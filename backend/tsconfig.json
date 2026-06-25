@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",                   /* JavaScript version to compile to */
+    "lib": ["ES2022"],                     /* Built-in library type definitions */
+    "module": "commonjs",                  /* Use CommonJS modules for Node.js */
+    "moduleResolution": "node",            /* Node.js-style module resolution */
+
+    /* Output */
+    "outDir": "./dist",                    /* Compiled output directory */
+    "rootDir": "./src",                    /* Source files root directory */
+
+    /* Strict Type Checks */
+    "strict": true,                        /* Enable all strict checks */
+    "noImplicitAny": true,                 /* Error on implicit 'any' types */
+    "strictNullChecks": true,              /* null/undefined are their own types */
+    "strictFunctionTypes": true,           /* Strict function parameter checking */
+    "noImplicitReturns": true,             /* All code paths must return a value */
+    "noFallthroughCasesInSwitch": true,    /* Prevent switch case fallthrough */
+    "noUnusedLocals": false,               /* Allow unused variables (enable later) */
+    "noUnusedParameters": false,           /* Allow unused parameters (enable later) */
+
+    /* Module Resolution */
+    "esModuleInterop": true,               /* Allow default imports from CommonJS */
+    "forceConsistentCasingInFileNames": true, /* Prevent case-sensitivity bugs */
+    "resolveJsonModule": true,             /* Allow importing JSON files */
+    "allowSyntheticDefaultImports": true,  /* Allow default imports without exports */
+
+    /* Source Maps */
+    "sourceMap": true,                     /* Generate .map files for debugging */
+    "declaration": true,                   /* Generate .d.ts type declaration files */
+
+    /* Decorators (for future use with NestJS-style patterns) */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* Path aliases for cleaner imports */
+    "baseUrl": "./src",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@controllers/*": ["controllers/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"],
+      "@services/*": ["services/*"],
+      "@middleware/*": ["middleware/*"],
+      "@utils/*": ["utils/*"],
+      "@validators/*": ["validators/*"],
+      "@types/*": ["types/*"],
+      "@interfaces/*": ["interfaces/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "tests"]
+}

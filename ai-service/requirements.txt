@@ -1,0 +1,53 @@
+# ============================================================
+# LifeVault AI Service - Python Dependencies
+# ============================================================
+# Install with: pip install -r requirements.txt
+# ============================================================
+
+# ============================================================
+# Web Framework
+# ============================================================
+fastapi==0.110.0              # Modern async web framework
+uvicorn[standard]==0.29.0     # ASGI server for FastAPI
+pydantic==2.6.4               # Data validation with type hints
+pydantic-settings==2.2.1      # Settings management
+
+# ============================================================
+# OCR & Document Processing
+# ============================================================
+python-doctr[torch]==0.8.1    # DocTR OCR engine with PyTorch
+opencv-python==4.9.0.80       # Computer vision library
+pillow==10.3.0                # Image processing
+pytesseract==0.3.10           # Tesseract OCR wrapper (fallback)
+
+# ============================================================
+# Image Processing
+# ============================================================
+numpy==1.26.4                 # Numerical computing
+scikit-image==0.22.0          # Image processing algorithms
+
+# ============================================================
+# ML & AI (Future Use)
+# ============================================================
+# transformers==4.38.2        # HuggingFace transformers (Phase 2)
+# torch==2.2.1                # PyTorch (Phase 2)
+
+# ============================================================
+# File Handling
+# ============================================================
+python-multipart==0.0.9       # File upload support
+aiofiles==23.2.1              # Async file operations
+
+# ============================================================
+# Utilities
+# ============================================================
+python-dotenv==1.0.1          # Environment variable management
+
+# ============================================================
+# Development Tools (optional, for dev environment)
+# ============================================================
+pytest==8.1.1                 # Testing framework
+pytest-asyncio==0.23.6        # Async test support
+black==24.3.0                 # Code formatter
+flake8==7.0.0                 # Linter
+mypy==1.9.0                   # Type checker

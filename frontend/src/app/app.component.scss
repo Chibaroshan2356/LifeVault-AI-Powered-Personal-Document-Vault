@@ -1,0 +1,14 @@
+/**
+ * AppComponent Styles
+ *
+ * Purpose: Root-level layout styles for the application shell.
+ * Since this is the root component, styles here define the overall
+ * application layout constraints.
+ */
+
+/* Ensure the app takes up the full viewport height */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

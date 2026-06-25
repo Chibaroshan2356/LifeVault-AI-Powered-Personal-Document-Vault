@@ -1,0 +1,3 @@
+"""
+LifeVault AI Service Package
+"""
