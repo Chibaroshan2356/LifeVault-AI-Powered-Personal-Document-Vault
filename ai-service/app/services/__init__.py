@@ -1,1 +1,1 @@
-"""Business logic services"""
+"""Orchestration services that coordinate pipeline stages"""

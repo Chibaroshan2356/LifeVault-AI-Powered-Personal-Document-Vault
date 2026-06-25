@@ -1,39 +1,27 @@
 /**
- * Auth Routes
+ * auth.routes.ts - Auth Routes
  *
- * Purpose: Defines the child routes for the authentication feature.
- * These routes are loaded lazily when the user visits /auth paths.
+ * Public routes, no guard needed.
+ * Components are placeholders — implemented in the auth sprint.
  *
- * Route Structure:
- *  /auth            → Redirects to /auth/login
- *  /auth/login      → LoginComponent (TODO)
- *  /auth/register   → RegisterComponent (TODO)
- *
- * Note: Placeholder routes until auth components are implemented.
+ * Routes:
+ *  /auth/login    → LoginComponent
+ *  /auth/register → RegisterComponent
  */
-
 import { Routes } from '@angular/router';
 
 export const AUTH_ROUTES: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full',
-  },
-  /**
-   * Login route - TODO: Add LoginComponent when implemented
-   */
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   // {
   //   path: 'login',
-  //   component: LoginComponent,
-  //   title: 'LifeVault - Sign In',
+  //   loadComponent: () =>
+  //     import('./login/login.component').then((m) => m.LoginComponent),
+  //   title: 'LifeVault – Sign In',
   // },
-  /**
-   * Register route - TODO: Add RegisterComponent when implemented
-   */
   // {
   //   path: 'register',
-  //   component: RegisterComponent,
-  //   title: 'LifeVault - Create Account',
+  //   loadComponent: () =>
+  //     import('./register/register.component').then((m) => m.RegisterComponent),
+  //   title: 'LifeVault – Create Account',
   // },
 ];

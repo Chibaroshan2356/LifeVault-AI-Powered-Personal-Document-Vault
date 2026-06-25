@@ -1,97 +1,50 @@
 /**
- * Application Routes - Top-Level Routing Configuration
+ * app.routes.ts - Top-Level Route Definitions
  *
- * Purpose: Defines the main application routes with lazy loading.
- * Each feature module is lazy-loaded to improve initial bundle size
- * and application performance.
+ * Structure:
+ *  /auth        → AuthModule  (login, register)  — public
+ *  /            → LayoutModule (shell + child routes) — protected
+ *    /dashboard   → DashboardModule
+ *    /documents   → DocumentsModule
+ *    /search      → SearchModule
+ *  **           → 404 NotFoundComponent
  *
- * Route Structure:
- *  /auth          → Authentication (login, register)
- *  /dashboard     → Main dashboard (protected)
- *  /documents     → Document management (protected)
- *  /search        → Search interface (protected)
- *  /              → Redirects to dashboard
- *  **             → 404 Not Found
- *
- * Design Decisions:
- *  - Lazy loading via loadChildren reduces initial bundle size
- *  - Auth guard (to be implemented) protects private routes
- *  - Redirect from empty path handles default navigation
+ * Notes:
+ *  - All protected routes will nest inside a LayoutModule that provides
+ *    the nav sidebar. This avoids repeating the nav in every feature.
+ *  - canActivate: [authGuard] added to protected routes in the auth sprint.
+ *  - Feature modules are lazy-loaded to keep the initial bundle small.
  */
-
 import { Routes } from '@angular/router';
 
-export const APP_ROUTES: Routes = [
-  /**
-   * Default redirect: navigates to dashboard when accessing root URL.
-   * pathMatch: 'full' ensures only the exact empty path triggers this redirect.
-   */
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
+export const routes: Routes = [
+  // Default redirect
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
 
-  /**
-   * Authentication routes (login, register, forgot password).
-   * Not protected by auth guard - accessible to unauthenticated users.
-   * Lazy loaded for smaller initial bundle.
-   */
+  // Public routes
   {
     path: 'auth',
     loadChildren: () =>
-      import('./features/auth/auth.module').then((m) => m.AuthModule),
-    title: 'LifeVault - Sign In',
+      import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
+    title: 'LifeVault – Sign In',
   },
 
-  /**
-   * Dashboard route - main overview page.
-   * Will be protected by AuthGuard when implemented.
-   */
+  // Protected app shell (layout with sidebar + nav)
+  // Will be protected by authGuard in the auth sprint
   {
-    path: 'dashboard',
+    path: '',
     loadChildren: () =>
-      import('./features/dashboard/dashboard.module').then(
-        (m) => m.DashboardModule
-      ),
-    title: 'LifeVault - Dashboard',
-    // canActivate: [AuthGuard],  // Uncomment when AuthGuard is implemented
+      import('./features/layout/layout.routes').then((m) => m.LAYOUT_ROUTES),
+    // canActivate: [authGuard],
   },
 
-  /**
-   * Documents route - upload, view, and manage documents.
-   * Will be protected by AuthGuard when implemented.
-   */
-  {
-    path: 'documents',
-    loadChildren: () =>
-      import('./features/documents/documents.module').then(
-        (m) => m.DocumentsModule
-      ),
-    title: 'LifeVault - Documents',
-    // canActivate: [AuthGuard],  // Uncomment when AuthGuard is implemented
-  },
-
-  /**
-   * Search route - intelligent document search.
-   * Will be protected by AuthGuard when implemented.
-   */
-  {
-    path: 'search',
-    loadChildren: () =>
-      import('./features/search/search.module').then((m) => m.SearchModule),
-    title: 'LifeVault - Search',
-    // canActivate: [AuthGuard],  // Uncomment when AuthGuard is implemented
-  },
-
-  /**
-   * Wildcard route: catches all unmatched paths.
-   * Redirects to a 404 page (or dashboard as fallback during development).
-   *
-   * TODO: Create a dedicated NotFoundComponent for better UX.
-   */
+  // 404
   {
     path: '**',
-    redirectTo: 'dashboard',
+    loadComponent: () =>
+      import('./features/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
+    title: 'LifeVault – Page Not Found',
   },
 ];

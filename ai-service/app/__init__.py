@@ -1,3 +1,1 @@
-"""
-LifeVault AI Service Package
-"""
+"""LifeVault AI Service"""
