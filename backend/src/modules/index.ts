@@ -1,28 +1,23 @@
 /**
- * modules/index.ts - API Router
+ * modules/index.ts — API Router
  *
  * Aggregates all feature module routers under /api/v1.
- * Each module owns its own routes, controller, service, and model.
+ * Mounted in app.ts as: app.use('/api/v1', apiRouter)
  *
  * URL structure:
  *  /api/v1/auth/...         → auth module
  *  /api/v1/users/...        → user module
- *  /api/v1/documents/...    → document module
- *  /api/v1/search/...       → search module
- *  /api/v1/notifications/.. → notification module
+ *  /api/v1/documents/...    → document module  (Sprint 3)
+ *  /api/v1/search/...       → search module    (Sprint 9)
+ *  /api/v1/notifications/.. → notification     (Sprint 10)
  */
 import { Router } from 'express';
-
-// Feature routers — uncommented as each module is implemented
-// import { authRouter }         from './auth/auth.routes';
-// import { userRouter }         from './user/user.routes';
-// import { documentRouter }     from './document/document.routes';
-// import { searchRouter }       from './search/search.routes';
-// import { notificationRouter } from './notification/notification.routes';
+import { authRouter } from './auth/auth.routes';
+import { userRouter } from './user/user.routes';
 
 export const apiRouter = Router();
 
-/** API root — returns available endpoints */
+/** API root — available endpoints */
 apiRouter.get('/', (_req, res) => {
   res.json({
     success: true,
@@ -34,12 +29,14 @@ apiRouter.get('/', (_req, res) => {
       search:        '/api/v1/search',
       notifications: '/api/v1/notifications',
     },
+    docs: '/api-docs',
   });
 });
 
-// Mount feature routers here as they are implemented:
-// apiRouter.use('/auth',          authRouter);
-// apiRouter.use('/users',         userRouter);
+apiRouter.use('/auth',  authRouter);
+apiRouter.use('/users', userRouter);
+
+// Mounted in subsequent sprints:
 // apiRouter.use('/documents',     documentRouter);
 // apiRouter.use('/search',        searchRouter);
 // apiRouter.use('/notifications', notificationRouter);
