@@ -54,6 +54,24 @@ Wait for explicit instruction before starting Phase 2.
 Upload → Save file → Create DB record (status: UPLOADED) → Enqueue OCR job → Return HTTP 202
 Never run OCR synchronously inside the upload request handler.
 
+**JobQueue note:** Current `JobQueueService` is an in-process placeholder using `setImmediate`.
+It is designed to be swapped to BullMQ + Redis before production deployment.
+For now it is acceptable — document this clearly in comments.
+
+### AI Pipeline Order (extraction BEFORE classification)
+preprocessing → OCR → **extraction** → **classification** → metadata
+Extraction runs first so the classifier gets structured fields, not just raw text.
+
+### Document Status Enum (corrected order)
+UPLOADED → OCR_PENDING → OCR_COMPLETED
+→ EXTRACTION_PENDING → EXTRACTION_COMPLETED
+→ CLASSIFICATION_PENDING → CLASSIFICATION_COMPLETED → READY | FAILED
+
+### Processing History
+Every document stores a `processingHistory` array:
+[{ stage, status, timestamp, durationMs, error? }, ...]
+This powers a visual timeline in the UI and aids debugging.
+
 ### Document Status Enum (granular)
 UPLOADED → OCR_PENDING → OCR_COMPLETED → CLASSIFICATION_PENDING
 → CLASSIFICATION_COMPLETED → EXTRACTION_PENDING → READY | FAILED

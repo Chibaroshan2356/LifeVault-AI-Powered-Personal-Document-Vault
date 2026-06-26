@@ -6,12 +6,17 @@
 
 ## 1. Pipeline Overview
 
+**Key design decision: Extraction runs BEFORE Classification.**
+After OCR, we first identify structured fields (name, dates, document number).
+The classifier then receives both raw text AND extracted fields — much richer
+signal than raw OCR text alone.
+
 ```
 Upload
   │
   ▼
 ┌─────────────────┐
-│  Preprocessing  │  Validate → Convert → Clean → Normalize
+│  Preprocessing  │  Validate → PDF→image → Deskew → Denoise
 │  app/preprocessing
 └────────┬────────┘
          │
@@ -23,20 +28,20 @@ Upload
          │
          ▼
 ┌─────────────────┐
-│ Classification  │  Detect document type from text + layout
-│  app/classification
+│   Extraction    │  Named entity extraction — runs BEFORE classification
+│  app/extraction │  Returns: holder_name, doc_number, issue_date, expiry_date
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│   Extraction    │  Named entity extraction (regex + NLP)
-│  app/extraction │  Returns: holder_name, doc_number, dates
+│ Classification  │  Uses OCR text + extracted fields for richer signal
+│  app/classification  Returns: document_type, confidence
 └────────┬────────┘
          │
          ▼
 ┌─────────────────┐
-│    Metadata     │  Assemble structured DocumentMetadata
-│  app/metadata   │  Normalize dates → ISO 8601
+│    Metadata     │  Assemble DocumentMetadata, normalize dates → ISO 8601
+│  app/metadata   │
 └────────┬────────┘
          │
          ▼

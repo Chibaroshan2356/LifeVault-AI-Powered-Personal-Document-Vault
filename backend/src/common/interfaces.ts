@@ -59,3 +59,24 @@ export interface OCRJobPayload {
   filePath:   string;
   mimeType:   string;
 }
+
+/**
+ * ProcessingHistoryEntry — one entry per pipeline stage.
+ * Stored as an array on the Document model.
+ * Rendered as a visual timeline in the document detail UI.
+ *
+ * Example display:
+ *   ✔ UPLOAD       (12ms)
+ *   ✔ OCR          (4.2s)
+ *   ✔ EXTRACTION   (230ms)
+ *   ✔ CLASSIFICATION (45ms)
+ *   ✔ METADATA     (12ms)
+ *   ✔ INDEXING     (8ms)
+ */
+export interface ProcessingHistoryEntry {
+  stage:       string;   // ProcessingStage enum value
+  status:      string;   // ProcessingStageStatus enum value
+  timestamp:   Date;
+  durationMs?: number;   // How long the stage took
+  error?:      string;   // Set only when status is "failed"
+}

@@ -48,9 +48,29 @@ Stores uploaded document records and AI-processed results.
   uploadDate:   Date,
 
   // AI Processing
-  status:       String,        // "pending" | "processing" | "completed" | "failed"
+  status:       String,        // DocumentStatus enum (see enums.ts)
+
+  // Granular processing history — shown as a timeline in the UI
+  processingHistory: [
+    {
+      stage:     String,       // "UPLOAD" | "OCR" | "EXTRACTION" | "CLASSIFICATION" | "METADATA"
+      status:    String,       // "started" | "completed" | "failed"
+      timestamp: Date,
+      durationMs: Number,      // How long the stage took
+      error:     String,       // Only set on failure
+    }
+  ],
+
   ocrText:      String,        // Full extracted text
   ocrConfidence: Number,       // 0–1 confidence score
+
+  // AI version info — which model produced this result
+  aiVersionInfo: {
+    ocrEngine:             String,   // "DocTR"
+    ocrVersion:            String,   // "0.8.1"
+    classificationModel:   String,   // "RuleBased" | "LayoutLMv3"
+    classificationVersion: String,
+  },
 
   metadata: {
     holderName:     String,
@@ -62,7 +82,7 @@ Stores uploaded document records and AI-processed results.
   },
 
   expiryDate:   Date,          // Denormalized from metadata for query performance
-  errorMessage: String,        // Set when status is "failed"
+  errorMessage: String,        // Set when status is FAILED
 
   createdAt:    Date,
   updatedAt:    Date,

@@ -6,28 +6,48 @@
  */
 
 /**
- * DocumentStatus — granular pipeline states
+ * ProcessingStage — maps to processingHistory entries in Document model.
+ * Every stage is recorded with a timestamp and duration for the UI timeline.
+ */
+export enum ProcessingStage {
+  UPLOAD         = 'UPLOAD',
+  OCR            = 'OCR',
+  EXTRACTION     = 'EXTRACTION',
+  CLASSIFICATION = 'CLASSIFICATION',
+  METADATA       = 'METADATA',
+  INDEXING       = 'INDEXING',
+}
+
+/**
+ * ProcessingStageStatus — result of each pipeline stage
+ */
+export enum ProcessingStageStatus {
+  STARTED   = 'started',
+  COMPLETED = 'completed',
+  FAILED    = 'failed',
+}
+
+/**
+ * DocumentStatus — overall document processing state
  *
  * Lifecycle:
  *  UPLOADED → OCR_PENDING → OCR_COMPLETED
+ *           → EXTRACTION_PENDING → EXTRACTION_COMPLETED
  *           → CLASSIFICATION_PENDING → CLASSIFICATION_COMPLETED
- *           → EXTRACTION_PENDING → READY
+ *           → READY
  *
  * FAILED can occur at any stage.
- * This granularity enables:
- *  - Precise retry logic (retry from the failed stage, not from scratch)
- *  - Progress indicators in the UI
- *  - Easier debugging ("failed during OCR" vs "failed during classification")
  */
 export enum DocumentStatus {
-  UPLOADED                  = 'UPLOADED',
-  OCR_PENDING               = 'OCR_PENDING',
-  OCR_COMPLETED             = 'OCR_COMPLETED',
-  CLASSIFICATION_PENDING    = 'CLASSIFICATION_PENDING',
-  CLASSIFICATION_COMPLETED  = 'CLASSIFICATION_COMPLETED',
-  EXTRACTION_PENDING        = 'EXTRACTION_PENDING',
-  READY                     = 'READY',
-  FAILED                    = 'FAILED',
+  UPLOADED                    = 'UPLOADED',
+  OCR_PENDING                 = 'OCR_PENDING',
+  OCR_COMPLETED               = 'OCR_COMPLETED',
+  EXTRACTION_PENDING          = 'EXTRACTION_PENDING',
+  EXTRACTION_COMPLETED        = 'EXTRACTION_COMPLETED',
+  CLASSIFICATION_PENDING      = 'CLASSIFICATION_PENDING',
+  CLASSIFICATION_COMPLETED    = 'CLASSIFICATION_COMPLETED',
+  READY                       = 'READY',
+  FAILED                      = 'FAILED',
 }
 
 /**
