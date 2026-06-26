@@ -72,7 +72,10 @@ export class LoginComponent implements OnInit {
     ).subscribe({
       next: () => this.router.navigate(['/dashboard']),
       error: (err) => {
-        this.errorMessage = err?.error?.message ?? 'Login failed. Please try again.';
+        this.errorMessage =
+          err?.error?.message ||
+          err?.message ||
+          'Login failed. Please try again.';
       },
     });
   }

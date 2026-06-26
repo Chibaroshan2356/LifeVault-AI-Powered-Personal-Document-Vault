@@ -1,12 +1,19 @@
 /**
- * documents.routes.ts — Document Routes (Sprint 2)
- * Placeholder until document components are implemented.
+ * documents.routes.ts — Document Feature Routes
  */
 import { Routes } from '@angular/router';
 
 export const DOCUMENTS_ROUTES: Routes = [
-  // Implemented in Sprint 2:
-  // { path: '', component: DocumentListComponent },
-  // { path: 'upload', component: DocumentUploadComponent },
-  // { path: ':id', component: DocumentDetailComponent },
+  {
+    path: '',
+    loadComponent: () =>
+      import('./list/document-list.component').then((m) => m.DocumentListComponent),
+    title: 'LifeVault – My Documents',
+  },
+  {
+    path: 'upload',
+    loadComponent: () =>
+      import('./upload/document-upload.component').then((m) => m.DocumentUploadComponent),
+    title: 'LifeVault – Upload Document',
+  },
 ];

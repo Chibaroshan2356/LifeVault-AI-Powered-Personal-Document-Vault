@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/material-icons/iconfont/material-icons.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
