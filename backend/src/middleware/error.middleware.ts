@@ -76,7 +76,7 @@ export const errorHandler = (
 
   // Multer file upload errors
   if (err.name === 'MulterError') {
-    const m = err as { code: string };
+    const m = err as unknown as { code: string };
     const msg = m.code === 'LIMIT_FILE_SIZE'
       ? 'File exceeds the size limit'
       : 'File upload error';
