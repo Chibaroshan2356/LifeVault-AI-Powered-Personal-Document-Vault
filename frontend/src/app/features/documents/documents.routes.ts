@@ -16,4 +16,10 @@ export const DOCUMENTS_ROUTES: Routes = [
       import('./upload/document-upload.component').then((m) => m.DocumentUploadComponent),
     title: 'LifeVault – Upload Document',
   },
+  {
+    path: ':id',
+    loadComponent: () =>
+      import('./detail/document-detail.component').then((m) => m.DocumentDetailComponent),
+    title: 'LifeVault – Document Detail',
+  },
 ];

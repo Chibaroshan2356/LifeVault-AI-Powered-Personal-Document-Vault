@@ -67,7 +67,9 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   font-weight: 500;
-  color: #333;
+  color: #3f51b5;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
 }
 
 .category { color: #555; }

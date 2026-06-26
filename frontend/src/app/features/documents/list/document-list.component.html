@@ -65,9 +65,9 @@
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef>Name</th>
           <td mat-cell *matCellDef="let doc">
-            <span class="doc-name" [matTooltip]="doc.originalFileName">
+            <a class="doc-name" [routerLink]="['/documents', doc._id]" [matTooltip]="doc.originalFileName">
               {{ doc.originalFileName }}
-            </span>
+            </a>
           </td>
         </ng-container>
 
