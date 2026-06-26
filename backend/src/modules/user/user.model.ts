@@ -107,11 +107,10 @@ const UserSchema = new Schema<IUser>(
 // ------------------------------------------------------------------
 
 /**
- * email index: unique constraint + fast login lookups.
- * Defined in schema options above via unique: true,
- * but we add a text index for case-insensitive search support.
+ * email index: unique constraint is already enforced by `unique: true`
+ * in the schema definition above. We do NOT add a manual schema.index()
+ * for email — that would create a duplicate index warning in Mongoose.
  */
-UserSchema.index({ email: 1 }, { unique: true });
 
 // ------------------------------------------------------------------
 // Instance methods

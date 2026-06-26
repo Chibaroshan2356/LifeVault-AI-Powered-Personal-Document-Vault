@@ -115,7 +115,7 @@ describe('AuthService.login()', () => {
 
     await expect(
       authService.login({ email: 'john@example.com', password: 'StrongPass1!' }),
-    ).rejects.toThrow(new HttpError(403, expect.stringContaining('deactivated')));
+    ).rejects.toThrow(new HttpError(403, 'Your account has been deactivated. Please contact support.'));
   });
 });
 
@@ -144,7 +144,7 @@ describe('AuthService.refresh()', () => {
 
     await expect(
       authService.refresh({ refreshToken: 'unknown_token' }),
-    ).rejects.toThrow(new HttpError(401, expect.stringContaining('not found')));
+    ).rejects.toThrow(new HttpError(401, 'Refresh token not found — please log in again'));
   });
 });
 

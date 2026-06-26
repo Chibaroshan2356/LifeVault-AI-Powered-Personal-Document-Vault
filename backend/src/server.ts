@@ -41,12 +41,21 @@ const PORT = parseInt(process.env.PORT ?? '3000', 10);
     process.on('SIGINT',  () => shutdown('SIGINT'));
 
     process.on('unhandledRejection', (reason) => {
-      logger.error('Unhandled rejection:', reason);
+      const err = reason instanceof Error ? reason : new Error(String(reason));
+      logger.error('Unhandled rejection', {
+        name:    err.name,
+        message: err.message,
+        stack:   err.stack,
+      });
       process.exit(1);
     });
 
     process.on('uncaughtException', (err) => {
-      logger.error('Uncaught exception:', err.message);
+      logger.error('Uncaught exception', {
+        name:    err.name,
+        message: err.message,
+        stack:   err.stack,
+      });
       process.exit(1);
     });
 

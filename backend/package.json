@@ -18,17 +18,24 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "roots": ["<rootDir>/tests"],
-    "testMatch": ["**/*.test.ts"],
+    "roots": [
+      "<rootDir>/tests"
+    ],
+    "testMatch": [
+      "**/*.test.ts"
+    ],
     "moduleNameMapper": {
-      "^@config/(.*)$":      "<rootDir>/src/config/$1",
-      "^@modules/(.*)$":     "<rootDir>/src/modules/$1",
-      "^@middleware/(.*)$":  "<rootDir>/src/middleware/$1",
-      "^@utils/(.*)$":       "<rootDir>/src/utils/$1",
-      "^@common/(.*)$":      "<rootDir>/src/common/$1"
+      "^@config/(.*)$": "<rootDir>/src/config/$1",
+      "^@modules/(.*)$": "<rootDir>/src/modules/$1",
+      "^@middleware/(.*)$": "<rootDir>/src/middleware/$1",
+      "^@utils/(.*)$": "<rootDir>/src/utils/$1",
+      "^@common/(.*)$": "<rootDir>/src/common/$1"
     },
     "coverageDirectory": "coverage",
-    "collectCoverageFrom": ["src/**/*.ts", "!src/server.ts"]
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/server.ts"
+    ]
   },
   "keywords": [
     "express",
@@ -79,6 +86,8 @@
     "rimraf": "^5.0.5",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.11",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.4.5"
   }
 }
