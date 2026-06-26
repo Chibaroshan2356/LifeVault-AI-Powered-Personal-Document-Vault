@@ -1,108 +1,143 @@
 /**
  * app.ts - Express Application Factory
  *
- * Creates and configures the Express app.
- * Kept separate from server.ts so the app can be imported in tests
- * without binding to a port.
+ * Creates and configures the Express app instance.
+ * Separated from server.ts so the app can be tested without binding a port.
  *
- * Middleware order (matters):
- *  1. Helmet        — security headers
- *  2. CORS          — cross-origin
- *  3. Rate limiter  — abuse prevention
- *  4. Morgan        — HTTP request logging
- *  5. Body parsers  — JSON + URL-encoded
- *  6. Static files  — /uploads served statically
- *  7. Health check  — /health (no auth required)
- *  8. API routes    — /api/v1/...
- *  9. 404 handler
- * 10. Error handler
+ * Middleware order (critical — do not reorder):
+ *  1. requestId        — attach unique ID for log tracing
+ *  2. Helmet           — security headers
+ *  3. CORS             — cross-origin policy
+ *  4. Rate limiter     — abuse prevention
+ *  5. Morgan           — HTTP access log → logs/access.log
+ *  6. Body parsers     — JSON + URL-encoded
+ *  7. Static uploads   — /uploads served statically
+ *  8. Health check     — GET /health (no auth, no rate limit)
+ *  9. Swagger UI       — GET /api-docs (interactive documentation)
+ * 10. API routes       — /api/v1/*
+ * 11. 404 handler
+ * 12. Error handler    — must be last
  */
+import 'express-async-errors'; // Patches async route handlers to forward errors to next()
 import express, { Application, Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
+import swaggerUi from 'swagger-ui-express';
 import path from 'path';
 
+import { requestIdMiddleware } from './middleware/requestId.middleware';
 import { errorHandler } from './middleware/error.middleware';
 import { notFoundHandler } from './middleware/notFound.middleware';
-import { logger } from './utils/logger';
+import { logger, morganStream } from './utils/logger';
+import { swaggerSpec } from './config/swagger';
 import { apiRouter } from './modules';
 
 export const createApp = (): Application => {
   const app = express();
 
-  // ------------------------------------------------------------------
-  // 1. Security
-  // ------------------------------------------------------------------
-  app.use(helmet());
+  // ----------------------------------------------------------------
+  // 1. Request ID — first, so all subsequent middleware can use it
+  // ----------------------------------------------------------------
+  app.use(requestIdMiddleware);
+
+  // ----------------------------------------------------------------
+  // 2. Security headers
+  // ----------------------------------------------------------------
+  app.use(
+    helmet({
+      // Allow Swagger UI to load its inline scripts and styles
+      contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false,
+    }),
+  );
+
+  // ----------------------------------------------------------------
+  // 3. CORS
+  // ----------------------------------------------------------------
   app.use(cors({
-    origin:      process.env.CORS_ORIGIN || 'http://localhost:4200',
-    methods:     ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,
+    origin:         process.env.CORS_ORIGIN || 'http://localhost:4200',
+    methods:        ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Request-ID'],
+    exposedHeaders: ['X-Request-ID'],
+    credentials:    true,
   }));
 
-  // ------------------------------------------------------------------
-  // 2. Rate limiting — 100 requests per 15 min per IP
-  // ------------------------------------------------------------------
+  // ----------------------------------------------------------------
+  // 4. Rate limiting — 100 req / 15 min per IP on all /api routes
+  // ----------------------------------------------------------------
   app.use('/api', rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100,
     standardHeaders: true,
     legacyHeaders: false,
-    message: ApiResponseError('Too many requests — try again after 15 minutes'),
+    message: { success: false, message: 'Too many requests — try again after 15 minutes' },
   }));
 
-  // ------------------------------------------------------------------
-  // 3. HTTP Logging
-  // ------------------------------------------------------------------
+  // ----------------------------------------------------------------
+  // 5. HTTP access logging → logs/access.log
+  // ----------------------------------------------------------------
+  app.use(morgan('combined', { stream: morganStream }));
   if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
-  } else {
-    app.use(morgan('combined', {
-      stream: { write: (msg: string) => logger.info(msg.trim()) },
-    }));
+    app.use(morgan('dev')); // also log colorized to console in dev
   }
 
-  // ------------------------------------------------------------------
-  // 4. Body parsers
-  // ------------------------------------------------------------------
+  // ----------------------------------------------------------------
+  // 6. Body parsers
+  // ----------------------------------------------------------------
   app.use(express.json({ limit: '10mb' }));
   app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-  // ------------------------------------------------------------------
-  // 5. Static uploads (dev only — use CDN/S3 in production)
-  // ------------------------------------------------------------------
+  // ----------------------------------------------------------------
+  // 7. Static file serving for uploads
+  // ----------------------------------------------------------------
   app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 
-  // ------------------------------------------------------------------
-  // 6. Health check
-  // ------------------------------------------------------------------
+  // ----------------------------------------------------------------
+  // 8. Health check (exempt from rate limiting)
+  // ----------------------------------------------------------------
   app.get('/health', (_req: Request, res: Response) => {
     res.status(200).json({
-      status: 'ok',
-      service: 'LifeVault API',
-      version: '1.0.0',
-      timestamp: new Date().toISOString(),
+      status:      'ok',
+      service:     'LifeVault Backend',
+      version:     '1.0.0',
+      environment: process.env.NODE_ENV || 'development',
+      timestamp:   new Date().toISOString(),
     });
   });
 
-  // ------------------------------------------------------------------
-  // 7. API routes — all under /api/v1
-  // ------------------------------------------------------------------
+  // ----------------------------------------------------------------
+  // 9. Swagger UI — interactive API documentation
+  //    Access at: http://localhost:3000/api-docs
+  // ----------------------------------------------------------------
+  app.use(
+    '/api-docs',
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec, {
+      customSiteTitle: 'LifeVault API Docs',
+      swaggerOptions: {
+        persistAuthorization: true, // keep JWT between page refreshes
+      },
+    }),
+  );
+
+  // Expose the raw OpenAPI JSON spec (useful for Postman import)
+  app.get('/api-docs.json', (_req: Request, res: Response) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerSpec);
+  });
+
+  // ----------------------------------------------------------------
+  // 10. API routes — /api/v1/*
+  // ----------------------------------------------------------------
   app.use('/api/v1', apiRouter);
 
-  // ------------------------------------------------------------------
-  // 8 & 9. Not-found + error handler (must be last)
-  // ------------------------------------------------------------------
+  // ----------------------------------------------------------------
+  // 11 & 12. Not-found + global error handler (always last)
+  // ----------------------------------------------------------------
   app.use(notFoundHandler);
   app.use(errorHandler);
 
+  logger.info('Express app configured');
   return app;
 };
-
-/** Helper used inline above before ApiResponse is imported */
-function ApiResponseError(message: string) {
-  return { success: false, message };
-}

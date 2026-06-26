@@ -42,6 +42,31 @@ Wait for explicit instruction before starting Phase 2.
 - Backend: Express.js, TypeScript strict, feature-based modules
 - Database: MongoDB + Mongoose
 - AI Service: FastAPI, Python 3.11, DocTR OCR
-- Validation: Zod (backend), Angular Reactive Forms (frontend)
+- Validation: **Zod** (backend — not express-validator), Angular Reactive Forms (frontend)
 - Auth: JWT (access + refresh tokens), bcrypt
-- Logging: Winston (backend), Python logging with rotation (AI service)
+- Logging: Winston with 3 log files (application.log, error.log, access.log)
+- API Docs: Swagger UI at /api-docs, raw JSON at /api-docs.json
+- Request tracing: X-Request-ID header on every request
+
+## Key Patterns (enforce in every module)
+
+### Background Jobs
+Upload → Save file → Create DB record (status: UPLOADED) → Enqueue OCR job → Return HTTP 202
+Never run OCR synchronously inside the upload request handler.
+
+### Document Status Enum (granular)
+UPLOADED → OCR_PENDING → OCR_COMPLETED → CLASSIFICATION_PENDING
+→ CLASSIFICATION_COMPLETED → EXTRACTION_PENDING → READY | FAILED
+
+### Storage Abstraction
+Always inject IStorageService — never use `fs` directly in document.service.ts.
+Currently: LocalStorageService. Swap to S3StorageService without touching callers.
+
+### AI Versioning
+Every AI pipeline response includes AIVersionInfo:
+{ ocrEngine, ocrVersion, classificationModel, classificationVersion }
+Store this in MongoDB alongside the OCR result.
+
+### API Resource Naming
+All endpoints use plural nouns:
+/api/v1/auth, /api/v1/users, /api/v1/documents, /api/v1/search, /api/v1/notifications, /api/v1/dashboard
