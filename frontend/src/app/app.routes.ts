@@ -25,13 +25,13 @@ export const routes: Routes = [
       import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
 
-  // Protected: dashboard placeholder (implemented in Sprint 8)
+  // Protected: dashboard (implemented in Milestone 5)
   {
     path: 'dashboard',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./features/dashboard/dashboard.placeholder').then(
-        (m) => m.DashboardPlaceholderComponent,
+      import('./features/dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent,
       ),
     title: 'LifeVault – Dashboard',
   },

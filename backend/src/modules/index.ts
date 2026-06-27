@@ -12,9 +12,10 @@
  *  /api/v1/notifications/.. → notification     (Sprint 10)
  */
 import { Router } from 'express';
-import { authRouter }     from './auth/auth.routes';
-import { userRouter }     from './user/user.routes';
-import { documentRouter } from './document/document.routes';
+import { authRouter }      from './auth/auth.routes';
+import { userRouter }      from './user/user.routes';
+import { documentRouter }  from './document/document.routes';
+import { dashboardRouter } from './document/dashboard.routes';
 
 export const apiRouter = Router();
 
@@ -27,6 +28,7 @@ apiRouter.get('/', (_req, res) => {
       auth:          '/api/v1/auth',
       users:         '/api/v1/users',
       documents:     '/api/v1/documents',
+      dashboard:     '/api/v1/dashboard',
       search:        '/api/v1/search',
       notifications: '/api/v1/notifications',
     },
@@ -37,6 +39,7 @@ apiRouter.get('/', (_req, res) => {
 apiRouter.use('/auth',      authRouter);
 apiRouter.use('/users',     userRouter);
 apiRouter.use('/documents', documentRouter);
+apiRouter.use('/dashboard', dashboardRouter);
 
 // Mounted in subsequent sprints:
 // apiRouter.use('/documents',     documentRouter);

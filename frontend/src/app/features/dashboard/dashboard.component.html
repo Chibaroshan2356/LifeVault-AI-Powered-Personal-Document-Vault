@@ -1,0 +1,160 @@
+<div class="shell">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <mat-icon>lock</mat-icon>
+      <span>LifeVault</span>
+    </div>
+
+    <nav class="nav">
+      <a class="nav-item active" matRipple>
+        <mat-icon>dashboard</mat-icon><span>Dashboard</span>
+      </a>
+      <a class="nav-item" matRipple routerLink="/documents">
+        <mat-icon>folder</mat-icon><span>Documents</span>
+      </a>
+      <a class="nav-item" matRipple routerLink="/search">
+        <mat-icon>search</mat-icon><span>Search</span>
+      </a>
+      <a class="nav-item" matRipple>
+        <mat-icon>notifications</mat-icon><span>Notifications</span>
+      </a>
+      <a class="nav-item" matRipple>
+        <mat-icon>person</mat-icon><span>Profile</span>
+      </a>
+    </nav>
+
+    <button class="signout" (click)="logout()">
+      <mat-icon>logout</mat-icon><span>Sign Out</span>
+    </button>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <!-- Top bar -->
+    <header class="topbar">
+      <div>
+        <h1 class="greeting">Good day{{ userName ? ', ' + userName : '' }} 👋</h1>
+        <p class="sub">Here's your document overview</p>
+      </div>
+      <button class="upload-btn" matRipple routerLink="/documents/upload">
+        <mat-icon>upload_file</mat-icon> Upload Document
+      </button>
+    </header>
+
+    <!-- Stats row -->
+    <div class="stats-row">
+      <div class="stat-card" *ngFor="let stat of statCards">
+        <div class="stat-icon" [ngClass]="stat.color">
+          <mat-icon>{{ stat.icon }}</mat-icon>
+        </div>
+        <div class="stat-info">
+          <span class="stat-value">{{ stat.value }}</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content area -->
+    <div class="content-row">
+      <!-- Recent documents -->
+      <div class="panel recent">
+        <div class="panel-header">
+          <h2>Recent Documents</h2>
+          <a class="see-all" routerLink="/documents">See all</a>
+        </div>
+
+        <div *ngIf="recentDocuments.length > 0" class="table-container">
+          <table class="documents-table">
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Size</th>
+                <th>Uploaded</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let doc of recentDocuments">
+                <td class="filename">
+                  <mat-icon class="file-icon">description</mat-icon>
+                  {{ doc.originalFileName }}
+                </td>
+                <td>{{ doc.category }}</td>
+                <td>
+                  <span class="status-badge" [ngClass]="getStatusClass(doc.status)">
+                    {{ formatStatus(doc.status) }}
+                  </span>
+                </td>
+                <td>{{ formatFileSize(doc.fileSize) }}</td>
+                <td>{{ formatDate(doc.uploadedAt) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div *ngIf="recentDocuments.length === 0" class="empty-state">
+          <mat-icon>cloud_upload</mat-icon>
+          <p>No documents yet.</p>
+          <span>Upload your first document to get started.</span>
+          <button class="upload-btn-sm" matRipple routerLink="/documents/upload">
+            <mat-icon>add</mat-icon> Upload Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="right-col">
+        <!-- Expiry alerts -->
+        <div class="panel alerts">
+          <div class="panel-header">
+            <h2>Expiry Alerts</h2>
+          </div>
+
+          <div *ngIf="expiringDocuments.length > 0" class="expiry-list">
+            <div class="expiry-item" *ngFor="let doc of expiringDocuments">
+              <div class="expiry-icon">
+                <mat-icon>schedule</mat-icon>
+              </div>
+              <div class="expiry-info">
+                <span class="filename">{{ doc.originalFileName }}</span>
+                <span class="category">{{ doc.category }}</span>
+              </div>
+              <mat-icon class="alert-icon">warning</mat-icon>
+            </div>
+          </div>
+
+          <div *ngIf="expiringDocuments.length === 0" class="empty-state small">
+            <mat-icon>notifications_none</mat-icon>
+            <p>No upcoming expiries</p>
+          </div>
+        </div>
+
+        <!-- Processing errors -->
+        <div class="panel errors">
+          <div class="panel-header">
+            <h2>Processing Errors</h2>
+          </div>
+
+          <div *ngIf="processingErrors.length > 0" class="error-list">
+            <div class="error-item" *ngFor="let doc of processingErrors">
+              <mat-icon class="error-icon">error</mat-icon>
+              <div class="error-info">
+                <span class="filename">{{ doc.originalFileName }}</span>
+                <span class="action">
+                  <a routerLink="/documents">View details</a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="processingErrors.length === 0" class="empty-state small">
+            <mat-icon>check_circle</mat-icon>
+            <p>No processing errors</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
