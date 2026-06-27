@@ -38,7 +38,7 @@ def extract(text: str) -> Dict[str, Optional[str]]:
     Returns a dict with null values for unfound fields.
     """
     result = {
-        "documentTitle":      _extract_title(text),
+        "documentName":       _extract_title(text),
         "holderName":         _extract_name(text),
         "organization":       _extract_org(text),
         "issueDate":          _extract_date_by_keyword(text, _ISSUE_KEYWORDS),

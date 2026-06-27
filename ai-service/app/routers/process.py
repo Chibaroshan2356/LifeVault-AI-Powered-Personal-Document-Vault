@@ -66,7 +66,7 @@ async def process_document(
             document_type=doc_type,
             classification_confidence=class_conf,
             metadata=DocumentMetadata(
-                documentTitle  = extracted.get("documentTitle"),
+                documentName   = extracted.get("documentName"),
                 holderName     = extracted.get("holderName"),
                 organization   = extracted.get("organization"),
                 documentNumber = extracted.get("documentNumber"),

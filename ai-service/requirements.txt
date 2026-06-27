@@ -7,10 +7,9 @@ python-multipart==0.0.20
 pydantic==2.10.4
 pydantic-settings==2.7.0
 
-# OCR — DocTR (CPU only for development)
-# python-doctr[torch] requires torch which is large
-# Use python-doctr[tensorflow] as lighter alternative for dev
-# For now use pytesseract as development fallback
+# OCR — EasyOCR (main), with PyMuPDF for direct PDF text extraction
+easyocr==1.7.2
+PyMuPDF==1.24.12
 pytesseract==0.3.13
 Pillow==11.1.0
 opencv-python-headless==4.11.0.86

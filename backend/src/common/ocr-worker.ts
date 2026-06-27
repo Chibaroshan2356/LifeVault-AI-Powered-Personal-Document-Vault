@@ -25,6 +25,28 @@ export async function ocrJobHandler(payload: OCRJobPayload): Promise<void> {
 
   logger.info('OCR job started', { documentId });
 
+  // ── 0. Health check: Verify AI service is available ──────────
+  const aiServiceHealthy = await aiClient.healthCheck();
+  if (!aiServiceHealthy) {
+    logger.error('AI service is unavailable', { documentId });
+    
+    // Update document with AI_UNAVAILABLE status
+    await DocumentModel.findByIdAndUpdate(documentId, {
+      status: DocumentStatus.FAILED,
+      errorMessage: 'AI service is currently unavailable. Please try again later.',
+      $push: {
+        processingHistory: {
+          stage:      ProcessingStage.OCR,
+          status:     ProcessingStageStatus.FAILED,
+          timestamp:  new Date(),
+          error:      'AI service health check failed',
+        },
+      },
+    });
+    
+    throw new Error('AI service health check failed');
+  }
+
   // ── 1. Mark as OCR_PENDING ──────────────────────────────────────
   await DocumentModel.findByIdAndUpdate(documentId, {
     status: DocumentStatus.OCR_PENDING,
@@ -72,7 +94,7 @@ export async function ocrJobHandler(payload: OCRJobPayload): Promise<void> {
 
       metadata: {
         holderName:     result.metadata.holderName     ?? undefined,
-        documentName:   result.metadata.documentTitle  ?? undefined,
+        documentName:   result.metadata.documentName   ?? undefined,
         organization:   result.metadata.organization   ?? undefined,
         documentNumber: result.metadata.documentNumber ?? undefined,
         issueDate:      result.metadata.issueDate

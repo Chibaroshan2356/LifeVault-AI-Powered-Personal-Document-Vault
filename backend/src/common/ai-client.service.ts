@@ -20,7 +20,7 @@ export interface AIProcessResult {
   document_type:             string;
   classification_confidence: number;
   metadata: {
-    documentTitle?:  string | null;
+    documentName?:   string | null;
     holderName?:     string | null;
     organization?:   string | null;
     documentNumber?: string | null;

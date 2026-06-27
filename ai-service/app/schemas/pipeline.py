@@ -14,7 +14,7 @@ class AIVersionInfo(BaseModel):
 
 
 class DocumentMetadata(BaseModel):
-    documentTitle:   Optional[str] = None
+    documentName:    Optional[str] = None
     holderName:      Optional[str] = None
     organization:    Optional[str] = None
     documentNumber:  Optional[str] = None
