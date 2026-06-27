@@ -12,9 +12,14 @@
       <h1>My Documents</h1>
       <p>{{ documents.length }} document{{ documents.length !== 1 ? 's' : '' }} stored</p>
     </div>
-    <button mat-raised-button color="primary" routerLink="/documents/upload">
-      <mat-icon>upload_file</mat-icon> Upload
-    </button>
+    <div class="header-actions">
+      <button mat-stroked-button routerLink="/documents/search">
+        <mat-icon>search</mat-icon> Search
+      </button>
+      <button mat-raised-button color="primary" routerLink="/documents/upload">
+        <mat-icon>upload_file</mat-icon> Upload
+      </button>
+    </div>
   </div>
 
   <!-- Loading -->

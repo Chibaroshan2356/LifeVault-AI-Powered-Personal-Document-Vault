@@ -23,6 +23,15 @@
 
   h1 { font-size: 1.75rem; font-weight: 500; color: #1a237e; margin: 0 0 4px; }
   p  { color: #666; font-size: 0.875rem; margin: 0; }
+
+  .header-actions {
+    display: flex;
+    gap: 1rem;
+    
+    button {
+      min-width: 100px;
+    }
+  }
 }
 
 /* ── States ── */

@@ -17,6 +17,12 @@ export const DOCUMENTS_ROUTES: Routes = [
     title: 'LifeVault – Upload Document',
   },
   {
+    path: 'search',
+    loadComponent: () =>
+      import('./search/document-search.component').then((m) => m.DocumentSearchComponent),
+    title: 'LifeVault – Search Documents',
+  },
+  {
     path: ':id',
     loadComponent: () =>
       import('./detail/document-detail.component').then((m) => m.DocumentDetailComponent),

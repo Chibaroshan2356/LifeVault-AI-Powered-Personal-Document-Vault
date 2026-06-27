@@ -1,0 +1,248 @@
+<!-- Search Page -->
+<div class="search-container">
+  <!-- Header -->
+  <div class="search-header">
+    <h1>Search Documents</h1>
+    <button mat-raised-button color="primary" routerLink="/documents">
+      <mat-icon>arrow_back</mat-icon>
+      Back to List
+    </button>
+  </div>
+
+  <!-- Search Form -->
+  <form [formGroup]="searchForm" class="search-form">
+    <!-- Full-text search -->
+    <div class="form-section">
+      <h3>Full-Text Search</h3>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Search OCR Text</mat-label>
+        <input matInput formControlName="q" placeholder="Search in document content...">
+      </mat-form-field>
+    </div>
+
+    <!-- Metadata search -->
+    <div class="form-section">
+      <h3>Metadata Search</h3>
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Holder Name</mat-label>
+          <input matInput formControlName="holder" placeholder="e.g., John Doe">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Document Name</mat-label>
+          <input matInput formControlName="docname" placeholder="e.g., Passport">
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Organization</mat-label>
+          <input matInput formControlName="org" placeholder="e.g., Ministry">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Document Number</mat-label>
+          <input matInput formControlName="docnumber" placeholder="e.g., ABC1234567">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="form-section">
+      <h3>Filters</h3>
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category">
+            <mat-option value="">All Categories</mat-option>
+            <mat-option *ngFor="let cat of documentCategories" [value]="cat">
+              {{ cat }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option value="">All Statuses</mat-option>
+            <mat-option *ngFor="let st of documentStatuses" [value]="st">
+              {{ st.replace('_', ' ') }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>File Type</mat-label>
+          <mat-select formControlName="mimeType">
+            <mat-option value="">All Types</mat-option>
+            <mat-option value="application/pdf">PDF</mat-option>
+            <mat-option value="image/jpeg">JPEG</mat-option>
+            <mat-option value="image/png">PNG</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Sort By</mat-label>
+          <mat-select formControlName="sort">
+            <mat-option *ngFor="let opt of sortOptions" [value]="opt.value">
+              {{ opt.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- File size and date range -->
+    <div class="form-section">
+      <h3>Advanced Filters</h3>
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Min File Size (KB)</mat-label>
+          <input matInput type="number" formControlName="minSize" placeholder="0">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>Max File Size (KB)</mat-label>
+          <input matInput type="number" formControlName="maxSize" placeholder="No limit">
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>From Date</mat-label>
+          <input matInput [matDatepicker]="fromPicker" formControlName="fromDate">
+          <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+          <mat-datepicker #fromPicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-col">
+          <mat-label>To Date</mat-label>
+          <input matInput [matDatepicker]="toPicker" formControlName="toDate">
+          <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
+          <mat-datepicker #toPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="form-actions">
+      <button type="button" mat-raised-button (click)="executeSearch()" [disabled]="isLoading">
+        <mat-icon *ngIf="!isLoading">search</mat-icon>
+        <mat-spinner *ngIf="isLoading" diameter="20" class="button-spinner"></mat-spinner>
+        Search
+      </button>
+      <button type="button" mat-stroked-button (click)="clearSearch()">
+        <mat-icon>clear</mat-icon>
+        Clear All
+      </button>
+    </div>
+  </form>
+
+  <!-- Error message -->
+  <div *ngIf="errorMsg" class="error-message">
+    <mat-icon>error</mat-icon>
+    {{ errorMsg }}
+  </div>
+
+  <!-- Results section -->
+  <div *ngIf="hasSearched" class="results-section">
+    <h2>
+      Results
+      <span class="result-count" *ngIf="totalResults > 0">
+        ({{ totalResults }} found)
+      </span>
+      <span class="result-count empty" *ngIf="totalResults === 0">
+        (No results found)
+      </span>
+    </h2>
+
+    <!-- Loading spinner -->
+    <div *ngIf="isLoading" class="loading-container">
+      <mat-spinner diameter="50"></mat-spinner>
+      <p>Searching...</p>
+    </div>
+
+    <!-- Results table -->
+    <div *ngIf="!isLoading && results.length > 0" class="results-container">
+      <table mat-table [dataSource]="results" class="documents-table">
+        <!-- Icon column -->
+        <ng-container matColumnDef="icon">
+          <th mat-header-cell>Type</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-icon [matTooltip]="element.mimeType">
+              {{ getFileIcon(element.mimeType) }}
+            </mat-icon>
+          </td>
+        </ng-container>
+
+        <!-- Name column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell>File Name</th>
+          <td mat-cell *matCellDef="let element">
+            <a class="doc-link" (click)="viewDocument(element)">
+              {{ element.originalFileName }}
+            </a>
+          </td>
+        </ng-container>
+
+        <!-- Category column -->
+        <ng-container matColumnDef="category">
+          <th mat-header-cell>Category</th>
+          <td mat-cell *matCellDef="let element">{{ element.category }}</td>
+        </ng-container>
+
+        <!-- Size column -->
+        <ng-container matColumnDef="size">
+          <th mat-header-cell>Size</th>
+          <td mat-cell *matCellDef="let element">{{ formatSize(element.fileSize) }}</td>
+        </ng-container>
+
+        <!-- Status column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell>Status</th>
+          <td mat-cell *matCellDef="let element">
+            <mat-chip-set>
+              <mat-chip [color]="getStatusColor(element.status)" selected>
+                {{ getStatusLabel(element.status) }}
+              </mat-chip>
+            </mat-chip-set>
+          </td>
+        </ng-container>
+
+        <!-- Uploaded date column -->
+        <ng-container matColumnDef="uploaded">
+          <th mat-header-cell>Uploaded</th>
+          <td mat-cell *matCellDef="let element">{{ formatDate(element.uploadedAt) }}</td>
+        </ng-container>
+
+        <!-- Actions column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell>Actions</th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="primary" (click)="viewDocument(element)" matTooltip="View">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteDocument(element)" matTooltip="Delete">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"></tr>
+      </table>
+
+      <!-- Pagination -->
+      <mat-paginator
+        [length]="totalResults"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="onPageChange($event)"
+        showFirstLastButtons>
+      </mat-paginator>
+    </div>
+
+    <!-- Empty state -->
+    <div *ngIf="!isLoading && results.length === 0" class="empty-state">
+      <mat-icon>search_off</mat-icon>
+      <p>No documents found matching your criteria.</p>
+      <button mat-stroked-button (click)="clearSearch()">Try Different Search</button>
+    </div>
+  </div>
+</div>

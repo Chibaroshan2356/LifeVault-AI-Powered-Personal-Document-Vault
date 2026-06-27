@@ -395,7 +395,7 @@ export class DashboardPlaceholderComponent implements OnInit {
 
   constructor(
     private readonly authService: AuthService,
-    private readonly router: Router,
+    readonly router: Router,
   ) {}
 
   ngOnInit(): void {

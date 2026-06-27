@@ -21,6 +21,7 @@ import { uploadMiddleware } from '../../middleware/upload.middleware';
 import {
   uploadDocument,
   listDocuments,
+  searchDocuments,
   getDocument,
   deleteDocument,
 } from './document.controller';
@@ -37,8 +38,9 @@ const uploadLimiter = rateLimit({
   message:  { success: false, message: 'Too many upload requests. Please wait.' },
 });
 
-// Routes
-documentRouter.post(  '/upload',  uploadLimiter, uploadMiddleware, uploadDocument);
-documentRouter.get(   '/',        listDocuments);
-documentRouter.get(   '/:id',     getDocument);
-documentRouter.delete('/:id',     deleteDocument);
+// Routes (search MUST be before /:id to avoid param capture)
+documentRouter.post(  '/upload',        uploadLimiter, uploadMiddleware, uploadDocument);
+documentRouter.get(   '/search/query',  searchDocuments);
+documentRouter.get(   '/',              listDocuments);
+documentRouter.get(   '/:id',           getDocument);
+documentRouter.delete('/:id',           deleteDocument);

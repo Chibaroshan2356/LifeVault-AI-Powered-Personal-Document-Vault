@@ -26,7 +26,7 @@ import { HttpError }              from '../../middleware/error.middleware';
 import { logger }                 from '../../utils/logger';
 import { DocumentStatus, DocumentCategory, ProcessingStage, ProcessingStageStatus } from '../../common/enums';
 import { ApiResponse, PaginationMeta } from '../../utils/ApiResponse';
-import type { ListDocumentsDto }  from './document.validator';
+import type { ListDocumentsDto, SearchDocumentsDto }  from './document.validator';
 
 const storage = new LocalStorageService();
 
@@ -159,6 +159,139 @@ class DocumentService {
     };
 
     return { documents, pagination };
+  }
+
+  // ------------------------------------------------------------------
+  // Search
+  // ------------------------------------------------------------------
+
+  /**
+   * Advanced search with full-text OCR search, metadata filters, and file filters.
+   * Supports:
+   *  - Full-text search on ocrText
+   *  - Metadata searches: holder name, document name, organization, document number
+   *  - Filters: category, status, file type, file size range, date range
+   *  - Sorting: newest, oldest, name, size
+   *  - Pagination
+   */
+  async search(
+    userId: string,
+    dto: SearchDocumentsDto,
+  ): Promise<{ documents: DocumentListItem[]; pagination: PaginationMeta }> {
+
+    const filter: Record<string, unknown> = {
+      userId: new mongoose.Types.ObjectId(userId),
+    };
+
+    // ── Full-text OCR search ──────────────────────────────────────
+    // If query provided, search ocrText using MongoDB text index
+    if (dto.q && dto.q.trim()) {
+      filter.$text = { $search: dto.q };
+    }
+
+    // ── Metadata searches (case-insensitive regex) ────────────────
+    if (dto.holder && dto.holder.trim()) {
+      filter['metadata.holderName'] = { $regex: dto.holder, $options: 'i' };
+    }
+    if (dto.docname && dto.docname.trim()) {
+      filter['metadata.documentName'] = { $regex: dto.docname, $options: 'i' };
+    }
+    if (dto.org && dto.org.trim()) {
+      filter['metadata.organization'] = { $regex: dto.org, $options: 'i' };
+    }
+    if (dto.docnumber && dto.docnumber.trim()) {
+      filter['metadata.documentNumber'] = { $regex: dto.docnumber, $options: 'i' };
+    }
+
+    // ── Category and Status filters ───────────────────────────────
+    if (dto.category) filter.category = dto.category;
+    if (dto.status)   filter.status   = dto.status;
+
+    // ── File type filter ──────────────────────────────────────────
+    if (dto.mimeType) filter.mimeType = dto.mimeType;
+
+    // ── File size range filter ────────────────────────────────────
+    if (dto.minSize !== undefined || dto.maxSize !== undefined) {
+      const sizeFilter: Record<string, unknown> = {};
+      if (dto.minSize !== undefined) sizeFilter.$gte = dto.minSize;
+      if (dto.maxSize !== undefined) sizeFilter.$lte = dto.maxSize;
+      filter.fileSize = sizeFilter;
+    }
+
+    // ── Date range filter ─────────────────────────────────────────
+    if (dto.fromDate || dto.toDate) {
+      const dateFilter: Record<string, unknown> = {};
+      if (dto.fromDate) dateFilter.$gte = new Date(dto.fromDate);
+      if (dto.toDate)   dateFilter.$lte = new Date(dto.toDate);
+      filter.createdAt = dateFilter;
+    }
+
+    // ── Sorting ───────────────────────────────────────────────────
+    let sortSpec: Record<string, unknown>;
+    if (dto.q && dto.q.trim()) {
+      // If full-text search, sort by relevance score
+      sortSpec = { score: { $meta: 'textScore' as any } };
+    } else {
+      // Otherwise sort by the specified order
+      switch (dto.sort) {
+        case 'oldest':
+          sortSpec = { createdAt: 1 };
+          break;
+        case 'name':
+          sortSpec = { originalFileName: 1 };
+          break;
+        case 'size':
+          sortSpec = { fileSize: -1 };
+          break;
+        case 'newest':
+        default:
+          sortSpec = { createdAt: -1 };
+      }
+    }
+
+    // ── Execute query ────────────────────────────────────────────
+    const skip  = (dto.page - 1) * dto.limit;
+    const total = await DocumentModel.countDocuments(filter);
+
+    const docs = (await (DocumentModel
+      .find(filter)
+      .sort(sortSpec as any)
+      .skip(skip)
+      .limit(dto.limit)
+      .select('_id originalFileName mimeType fileSize category status createdAt')
+      .lean() as any)).map((d: any) => ({
+        _id: d._id.toString(),
+        originalFileName: d.originalFileName,
+        mimeType: d.mimeType,
+        fileSize: d.fileSize,
+        category: d.category,
+        status: d.status,
+        uploadedAt: d.createdAt,
+      })) as DocumentListItem[];
+
+    const pagination: PaginationMeta = {
+      page:       dto.page,
+      limit:      dto.limit,
+      total,
+      totalPages: Math.ceil(total / dto.limit),
+    };
+
+    logger.info('Search executed', {
+      userId,
+      filters: {
+        q:        !!dto.q,
+        holder:   !!dto.holder,
+        docname:  !!dto.docname,
+        org:      !!dto.org,
+        docnumber: !!dto.docnumber,
+        category: !!dto.category,
+        status:   !!dto.status,
+      },
+      results: total,
+      page: dto.page,
+    });
+
+    return { documents: docs, pagination };
   }
 
   // ------------------------------------------------------------------
