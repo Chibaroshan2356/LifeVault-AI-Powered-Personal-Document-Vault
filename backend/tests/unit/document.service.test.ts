@@ -172,3 +172,179 @@ describe('DocumentService.deleteById()', () => {
     await expect(documentService.deleteById(DOC_ID, OWNER_ID)).resolves.not.toThrow();
   });
 });
+
+// ----------------------------------------------------------------
+// search()
+// ----------------------------------------------------------------
+describe('DocumentService.search()', () => {
+  beforeEach(() => jest.clearAllMocks());
+
+  it('performs full-text OCR search', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    const result = await documentService.search(OWNER_ID, {
+      q: 'passport',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(result.documents).toHaveLength(1);
+    expect(result.pagination.total).toBe(1);
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        userId: expect.any(Object),
+        $text: { $search: 'passport' },
+      }),
+    );
+  });
+
+  it('filters by metadata: holder name', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    const result = await documentService.search(OWNER_ID, {
+      holder: 'John',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(result.documents).toHaveLength(1);
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        'metadata.holderName': { $regex: 'John', $options: 'i' },
+      }),
+    );
+  });
+
+  it('filters by category', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    const result = await documentService.search(OWNER_ID, {
+      category: 'Passport',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(result.documents).toHaveLength(1);
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({ category: 'Passport' }),
+    );
+  });
+
+  it('filters by status', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    const result = await documentService.search(OWNER_ID, {
+      status: 'READY',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(result.documents).toHaveLength(1);
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({ status: 'READY' }),
+    );
+  });
+
+  it('applies pagination correctly', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(50);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    const result = await documentService.search(OWNER_ID, {
+      page: 2,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(result.pagination.total).toBe(50);
+    expect(result.pagination.totalPages).toBe(5);
+    expect(result.pagination.page).toBe(2);
+    expect(chainMock.skip).toHaveBeenCalledWith(10);
+  });
+
+  it('sorts by newest (default)', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    await documentService.search(OWNER_ID, {
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(chainMock.sort).toHaveBeenCalledWith({ createdAt: -1 });
+  });
+
+  it('respects user ownership in search', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    await documentService.search(OWNER_ID, {
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        userId: expect.any(Object),
+      }),
+    );
+  });
+});

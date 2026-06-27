@@ -227,47 +227,60 @@ class DocumentService {
     }
 
     // ── Sorting ───────────────────────────────────────────────────
-    let sortSpec: Record<string, unknown>;
-    if (dto.q && dto.q.trim()) {
-      // If full-text search, sort by relevance score
-      sortSpec = { score: { $meta: 'textScore' as any } };
-    } else {
-      // Otherwise sort by the specified order
-      switch (dto.sort) {
+    // Build sort specification based on search type
+    type SortSpecType = { [key: string]: 1 | -1 | { $meta: string } };
+    
+    const getSortSpec = (hasTextSearch: boolean, sortOption: string): SortSpecType => {
+      if (hasTextSearch) {
+        return { score: { $meta: 'textScore' } };
+      }
+      switch (sortOption) {
         case 'oldest':
-          sortSpec = { createdAt: 1 };
-          break;
+          return { createdAt: 1 };
         case 'name':
-          sortSpec = { originalFileName: 1 };
-          break;
+          return { originalFileName: 1 };
         case 'size':
-          sortSpec = { fileSize: -1 };
-          break;
+          return { fileSize: -1 };
         case 'newest':
         default:
-          sortSpec = { createdAt: -1 };
+          return { createdAt: -1 };
       }
-    }
+    };
+
+    const sortSpec = getSortSpec(dto.q && dto.q.trim() ? true : false, dto.sort);
 
     // ── Execute query ────────────────────────────────────────────
     const skip  = (dto.page - 1) * dto.limit;
     const total = await DocumentModel.countDocuments(filter);
 
-    const docs = (await (DocumentModel
+    // Use a separate type for lean results to avoid Mongoose typing issues
+    interface LeanDocument {
+      _id: any;
+      originalFileName: string;
+      mimeType: string;
+      fileSize: number;
+      category: string;
+      status: string;
+      createdAt: Date;
+    }
+
+    const docs = await DocumentModel
       .find(filter)
-      .sort(sortSpec as any)
+      .sort(sortSpec)
       .skip(skip)
       .limit(dto.limit)
       .select('_id originalFileName mimeType fileSize category status createdAt')
-      .lean() as any)).map((d: any) => ({
-        _id: d._id.toString(),
-        originalFileName: d.originalFileName,
-        mimeType: d.mimeType,
-        fileSize: d.fileSize,
-        category: d.category,
-        status: d.status,
-        uploadedAt: d.createdAt,
-      })) as DocumentListItem[];
+      .lean<LeanDocument[]>();
+
+    const documents: DocumentListItem[] = docs.map((d) => ({
+      _id:              d._id.toString(),
+      originalFileName: d.originalFileName,
+      mimeType:         d.mimeType,
+      fileSize:         d.fileSize,
+      category:         d.category,
+      status:           d.status,
+      uploadedAt:       d.createdAt,
+    }));
 
     const pagination: PaginationMeta = {
       page:       dto.page,
@@ -291,7 +304,7 @@ class DocumentService {
       page: dto.page,
     });
 
-    return { documents: docs, pagination };
+    return { documents, pagination };
   }
 
   // ------------------------------------------------------------------

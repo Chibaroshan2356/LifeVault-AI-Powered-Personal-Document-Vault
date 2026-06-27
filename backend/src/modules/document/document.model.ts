@@ -190,8 +190,21 @@ const DocumentSchema = new Schema<IDocument>(
 // Compound index: fetch all documents for a user, sorted by date
 DocumentSchema.index({ userId: 1, createdAt: -1 });
 
-// Text index on OCR text for full-text search (Sprint 9)
+// Text index on OCR text for full-text search
 DocumentSchema.index({ ocrText: 'text' });
+
+// Indexes for metadata search filtering
+DocumentSchema.index({ 'metadata.holderName': 1 });
+DocumentSchema.index({ 'metadata.documentName': 1 });
+DocumentSchema.index({ 'metadata.organization': 1 });
+DocumentSchema.index({ 'metadata.documentNumber': 1 });
+
+// Indexes for category and status filtering
+DocumentSchema.index({ category: 1 });
+DocumentSchema.index({ mimeType: 1 });
+
+// Compound index for efficient user + category + status searches
+DocumentSchema.index({ userId: 1, category: 1, status: 1 });
 
 export const DocumentModel: Model<IDocument> =
   mongoose.model<IDocument>('Document', DocumentSchema);
