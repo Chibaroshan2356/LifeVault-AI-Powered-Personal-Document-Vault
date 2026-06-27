@@ -70,6 +70,8 @@ const options: swaggerJSDoc.Options = {
     path.join(__dirname, '../modules/auth/auth.routes.ts'),
     path.join(__dirname, '../modules/user/user.controller.ts'),
     path.join(__dirname, '../modules/user/user.routes.ts'),
+    path.join(__dirname, '../modules/document/document.controller.ts'),
+    path.join(__dirname, '../modules/document/document.routes.ts'),
   ],
 };
 

@@ -1,8 +1,4 @@
-"""
-config.py - AI Service Settings
-
-Reads .env via Pydantic Settings for type-safe configuration.
-"""
+"""AI Service configuration."""
 from pydantic_settings import BaseSettings
 from typing import List
 
@@ -11,27 +7,13 @@ class Settings(BaseSettings):
     APP_NAME:        str  = "LifeVault AI Service"
     APP_VERSION:     str  = "1.0.0"
     ENVIRONMENT:     str  = "development"
-
     HOST:            str  = "0.0.0.0"
     PORT:            int  = 8000
-
-    # File handling
-    MAX_FILE_SIZE:   int  = 10 * 1024 * 1024  # 10 MB
+    MAX_FILE_SIZE:   int  = 10 * 1024 * 1024
     UPLOAD_DIR:      str  = "temp_uploads"
-    ALLOWED_TYPES:   List[str] = [
-        "application/pdf", "image/jpeg", "image/png", "image/jpg",
-    ]
-
-    # OCR
-    OCR_MODEL:       str  = "db_resnet50"   # DocTR detection model
+    ALLOWED_TYPES:   List[str] = ["application/pdf", "image/jpeg", "image/png", "image/jpg"]
     USE_GPU:         bool = False
-
-    # CORS — must allow the Express backend
-    ALLOWED_ORIGINS: List[str] = [
-        "http://localhost:3000",
-        "http://localhost:4200",
-    ]
-
+    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000", "http://localhost:4200"]
     LOG_LEVEL:       str  = "INFO"
 
     class Config:

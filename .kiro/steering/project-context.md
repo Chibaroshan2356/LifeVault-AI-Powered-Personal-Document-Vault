@@ -32,10 +32,22 @@ It is a Final Year Project built to professional standards.
 #[[file:specs/07-roadmap.md]]
 
 ## Current Phase
-**Phase 1 (Foundation) — COMPLETE**
+**Sprint 1 (Authentication) — COMPLETE ✅ — Merged to main**
 
-**Next: Phase 2 — Authentication Module**
-Wait for explicit instruction before starting Phase 2.
+**Current: Sprint 2 — Document Upload**
+Branch: `feature/document-upload`
+
+Sprint 2 scope (do NOT go beyond this):
+- Document Mongoose model (with processingHistory, aiVersionInfo fields)
+- Multer upload middleware (PDF/image, 10MB limit, MIME validation)
+- IStorageService + LocalStorageService (already in common/)
+- Document service: upload, findByUser, findById, delete
+- Document controller + routes: POST /documents/upload, GET /documents, GET /documents/:id, DELETE /documents/:id
+- Background job: enqueue OCR job after upload, return 202 Accepted
+- Angular: DocumentUploadComponent (drag-and-drop), DocumentListComponent, DocumentService
+- Swagger annotations on all routes
+- Unit tests for DocumentService
+- Do NOT implement OCR, AI, or classification yet
 
 ## Tech Stack
 - Frontend: Angular 17, standalone components, no SSR, Angular Material

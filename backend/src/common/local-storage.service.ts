@@ -1,19 +1,21 @@
 /**
- * local-storage.service.ts - Local Filesystem Storage
+ * local-storage.service.ts — Local Filesystem Storage
  *
  * Implements IStorageService using the local /uploads directory.
- * Used in development and Docker Compose.
  *
- * File naming: {userId}/{uuid}.{ext}
- * Example: uploads/64f3a1.../a3c7f2b1-1234-5678-9abc-def012345678.pdf
+ * File layout:
+ *   uploads/{subDir}/{storedFileName}
+ *   e.g. uploads/64f3a1.../2026/a3c7f2b1.pdf
+ *
+ * The subDir is provided by the caller (DocumentService passes userId/year).
+ * storagePath stored in MongoDB is the relative path: "userId/year/filename"
  *
  * To switch to S3 in production:
  *  1. Create S3StorageService implementing IStorageService
- *  2. Swap the injection in the DI container — no other code changes needed
+ *  2. Change the injection in document.service.ts — nothing else changes
  */
 import fs from 'fs/promises';
 import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
 import { IStorageService, SavedFile } from './storage.interface';
 import { appConfig } from '../config/app.config';
 import { logger } from '../utils/logger';
@@ -27,45 +29,47 @@ export class LocalStorageService implements IStorageService {
 
   async save(
     buffer: Buffer,
-    originalName: string,
+    storedFileName: string,
     mimeType: string,
-    userId: string,
+    subDir: string,       // e.g. "userId/2026"
   ): Promise<SavedFile> {
-    // Create user-specific subdirectory
-    const userDir = path.join(this.baseDir, userId);
-    await fs.mkdir(userDir, { recursive: true });
+    const dirPath  = path.join(this.baseDir, subDir);
+    const filePath = path.join(dirPath, storedFileName);
 
-    // Preserve original extension; use UUID for the filename
-    const ext = path.extname(originalName).toLowerCase();
-    const storedName = `${uuidv4()}${ext}`;
-    const filePath = path.join(userDir, storedName);
+    // Ensure the directory exists
+    await fs.mkdir(dirPath, { recursive: true });
 
     await fs.writeFile(filePath, buffer);
-    logger.debug('File saved', { storedName, userId, mimeType, bytes: buffer.length });
+
+    const storagePath = `${subDir}/${storedFileName}`;
+
+    logger.debug('File saved to local storage', {
+      storagePath,
+      mimeType,
+      bytes: buffer.length,
+    });
 
     return {
-      storedName,
-      path: filePath,
-      sizeBytes: buffer.length,
+      storedName:  storedFileName,
+      path:        filePath,
+      sizeBytes:   buffer.length,
     };
   }
 
-  async get(storedName: string): Promise<Buffer> {
-    // storedName includes userId prefix: "userId/uuid.ext"
-    const filePath = path.join(this.baseDir, storedName);
+  async get(storagePath: string): Promise<Buffer> {
+    const filePath = path.join(this.baseDir, storagePath);
     return fs.readFile(filePath);
   }
 
-  async delete(storedName: string): Promise<void> {
-    const filePath = path.join(this.baseDir, storedName);
+  async delete(storagePath: string): Promise<void> {
+    const filePath = path.join(this.baseDir, storagePath);
     await fs.unlink(filePath);
-    logger.debug('File deleted', { storedName });
+    logger.debug('File deleted from local storage', { storagePath });
   }
 
-  async exists(storedName: string): Promise<boolean> {
+  async exists(storagePath: string): Promise<boolean> {
     try {
-      const filePath = path.join(this.baseDir, storedName);
-      await fs.access(filePath);
+      await fs.access(path.join(this.baseDir, storagePath));
       return true;
     } catch {
       return false;

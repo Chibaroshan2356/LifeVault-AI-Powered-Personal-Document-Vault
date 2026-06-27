@@ -14,6 +14,8 @@ import { validateConfig } from './config/app.config';
 import { connectDatabase } from './config/database';
 import { createApp }       from './app';
 import { logger }          from './utils/logger';
+import { jobQueue }        from './common/job-queue.service';
+import { ocrJobHandler }   from './common/ocr-worker';
 
 const PORT = parseInt(process.env.PORT ?? '3000', 10);
 
@@ -22,6 +24,10 @@ const PORT = parseInt(process.env.PORT ?? '3000', 10);
     validateConfig();
 
     await connectDatabase();
+
+    // Register OCR handler BEFORE starting HTTP server
+    jobQueue.register(ocrJobHandler);
+    logger.info('✅ OCR job handler registered');
 
     const app    = createApp();
     const server = app.listen(PORT, () => {

@@ -107,7 +107,11 @@ export class RegisterComponent implements OnInit {
         setTimeout(() => this.router.navigate(['/auth/login']), 1500);
       },
       error: (err) => {
-        this.errorMessage = err?.error?.message ?? 'Registration failed. Please try again.';
+        // HttpClient puts the parsed body in err.error for 4xx responses
+        this.errorMessage =
+          err?.error?.message ||
+          err?.message ||
+          'Registration failed. Please try again.';
       },
     });
   }

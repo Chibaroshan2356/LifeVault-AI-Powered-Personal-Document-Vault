@@ -1,0 +1,134 @@
+<!--
+  DocumentListComponent — My Documents Page
+-->
+<div class="list-page">
+
+  <!-- Header -->
+  <div class="page-header">
+    <div>
+      <a routerLink="/dashboard" class="back-link">
+        <mat-icon>arrow_back</mat-icon> Dashboard
+      </a>
+      <h1>My Documents</h1>
+      <p>{{ documents.length }} document{{ documents.length !== 1 ? 's' : '' }} stored</p>
+    </div>
+    <div class="header-actions">
+      <button mat-stroked-button routerLink="/documents/search">
+        <mat-icon>search</mat-icon> Search
+      </button>
+      <button mat-raised-button color="primary" routerLink="/documents/upload">
+        <mat-icon>upload_file</mat-icon> Upload
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  @if (isLoading) {
+    <div class="center-state">
+      <mat-spinner diameter="48" />
+      <p>Loading documents…</p>
+    </div>
+  }
+
+  <!-- Error -->
+  @if (!isLoading && errorMsg) {
+    <div class="error-state">
+      <mat-icon>error_outline</mat-icon>
+      <p>{{ errorMsg }}</p>
+      <button mat-stroked-button (click)="loadDocuments()">Retry</button>
+    </div>
+  }
+
+  <!-- Empty -->
+  @if (!isLoading && !errorMsg && documents.length === 0) {
+    <div class="empty-state">
+      <mat-icon>cloud_upload</mat-icon>
+      <h2>No documents yet</h2>
+      <p>Upload your first document to get started.</p>
+      <button mat-raised-button color="primary" routerLink="/documents/upload">
+        <mat-icon>add</mat-icon> Upload Now
+      </button>
+    </div>
+  }
+
+  <!-- Table -->
+  @if (!isLoading && !errorMsg && documents.length > 0) {
+    <div class="table-card">
+      <table mat-table [dataSource]="documents" class="doc-table">
+
+        <!-- Icon -->
+        <ng-container matColumnDef="icon">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let doc">
+            <mat-icon class="file-icon" [class.pdf]="doc.mimeType === 'application/pdf'">
+              {{ getFileIcon(doc.mimeType) }}
+            </mat-icon>
+          </td>
+        </ng-container>
+
+        <!-- Name -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let doc">
+            <a class="doc-name" [routerLink]="['/documents', doc._id]" [matTooltip]="doc.originalFileName">
+              {{ doc.originalFileName }}
+            </a>
+          </td>
+        </ng-container>
+
+        <!-- Category -->
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef>Category</th>
+          <td mat-cell *matCellDef="let doc">
+            <span class="category">{{ doc.category }}</span>
+          </td>
+        </ng-container>
+
+        <!-- Size -->
+        <ng-container matColumnDef="size">
+          <th mat-header-cell *matHeaderCellDef>Size</th>
+          <td mat-cell *matCellDef="let doc" class="muted">
+            {{ formatSize(doc.fileSize) }}
+          </td>
+        </ng-container>
+
+        <!-- Status -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let doc">
+            <span class="status-badge" [attr.data-status]="doc.status">
+              {{ getStatusLabel(doc.status) }}
+            </span>
+          </td>
+        </ng-container>
+
+        <!-- Uploaded -->
+        <ng-container matColumnDef="uploaded">
+          <th mat-header-cell *matHeaderCellDef>Uploaded</th>
+          <td mat-cell *matCellDef="let doc" class="muted">
+            {{ formatDate(doc.uploadedAt) }}
+          </td>
+        </ng-container>
+
+        <!-- Actions -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let doc">
+            <button
+              mat-icon-button
+              class="delete-btn"
+              [matTooltip]="'Delete ' + doc.originalFileName"
+              (click)="deleteDocument(doc)"
+            >
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  }
+
+</div>

@@ -1,27 +1,51 @@
 /**
  * app.routes.ts — Top-Level Route Definitions
+ *
+ * Route hierarchy:
+ *  /auth/login     → LoginComponent      (public)
+ *  /auth/register  → RegisterComponent   (public)
+ *  /dashboard      → DashboardPlaceholder (protected — Sprint 8)
+ *  /documents      → DocumentsPlaceholder (protected — Sprint 2+)
+ *  **              → NotFoundComponent
+ *
+ * Protected routes are guarded by authGuard.
+ * Feature components are placeholders until their sprint is implemented.
  */
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
+  // Default: redirect to login
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
 
+  // Public: auth pages
   {
     path: 'auth',
     loadChildren: () =>
       import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
-    title: 'LifeVault – Sign In',
   },
 
-  // Protected shell — guarded
+  // Protected: dashboard (implemented in Milestone 5)
   {
-    path: '',
+    path: 'dashboard',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./features/dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent,
+      ),
+    title: 'LifeVault – Dashboard',
+  },
+
+  // Protected: documents (implemented in Sprint 2)
+  {
+    path: 'documents',
     canActivate: [authGuard],
     loadChildren: () =>
-      import('./features/layout/layout.routes').then((m) => m.LAYOUT_ROUTES),
+      import('./features/documents/documents.routes').then((m) => m.DOCUMENTS_ROUTES),
+    title: 'LifeVault – Documents',
   },
 
+  // 404
   {
     path: '**',
     loadComponent: () =>

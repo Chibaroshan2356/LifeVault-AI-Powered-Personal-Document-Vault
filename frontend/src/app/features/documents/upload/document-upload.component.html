@@ -1,0 +1,109 @@
+<!--
+  DocumentUploadComponent — Upload Page
+-->
+<div class="upload-page">
+
+  <!-- Header -->
+  <div class="page-header">
+    <a routerLink="/documents" class="back-link">
+      <mat-icon>arrow_back</mat-icon> My Documents
+    </a>
+    <h1>Upload Document</h1>
+    <p>Supported formats: {{ allowedLabels }} — Max {{ maxSizeLabel }}</p>
+  </div>
+
+  <!-- Upload card -->
+  <div class="upload-card">
+
+    <!-- Drop zone -->
+    @if (uploadState === 'idle' || uploadState === 'error') {
+      <div
+        class="drop-zone"
+        [class.drag-over]="isDragOver"
+        [class.has-file]="selectedFile"
+        (click)="!selectedFile && openFilePicker()"
+      >
+        @if (!selectedFile) {
+          <!-- Empty state -->
+          <mat-icon class="drop-icon">cloud_upload</mat-icon>
+          <p class="drop-title">Drag &amp; Drop your document here</p>
+          <p class="drop-sub">or</p>
+          <button mat-stroked-button color="primary" (click)="openFilePicker()">
+            <mat-icon>folder_open</mat-icon> Choose File
+          </button>
+          <p class="drop-hint">{{ allowedLabels }} up to {{ maxSizeLabel }}</p>
+        } @else {
+          <!-- File selected -->
+          <div class="selected-file">
+            <mat-icon class="file-icon" [class.pdf]="selectedFile.type === 'application/pdf'">
+              {{ fileIcon }}
+            </mat-icon>
+            <div class="file-info">
+              <span class="file-name">{{ selectedFile.name }}</span>
+              <span class="file-meta">{{ fileSizeLabel }} · {{ selectedFile.type }}</span>
+            </div>
+            <button mat-icon-button class="remove-btn" (click)="clearSelection()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        }
+      </div>
+
+      <!-- Validation error -->
+      @if (validationError) {
+        <div class="validation-error">
+          <mat-icon>error_outline</mat-icon>
+          {{ validationError }}
+        </div>
+      }
+
+      <!-- Action buttons -->
+      <div class="actions">
+        <button mat-button routerLink="/documents">Cancel</button>
+        <button
+          mat-raised-button color="primary"
+          [disabled]="!selectedFile"
+          (click)="upload()"
+        >
+          <mat-icon>upload</mat-icon> Upload Document
+        </button>
+      </div>
+    }
+
+    <!-- Uploading state -->
+    @if (uploadState === 'uploading') {
+      <div class="uploading-state">
+        <mat-icon class="uploading-icon">hourglass_top</mat-icon>
+        <p class="uploading-title">Uploading {{ selectedFile?.name }}…</p>
+        <mat-progress-bar
+          mode="determinate"
+          [value]="uploadPercent"
+          color="primary"
+        />
+        <p class="uploading-pct">{{ uploadPercent }}%</p>
+      </div>
+    }
+
+    <!-- Success state -->
+    @if (uploadState === 'success') {
+      <div class="success-state">
+        <mat-icon class="success-icon">check_circle</mat-icon>
+        <p class="success-title">Upload complete!</p>
+        <p class="success-sub">Your document has been stored and is queued for processing.</p>
+        <button mat-raised-button color="primary" routerLink="/documents">
+          <mat-icon>folder</mat-icon> View My Documents
+        </button>
+      </div>
+    }
+
+    <!-- Hidden file input -->
+    <input
+      #fileInput
+      type="file"
+      accept=".pdf,.jpg,.jpeg,.png"
+      class="hidden-input"
+      (change)="onFileInputChange($event)"
+    />
+
+  </div>
+</div>

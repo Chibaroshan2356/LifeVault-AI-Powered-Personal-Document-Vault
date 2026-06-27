@@ -167,7 +167,10 @@ export class AuthService {
   private restoreSession(): void {
     const token = this.tokenStorage.getAccessToken();
     if (token) {
-      // Restore a minimal authenticated state — the profile is fetched lazily
+      // Restore minimal authenticated state from stored token.
+      // Profile is fetched lazily when the dashboard loads.
+      // We do NOT call the API here — it would fire a 401 on every
+      // page load if the token expired, causing a redirect loop.
       this._authState$.next({
         isAuthenticated: true,
         user:            null,
