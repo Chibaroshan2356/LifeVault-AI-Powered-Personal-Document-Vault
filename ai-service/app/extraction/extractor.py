@@ -140,3 +140,88 @@ def _normalise_date(raw: str) -> Optional[str]:
         except ValueError:
             continue
     return raw  # return as-is if can't parse
+
+
+def _extract_resume_candidate_name(text: str) -> Optional[str]:
+    """Extract candidate name from the top lines of a Resume."""
+    # Candidates for name are typically in the first 4 lines of text
+    lines = [line.strip() for line in text.split('\n') if line.strip()]
+    for line in lines[:4]:
+        # Remove any email addresses, phone numbers, or URLs first
+        clean_line = re.sub(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b', '', line)
+        clean_line = re.sub(r'\b(?:\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}\b', '', clean_line)
+        clean_line = re.sub(r'https?://\S+|www\.\S+', '', clean_line)
+        # Keep only letters, dots, and spaces
+        clean_line = re.sub(r'[^a-zA-Z\s\.]', '', clean_line).strip()
+        
+        words = clean_line.split()
+        if 2 <= len(words) <= 4:
+            if all((len(w) >= 2 or w.isupper()) and w[0].isupper() for w in words):
+                joined = " ".join(words).lower()
+                # Skip resume-related terms/headings
+                if not any(x in joined for x in ["resume", "curriculum", "vitae", "summary", "profile", "contact", "address", "phone", "email"]):
+                    return " ".join(words).title()
+    return None
+
+
+def _extract_resume_org(text: str) -> Optional[str]:
+    """Extract corporate company or educational college/university from a Resume."""
+    lines = [line.strip() for line in text.split('\n') if line.strip()]
+    
+    org_patterns = [
+        # College/University indicators
+        r'\b[A-Za-z0-9\s,\.\(\)\-]+ (?:University|College|Institute|School|Academy|IIT|NIT|KEC)\b',
+        r'\b(?:University|College|Institute|School|Academy) of [A-Za-z0-9\s,\.\(\)\-]+\b',
+        # Company indicators
+        r'\b[A-Za-z0-9\s,\.\(\)\-]+ (?:Pvt\.? Ltd\.?|Private Limited|Ltd\.?|Limited|Inc\.?|Corp\.?|Corporation|Solutions|Technologies|Consultancy)\b'
+    ]
+    
+    prepositions = [" at ", " from ", " in "]
+    
+    for line in lines[:20]:  # Limit to top 20 lines to prevent grabbing random text
+        # Skip lines that look like objectives/profiles to avoid false positives
+        if any(keyword in line.lower() for keyword in ["objective", "profile", "summary"]):
+            continue
+            
+        # Try to find preposition first to isolate organization
+        for prep in prepositions:
+            if prep in line.lower():
+                parts = re.split(prep, line, flags=re.IGNORECASE)
+                if len(parts) > 1:
+                    candidate = parts[-1].strip()
+                    for pattern in org_patterns:
+                        m = re.search(pattern, candidate, re.IGNORECASE)
+                        if m:
+                            org = m.group(0).strip()
+                            org = re.sub(r'^[,\.\-\s]+|[,\.\-\s]+$', '', org).strip()
+                            if 2 <= len(org.split()) <= 7:
+                                return org.title()
+                                
+        # Fallback: check the entire line
+        for pattern in org_patterns:
+            m = re.search(pattern, line, re.IGNORECASE)
+            if m:
+                org = m.group(0).strip()
+                org = re.sub(r'^[,\.\-\s]+|[,\.\-\s]+$', '', org).strip()
+                if 2 <= len(org.split()) <= 7:
+                    return org.title()
+                    
+    return None
+
+
+def extract_resume_metadata(text: str, default_metadata: dict) -> dict:
+    """
+    Extract structured fields optimized specifically for Resume documents.
+    Overrides generic extraction for Holder, Document and Organization.
+    """
+    holder = _extract_resume_candidate_name(text) or default_metadata.get("holderName")
+    org = _extract_resume_org(text)
+    
+    return {
+        "documentName":   "Resume",
+        "holderName":     holder,
+        "organization":   org,
+        "issueDate":      None,
+        "expiryDate":     None,
+        "documentNumber": None,
+    }

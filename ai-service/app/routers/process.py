@@ -9,7 +9,7 @@ from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 
 from app.preprocessing.processor import preprocess
 from app.ocr.extractor import extract_text_from_images, extract_text_from_pdf_direct
-from app.extraction.extractor import extract
+from app.extraction.extractor import extract, extract_resume_metadata
 from app.classification.classifier import classify
 from app.schemas.pipeline import ProcessResponse, DocumentMetadata, AIVersionInfo
 
@@ -55,6 +55,10 @@ async def process_document(
 
         # ── Stage 4: Classification ───────────────────────────────
         doc_type, class_conf = classify(ocr_text, extracted)
+
+        # ── Stage 5: Resume Metadata Refinement ───────────────────
+        if doc_type == "Resume":
+            extracted = extract_resume_metadata(ocr_text, extracted)
 
         processing_time = round(time.time() - start_time, 3)
 
