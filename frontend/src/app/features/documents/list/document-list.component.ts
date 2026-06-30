@@ -92,17 +92,24 @@ export class DocumentListComponent implements OnInit, OnDestroy {
   }
 
   deleteDocument(doc: DocumentListItem): void {
-    if (!confirm(`Delete "${doc.originalFileName}"? This cannot be undone.`)) return;
+    console.log('deleteDocument triggered for:', doc._id, doc.originalFileName);
+    if (!window.confirm(`Delete "${doc.originalFileName}"? This cannot be undone.`)) {
+      console.log('Deletion cancelled by user');
+      return;
+    }
 
+    console.log('Sending delete API request for:', doc._id);
     this.docService.delete(doc._id).subscribe({
       next: () => {
+        console.log('Document deleted successfully from DB and storage');
         this.documents = this.documents.filter((d) => d._id !== doc._id);
         this.snackbar.open('Document deleted', 'OK', {
           duration: 3000,
           panelClass: ['snackbar-success'],
         });
       },
-      error: () => {
+      error: (err) => {
+        console.error('Delete request failed:', err);
         this.snackbar.open('Failed to delete document', 'Dismiss', {
           duration: 4000,
           panelClass: ['snackbar-error'],
