@@ -132,3 +132,19 @@
   }
 
 </div>
+
+<!-- Material Delete Confirmation Dialog -->
+<ng-template #deleteConfirmDialog>
+  <h2 mat-dialog-title>Delete Document</h2>
+  <mat-dialog-content>
+    <p>Are you sure you want to permanently delete "{{ documentToDelete?.originalFileName }}"?</p>
+    <p style="color: #c62828; font-size: 0.85rem; margin-top: 8px; display: flex; align-items: center; gap: 4px;">
+      <mat-icon style="font-size: 16px; width: 16px; height: 16px;">warning</mat-icon>
+      This action cannot be undone.
+    </p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="warn" [mat-dialog-close]="true">Delete</button>
+  </mat-dialog-actions>
+</ng-template>

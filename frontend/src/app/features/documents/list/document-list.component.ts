@@ -4,7 +4,7 @@
  * Shows all uploaded documents for the authenticated user.
  * Features: status badges, file type icons, delete, upload button.
  */
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { MatIconModule }    from '@angular/material/icon';
@@ -33,9 +33,11 @@ import { DocumentListItem, DocumentStatus } from '../models/document.models';
   styleUrl:    './document-list.component.scss',
 })
 export class DocumentListComponent implements OnInit, OnDestroy {
+  @ViewChild('deleteConfirmDialog') deleteConfirmDialog!: TemplateRef<any>;
   documents: DocumentListItem[] = [];
   isLoading = true;
   errorMsg  = '';
+  documentToDelete?: DocumentListItem;
   private pollSubscription?: Subscription;
 
   readonly displayedColumns = ['icon', 'name', 'category', 'size', 'status', 'uploaded', 'actions'];
@@ -44,6 +46,7 @@ export class DocumentListComponent implements OnInit, OnDestroy {
     private readonly docService: DocumentService,
     private readonly snackbar:   MatSnackBar,
     private readonly router:     Router,
+    private readonly dialog:     MatDialog,
   ) {}
 
   ngOnInit(): void { this.loadDocuments(); }
@@ -93,28 +96,34 @@ export class DocumentListComponent implements OnInit, OnDestroy {
 
   deleteDocument(doc: DocumentListItem): void {
     console.log('deleteDocument triggered for:', doc._id, doc.originalFileName);
-    if (!window.confirm(`Delete "${doc.originalFileName}"? This cannot be undone.`)) {
-      console.log('Deletion cancelled by user');
-      return;
-    }
+    this.documentToDelete = doc;
+    const dialogRef = this.dialog.open(this.deleteConfirmDialog, {
+      width: '400px',
+    });
 
-    console.log('Sending delete API request for:', doc._id);
-    this.docService.delete(doc._id).subscribe({
-      next: () => {
-        console.log('Document deleted successfully from DB and storage');
-        this.documents = this.documents.filter((d) => d._id !== doc._id);
-        this.snackbar.open('Document deleted', 'OK', {
-          duration: 3000,
-          panelClass: ['snackbar-success'],
+    dialogRef.afterClosed().subscribe((confirmed) => {
+      if (confirmed) {
+        console.log('Sending delete API request for:', doc._id);
+        this.docService.delete(doc._id).subscribe({
+          next: () => {
+            console.log('Document deleted successfully from DB and storage');
+            this.documents = this.documents.filter((d) => d._id !== doc._id);
+            this.snackbar.open('Document deleted', 'OK', {
+              duration: 3000,
+              panelClass: ['snackbar-success'],
+            });
+          },
+          error: (err) => {
+            console.error('Delete request failed:', err);
+            this.snackbar.open('Failed to delete document', 'Dismiss', {
+              duration: 4000,
+              panelClass: ['snackbar-error'],
+            });
+          },
         });
-      },
-      error: (err) => {
-        console.error('Delete request failed:', err);
-        this.snackbar.open('Failed to delete document', 'Dismiss', {
-          duration: 4000,
-          panelClass: ['snackbar-error'],
-        });
-      },
+      } else {
+        console.log('Deletion cancelled by user');
+      }
     });
   }
 
