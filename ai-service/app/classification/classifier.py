@@ -11,17 +11,17 @@ logger = logging.getLogger(__name__)
 
 # Keyword rules: (document_type, [keywords], weight)
 _RULES = [
-    ("Aadhaar Card",       ["aadhaar", "uid", "unique identification", "uidai", "आधार"],                                    10),
-    ("PAN Card",           ["permanent account number", "income tax", "pan", "govt. of india"],                               10),
-    ("Passport",           ["passport", "republic of india", "passport no", "nationality", "place of birth"],                 10),
-    ("Driving License",    ["driving licence", "driving license", "d.l. no", "motor vehicles", "transport"],                   9),
-    ("Voter ID",           ["election commission", "voter", "electoral", "epic no"],                                           9),
-    ("Birth Certificate",  ["birth certificate", "date of birth", "place of birth", "registrar of births"],                   9),
-    ("Degree Certificate", ["degree", "bachelor", "master", "doctorate", "university", "awarded the degree"],                  8),
-    ("Marksheet",          ["marksheet", "mark sheet", "result", "grade", "percentage", "semester", "examination"],            8),
-    ("Bank Statement",     ["account statement", "bank statement", "opening balance", "closing balance", "transaction"],       8),
+    ("Aadhaar Card",       ["aadhaar", "aadhar", "uidai", "आधार", "unique identification authority"],                       10),
+    ("PAN Card",           ["permanent account number", "pan card", "pan no", "pan number"],                                10),
+    ("Passport",           ["passport", "passport no"],                                                                     10),
+    ("Driving License",    ["driving licence", "driving license", "d.l. no", "d.l. number"],                                 9),
+    ("Voter ID",           ["election commission", "voter id", "voter card", "electoral photo", "epic no"],                  9),
+    ("Birth Certificate",  ["birth certificate", "registrar of births", "certificate of birth", "birth registration"],        9),
+    ("Degree Certificate", ["degree certificate", "awarded the degree", "bachelor of", "master of", "doctor of", "diploma"], 8),
+    ("Marksheet",          ["marksheet", "mark sheet", "statement of marks", "grade card", "grade sheet", "gradesheet", "transcript"], 8),
+    ("Bank Statement",     ["account statement", "bank statement", "opening balance", "closing balance", "statement period"], 8),
     ("Salary Slip",        ["salary slip", "pay slip", "payslip", "basic salary", "net pay", "gross salary"],                  8),
-    ("Invoice",            ["invoice", "bill to", "gst", "tax invoice", "total amount due", "hsn"],                           8),
+    ("Invoice",            ["invoice", "tax invoice", "total amount due", "bill to"],                                         8),
 ]
 
 
@@ -30,7 +30,9 @@ def classify(text: str, extracted_fields: dict) -> Tuple[str, float]:
     Classify the document type.
     Returns (document_type, confidence 0-1).
     """
-    text_lower = text.lower()
+    # Focus on the first 4000 characters (roughly 1-2 pages) to prevent false positives
+    # in long documents (like research articles, books, or reports).
+    text_lower = text[:4000].lower()
     scores: dict[str, int] = {}
 
     for doc_type, keywords, weight in _RULES:
