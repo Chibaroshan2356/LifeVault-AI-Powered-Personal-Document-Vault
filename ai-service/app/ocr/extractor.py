@@ -25,6 +25,12 @@ def _get_reader():
     return _reader
 
 
+def warmup_reader() -> None:
+    """Pre-load the EasyOCR model at service startup to avoid cold-start timeouts."""
+    _get_reader()
+
+
+
 def extract_text_from_images(images: List[Image.Image]) -> Tuple[str, float]:
     """
     Run OCR on a list of PIL images.
