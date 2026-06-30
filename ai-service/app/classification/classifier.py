@@ -4,37 +4,36 @@ Rule-based classifier using OCR text + extracted fields.
 Extraction runs first (Stage 3) to provide richer input.
 """
 import re
+import os
+import json
 import logging
 from typing import Tuple
 
 logger = logging.getLogger(__name__)
 
-# Keyword rules: (document_type, [keywords], weight, min_unique_matches)
-_RULES = [
-    ("Aadhaar Card",       ["aadhaar", "aadhar", "uidai", "आधार", "unique identification authority"],                       10, 1),
-    ("PAN Card",           ["permanent account number", "pan card", "pan no", "pan number"],                                10, 1),
-    ("Passport",           ["passport", "passport no"],                                                                     10, 1),
-    ("Driving License",    ["driving licence", "driving license", "d.l. no", "d.l. number"],                                 9, 1),
-    ("Voter ID",           ["election commission", "voter id", "voter card", "electoral photo", "epic no"],                  9, 1),
-    ("Birth Certificate",  ["birth certificate", "registrar of births", "certificate of birth", "birth registration"],        9, 1),
-    ("Resume",             ["resume", "curriculum vitae", "cv", "technical skills", "projects", "education", "experience", 
-                            "internship", "certifications", "objective", "profile", "github", "linkedin", "email", "phone",
-                            "skills", "contact", "work experience", "mobile"], 9, 3),
-    ("Degree Certificate", ["degree certificate", "awarded the degree", "bachelor of", "master of", "doctor of", "diploma"], 8, 1),
-    ("Educational Certificate", ["educational certificate", "school certificate", "board examination", "passing certificate", 
-                                 "provisional certificate", "transcript of records", "academic transcript"],                8, 1),
-    ("Internship Certificate", ["internship certificate", "certificate of internship", "internship completion", 
-                                "internship training", "completed internship", "as an intern"],                              8, 2),
-    ("Employment Document", ["employment contract", "offer letter", "appointment letter", "employment certificate", 
-                             "salary certificate", "joining letter", "experience letter"],                                   8, 2),
-    ("Medical Report",     ["medical report", "prescription", "lab report", "clinical summary", "patient name", 
-                            "blood test", "diagnostic report", "medical history"],                                           8, 2),
-    ("Insurance Document", ["insurance policy", "policy schedule", "insurance premium", "insurance certificate", 
-                            "life insurance", "health insurance", "motor insurance"],                                       8, 2),
-    ("Invoice",            ["invoice", "tax invoice", "total amount due", "bill to", "payment receipt"],                     8, 1),
-    ("Warranty Card",      ["warranty card", "warranty period", "product warranty", "guarantee card", 
-                            "warranty void", "year warranty", "months warranty"],                                            8, 2),
-]
+# Load classification rules from configuration file rules.json
+_RULES = []
+try:
+    _rules_path = os.path.join(os.path.dirname(__file__), "rules.json")
+    with open(_rules_path, "r", encoding="utf-8") as f:
+        _loaded_rules = json.load(f)
+        for rule in _loaded_rules:
+            _RULES.append((
+                rule["category"],
+                rule["keywords"],
+                rule["weight"],
+                rule["min_unique_matches"]
+            ))
+except Exception as e:
+    logger.error(f"Failed to load classification rules from rules.json: {e}", exc_info=True)
+    # Fallback rules in case loading fails (minimal set)
+    _RULES = [
+        ("Aadhaar Card",       ["aadhaar", "aadhar", "uidai", "आधार"], 10, 1),
+        ("PAN Card",           ["permanent account number", "pan card", "pan no"], 10, 1),
+        ("Passport",           ["passport"], 10, 1),
+        ("Resume",             ["resume", "cv", "education", "experience"], 9, 2),
+        ("Fee Receipt",        ["fee receipt", "tuition fee", "receipt"], 9, 2),
+    ]
 
 
 def classify(text: str, extracted_fields: dict) -> Tuple[str, float]:

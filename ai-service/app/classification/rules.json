@@ -1,0 +1,125 @@
+[
+  {
+    "category": "Aadhaar Card",
+    "keywords": ["aadhaar", "aadhar", "uidai", "आधार", "unique identification authority"],
+    "weight": 10,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "PAN Card",
+    "keywords": ["permanent account number", "pan card", "pan no", "pan number"],
+    "weight": 10,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "Passport",
+    "keywords": ["passport", "passport no"],
+    "weight": 10,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "Driving License",
+    "keywords": ["driving licence", "driving license", "d.l. no", "d.l. number"],
+    "weight": 9,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "Voter ID",
+    "keywords": ["election commission", "voter id", "voter card", "electoral photo", "epic no"],
+    "weight": 9,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "Birth Certificate",
+    "keywords": ["birth certificate", "registrar of births", "certificate of birth", "birth registration"],
+    "weight": 9,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "Resume",
+    "keywords": [
+      "resume", "curriculum vitae", "cv", "technical skills", "projects", "education", "experience", 
+      "internship", "certifications", "objective", "profile", "github", "linkedin", "email", "phone",
+      "skills", "contact", "work experience", "mobile"
+    ],
+    "weight": 9,
+    "min_unique_matches": 3
+  },
+  {
+    "category": "Degree Certificate",
+    "keywords": ["degree certificate", "awarded the degree", "bachelor of", "master of", "doctor of", "diploma"],
+    "weight": 8,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "Educational Certificate",
+    "keywords": [
+      "educational certificate", "school certificate", "board examination", "passing certificate", 
+      "provisional certificate", "transcript of records", "academic transcript"
+    ],
+    "weight": 8,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "Internship Certificate",
+    "keywords": [
+      "internship certificate", "certificate of internship", "internship completion", 
+      "internship training", "completed internship", "as an intern"
+    ],
+    "weight": 8,
+    "min_unique_matches": 2
+  },
+  {
+    "category": "Employment Document",
+    "keywords": [
+      "employment contract", "offer letter", "appointment letter", "employment certificate", 
+      "salary certificate", "joining letter", "experience letter"
+    ],
+    "weight": 8,
+    "min_unique_matches": 2
+  },
+  {
+    "category": "Medical Report",
+    "keywords": [
+      "medical report", "prescription", "lab report", "clinical summary", "patient name", 
+      "blood test", "diagnostic report", "medical history"
+    ],
+    "weight": 8,
+    "min_unique_matches": 2
+  },
+  {
+    "category": "Insurance Document",
+    "keywords": [
+      "insurance policy", "policy schedule", "insurance premium", "insurance certificate", 
+      "life insurance", "health insurance", "motor insurance"
+    ],
+    "weight": 8,
+    "min_unique_matches": 2
+  },
+  {
+    "category": "Invoice",
+    "keywords": ["invoice", "tax invoice", "total amount due", "bill to", "payment receipt"],
+    "weight": 8,
+    "min_unique_matches": 1
+  },
+  {
+    "category": "Warranty Card",
+    "keywords": [
+      "warranty card", "warranty period", "product warranty", "guarantee card", 
+      "warranty void", "year warranty", "months warranty"
+    ],
+    "weight": 8,
+    "min_unique_matches": 2
+  },
+  {
+    "category": "Fee Receipt",
+    "keywords": [
+      "fee receipt", "tuition fee", "receipt", "semester fee", "college fee", 
+      "payment receipt", "amount paid", "transaction id", "challan", "fees paid", 
+      "fee paid", "receipt no", "roll no", "student name", "admission no", 
+      "register no", "register number", "fee payment", "fees receipt"
+    ],
+    "weight": 9,
+    "min_unique_matches": 2
+  }
+]

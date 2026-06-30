@@ -6,7 +6,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app.classification.classifier import classify
-from app.extraction.extractor import extract, extract_resume_metadata
+from app.extraction.extractor import extract, extract_resume_metadata, extract_fee_receipt_metadata
 
 
 def test_resume_classification_and_metadata():
@@ -142,3 +142,57 @@ TOTAL AMOUNT DUE: $150.00
     doc_type, conf = classify(invoice_text, extracted_fields)
     assert doc_type == "Invoice"
     assert conf > 0.5
+
+
+def test_fee_receipt_classification_and_metadata():
+    fee_receipt_text = """
+    KONGU ENGINEERING COLLEGE
+    PERUNDURAI, ERODE - 638060
+    FEE RECEIPT
+    
+    Receipt No: REC/2026/10243
+    Date: 30/06/2026
+    
+    Student Name: John Doe
+    Register No: 23ITR047
+    Degree & Branch: B.Tech - Information Technology
+    Semester: V
+    
+    S.No   Particulars                  Amount (Rs.)
+    1      Tuition Fee                  55000.00
+    2      Development Fee              5000.00
+    3      Library Fee                  1500.00
+    
+    Total Amount Paid: Rs. 61500.00
+    Amount in words: Sixty One Thousand Five Hundred Only.
+    
+    Cashier Signature
+    """
+    
+    extracted_fields = extract(fee_receipt_text)
+    doc_type, conf = classify(fee_receipt_text, extracted_fields)
+    assert doc_type == "Fee Receipt"
+    assert conf > 0.5
+    
+    refined = extract_fee_receipt_metadata(fee_receipt_text, extracted_fields)
+    assert refined["documentName"] == "Fee Receipt"
+    assert refined["holderName"] == "John Doe"
+    assert refined["organization"] == "Kongu Engineering College"
+    assert refined["documentNumber"] == "23ITR047"
+    assert refined["issueDate"] == "2026-06-30T00:00:00.000Z"
+
+
+def test_fee_receipt_metadata_adjacent_name():
+    fee_receipt_text = """
+    KONGU ENGINEERING COLLEGE
+    FEE RECEIPT
+    23ITR047
+    John Doe
+    Tuition Fee: 55000.00
+    """
+    extracted_fields = extract(fee_receipt_text)
+    refined = extract_fee_receipt_metadata(fee_receipt_text, extracted_fields)
+    assert refined["holderName"] == "John Doe"
+    assert refined["organization"] == "Kongu Engineering College"
+    assert refined["documentNumber"] == "23ITR047"
+

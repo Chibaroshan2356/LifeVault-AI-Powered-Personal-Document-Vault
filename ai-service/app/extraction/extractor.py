@@ -225,3 +225,132 @@ def extract_resume_metadata(text: str, default_metadata: dict) -> dict:
         "expiryDate":     None,
         "documentNumber": None,
     }
+
+
+def _is_valid_person_name(name: str) -> bool:
+    if not name:
+        return False
+    name_lower = name.lower()
+    invalid_keywords = [
+        "college", "university", "institute", "school", "engineering", 
+        "technology", "receipt", "fee", "payment", "amount", "rupees", "rs.", "rs", 
+        "date", "class", "branch", "degree", "semester", "year", "total", "paid", 
+        "signature", "cashier", "challan", "bank", "no.", "number", "id", "register", 
+        "roll", "admission", "office", "copy", "original", "student", "candidate", "kec"
+    ]
+    for kw in invalid_keywords:
+        if kw in name_lower:
+            return False
+    # A person name should typically be between 2 and 40 characters
+    if not (2 <= len(name.strip()) <= 40):
+        return False
+    return True
+
+
+def _extract_fee_receipt_org(text: str) -> Optional[str]:
+    # Search for lines containing university, college, institute, school, academy
+    lines = [l.strip() for l in text.split("\n") if l.strip()]
+    org_indicators = ["university", "college", "institute", "school", "academy", "kec", "polytechnic"]
+    for line in lines[:10]: # Check first 10 lines
+        line_lower = line.lower()
+        if any(ind in line_lower for ind in org_indicators):
+            # Check if it doesn't contain fee/receipt/payment/challan keywords
+            if not any(kw in line_lower for kw in ["receipt", "fee", "payment", "challan"]):
+                # Clean it up: keep letters, numbers, spaces, and common symbols
+                clean = re.sub(r'[^A-Za-z0-9\s\&\.\-]', '', line).strip()
+                if 5 <= len(clean) <= 100:
+                    return clean.title()
+    return None
+
+
+def _extract_fee_receipt_number(text: str) -> Optional[str]:
+    id_labels = [
+        r'register\s+no\.?', r'register\s+number', r'reg\.?\s*no\.?', r'reg\.?\s*number',
+        r'roll\s+no\.?', r'roll\s+number',
+        r'student\s+id', r'student\s+no\.?', r'student\s+number',
+        r'admission\s+no\.?', r'admission\s+number',
+        r'receipt\s+no\.?', r'receipt\s+number',
+        r'challan\s+no\.?', r'challan\s+number',
+        r'transaction\s+id', r'ref\s+no\.?', r'reference\s+no\.?'
+    ]
+    
+    for label in id_labels:
+        pattern = r'\b' + label + r'[:\s\-–—]+([A-Z0-9/\-]{4,25})\b'
+        m = re.search(pattern, text, re.IGNORECASE)
+        if m:
+            return m.group(1).strip()
+            
+    # Standalone student ID pattern (e.g. 23ITR047)
+    m = re.search(r'\b(\d{2}[A-Z]{2,3}\d{3,4})\b', text)
+    if m:
+        return m.group(1).strip()
+        
+    return None
+
+
+def _extract_fee_receipt_date(text: str) -> Optional[str]:
+    # Search for date labels near dates
+    date_labels = r'(?:date|payment\s+date|transaction\s+date|receipt\s+date)'
+    return _extract_date_by_keyword(text, date_labels)
+
+
+def extract_fee_receipt_metadata(text: str, default_metadata: dict) -> dict:
+    """
+    Extract structured fields optimized specifically for Fee Receipt documents.
+    Overrides generic extraction for Holder, Document, and Organization.
+    """
+    doc_name = "Fee Receipt"
+    
+    # Extract holder (student name)
+    holder = None
+    # Try explicit labels first
+    name_patterns = [
+        r'(?:student\s+name|candidate\s+name|name\s+of\s+student|name\s+of\s+the\s+student|student|candidate)\s*[:\-–—\s]\s*([A-Za-z][A-Za-z\ \.]+)',
+        r'\b(?:name)\s*[:\-–—]\s*([A-Za-z][A-Za-z\ \.]+)'
+    ]
+    for pattern in name_patterns:
+        m = re.search(pattern, text, re.IGNORECASE)
+        if m:
+            candidate = m.group(1).strip()
+            if _is_valid_person_name(candidate):
+                holder = candidate.title()
+                break
+                
+    # Adjacent-line heuristic if roll number / student ID is present
+    if not holder:
+        lines = [l.strip() for l in text.split("\n") if l.strip()]
+        for idx, line in enumerate(lines):
+            if re.search(r'\b(\d{2}[A-Z]{2,3}\d{3,4})\b', line) or any(kw in line.lower() for kw in ["roll no", "register no", "reg no", "admission no"]):
+                # Check line below
+                if idx + 1 < len(lines):
+                    candidate = lines[idx+1]
+                    candidate_clean = re.sub(r'[^A-Za-z\ \.]', '', candidate).strip()
+                    if _is_valid_person_name(candidate_clean) and len(candidate_clean.split()) >= 2:
+                        holder = candidate_clean.title()
+                        break
+                # Check line above
+                if idx - 1 >= 0:
+                    candidate = lines[idx-1]
+                    candidate_clean = re.sub(r'[^A-Za-z\ \.]', '', candidate).strip()
+                    if _is_valid_person_name(candidate_clean) and len(candidate_clean.split()) >= 2:
+                        holder = candidate_clean.title()
+                        break
+                        
+    # Fallback to default holder name if it passes validation
+    if not holder:
+        default_holder = default_metadata.get("holderName")
+        if default_holder and _is_valid_person_name(default_holder):
+            holder = default_holder
+
+    org = _extract_fee_receipt_org(text) or default_metadata.get("organization")
+    doc_num = _extract_fee_receipt_number(text) or default_metadata.get("documentNumber")
+    issue_date = _extract_fee_receipt_date(text) or default_metadata.get("issueDate")
+    
+    return {
+        "documentName":   doc_name,
+        "holderName":     holder,
+        "organization":   org,
+        "issueDate":      issue_date,
+        "expiryDate":     None,  # Fee receipts do not expire
+        "documentNumber": doc_num,
+    }
