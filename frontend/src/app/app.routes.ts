@@ -2,14 +2,15 @@
  * app.routes.ts — Top-Level Route Definitions
  *
  * Route hierarchy:
- *  /auth/login     → LoginComponent      (public)
- *  /auth/register  → RegisterComponent   (public)
- *  /dashboard      → DashboardPlaceholder (protected — Sprint 8)
- *  /documents      → DocumentsPlaceholder (protected — Sprint 2+)
- *  **              → NotFoundComponent
+ *  /auth/login       → LoginComponent      (public)
+ *  /auth/register    → RegisterComponent   (public)
+ *  /dashboard        → DashboardComponent  (protected)
+ *  /documents        → Document feature    (protected)
+ *  /documents/search → DocumentSearchComponent (protected, aliased at /search)
+ *  /search           → redirect → /documents/search (convenience alias)
+ *  **                → NotFoundComponent
  *
  * Protected routes are guarded by authGuard.
- * Feature components are placeholders until their sprint is implemented.
  */
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
@@ -25,7 +26,7 @@ export const routes: Routes = [
       import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
 
-  // Protected: dashboard (implemented in Milestone 5)
+  // Protected: dashboard
   {
     path: 'dashboard',
     canActivate: [authGuard],
@@ -36,13 +37,21 @@ export const routes: Routes = [
     title: 'LifeVault – Dashboard',
   },
 
-  // Protected: documents (implemented in Sprint 2)
+  // Protected: documents (list, upload, search, detail)
   {
     path: 'documents',
     canActivate: [authGuard],
     loadChildren: () =>
       import('./features/documents/documents.routes').then((m) => m.DOCUMENTS_ROUTES),
     title: 'LifeVault – Documents',
+  },
+
+  // Convenience alias: /search → /documents/search
+  {
+    path: 'search',
+    canActivate: [authGuard],
+    redirectTo: 'documents/search',
+    pathMatch: 'full',
   },
 
   // 404
@@ -55,3 +64,4 @@ export const routes: Routes = [
     title: 'LifeVault – Not Found',
   },
 ];
+

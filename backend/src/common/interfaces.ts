@@ -40,7 +40,7 @@ export interface DocumentMetadataFields {
  * Enables future comparison between model versions.
  */
 export interface AIVersionInfo {
-  ocrEngine:               string;   // e.g. "DocTR"
+  ocrEngine:               string;   // e.g. "EasyOCR"
   ocrVersion:              string;   // e.g. "0.8.1"
   classificationModel:     string;   // e.g. "RuleBased" | "LayoutLMv3"
   classificationVersion:   string;   // e.g. "1.0"

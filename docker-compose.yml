@@ -45,15 +45,19 @@ services:
     restart: unless-stopped
     ports:
       - "3000:3000"
+    env_file:
+      - ./backend/.env
     environment:
-      NODE_ENV:      development
-      PORT:          3000
-      MONGODB_URI:   mongodb://mongodb:27017/lifevault
-      CORS_ORIGIN:   http://localhost:4200
+      NODE_ENV:       development
+      PORT:           3000
+      MONGODB_URI:    mongodb://mongodb:27017/lifevault
+      CORS_ORIGIN:    http://localhost:4200
       AI_SERVICE_URL: http://ai-service:8000
-      # Secrets — override via .env or CI/CD secrets
-      JWT_SECRET:           changeme-jwt-secret
-      JWT_REFRESH_SECRET:   changeme-refresh-secret
+      # Secrets are loaded from backend/.env via env_file above.
+      # Generate strong secrets:
+      #   node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
+      JWT_SECRET:           ${JWT_SECRET}
+      JWT_REFRESH_SECRET:   ${JWT_REFRESH_SECRET}
     volumes:
       - ./uploads:/app/uploads
       - ./backend/logs:/app/logs

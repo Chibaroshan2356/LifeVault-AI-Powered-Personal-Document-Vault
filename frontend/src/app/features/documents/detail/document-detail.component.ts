@@ -60,11 +60,11 @@ import type { DocumentDetail } from '../models/document.models';
         }
 
         <!-- Processing History -->
-        @if (doc.processingHistory?.length) {
+        @if (doc.processingHistory.length) {
           <div class="card">
             <h2><mat-icon>history</mat-icon> Processing History</h2>
             <div class="history">
-              @for (entry of doc.processingHistory; track entry.stage) {
+              @for (entry of doc.processingHistory; track $index) {
                 <div class="history-item" [class.failed]="entry.status === 'failed'">
                   <mat-icon>{{ entry.status === 'completed' ? 'check_circle' : entry.status === 'failed' ? 'error' : 'pending' }}</mat-icon>
                   <span class="stage">{{ entry.stage }}</span>

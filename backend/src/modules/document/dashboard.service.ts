@@ -12,6 +12,7 @@
  */
 import mongoose from 'mongoose';
 import { DocumentModel, IDocument } from './document.model';
+import { DocumentStatus } from '../../common/enums';
 import { logger } from '../../utils/logger';
 
 /** Shape returned by getStats() */
@@ -190,7 +191,7 @@ class DashboardService {
     const docs = await DocumentModel
       .find({
         userId: userOid,
-        status: 'FAILED',
+        status: DocumentStatus.FAILED,
       })
       .sort({ updatedAt: -1 })
       .select(
