@@ -4,7 +4,7 @@
  * Shows all uploaded documents for the authenticated user.
  * Features: status badges, file type icons, delete, upload button.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { MatIconModule }    from '@angular/material/icon';
@@ -15,10 +15,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { Subscription, interval, startWith, switchMap } from 'rxjs';
 
 import { DocumentService }  from '../services/document.service';
-import type { DocumentListItem } from '../models/document.models';
-import { DocumentStatus }   from '../models/document.models';
+import { DocumentListItem, DocumentStatus } from '../models/document.models';
 
 @Component({
   selector: 'app-document-list',
@@ -32,10 +32,13 @@ import { DocumentStatus }   from '../models/document.models';
   templateUrl: './document-list.component.html',
   styleUrl:    './document-list.component.scss',
 })
-export class DocumentListComponent implements OnInit {
+export class DocumentListComponent implements OnInit, OnDestroy {
+  @ViewChild('deleteConfirmDialog') deleteConfirmDialog!: TemplateRef<any>;
   documents: DocumentListItem[] = [];
   isLoading = true;
   errorMsg  = '';
+  documentToDelete?: DocumentListItem;
+  private pollSubscription?: Subscription;
 
   readonly displayedColumns = ['icon', 'name', 'category', 'size', 'status', 'uploaded', 'actions'];
 
@@ -43,43 +46,84 @@ export class DocumentListComponent implements OnInit {
     private readonly docService: DocumentService,
     private readonly snackbar:   MatSnackBar,
     private readonly router:     Router,
+    private readonly dialog:     MatDialog,
   ) {}
 
   ngOnInit(): void { this.loadDocuments(); }
 
+  ngOnDestroy(): void {
+    this.stopPolling();
+  }
+
   loadDocuments(): void {
     this.isLoading = true;
     this.errorMsg  = '';
+    this.stopPolling();
 
-    this.docService.list().subscribe({
-      next: ({ documents }) => {
-        this.documents = documents;
-        this.isLoading = false;
-      },
-      error: () => {
-        this.errorMsg  = 'Failed to load documents.';
-        this.isLoading = false;
-      },
-    });
+    this.pollSubscription = interval(3000)
+      .pipe(
+        startWith(0),
+        switchMap(() => this.docService.list())
+      )
+      .subscribe({
+        next: ({ documents }) => {
+          this.documents = documents;
+          this.isLoading = false;
+          // Stop polling if there are no processing documents
+          const hasProcessing = documents.some(
+            (d) => d.status !== DocumentStatus.READY && d.status !== DocumentStatus.FAILED
+          );
+          if (!hasProcessing) {
+            this.stopPolling();
+          }
+        },
+        error: () => {
+          if (this.documents.length === 0) {
+            this.errorMsg  = 'Failed to load documents.';
+            this.isLoading = false;
+            this.stopPolling();
+          }
+        },
+      });
+  }
+
+  private stopPolling(): void {
+    if (this.pollSubscription) {
+      this.pollSubscription.unsubscribe();
+      this.pollSubscription = undefined;
+    }
   }
 
   deleteDocument(doc: DocumentListItem): void {
-    if (!confirm(`Delete "${doc.originalFileName}"? This cannot be undone.`)) return;
+    console.log('deleteDocument triggered for:', doc._id, doc.originalFileName);
+    this.documentToDelete = doc;
+    const dialogRef = this.dialog.open(this.deleteConfirmDialog, {
+      width: '400px',
+    });
 
-    this.docService.delete(doc._id).subscribe({
-      next: () => {
-        this.documents = this.documents.filter((d) => d._id !== doc._id);
-        this.snackbar.open('Document deleted', 'OK', {
-          duration: 3000,
-          panelClass: ['snackbar-success'],
+    dialogRef.afterClosed().subscribe((confirmed) => {
+      if (confirmed) {
+        console.log('Sending delete API request for:', doc._id);
+        this.docService.delete(doc._id).subscribe({
+          next: () => {
+            console.log('Document deleted successfully from DB and storage');
+            this.documents = this.documents.filter((d) => d._id !== doc._id);
+            this.snackbar.open('Document deleted', 'OK', {
+              duration: 3000,
+              panelClass: ['snackbar-success'],
+            });
+          },
+          error: (err) => {
+            console.error('Delete request failed:', err);
+            this.snackbar.open('Failed to delete document', 'Dismiss', {
+              duration: 4000,
+              panelClass: ['snackbar-error'],
+            });
+          },
         });
-      },
-      error: () => {
-        this.snackbar.open('Failed to delete document', 'Dismiss', {
-          duration: 4000,
-          panelClass: ['snackbar-error'],
-        });
-      },
+      } else {
+        console.log('Deletion cancelled by user');
+      }
     });
   }
 

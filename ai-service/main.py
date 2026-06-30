@@ -1,4 +1,5 @@
 """LifeVault AI Service — FastAPI entry point."""
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
@@ -6,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.routers.process import router as process_router
+from app.ocr.extractor import warmup_reader
 
 logging.basicConfig(
     level=settings.LOG_LEVEL,
@@ -17,6 +19,12 @@ logger = logging.getLogger(__name__)
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info(f"LifeVault AI Service starting (env={settings.ENVIRONMENT})")
+    # Pre-load EasyOCR model so the first document request doesn't time out.
+    # run_in_executor keeps the event loop unblocked while PyTorch loads.
+    logger.info("Pre-loading EasyOCR model (this may take up to 60s on first run)...")
+    loop = asyncio.get_event_loop()
+    await loop.run_in_executor(None, warmup_reader)
+    logger.info("EasyOCR model ready — service accepting requests")
     yield
     logger.info("LifeVault AI Service shutting down")
 

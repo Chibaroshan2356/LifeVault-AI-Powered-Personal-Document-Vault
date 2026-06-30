@@ -73,7 +73,7 @@ Backend calls AI Service → POST /process
 AI Service preprocesses image (OpenCV)
       │
       ▼
-DocTR performs OCR → extracts text
+EasyOCR (or PyMuPDF for digital PDFs) performs OCR → extracts text
       │
       ▼
 Classification model → determines document type

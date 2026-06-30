@@ -1,15 +1,16 @@
 /**
  * DocumentDetailComponent — Shows OCR text, metadata, processing history.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Subscription, interval, startWith, switchMap } from 'rxjs';
 import { DocumentService } from '../services/document.service';
-import type { DocumentDetail } from '../models/document.models';
+import { DocumentDetail, DocumentStatus } from '../models/document.models';
 
 @Component({
   selector: 'app-document-detail',
@@ -33,6 +34,13 @@ import type { DocumentDetail } from '../models/document.models';
           <span class="muted">{{ doc.fileSize | number }} bytes</span>
           <span class="muted">{{ doc.mimeType }}</span>
         </div>
+
+        @if (doc.status !== 'READY' && doc.status !== 'FAILED') {
+          <div class="card processing-card">
+            <mat-spinner diameter="20"></mat-spinner>
+            <span>Document is being analyzed by AI. Please wait...</span>
+          </div>
+        }
 
         <!-- Metadata card -->
         @if (hasMetadata) {
@@ -60,11 +68,11 @@ import type { DocumentDetail } from '../models/document.models';
         }
 
         <!-- Processing History -->
-        @if (doc.processingHistory?.length) {
+        @if (doc.processingHistory.length) {
           <div class="card">
             <h2><mat-icon>history</mat-icon> Processing History</h2>
             <div class="history">
-              @for (entry of doc.processingHistory; track entry.stage) {
+              @for (entry of doc.processingHistory; track $index) {
                 <div class="history-item" [class.failed]="entry.status === 'failed'">
                   <mat-icon>{{ entry.status === 'completed' ? 'check_circle' : entry.status === 'failed' ? 'error' : 'pending' }}</mat-icon>
                   <span class="stage">{{ entry.stage }}</span>
@@ -116,21 +124,55 @@ import type { DocumentDetail } from '../models/document.models';
       .stage{font-weight:500;}
     }
     .error-card { background:#fce4ec; display:flex; align-items:center; gap:8px; color:#c62828; mat-icon{color:#c62828;} }
+    .processing-card { background:#e8eaf6; display:flex; align-items:center; gap:12px; color:#3f51b5; font-weight:500; }
   `],
 })
-export class DocumentDetailComponent implements OnInit {
+export class DocumentDetailComponent implements OnInit, OnDestroy {
   doc?: DocumentDetail;
   loading = true;
   error   = '';
+  private pollSubscription?: Subscription;
 
   constructor(private route: ActivatedRoute, private docService: DocumentService) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')!;
-    this.docService.getById(id).subscribe({
-      next:  (d) => { this.doc = d; this.loading = false; },
-      error: () => { this.error = 'Failed to load document.'; this.loading = false; },
-    });
+    this.startPolling(id);
+  }
+
+  ngOnDestroy(): void {
+    this.stopPolling();
+  }
+
+  private startPolling(id: string): void {
+    this.pollSubscription = interval(3000)
+      .pipe(
+        startWith(0),
+        switchMap(() => this.docService.getById(id))
+      )
+      .subscribe({
+        next: (d) => {
+          this.doc = d;
+          this.loading = false;
+          if (d.status === DocumentStatus.READY || d.status === DocumentStatus.FAILED) {
+            this.stopPolling();
+          }
+        },
+        error: () => {
+          if (!this.doc) {
+            this.error = 'Failed to load document.';
+            this.loading = false;
+            this.stopPolling();
+          }
+        },
+      });
+  }
+
+  private stopPolling(): void {
+    if (this.pollSubscription) {
+      this.pollSubscription.unsubscribe();
+      this.pollSubscription = undefined;
+    }
   }
 
   get hasMetadata(): boolean {

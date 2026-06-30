@@ -11,9 +11,11 @@ import { HttpInterceptorFn, HttpErrorResponse } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { catchError, switchMap, throwError } from 'rxjs';
 import { TokenStorageService } from '../services/token-storage.service';
+import { AuthService } from '../../features/auth/services/auth.service';
 
 export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
   const tokenStorage = inject(TokenStorageService);
+  const authService = inject(AuthService);
   const token = tokenStorage.getAccessToken();
 
   // Attach token if available — skip auth endpoints to avoid circular calls
@@ -27,8 +29,25 @@ export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(authReq).pipe(
     catchError((error: HttpErrorResponse) => {
-      // 401 on non-auth endpoints: token likely expired — handled by AuthService.refreshToken()
-      // Full refresh logic (auto-retry) will be added in Sprint 2 when needed
+      // 401 on non-auth endpoints: token likely expired — refresh and retry
+      if (error.status === 401 && !isAuthEndpoint) {
+        return authService.refreshToken().pipe(
+          switchMap((res) => {
+            const newToken = res.data?.accessToken;
+            if (newToken) {
+              const retriedReq = req.clone({
+                setHeaders: { Authorization: `Bearer ${newToken}` },
+              });
+              return next(retriedReq);
+            }
+            return throwError(() => error);
+          }),
+          catchError((refreshErr) => {
+            authService.logout().subscribe();
+            return throwError(() => refreshErr);
+          })
+        );
+      }
       return throwError(() => error);
     }),
   );

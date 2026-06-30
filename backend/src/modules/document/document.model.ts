@@ -88,7 +88,7 @@ const DocumentMetadataSchema = new Schema<IDocumentMetadata>(
 
 const AIVersionInfoSchema = new Schema<IAIVersionInfo>(
   {
-    ocrEngine:             { type: String, default: 'DocTR' },
+    ocrEngine:             { type: String, default: 'EasyOCR' },
     ocrVersion:            { type: String, default: '' },
     classificationModel:   { type: String, default: 'RuleBased' },
     classificationVersion: { type: String, default: '1.0' },
