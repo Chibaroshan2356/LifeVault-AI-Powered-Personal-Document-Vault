@@ -49,7 +49,6 @@ export const routes: Routes = [
   // Convenience alias: /search → /documents/search
   {
     path: 'search',
-    canActivate: [authGuard],
     redirectTo: 'documents/search',
     pathMatch: 'full',
   },
