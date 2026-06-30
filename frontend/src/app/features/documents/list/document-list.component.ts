@@ -4,7 +4,7 @@
  * Shows all uploaded documents for the authenticated user.
  * Features: status badges, file type icons, delete, upload button.
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { MatIconModule }    from '@angular/material/icon';
@@ -15,10 +15,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { Subscription, interval, startWith, switchMap } from 'rxjs';
 
 import { DocumentService }  from '../services/document.service';
-import type { DocumentListItem } from '../models/document.models';
-import { DocumentStatus }   from '../models/document.models';
+import { DocumentListItem, DocumentStatus } from '../models/document.models';
 
 @Component({
   selector: 'app-document-list',
@@ -32,10 +32,11 @@ import { DocumentStatus }   from '../models/document.models';
   templateUrl: './document-list.component.html',
   styleUrl:    './document-list.component.scss',
 })
-export class DocumentListComponent implements OnInit {
+export class DocumentListComponent implements OnInit, OnDestroy {
   documents: DocumentListItem[] = [];
   isLoading = true;
   errorMsg  = '';
+  private pollSubscription?: Subscription;
 
   readonly displayedColumns = ['icon', 'name', 'category', 'size', 'status', 'uploaded', 'actions'];
 
@@ -47,20 +48,47 @@ export class DocumentListComponent implements OnInit {
 
   ngOnInit(): void { this.loadDocuments(); }
 
+  ngOnDestroy(): void {
+    this.stopPolling();
+  }
+
   loadDocuments(): void {
     this.isLoading = true;
     this.errorMsg  = '';
+    this.stopPolling();
 
-    this.docService.list().subscribe({
-      next: ({ documents }) => {
-        this.documents = documents;
-        this.isLoading = false;
-      },
-      error: () => {
-        this.errorMsg  = 'Failed to load documents.';
-        this.isLoading = false;
-      },
-    });
+    this.pollSubscription = interval(3000)
+      .pipe(
+        startWith(0),
+        switchMap(() => this.docService.list())
+      )
+      .subscribe({
+        next: ({ documents }) => {
+          this.documents = documents;
+          this.isLoading = false;
+          // Stop polling if there are no processing documents
+          const hasProcessing = documents.some(
+            (d) => d.status !== DocumentStatus.READY && d.status !== DocumentStatus.FAILED
+          );
+          if (!hasProcessing) {
+            this.stopPolling();
+          }
+        },
+        error: () => {
+          if (this.documents.length === 0) {
+            this.errorMsg  = 'Failed to load documents.';
+            this.isLoading = false;
+            this.stopPolling();
+          }
+        },
+      });
+  }
+
+  private stopPolling(): void {
+    if (this.pollSubscription) {
+      this.pollSubscription.unsubscribe();
+      this.pollSubscription = undefined;
+    }
   }
 
   deleteDocument(doc: DocumentListItem): void {
