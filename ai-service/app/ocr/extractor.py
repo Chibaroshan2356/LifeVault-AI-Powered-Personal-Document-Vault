@@ -11,6 +11,10 @@ import io
 
 logger = logging.getLogger(__name__)
 
+# OCR confidence thresholds
+MIN_CONFIDENCE_THRESHOLD = 0.7       # Below this → show warning in UI
+LOW_CONFIDENCE_RETRY_THRESHOLD = 0.4  # Below this → retry with binarized images
+
 # Lazy-load EasyOCR reader (large model, initialise once)
 _reader = None
 

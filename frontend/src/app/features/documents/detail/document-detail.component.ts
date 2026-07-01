@@ -45,7 +45,12 @@ import { DocumentDetail, DocumentStatus } from '../models/document.models';
         <!-- Metadata card -->
         @if (hasMetadata) {
           <div class="card">
-            <h2><mat-icon>info</mat-icon> Extracted Metadata</h2>
+            <div class="card-header-row">
+              <h2><mat-icon>info</mat-icon> Extracted Metadata</h2>
+              <button class="improve-btn" mat-stroked-button [routerLink]="['/documents/training']" [queryParams]="{ docId: doc._id }">
+                <mat-icon>model_training</mat-icon> Improve AI
+              </button>
+            </div>
             <div class="meta-grid">
               @if (doc.metadata.holderName)     { <div class="field"><span>Holder</span><strong>{{ doc.metadata.holderName }}</strong></div> }
               @if (doc.metadata.documentName)   { <div class="field"><span>Document</span><strong>{{ doc.metadata.documentName }}</strong></div> }
@@ -53,6 +58,17 @@ import { DocumentDetail, DocumentStatus } from '../models/document.models';
               @if (doc.metadata.documentNumber) { <div class="field"><span>Number</span><strong>{{ doc.metadata.documentNumber }}</strong></div> }
               @if (doc.metadata.issueDate)      { <div class="field"><span>Issue Date</span><strong>{{ doc.metadata.issueDate | date:'mediumDate' }}</strong></div> }
               @if (doc.metadata.expiryDate)     { <div class="field"><span>Expiry Date</span><strong>{{ doc.metadata.expiryDate | date:'mediumDate' }}</strong></div> }
+            </div>
+          </div>
+        }
+
+        <!-- OCR Confidence Warning -->
+        @if (doc.ocrConfidence > 0 && doc.ocrConfidence < 0.7) {
+          <div class="card warning-card">
+            <mat-icon>warning_amber</mat-icon>
+            <div>
+              <strong>Low OCR Confidence ({{ (doc.ocrConfidence * 100).toFixed(1) }}%)</strong>
+              <p>The text recognition quality is below the recommended threshold. Extracted metadata may require manual review.</p>
             </div>
           </div>
         }
@@ -108,8 +124,12 @@ import { DocumentDetail, DocumentStatus } from '../models/document.models';
     }
     .chip { background:#e3f2fd; color:#1565c0; padding:3px 10px; border-radius:999px; font-size:.8rem; }
     .muted { color:#888; font-size:.8rem; }
+    .card-header-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; }
+    .card-header-row h2 { margin:0 !important; }
+    .improve-btn { font-size:.8rem; border-color:#3f51b5; color:#3f51b5; display:flex; align-items:center; gap:4px; height:32px; min-height:32px !important; line-height:32px; padding:0 8px; border-radius:4px; transition:all .2s; }
+    .improve-btn:hover { background:rgba(63,81,181,.04); }
     .card { max-width:800px; margin:0 auto 1rem; background:white; border-radius:12px; padding:1.25rem 1.5rem; box-shadow:0 1px 4px rgba(0,0,0,.08);
-      h2 { display:flex; align-items:center; gap:8px; font-size:1rem; font-weight:500; margin:0 0 1rem; color:#333;
+      h2 { display:flex; align-items:center; gap:8px; font-size:1rem; font-weight:500; margin:0; color:#333;
         mat-icon{font-size:20px;width:20px;height:20px;color:#3f51b5;}
         .conf{font-size:.75rem;color:#888;margin-left:auto;font-weight:400;}
       }
@@ -124,6 +144,11 @@ import { DocumentDetail, DocumentStatus } from '../models/document.models';
       .stage{font-weight:500;}
     }
     .error-card { background:#fce4ec; display:flex; align-items:center; gap:8px; color:#c62828; mat-icon{color:#c62828;} }
+    .warning-card { background:#fff8e1; display:flex; align-items:center; gap:12px; color:#f57f17; border-left:4px solid #ffb300;
+      mat-icon{color:#ffb300; font-size:28px; width:28px; height:28px;}
+      strong{font-size:.9rem; color:#e65100;}
+      p{margin:.25rem 0 0; font-size:.82rem; color:#795548; line-height:1.4;}
+    }
     .processing-card { background:#e8eaf6; display:flex; align-items:center; gap:12px; color:#3f51b5; font-weight:500; }
   `],
 })

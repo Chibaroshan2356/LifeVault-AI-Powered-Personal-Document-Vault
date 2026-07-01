@@ -62,8 +62,10 @@ export class DocumentSearchComponent implements OnInit {
   readonly displayedColumns = ['icon', 'name', 'category', 'size', 'status', 'uploaded', 'actions'];
   readonly documentCategories = [
     'Aadhaar Card', 'PAN Card', 'Passport', 'Driving License',
-    'Voter ID', 'Birth Certificate', 'Degree Certificate', 'Marksheet',
-    'Bank Statement', 'Salary Slip', 'Invoice', 'Other',
+    'Voter ID', 'Birth Certificate', 'Resume', 'Degree Certificate', 'Marksheet',
+    'Educational Certificate', 'Internship Certificate', 'Employment Document',
+    'Medical Report', 'Insurance Document', 'Bank Statement', 'Salary Slip',
+    'Invoice', 'Warranty Card', 'Fee Receipt', 'Identity Card', 'Other',
   ];
   readonly documentStatuses = [
     'UPLOADED', 'OCR_PENDING', 'OCR_COMPLETED',
