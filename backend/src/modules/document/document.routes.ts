@@ -25,6 +25,10 @@ import {
   getDocument,
   deleteDocument,
 } from './document.controller';
+import {
+  uploadTrainingDoc,
+  saveTrainingDoc,
+} from './training-document.controller';
 
 export const documentRouter = Router();
 
@@ -40,6 +44,8 @@ const uploadLimiter = rateLimit({
 
 // Routes (search MUST be before /:id to avoid param capture)
 documentRouter.post(  '/upload',        uploadLimiter, uploadMiddleware, uploadDocument);
+documentRouter.post(  '/training/upload', uploadLimiter, uploadMiddleware, uploadTrainingDoc);
+documentRouter.post(  '/training/save',   saveTrainingDoc);
 documentRouter.get(   '/search/query',  searchDocuments);
 documentRouter.get(   '/',              listDocuments);
 documentRouter.get(   '/:id',           getDocument);

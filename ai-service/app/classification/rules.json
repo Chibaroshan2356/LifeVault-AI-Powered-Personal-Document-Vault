@@ -55,16 +55,18 @@
     "category": "Educational Certificate",
     "keywords": [
       "educational certificate", "school certificate", "board examination", "passing certificate", 
-      "provisional certificate", "transcript of records", "academic transcript"
+      "provisional certificate", "transcript of records", "academic transcript",
+      "certificate", "associate developer", "associate", "professional", "certified",
+      "issued to", "issued by", "verify", "credential", "completion", "achievement"
     ],
     "weight": 8,
-    "min_unique_matches": 1
+    "min_unique_matches": 2
   },
   {
     "category": "Internship Certificate",
     "keywords": [
       "internship certificate", "certificate of internship", "internship completion", 
-      "internship training", "completed internship", "as an intern"
+      "internship training", "completed internship", "as an intern", "internship", "intern"
     ],
     "weight": 8,
     "min_unique_matches": 2
@@ -121,5 +123,16 @@
     ],
     "weight": 9,
     "min_unique_matches": 2
+  },
+  {
+    "category": "Identity Card",
+    "keywords": [
+      "id card", "identity card", "student", "employee", "register number",
+      "roll number", "admission number", "department", "valid till", "card number",
+      "college", "university", "company", "validity", "valid until", "admission no",
+      "roll no", "register no", "reg no", "reg number", "employee id", "student id"
+    ],
+    "weight": 9,
+    "min_unique_matches": 3
   }
 ]

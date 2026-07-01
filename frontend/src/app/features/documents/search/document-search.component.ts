@@ -65,7 +65,7 @@ export class DocumentSearchComponent implements OnInit {
     'Voter ID', 'Birth Certificate', 'Resume', 'Degree Certificate', 'Marksheet',
     'Educational Certificate', 'Internship Certificate', 'Employment Document',
     'Medical Report', 'Insurance Document', 'Bank Statement', 'Salary Slip',
-    'Invoice', 'Warranty Card', 'Other',
+    'Invoice', 'Warranty Card', 'Fee Receipt', 'Identity Card', 'Other',
   ];
   readonly documentStatuses = [
     'UPLOADED', 'OCR_PENDING', 'OCR_COMPLETED',

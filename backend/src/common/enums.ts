@@ -72,6 +72,8 @@ export enum DocumentCategory {
   SALARY_SLIP              = 'Salary Slip',
   INVOICE                  = 'Invoice',
   WARRANTY_CARD            = 'Warranty Card',
+  FEE_RECEIPT              = 'Fee Receipt',
+  IDENTITY_CARD            = 'Identity Card',
   OTHER                    = 'Other',
 }
 

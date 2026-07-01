@@ -1,0 +1,140 @@
+<div class="training-container">
+  <!-- Page Header -->
+  <div class="header">
+    <div class="back">
+      <a routerLink="/dashboard" class="back-link">
+        <mat-icon>arrow_back</mat-icon> Dashboard
+      </a>
+    </div>
+    <h1>AI Training Center (Beta)</h1>
+    <p class="subtitle">Quality Assurance: Review AI predictions, correct metadata, and approve document labels to improve OCR & Classification models.</p>
+  </div>
+
+  <!-- Loading State -->
+  <div class="center-spinner" *ngIf="isLoading">
+    <mat-spinner diameter="60"></mat-spinner>
+    <p class="spinner-text">Running AI OCR, Classification, and Metadata Extraction pipelines synchronously...</p>
+  </div>
+
+  <!-- Dropzone upload area (Shown if no file or has result reset) -->
+  <div class="upload-section" *ngIf="!selectedFile && !isLoading">
+    <div class="dropzone" (click)="triggerFileSelect()">
+      <mat-icon class="upload-icon">model_training</mat-icon>
+      <h2>Upload Document for QA Review</h2>
+      <p>Supports PDF, JPEG, PNG (Max 10 MB)</p>
+      <button mat-raised-button color="primary">Select Document</button>
+      <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;" accept=".pdf,.jpeg,.jpg,.png">
+    </div>
+    <div class="error-msg" *ngIf="validationError">
+      <mat-icon>error_outline</mat-icon>
+      <span>{{ validationError }}</span>
+    </div>
+  </div>
+
+  <!-- Review Panel (Two Column Layout) -->
+  <div class="review-panel" *ngIf="hasResult && !isLoading">
+    <!-- Left Column: Document Preview and OCR Text -->
+    <div class="left-col card">
+      <div class="card-header">
+        <h3>Document Preview</h3>
+        <span class="badge file-badge">{{ selectedFile?.name }}</span>
+      </div>
+      
+      <div class="preview-frame">
+        <iframe *ngIf="fileType === 'pdf' && filePreviewUrl" [src]="filePreviewUrl" width="100%" height="450px" frameborder="0"></iframe>
+        <img *ngIf="fileType === 'image' && filePreviewUrl" [src]="filePreviewUrl" alt="Document Preview" class="img-preview">
+      </div>
+
+      <div class="ocr-section">
+        <h3>OCR Extracted Text</h3>
+        <textarea class="ocr-textarea" [(ngModel)]="ocrText" rows="12"></textarea>
+      </div>
+    </div>
+
+    <!-- Right Column: AI Analysis & Corrections Form -->
+    <div class="right-col card">
+      <div class="card-header">
+        <h3>AI Quality Review & Corrections</h3>
+      </div>
+
+      <!-- AI Insights Block -->
+      <div class="ai-insights">
+        <div class="insight-row">
+          <span class="label">AI Predicted Category:</span>
+          <span class="value badge category-badge">{{ aiCategory }}</span>
+        </div>
+        <div class="insight-row">
+          <span class="label">Classification Confidence:</span>
+          <span class="value confidence-pill" [ngClass]="{
+            'high-conf': aiConfidence >= 0.85,
+            'med-conf': aiConfidence >= 0.6 && aiConfidence < 0.85,
+            'low-conf': aiConfidence < 0.6
+          }">
+            {{ (aiConfidence * 100) | number:'1.0-1' }}%
+          </span>
+        </div>
+        <div class="insight-row">
+          <span class="label">AI Engine & Model Version:</span>
+          <span class="value version-text">
+            {{ aiVersionInfo?.ocr_engine || 'EasyOCR' }} v{{ aiVersionInfo?.ocr_version || '1.7.2' }} /
+            {{ aiVersionInfo?.classification_model || 'Rules' }} v{{ aiVersionInfo?.classification_version || '1.0' }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Correction Form -->
+      <form class="correction-form" (ngSubmit)="saveCorrections()">
+        <div class="form-group">
+          <label for="category">Final Approved Category</label>
+          <select id="category" name="category" [(ngModel)]="formCategory" class="form-control select-control">
+            <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="holder">Holder Name</label>
+          <input type="text" id="holder" name="holder" [(ngModel)]="formHolder" class="form-control" placeholder="Not detected">
+          <span class="ai-hint" *ngIf="aiMetadata.holderName">AI Extracted: {{ aiMetadata.holderName }}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="organization">Organization / Issuer</label>
+          <input type="text" id="organization" name="organization" [(ngModel)]="formOrganization" class="form-control" placeholder="Not detected">
+          <span class="ai-hint" *ngIf="aiMetadata.organization">AI Extracted: {{ aiMetadata.organization }}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="docName">Document Title</label>
+          <input type="text" id="docName" name="docName" [(ngModel)]="formDocumentName" class="form-control" placeholder="Not detected">
+          <span class="ai-hint" *ngIf="aiMetadata.documentName">AI Extracted: {{ aiMetadata.documentName }}</span>
+        </div>
+
+        <div class="form-group">
+          <label for="docNumber">Document Number</label>
+          <input type="text" id="docNumber" name="docNumber" [(ngModel)]="formDocumentNumber" class="form-control" placeholder="Not detected">
+          <span class="ai-hint" *ngIf="aiMetadata.documentNumber">AI Extracted: {{ aiMetadata.documentNumber }}</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="issueDate">Issue Date</label>
+            <input type="date" id="issueDate" name="issueDate" [(ngModel)]="formIssueDate" class="form-control">
+            <span class="ai-hint" *ngIf="aiMetadata.issueDate">AI Extracted: {{ aiMetadata.issueDate | date:'mediumDate' }}</span>
+          </div>
+
+          <div class="form-group half">
+            <label for="expiryDate">Expiry Date</label>
+            <input type="date" id="expiryDate" name="expiryDate" [(ngModel)]="formExpiryDate" class="form-control">
+            <span class="ai-hint" *ngIf="aiMetadata.expiryDate">AI Extracted: {{ aiMetadata.expiryDate | date:'mediumDate' }}</span>
+          </div>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" (click)="reset()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Corrections & Approve</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

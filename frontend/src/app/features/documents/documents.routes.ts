@@ -23,6 +23,12 @@ export const DOCUMENTS_ROUTES: Routes = [
     title: 'LifeVault – Search Documents',
   },
   {
+    path: 'training',
+    loadComponent: () =>
+      import('./training/document-training.component').then((m) => m.DocumentTrainingComponent),
+    title: 'LifeVault – AI Training Center',
+  },
+  {
     path: ':id',
     loadComponent: () =>
       import('./detail/document-detail.component').then((m) => m.DocumentDetailComponent),

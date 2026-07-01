@@ -6,7 +6,18 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app.classification.classifier import classify
-from app.extraction.extractor import extract, extract_resume_metadata, extract_fee_receipt_metadata
+from app.extraction.extractor import (
+    extract, 
+    extract_resume_metadata, 
+    extract_fee_receipt_metadata, 
+    extract_identity_card_metadata, 
+    extract_educational_certificate_metadata,
+    extract_passport_metadata,
+    extract_aadhaar_metadata,
+    extract_pan_metadata,
+    extract_driving_license_metadata,
+    extract_internship_certificate_metadata
+)
 
 
 def test_resume_classification_and_metadata():
@@ -69,7 +80,7 @@ HTML, CSS, JS
     assert refined["organization"] is None  # Ensures no fallback to random text
 
 
-def test_passport_classification():
+def test_passport_classification_and_metadata():
     passport_text = """
 PASSPORT
 REPUBLIC OF INDIA
@@ -79,14 +90,23 @@ Nationality: INDIAN
 Date of Birth: 01/01/1990
 Date of Issue: 15/05/2020
 Date of Expiry: 14/05/2030
+P<INDDOE<<JOHN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     """
     extracted_fields = extract(passport_text)
     doc_type, conf = classify(passport_text, extracted_fields)
     assert doc_type == "Passport"
     assert conf > 0.5
+    
+    refined = extract_passport_metadata(passport_text, extracted_fields)
+    assert refined["documentName"] == "Passport"
+    assert refined["holderName"] == "John Doe"
+    assert refined["organization"] == "Republic of India"
+    assert refined["documentNumber"] == "Z1234567"
+    assert refined["issueDate"] == "2020-05-15T00:00:00.000Z"
+    assert refined["expiryDate"] == "2030-05-14T00:00:00.000Z"
 
 
-def test_aadhaar_classification():
+def test_aadhaar_classification_and_metadata():
     aadhaar_text = """
 GOVERNMENT OF INDIA
 भारत सरकार
@@ -100,9 +120,15 @@ John Doe
     doc_type, conf = classify(aadhaar_text, extracted_fields)
     assert doc_type == "Aadhaar Card"
     assert conf > 0.5
+    
+    refined = extract_aadhaar_metadata(aadhaar_text, extracted_fields)
+    assert refined["documentName"] == "Aadhaar Card"
+    assert refined["holderName"] == "John Doe"
+    assert refined["organization"] == "UIDAI"
+    assert refined["documentNumber"] == "1234 5678 9012"
 
 
-def test_pan_classification():
+def test_pan_classification_and_metadata():
     pan_text = """
 INCOME TAX DEPARTMENT
 GOVERNMENT OF INDIA
@@ -114,6 +140,12 @@ NAME: JOHN DOE
     doc_type, conf = classify(pan_text, extracted_fields)
     assert doc_type == "PAN Card"
     assert conf > 0.5
+    
+    refined = extract_pan_metadata(pan_text, extracted_fields)
+    assert refined["documentName"] == "PAN Card"
+    assert refined["holderName"] == "John Doe"
+    assert refined["organization"] == "Income Tax Department"
+    assert refined["documentNumber"] == "ABCDE1234F"
 
 
 def test_educational_certificate_classification():
@@ -195,4 +227,123 @@ def test_fee_receipt_metadata_adjacent_name():
     assert refined["holderName"] == "John Doe"
     assert refined["organization"] == "Kongu Engineering College"
     assert refined["documentNumber"] == "23ITR047"
+
+
+def test_student_id_card_classification_and_metadata():
+    student_id_text = """
+    KONGU
+    ENGINEERING COLLEGE
+    STUDENT IDENTITY CARD
+    
+    Name: CHIBA ROSHAN A
+    Roll No: 23ITR019
+    Department: Information Technology
+    Valid Till: 31/05/2027
+    
+    Father Name: S/O ARULRAJ
+    Address: 123 Street Name
+    """
+    extracted_fields = extract(student_id_text)
+    doc_type, conf = classify(student_id_text, extracted_fields)
+    assert doc_type == "Identity Card"
+    assert conf > 0.5
+    
+    refined = extract_identity_card_metadata(student_id_text, extracted_fields)
+    assert refined["documentName"] == "Student Identity Card"
+    assert refined["holderName"] == "Chiba Roshan A"
+    assert refined["organization"] == "Kongu Engineering College"
+    assert refined["documentNumber"] == "23ITR019"
+
+
+def test_employee_id_card_classification_and_metadata():
+    employee_id_text = """
+    ABC SOLUTIONS PRIVATE LIMITED
+    EMPLOYEE ID CARD
+    
+    Employee ID: EMP-10243
+    Name: John Doe
+    Designation: Software Engineer
+    Valid Until: 31/12/2030
+    """
+    extracted_fields = extract(employee_id_text)
+    doc_type, conf = classify(employee_id_text, extracted_fields)
+    assert doc_type == "Identity Card"
+    assert conf > 0.5
+    
+    refined = extract_identity_card_metadata(employee_id_text, extracted_fields)
+    assert refined["documentName"] == "Employee Identity Card"
+    assert refined["holderName"] == "John Doe"
+    assert refined["organization"] == "Abc Solutions Private Limited"
+    assert refined["documentNumber"] == "EMP-10243"
+
+
+def test_mongodb_certificate_classification_and_metadata():
+    certificate_text = """
+    MongoDB Associate Developer
+    ISSUED TO
+    CHIBA ROSHAN A
+    Issued on: 12 MAY 2025
+    Issued by: MongoDB
+    Verification URL
+    Verify: https://verify.mongodb.com/xyz
+    """
+    extracted_fields = extract(certificate_text)
+    doc_type, conf = classify(certificate_text, extracted_fields)
+    assert doc_type == "Educational Certificate"
+    assert conf > 0.5
+    
+    refined = extract_educational_certificate_metadata(certificate_text, extracted_fields)
+    assert refined["documentName"] == "MongoDB Associate Developer"
+    assert refined["holderName"] == "Chiba Roshan A"
+    assert refined["organization"] == "MongoDB"
+    assert refined["issueDate"] == "2025-05-12T00:00:00.000Z"
+
+
+def test_driving_license_classification_and_metadata():
+    dl_text = """
+    UNION TERRITORY OF CHANDIGARH
+    DRIVING LICENSE
+    
+    DL NO: CH-0420160000123
+    Name: JOHN DOE
+    Date of Issue: 15/05/2020
+    Valid Till: 14/05/2030
+    """
+    extracted_fields = extract(dl_text)
+    doc_type, conf = classify(dl_text, extracted_fields)
+    assert doc_type == "Driving License"
+    assert conf > 0.5
+    
+    refined = extract_driving_license_metadata(dl_text, extracted_fields)
+    assert refined["documentName"] == "Driving License"
+    assert refined["holderName"] == "John Doe"
+    assert refined["organization"] == "Union Territory Of Chandigarh"
+    assert refined["documentNumber"] == "CH-0420160000123"
+    assert refined["issueDate"] == "2020-05-15T00:00:00.000Z"
+    assert refined["expiryDate"] == "2030-05-14T00:00:00.000Z"
+
+
+def test_internship_certificate_classification_and_metadata():
+    internship_text = """
+    ABC SOLUTIONS PRIVATE LIMITED
+    CERTIFICATE OF INTERNSHIP
+    
+    This is to certify that
+    CHIBA ROSHAN A
+    has successfully completed his internship as a Software Developer.
+    Issued on: 12/06/2026
+    """
+    extracted_fields = extract(internship_text)
+    doc_type, conf = classify(internship_text, extracted_fields)
+    assert doc_type == "Internship Certificate"
+    assert conf > 0.5
+    
+    refined = extract_internship_certificate_metadata(internship_text, extracted_fields)
+    assert refined["documentName"] == "Internship Certificate"
+    assert refined["holderName"] == "Chiba Roshan A"
+    assert refined["organization"] == "Abc Solutions Private Limited"
+    assert refined["issueDate"] == "2026-06-12T00:00:00.000Z"
+
+
+
 
