@@ -1,0 +1,32 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_053.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "I",
+      "box": [
+        648,
+        289,
+        698,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        609,
+        310,
+        648,
+        501
+      ],
+      "label": "O"
+    }
+  ]
+}

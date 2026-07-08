@@ -1,0 +1,132 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_008.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "KOBENHAVNS",
+      "box": [
+        71,
+        200,
+        359,
+        237
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "UNIVERSTTET",
+      "box": [
+        368,
+        200,
+        653,
+        237
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "UNIVERSTTY OF COPENIAGEN",
+      "box": [
+        73,
+        242,
+        589,
+        273
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "DET SUNDHEDSVIDENSKABELIGE FAKULTET",
+      "box": [
+        73,
+        271,
+        582,
+        304
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "ID-KORT",
+      "box": [
+        70,
+        378,
+        210,
+        415
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "GUSTAVO ZUBIETA",
+      "box": [
+        75,
+        418,
+        350,
+        456
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "gaesteforsker",
+      "box": [
+        73,
+        453,
+        243,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "04-11-122858",
+      "box": [
+        368,
+        518,
+        584,
+        556
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RohiMu",
+      "box": [
+        371,
+        562,
+        431,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Laktu HO",
+      "box": [
+        443,
+        562,
+        503,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10.11.10",
+      "box": [
+        371,
+        593,
+        506,
+        634
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Iidi WafR + [ Xpire $",
+      "box": [
+        370,
+        635,
+        504,
+        654
+      ],
+      "label": "O"
+    }
+  ]
+}

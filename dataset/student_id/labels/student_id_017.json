@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_017.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "COLUMBIA UNIVERSITY",
+      "box": [
+        320,
+        289,
+        837,
+        364
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "MEDICAL CENTER",
+      "box": [
+        318,
+        343,
+        717,
+        421
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Lori",
+      "box": [
+        495,
+        457,
+        576,
+        514
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Peek",
+      "box": [
+        489,
+        515,
+        600,
+        575
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "NATL CTR DISASTER PREP",
+      "box": [
+        484,
+        606,
+        904,
+        667
+      ],
+      "label": "O"
+    },
+    {
+      "text": "EXP 09/06/2022",
+      "box": [
+        484,
+        706,
+        690,
+        756
+      ],
+      "label": "O"
+    }
+  ]
+}

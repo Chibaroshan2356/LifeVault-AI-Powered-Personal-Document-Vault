@@ -1,0 +1,112 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_002.png",
+  "image_dimensions": [
+    1056,
+    816
+  ],
+  "words": [
+    {
+      "text": "SustainAbility Group",
+      "box": [
+        421,
+        193,
+        607,
+        227
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Award Certificate",
+      "box": [
+        173,
+        261,
+        864,
+        368
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "This is to certify that",
+      "box": [
+        399,
+        431,
+        632,
+        468
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Carolyn J.",
+      "box": [
+        255,
+        488,
+        630,
+        615
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Hall",
+      "box": [
+        655,
+        495,
+        804,
+        590
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Was named the \"Top Junior Marketing Officer\" for the month",
+      "box": [
+        200,
+        674,
+        831,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of August 2050.",
+      "box": [
+        431,
+        713,
+        596,
+        750
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Presented on September 5, 2050",
+      "box": [
+        340,
+        747,
+        689,
+        784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cheryl T. Smith",
+      "box": [
+        433,
+        872,
+        594,
+        912
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Inventory Specialist",
+      "box": [
+        393,
+        911,
+        620,
+        960
+      ],
+      "label": "O"
+    }
+  ]
+}

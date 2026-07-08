@@ -1,0 +1,132 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_005.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "602-296-22",
+      "box": [
+        740,
+        225,
+        912,
+        262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ZASH",
+      "box": [
+        73,
+        226,
+        217,
+        292
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "S",
+      "box": [
+        340,
+        218,
+        453,
+        353
+      ],
+      "label": "O"
+    },
+    {
+      "text": "OSW ?S duo)",
+      "box": [
+        690,
+        250,
+        912,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ezoz 80 90 =",
+      "box": [
+        76,
+        289,
+        354,
+        351
+      ],
+      "label": "O"
+    },
+    {
+      "text": "soipms",
+      "box": [
+        784,
+        315,
+        906,
+        353
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4briajy} Pyiex / Siq",
+      "box": [
+        75,
+        365,
+        273,
+        398
+      ],
+      "label": "O"
+    },
+    {
+      "text": "OOOz Zo zz",
+      "box": [
+        709,
+        396,
+        912,
+        443
+      ],
+      "label": "O"
+    },
+    {
+      "text": "eulsna",
+      "box": [
+        765,
+        478,
+        903,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "eaojeyjaO",
+      "box": [
+        707,
+        510,
+        901,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "YjuunzHB",
+      "box": [
+        518,
+        656,
+        896,
+        740
+      ],
+      "label": "O"
+    },
+    {
+      "text": "160109",
+      "box": [
+        262,
+        362,
+        342,
+        404
+      ],
+      "label": "O"
+    }
+  ]
+}

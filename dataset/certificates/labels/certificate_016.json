@@ -1,0 +1,102 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_016.png",
+  "image_dimensions": [
+    2000,
+    1414
+  ],
+  "words": [
+    {
+      "text": "CERTIFICATE",
+      "box": [
+        237,
+        132,
+        764,
+        236
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "OF PARTICIPATION",
+      "box": [
+        378,
+        254,
+        623,
+        294
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "This certificate is proudly presented to",
+      "box": [
+        321,
+        373,
+        680,
+        407
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Matiana Capolitani",
+      "box": [
+        187,
+        417,
+        825,
+        574
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "This certificate is given to Mariana Napolitani for her achievement in the field of",
+      "box": [
+        105,
+        569,
+        896,
+        605
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "education and proves that she is competent in her field.",
+      "box": [
+        225,
+        605,
+        774,
+        643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MUHAMMAD PATEL",
+      "box": [
+        408,
+        813,
+        593,
+        838
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Head Event",
+      "box": [
+        446,
+        842,
+        554,
+        867
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7r7~",
+      "box": [
+        378,
+        652,
+        591,
+        812
+      ],
+      "label": "O"
+    }
+  ]
+}

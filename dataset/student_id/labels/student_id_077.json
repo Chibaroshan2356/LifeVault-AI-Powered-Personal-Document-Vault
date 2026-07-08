@@ -1,0 +1,52 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_077.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "1",
+      "box": [
+        555,
+        706,
+        604,
+        864
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        190,
+        771,
+        244,
+        895
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        364,
+        800,
+        408,
+        929
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        539,
+        859,
+        582,
+        973
+      ],
+      "label": "O"
+    }
+  ]
+}

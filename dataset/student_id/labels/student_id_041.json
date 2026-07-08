@@ -1,0 +1,152 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_041.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "STUDENT",
+      "box": [
+        210,
+        0,
+        693,
+        65
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Shahjalal University ot",
+      "box": [
+        232,
+        207,
+        660,
+        264
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Scionce & Techaology; Sylhet",
+      "box": [
+        167,
+        254,
+        726,
+        312
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "SHAILA AKTER",
+      "box": [
+        250,
+        640,
+        593,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Kepineeatiuu No ;20ig) iUJ",
+      "box": [
+        181,
+        687,
+        662,
+        731
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dop of( opekz Scicuce Ba Enzinccring",
+      "box": [
+        135,
+        720,
+        715,
+        787
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Blood Group",
+      "box": [
+        276,
+        770,
+        490,
+        828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "At",
+      "box": [
+        506,
+        775,
+        559,
+        812
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Firat Ladka ' Hall",
+      "box": [
+        296,
+        815,
+        546,
+        862
+      ],
+      "label": "O"
+    },
+    {
+      "text": "KTN",
+      "box": [
+        234,
+        868,
+        337,
+        909
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sb MT",
+      "box": [
+        462,
+        853,
+        753,
+        932
+      ],
+      "label": "O"
+    },
+    {
+      "text": "oltne Dopl",
+      "box": [
+        240,
+        925,
+        425,
+        968
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studont",
+      "box": [
+        571,
+        931,
+        706,
+        971
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HHeed",
+      "box": [
+        148,
+        914,
+        249,
+        968
+      ],
+      "label": "O"
+    }
+  ]
+}

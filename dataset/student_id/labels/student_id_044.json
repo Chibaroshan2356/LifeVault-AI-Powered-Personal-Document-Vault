@@ -1,0 +1,102 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_044.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "St Marys",
+      "box": [
+        232,
+        243,
+        467,
+        312
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "University",
+      "box": [
+        229,
+        292,
+        481,
+        360
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Twickenham",
+      "box": [
+        226,
+        351,
+        539,
+        407
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "London",
+      "box": [
+        231,
+        400,
+        429,
+        460
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "DOB",
+      "box": [
+        734,
+        512,
+        818,
+        550
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "John",
+      "box": [
+        37,
+        546,
+        153,
+        593
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "0309/1931",
+      "box": [
+        687,
+        539,
+        868,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Security",
+      "box": [
+        37,
+        593,
+        220,
+        654
+      ],
+      "label": "O"
+    },
+    {
+      "text": "31.07.2027",
+      "box": [
+        28,
+        678,
+        256,
+        725
+      ],
+      "label": "B-ISSUE_DATE"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "document_metadata": {
+    "category": "PAN Card",
+    "holder_name": "JOHN DOE",
+    "father_name": "ARTHUR DOE",
+    "pan_number": "ABCDE1234F",
+    "date_of_birth": "1990-01-01"
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [600, 400],
+  "words": [
+    { "text": "INCOME", "box": [30, 20, 90, 35], "label": "O" },
+    { "text": "TAX", "box": [100, 20, 130, 35], "label": "O" },
+    { "text": "DEPARTMENT", "box": [140, 20, 230, 35], "label": "O" },
+    { "text": "PAN:", "box": [30, 70, 70, 85], "label": "O" },
+    { "text": "ABCDE1234F", "box": [80, 70, 200, 85], "label": "B-DOCUMENT_NUMBER" },
+    { "text": "NAME:", "box": [30, 110, 70, 125], "label": "O" },
+    { "text": "JOHN", "box": [80, 110, 130, 125], "label": "B-HOLDER_NAME" },
+    { "text": "DOE", "box": [140, 110, 180, 125], "label": "I-HOLDER_NAME" }
+  ]
+}

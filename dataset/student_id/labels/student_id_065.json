@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_065.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "North South University",
+      "box": [
+        57,
+        314,
+        270,
+        339
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Name; Alicia Neloon",
+      "box": [
+        57,
+        420,
+        242,
+        445
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "ID 91282963",
+      "box": [
+        54,
+        526,
+        182,
+        551
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Explily Date: Valid until 2026,07/06",
+      "box": [
+        57,
+        635,
+        373,
+        660
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Ep",
+      "box": [
+        856,
+        890,
+        937,
+        965
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "1t ~",
+      "box": [
+        642,
+        871,
+        863,
+        1000
+      ],
+      "label": "O"
+    }
+  ]
+}

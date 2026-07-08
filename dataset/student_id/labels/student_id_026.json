@@ -1,0 +1,212 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_026.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "03c *",
+      "box": [
+        162,
+        396,
+        290,
+        446
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Onhl",
+      "box": [
+        390,
+        378,
+        489,
+        426
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "TL",
+      "box": [
+        290,
+        415,
+        343,
+        453
+      ],
+      "label": "O"
+    },
+    {
+      "text": "On",
+      "box": [
+        240,
+        509,
+        300,
+        550
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ana",
+      "box": [
+        410,
+        545,
+        473,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expirz On",
+      "box": [
+        126,
+        545,
+        310,
+        607
+      ],
+      "label": "O"
+    },
+    {
+      "text": "J",
+      "box": [
+        337,
+        575,
+        393,
+        615
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4",
+      "box": [
+        700,
+        575,
+        750,
+        615
+      ],
+      "label": "O"
+    },
+    {
+      "text": "0",
+      "box": [
+        721,
+        618,
+        775,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "E ,",
+      "box": [
+        751,
+        670,
+        945,
+        729
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Daffodil",
+      "box": [
+        328,
+        250,
+        581,
+        343
+      ],
+      "label": "O"
+    },
+    {
+      "text": "University",
+      "box": [
+        357,
+        306,
+        607,
+        396
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Nni",
+      "box": [
+        168,
+        340,
+        298,
+        404
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Jahan",
+      "box": [
+        284,
+        361,
+        399,
+        415
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "791-21-50",
+      "box": [
+        150,
+        439,
+        326,
+        506
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tut",
+      "box": [
+        134,
+        493,
+        243,
+        546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "701g",
+      "box": [
+        456,
+        534,
+        554,
+        587
+      ],
+      "label": "O"
+    },
+    {
+      "text": "401c7022",
+      "box": [
+        373,
+        573,
+        557,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "u o4t7enle",
+      "box": [
+        734,
+        576,
+        992,
+        654
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ranstrar",
+      "box": [
+        742,
+        723,
+        901,
+        795
+      ],
+      "label": "O"
+    }
+  ]
+}

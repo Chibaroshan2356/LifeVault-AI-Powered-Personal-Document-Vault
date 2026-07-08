@@ -1,0 +1,52 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_085.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Tsinghua University",
+      "box": [
+        50,
+        46,
+        617,
+        131
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Richald Brown",
+      "box": [
+        57,
+        232,
+        195,
+        254
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID: 24248761",
+      "box": [
+        53,
+        403,
+        353,
+        453
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expity Date: Exp 2025-10-19",
+      "box": [
+        57,
+        573,
+        317,
+        601
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    }
+  ]
+}

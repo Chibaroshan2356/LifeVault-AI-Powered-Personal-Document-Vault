@@ -1,0 +1,232 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_018.png",
+  "image_dimensions": [
+    841,
+    595
+  ],
+  "words": [
+    {
+      "text": "Course",
+      "box": [
+        260,
+        1198,
+        299,
+        1347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Completion",
+      "box": [
+        260,
+        946,
+        299,
+        1186
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certificate",
+      "box": [
+        260,
+        717,
+        299,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CHARULEELA",
+      "box": [
+        344,
+        1140,
+        371,
+        1347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "S",
+      "box": [
+        344,
+        1112,
+        371,
+        1132
+      ],
+      "label": "O"
+    },
+    {
+      "text": "has",
+      "box": [
+        398,
+        1303,
+        420,
+        1347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "successfully",
+      "box": [
+        398,
+        1148,
+        420,
+        1297
+      ],
+      "label": "O"
+    },
+    {
+      "text": "completed",
+      "box": [
+        398,
+        1014,
+        420,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "100%",
+      "box": [
+        389,
+        899,
+        423,
+        999
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        398,
+        856,
+        420,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        398,
+        812,
+        420,
+        850
+      ],
+      "label": "O"
+    },
+    {
+      "text": "self-paced",
+      "box": [
+        398,
+        680,
+        420,
+        805
+      ],
+      "label": "O"
+    },
+    {
+      "text": "training",
+      "box": [
+        398,
+        583,
+        420,
+        674
+      ],
+      "label": "O"
+    },
+    {
+      "text": "course",
+      "box": [
+        398,
+        495,
+        420,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Calculations",
+      "box": [
+        443,
+        1162,
+        471,
+        1347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        443,
+        1090,
+        471,
+        1153
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vectors",
+      "box": [
+        443,
+        966,
+        471,
+        1082
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        443,
+        902,
+        471,
+        958
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Matrices",
+      "box": [
+        443,
+        763,
+        471,
+        894
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3",
+      "box": [
+        590,
+        366,
+        610,
+        380
+      ],
+      "label": "O"
+    },
+    {
+      "text": "November",
+      "box": [
+        590,
+        252,
+        610,
+        361
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "2024",
+      "box": [
+        590,
+        194,
+        610,
+        247
+      ],
+      "label": "B-ISSUE_DATE"
+    }
+  ]
+}

@@ -70,3 +70,4 @@ Thumbs.db
 # MongoDB
 data/
 dump/
+mongodb-data/

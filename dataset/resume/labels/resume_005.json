@@ -1,0 +1,7342 @@
+{
+  "document_metadata": {
+    "category": "Resume"
+  },
+  "image_filename": "resume_005.png",
+  "image_dimensions": [
+    595,
+    842
+  ],
+  "words": [
+    {
+      "text": "PATIENT",
+      "box": [
+        55,
+        34,
+        122,
+        47
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "SERVICE",
+      "box": [
+        124,
+        34,
+        190,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "REPRESENTATIVE",
+      "box": [
+        193,
+        34,
+        326,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Summary",
+      "box": [
+        55,
+        48,
+        115,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Seeking",
+      "box": [
+        55,
+        62,
+        105,
+        76
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "a",
+      "box": [
+        108,
+        62,
+        116,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "position",
+      "box": [
+        119,
+        62,
+        168,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "using",
+      "box": [
+        170,
+        62,
+        202,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strong",
+      "box": [
+        205,
+        62,
+        244,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "organizational",
+      "box": [
+        246,
+        62,
+        331,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills,",
+      "box": [
+        333,
+        62,
+        366,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "superb",
+      "box": [
+        370,
+        62,
+        412,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "communication",
+      "box": [
+        416,
+        62,
+        508,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        510,
+        62,
+        540,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        544,
+        62,
+        566,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interest",
+      "box": [
+        570,
+        62,
+        614,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        617,
+        62,
+        629,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        631,
+        62,
+        708,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "position",
+      "box": [
+        711,
+        62,
+        760,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        763,
+        62,
+        789,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        792,
+        62,
+        811,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reputed",
+      "box": [
+        814,
+        62,
+        861,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "organization",
+      "box": [
+        864,
+        62,
+        939,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        55,
+        76,
+        78,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rewards",
+      "box": [
+        82,
+        76,
+        132,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "loyalty,",
+      "box": [
+        135,
+        76,
+        179,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hard",
+      "box": [
+        183,
+        76,
+        210,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "work,",
+      "box": [
+        214,
+        76,
+        250,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dependability",
+      "box": [
+        254,
+        76,
+        336,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        339,
+        76,
+        362,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "positive",
+      "box": [
+        365,
+        76,
+        412,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "results",
+      "box": [
+        416,
+        76,
+        455,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        458,
+        76,
+        470,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        472,
+        76,
+        491,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        494,
+        76,
+        526,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "environment.",
+      "box": [
+        528,
+        76,
+        605,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        55,
+        91,
+        88,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maintains",
+      "box": [
+        99,
+        107,
+        168,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strict",
+      "box": [
+        171,
+        107,
+        206,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "confidentiality",
+      "box": [
+        210,
+        107,
+        309,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Knowledge",
+      "box": [
+        99,
+        121,
+        174,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        178,
+        121,
+        191,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HMOs,",
+      "box": [
+        195,
+        121,
+        242,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Medicare",
+      "box": [
+        246,
+        121,
+        308,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        312,
+        121,
+        337,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Medi-Cal",
+      "box": [
+        341,
+        121,
+        403,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Medical",
+      "box": [
+        99,
+        136,
+        152,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager",
+      "box": [
+        156,
+        136,
+        217,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Software",
+      "box": [
+        220,
+        136,
+        280,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Electronic",
+      "box": [
+        99,
+        150,
+        170,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Medical",
+      "box": [
+        173,
+        150,
+        227,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Record",
+      "box": [
+        231,
+        150,
+        279,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(EMR)",
+      "box": [
+        282,
+        150,
+        329,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "software",
+      "box": [
+        332,
+        150,
+        389,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HIPAA",
+      "box": [
+        99,
+        164,
+        150,
+        178
+      ],
+      "label": "O"
+    },
+    {
+      "text": "compliance",
+      "box": [
+        153,
+        164,
+        231,
+        178
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Patient-focused",
+      "box": [
+        99,
+        178,
+        204,
+        192
+      ],
+      "label": "O"
+    },
+    {
+      "text": "care",
+      "box": [
+        208,
+        178,
+        237,
+        192
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Strong",
+      "box": [
+        99,
+        193,
+        145,
+        206
+      ],
+      "label": "O"
+    },
+    {
+      "text": "work",
+      "box": [
+        148,
+        193,
+        182,
+        206
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ethic",
+      "box": [
+        186,
+        193,
+        219,
+        206
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        99,
+        207,
+        138,
+        221
+      ],
+      "label": "O"
+    },
+    {
+      "text": "player",
+      "box": [
+        140,
+        207,
+        182,
+        221
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        186,
+        207,
+        216,
+        221
+      ],
+      "label": "O"
+    },
+    {
+      "text": "positive",
+      "box": [
+        220,
+        207,
+        272,
+        221
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attitude",
+      "box": [
+        275,
+        207,
+        328,
+        221
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Proven",
+      "box": [
+        448,
+        114,
+        496,
+        128
+      ],
+      "label": "O"
+    },
+    {
+      "text": "patience",
+      "box": [
+        499,
+        114,
+        556,
+        128
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        560,
+        114,
+        586,
+        128
+      ],
+      "label": "O"
+    },
+    {
+      "text": "self-discipline",
+      "box": [
+        589,
+        114,
+        683,
+        128
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Personal",
+      "box": [
+        448,
+        129,
+        507,
+        142
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        511,
+        129,
+        537,
+        142
+      ],
+      "label": "O"
+    },
+    {
+      "text": "professional",
+      "box": [
+        541,
+        129,
+        622,
+        142
+      ],
+      "label": "O"
+    },
+    {
+      "text": "integrity",
+      "box": [
+        626,
+        129,
+        685,
+        142
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Relationship",
+      "box": [
+        448,
+        143,
+        535,
+        156
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        539,
+        143,
+        564,
+        156
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        568,
+        143,
+        602,
+        156
+      ],
+      "label": "O"
+    },
+    {
+      "text": "building",
+      "box": [
+        604,
+        143,
+        662,
+        156
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Staff",
+      "box": [
+        448,
+        157,
+        481,
+        171
+      ],
+      "label": "O"
+    },
+    {
+      "text": "training",
+      "box": [
+        484,
+        157,
+        540,
+        171
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        544,
+        157,
+        569,
+        171
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development",
+      "box": [
+        573,
+        157,
+        656,
+        171
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Effectively",
+      "box": [
+        448,
+        171,
+        520,
+        185
+      ],
+      "label": "O"
+    },
+    {
+      "text": "influences",
+      "box": [
+        523,
+        171,
+        594,
+        185
+      ],
+      "label": "O"
+    },
+    {
+      "text": "others",
+      "box": [
+        597,
+        171,
+        639,
+        185
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Critical",
+      "box": [
+        448,
+        186,
+        500,
+        199
+      ],
+      "label": "O"
+    },
+    {
+      "text": "thinking",
+      "box": [
+        504,
+        186,
+        563,
+        199
+      ],
+      "label": "O"
+    },
+    {
+      "text": "proficiency",
+      "box": [
+        567,
+        186,
+        642,
+        199
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cultural",
+      "box": [
+        448,
+        200,
+        506,
+        213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "awareness",
+      "box": [
+        510,
+        200,
+        580,
+        213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        583,
+        200,
+        609,
+        213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sensitivity",
+      "box": [
+        612,
+        200,
+        680,
+        213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        55,
+        235,
+        124,
+        248
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Patient",
+      "box": [
+        55,
+        249,
+        98,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Service",
+      "box": [
+        101,
+        249,
+        147,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Representative",
+      "box": [
+        150,
+        249,
+        241,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "03/2015",
+      "box": [
+        244,
+        249,
+        297,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        301,
+        249,
+        313,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Current",
+      "box": [
+        317,
+        249,
+        364,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        367,
+        249,
+        428,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        431,
+        249,
+        469,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        472,
+        249,
+        499,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        501,
+        249,
+        506,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        509,
+        249,
+        541,
+        263
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Trained",
+      "box": [
+        96,
+        275,
+        143,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new",
+      "box": [
+        146,
+        275,
+        173,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hires",
+      "box": [
+        176,
+        275,
+        204,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "andÂ",
+      "box": [
+        208,
+        275,
+        242,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        249,
+        275,
+        262,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in-house",
+      "box": [
+        264,
+        275,
+        316,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "staff",
+      "box": [
+        320,
+        275,
+        347,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "members",
+      "box": [
+        349,
+        275,
+        405,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        409,
+        275,
+        420,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "evaluation,",
+      "box": [
+        423,
+        275,
+        487,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        491,
+        275,
+        518,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "collection,",
+      "box": [
+        521,
+        275,
+        583,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "analysis",
+      "box": [
+        587,
+        275,
+        634,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        637,
+        275,
+        660,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reporting",
+      "box": [
+        664,
+        275,
+        720,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategies.",
+      "box": [
+        722,
+        275,
+        783,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Oversaw",
+      "box": [
+        96,
+        289,
+        153,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        155,
+        289,
+        182,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "queries",
+      "box": [
+        186,
+        289,
+        230,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        233,
+        289,
+        256,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "made",
+      "box": [
+        259,
+        289,
+        293,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sure",
+      "box": [
+        297,
+        289,
+        322,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        326,
+        289,
+        349,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "they",
+      "box": [
+        352,
+        289,
+        379,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "were",
+      "box": [
+        381,
+        289,
+        412,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rectified",
+      "box": [
+        416,
+        289,
+        465,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        468,
+        289,
+        480,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        482,
+        289,
+        501,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "most",
+      "box": [
+        504,
+        289,
+        534,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "efficient",
+      "box": [
+        538,
+        289,
+        585,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "manner.",
+      "box": [
+        588,
+        289,
+        637,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Answered",
+      "box": [
+        96,
+        303,
+        159,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "phone",
+      "box": [
+        162,
+        303,
+        200,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "calls,",
+      "box": [
+        204,
+        303,
+        234,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "emails,",
+      "box": [
+        238,
+        303,
+        280,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "letters",
+      "box": [
+        283,
+        303,
+        320,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        324,
+        303,
+        347,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "faxes",
+      "box": [
+        350,
+        303,
+        382,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        385,
+        303,
+        408,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "efficiently",
+      "box": [
+        412,
+        303,
+        470,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "provided",
+      "box": [
+        472,
+        303,
+        527,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accurate",
+      "box": [
+        531,
+        303,
+        583,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "information",
+      "box": [
+        586,
+        303,
+        655,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        658,
+        303,
+        680,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "responses.",
+      "box": [
+        684,
+        303,
+        749,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Guided",
+      "box": [
+        96,
+        317,
+        141,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        144,
+        317,
+        167,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "handled",
+      "box": [
+        170,
+        317,
+        218,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "16",
+      "box": [
+        222,
+        317,
+        239,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "-employees",
+      "box": [
+        242,
+        317,
+        313,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "including",
+      "box": [
+        317,
+        317,
+        371,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assistants;",
+      "box": [
+        373,
+        317,
+        435,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HR",
+      "box": [
+        438,
+        317,
+        460,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assistant",
+      "box": [
+        463,
+        317,
+        514,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(hiring",
+      "box": [
+        517,
+        317,
+        556,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        559,
+        317,
+        573,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "employees",
+      "box": [
+        575,
+        317,
+        640,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        644,
+        317,
+        666,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assisting",
+      "box": [
+        670,
+        317,
+        721,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        723,
+        317,
+        735,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "appraisals",
+      "box": [
+        737,
+        317,
+        799,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        802,
+        317,
+        820,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performance",
+      "box": [
+        823,
+        317,
+        900,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        904,
+        317,
+        927,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "corrective",
+      "box": [
+        96,
+        332,
+        157,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "action)",
+      "box": [
+        160,
+        332,
+        202,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "responsible",
+      "box": [
+        206,
+        332,
+        275,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        278,
+        332,
+        296,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "arrangement,",
+      "box": [
+        300,
+        332,
+        379,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolving",
+      "box": [
+        382,
+        332,
+        437,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "employee",
+      "box": [
+        440,
+        332,
+        499,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "discrepancies",
+      "box": [
+        502,
+        332,
+        585,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": ".",
+      "box": [
+        588,
+        332,
+        592,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ability",
+      "box": [
+        96,
+        346,
+        137,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        139,
+        346,
+        152,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "handle",
+      "box": [
+        155,
+        346,
+        195,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "high",
+      "box": [
+        199,
+        346,
+        225,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "volume",
+      "box": [
+        227,
+        346,
+        271,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        274,
+        346,
+        288,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inbound",
+      "box": [
+        290,
+        346,
+        339,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        343,
+        346,
+        366,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "outbound",
+      "box": [
+        369,
+        346,
+        427,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "calls,",
+      "box": [
+        431,
+        346,
+        461,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        465,
+        346,
+        488,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "concluded",
+      "box": [
+        491,
+        346,
+        554,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        558,
+        346,
+        577,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "nature",
+      "box": [
+        580,
+        346,
+        618,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        621,
+        346,
+        635,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "calls.As",
+      "box": [
+        637,
+        346,
+        686,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "well",
+      "box": [
+        689,
+        346,
+        715,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        717,
+        346,
+        731,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assisted",
+      "box": [
+        734,
+        346,
+        782,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "callers",
+      "box": [
+        786,
+        346,
+        825,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        828,
+        346,
+        841,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        844,
+        346,
+        863,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "proper",
+      "box": [
+        866,
+        346,
+        909,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Physician.",
+      "box": [
+        96,
+        360,
+        157,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Successfully",
+      "box": [
+        96,
+        374,
+        171,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "organized",
+      "box": [
+        173,
+        374,
+        233,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "appointments",
+      "box": [
+        236,
+        374,
+        317,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "between",
+      "box": [
+        321,
+        374,
+        374,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Physicians",
+      "box": [
+        376,
+        374,
+        439,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        443,
+        374,
+        466,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Patients,",
+      "box": [
+        469,
+        374,
+        521,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "responsible",
+      "box": [
+        525,
+        374,
+        594,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        597,
+        374,
+        615,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "typing",
+      "box": [
+        618,
+        374,
+        656,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports,",
+      "box": [
+        659,
+        374,
+        706,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "memos",
+      "box": [
+        710,
+        374,
+        754,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        758,
+        374,
+        780,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "other",
+      "box": [
+        784,
+        374,
+        816,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "correspondence",
+      "box": [
+        819,
+        374,
+        918,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        921,
+        374,
+        935,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "well",
+      "box": [
+        96,
+        389,
+        122,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        124,
+        389,
+        138,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "established",
+      "box": [
+        141,
+        389,
+        208,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accuracy,",
+      "box": [
+        212,
+        389,
+        271,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "consistent,",
+      "box": [
+        274,
+        389,
+        338,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "detail-oriented",
+      "box": [
+        342,
+        389,
+        430,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        434,
+        389,
+        457,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "capacity",
+      "box": [
+        460,
+        389,
+        512,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        514,
+        389,
+        527,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "carry",
+      "box": [
+        531,
+        389,
+        563,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "higher",
+      "box": [
+        566,
+        389,
+        603,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "responsibility.",
+      "box": [
+        606,
+        389,
+        689,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Proficient",
+      "box": [
+        96,
+        403,
+        154,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        157,
+        403,
+        169,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Windows,",
+      "box": [
+        171,
+        403,
+        234,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Word,",
+      "box": [
+        238,
+        403,
+        279,
+        416
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Excel,",
+      "box": [
+        282,
+        403,
+        320,
+        416
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Access,",
+      "box": [
+        324,
+        403,
+        372,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PowerPoint,",
+      "box": [
+        376,
+        403,
+        452,
+        416
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "ect.",
+      "box": [
+        456,
+        403,
+        478,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Efficient",
+      "box": [
+        96,
+        417,
+        145,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        148,
+        417,
+        160,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "registration",
+      "box": [
+        162,
+        417,
+        231,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        233,
+        417,
+        247,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "patients,",
+      "box": [
+        249,
+        417,
+        300,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "verifying",
+      "box": [
+        304,
+        417,
+        356,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "patient",
+      "box": [
+        358,
+        417,
+        399,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Demographics",
+      "box": [
+        402,
+        417,
+        491,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        494,
+        417,
+        499,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "entering",
+      "box": [
+        502,
+        417,
+        551,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        554,
+        417,
+        581,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        584,
+        417,
+        607,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "verifying",
+      "box": [
+        610,
+        417,
+        662,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "patients",
+      "box": [
+        665,
+        417,
+        712,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "insurance,",
+      "box": [
+        715,
+        417,
+        776,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "scheduling",
+      "box": [
+        780,
+        417,
+        844,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "patients",
+      "box": [
+        846,
+        417,
+        893,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "via",
+      "box": [
+        897,
+        417,
+        914,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "IDX,",
+      "box": [
+        96,
+        431,
+        127,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "scan",
+      "box": [
+        131,
+        431,
+        160,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "patient",
+      "box": [
+        162,
+        431,
+        204,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "documents.",
+      "box": [
+        207,
+        431,
+        277,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sending",
+      "box": [
+        96,
+        446,
+        146,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "messages",
+      "box": [
+        148,
+        446,
+        206,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        210,
+        446,
+        222,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pediatric,",
+      "box": [
+        226,
+        446,
+        283,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "adult,",
+      "box": [
+        286,
+        446,
+        320,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        324,
+        446,
+        347,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "specialty",
+      "box": [
+        350,
+        446,
+        404,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "physicians",
+      "box": [
+        406,
+        446,
+        469,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        472,
+        446,
+        484,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Clinicare.",
+      "box": [
+        486,
+        446,
+        544,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Paging",
+      "box": [
+        96,
+        460,
+        138,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Physicians",
+      "box": [
+        140,
+        460,
+        203,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "through",
+      "box": [
+        207,
+        460,
+        254,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Perfect",
+      "box": [
+        256,
+        460,
+        300,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Serve.",
+      "box": [
+        304,
+        460,
+        343,
+        474
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Knowledge",
+      "box": [
+        96,
+        474,
+        167,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        170,
+        474,
+        184,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Medical",
+      "box": [
+        187,
+        474,
+        238,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Terminology",
+      "box": [
+        240,
+        474,
+        317,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        320,
+        474,
+        343,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Health",
+      "box": [
+        346,
+        474,
+        387,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Care",
+      "box": [
+        389,
+        474,
+        420,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "related",
+      "box": [
+        424,
+        474,
+        466,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Training.",
+      "box": [
+        469,
+        474,
+        522,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Capable",
+      "box": [
+        96,
+        488,
+        148,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        151,
+        488,
+        165,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "managing",
+      "box": [
+        167,
+        488,
+        226,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        228,
+        488,
+        275,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tasks",
+      "box": [
+        278,
+        488,
+        310,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        314,
+        488,
+        341,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "an",
+      "box": [
+        343,
+        488,
+        359,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "emphasis",
+      "box": [
+        361,
+        488,
+        417,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        421,
+        488,
+        437,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "retaining",
+      "box": [
+        440,
+        488,
+        492,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quality",
+      "box": [
+        494,
+        488,
+        535,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "standards.",
+      "box": [
+        538,
+        488,
+        600,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ability",
+      "box": [
+        96,
+        503,
+        137,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        139,
+        503,
+        152,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quickly",
+      "box": [
+        155,
+        503,
+        200,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assess",
+      "box": [
+        203,
+        503,
+        242,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        245,
+        503,
+        268,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prioritize",
+      "box": [
+        271,
+        503,
+        324,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "projects",
+      "box": [
+        328,
+        503,
+        378,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        381,
+        503,
+        404,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "office",
+      "box": [
+        407,
+        503,
+        441,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tasks.",
+      "box": [
+        445,
+        503,
+        480,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Proficient",
+      "box": [
+        96,
+        517,
+        154,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at",
+      "box": [
+        157,
+        517,
+        169,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "evaluating",
+      "box": [
+        172,
+        517,
+        234,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "problems",
+      "box": [
+        236,
+        517,
+        293,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        297,
+        517,
+        319,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quickly",
+      "box": [
+        323,
+        517,
+        368,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "devising",
+      "box": [
+        370,
+        517,
+        420,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "practical",
+      "box": [
+        423,
+        517,
+        476,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "solutions.",
+      "box": [
+        478,
+        517,
+        535,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Handle",
+      "box": [
+        96,
+        531,
+        140,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cash,",
+      "box": [
+        143,
+        531,
+        175,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": "receipts",
+      "box": [
+        179,
+        531,
+        227,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",and",
+      "box": [
+        230,
+        531,
+        257,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tracked",
+      "box": [
+        260,
+        531,
+        307,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cash",
+      "box": [
+        311,
+        531,
+        339,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": "withdrawals.",
+      "box": [
+        342,
+        531,
+        419,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Human",
+      "box": [
+        55,
+        557,
+        100,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Resource",
+      "box": [
+        103,
+        557,
+        161,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assistant,",
+      "box": [
+        164,
+        557,
+        223,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Supervisor/Call",
+      "box": [
+        227,
+        557,
+        323,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cneter",
+      "box": [
+        325,
+        557,
+        363,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Supervisor",
+      "box": [
+        366,
+        557,
+        432,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "12/2011",
+      "box": [
+        436,
+        557,
+        489,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        492,
+        557,
+        505,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "03/2015",
+      "box": [
+        508,
+        557,
+        561,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        565,
+        557,
+        626,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        628,
+        557,
+        666,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        670,
+        557,
+        697,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        699,
+        557,
+        703,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        707,
+        557,
+        739,
+        570
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Properly",
+      "box": [
+        55,
+        571,
+        110,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "directed",
+      "box": [
+        112,
+        571,
+        162,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inbound",
+      "box": [
+        165,
+        571,
+        214,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "calls",
+      "box": [
+        218,
+        571,
+        245,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        248,
+        571,
+        260,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "phone",
+      "box": [
+        262,
+        571,
+        300,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "queues",
+      "box": [
+        304,
+        571,
+        347,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        350,
+        571,
+        363,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "improve",
+      "box": [
+        366,
+        571,
+        416,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "call",
+      "box": [
+        420,
+        571,
+        442,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "flow.",
+      "box": [
+        444,
+        571,
+        474,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Facilitated",
+      "box": [
+        55,
+        585,
+        119,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "information",
+      "box": [
+        122,
+        585,
+        191,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "flow",
+      "box": [
+        194,
+        585,
+        221,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "between",
+      "box": [
+        224,
+        585,
+        277,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        279,
+        585,
+        336,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service,",
+      "box": [
+        339,
+        585,
+        386,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "account",
+      "box": [
+        389,
+        585,
+        438,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        441,
+        585,
+        517,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "operations,",
+      "box": [
+        520,
+        585,
+        588,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quality",
+      "box": [
+        592,
+        585,
+        633,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assurance,",
+      "box": [
+        635,
+        585,
+        699,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "training",
+      "box": [
+        703,
+        585,
+        748,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        750,
+        585,
+        773,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "payroll",
+      "box": [
+        777,
+        585,
+        820,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "departments",
+      "box": [
+        822,
+        585,
+        897,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        901,
+        585,
+        913,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "guarantee",
+      "box": [
+        55,
+        600,
+        115,
+        613
+      ],
+      "label": "O"
+    },
+    {
+      "text": "call",
+      "box": [
+        118,
+        600,
+        140,
+        613
+      ],
+      "label": "O"
+    },
+    {
+      "text": "center",
+      "box": [
+        142,
+        600,
+        180,
+        613
+      ],
+      "label": "O"
+    },
+    {
+      "text": "objectives",
+      "box": [
+        184,
+        600,
+        246,
+        613
+      ],
+      "label": "O"
+    },
+    {
+      "text": "were",
+      "box": [
+        249,
+        600,
+        280,
+        613
+      ],
+      "label": "O"
+    },
+    {
+      "text": "met.",
+      "box": [
+        283,
+        600,
+        310,
+        613
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Led",
+      "box": [
+        55,
+        614,
+        80,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        84,
+        614,
+        91,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        95,
+        614,
+        126,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        128,
+        614,
+        142,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        144,
+        614,
+        200,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service",
+      "box": [
+        204,
+        614,
+        247,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "representatives",
+      "box": [
+        250,
+        614,
+        342,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        345,
+        614,
+        358,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        361,
+        614,
+        411,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service",
+      "box": [
+        415,
+        614,
+        458,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "center",
+      "box": [
+        461,
+        614,
+        499,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "profitability.",
+      "box": [
+        502,
+        614,
+        574,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assisted",
+      "box": [
+        55,
+        628,
+        107,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        111,
+        628,
+        138,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        140,
+        628,
+        159,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development",
+      "box": [
+        162,
+        628,
+        241,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        244,
+        628,
+        258,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        260,
+        628,
+        279,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "call",
+      "box": [
+        282,
+        628,
+        304,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "center's",
+      "box": [
+        307,
+        628,
+        354,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "operations,",
+      "box": [
+        357,
+        628,
+        425,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quality",
+      "box": [
+        429,
+        628,
+        470,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        472,
+        628,
+        495,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "training",
+      "box": [
+        498,
+        628,
+        543,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "processes.",
+      "box": [
+        546,
+        628,
+        611,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Selected",
+      "box": [
+        55,
+        642,
+        109,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        112,
+        642,
+        135,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interviewed",
+      "box": [
+        138,
+        642,
+        208,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "candidates",
+      "box": [
+        212,
+        642,
+        277,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        280,
+        642,
+        298,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        302,
+        642,
+        316,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "available",
+      "box": [
+        319,
+        642,
+        372,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "positions.",
+      "box": [
+        375,
+        642,
+        433,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conducted",
+      "box": [
+        437,
+        642,
+        505,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "telephone",
+      "box": [
+        508,
+        642,
+        567,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        571,
+        642,
+        594,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "onsite",
+      "box": [
+        597,
+        642,
+        633,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "exit",
+      "box": [
+        636,
+        642,
+        658,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interviews",
+      "box": [
+        662,
+        642,
+        723,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        726,
+        642,
+        744,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        747,
+        642,
+        762,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "employees.",
+      "box": [
+        765,
+        642,
+        833,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        55,
+        657,
+        107,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "closely",
+      "box": [
+        111,
+        657,
+        154,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        156,
+        657,
+        183,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HR",
+      "box": [
+        186,
+        657,
+        208,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "business",
+      "box": [
+        211,
+        657,
+        262,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partners",
+      "box": [
+        265,
+        657,
+        315,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        319,
+        657,
+        331,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "facilitate",
+      "box": [
+        335,
+        657,
+        385,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "year-end",
+      "box": [
+        388,
+        657,
+        443,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "talent",
+      "box": [
+        447,
+        657,
+        480,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reviews",
+      "box": [
+        483,
+        657,
+        530,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        534,
+        657,
+        556,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "articulate",
+      "box": [
+        560,
+        657,
+        615,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        618,
+        657,
+        650,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strengths.",
+      "box": [
+        652,
+        657,
+        709,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Helped",
+      "box": [
+        55,
+        671,
+        100,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "training",
+      "box": [
+        104,
+        671,
+        149,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        151,
+        671,
+        174,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development",
+      "box": [
+        178,
+        671,
+        256,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "staff",
+      "box": [
+        259,
+        671,
+        286,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        288,
+        671,
+        315,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        318,
+        671,
+        333,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "aspects",
+      "box": [
+        335,
+        671,
+        381,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        384,
+        671,
+        398,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "training",
+      "box": [
+        400,
+        671,
+        445,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "coordination.",
+      "box": [
+        448,
+        671,
+        528,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assisted",
+      "box": [
+        64,
+        685,
+        116,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        119,
+        685,
+        175,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service",
+      "box": [
+        179,
+        685,
+        222,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        225,
+        685,
+        252,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inbound",
+      "box": [
+        254,
+        685,
+        303,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        307,
+        685,
+        329,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "outbound",
+      "box": [
+        333,
+        685,
+        391,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "calls",
+      "box": [
+        394,
+        685,
+        421,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "regarding",
+      "box": [
+        425,
+        685,
+        483,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        485,
+        685,
+        500,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HR",
+      "box": [
+        502,
+        685,
+        525,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inquiries.",
+      "box": [
+        528,
+        685,
+        581,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Created",
+      "box": [
+        64,
+        699,
+        114,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "social",
+      "box": [
+        117,
+        699,
+        153,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "media",
+      "box": [
+        155,
+        699,
+        192,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "initiatives",
+      "box": [
+        196,
+        699,
+        251,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        254,
+        699,
+        272,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new",
+      "box": [
+        275,
+        699,
+        302,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "employee",
+      "box": [
+        305,
+        699,
+        364,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "search",
+      "box": [
+        367,
+        699,
+        408,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategies.",
+      "box": [
+        411,
+        699,
+        471,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Drafted",
+      "box": [
+        64,
+        714,
+        111,
+        727
+      ],
+      "label": "O"
+    },
+    {
+      "text": "department-specific",
+      "box": [
+        114,
+        714,
+        235,
+        727
+      ],
+      "label": "O"
+    },
+    {
+      "text": "employee",
+      "box": [
+        238,
+        714,
+        297,
+        727
+      ],
+      "label": "O"
+    },
+    {
+      "text": "announcements.",
+      "box": [
+        301,
+        714,
+        398,
+        727
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Partnered",
+      "box": [
+        64,
+        728,
+        124,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        127,
+        728,
+        154,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        156,
+        728,
+        175,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "IT",
+      "box": [
+        179,
+        728,
+        194,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "department",
+      "box": [
+        197,
+        728,
+        266,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        269,
+        728,
+        282,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "create",
+      "box": [
+        285,
+        728,
+        323,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        327,
+        728,
+        334,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "streamlined",
+      "box": [
+        338,
+        728,
+        407,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "onboarding",
+      "box": [
+        411,
+        728,
+        481,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "process",
+      "box": [
+        483,
+        728,
+        531,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        535,
+        728,
+        552,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new",
+      "box": [
+        556,
+        728,
+        582,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hires.",
+      "box": [
+        585,
+        728,
+        618,
+        742
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Salon",
+      "box": [
+        55,
+        785,
+        91,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager/",
+      "box": [
+        94,
+        785,
+        153,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Receptionist",
+      "box": [
+        156,
+        785,
+        232,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01/1999",
+      "box": [
+        235,
+        785,
+        288,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        292,
+        785,
+        304,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01/2011",
+      "box": [
+        308,
+        785,
+        361,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        364,
+        785,
+        425,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        428,
+        785,
+        466,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        469,
+        785,
+        496,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        498,
+        785,
+        503,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        506,
+        785,
+        538,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Created",
+      "box": [
+        55,
+        799,
+        105,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "repeat",
+      "box": [
+        109,
+        799,
+        148,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "business",
+      "box": [
+        151,
+        799,
+        202,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        206,
+        799,
+        222,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "developing",
+      "box": [
+        225,
+        799,
+        292,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "long-term",
+      "box": [
+        295,
+        799,
+        355,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "relationships",
+      "box": [
+        357,
+        799,
+        432,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        436,
+        799,
+        463,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "regular",
+      "box": [
+        465,
+        799,
+        507,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customers.",
+      "box": [
+        510,
+        799,
+        576,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enforced",
+      "box": [
+        55,
+        814,
+        112,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "safety",
+      "box": [
+        115,
+        814,
+        152,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "procedures",
+      "box": [
+        154,
+        814,
+        224,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        227,
+        814,
+        239,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accordance",
+      "box": [
+        241,
+        814,
+        312,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        316,
+        814,
+        343,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "facility",
+      "box": [
+        345,
+        814,
+        385,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "policies",
+      "box": [
+        387,
+        814,
+        433,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        437,
+        814,
+        460,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "government",
+      "box": [
+        463,
+        814,
+        534,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "regulations.",
+      "box": [
+        538,
+        814,
+        606,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accountable",
+      "box": [
+        55,
+        828,
+        133,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        136,
+        828,
+        154,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        157,
+        828,
+        172,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "staff",
+      "box": [
+        174,
+        828,
+        201,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development,",
+      "box": [
+        204,
+        828,
+        286,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "budgeting",
+      "box": [
+        289,
+        828,
+        350,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        352,
+        828,
+        375,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "supply",
+      "box": [
+        378,
+        828,
+        419,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ordering.",
+      "box": [
+        422,
+        828,
+        476,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        55,
+        842,
+        107,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "closely",
+      "box": [
+        111,
+        842,
+        154,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        156,
+        842,
+        183,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Salon",
+      "box": [
+        186,
+        842,
+        221,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teamÂ",
+      "box": [
+        224,
+        842,
+        266,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        268,
+        842,
+        281,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        283,
+        842,
+        296,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "produce",
+      "box": [
+        300,
+        842,
+        351,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "repeat",
+      "box": [
+        354,
+        842,
+        393,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "clientel",
+      "box": [
+        396,
+        842,
+        440,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": ".",
+      "box": [
+        442,
+        842,
+        446,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Re-designed",
+      "box": [
+        55,
+        856,
+        133,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "every",
+      "box": [
+        136,
+        856,
+        171,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "business",
+      "box": [
+        173,
+        856,
+        225,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "form,",
+      "box": [
+        228,
+        856,
+        261,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "containing",
+      "box": [
+        264,
+        856,
+        326,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "time",
+      "box": [
+        329,
+        856,
+        355,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        358,
+        856,
+        372,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inventory",
+      "box": [
+        374,
+        856,
+        431,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sheets",
+      "box": [
+        434,
+        856,
+        472,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        475,
+        856,
+        498,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "appointment",
+      "box": [
+        501,
+        856,
+        577,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "calendars",
+      "box": [
+        580,
+        856,
+        638,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        642,
+        856,
+        654,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        658,
+        856,
+        708,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "clarity",
+      "box": [
+        711,
+        856,
+        749,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        751,
+        856,
+        774,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "effectiveness.",
+      "box": [
+        778,
+        856,
+        859,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Increased",
+      "box": [
+        862,
+        856,
+        923,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "product",
+      "box": [
+        55,
+        871,
+        104,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sales",
+      "box": [
+        107,
+        871,
+        137,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        140,
+        871,
+        157,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "53%",
+      "box": [
+        159,
+        871,
+        190,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "within",
+      "box": [
+        193,
+        871,
+        230,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "first",
+      "box": [
+        232,
+        871,
+        255,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quarters",
+      "box": [
+        258,
+        871,
+        308,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        312,
+        871,
+        325,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Salon",
+      "box": [
+        329,
+        871,
+        365,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager.",
+      "box": [
+        367,
+        871,
+        426,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        55,
+        885,
+        123,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "productivity",
+      "box": [
+        126,
+        885,
+        199,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        202,
+        885,
+        216,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        218,
+        885,
+        294,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        298,
+        885,
+        314,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "arranging",
+      "box": [
+        317,
+        885,
+        374,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bi-monthly",
+      "box": [
+        376,
+        885,
+        442,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "meetings",
+      "box": [
+        445,
+        885,
+        498,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        501,
+        885,
+        514,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "talk",
+      "box": [
+        517,
+        885,
+        540,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "about",
+      "box": [
+        544,
+        885,
+        579,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accomplishments,",
+      "box": [
+        582,
+        885,
+        689,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "matters",
+      "box": [
+        693,
+        885,
+        738,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        741,
+        885,
+        764,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "room",
+      "box": [
+        768,
+        885,
+        802,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        804,
+        885,
+        822,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "enhancement",
+      "box": [
+        825,
+        885,
+        905,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Resolved",
+      "box": [
+        55,
+        899,
+        113,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "guest",
+      "box": [
+        116,
+        899,
+        148,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "complaints.",
+      "box": [
+        151,
+        899,
+        220,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Customer",
+      "box": [
+        55,
+        913,
+        116,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Service",
+      "box": [
+        119,
+        913,
+        165,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sales",
+      "box": [
+        168,
+        913,
+        201,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Associate",
+      "box": [
+        205,
+        913,
+        265,
+        927
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "01/1996",
+      "box": [
+        268,
+        913,
+        321,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        325,
+        913,
+        337,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01/1999",
+      "box": [
+        341,
+        913,
+        394,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        397,
+        913,
+        459,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        461,
+        913,
+        499,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        502,
+        913,
+        529,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        532,
+        913,
+        536,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        540,
+        913,
+        572,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fielded",
+      "box": [
+        575,
+        913,
+        621,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "an",
+      "box": [
+        624,
+        913,
+        640,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "average",
+      "box": [
+        643,
+        913,
+        691,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        694,
+        913,
+        708,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "150Â",
+      "box": [
+        710,
+        913,
+        747,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        749,
+        913,
+        806,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service",
+      "box": [
+        809,
+        913,
+        852,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "calls",
+      "box": [
+        855,
+        913,
+        882,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "per",
+      "box": [
+        886,
+        913,
+        907,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "day.",
+      "box": [
+        910,
+        913,
+        936,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Recommended",
+      "box": [
+        64,
+        942,
+        156,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        159,
+        942,
+        182,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "helped",
+      "box": [
+        186,
+        942,
+        227,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customers",
+      "box": [
+        230,
+        942,
+        292,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "select",
+      "box": [
+        296,
+        942,
+        331,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "merchandise",
+      "box": [
+        334,
+        942,
+        410,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        414,
+        942,
+        450,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        454,
+        942,
+        471,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "their",
+      "box": [
+        473,
+        942,
+        500,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needs.",
+      "box": [
+        503,
+        942,
+        543,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Exchanged",
+      "box": [
+        64,
+        1034,
+        131,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "returned",
+      "box": [
+        134,
+        1034,
+        185,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "merchandise",
+      "box": [
+        189,
+        1034,
+        265,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        268,
+        1034,
+        286,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customers",
+      "box": [
+        289,
+        1034,
+        352,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quickly",
+      "box": [
+        355,
+        1034,
+        400,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        402,
+        1034,
+        425,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "efficiently.",
+      "box": [
+        429,
+        1034,
+        489,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Confirmed",
+      "box": [
+        55,
+        1048,
+        121,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        124,
+        1048,
+        147,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "appropriate",
+      "box": [
+        150,
+        1048,
+        222,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "changes",
+      "box": [
+        225,
+        1048,
+        274,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "were",
+      "box": [
+        277,
+        1048,
+        308,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "made",
+      "box": [
+        312,
+        1048,
+        346,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        349,
+        1048,
+        362,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolve",
+      "box": [
+        365,
+        1048,
+        409,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customers'",
+      "box": [
+        413,
+        1048,
+        477,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "problems.",
+      "box": [
+        481,
+        1048,
+        542,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Exercises",
+      "box": [
+        55,
+        1062,
+        114,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sound",
+      "box": [
+        117,
+        1062,
+        154,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "judgment",
+      "box": [
+        157,
+        1062,
+        214,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        217,
+        1062,
+        229,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "issuing",
+      "box": [
+        231,
+        1062,
+        272,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "credits",
+      "box": [
+        274,
+        1062,
+        315,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        319,
+        1062,
+        342,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "making",
+      "box": [
+        345,
+        1062,
+        390,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "exceptions",
+      "box": [
+        392,
+        1062,
+        458,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        461,
+        1062,
+        474,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        477,
+        1062,
+        533,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "policies",
+      "box": [
+        537,
+        1062,
+        583,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        586,
+        1062,
+        599,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "maintain",
+      "box": [
+        602,
+        1062,
+        653,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "high",
+      "box": [
+        656,
+        1062,
+        681,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "levels",
+      "box": [
+        684,
+        1062,
+        718,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        721,
+        1062,
+        735,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        737,
+        1062,
+        794,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "satisfaction.",
+      "box": [
+        797,
+        1062,
+        868,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Extended",
+      "box": [
+        55,
+        1076,
+        114,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        117,
+        1076,
+        173,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "subscriptions,",
+      "box": [
+        177,
+        1076,
+        260,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "offering",
+      "box": [
+        263,
+        1076,
+        310,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "discounts",
+      "box": [
+        313,
+        1076,
+        370,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        373,
+        1076,
+        396,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "promotions",
+      "box": [
+        399,
+        1076,
+        469,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        472,
+        1076,
+        485,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ensure",
+      "box": [
+        488,
+        1076,
+        528,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "high",
+      "box": [
+        532,
+        1076,
+        557,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        560,
+        1076,
+        616,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "retention",
+      "box": [
+        619,
+        1076,
+        673,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rates.",
+      "box": [
+        676,
+        1076,
+        709,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Informed",
+      "box": [
+        55,
+        1091,
+        112,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customers",
+      "box": [
+        115,
+        1091,
+        177,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "about",
+      "box": [
+        181,
+        1091,
+        216,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sales",
+      "box": [
+        219,
+        1091,
+        249,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        252,
+        1091,
+        275,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "promotions",
+      "box": [
+        278,
+        1091,
+        348,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        351,
+        1091,
+        363,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        365,
+        1091,
+        373,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "friendly",
+      "box": [
+        376,
+        1091,
+        422,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        425,
+        1091,
+        447,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "engaging",
+      "box": [
+        451,
+        1091,
+        505,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "manner.",
+      "box": [
+        507,
+        1091,
+        556,
+        1104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Managed",
+      "box": [
+        55,
+        1105,
+        114,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "wide",
+      "box": [
+        117,
+        1105,
+        147,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "variety",
+      "box": [
+        150,
+        1105,
+        192,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        195,
+        1105,
+        209,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        211,
+        1105,
+        267,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service",
+      "box": [
+        270,
+        1105,
+        313,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        317,
+        1105,
+        339,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "administrative",
+      "box": [
+        343,
+        1105,
+        426,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tasks",
+      "box": [
+        430,
+        1105,
+        462,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        465,
+        1105,
+        478,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolve",
+      "box": [
+        481,
+        1105,
+        525,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        529,
+        1105,
+        585,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "issues",
+      "box": [
+        588,
+        1105,
+        624,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quickly",
+      "box": [
+        627,
+        1105,
+        672,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        675,
+        1105,
+        698,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "efficiently.",
+      "box": [
+        701,
+        1105,
+        762,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Trained",
+      "box": [
+        55,
+        1119,
+        102,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new",
+      "box": [
+        106,
+        1119,
+        133,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "employees",
+      "box": [
+        135,
+        1119,
+        200,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        204,
+        1119,
+        220,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "company",
+      "box": [
+        223,
+        1119,
+        280,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        282,
+        1119,
+        339,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service",
+      "box": [
+        342,
+        1119,
+        385,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "policies",
+      "box": [
+        388,
+        1119,
+        434,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        438,
+        1119,
+        461,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service",
+      "box": [
+        464,
+        1119,
+        507,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "level",
+      "box": [
+        510,
+        1119,
+        539,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "standards.",
+      "box": [
+        542,
+        1119,
+        604,
+        1133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        55,
+        1134,
+        118,
+        1147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        120,
+        1134,
+        143,
+        1147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Training",
+      "box": [
+        146,
+        1134,
+        196,
+        1147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bachelors",
+      "box": [
+        55,
+        1148,
+        117,
+        1161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        120,
+        1148,
+        134,
+        1161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        136,
+        1148,
+        163,
+        1161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2011",
+      "box": [
+        166,
+        1148,
+        199,
+        1161
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Harrington",
+      "box": [
+        203,
+        1148,
+        269,
+        1161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "College",
+      "box": [
+        271,
+        1148,
+        318,
+        1161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        322,
+        1148,
+        336,
+        1161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Design",
+      "box": [
+        338,
+        1148,
+        381,
+        1161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        55,
+        1162,
+        88,
+        1176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Patient-focused",
+      "box": [
+        96,
+        1188,
+        201,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "care",
+      "box": [
+        204,
+        1188,
+        233,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Excellent",
+      "box": [
+        96,
+        1202,
+        159,
+        1216
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interpersonal",
+      "box": [
+        162,
+        1202,
+        252,
+        1216
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        255,
+        1202,
+        290,
+        1216
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Compassionate",
+      "box": [
+        96,
+        1216,
+        198,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        203,
+        1216,
+        228,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "trustworthy",
+      "box": [
+        231,
+        1216,
+        308,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "caregiver",
+      "box": [
+        312,
+        1216,
+        377,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Time",
+      "box": [
+        96,
+        1230,
+        130,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        134,
+        1230,
+        221,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Detail-oriented",
+      "box": [
+        96,
+        1245,
+        199,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Effectively",
+      "box": [
+        96,
+        1259,
+        169,
+        1273
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interacts",
+      "box": [
+        172,
+        1259,
+        231,
+        1273
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        235,
+        1259,
+        264,
+        1273
+      ],
+      "label": "O"
+    },
+    {
+      "text": "patients",
+      "box": [
+        266,
+        1259,
+        319,
+        1273
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        324,
+        1259,
+        350,
+        1273
+      ],
+      "label": "O"
+    },
+    {
+      "text": "families.",
+      "box": [
+        352,
+        1259,
+        409,
+        1273
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Medical",
+      "box": [
+        96,
+        1273,
+        152,
+        1287
+      ],
+      "label": "O"
+    },
+    {
+      "text": "terminology",
+      "box": [
+        155,
+        1273,
+        236,
+        1287
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Charting",
+      "box": [
+        96,
+        1288,
+        155,
+        1301
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        158,
+        1288,
+        184,
+        1301
+      ],
+      "label": "O"
+    },
+    {
+      "text": "record",
+      "box": [
+        187,
+        1288,
+        232,
+        1301
+      ],
+      "label": "O"
+    },
+    {
+      "text": "keeping",
+      "box": [
+        234,
+        1288,
+        288,
+        1301
+      ],
+      "label": "O"
+    }
+  ]
+}

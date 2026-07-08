@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_013.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "UNIVERSITY OF",
+      "box": [
+        150,
+        231,
+        510,
+        296
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "CAMBRIDGE",
+      "box": [
+        142,
+        275,
+        512,
+        350
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Card explres",
+      "box": [
+        71,
+        640,
+        278,
+        684
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "06/2026",
+      "box": [
+        282,
+        629,
+        495,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "F Huszar",
+      "box": [
+        73,
+        717,
+        348,
+        779
+      ],
+      "label": "O"
+    }
+  ]
+}

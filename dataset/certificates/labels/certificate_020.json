@@ -1,0 +1,212 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_020.png",
+  "image_dimensions": [
+    649,
+    472
+  ],
+  "words": [
+    {
+      "text": "CERTIFICATE",
+      "box": [
+        594,
+        156,
+        884,
+        216
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "0F",
+      "box": [
+        599,
+        218,
+        642,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "APPRECIATION",
+      "box": [
+        651,
+        209,
+        876,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PRouUdlY PResented",
+      "box": [
+        371,
+        362,
+        639,
+        396
+      ],
+      "label": "O"
+    },
+    {
+      "text": "To",
+      "box": [
+        645,
+        362,
+        682,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GYlame  Sutname",
+      "box": [
+        291,
+        400,
+        747,
+        527
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lorem ipsum Dolor sit Amet,",
+      "box": [
+        297,
+        540,
+        593,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": "consectetur",
+      "box": [
+        599,
+        540,
+        738,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cttbltu",
+      "box": [
+        745,
+        601,
+        795,
+        614
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Wennmn nn",
+      "box": [
+        234,
+        618,
+        311,
+        631
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        320,
+        618,
+        354,
+        631
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mnelnte mclenun Wlemeenenamt",
+      "box": [
+        369,
+        618,
+        548,
+        631
+      ],
+      "label": "O"
+    },
+    {
+      "text": "aenanenmleuni",
+      "box": [
+        653,
+        618,
+        801,
+        631
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tenn",
+      "box": [
+        338,
+        639,
+        379,
+        648
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Man am",
+      "box": [
+        406,
+        639,
+        468,
+        648
+      ],
+      "label": "O"
+    },
+    {
+      "text": "neaue",
+      "box": [
+        471,
+        639,
+        505,
+        652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "elamentum",
+      "box": [
+        530,
+        631,
+        596,
+        656
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cane",
+      "box": [
+        604,
+        639,
+        647,
+        648
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Facut",
+      "box": [
+        736,
+        639,
+        770,
+        652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ghandue",
+      "box": [
+        443,
+        813,
+        508,
+        826
+      ],
+      "label": "O"
+    }
+  ]
+}

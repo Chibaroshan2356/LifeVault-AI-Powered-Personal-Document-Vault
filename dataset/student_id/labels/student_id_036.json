@@ -1,0 +1,202 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_036.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "UTTARA UNIVERSITY",
+      "box": [
+        220,
+        192,
+        804,
+        289
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Uttara; Dhaka-1230, Tel : 8919116, 8919794, 9132287",
+      "box": [
+        225,
+        278,
+        793,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "WENuW CARd",
+      "box": [
+        354,
+        317,
+        673,
+        376
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        234,
+        612,
+        337,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Shubel",
+      "box": [
+        396,
+        612,
+        521,
+        653
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID No",
+      "box": [
+        231,
+        656,
+        334,
+        700
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "M 21112333009",
+      "box": [
+        400,
+        656,
+        668,
+        700
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Department: CSE",
+      "box": [
+        231,
+        700,
+        468,
+        743
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Program",
+      "box": [
+        228,
+        742,
+        354,
+        793
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "CSE",
+      "box": [
+        393,
+        743,
+        468,
+        787
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Semester : Spring-2013",
+      "box": [
+        231,
+        785,
+        575,
+        835
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Batch",
+      "box": [
+        231,
+        831,
+        318,
+        871
+      ],
+      "label": "O"
+    },
+    {
+      "text": "38th",
+      "box": [
+        393,
+        831,
+        465,
+        875
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Issue Date",
+      "box": [
+        228,
+        878,
+        371,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sep 01,2013",
+      "box": [
+        393,
+        875,
+        587,
+        918
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Valid Upto",
+      "box": [
+        231,
+        918,
+        384,
+        968
+      ],
+      "label": "O"
+    },
+    {
+      "text": "30,2016",
+      "box": [
+        456,
+        918,
+        590,
+        965
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Registrar",
+      "box": [
+        640,
+        931,
+        778,
+        968
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Aug",
+      "box": [
+        386,
+        917,
+        458,
+        968
+      ],
+      "label": "O"
+    }
+  ]
+}

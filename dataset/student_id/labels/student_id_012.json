@@ -1,0 +1,142 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_012.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Imperial College",
+      "box": [
+        248,
+        354,
+        504,
+        404
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "London",
+      "box": [
+        250,
+        396,
+        384,
+        434
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "FANKANG MENG",
+      "box": [
+        267,
+        529,
+        420,
+        551
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "BIOENGINEERING",
+      "box": [
+        265,
+        551,
+        423,
+        579
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "~id01848444",
+      "box": [
+        600,
+        571,
+        693,
+        584
+      ],
+      "label": "O"
+    },
+    {
+      "text": "STUDENT (PG)",
+      "box": [
+        267,
+        582,
+        398,
+        604
+      ],
+      "label": "O"
+    },
+    {
+      "text": "LIBRARY NC 0248385-+93",
+      "box": [
+        517,
+        589,
+        698,
+        614
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        65,
+        520,
+        106,
+        721
+      ],
+      "label": "O"
+    },
+    {
+      "text": "05,/10/2024",
+      "box": [
+        270,
+        607,
+        360,
+        629
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CARDRO",
+      "box": [
+        581,
+        612,
+        643,
+        625
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "Fuet",
+      "box": [
+        650,
+        612,
+        693,
+        621
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        101,
+        617,
+        132,
+        720
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        107,
+        281,
+        162,
+        367
+      ],
+      "label": "O"
+    }
+  ]
+}

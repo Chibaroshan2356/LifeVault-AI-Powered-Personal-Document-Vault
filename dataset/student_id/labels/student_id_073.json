@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_073.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "University of Sao Paulo",
+      "box": [
+        51,
+        304,
+        653,
+        381
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Sherry Smith",
+      "box": [
+        51,
+        420,
+        370,
+        482
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "ID 15272541",
+      "box": [
+        54,
+        526,
+        182,
+        551
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Explily Date: Valid until 2027,06/17",
+      "box": [
+        57,
+        635,
+        373,
+        660
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Ask",
+      "box": [
+        654,
+        901,
+        764,
+        964
+      ],
+      "label": "I-ORGANIZATION"
+    }
+  ]
+}

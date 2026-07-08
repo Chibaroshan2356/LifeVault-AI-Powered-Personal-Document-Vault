@@ -1,0 +1,112 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_017.png",
+  "image_dimensions": [
+    659,
+    465
+  ],
+  "words": [
+    {
+      "text": "SCHOLARSHIP AWARD",
+      "box": [
+        285,
+        180,
+        716,
+        245
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "We proudly given thiscertificateto",
+      "box": [
+        362,
+        281,
+        638,
+        316
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Jyb",
+      "box": [
+        355,
+        374,
+        470,
+        481
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Inufwv",
+      "box": [
+        470,
+        335,
+        713,
+        503
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "awardedafull scholarshipforthe academicyear2020-2022,for his exemplary",
+      "box": [
+        201,
+        533,
+        817,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": "academicrecord Givenbythe School Alumni Associationonthe 3th of June 2021,",
+      "box": [
+        183,
+        569,
+        811,
+        604
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Richard Sanchez",
+      "box": [
+        220,
+        759,
+        359,
+        784
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Morgan Maxwell",
+      "box": [
+        638,
+        759,
+        784,
+        789
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Chiel Executive",
+      "box": [
+        226,
+        789,
+        353,
+        815
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Ca Fxecutive",
+      "box": [
+        660,
+        789,
+        766,
+        819
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    }
+  ]
+}

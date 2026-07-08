@@ -1,0 +1,52 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_057.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Kings College London",
+      "box": [
+        56,
+        56,
+        264,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jonathan",
+      "box": [
+        57,
+        232,
+        151,
+        254
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID: 30425798",
+      "box": [
+        51,
+        401,
+        439,
+        464
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expiry Date: Expires: October 202",
+      "box": [
+        53,
+        571,
+        1000,
+        646
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    }
+  ]
+}

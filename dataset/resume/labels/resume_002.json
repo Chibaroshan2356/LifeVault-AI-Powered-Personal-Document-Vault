@@ -1,0 +1,6592 @@
+{
+  "document_metadata": {
+    "category": "Resume"
+  },
+  "image_filename": "resume_002.png",
+  "image_dimensions": [
+    595,
+    842
+  ],
+  "words": [
+    {
+      "text": "ACCOUNTANT",
+      "box": [
+        55,
+        34,
+        167,
+        47
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Summary",
+      "box": [
+        55,
+        48,
+        115,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "A",
+      "box": [
+        55,
+        62,
+        68,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "detail",
+      "box": [
+        71,
+        62,
+        105,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "oriented,",
+      "box": [
+        107,
+        62,
+        161,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "efficient",
+      "box": [
+        164,
+        62,
+        212,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accountant",
+      "box": [
+        215,
+        62,
+        281,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        284,
+        62,
+        307,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "excels",
+      "box": [
+        311,
+        62,
+        349,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        352,
+        62,
+        364,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "managing",
+      "box": [
+        366,
+        62,
+        424,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        427,
+        62,
+        474,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tasks",
+      "box": [
+        477,
+        62,
+        509,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        512,
+        62,
+        524,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "fast",
+      "box": [
+        527,
+        62,
+        548,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "paced",
+      "box": [
+        552,
+        62,
+        590,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "environments.Â",
+      "box": [
+        593,
+        62,
+        689,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "A",
+      "box": [
+        696,
+        62,
+        708,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "proven",
+      "box": [
+        711,
+        62,
+        755,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "track",
+      "box": [
+        758,
+        62,
+        789,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "record",
+      "box": [
+        793,
+        62,
+        834,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        837,
+        62,
+        849,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "meeting",
+      "box": [
+        851,
+        62,
+        899,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "deadlines,",
+      "box": [
+        55,
+        76,
+        116,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "streamlining",
+      "box": [
+        120,
+        76,
+        192,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "processes",
+      "box": [
+        195,
+        76,
+        256,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        259,
+        76,
+        282,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "promoting",
+      "box": [
+        285,
+        76,
+        349,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        351,
+        76,
+        359,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "positive",
+      "box": [
+        362,
+        76,
+        409,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "work",
+      "box": [
+        413,
+        76,
+        445,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "environment.Â",
+      "box": [
+        449,
+        76,
+        539,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Articulate",
+      "box": [
+        546,
+        76,
+        605,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "communicator",
+      "box": [
+        608,
+        76,
+        695,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "known",
+      "box": [
+        698,
+        76,
+        741,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        743,
+        76,
+        761,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "delivering",
+      "box": [
+        765,
+        76,
+        824,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "excellent",
+      "box": [
+        826,
+        76,
+        879,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        883,
+        76,
+        939,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "service",
+      "box": [
+        55,
+        91,
+        98,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "both",
+      "box": [
+        102,
+        91,
+        131,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "internally",
+      "box": [
+        133,
+        91,
+        188,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        191,
+        91,
+        213,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "externally.Â",
+      "box": [
+        217,
+        91,
+        291,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Self-motivated",
+      "box": [
+        298,
+        91,
+        387,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        390,
+        91,
+        422,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "player",
+      "box": [
+        424,
+        91,
+        462,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "who",
+      "box": [
+        465,
+        91,
+        492,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "demonstrates",
+      "box": [
+        495,
+        91,
+        577,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        580,
+        91,
+        588,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "high",
+      "box": [
+        591,
+        91,
+        617,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "level",
+      "box": [
+        619,
+        91,
+        648,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        651,
+        91,
+        664,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quality",
+      "box": [
+        667,
+        91,
+        708,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "work",
+      "box": [
+        710,
+        91,
+        743,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        746,
+        91,
+        769,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "professionalism",
+      "box": [
+        773,
+        91,
+        868,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        55,
+        105,
+        118,
+        119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bachelor",
+      "box": [
+        55,
+        119,
+        111,
+        133
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        114,
+        119,
+        128,
+        133
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Science",
+      "box": [
+        130,
+        119,
+        178,
+        133
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ":",
+      "box": [
+        182,
+        119,
+        186,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accounting",
+      "box": [
+        189,
+        119,
+        259,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        261,
+        119,
+        284,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Information",
+      "box": [
+        287,
+        119,
+        359,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Management",
+      "box": [
+        361,
+        119,
+        441,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "University",
+      "box": [
+        444,
+        119,
+        506,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        508,
+        119,
+        522,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Texas",
+      "box": [
+        525,
+        119,
+        562,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at",
+      "box": [
+        565,
+        119,
+        577,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dallas",
+      "box": [
+        580,
+        119,
+        618,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bachelor",
+      "box": [
+        55,
+        134,
+        111,
+        147
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        114,
+        134,
+        128,
+        147
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        130,
+        134,
+        157,
+        147
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ":",
+      "box": [
+        160,
+        134,
+        165,
+        147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Psychology",
+      "box": [
+        167,
+        134,
+        239,
+        147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "University",
+      "box": [
+        241,
+        134,
+        303,
+        147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        306,
+        134,
+        319,
+        147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Texas",
+      "box": [
+        322,
+        134,
+        359,
+        147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at",
+      "box": [
+        362,
+        134,
+        374,
+        147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dallas",
+      "box": [
+        377,
+        134,
+        415,
+        147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Highlights",
+      "box": [
+        55,
+        148,
+        115,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Account",
+      "box": [
+        99,
+        164,
+        151,
+        178
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reconciliation",
+      "box": [
+        154,
+        164,
+        236,
+        178
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expert",
+      "box": [
+        238,
+        164,
+        277,
+        178
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Financial",
+      "box": [
+        99,
+        178,
+        154,
+        192
+      ],
+      "label": "O"
+    },
+    {
+      "text": "modeling",
+      "box": [
+        156,
+        178,
+        212,
+        192
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Variance",
+      "box": [
+        99,
+        193,
+        154,
+        206
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analysis",
+      "box": [
+        157,
+        193,
+        208,
+        206
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Corporate",
+      "box": [
+        99,
+        207,
+        163,
+        220
+      ],
+      "label": "O"
+    },
+    {
+      "text": "G&A",
+      "box": [
+        166,
+        207,
+        202,
+        220
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        205,
+        207,
+        228,
+        220
+      ],
+      "label": "O"
+    },
+    {
+      "text": "COGS",
+      "box": [
+        231,
+        207,
+        275,
+        220
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accounting",
+      "box": [
+        278,
+        207,
+        349,
+        220
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cash",
+      "box": [
+        99,
+        221,
+        132,
+        235
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Forecasting",
+      "box": [
+        134,
+        221,
+        206,
+        235
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Capitalization",
+      "box": [
+        99,
+        235,
+        182,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        185,
+        235,
+        207,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fixed",
+      "box": [
+        211,
+        235,
+        246,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assets",
+      "box": [
+        249,
+        235,
+        290,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analytical",
+      "box": [
+        391,
+        171,
+        453,
+        185
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reasoning",
+      "box": [
+        455,
+        171,
+        514,
+        185
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Effective",
+      "box": [
+        391,
+        186,
+        444,
+        199
+      ],
+      "label": "O"
+    },
+    {
+      "text": "time",
+      "box": [
+        448,
+        186,
+        474,
+        199
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        477,
+        186,
+        554,
+        199
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Superior",
+      "box": [
+        391,
+        200,
+        445,
+        213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "research",
+      "box": [
+        448,
+        200,
+        501,
+        213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        503,
+        200,
+        533,
+        213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intermediate",
+      "box": [
+        391,
+        214,
+        468,
+        228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Excel",
+      "box": [
+        471,
+        214,
+        506,
+        228
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        508,
+        214,
+        541,
+        228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "including",
+      "box": [
+        545,
+        214,
+        599,
+        228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pivot",
+      "box": [
+        601,
+        214,
+        633,
+        228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tables",
+      "box": [
+        636,
+        214,
+        678,
+        228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        681,
+        214,
+        704,
+        228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "V-Lookups",
+      "box": [
+        707,
+        214,
+        779,
+        228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Inventory",
+      "box": [
+        391,
+        228,
+        450,
+        242
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accounting",
+      "box": [
+        453,
+        228,
+        523,
+        242
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Computer",
+      "box": [
+        55,
+        263,
+        118,
+        277
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        121,
+        263,
+        154,
+        277
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Netsuite;",
+      "box": [
+        55,
+        277,
+        111,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Quickbooks;",
+      "box": [
+        114,
+        277,
+        194,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cognos",
+      "box": [
+        198,
+        277,
+        246,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Impromptu;",
+      "box": [
+        249,
+        277,
+        322,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "JDEdwards;",
+      "box": [
+        325,
+        277,
+        401,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AS400;",
+      "box": [
+        404,
+        277,
+        454,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sage",
+      "box": [
+        457,
+        277,
+        488,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FAS",
+      "box": [
+        491,
+        277,
+        521,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fixed",
+      "box": [
+        525,
+        277,
+        559,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assets;",
+      "box": [
+        563,
+        277,
+        608,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "BNA",
+      "box": [
+        611,
+        277,
+        646,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fixed",
+      "box": [
+        649,
+        277,
+        683,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assets;",
+      "box": [
+        687,
+        277,
+        732,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "BusinessObjects",
+      "box": [
+        735,
+        277,
+        837,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Crystal",
+      "box": [
+        840,
+        277,
+        885,
+        291
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reports(currently",
+      "box": [
+        55,
+        292,
+        163,
+        305
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SAP",
+      "box": [
+        165,
+        292,
+        195,
+        305
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Crystal",
+      "box": [
+        199,
+        292,
+        244,
+        305
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reports);",
+      "box": [
+        246,
+        292,
+        304,
+        305
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Hyperion",
+      "box": [
+        308,
+        292,
+        366,
+        305
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Essbase",
+      "box": [
+        368,
+        292,
+        418,
+        305
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        55,
+        306,
+        124,
+        320
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        320,
+        117,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        320,
+        157,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        160,
+        320,
+        187,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        190,
+        320,
+        194,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        198,
+        320,
+        230,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accountant",
+      "box": [
+        233,
+        320,
+        303,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "12/2012",
+      "box": [
+        307,
+        320,
+        360,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        363,
+        320,
+        376,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Current",
+      "box": [
+        379,
+        320,
+        426,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "â—​",
+      "box": [
+        55,
+        335,
+        80,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        83,
+        335,
+        95,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Compile",
+      "box": [
+        98,
+        335,
+        150,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        153,
+        335,
+        176,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "analyze",
+      "box": [
+        180,
+        335,
+        225,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "financial",
+      "box": [
+        228,
+        335,
+        278,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "information",
+      "box": [
+        280,
+        335,
+        350,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        352,
+        335,
+        365,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prepare",
+      "box": [
+        368,
+        335,
+        416,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "financial",
+      "box": [
+        420,
+        335,
+        470,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "statements",
+      "box": [
+        472,
+        335,
+        536,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        540,
+        335,
+        552,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "be",
+      "box": [
+        556,
+        335,
+        572,
+        348
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "distributed",
+      "box": [
+        575,
+        335,
+        639,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "internally",
+      "box": [
+        643,
+        335,
+        698,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        700,
+        335,
+        723,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "externally",
+      "box": [
+        726,
+        335,
+        785,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "â—​",
+      "box": [
+        55,
+        349,
+        80,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        83,
+        349,
+        95,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reconcile",
+      "box": [
+        98,
+        349,
+        158,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bank",
+      "box": [
+        161,
+        349,
+        192,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounts",
+      "box": [
+        196,
+        349,
+        250,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        253,
+        349,
+        266,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "general",
+      "box": [
+        269,
+        349,
+        314,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ledger",
+      "box": [
+        317,
+        349,
+        355,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        358,
+        349,
+        375,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        377,
+        349,
+        385,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        388,
+        349,
+        437,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "basis",
+      "box": [
+        440,
+        349,
+        471,
+        362
+      ],
+      "label": "O"
+    },
+    {
+      "text": "â—​",
+      "box": [
+        55,
+        363,
+        80,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        83,
+        363,
+        95,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manage",
+      "box": [
+        98,
+        363,
+        148,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "fixed",
+      "box": [
+        151,
+        363,
+        181,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assets",
+      "box": [
+        185,
+        363,
+        222,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ensuring",
+      "box": [
+        225,
+        363,
+        276,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        278,
+        363,
+        293,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assets",
+      "box": [
+        296,
+        363,
+        333,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        336,
+        363,
+        359,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "meet",
+      "box": [
+        362,
+        363,
+        392,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "our",
+      "box": [
+        395,
+        363,
+        416,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "threshold",
+      "box": [
+        420,
+        363,
+        476,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "are",
+      "box": [
+        479,
+        363,
+        499,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "input",
+      "box": [
+        502,
+        363,
+        532,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accurately",
+      "box": [
+        536,
+        363,
+        599,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        601,
+        363,
+        624,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "depreciated",
+      "box": [
+        627,
+        363,
+        700,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "properly",
+      "box": [
+        703,
+        363,
+        756,
+        377
+      ],
+      "label": "O"
+    },
+    {
+      "text": "â—​",
+      "box": [
+        55,
+        377,
+        80,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        83,
+        377,
+        95,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analyze",
+      "box": [
+        98,
+        377,
+        147,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inventory",
+      "box": [
+        150,
+        377,
+        207,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expense",
+      "box": [
+        210,
+        377,
+        260,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        263,
+        377,
+        286,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assets",
+      "box": [
+        289,
+        377,
+        326,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounts;",
+      "box": [
+        330,
+        377,
+        388,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Research",
+      "box": [
+        391,
+        377,
+        449,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        452,
+        377,
+        475,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolve",
+      "box": [
+        478,
+        377,
+        522,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "discrepancies",
+      "box": [
+        526,
+        377,
+        608,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        611,
+        377,
+        623,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "coordination",
+      "box": [
+        625,
+        377,
+        703,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        705,
+        377,
+        732,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fulfillment",
+      "box": [
+        734,
+        377,
+        797,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        800,
+        377,
+        831,
+        391
+      ],
+      "label": "O"
+    },
+    {
+      "text": "â—​",
+      "box": [
+        55,
+        392,
+        80,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        83,
+        392,
+        95,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Monitor",
+      "box": [
+        98,
+        392,
+        148,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        151,
+        392,
+        174,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "record",
+      "box": [
+        178,
+        392,
+        218,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bank",
+      "box": [
+        222,
+        392,
+        253,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activity",
+      "box": [
+        256,
+        392,
+        300,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        303,
+        392,
+        319,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        322,
+        392,
+        329,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        333,
+        392,
+        363,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "basis;",
+      "box": [
+        365,
+        392,
+        400,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analyze",
+      "box": [
+        403,
+        392,
+        453,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "past",
+      "box": [
+        456,
+        392,
+        482,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "costs",
+      "box": [
+        485,
+        392,
+        517,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        520,
+        392,
+        543,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "revenue",
+      "box": [
+        547,
+        392,
+        595,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        598,
+        392,
+        611,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "provide",
+      "box": [
+        614,
+        392,
+        661,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cash",
+      "box": [
+        665,
+        392,
+        694,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "forecast",
+      "box": [
+        696,
+        392,
+        745,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "weekly",
+      "box": [
+        748,
+        392,
+        793,
+        405
+      ],
+      "label": "O"
+    },
+    {
+      "text": "â—​",
+      "box": [
+        55,
+        406,
+        80,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        83,
+        406,
+        95,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Record",
+      "box": [
+        98,
+        406,
+        144,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cash",
+      "box": [
+        147,
+        406,
+        176,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "receipts",
+      "box": [
+        179,
+        406,
+        227,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        230,
+        406,
+        253,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "revenue",
+      "box": [
+        256,
+        406,
+        304,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        308,
+        406,
+        326,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "associated",
+      "box": [
+        329,
+        406,
+        393,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "company;",
+      "box": [
+        396,
+        406,
+        457,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reconcile",
+      "box": [
+        460,
+        406,
+        520,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sub-ledger",
+      "box": [
+        523,
+        406,
+        589,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        592,
+        406,
+        605,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "general",
+      "box": [
+        608,
+        406,
+        653,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ledger",
+      "box": [
+        656,
+        406,
+        694,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        697,
+        406,
+        714,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "verifying",
+      "box": [
+        716,
+        406,
+        768,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        771,
+        406,
+        820,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activity",
+      "box": [
+        822,
+        406,
+        866,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "â—​",
+      "box": [
+        55,
+        420,
+        80,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        83,
+        420,
+        95,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Forecast",
+      "box": [
+        98,
+        420,
+        152,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "balance",
+      "box": [
+        155,
+        420,
+        202,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sheet",
+      "box": [
+        206,
+        420,
+        238,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        241,
+        420,
+        264,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cash",
+      "box": [
+        267,
+        420,
+        296,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "flow",
+      "box": [
+        299,
+        420,
+        326,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "forecast",
+      "box": [
+        329,
+        420,
+        378,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        381,
+        420,
+        418,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        422,
+        420,
+        438,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "yearly",
+      "box": [
+        441,
+        420,
+        479,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "budgeted",
+      "box": [
+        481,
+        420,
+        538,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "income",
+      "box": [
+        542,
+        420,
+        586,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "statement",
+      "box": [
+        589,
+        420,
+        647,
+        434
+      ],
+      "label": "O"
+    },
+    {
+      "text": "â—​",
+      "box": [
+        55,
+        434,
+        80,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        83,
+        434,
+        95,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reduced",
+      "box": [
+        102,
+        434,
+        157,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "closing",
+      "box": [
+        160,
+        434,
+        203,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "time",
+      "box": [
+        206,
+        434,
+        232,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        235,
+        434,
+        253,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        256,
+        434,
+        305,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        308,
+        434,
+        330,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quarterly",
+      "box": [
+        334,
+        434,
+        389,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "close",
+      "box": [
+        391,
+        434,
+        423,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        427,
+        434,
+        443,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "25",
+      "box": [
+        446,
+        434,
+        463,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "%",
+      "box": [
+        466,
+        434,
+        480,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        483,
+        434,
+        500,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "implementing",
+      "box": [
+        502,
+        434,
+        583,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "more",
+      "box": [
+        585,
+        434,
+        617,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accurate",
+      "box": [
+        620,
+        434,
+        672,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        676,
+        434,
+        699,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "efficient",
+      "box": [
+        702,
+        434,
+        749,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "procedures",
+      "box": [
+        752,
+        434,
+        822,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        463,
+        117,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        463,
+        157,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        160,
+        463,
+        192,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Staff",
+      "box": [
+        196,
+        463,
+        226,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accountant",
+      "box": [
+        228,
+        463,
+        298,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "09/2008",
+      "box": [
+        302,
+        463,
+        355,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        358,
+        463,
+        371,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "12/2012",
+      "box": [
+        374,
+        463,
+        427,
+        476
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tracked",
+      "box": [
+        96,
+        488,
+        148,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "capital",
+      "box": [
+        151,
+        488,
+        192,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "improvement",
+      "box": [
+        195,
+        488,
+        274,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "projects",
+      "box": [
+        277,
+        488,
+        327,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        331,
+        488,
+        343,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AS400",
+      "box": [
+        345,
+        488,
+        390,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "system",
+      "box": [
+        393,
+        488,
+        437,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        439,
+        488,
+        455,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "checking",
+      "box": [
+        458,
+        488,
+        513,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "status",
+      "box": [
+        515,
+        488,
+        550,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        554,
+        488,
+        577,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "confirming",
+      "box": [
+        580,
+        488,
+        644,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expenditures;",
+      "box": [
+        647,
+        488,
+        728,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "provided",
+      "box": [
+        731,
+        488,
+        786,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounting",
+      "box": [
+        790,
+        488,
+        856,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "support",
+      "box": [
+        858,
+        488,
+        906,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        909,
+        488,
+        923,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needed",
+      "box": [
+        96,
+        503,
+        141,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Managed",
+      "box": [
+        96,
+        517,
+        154,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "fixed",
+      "box": [
+        157,
+        517,
+        187,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assets;",
+      "box": [
+        191,
+        517,
+        232,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Generated",
+      "box": [
+        235,
+        517,
+        299,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "year",
+      "box": [
+        303,
+        517,
+        330,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "end",
+      "box": [
+        333,
+        517,
+        356,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "depreciation",
+      "box": [
+        359,
+        517,
+        435,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports",
+      "box": [
+        438,
+        517,
+        482,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        485,
+        517,
+        508,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "recorded",
+      "box": [
+        511,
+        517,
+        567,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        571,
+        517,
+        584,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        587,
+        517,
+        606,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "general",
+      "box": [
+        609,
+        517,
+        654,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ledger;",
+      "box": [
+        657,
+        517,
+        699,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coordinated",
+      "box": [
+        702,
+        517,
+        779,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        783,
+        517,
+        806,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conducted",
+      "box": [
+        809,
+        517,
+        873,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "city-wide",
+      "box": [
+        877,
+        517,
+        934,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "asset",
+      "box": [
+        96,
+        531,
+        127,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": "audit",
+      "box": [
+        130,
+        531,
+        160,
+        545
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Investigated",
+      "box": [
+        96,
+        545,
+        169,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        172,
+        545,
+        195,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolved",
+      "box": [
+        199,
+        545,
+        251,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "discrepancies",
+      "box": [
+        254,
+        545,
+        337,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        340,
+        545,
+        352,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        354,
+        545,
+        403,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bank",
+      "box": [
+        405,
+        545,
+        436,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounts",
+      "box": [
+        440,
+        545,
+        494,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "while",
+      "box": [
+        497,
+        545,
+        529,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "under",
+      "box": [
+        533,
+        545,
+        568,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tight",
+      "box": [
+        571,
+        545,
+        597,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "deadlines.",
+      "box": [
+        600,
+        545,
+        661,
+        559
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Verified",
+      "box": [
+        96,
+        560,
+        145,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "department",
+      "box": [
+        148,
+        560,
+        218,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "software",
+      "box": [
+        221,
+        560,
+        274,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interfaced",
+      "box": [
+        277,
+        560,
+        337,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "appropriately",
+      "box": [
+        341,
+        560,
+        423,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        426,
+        560,
+        448,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "communicated",
+      "box": [
+        452,
+        560,
+        540,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        544,
+        560,
+        570,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "various",
+      "box": [
+        573,
+        560,
+        617,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "departments",
+      "box": [
+        620,
+        560,
+        696,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        699,
+        560,
+        712,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "provide",
+      "box": [
+        715,
+        560,
+        762,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "information",
+      "box": [
+        766,
+        560,
+        835,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        837,
+        560,
+        860,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "answer",
+      "box": [
+        863,
+        560,
+        908,
+        573
+      ],
+      "label": "O"
+    },
+    {
+      "text": "questions;",
+      "box": [
+        96,
+        574,
+        157,
+        588
+      ],
+      "label": "O"
+    },
+    {
+      "text": "documented",
+      "box": [
+        160,
+        574,
+        236,
+        588
+      ],
+      "label": "O"
+    },
+    {
+      "text": "procedures",
+      "box": [
+        239,
+        574,
+        308,
+        588
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        312,
+        574,
+        325,
+        588
+      ],
+      "label": "O"
+    },
+    {
+      "text": "appropriate.",
+      "box": [
+        329,
+        574,
+        404,
+        588
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Prepared",
+      "box": [
+        96,
+        588,
+        153,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "year-end",
+      "box": [
+        156,
+        588,
+        211,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "audit",
+      "box": [
+        215,
+        588,
+        245,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "schedules",
+      "box": [
+        248,
+        588,
+        307,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        311,
+        588,
+        333,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ensured",
+      "box": [
+        337,
+        588,
+        385,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accuracy;",
+      "box": [
+        388,
+        588,
+        448,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "researched",
+      "box": [
+        451,
+        588,
+        518,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        521,
+        588,
+        544,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolved",
+      "box": [
+        548,
+        588,
+        600,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "auditors'",
+      "box": [
+        603,
+        588,
+        655,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inquiries",
+      "box": [
+        659,
+        588,
+        709,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        712,
+        588,
+        735,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "requests.",
+      "box": [
+        738,
+        588,
+        793,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Recorded",
+      "box": [
+        96,
+        603,
+        157,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "state",
+      "box": [
+        160,
+        603,
+        189,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        193,
+        603,
+        215,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "federal",
+      "box": [
+        219,
+        603,
+        262,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "seizure",
+      "box": [
+        264,
+        603,
+        306,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        310,
+        603,
+        332,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "forfeiture",
+      "box": [
+        336,
+        603,
+        391,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "funds",
+      "box": [
+        394,
+        603,
+        427,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "received",
+      "box": [
+        431,
+        603,
+        483,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        486,
+        603,
+        509,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expended",
+      "box": [
+        512,
+        603,
+        573,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        576,
+        603,
+        599,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "balanced",
+      "box": [
+        602,
+        603,
+        657,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "corresponding",
+      "box": [
+        661,
+        603,
+        749,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "general",
+      "box": [
+        751,
+        603,
+        797,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ledger",
+      "box": [
+        799,
+        603,
+        837,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounts;",
+      "box": [
+        840,
+        603,
+        898,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "coordinated",
+      "box": [
+        96,
+        617,
+        169,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        172,
+        617,
+        199,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "police",
+      "box": [
+        202,
+        617,
+        239,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "department",
+      "box": [
+        242,
+        617,
+        311,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        315,
+        617,
+        327,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ensure",
+      "box": [
+        331,
+        617,
+        371,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accuracy",
+      "box": [
+        374,
+        617,
+        430,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        433,
+        617,
+        447,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "annual",
+      "box": [
+        449,
+        617,
+        489,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "state",
+      "box": [
+        491,
+        617,
+        520,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        523,
+        617,
+        546,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "federal",
+      "box": [
+        550,
+        617,
+        593,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports.",
+      "box": [
+        595,
+        617,
+        643,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Generated",
+      "box": [
+        96,
+        631,
+        160,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "yearly",
+      "box": [
+        163,
+        631,
+        201,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1099",
+      "box": [
+        204,
+        631,
+        237,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "report",
+      "box": [
+        240,
+        631,
+        278,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "from",
+      "box": [
+        281,
+        631,
+        312,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "general",
+      "box": [
+        314,
+        631,
+        359,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ledger",
+      "box": [
+        361,
+        631,
+        399,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        402,
+        631,
+        425,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "electronically",
+      "box": [
+        429,
+        631,
+        509,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "filed",
+      "box": [
+        511,
+        631,
+        537,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1099",
+      "box": [
+        541,
+        631,
+        574,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "report",
+      "box": [
+        577,
+        631,
+        615,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        618,
+        631,
+        645,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        648,
+        631,
+        666,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "IRS.",
+      "box": [
+        670,
+        631,
+        698,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reconciled",
+      "box": [
+        96,
+        645,
+        164,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "municipal",
+      "box": [
+        167,
+        645,
+        226,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "court",
+      "box": [
+        228,
+        645,
+        260,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "transactions",
+      "box": [
+        263,
+        645,
+        336,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        339,
+        645,
+        352,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        355,
+        645,
+        374,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "general",
+      "box": [
+        377,
+        645,
+        422,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ledger",
+      "box": [
+        425,
+        645,
+        463,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        466,
+        645,
+        480,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "well",
+      "box": [
+        483,
+        645,
+        509,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        511,
+        645,
+        525,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "filed",
+      "box": [
+        529,
+        645,
+        554,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quarterly",
+      "box": [
+        558,
+        645,
+        613,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        615,
+        645,
+        638,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "annual",
+      "box": [
+        642,
+        645,
+        682,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports;",
+      "box": [
+        684,
+        645,
+        732,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "investigated",
+      "box": [
+        735,
+        645,
+        807,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        810,
+        645,
+        833,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolved",
+      "box": [
+        836,
+        645,
+        888,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "any",
+      "box": [
+        892,
+        645,
+        914,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "discrepancies.",
+      "box": [
+        96,
+        660,
+        182,
+        673
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Monitored",
+      "box": [
+        96,
+        674,
+        161,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bank",
+      "box": [
+        164,
+        674,
+        195,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounts",
+      "box": [
+        199,
+        674,
+        253,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        256,
+        674,
+        274,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "investment",
+      "box": [
+        277,
+        674,
+        342,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities;",
+      "box": [
+        345,
+        674,
+        401,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Recorded",
+      "box": [
+        404,
+        674,
+        466,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "investment",
+      "box": [
+        469,
+        674,
+        533,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "maturities,",
+      "box": [
+        537,
+        674,
+        598,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "purchases,",
+      "box": [
+        602,
+        674,
+        667,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        671,
+        674,
+        694,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interest;",
+      "box": [
+        697,
+        674,
+        745,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Updated",
+      "box": [
+        748,
+        674,
+        802,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "investment",
+      "box": [
+        806,
+        674,
+        870,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "spreadsheet",
+      "box": [
+        96,
+        688,
+        169,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        172,
+        688,
+        185,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reflect",
+      "box": [
+        189,
+        688,
+        227,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "current",
+      "box": [
+        230,
+        688,
+        273,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "balances,",
+      "box": [
+        276,
+        688,
+        333,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "outstanding",
+      "box": [
+        337,
+        688,
+        407,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bonds",
+      "box": [
+        410,
+        688,
+        448,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        451,
+        688,
+        474,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "certificates",
+      "box": [
+        477,
+        688,
+        542,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        546,
+        688,
+        560,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "deposits.",
+      "box": [
+        562,
+        688,
+        617,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Innovated",
+      "box": [
+        96,
+        702,
+        157,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accurate",
+      "box": [
+        160,
+        702,
+        212,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        216,
+        702,
+        239,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "efficient",
+      "box": [
+        242,
+        702,
+        289,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "method",
+      "box": [
+        293,
+        702,
+        338,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        342,
+        702,
+        360,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "proper",
+      "box": [
+        363,
+        702,
+        405,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounting",
+      "box": [
+        409,
+        702,
+        475,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        477,
+        702,
+        491,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assets",
+      "box": [
+        493,
+        702,
+        530,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coordinated",
+      "box": [
+        96,
+        717,
+        173,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        177,
+        717,
+        203,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "fellow",
+      "box": [
+        206,
+        717,
+        243,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "staff",
+      "box": [
+        246,
+        717,
+        273,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        275,
+        717,
+        288,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "improve",
+      "box": [
+        292,
+        717,
+        342,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "processes;",
+      "box": [
+        345,
+        717,
+        410,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Provided",
+      "box": [
+        414,
+        717,
+        470,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "administrative",
+      "box": [
+        473,
+        717,
+        556,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "support",
+      "box": [
+        560,
+        717,
+        607,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        610,
+        717,
+        627,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "filing",
+      "box": [
+        629,
+        717,
+        658,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        661,
+        717,
+        683,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "gathering",
+      "box": [
+        687,
+        717,
+        743,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports,",
+      "box": [
+        745,
+        717,
+        793,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creating",
+      "box": [
+        797,
+        717,
+        846,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        848,
+        717,
+        871,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preparing",
+      "box": [
+        875,
+        717,
+        934,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "spreadsheets",
+      "box": [
+        96,
+        731,
+        175,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        179,
+        731,
+        196,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "special",
+      "box": [
+        200,
+        731,
+        243,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "projects",
+      "box": [
+        245,
+        731,
+        295,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        299,
+        731,
+        321,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "providing",
+      "box": [
+        325,
+        731,
+        383,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "assistance",
+      "box": [
+        385,
+        731,
+        446,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        450,
+        731,
+        473,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "information",
+      "box": [
+        476,
+        731,
+        545,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        548,
+        731,
+        564,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "financial",
+      "box": [
+        567,
+        731,
+        617,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        619,
+        731,
+        642,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounting",
+      "box": [
+        646,
+        731,
+        712,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "issues.",
+      "box": [
+        714,
+        731,
+        754,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        756,
+        117,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        756,
+        157,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        160,
+        756,
+        187,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        190,
+        756,
+        194,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        198,
+        756,
+        230,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Staff",
+      "box": [
+        233,
+        756,
+        263,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accountant",
+      "box": [
+        265,
+        756,
+        336,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "12/2006",
+      "box": [
+        339,
+        756,
+        392,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        395,
+        756,
+        408,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "05/2008",
+      "box": [
+        412,
+        756,
+        465,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maintained",
+      "box": [
+        96,
+        782,
+        164,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "capital",
+      "box": [
+        167,
+        782,
+        209,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expenditures",
+      "box": [
+        211,
+        782,
+        288,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        292,
+        782,
+        303,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "BNA;",
+      "box": [
+        306,
+        782,
+        344,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Organized",
+      "box": [
+        347,
+        782,
+        410,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        414,
+        782,
+        436,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conducted",
+      "box": [
+        440,
+        782,
+        504,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "asset",
+      "box": [
+        507,
+        782,
+        538,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "audit",
+      "box": [
+        542,
+        782,
+        572,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        575,
+        782,
+        593,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "26",
+      "box": [
+        596,
+        782,
+        613,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "regional",
+      "box": [
+        616,
+        782,
+        665,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "branches",
+      "box": [
+        668,
+        782,
+        723,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        726,
+        782,
+        743,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interfacing",
+      "box": [
+        745,
+        782,
+        809,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        811,
+        782,
+        838,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "each",
+      "box": [
+        840,
+        782,
+        870,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Asset",
+      "box": [
+        873,
+        782,
+        908,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Branch",
+      "box": [
+        96,
+        796,
+        141,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager;",
+      "box": [
+        143,
+        796,
+        203,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "drafted",
+      "box": [
+        206,
+        796,
+        250,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        253,
+        796,
+        302,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "depreciation",
+      "box": [
+        305,
+        796,
+        381,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports",
+      "box": [
+        383,
+        796,
+        427,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        431,
+        796,
+        453,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "computed",
+      "box": [
+        457,
+        796,
+        518,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "depreciation",
+      "box": [
+        521,
+        796,
+        598,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reconciled",
+      "box": [
+        96,
+        811,
+        164,
+        824
+      ],
+      "label": "O"
+    },
+    {
+      "text": "branch",
+      "box": [
+        167,
+        811,
+        210,
+        824
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sales",
+      "box": [
+        213,
+        811,
+        243,
+        824
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports",
+      "box": [
+        246,
+        811,
+        290,
+        824
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        294,
+        811,
+        306,
+        824
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bank",
+      "box": [
+        310,
+        811,
+        341,
+        824
+      ],
+      "label": "O"
+    },
+    {
+      "text": "account",
+      "box": [
+        344,
+        811,
+        392,
+        824
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activity.",
+      "box": [
+        395,
+        811,
+        442,
+        824
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Audited",
+      "box": [
+        96,
+        825,
+        145,
+        838
+      ],
+      "label": "O"
+    },
+    {
+      "text": "weekly",
+      "box": [
+        148,
+        825,
+        193,
+        838
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accounts",
+      "box": [
+        196,
+        825,
+        254,
+        838
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Payable",
+      "box": [
+        257,
+        825,
+        306,
+        838
+      ],
+      "label": "O"
+    },
+    {
+      "text": "check",
+      "box": [
+        310,
+        825,
+        347,
+        838
+      ],
+      "label": "O"
+    },
+    {
+      "text": "runs.",
+      "box": [
+        350,
+        825,
+        380,
+        838
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Audited",
+      "box": [
+        96,
+        839,
+        145,
+        853
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        148,
+        839,
+        178,
+        853
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accounts",
+      "box": [
+        181,
+        839,
+        239,
+        853
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Receivable",
+      "box": [
+        242,
+        839,
+        309,
+        853
+      ],
+      "label": "O"
+    },
+    {
+      "text": "credit",
+      "box": [
+        313,
+        839,
+        348,
+        853
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports.",
+      "box": [
+        351,
+        839,
+        399,
+        853
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Researched",
+      "box": [
+        96,
+        853,
+        168,
+        867
+      ],
+      "label": "O"
+    },
+    {
+      "text": "validity",
+      "box": [
+        171,
+        853,
+        215,
+        867
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        218,
+        853,
+        232,
+        867
+      ],
+      "label": "O"
+    },
+    {
+      "text": "invoice",
+      "box": [
+        234,
+        853,
+        277,
+        867
+      ],
+      "label": "O"
+    },
+    {
+      "text": "void",
+      "box": [
+        280,
+        853,
+        307,
+        867
+      ],
+      "label": "O"
+    },
+    {
+      "text": "requests.",
+      "box": [
+        311,
+        853,
+        365,
+        867
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Investigated",
+      "box": [
+        96,
+        868,
+        169,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        172,
+        868,
+        195,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolved",
+      "box": [
+        199,
+        868,
+        251,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "credit",
+      "box": [
+        254,
+        868,
+        289,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "card",
+      "box": [
+        293,
+        868,
+        320,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        324,
+        868,
+        347,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bank",
+      "box": [
+        350,
+        868,
+        381,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "deposit",
+      "box": [
+        384,
+        868,
+        429,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "variances.",
+      "box": [
+        433,
+        868,
+        494,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        893,
+        117,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        893,
+        157,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        160,
+        893,
+        187,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        190,
+        893,
+        194,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        198,
+        893,
+        230,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accounting",
+      "box": [
+        233,
+        893,
+        303,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assistant",
+      "box": [
+        306,
+        893,
+        361,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "03/2005",
+      "box": [
+        364,
+        893,
+        417,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        421,
+        893,
+        433,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "12/2006",
+      "box": [
+        437,
+        893,
+        490,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Prepared",
+      "box": [
+        96,
+        919,
+        153,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        156,
+        919,
+        179,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "input",
+      "box": [
+        183,
+        919,
+        213,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        216,
+        919,
+        246,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        248,
+        919,
+        271,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        274,
+        919,
+        323,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "journal",
+      "box": [
+        326,
+        919,
+        369,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "entries",
+      "box": [
+        371,
+        919,
+        411,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "into",
+      "box": [
+        415,
+        919,
+        437,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "general",
+      "box": [
+        441,
+        919,
+        486,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ledger.",
+      "box": [
+        488,
+        919,
+        530,
+        933
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analyzed",
+      "box": [
+        96,
+        933,
+        153,
+        947
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        156,
+        933,
+        179,
+        947
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reviewed",
+      "box": [
+        183,
+        933,
+        239,
+        947
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expense",
+      "box": [
+        242,
+        933,
+        292,
+        947
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports",
+      "box": [
+        296,
+        933,
+        340,
+        947
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        343,
+        933,
+        361,
+        947
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accuracy.",
+      "box": [
+        364,
+        933,
+        423,
+        947
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Performed",
+      "box": [
+        96,
+        948,
+        161,
+        961
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        164,
+        948,
+        213,
+        961
+      ],
+      "label": "O"
+    },
+    {
+      "text": "balance",
+      "box": [
+        216,
+        948,
+        263,
+        961
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sheet",
+      "box": [
+        266,
+        948,
+        298,
+        961
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reconciliations.",
+      "box": [
+        302,
+        948,
+        392,
+        961
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Recorded",
+      "box": [
+        96,
+        1034,
+        157,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        160,
+        1034,
+        209,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        212,
+        1034,
+        235,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "yearly",
+      "box": [
+        238,
+        1034,
+        276,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accruals.",
+      "box": [
+        278,
+        1034,
+        332,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Input",
+      "box": [
+        96,
+        1048,
+        128,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new",
+      "box": [
+        131,
+        1048,
+        158,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "vendors",
+      "box": [
+        160,
+        1048,
+        209,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        213,
+        1048,
+        236,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "invoices",
+      "box": [
+        239,
+        1048,
+        288,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "into",
+      "box": [
+        292,
+        1048,
+        314,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounting",
+      "box": [
+        318,
+        1048,
+        384,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "system;",
+      "box": [
+        386,
+        1048,
+        432,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conducted",
+      "box": [
+        436,
+        1048,
+        500,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "weekly",
+      "box": [
+        503,
+        1048,
+        548,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "check",
+      "box": [
+        551,
+        1048,
+        588,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "runs.",
+      "box": [
+        591,
+        1048,
+        621,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Prepared",
+      "box": [
+        96,
+        1062,
+        153,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        156,
+        1062,
+        186,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cash",
+      "box": [
+        189,
+        1062,
+        217,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reports",
+      "box": [
+        220,
+        1062,
+        264,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        267,
+        1062,
+        290,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performed",
+      "box": [
+        294,
+        1062,
+        358,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "transfers",
+      "box": [
+        361,
+        1062,
+        413,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        417,
+        1062,
+        430,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needed.",
+      "box": [
+        434,
+        1062,
+        482,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Managed",
+      "box": [
+        96,
+        1076,
+        154,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bank",
+      "box": [
+        157,
+        1076,
+        188,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accounts",
+      "box": [
+        192,
+        1076,
+        246,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        249,
+        1076,
+        267,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "24",
+      "box": [
+        270,
+        1076,
+        287,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "properties;",
+      "box": [
+        290,
+        1076,
+        357,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Performed",
+      "box": [
+        360,
+        1076,
+        425,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "intercompany",
+      "box": [
+        429,
+        1076,
+        512,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "transfers",
+      "box": [
+        514,
+        1076,
+        567,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        570,
+        1076,
+        584,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needed",
+      "box": [
+        587,
+        1076,
+        632,
+        1090
+      ],
+      "label": "O"
+    }
+  ]
+}

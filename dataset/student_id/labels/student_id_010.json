@@ -1,0 +1,122 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_010.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "UNIVERSITY OF",
+      "box": [
+        201,
+        148,
+        440,
+        193
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "CAMBRIDGE",
+      "box": [
+        201,
+        179,
+        437,
+        229
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Date orbitn  12 APR-1996",
+      "box": [
+        162,
+        368,
+        456,
+        406
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Carderples 09/2017",
+      "box": [
+        159,
+        409,
+        415,
+        450
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "TE Tahajian",
+      "box": [
+        160,
+        448,
+        387,
+        509
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "CAMDRIDCE UNIVERSITY UBRARY",
+      "box": [
+        204,
+        668,
+        528,
+        715
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "VRVTJ",
+      "box": [
+        209,
+        706,
+        285,
+        737
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cam-Reader",
+      "box": [
+        198,
+        835,
+        409,
+        895
+      ],
+      "label": "O"
+    },
+    {
+      "text": "N M",
+      "box": [
+        464,
+        860,
+        520,
+        892
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expires:",
+      "box": [
+        587,
+        848,
+        714,
+        895
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1044^",
+      "box": [
+        592,
+        889,
+        673,
+        910
+      ],
+      "label": "O"
+    }
+  ]
+}

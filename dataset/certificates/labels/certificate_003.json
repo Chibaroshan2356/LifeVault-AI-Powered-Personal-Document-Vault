@@ -1,0 +1,252 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_003.png",
+  "image_dimensions": [
+    841,
+    595
+  ],
+  "words": [
+    {
+      "text": "CHARULEELA",
+      "box": [
+        86,
+        435,
+        324,
+        503
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "S",
+      "box": [
+        334,
+        435,
+        357,
+        503
+      ],
+      "label": "O"
+    },
+    {
+      "text": "You",
+      "box": [
+        50,
+        572,
+        76,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "have",
+      "box": [
+        80,
+        572,
+        111,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "completed",
+      "box": [
+        115,
+        572,
+        180,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "our",
+      "box": [
+        184,
+        572,
+        205,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Python",
+      "box": [
+        209,
+        572,
+        253,
+        599
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Programming",
+      "box": [
+        257,
+        572,
+        343,
+        599
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Online",
+      "box": [
+        347,
+        572,
+        388,
+        599
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Test",
+      "box": [
+        392,
+        572,
+        420,
+        599
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "(beginner)",
+      "box": [
+        424,
+        572,
+        488,
+        599
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "with",
+      "box": [
+        492,
+        572,
+        518,
+        599
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "100",
+      "box": [
+        522,
+        572,
+        546,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "%",
+      "box": [
+        549,
+        572,
+        562,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "For",
+      "box": [
+        50,
+        597,
+        72,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "any",
+      "box": [
+        76,
+        597,
+        99,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "clarification",
+      "box": [
+        103,
+        597,
+        174,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "contact",
+      "box": [
+        178,
+        597,
+        224,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "us",
+      "box": [
+        228,
+        597,
+        243,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at",
+      "box": [
+        247,
+        597,
+        259,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "'admin@cppbuzz.com'",
+      "box": [
+        263,
+        597,
+        405,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024.07.29",
+      "box": [
+        113,
+        711,
+        202,
+        745
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Chicago,",
+      "box": [
+        502,
+        770,
+        572,
+        804
+      ],
+      "label": "O"
+    },
+    {
+      "text": "USA",
+      "box": [
+        577,
+        770,
+        614,
+        804
+      ],
+      "label": "O"
+    }
+  ]
+}

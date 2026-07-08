@@ -1,0 +1,172 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_014.png",
+  "image_dimensions": [
+    2000,
+    1414
+  ],
+  "words": [
+    {
+      "text": "CERTIFICATE",
+      "box": [
+        192,
+        157,
+        811,
+        255
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "OF",
+      "box": [
+        298,
+        244,
+        357,
+        297
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RECOGNITION",
+      "box": [
+        371,
+        242,
+        702,
+        297
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "THE",
+      "box": [
+        260,
+        369,
+        310,
+        398
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "FOLL O WING",
+      "box": [
+        317,
+        368,
+        471,
+        398
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "A WARD",
+      "box": [
+        481,
+        368,
+        574,
+        398
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "IS",
+      "box": [
+        580,
+        368,
+        608,
+        398
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "GIVEN",
+      "box": [
+        616,
+        368,
+        697,
+        398
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "TO",
+      "box": [
+        705,
+        369,
+        740,
+        398
+      ],
+      "label": "O"
+    },
+    {
+      "text": "\"steele OD)uvey",
+      "box": [
+        268,
+        441,
+        773,
+        578
+      ],
+      "label": "O"
+    },
+    {
+      "text": "This certificate is presented to Ms Estelle Darcy in acknowledgment of her achievements in the",
+      "box": [
+        112,
+        597,
+        889,
+        636
+      ],
+      "label": "O"
+    },
+    {
+      "text": "field of education, highlighting her skills and expertise in this area:",
+      "box": [
+        226,
+        637,
+        770,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "OLIVIA WILSON",
+      "box": [
+        227,
+        839,
+        358,
+        862
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ALFREDO TORRES",
+      "box": [
+        634,
+        840,
+        782,
+        862
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HEAD MASTER",
+      "box": [
+        245,
+        862,
+        340,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MENTOR",
+      "box": [
+        678,
+        862,
+        737,
+        882
+      ],
+      "label": "O"
+    }
+  ]
+}

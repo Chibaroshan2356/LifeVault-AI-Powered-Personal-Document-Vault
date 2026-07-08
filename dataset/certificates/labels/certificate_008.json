@@ -1,0 +1,192 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_008.png",
+  "image_dimensions": [
+    3119,
+    2673
+  ],
+  "words": [
+    {
+      "text": "upSkii",
+      "box": [
+        431,
+        141,
+        592,
+        214
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CAMPUS",
+      "box": [
+        515,
+        194,
+        583,
+        214
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Certificate of Completion",
+      "box": [
+        265,
+        232,
+        752,
+        293
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "This certified that",
+      "box": [
+        395,
+        318,
+        631,
+        355
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Debanik Debnath",
+      "box": [
+        393,
+        385,
+        631,
+        426
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "You have successfully completed the online course on",
+      "box": [
+        209,
+        452,
+        808,
+        497
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Free Internet of Things (loT)",
+      "box": [
+        315,
+        515,
+        705,
+        565
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Je",
+      "box": [
+        465,
+        716,
+        480,
+        728
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "0",
+      "box": [
+        506,
+        720,
+        516,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "28th November 2023",
+      "box": [
+        47,
+        732,
+        236,
+        756
+      ],
+      "label": "O"
+    },
+    {
+      "text": "JaL X",
+      "box": [
+        793,
+        701,
+        905,
+        757
+      ],
+      "label": "O"
+    },
+    {
+      "text": "upSkizi",
+      "box": [
+        460,
+        746,
+        518,
+        772
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CAMPUS",
+      "box": [
+        490,
+        766,
+        515,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Kaushalendra Singh Sisodia",
+      "box": [
+        776,
+        783,
+        945,
+        801
+      ],
+      "label": "O"
+    },
+    {
+      "text": "BZN9ZA3T",
+      "box": [
+        92,
+        788,
+        190,
+        811
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certifica %",
+      "box": [
+        460,
+        786,
+        521,
+        814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Director",
+      "box": [
+        838,
+        805,
+        883,
+        820
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rifie",
+      "box": [
+        477,
+        708,
+        510,
+        728
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    }
+  ]
+}

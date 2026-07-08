@@ -1,0 +1,29 @@
+# LifeVault LayoutLMv3 Google Colab Training Dependencies
+# Python 3.10 / 3.11 compatible
+
+# Core Deep Learning
+torch>=2.1.0
+torchvision>=0.16.0
+accelerate>=0.29.0
+
+# Hugging Face Ecosystem
+transformers==4.40.0
+datasets>=2.18.0
+evaluate>=0.4.1
+seqeval>=1.2.2
+
+# Document OCR & PDF processing (Data Prep)
+easyocr==1.7.2
+PyMuPDF==1.24.12
+pdf2image==1.17.0
+Pillow>=10.2.0
+
+# Utilities
+numpy>=1.24.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+tqdm>=4.66.0
+psutil>=5.9.8
+
+# Experiment tracking
+tensorboard>=2.14.0

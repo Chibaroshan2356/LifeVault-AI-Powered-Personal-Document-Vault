@@ -1,0 +1,162 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_035.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "AMERICA BANGLADESH UNIVERSITY",
+      "box": [
+        243,
+        209,
+        754,
+        276
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        253,
+        543,
+        346,
+        581
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mohammad Mashud Anwer",
+      "box": [
+        415,
+        543,
+        740,
+        581
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Std: ID",
+      "box": [
+        250,
+        581,
+        334,
+        621
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "1123904301",
+      "box": [
+        412,
+        584,
+        562,
+        621
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Roll No",
+      "box": [
+        251,
+        626,
+        342,
+        657
+      ],
+      "label": "O"
+    },
+    {
+      "text": "112390",
+      "box": [
+        414,
+        626,
+        507,
+        657
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "Program",
+      "box": [
+        248,
+        664,
+        359,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MBA",
+      "box": [
+        420,
+        667,
+        479,
+        698
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date of Birth",
+      "box": [
+        250,
+        703,
+        406,
+        743
+      ],
+      "label": "O"
+    },
+    {
+      "text": "03-01-1976",
+      "box": [
+        415,
+        706,
+        559,
+        743
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Blood Group :AB + (AB positive)",
+      "box": [
+        250,
+        742,
+        625,
+        785
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Validity",
+      "box": [
+        246,
+        778,
+        351,
+        829
+      ],
+      "label": "O"
+    },
+    {
+      "text": ";Spring 2004 to Fall 2004",
+      "box": [
+        400,
+        784,
+        696,
+        828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "STUDENT",
+      "box": [
+        575,
+        906,
+        771,
+        953
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_061.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Kyplo University",
+      "box": [
+        57,
+        57,
+        207,
+        85
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ms FobartWilson",
+      "box": [
+        57,
+        229,
+        220,
+        254
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID 93905154",
+      "box": [
+        54,
+        398,
+        182,
+        426
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Date: Expites Decembar 2021",
+      "box": [
+        117,
+        573,
+        392,
+        601
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "5 Rcnx",
+      "box": [
+        656,
+        887,
+        828,
+        975
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Explly",
+      "box": [
+        53,
+        570,
+        121,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "'gc_",
+      "box": [
+        805,
+        905,
+        939,
+        989
+      ],
+      "label": "O"
+    }
+  ]
+}

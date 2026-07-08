@@ -1,0 +1,52 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_074.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Yale University",
+      "box": [
+        50,
+        59,
+        537,
+        140
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ms Heidi Pennington",
+      "box": [
+        57,
+        232,
+        260,
+        257
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID: 35511822",
+      "box": [
+        53,
+        403,
+        353,
+        453
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expiry Date: Expireson 2 Istof Decembet; 2022",
+      "box": [
+        57,
+        570,
+        479,
+        601
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    }
+  ]
+}

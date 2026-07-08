@@ -1,0 +1,242 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_034.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "841Jo",
+      "box": [
+        640,
+        134,
+        721,
+        178
+      ],
+      "label": "O"
+    },
+    {
+      "text": "+0",
+      "box": [
+        465,
+        312,
+        528,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "\"ON @i",
+      "box": [
+        673,
+        401,
+        798,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Qpl",
+      "box": [
+        151,
+        757,
+        376,
+        932
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Juvls",
+      "box": [
+        475,
+        11,
+        795,
+        138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Juapnis",
+      "box": [
+        537,
+        103,
+        646,
+        170
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "anieubois",
+      "box": [
+        714,
+        137,
+        856,
+        215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "wvx",
+      "box": [
+        529,
+        147,
+        670,
+        234
+      ],
+      "label": "O"
+    },
+    {
+      "text": "#loz\"",
+      "box": [
+        315,
+        159,
+        446,
+        242
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(auiv",
+      "box": [
+        660,
+        176,
+        832,
+        267
+      ],
+      "label": "O"
+    },
+    {
+      "text": "\"e0*L: =",
+      "box": [
+        412,
+        179,
+        563,
+        267
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ZolzbzlLLlo =",
+      "box": [
+        251,
+        198,
+        553,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Kzipiiea",
+      "box": [
+        657,
+        231,
+        835,
+        326
+      ],
+      "label": "O"
+    },
+    {
+      "text": "auoyd",
+      "box": [
+        670,
+        284,
+        828,
+        376
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dnojo",
+      "box": [
+        545,
+        312,
+        695,
+        401
+      ],
+      "label": "O"
+    },
+    {
+      "text": "O8ezolll",
+      "box": [
+        300,
+        315,
+        526,
+        418
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pooia",
+      "box": [
+        673,
+        339,
+        815,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "va8 =",
+      "box": [
+        408,
+        392,
+        518,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "weisi /",
+      "box": [
+        223,
+        404,
+        359,
+        487
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Inuiwv",
+      "box": [
+        332,
+        428,
+        507,
+        520
+      ],
+      "label": "O"
+    },
+    {
+      "text": "wejbojd",
+      "box": [
+        589,
+        423,
+        793,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": "alen",
+      "box": [
+        635,
+        490,
+        782,
+        577
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jbani",
+      "box": [
+        378,
+        834,
+        720,
+        992
+      ],
+      "label": "O"
+    }
+  ]
+}

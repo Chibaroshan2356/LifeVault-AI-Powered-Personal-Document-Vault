@@ -1,0 +1,92 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_023.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "BROWN",
+      "box": [
+        165,
+        262,
+        626,
+        389
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Banner ID# B00123456",
+      "box": [
+        520,
+        343,
+        889,
+        401
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Brown ID# 000412345",
+      "box": [
+        529,
+        398,
+        885,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6009553660926201",
+      "box": [
+        9,
+        504,
+        395,
+        570
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "SMITH; JANE",
+      "box": [
+        6,
+        560,
+        367,
+        637
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2-1236-00879-3544",
+      "box": [
+        85,
+        689,
+        407,
+        748
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expires: 05/31/2017",
+      "box": [
+        85,
+        742,
+        407,
+        801
+      ],
+      "label": "O"
+    },
+    {
+      "text": "STUDENT",
+      "box": [
+        654,
+        734,
+        831,
+        785
+      ],
+      "label": "O"
+    }
+  ]
+}

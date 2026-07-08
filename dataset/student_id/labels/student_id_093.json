@@ -1,0 +1,82 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_093.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "1",
+      "box": [
+        0,
+        217,
+        56,
+        793
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        514,
+        545,
+        545,
+        682
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        501,
+        679,
+        540,
+        875
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2",
+      "box": [
+        129,
+        895,
+        185,
+        985
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        310,
+        850,
+        343,
+        985
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8",
+      "box": [
+        501,
+        876,
+        526,
+        923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "[",
+      "box": [
+        495,
+        918,
+        531,
+        992
+      ],
+      "label": "O"
+    }
+  ]
+}

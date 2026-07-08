@@ -1,0 +1,152 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_027.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Daffodil",
+      "box": [
+        292,
+        270,
+        531,
+        339
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "University",
+      "box": [
+        323,
+        317,
+        562,
+        387
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Nusrat Jahan Orshi",
+      "box": [
+        142,
+        373,
+        454,
+        429
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "0Sc I TL",
+      "box": [
+        137,
+        425,
+        315,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "191-21-50,",
+      "box": [
+        132,
+        468,
+        296,
+        517
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Esua On",
+      "box": [
+        121,
+        520,
+        278,
+        565
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8n-901g",
+      "box": [
+        384,
+        537,
+        525,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L",
+      "box": [
+        670,
+        554,
+        717,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4pn+944/7ed82",
+      "box": [
+        707,
+        551,
+        950,
+        601
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expae On",
+      "box": [
+        118,
+        575,
+        290,
+        618
+      ],
+      "label": "O"
+    },
+    {
+      "text": "31-Duc-2022",
+      "box": [
+        318,
+        581,
+        528,
+        628
+      ],
+      "label": "O"
+    },
+    {
+      "text": "04",
+      "box": [
+        695,
+        595,
+        745,
+        626
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Esrt",
+      "box": [
+        723,
+        631,
+        912,
+        695
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Registrar",
+      "box": [
+        720,
+        689,
+        875,
+        748
+      ],
+      "label": "O"
+    }
+  ]
+}

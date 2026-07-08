@@ -1,0 +1,112 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_095.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Mr",
+      "box": [
+        67,
+        104,
+        104,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ID",
+      "box": [
+        39,
+        285,
+        73,
+        317
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "iversity",
+      "box": [
+        404,
+        0,
+        662,
+        113
+      ],
+      "label": "O"
+    },
+    {
+      "text": "~Jenniter Collins",
+      "box": [
+        95,
+        104,
+        276,
+        176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "191356956",
+      "box": [
+        59,
+        282,
+        182,
+        346
+      ],
+      "label": "O"
+    },
+    {
+      "text": "EExpiny [",
+      "box": [
+        4,
+        461,
+        89,
+        515
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "{Dobe",
+      "box": [
+        70,
+        476,
+        137,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Valid [",
+      "box": [
+        123,
+        487,
+        190,
+        532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "until",
+      "box": [
+        178,
+        506,
+        245,
+        541
+      ],
+      "label": "O"
+    },
+    {
+      "text": "12025,01/14",
+      "box": [
+        223,
+        504,
+        362,
+        568
+      ],
+      "label": "O"
+    }
+  ]
+}

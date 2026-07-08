@@ -1,0 +1,6922 @@
+{
+  "document_metadata": {
+    "category": "Resume"
+  },
+  "image_filename": "resume_032.png",
+  "image_dimensions": [
+    595,
+    842
+  ],
+  "words": [
+    {
+      "text": "DIGITAL",
+      "box": [
+        55,
+        34,
+        118,
+        47
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "MARKETING",
+      "box": [
+        121,
+        34,
+        216,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "MANAGER",
+      "box": [
+        219,
+        34,
+        299,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Core",
+      "box": [
+        55,
+        48,
+        87,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Qualifications",
+      "box": [
+        91,
+        48,
+        173,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Window",
+      "box": [
+        99,
+        64,
+        153,
+        78
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "XP,",
+      "box": [
+        155,
+        64,
+        180,
+        78
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vista,",
+      "box": [
+        184,
+        64,
+        219,
+        78
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7.",
+      "box": [
+        223,
+        64,
+        235,
+        78
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program",
+      "box": [
+        99,
+        79,
+        154,
+        92
+      ],
+      "label": "O"
+    },
+    {
+      "text": "languages:",
+      "box": [
+        155,
+        79,
+        219,
+        92
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lisp,",
+      "box": [
+        221,
+        79,
+        251,
+        92
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HTML,",
+      "box": [
+        255,
+        79,
+        303,
+        92
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "SQL,",
+      "box": [
+        307,
+        79,
+        341,
+        92
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Macros",
+      "box": [
+        345,
+        79,
+        393,
+        92
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(VBA).",
+      "box": [
+        396,
+        79,
+        443,
+        92
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Software",
+      "box": [
+        99,
+        93,
+        155,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Products/Tools:",
+      "box": [
+        158,
+        93,
+        256,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        258,
+        93,
+        319,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Word,",
+      "box": [
+        322,
+        93,
+        362,
+        106
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Excel",
+      "box": [
+        366,
+        93,
+        401,
+        106
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "(Pivot",
+      "box": [
+        403,
+        93,
+        441,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "table,",
+      "box": [
+        444,
+        93,
+        477,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vlookup,",
+      "box": [
+        481,
+        93,
+        539,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc.),",
+      "box": [
+        543,
+        93,
+        574,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Access,",
+      "box": [
+        578,
+        93,
+        627,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PowerPoint,",
+      "box": [
+        630,
+        93,
+        706,
+        106
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Sharepoint,",
+      "box": [
+        99,
+        107,
+        169,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Salesforce,",
+      "box": [
+        172,
+        107,
+        240,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Google",
+      "box": [
+        244,
+        107,
+        289,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analytics,",
+      "box": [
+        293,
+        107,
+        352,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "IBM",
+      "box": [
+        356,
+        107,
+        387,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coremetrics",
+      "box": [
+        389,
+        107,
+        465,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        468,
+        107,
+        491,
+        121
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microstrategy,",
+      "box": [
+        99,
+        121,
+        188,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Infoview,",
+      "box": [
+        192,
+        121,
+        248,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Basecamp,",
+      "box": [
+        252,
+        121,
+        320,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Youtube",
+      "box": [
+        324,
+        121,
+        377,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        380,
+        121,
+        403,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Facebook",
+      "box": [
+        406,
+        121,
+        470,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analytics,",
+      "box": [
+        473,
+        121,
+        533,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sitespect,",
+      "box": [
+        99,
+        136,
+        159,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SEO",
+      "box": [
+        162,
+        136,
+        193,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(working",
+      "box": [
+        197,
+        136,
+        253,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "knowledge).",
+      "box": [
+        255,
+        136,
+        331,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Others:",
+      "box": [
+        335,
+        136,
+        381,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Statistic,",
+      "box": [
+        383,
+        136,
+        435,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Behavioral",
+      "box": [
+        439,
+        136,
+        505,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Psychology.",
+      "box": [
+        507,
+        136,
+        581,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        55,
+        163,
+        124,
+        177
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Digital",
+      "box": [
+        55,
+        178,
+        96,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marketing",
+      "box": [
+        98,
+        178,
+        162,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager",
+      "box": [
+        164,
+        178,
+        220,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "08/2012",
+      "box": [
+        223,
+        178,
+        276,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        279,
+        178,
+        292,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01/2016",
+      "box": [
+        296,
+        178,
+        349,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        352,
+        178,
+        413,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        416,
+        178,
+        454,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        457,
+        178,
+        484,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        486,
+        178,
+        491,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        494,
+        178,
+        526,
+        191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Grew",
+      "box": [
+        96,
+        203,
+        132,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        134,
+        203,
+        153,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "combined",
+      "box": [
+        156,
+        203,
+        216,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SEM,",
+      "box": [
+        220,
+        203,
+        256,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "display,",
+      "box": [
+        260,
+        203,
+        307,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "retargeting",
+      "box": [
+        311,
+        203,
+        376,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        378,
+        203,
+        401,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "affiliate",
+      "box": [
+        404,
+        203,
+        447,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        451,
+        203,
+        512,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "channel",
+      "box": [
+        514,
+        203,
+        562,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        564,
+        203,
+        581,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "15%",
+      "box": [
+        583,
+        203,
+        614,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        616,
+        203,
+        628,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "membership",
+      "box": [
+        630,
+        203,
+        705,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "this",
+      "box": [
+        708,
+        203,
+        729,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "past",
+      "box": [
+        732,
+        203,
+        758,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "year.",
+      "box": [
+        762,
+        203,
+        792,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Hence",
+      "box": [
+        96,
+        218,
+        136,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "an",
+      "box": [
+        139,
+        218,
+        155,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        157,
+        218,
+        207,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        211,
+        218,
+        225,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "$20",
+      "box": [
+        227,
+        218,
+        252,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "million",
+      "box": [
+        255,
+        218,
+        295,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        298,
+        218,
+        309,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "life",
+      "box": [
+        312,
+        218,
+        329,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "time",
+      "box": [
+        333,
+        218,
+        359,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "value.",
+      "box": [
+        362,
+        218,
+        398,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Launched",
+      "box": [
+        96,
+        232,
+        156,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "acquisition",
+      "box": [
+        159,
+        232,
+        225,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        227,
+        232,
+        250,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "brand",
+      "box": [
+        253,
+        232,
+        289,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "awareness",
+      "box": [
+        293,
+        232,
+        357,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        360,
+        232,
+        421,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "campaigns",
+      "box": [
+        424,
+        232,
+        488,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        491,
+        232,
+        518,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        520,
+        232,
+        582,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partners",
+      "box": [
+        584,
+        232,
+        634,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Affiliate,",
+      "box": [
+        637,
+        232,
+        688,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Retargeting,",
+      "box": [
+        692,
+        232,
+        765,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SEM",
+      "box": [
+        769,
+        232,
+        802,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Adwords,",
+      "box": [
+        805,
+        232,
+        867,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Facebook,",
+      "box": [
+        870,
+        232,
+        937,
+        245
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc.)",
+      "box": [
+        96,
+        246,
+        124,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        127,
+        246,
+        150,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "were",
+      "box": [
+        153,
+        246,
+        184,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "segmented",
+      "box": [
+        188,
+        246,
+        253,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        256,
+        246,
+        273,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "market.",
+      "box": [
+        275,
+        246,
+        322,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Optimized",
+      "box": [
+        96,
+        260,
+        159,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "campaigns",
+      "box": [
+        162,
+        260,
+        227,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "across",
+      "box": [
+        230,
+        260,
+        270,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "different",
+      "box": [
+        273,
+        260,
+        324,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "channels",
+      "box": [
+        327,
+        260,
+        379,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        382,
+        260,
+        399,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "changing/adding",
+      "box": [
+        401,
+        260,
+        500,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "keywords,",
+      "box": [
+        502,
+        260,
+        567,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative,",
+      "box": [
+        571,
+        260,
+        623,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ad",
+      "box": [
+        626,
+        260,
+        642,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grouping,",
+      "box": [
+        646,
+        260,
+        702,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dna/cities,",
+      "box": [
+        706,
+        260,
+        767,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ad",
+      "box": [
+        771,
+        260,
+        786,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "copies,",
+      "box": [
+        790,
+        260,
+        833,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bids,",
+      "box": [
+        837,
+        260,
+        867,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "landing",
+      "box": [
+        870,
+        260,
+        914,
+        274
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pages,",
+      "box": [
+        96,
+        275,
+        135,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc.",
+      "box": [
+        139,
+        275,
+        162,
+        288
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        96,
+        289,
+        109,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lower",
+      "box": [
+        112,
+        289,
+        147,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPA",
+      "box": [
+        150,
+        289,
+        183,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        186,
+        289,
+        208,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        212,
+        289,
+        262,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ROI.",
+      "box": [
+        265,
+        289,
+        297,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Collaborated",
+      "box": [
+        96,
+        303,
+        176,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        180,
+        303,
+        206,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pricing",
+      "box": [
+        209,
+        303,
+        251,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        253,
+        303,
+        276,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative",
+      "box": [
+        279,
+        303,
+        327,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        331,
+        303,
+        362,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        364,
+        303,
+        387,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        390,
+        303,
+        451,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partners",
+      "box": [
+        454,
+        303,
+        504,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        507,
+        303,
+        520,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "create/replace",
+      "box": [
+        523,
+        303,
+        610,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative",
+      "box": [
+        613,
+        303,
+        661,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        665,
+        303,
+        688,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reflect",
+      "box": [
+        691,
+        303,
+        729,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        732,
+        303,
+        793,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategies.",
+      "box": [
+        796,
+        303,
+        857,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        317,
+        148,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        151,
+        317,
+        178,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        181,
+        317,
+        242,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partners",
+      "box": [
+        244,
+        317,
+        294,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        298,
+        317,
+        310,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "understand",
+      "box": [
+        314,
+        317,
+        381,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        384,
+        317,
+        398,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "compete",
+      "box": [
+        400,
+        317,
+        454,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        457,
+        317,
+        484,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "competitors'",
+      "box": [
+        486,
+        317,
+        561,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        565,
+        317,
+        626,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategies.",
+      "box": [
+        628,
+        317,
+        689,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maintained",
+      "box": [
+        96,
+        332,
+        164,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "budgets",
+      "box": [
+        167,
+        332,
+        216,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        219,
+        332,
+        242,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "negotiated",
+      "box": [
+        245,
+        332,
+        308,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "prices/bonuses",
+      "box": [
+        312,
+        332,
+        402,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        405,
+        332,
+        432,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new/existing",
+      "box": [
+        435,
+        332,
+        510,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        512,
+        332,
+        574,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partners.",
+      "box": [
+        576,
+        332,
+        630,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Exported",
+      "box": [
+        96,
+        346,
+        153,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        156,
+        346,
+        183,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "from",
+      "box": [
+        187,
+        346,
+        217,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "different",
+      "box": [
+        219,
+        346,
+        269,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        272,
+        346,
+        333,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partners",
+      "box": [
+        336,
+        346,
+        386,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "system.",
+      "box": [
+        389,
+        346,
+        435,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Used",
+      "box": [
+        96,
+        360,
+        129,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "advance",
+      "box": [
+        132,
+        360,
+        183,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Excel",
+      "box": [
+        187,
+        360,
+        222,
+        374
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "to",
+      "box": [
+        224,
+        360,
+        237,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dissect",
+      "box": [
+        240,
+        360,
+        282,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        285,
+        360,
+        312,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        316,
+        360,
+        338,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "create",
+      "box": [
+        342,
+        360,
+        380,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dashboards",
+      "box": [
+        383,
+        360,
+        455,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        458,
+        360,
+        471,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "highlight",
+      "box": [
+        474,
+        360,
+        523,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        527,
+        360,
+        588,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "campaigns",
+      "box": [
+        590,
+        360,
+        654,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(CPA,",
+      "box": [
+        658,
+        360,
+        698,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPC,",
+      "box": [
+        702,
+        360,
+        738,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPM).",
+      "box": [
+        741,
+        360,
+        785,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Used",
+      "box": [
+        96,
+        374,
+        129,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PowerPoint",
+      "box": [
+        132,
+        374,
+        205,
+        388
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "to",
+      "box": [
+        208,
+        374,
+        220,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "present",
+      "box": [
+        224,
+        374,
+        269,
+        388
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "KPI,",
+      "box": [
+        272,
+        374,
+        303,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ROI",
+      "box": [
+        307,
+        374,
+        335,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        338,
+        374,
+        361,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "recommendations",
+      "box": [
+        364,
+        374,
+        472,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        475,
+        374,
+        488,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "internal",
+      "box": [
+        491,
+        374,
+        536,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teams,",
+      "box": [
+        539,
+        374,
+        578,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "executives",
+      "box": [
+        582,
+        374,
+        645,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        649,
+        374,
+        671,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        675,
+        374,
+        736,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partners.",
+      "box": [
+        738,
+        374,
+        792,
+        388
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Managed",
+      "box": [
+        96,
+        389,
+        154,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "an",
+      "box": [
+        157,
+        389,
+        173,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "associate",
+      "box": [
+        176,
+        389,
+        232,
+        402
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "to",
+      "box": [
+        235,
+        389,
+        248,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "maintain",
+      "box": [
+        251,
+        389,
+        302,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        305,
+        389,
+        327,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "optimize",
+      "box": [
+        331,
+        389,
+        382,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "campaigns",
+      "box": [
+        385,
+        389,
+        450,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "across",
+      "box": [
+        453,
+        389,
+        493,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "different",
+      "box": [
+        496,
+        389,
+        546,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "channels.",
+      "box": [
+        550,
+        389,
+        605,
+        402
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Created",
+      "box": [
+        96,
+        403,
+        146,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "A/B",
+      "box": [
+        149,
+        403,
+        176,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        179,
+        403,
+        201,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multivariate",
+      "box": [
+        205,
+        403,
+        274,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tests",
+      "box": [
+        277,
+        403,
+        305,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        309,
+        403,
+        335,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sitespect",
+      "box": [
+        338,
+        403,
+        394,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        397,
+        403,
+        410,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "find",
+      "box": [
+        414,
+        403,
+        436,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "landing",
+      "box": [
+        440,
+        403,
+        484,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "page/channel/messaging",
+      "box": [
+        486,
+        403,
+        632,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        634,
+        403,
+        657,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "generate",
+      "box": [
+        661,
+        403,
+        713,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        716,
+        403,
+        735,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "highest",
+      "box": [
+        738,
+        403,
+        780,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conversion",
+      "box": [
+        784,
+        403,
+        851,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rate.",
+      "box": [
+        853,
+        403,
+        881,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Consequently",
+      "box": [
+        96,
+        417,
+        180,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        183,
+        417,
+        233,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conversion",
+      "box": [
+        236,
+        417,
+        303,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rate",
+      "box": [
+        306,
+        417,
+        329,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        333,
+        417,
+        350,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10%.",
+      "box": [
+        352,
+        417,
+        386,
+        431
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analyzed",
+      "box": [
+        96,
+        431,
+        153,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "web",
+      "box": [
+        156,
+        431,
+        183,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        187,
+        431,
+        200,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        203,
+        431,
+        264,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performance",
+      "box": [
+        266,
+        431,
+        344,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "metrics",
+      "box": [
+        347,
+        431,
+        391,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "such",
+      "box": [
+        394,
+        431,
+        423,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        426,
+        431,
+        439,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CTR,",
+      "box": [
+        443,
+        431,
+        477,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conversion",
+      "box": [
+        481,
+        431,
+        552,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rate,",
+      "box": [
+        555,
+        431,
+        587,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "purchase",
+      "box": [
+        591,
+        431,
+        646,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "funnel",
+      "box": [
+        650,
+        431,
+        687,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conversion",
+      "box": [
+        689,
+        431,
+        756,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rate,",
+      "box": [
+        759,
+        431,
+        786,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "LTV,",
+      "box": [
+        790,
+        431,
+        823,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc.",
+      "box": [
+        827,
+        431,
+        850,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        96,
+        446,
+        123,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "IBM",
+      "box": [
+        125,
+        446,
+        156,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coremetric",
+      "box": [
+        158,
+        446,
+        228,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        231,
+        446,
+        254,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Google",
+      "box": [
+        257,
+        446,
+        302,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analytics.",
+      "box": [
+        306,
+        446,
+        365,
+        459
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Affiliate",
+      "box": [
+        55,
+        471,
+        102,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marketing",
+      "box": [
+        106,
+        471,
+        170,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager",
+      "box": [
+        172,
+        471,
+        228,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "04/2009",
+      "box": [
+        231,
+        471,
+        284,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        287,
+        471,
+        300,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "07/2012",
+      "box": [
+        304,
+        471,
+        357,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        360,
+        471,
+        421,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        424,
+        471,
+        462,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        465,
+        471,
+        492,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        494,
+        471,
+        499,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        502,
+        471,
+        534,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Managed",
+      "box": [
+        96,
+        497,
+        154,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        157,
+        497,
+        180,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monitored",
+      "box": [
+        184,
+        497,
+        246,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        249,
+        497,
+        279,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "affiliate",
+      "box": [
+        281,
+        497,
+        324,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performance.",
+      "box": [
+        328,
+        497,
+        409,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Also",
+      "box": [
+        96,
+        511,
+        125,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "optimized",
+      "box": [
+        128,
+        511,
+        187,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "campaigns",
+      "box": [
+        191,
+        511,
+        255,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "often",
+      "box": [
+        258,
+        511,
+        290,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        293,
+        511,
+        309,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "changing",
+      "box": [
+        312,
+        511,
+        366,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative,",
+      "box": [
+        368,
+        511,
+        420,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "landing",
+      "box": [
+        424,
+        511,
+        468,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pages,",
+      "box": [
+        470,
+        511,
+        510,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "offers,",
+      "box": [
+        513,
+        511,
+        552,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc.",
+      "box": [
+        556,
+        511,
+        578,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "As",
+      "box": [
+        96,
+        526,
+        114,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        117,
+        526,
+        125,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "result",
+      "box": [
+        128,
+        526,
+        161,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "generated",
+      "box": [
+        164,
+        526,
+        225,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10%",
+      "box": [
+        228,
+        526,
+        259,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        261,
+        526,
+        311,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        315,
+        526,
+        326,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "revenue.",
+      "box": [
+        329,
+        526,
+        381,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Negotiated",
+      "box": [
+        96,
+        540,
+        164,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        167,
+        540,
+        194,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "affiliate",
+      "box": [
+        197,
+        540,
+        240,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "networks",
+      "box": [
+        243,
+        540,
+        300,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        304,
+        540,
+        321,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "optimal",
+      "box": [
+        325,
+        540,
+        371,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cost:",
+      "box": [
+        373,
+        540,
+        403,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "base",
+      "box": [
+        405,
+        540,
+        434,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        438,
+        540,
+        454,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPC,",
+      "box": [
+        457,
+        540,
+        493,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPM,",
+      "box": [
+        496,
+        540,
+        535,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPA.",
+      "box": [
+        539,
+        540,
+        574,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Used",
+      "box": [
+        96,
+        554,
+        129,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SiteCatalyst,",
+      "box": [
+        132,
+        554,
+        209,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Omniture",
+      "box": [
+        213,
+        554,
+        270,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        273,
+        554,
+        286,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "generate",
+      "box": [
+        289,
+        554,
+        342,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        345,
+        554,
+        375,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        377,
+        554,
+        400,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "weekly",
+      "box": [
+        403,
+        554,
+        448,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reporting",
+      "box": [
+        451,
+        554,
+        507,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        509,
+        554,
+        523,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "analysis",
+      "box": [
+        526,
+        554,
+        573,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        576,
+        554,
+        589,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "internal",
+      "box": [
+        592,
+        554,
+        637,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        639,
+        554,
+        671,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        673,
+        554,
+        696,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "external",
+      "box": [
+        699,
+        554,
+        748,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partners.",
+      "box": [
+        750,
+        554,
+        804,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Researched",
+      "box": [
+        96,
+        568,
+        168,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        171,
+        568,
+        194,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "built",
+      "box": [
+        198,
+        568,
+        224,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "partnerships",
+      "box": [
+        227,
+        568,
+        301,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        305,
+        568,
+        331,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new",
+      "box": [
+        334,
+        568,
+        360,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "affiliates",
+      "box": [
+        363,
+        568,
+        412,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        416,
+        568,
+        442,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "high",
+      "box": [
+        445,
+        568,
+        471,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "levels",
+      "box": [
+        473,
+        568,
+        507,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        510,
+        568,
+        524,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "relevant",
+      "box": [
+        527,
+        568,
+        575,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "traffic.",
+      "box": [
+        578,
+        568,
+        617,
+        582
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        583,
+        148,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        151,
+        583,
+        178,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative",
+      "box": [
+        181,
+        583,
+        229,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        232,
+        583,
+        264,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        265,
+        583,
+        278,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "design",
+      "box": [
+        281,
+        583,
+        321,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative",
+      "box": [
+        324,
+        583,
+        372,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        375,
+        583,
+        398,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "is",
+      "box": [
+        401,
+        583,
+        411,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "relevant",
+      "box": [
+        415,
+        583,
+        463,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        466,
+        583,
+        479,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "current",
+      "box": [
+        482,
+        583,
+        525,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "events",
+      "box": [
+        529,
+        583,
+        568,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        571,
+        583,
+        594,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "seasons.",
+      "box": [
+        597,
+        583,
+        649,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Managed",
+      "box": [
+        96,
+        597,
+        154,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "A/B",
+      "box": [
+        157,
+        597,
+        184,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        187,
+        597,
+        209,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multivariate",
+      "box": [
+        213,
+        597,
+        282,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tests",
+      "box": [
+        285,
+        597,
+        313,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        317,
+        597,
+        329,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "find",
+      "box": [
+        333,
+        597,
+        356,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        359,
+        597,
+        378,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "highest",
+      "box": [
+        381,
+        597,
+        423,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "converting",
+      "box": [
+        427,
+        597,
+        491,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "landing",
+      "box": [
+        493,
+        597,
+        537,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pages.",
+      "box": [
+        540,
+        597,
+        579,
+        610
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analyzed",
+      "box": [
+        96,
+        611,
+        153,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "historic",
+      "box": [
+        156,
+        611,
+        200,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performance",
+      "box": [
+        204,
+        611,
+        281,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        284,
+        611,
+        311,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "advance",
+      "box": [
+        314,
+        611,
+        365,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        368,
+        611,
+        428,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Excel",
+      "box": [
+        432,
+        611,
+        467,
+        625
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "(Pivot",
+      "box": [
+        469,
+        611,
+        506,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "table",
+      "box": [
+        509,
+        611,
+        539,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        543,
+        611,
+        565,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vlookup)",
+      "box": [
+        569,
+        611,
+        628,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        631,
+        611,
+        699,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new",
+      "box": [
+        702,
+        611,
+        729,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "business",
+      "box": [
+        731,
+        611,
+        782,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "models",
+      "box": [
+        786,
+        611,
+        830,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "such",
+      "box": [
+        833,
+        611,
+        862,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        864,
+        611,
+        878,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "up",
+      "box": [
+        882,
+        611,
+        897,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "selling,",
+      "box": [
+        901,
+        611,
+        941,
+        625
+      ],
+      "label": "O"
+    },
+    {
+      "text": "redesigning",
+      "box": [
+        96,
+        625,
+        165,
+        639
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative",
+      "box": [
+        167,
+        625,
+        215,
+        639
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        219,
+        625,
+        242,
+        639
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pop",
+      "box": [
+        245,
+        625,
+        270,
+        639
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ups.",
+      "box": [
+        273,
+        625,
+        299,
+        639
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Collaborated",
+      "box": [
+        96,
+        640,
+        176,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        180,
+        640,
+        206,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "technical",
+      "box": [
+        209,
+        640,
+        263,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teams",
+      "box": [
+        265,
+        640,
+        301,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        305,
+        640,
+        317,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolve",
+      "box": [
+        321,
+        640,
+        365,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reporting,",
+      "box": [
+        368,
+        640,
+        427,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative",
+      "box": [
+        431,
+        640,
+        479,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "or",
+      "box": [
+        482,
+        640,
+        496,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "application",
+      "box": [
+        499,
+        640,
+        566,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "issues.",
+      "box": [
+        569,
+        640,
+        609,
+        653
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Business",
+      "box": [
+        55,
+        665,
+        109,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intelligent",
+      "box": [
+        112,
+        665,
+        170,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analyst",
+      "box": [
+        173,
+        665,
+        220,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "07/2006",
+      "box": [
+        223,
+        665,
+        276,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        279,
+        665,
+        292,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "04/2009",
+      "box": [
+        296,
+        665,
+        349,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        352,
+        665,
+        413,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        416,
+        665,
+        454,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        457,
+        665,
+        484,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        486,
+        665,
+        491,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        494,
+        665,
+        526,
+        679
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        691,
+        148,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        151,
+        691,
+        178,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        181,
+        691,
+        228,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teams",
+      "box": [
+        231,
+        691,
+        267,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        270,
+        691,
+        283,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        286,
+        691,
+        337,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "call",
+      "box": [
+        340,
+        691,
+        362,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        364,
+        691,
+        381,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "18%",
+      "box": [
+        383,
+        691,
+        414,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        417,
+        691,
+        439,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "revenue",
+      "box": [
+        443,
+        691,
+        491,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        494,
+        691,
+        511,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10%",
+      "box": [
+        513,
+        691,
+        544,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        547,
+        691,
+        558,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "past",
+      "box": [
+        561,
+        691,
+        587,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "years.",
+      "box": [
+        590,
+        691,
+        627,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Used",
+      "box": [
+        96,
+        705,
+        129,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SQL",
+      "box": [
+        132,
+        705,
+        164,
+        719
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "to",
+      "box": [
+        166,
+        705,
+        179,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mine",
+      "box": [
+        183,
+        705,
+        211,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        215,
+        705,
+        242,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "from",
+      "box": [
+        245,
+        705,
+        276,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        277,
+        705,
+        324,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "databases",
+      "box": [
+        328,
+        705,
+        389,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        392,
+        705,
+        415,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tables.",
+      "box": [
+        419,
+        705,
+        458,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Also",
+      "box": [
+        96,
+        719,
+        125,
+        733
+      ],
+      "label": "O"
+    },
+    {
+      "text": "gathered",
+      "box": [
+        128,
+        719,
+        181,
+        733
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        185,
+        719,
+        211,
+        733
+      ],
+      "label": "O"
+    },
+    {
+      "text": "from",
+      "box": [
+        215,
+        719,
+        245,
+        733
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Salesforce.",
+      "box": [
+        247,
+        719,
+        315,
+        733
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Built",
+      "box": [
+        96,
+        734,
+        124,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ad",
+      "box": [
+        127,
+        734,
+        143,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hoc",
+      "box": [
+        146,
+        734,
+        169,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "report",
+      "box": [
+        172,
+        734,
+        211,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        214,
+        734,
+        241,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Business",
+      "box": [
+        243,
+        734,
+        296,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Object",
+      "box": [
+        300,
+        734,
+        343,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "-",
+      "box": [
+        346,
+        734,
+        352,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Infoview",
+      "box": [
+        356,
+        734,
+        410,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        413,
+        734,
+        425,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "highlight",
+      "box": [
+        429,
+        734,
+        478,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "metrics:",
+      "box": [
+        481,
+        734,
+        529,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "impressions,",
+      "box": [
+        532,
+        734,
+        606,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "searches,",
+      "box": [
+        610,
+        734,
+        667,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "clicks,",
+      "box": [
+        671,
+        734,
+        709,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CTR,",
+      "box": [
+        713,
+        734,
+        748,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "revenue,",
+      "box": [
+        751,
+        734,
+        803,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc.",
+      "box": [
+        807,
+        734,
+        829,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Created",
+      "box": [
+        96,
+        748,
+        146,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        149,
+        748,
+        157,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dashboard",
+      "box": [
+        160,
+        748,
+        226,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        229,
+        748,
+        252,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "collects",
+      "box": [
+        255,
+        748,
+        301,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "raw",
+      "box": [
+        305,
+        748,
+        329,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        332,
+        748,
+        359,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "live",
+      "box": [
+        362,
+        748,
+        383,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "without",
+      "box": [
+        386,
+        748,
+        431,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        435,
+        748,
+        454,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "delay",
+      "box": [
+        457,
+        748,
+        491,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        493,
+        748,
+        507,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "applying",
+      "box": [
+        509,
+        748,
+        561,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "business",
+      "box": [
+        564,
+        748,
+        615,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rules",
+      "box": [
+        618,
+        748,
+        647,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Designed",
+      "box": [
+        651,
+        748,
+        708,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "A/B",
+      "box": [
+        711,
+        748,
+        738,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "testing",
+      "box": [
+        740,
+        748,
+        780,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        783,
+        748,
+        795,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "highlight",
+      "box": [
+        799,
+        748,
+        848,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        851,
+        748,
+        870,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "effects",
+      "box": [
+        874,
+        748,
+        914,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        917,
+        748,
+        931,
+        761
+      ],
+      "label": "O"
+    },
+    {
+      "text": "product",
+      "box": [
+        96,
+        762,
+        144,
+        776
+      ],
+      "label": "O"
+    },
+    {
+      "text": "enhancements",
+      "box": [
+        147,
+        762,
+        233,
+        776
+      ],
+      "label": "O"
+    },
+    {
+      "text": "or",
+      "box": [
+        236,
+        762,
+        250,
+        776
+      ],
+      "label": "O"
+    },
+    {
+      "text": "replacements.",
+      "box": [
+        253,
+        762,
+        337,
+        776
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analyzed",
+      "box": [
+        96,
+        776,
+        153,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        156,
+        776,
+        175,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "results",
+      "box": [
+        179,
+        776,
+        218,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        221,
+        776,
+        235,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "A/B",
+      "box": [
+        237,
+        776,
+        264,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "testing",
+      "box": [
+        266,
+        776,
+        306,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        309,
+        776,
+        335,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "advance",
+      "box": [
+        338,
+        776,
+        389,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Excel",
+      "box": [
+        392,
+        776,
+        427,
+        790
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "(Pivot",
+      "box": [
+        430,
+        776,
+        467,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "table,",
+      "box": [
+        470,
+        776,
+        504,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vlookup,",
+      "box": [
+        507,
+        776,
+        565,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc)",
+      "box": [
+        569,
+        776,
+        593,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        596,
+        776,
+        619,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "present",
+      "box": [
+        622,
+        776,
+        668,
+        790
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "KPI",
+      "box": [
+        671,
+        776,
+        698,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        701,
+        776,
+        724,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "forecast",
+      "box": [
+        727,
+        776,
+        776,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        780,
+        776,
+        792,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        796,
+        776,
+        827,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "members",
+      "box": [
+        829,
+        776,
+        885,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        889,
+        776,
+        911,
+        790
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        96,
+        791,
+        172,
+        804
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        176,
+        791,
+        187,
+        804
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PowerPoint.",
+      "box": [
+        190,
+        791,
+        266,
+        804
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Identified",
+      "box": [
+        96,
+        805,
+        153,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "enhancements",
+      "box": [
+        156,
+        805,
+        242,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        245,
+        805,
+        257,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "existing",
+      "box": [
+        259,
+        805,
+        305,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "online",
+      "box": [
+        308,
+        805,
+        344,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "products",
+      "box": [
+        347,
+        805,
+        401,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        404,
+        805,
+        417,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        421,
+        805,
+        471,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "search",
+      "box": [
+        474,
+        805,
+        515,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "relevancy",
+      "box": [
+        517,
+        805,
+        577,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        579,
+        805,
+        602,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customer",
+      "box": [
+        605,
+        805,
+        661,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "experience,",
+      "box": [
+        665,
+        805,
+        735,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        738,
+        805,
+        752,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "result",
+      "box": [
+        755,
+        805,
+        789,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        792,
+        805,
+        842,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        845,
+        805,
+        857,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "click",
+      "box": [
+        859,
+        805,
+        888,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "through",
+      "box": [
+        892,
+        805,
+        939,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rate",
+      "box": [
+        96,
+        819,
+        120,
+        833
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(CTR)",
+      "box": [
+        123,
+        819,
+        164,
+        833
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        167,
+        819,
+        181,
+        833
+      ],
+      "label": "O"
+    },
+    {
+      "text": "more",
+      "box": [
+        184,
+        819,
+        215,
+        833
+      ],
+      "label": "O"
+    },
+    {
+      "text": "revenue.",
+      "box": [
+        219,
+        819,
+        271,
+        833
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Loan",
+      "box": [
+        55,
+        845,
+        88,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Processor/Analyst",
+      "box": [
+        91,
+        845,
+        203,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "07/2004",
+      "box": [
+        206,
+        845,
+        259,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        262,
+        845,
+        275,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "06/2006",
+      "box": [
+        278,
+        845,
+        331,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        335,
+        845,
+        396,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        398,
+        845,
+        436,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        440,
+        845,
+        467,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        469,
+        845,
+        473,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        477,
+        845,
+        509,
+        858
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Validated",
+      "box": [
+        96,
+        871,
+        155,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        158,
+        871,
+        181,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "verified",
+      "box": [
+        185,
+        871,
+        230,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "loan",
+      "box": [
+        233,
+        871,
+        260,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "application",
+      "box": [
+        262,
+        871,
+        329,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "information.",
+      "box": [
+        332,
+        871,
+        404,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Compared",
+      "box": [
+        96,
+        885,
+        162,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "application",
+      "box": [
+        165,
+        885,
+        233,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "information",
+      "box": [
+        235,
+        885,
+        304,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        307,
+        885,
+        319,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Database.",
+      "box": [
+        323,
+        885,
+        385,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analyzed",
+      "box": [
+        96,
+        899,
+        153,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "supporting",
+      "box": [
+        156,
+        899,
+        221,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "documentation",
+      "box": [
+        224,
+        899,
+        314,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        317,
+        899,
+        333,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Automated",
+      "box": [
+        336,
+        899,
+        404,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Underwriting",
+      "box": [
+        407,
+        899,
+        488,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "System.",
+      "box": [
+        490,
+        899,
+        539,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reviewed",
+      "box": [
+        96,
+        913,
+        157,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "loan",
+      "box": [
+        160,
+        913,
+        187,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "application",
+      "box": [
+        190,
+        913,
+        257,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "package",
+      "box": [
+        259,
+        913,
+        311,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        315,
+        913,
+        333,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "completeness",
+      "box": [
+        336,
+        913,
+        418,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        422,
+        913,
+        444,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accuracy.",
+      "box": [
+        448,
+        913,
+        507,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reconciled",
+      "box": [
+        96,
+        928,
+        164,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "application",
+      "box": [
+        167,
+        928,
+        235,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "information",
+      "box": [
+        237,
+        928,
+        306,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "against",
+      "box": [
+        309,
+        928,
+        351,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "system",
+      "box": [
+        354,
+        928,
+        398,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "input,",
+      "box": [
+        399,
+        928,
+        433,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "comparing",
+      "box": [
+        437,
+        928,
+        502,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "individual",
+      "box": [
+        504,
+        928,
+        563,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data.",
+      "box": [
+        565,
+        928,
+        595,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Calculated",
+      "box": [
+        96,
+        942,
+        161,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        164,
+        942,
+        187,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "analyzed",
+      "box": [
+        191,
+        942,
+        244,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "debt",
+      "box": [
+        247,
+        942,
+        275,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        278,
+        942,
+        291,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "income",
+      "box": [
+        295,
+        942,
+        339,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ratio",
+      "box": [
+        342,
+        942,
+        370,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(i.e.",
+      "box": [
+        373,
+        942,
+        397,
+        955
+      ],
+      "label": "O"
+    },
+    {
+      "text": "employment,",
+      "box": [
+        96,
+        1034,
+        174,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tax",
+      "box": [
+        178,
+        1034,
+        197,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "returns,",
+      "box": [
+        200,
+        1034,
+        245,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc.).",
+      "box": [
+        249,
+        1034,
+        281,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Also",
+      "box": [
+        96,
+        1048,
+        125,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "funds",
+      "box": [
+        128,
+        1048,
+        161,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        164,
+        1048,
+        177,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "close",
+      "box": [
+        181,
+        1048,
+        212,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(i.e.",
+      "box": [
+        216,
+        1048,
+        239,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "verification",
+      "box": [
+        96,
+        1062,
+        163,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        165,
+        1062,
+        179,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "deposits,",
+      "box": [
+        182,
+        1062,
+        236,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "gift",
+      "box": [
+        240,
+        1062,
+        259,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "money,",
+      "box": [
+        262,
+        1062,
+        307,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etc).",
+      "box": [
+        311,
+        1062,
+        338,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coordinated",
+      "box": [
+        96,
+        1076,
+        173,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rigorously",
+      "box": [
+        177,
+        1076,
+        238,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        240,
+        1076,
+        267,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customers,",
+      "box": [
+        269,
+        1076,
+        335,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "boarding,",
+      "box": [
+        339,
+        1076,
+        397,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "processing,",
+      "box": [
+        400,
+        1076,
+        469,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "underwriting,",
+      "box": [
+        473,
+        1076,
+        552,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "closing,",
+      "box": [
+        556,
+        1076,
+        601,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "appraisal",
+      "box": [
+        605,
+        1076,
+        661,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        664,
+        1076,
+        686,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "escrow",
+      "box": [
+        690,
+        1076,
+        736,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teams",
+      "box": [
+        738,
+        1076,
+        774,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        778,
+        1076,
+        790,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "close",
+      "box": [
+        794,
+        1076,
+        826,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "loans.",
+      "box": [
+        829,
+        1076,
+        865,
+        1090
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        55,
+        1102,
+        118,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bachelor",
+      "box": [
+        55,
+        1116,
+        111,
+        1130
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": ":",
+      "box": [
+        114,
+        1116,
+        119,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cognitive",
+      "box": [
+        121,
+        1116,
+        179,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Science",
+      "box": [
+        183,
+        1116,
+        231,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Computational",
+      "box": [
+        234,
+        1116,
+        325,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Modeling",
+      "box": [
+        327,
+        1116,
+        386,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "May",
+      "box": [
+        388,
+        1116,
+        418,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2004",
+      "box": [
+        421,
+        1116,
+        453,
+        1130
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "University",
+      "box": [
+        457,
+        1116,
+        519,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        521,
+        1116,
+        535,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "California",
+      "box": [
+        538,
+        1116,
+        597,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        600,
+        1116,
+        627,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cognitive",
+      "box": [
+        629,
+        1116,
+        688,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Science",
+      "box": [
+        691,
+        1116,
+        739,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Computational",
+      "box": [
+        742,
+        1116,
+        833,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Modeling",
+      "box": [
+        835,
+        1116,
+        894,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        55,
+        1131,
+        88,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ad,",
+      "box": [
+        55,
+        1145,
+        75,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "budgets,",
+      "box": [
+        79,
+        1145,
+        130,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "closing,",
+      "box": [
+        134,
+        1145,
+        180,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conversion,",
+      "box": [
+        184,
+        1145,
+        257,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPA,",
+      "box": [
+        261,
+        1145,
+        297,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "databases,",
+      "box": [
+        301,
+        1145,
+        365,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Database,",
+      "box": [
+        369,
+        1145,
+        431,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dna,",
+      "box": [
+        435,
+        1145,
+        461,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "documentation,",
+      "box": [
+        465,
+        1145,
+        558,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "funds,",
+      "box": [
+        562,
+        1145,
+        598,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Google",
+      "box": [
+        602,
+        1145,
+        647,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analytics,",
+      "box": [
+        651,
+        1145,
+        710,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HTML,",
+      "box": [
+        714,
+        1145,
+        762,
+        1158
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "IBM,",
+      "box": [
+        766,
+        1145,
+        799,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lisp,",
+      "box": [
+        803,
+        1145,
+        833,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Macros,",
+      "box": [
+        837,
+        1145,
+        889,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing",
+      "box": [
+        55,
+        1159,
+        117,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategies,",
+      "box": [
+        119,
+        1159,
+        180,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "marketing,",
+      "box": [
+        184,
+        1159,
+        247,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "market,",
+      "box": [
+        251,
+        1159,
+        298,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "messaging,",
+      "box": [
+        302,
+        1159,
+        367,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Access,",
+      "box": [
+        371,
+        1159,
+        420,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        424,
+        1159,
+        484,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Excel,",
+      "box": [
+        487,
+        1159,
+        525,
+        1173
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Excel,",
+      "box": [
+        529,
+        1159,
+        566,
+        1173
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "money,",
+      "box": [
+        570,
+        1159,
+        615,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PowerPoint,",
+      "box": [
+        618,
+        1159,
+        694,
+        1173
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Sharepoint,",
+      "box": [
+        698,
+        1159,
+        768,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Window,",
+      "box": [
+        772,
+        1159,
+        828,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        832,
+        1159,
+        892,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Word,",
+      "box": [
+        896,
+        1159,
+        936,
+        1173
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Microstrategy,",
+      "box": [
+        55,
+        1173,
+        145,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "networks,",
+      "box": [
+        148,
+        1173,
+        209,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Operating",
+      "box": [
+        213,
+        1173,
+        275,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "systems,",
+      "box": [
+        277,
+        1173,
+        329,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "page,",
+      "box": [
+        333,
+        1173,
+        366,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pivot",
+      "box": [
+        370,
+        1173,
+        402,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "table,",
+      "box": [
+        405,
+        1173,
+        439,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pricing,",
+      "box": [
+        443,
+        1173,
+        487,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Psychology,",
+      "box": [
+        491,
+        1173,
+        565,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reporting,",
+      "box": [
+        569,
+        1173,
+        628,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "selling,",
+      "box": [
+        631,
+        1173,
+        672,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SQL,",
+      "box": [
+        676,
+        1173,
+        710,
+        1187
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "tables,",
+      "box": [
+        714,
+        1173,
+        754,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tax",
+      "box": [
+        758,
+        1173,
+        777,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "returns,",
+      "box": [
+        780,
+        1173,
+        825,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Underwriting,",
+      "box": [
+        829,
+        1173,
+        912,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vista,",
+      "box": [
+        55,
+        1188,
+        91,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "VBA",
+      "box": [
+        95,
+        1188,
+        128,
+        1201
+      ],
+      "label": "B-SKILL"
+    }
+  ]
+}

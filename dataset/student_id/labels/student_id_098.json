@@ -1,0 +1,122 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_098.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Columbia",
+      "box": [
+        37,
+        253,
+        367,
+        385
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "University",
+      "box": [
+        353,
+        296,
+        714,
+        462
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Nama",
+      "box": [
+        31,
+        362,
+        101,
+        401
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Michalle",
+      "box": [
+        92,
+        370,
+        193,
+        418
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Noln",
+      "box": [
+        176,
+        384,
+        252,
+        429
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "'25578927",
+      "box": [
+        31,
+        468,
+        149,
+        524
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expiry:",
+      "box": [
+        0,
+        578,
+        120,
+        654
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date:",
+      "box": [
+        103,
+        598,
+        223,
+        668
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expires:",
+      "box": [
+        210,
+        618,
+        374,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "August",
+      "box": [
+        362,
+        650,
+        509,
+        721
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023",
+      "box": [
+        495,
+        670,
+        609,
+        738
+      ],
+      "label": "B-EXPIRY_DATE"
+    }
+  ]
+}

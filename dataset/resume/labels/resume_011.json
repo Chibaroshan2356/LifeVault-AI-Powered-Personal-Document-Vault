@@ -1,0 +1,12372 @@
+{
+  "document_metadata": {
+    "category": "Resume"
+  },
+  "image_filename": "resume_011.png",
+  "image_dimensions": [
+    595,
+    842
+  ],
+  "words": [
+    {
+      "text": "TUTORING",
+      "box": [
+        55,
+        34,
+        137,
+        47
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "CONSULTANT",
+      "box": [
+        139,
+        34,
+        247,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Executive",
+      "box": [
+        55,
+        48,
+        115,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Profile",
+      "box": [
+        118,
+        48,
+        158,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Motivated,",
+      "box": [
+        55,
+        62,
+        122,
+        76
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "enthusiastic",
+      "box": [
+        126,
+        62,
+        195,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "educational",
+      "box": [
+        199,
+        62,
+        269,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "leader",
+      "box": [
+        271,
+        62,
+        309,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        313,
+        62,
+        339,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "15+",
+      "box": [
+        342,
+        62,
+        368,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "years'",
+      "box": [
+        371,
+        62,
+        407,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "experience",
+      "box": [
+        411,
+        62,
+        477,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "fostering",
+      "box": [
+        480,
+        62,
+        533,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        536,
+        62,
+        543,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cohesive",
+      "box": [
+        547,
+        62,
+        600,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        603,
+        62,
+        647,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        651,
+        62,
+        699,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "atmosphere",
+      "box": [
+        701,
+        62,
+        772,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conducive",
+      "box": [
+        776,
+        62,
+        838,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        841,
+        62,
+        854,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning.",
+      "box": [
+        857,
+        62,
+        908,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        55,
+        76,
+        68,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "My",
+      "box": [
+        71,
+        76,
+        93,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        96,
+        76,
+        108,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "core",
+      "box": [
+        111,
+        76,
+        139,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "qualifications",
+      "box": [
+        142,
+        76,
+        221,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "include",
+      "box": [
+        224,
+        76,
+        267,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "being",
+      "box": [
+        270,
+        76,
+        304,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        307,
+        76,
+        314,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "licensed",
+      "box": [
+        318,
+        76,
+        367,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reading",
+      "box": [
+        370,
+        76,
+        416,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "specialist",
+      "box": [
+        419,
+        76,
+        474,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        477,
+        76,
+        489,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        491,
+        76,
+        538,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "states,",
+      "box": [
+        542,
+        76,
+        580,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strong",
+      "box": [
+        584,
+        76,
+        623,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classroom",
+      "box": [
+        625,
+        76,
+        689,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management,",
+      "box": [
+        691,
+        76,
+        771,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "public",
+      "box": [
+        775,
+        76,
+        812,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "speaking",
+      "box": [
+        815,
+        76,
+        870,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills,",
+      "box": [
+        873,
+        76,
+        906,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPR",
+      "box": [
+        910,
+        76,
+        942,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certified",
+      "box": [
+        55,
+        91,
+        109,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        112,
+        91,
+        135,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "F.E.M.A.",
+      "box": [
+        138,
+        91,
+        198,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        202,
+        91,
+        214,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "certified",
+      "box": [
+        217,
+        91,
+        266,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        269,
+        91,
+        287,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "emergency",
+      "box": [
+        290,
+        91,
+        358,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        360,
+        91,
+        437,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "situations.",
+      "box": [
+        440,
+        91,
+        500,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skill",
+      "box": [
+        55,
+        105,
+        83,
+        119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Highlights",
+      "box": [
+        86,
+        105,
+        145,
+        119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leadership/communication",
+      "box": [
+        99,
+        121,
+        263,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        265,
+        121,
+        295,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Self-motivated",
+      "box": [
+        99,
+        136,
+        188,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CPR",
+      "box": [
+        99,
+        151,
+        131,
+        165
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certified",
+      "box": [
+        133,
+        151,
+        186,
+        165
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Classroom",
+      "box": [
+        339,
+        123,
+        407,
+        136
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        409,
+        123,
+        485,
+        136
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Crisis",
+      "box": [
+        339,
+        137,
+        374,
+        151
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        377,
+        137,
+        454,
+        151
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Patient",
+      "box": [
+        339,
+        151,
+        381,
+        165
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Core",
+      "box": [
+        55,
+        181,
+        87,
+        194
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accomplishments",
+      "box": [
+        91,
+        181,
+        198,
+        194
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Helped",
+      "box": [
+        55,
+        195,
+        100,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "my",
+      "box": [
+        104,
+        195,
+        124,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "low",
+      "box": [
+        126,
+        195,
+        150,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "functioning",
+      "box": [
+        152,
+        195,
+        218,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "readers",
+      "box": [
+        221,
+        195,
+        267,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "move",
+      "box": [
+        270,
+        195,
+        304,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "from",
+      "box": [
+        308,
+        195,
+        338,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pre-K",
+      "box": [
+        340,
+        195,
+        380,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "level",
+      "box": [
+        383,
+        195,
+        412,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reading",
+      "box": [
+        415,
+        195,
+        461,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        463,
+        195,
+        476,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "5th",
+      "box": [
+        479,
+        195,
+        500,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        502,
+        195,
+        525,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6th",
+      "box": [
+        529,
+        195,
+        549,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grade",
+      "box": [
+        552,
+        195,
+        587,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reading",
+      "box": [
+        590,
+        195,
+        636,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "levels.",
+      "box": [
+        638,
+        195,
+        676,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Facilitated",
+      "box": [
+        55,
+        210,
+        119,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "small",
+      "box": [
+        122,
+        210,
+        154,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reading",
+      "box": [
+        156,
+        210,
+        202,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        205,
+        210,
+        228,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "writing",
+      "box": [
+        231,
+        210,
+        273,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "groups,",
+      "box": [
+        275,
+        210,
+        321,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        325,
+        210,
+        348,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "phonics",
+      "box": [
+        351,
+        210,
+        398,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "groups",
+      "box": [
+        401,
+        210,
+        443,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        447,
+        210,
+        465,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grades",
+      "box": [
+        468,
+        210,
+        509,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6",
+      "box": [
+        512,
+        210,
+        521,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "through",
+      "box": [
+        525,
+        210,
+        571,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "12",
+      "box": [
+        574,
+        210,
+        591,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": ".",
+      "box": [
+        594,
+        210,
+        598,
+        224
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Managed",
+      "box": [
+        55,
+        228,
+        114,
+        241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classes",
+      "box": [
+        117,
+        228,
+        160,
+        241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        163,
+        228,
+        177,
+        241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "up",
+      "box": [
+        180,
+        228,
+        195,
+        241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        199,
+        228,
+        211,
+        241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "45.",
+      "box": [
+        215,
+        228,
+        235,
+        241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Chaperoned",
+      "box": [
+        55,
+        243,
+        132,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        135,
+        243,
+        182,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "field",
+      "box": [
+        186,
+        243,
+        211,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "trips",
+      "box": [
+        215,
+        243,
+        242,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        245,
+        243,
+        268,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "after-school",
+      "box": [
+        271,
+        243,
+        346,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities.",
+      "box": [
+        348,
+        243,
+        404,
+        257
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Designed",
+      "box": [
+        55,
+        258,
+        113,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Â",
+      "box": [
+        116,
+        258,
+        128,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "weekly",
+      "box": [
+        131,
+        258,
+        176,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        179,
+        258,
+        217,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        220,
+        258,
+        252,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "focused",
+      "box": [
+        255,
+        258,
+        303,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        307,
+        258,
+        323,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "age",
+      "box": [
+        326,
+        258,
+        348,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        351,
+        258,
+        374,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "level-appropriate",
+      "box": [
+        377,
+        258,
+        482,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "material.",
+      "box": [
+        485,
+        258,
+        537,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Designed",
+      "box": [
+        55,
+        272,
+        113,
+        285
+      ],
+      "label": "O"
+    },
+    {
+      "text": "curriculum",
+      "box": [
+        116,
+        272,
+        181,
+        285
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        183,
+        272,
+        219,
+        285
+      ],
+      "label": "O"
+    },
+    {
+      "text": "upon",
+      "box": [
+        223,
+        272,
+        255,
+        285
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        257,
+        272,
+        301,
+        285
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needs.",
+      "box": [
+        305,
+        272,
+        344,
+        285
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Helped",
+      "box": [
+        55,
+        286,
+        100,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "myÂ",
+      "box": [
+        104,
+        286,
+        135,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        137,
+        286,
+        187,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reach",
+      "box": [
+        191,
+        286,
+        226,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "their",
+      "box": [
+        228,
+        286,
+        255,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "IEP",
+      "box": [
+        258,
+        286,
+        282,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "goals.",
+      "box": [
+        285,
+        286,
+        321,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional",
+      "box": [
+        55,
+        300,
+        131,
+        314
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        133,
+        300,
+        201,
+        314
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tutoring",
+      "box": [
+        55,
+        315,
+        107,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Consultant",
+      "box": [
+        110,
+        315,
+        175,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": "August",
+      "box": [
+        55,
+        329,
+        99,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2014",
+      "box": [
+        102,
+        329,
+        135,
+        342
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        138,
+        329,
+        151,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Current",
+      "box": [
+        154,
+        329,
+        201,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        205,
+        329,
+        266,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        268,
+        329,
+        306,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        310,
+        329,
+        326,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        329,
+        329,
+        356,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        358,
+        329,
+        362,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        366,
+        329,
+        398,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        96,
+        354,
+        164,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "working",
+      "box": [
+        167,
+        354,
+        218,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "special",
+      "box": [
+        221,
+        354,
+        264,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needs",
+      "box": [
+        266,
+        354,
+        302,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students.",
+      "box": [
+        306,
+        354,
+        359,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Promoted",
+      "box": [
+        96,
+        369,
+        157,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "language",
+      "box": [
+        160,
+        369,
+        213,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development",
+      "box": [
+        217,
+        369,
+        295,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        299,
+        369,
+        328,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "through",
+      "box": [
+        332,
+        369,
+        379,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reading",
+      "box": [
+        381,
+        369,
+        427,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        430,
+        369,
+        452,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "storytelling.",
+      "box": [
+        456,
+        369,
+        525,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Applied",
+      "box": [
+        96,
+        383,
+        145,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        148,
+        383,
+        167,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "positive",
+      "box": [
+        170,
+        383,
+        217,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reinforcement",
+      "box": [
+        221,
+        383,
+        304,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "method",
+      "box": [
+        308,
+        383,
+        354,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        357,
+        383,
+        370,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "redirect",
+      "box": [
+        373,
+        383,
+        420,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "negative",
+      "box": [
+        424,
+        383,
+        474,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "behaviors.",
+      "box": [
+        477,
+        383,
+        540,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Encouraged",
+      "box": [
+        96,
+        397,
+        169,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        172,
+        397,
+        223,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        226,
+        397,
+        239,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "be",
+      "box": [
+        242,
+        397,
+        258,
+        411
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "understanding",
+      "box": [
+        261,
+        397,
+        347,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        349,
+        397,
+        363,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        365,
+        397,
+        388,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "helpful",
+      "box": [
+        391,
+        397,
+        432,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        435,
+        397,
+        447,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "others.",
+      "box": [
+        451,
+        397,
+        493,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Observed",
+      "box": [
+        96,
+        411,
+        157,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        160,
+        411,
+        210,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        214,
+        411,
+        227,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "supply",
+      "box": [
+        230,
+        411,
+        271,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teachers",
+      "box": [
+        273,
+        411,
+        324,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        328,
+        411,
+        355,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "feedback",
+      "box": [
+        357,
+        411,
+        414,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "regarding",
+      "box": [
+        418,
+        411,
+        476,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "potential",
+      "box": [
+        478,
+        411,
+        531,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        534,
+        411,
+        582,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "blocks",
+      "box": [
+        584,
+        411,
+        625,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        628,
+        411,
+        651,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "opportunities",
+      "box": [
+        655,
+        411,
+        734,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        737,
+        411,
+        755,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "support.",
+      "box": [
+        759,
+        411,
+        809,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English/Social",
+      "box": [
+        55,
+        437,
+        141,
+        451
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        143,
+        437,
+        188,
+        451
+      ],
+      "label": "O"
+    },
+    {
+      "text": "September",
+      "box": [
+        55,
+        451,
+        123,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2013",
+      "box": [
+        126,
+        451,
+        159,
+        465
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        162,
+        451,
+        175,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Current",
+      "box": [
+        179,
+        451,
+        226,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        229,
+        451,
+        290,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        293,
+        451,
+        330,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        334,
+        451,
+        350,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        353,
+        451,
+        380,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        382,
+        451,
+        387,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        390,
+        451,
+        422,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        96,
+        477,
+        163,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        166,
+        477,
+        189,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "implemented",
+      "box": [
+        193,
+        477,
+        270,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        273,
+        477,
+        303,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        306,
+        477,
+        328,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "unit",
+      "box": [
+        332,
+        477,
+        354,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        357,
+        477,
+        396,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        398,
+        477,
+        430,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        434,
+        477,
+        452,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6th",
+      "box": [
+        455,
+        477,
+        476,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grade",
+      "box": [
+        478,
+        477,
+        513,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English",
+      "box": [
+        516,
+        477,
+        560,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed,",
+      "box": [
+        563,
+        477,
+        634,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "administered",
+      "box": [
+        637,
+        477,
+        715,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        718,
+        477,
+        741,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "corrected",
+      "box": [
+        744,
+        477,
+        803,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tests",
+      "box": [
+        807,
+        477,
+        835,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        838,
+        477,
+        861,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quizzes",
+      "box": [
+        864,
+        477,
+        908,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        912,
+        477,
+        924,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        926,
+        477,
+        934,
+        491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "timely",
+      "box": [
+        96,
+        491,
+        133,
+        505
+      ],
+      "label": "O"
+    },
+    {
+      "text": "manner.",
+      "box": [
+        135,
+        491,
+        184,
+        505
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conducted",
+      "box": [
+        96,
+        506,
+        164,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        167,
+        506,
+        203,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        207,
+        506,
+        230,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "one-on-one",
+      "box": [
+        233,
+        506,
+        305,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reading",
+      "box": [
+        309,
+        506,
+        355,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        357,
+        506,
+        380,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "writing",
+      "box": [
+        383,
+        506,
+        425,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities",
+      "box": [
+        428,
+        506,
+        480,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        96,
+        520,
+        163,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "excellent",
+      "box": [
+        166,
+        520,
+        220,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rapport",
+      "box": [
+        223,
+        520,
+        269,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        272,
+        520,
+        299,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        302,
+        520,
+        352,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fostered",
+      "box": [
+        355,
+        520,
+        410,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        414,
+        520,
+        421,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classroom",
+      "box": [
+        425,
+        520,
+        489,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "environment,",
+      "box": [
+        490,
+        520,
+        568,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conducive",
+      "box": [
+        572,
+        520,
+        634,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        637,
+        520,
+        650,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        654,
+        520,
+        702,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        704,
+        520,
+        727,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "promoting",
+      "box": [
+        730,
+        520,
+        793,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "excellent",
+      "box": [
+        796,
+        520,
+        849,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        852,
+        520,
+        896,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "engagement",
+      "box": [
+        96,
+        534,
+        168,
+        548
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Participated",
+      "box": [
+        96,
+        548,
+        169,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        172,
+        548,
+        184,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "parent",
+      "box": [
+        187,
+        548,
+        226,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        229,
+        548,
+        252,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "faculty",
+      "box": [
+        255,
+        548,
+        296,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conferences",
+      "box": [
+        299,
+        548,
+        372,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Designed",
+      "box": [
+        375,
+        548,
+        432,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        436,
+        548,
+        475,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        477,
+        548,
+        509,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "focused",
+      "box": [
+        512,
+        548,
+        560,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        564,
+        548,
+        581,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needs",
+      "box": [
+        583,
+        548,
+        619,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        622,
+        548,
+        645,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grade",
+      "box": [
+        649,
+        548,
+        683,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "level",
+      "box": [
+        687,
+        548,
+        716,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Instructor",
+      "box": [
+        718,
+        548,
+        777,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        781,
+        548,
+        799,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        802,
+        548,
+        821,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Voyager",
+      "box": [
+        824,
+        548,
+        877,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Learning",
+      "box": [
+        881,
+        548,
+        935,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program.",
+      "box": [
+        96,
+        563,
+        153,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Implemented",
+      "box": [
+        96,
+        577,
+        175,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PBIS",
+      "box": [
+        179,
+        577,
+        212,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "programs",
+      "box": [
+        216,
+        577,
+        274,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        277,
+        577,
+        290,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "encourage",
+      "box": [
+        294,
+        577,
+        357,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        360,
+        577,
+        404,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "participation.",
+      "box": [
+        407,
+        577,
+        486,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Supported",
+      "box": [
+        96,
+        591,
+        161,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        164,
+        591,
+        215,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        218,
+        591,
+        230,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "developing",
+      "box": [
+        232,
+        591,
+        299,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategies",
+      "box": [
+        302,
+        591,
+        359,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        362,
+        591,
+        380,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "individual",
+      "box": [
+        383,
+        591,
+        442,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needs",
+      "box": [
+        444,
+        591,
+        480,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        483,
+        591,
+        506,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classroom",
+      "box": [
+        509,
+        591,
+        573,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        575,
+        591,
+        611,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dynamics.",
+      "box": [
+        614,
+        591,
+        675,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Communicated",
+      "box": [
+        96,
+        605,
+        188,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "effectively",
+      "box": [
+        192,
+        605,
+        254,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        256,
+        605,
+        283,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "educators",
+      "box": [
+        285,
+        605,
+        346,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "from",
+      "box": [
+        349,
+        605,
+        380,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "various",
+      "box": [
+        381,
+        605,
+        425,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grade",
+      "box": [
+        429,
+        605,
+        464,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "levels.",
+      "box": [
+        467,
+        605,
+        505,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Physically",
+      "box": [
+        96,
+        620,
+        157,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        159,
+        620,
+        182,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "verbally",
+      "box": [
+        186,
+        620,
+        235,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interacted",
+      "box": [
+        237,
+        620,
+        297,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        301,
+        620,
+        327,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        330,
+        620,
+        380,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "throughout",
+      "box": [
+        383,
+        620,
+        449,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        452,
+        620,
+        471,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "day",
+      "box": [
+        474,
+        620,
+        498,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        500,
+        620,
+        513,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "keep",
+      "box": [
+        516,
+        620,
+        547,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "them",
+      "box": [
+        551,
+        620,
+        582,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "engaged.",
+      "box": [
+        584,
+        620,
+        639,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Supplied",
+      "box": [
+        96,
+        634,
+        150,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "one-on-one",
+      "box": [
+        153,
+        634,
+        226,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attention",
+      "box": [
+        229,
+        634,
+        282,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        284,
+        634,
+        297,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "each",
+      "box": [
+        301,
+        634,
+        330,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student,",
+      "box": [
+        333,
+        634,
+        381,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "while",
+      "box": [
+        384,
+        634,
+        416,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "maintaining",
+      "box": [
+        420,
+        634,
+        488,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "overall",
+      "box": [
+        490,
+        634,
+        532,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "focus",
+      "box": [
+        535,
+        634,
+        568,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        571,
+        634,
+        588,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        590,
+        634,
+        609,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "entire",
+      "box": [
+        612,
+        634,
+        646,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group.",
+      "box": [
+        650,
+        634,
+        689,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Encouraged",
+      "box": [
+        96,
+        648,
+        169,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        172,
+        648,
+        223,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        226,
+        648,
+        239,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "be",
+      "box": [
+        242,
+        648,
+        258,
+        662
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "understanding",
+      "box": [
+        261,
+        648,
+        347,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        349,
+        648,
+        363,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        365,
+        648,
+        388,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "helpful",
+      "box": [
+        391,
+        648,
+        432,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        435,
+        648,
+        447,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "others.",
+      "box": [
+        451,
+        648,
+        493,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conducted",
+      "box": [
+        96,
+        662,
+        164,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "small",
+      "box": [
+        167,
+        662,
+        199,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        202,
+        662,
+        238,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        241,
+        662,
+        264,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "individual",
+      "box": [
+        267,
+        662,
+        326,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classroom",
+      "box": [
+        328,
+        662,
+        392,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities",
+      "box": [
+        393,
+        662,
+        446,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        449,
+        662,
+        486,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        489,
+        662,
+        506,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "differentiated",
+      "box": [
+        508,
+        662,
+        588,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        591,
+        662,
+        639,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needs.",
+      "box": [
+        642,
+        662,
+        681,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Communicated",
+      "box": [
+        96,
+        677,
+        188,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        192,
+        677,
+        218,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "parents",
+      "box": [
+        221,
+        677,
+        266,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "throughout",
+      "box": [
+        269,
+        677,
+        335,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        338,
+        677,
+        357,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "school",
+      "box": [
+        360,
+        677,
+        401,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "year.",
+      "box": [
+        403,
+        677,
+        434,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Created",
+      "box": [
+        96,
+        691,
+        146,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        149,
+        691,
+        157,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        160,
+        691,
+        192,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "meeting",
+      "box": [
+        194,
+        691,
+        242,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "format",
+      "box": [
+        244,
+        691,
+        284,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        287,
+        691,
+        300,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "allow",
+      "box": [
+        304,
+        691,
+        337,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "parents",
+      "box": [
+        340,
+        691,
+        385,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        388,
+        691,
+        407,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "opportunity",
+      "box": [
+        411,
+        691,
+        482,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        484,
+        691,
+        497,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "meet",
+      "box": [
+        500,
+        691,
+        530,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        534,
+        691,
+        560,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        563,
+        691,
+        578,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        580,
+        691,
+        594,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "their",
+      "box": [
+        596,
+        691,
+        623,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "child's",
+      "box": [
+        626,
+        691,
+        664,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teachers",
+      "box": [
+        668,
+        691,
+        719,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "together.",
+      "box": [
+        722,
+        691,
+        776,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        55,
+        717,
+        95,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        97,
+        717,
+        142,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        145,
+        717,
+        195,
+        730
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        55,
+        731,
+        83,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2007",
+      "box": [
+        87,
+        731,
+        120,
+        744
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        123,
+        731,
+        136,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        139,
+        731,
+        167,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2013",
+      "box": [
+        170,
+        731,
+        203,
+        744
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        207,
+        731,
+        268,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        270,
+        731,
+        308,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        312,
+        731,
+        328,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        331,
+        731,
+        358,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        360,
+        731,
+        364,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        368,
+        731,
+        400,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Provided",
+      "box": [
+        96,
+        756,
+        152,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "state",
+      "box": [
+        155,
+        756,
+        184,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mandated",
+      "box": [
+        188,
+        756,
+        248,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "curriculum",
+      "box": [
+        251,
+        756,
+        316,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        318,
+        756,
+        341,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "created",
+      "box": [
+        344,
+        756,
+        390,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        393,
+        756,
+        412,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "school's",
+      "box": [
+        416,
+        756,
+        465,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "curriculum",
+      "box": [
+        468,
+        756,
+        533,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        535,
+        756,
+        552,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10th",
+      "box": [
+        556,
+        756,
+        585,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grade",
+      "box": [
+        587,
+        756,
+        622,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "World",
+      "box": [
+        625,
+        756,
+        665,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "History",
+      "box": [
+        669,
+        756,
+        715,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        717,
+        756,
+        731,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "well",
+      "box": [
+        734,
+        756,
+        760,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        763,
+        756,
+        776,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Advanced",
+      "box": [
+        780,
+        756,
+        843,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Placement",
+      "box": [
+        846,
+        756,
+        910,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "World",
+      "box": [
+        96,
+        771,
+        136,
+        784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "History.",
+      "box": [
+        139,
+        771,
+        188,
+        784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        96,
+        785,
+        163,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        166,
+        785,
+        189,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "implemented",
+      "box": [
+        193,
+        785,
+        270,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        273,
+        785,
+        303,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        306,
+        785,
+        328,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "unit",
+      "box": [
+        332,
+        785,
+        354,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        357,
+        785,
+        396,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        398,
+        785,
+        430,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        434,
+        785,
+        452,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10th",
+      "box": [
+        455,
+        785,
+        484,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grade",
+      "box": [
+        486,
+        785,
+        521,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Global",
+      "box": [
+        525,
+        785,
+        567,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "History.",
+      "box": [
+        569,
+        785,
+        618,
+        799
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Provided",
+      "box": [
+        96,
+        799,
+        152,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Regents",
+      "box": [
+        155,
+        799,
+        204,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "study",
+      "box": [
+        208,
+        799,
+        242,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "habits",
+      "box": [
+        244,
+        799,
+        280,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        283,
+        799,
+        306,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        310,
+        799,
+        340,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "after-school",
+      "box": [
+        343,
+        799,
+        417,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        420,
+        799,
+        442,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        446,
+        799,
+        463,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Saturdays",
+      "box": [
+        465,
+        799,
+        526,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Created",
+      "box": [
+        530,
+        799,
+        580,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inter-disciplinary",
+      "box": [
+        583,
+        799,
+        684,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "portfolio",
+      "box": [
+        687,
+        799,
+        739,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "projects",
+      "box": [
+        742,
+        799,
+        792,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        796,
+        799,
+        819,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "were",
+      "box": [
+        822,
+        799,
+        853,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        856,
+        799,
+        879,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        883,
+        799,
+        919,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        923,
+        799,
+        940,
+        813
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        96,
+        814,
+        103,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teacher",
+      "box": [
+        107,
+        814,
+        152,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "selected",
+      "box": [
+        155,
+        814,
+        205,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "theme.",
+      "box": [
+        209,
+        814,
+        249,
+        827
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reinforced",
+      "box": [
+        96,
+        828,
+        163,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        166,
+        828,
+        196,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needed",
+      "box": [
+        200,
+        828,
+        245,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        248,
+        828,
+        261,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "be",
+      "box": [
+        264,
+        828,
+        280,
+        841
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "successful",
+      "box": [
+        283,
+        828,
+        346,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administered",
+      "box": [
+        348,
+        828,
+        429,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "testing,",
+      "box": [
+        433,
+        828,
+        475,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tracked",
+      "box": [
+        479,
+        828,
+        526,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        530,
+        828,
+        552,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "analyzed",
+      "box": [
+        556,
+        828,
+        609,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "class",
+      "box": [
+        612,
+        828,
+        642,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performance.",
+      "box": [
+        646,
+        828,
+        727,
+        841
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conducted",
+      "box": [
+        96,
+        842,
+        164,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        167,
+        842,
+        203,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        207,
+        842,
+        230,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "one-on-one",
+      "box": [
+        233,
+        842,
+        305,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reading",
+      "box": [
+        309,
+        842,
+        355,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        357,
+        842,
+        380,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "writing",
+      "box": [
+        383,
+        842,
+        425,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities.",
+      "box": [
+        428,
+        842,
+        483,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Implemented",
+      "box": [
+        96,
+        856,
+        175,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        179,
+        856,
+        197,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Workshop",
+      "box": [
+        201,
+        856,
+        267,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Model",
+      "box": [
+        270,
+        856,
+        312,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Familiar",
+      "box": [
+        315,
+        856,
+        364,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        367,
+        856,
+        394,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        396,
+        856,
+        415,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Danielson",
+      "box": [
+        419,
+        856,
+        480,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Framework.",
+      "box": [
+        482,
+        856,
+        558,
+        870
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Used",
+      "box": [
+        96,
+        871,
+        129,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        132,
+        871,
+        151,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Understanding",
+      "box": [
+        154,
+        871,
+        244,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        246,
+        871,
+        263,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Design",
+      "box": [
+        265,
+        871,
+        308,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "model,",
+      "box": [
+        311,
+        871,
+        352,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        356,
+        871,
+        369,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "create",
+      "box": [
+        372,
+        871,
+        410,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "unit",
+      "box": [
+        414,
+        871,
+        436,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        439,
+        871,
+        471,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        474,
+        871,
+        497,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        500,
+        871,
+        539,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans.",
+      "box": [
+        542,
+        871,
+        577,
+        884
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Implemented",
+      "box": [
+        96,
+        885,
+        175,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AVID",
+      "box": [
+        179,
+        885,
+        218,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategies",
+      "box": [
+        221,
+        885,
+        278,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "such",
+      "box": [
+        281,
+        885,
+        310,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        313,
+        885,
+        326,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cornell",
+      "box": [
+        330,
+        885,
+        376,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Notes",
+      "box": [
+        378,
+        885,
+        416,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        420,
+        885,
+        442,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "binder",
+      "box": [
+        446,
+        885,
+        485,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "organization.",
+      "box": [
+        488,
+        885,
+        565,
+        898
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Turn-keyed",
+      "box": [
+        96,
+        899,
+        168,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AVID",
+      "box": [
+        171,
+        899,
+        211,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Training",
+      "box": [
+        214,
+        899,
+        264,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        266,
+        899,
+        279,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        282,
+        899,
+        301,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "school",
+      "box": [
+        305,
+        899,
+        346,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "staff",
+      "box": [
+        348,
+        899,
+        375,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "during",
+      "box": [
+        377,
+        899,
+        416,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "professional",
+      "box": [
+        419,
+        899,
+        493,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development",
+      "box": [
+        495,
+        899,
+        574,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Participated",
+      "box": [
+        96,
+        913,
+        169,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        172,
+        913,
+        184,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "parent",
+      "box": [
+        187,
+        913,
+        226,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        229,
+        913,
+        252,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "faculty",
+      "box": [
+        255,
+        913,
+        296,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conferences.",
+      "box": [
+        299,
+        913,
+        376,
+        927
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Established",
+      "box": [
+        96,
+        928,
+        165,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        168,
+        928,
+        191,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "enforced",
+      "box": [
+        195,
+        928,
+        249,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rules",
+      "box": [
+        252,
+        928,
+        281,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        284,
+        928,
+        302,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "behavior",
+      "box": [
+        306,
+        928,
+        359,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        362,
+        928,
+        385,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "procedures",
+      "box": [
+        388,
+        928,
+        458,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        461,
+        928,
+        479,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "maintaining",
+      "box": [
+        482,
+        928,
+        550,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "order",
+      "box": [
+        553,
+        928,
+        587,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "among",
+      "box": [
+        590,
+        928,
+        632,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        634,
+        928,
+        681,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classes",
+      "box": [
+        685,
+        928,
+        728,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        731,
+        928,
+        745,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "34",
+      "box": [
+        747,
+        928,
+        764,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students.",
+      "box": [
+        768,
+        928,
+        821,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English",
+      "box": [
+        55,
+        1034,
+        99,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Language",
+      "box": [
+        102,
+        1034,
+        161,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        164,
+        1034,
+        191,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher/Social",
+      "box": [
+        195,
+        1034,
+        287,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        289,
+        1034,
+        335,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        338,
+        1034,
+        388,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        55,
+        1048,
+        83,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2002",
+      "box": [
+        87,
+        1048,
+        120,
+        1062
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        123,
+        1048,
+        136,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        139,
+        1048,
+        167,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2007",
+      "box": [
+        170,
+        1048,
+        203,
+        1062
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        207,
+        1048,
+        268,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        270,
+        1048,
+        308,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        312,
+        1048,
+        328,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        331,
+        1048,
+        358,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        360,
+        1048,
+        364,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        368,
+        1048,
+        400,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Provided",
+      "box": [
+        96,
+        1074,
+        152,
+        1087
+      ],
+      "label": "O"
+    },
+    {
+      "text": "state",
+      "box": [
+        155,
+        1074,
+        184,
+        1087
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mandated",
+      "box": [
+        188,
+        1074,
+        248,
+        1087
+      ],
+      "label": "O"
+    },
+    {
+      "text": "curriculum",
+      "box": [
+        251,
+        1074,
+        316,
+        1087
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maintained",
+      "box": [
+        318,
+        1074,
+        386,
+        1087
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        389,
+        1074,
+        433,
+        1087
+      ],
+      "label": "O"
+    },
+    {
+      "text": "progress.",
+      "box": [
+        437,
+        1074,
+        494,
+        1087
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maintained",
+      "box": [
+        96,
+        1088,
+        164,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        167,
+        1088,
+        212,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "portfolios",
+      "box": [
+        215,
+        1088,
+        273,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reinforced",
+      "box": [
+        276,
+        1088,
+        344,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        347,
+        1088,
+        377,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needed",
+      "box": [
+        380,
+        1088,
+        425,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        429,
+        1088,
+        441,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "be",
+      "box": [
+        445,
+        1088,
+        461,
+        1101
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "successful.",
+      "box": [
+        464,
+        1088,
+        529,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        96,
+        1102,
+        163,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        166,
+        1102,
+        189,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "implemented",
+      "box": [
+        193,
+        1102,
+        270,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        273,
+        1102,
+        303,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        306,
+        1102,
+        328,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "unit",
+      "box": [
+        332,
+        1102,
+        354,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        357,
+        1102,
+        396,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        398,
+        1102,
+        430,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        434,
+        1102,
+        452,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6th",
+      "box": [
+        455,
+        1102,
+        476,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        478,
+        1102,
+        501,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7th",
+      "box": [
+        504,
+        1102,
+        525,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grade",
+      "box": [
+        528,
+        1102,
+        562,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English.",
+      "box": [
+        566,
+        1102,
+        613,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed,",
+      "box": [
+        96,
+        1116,
+        167,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "administered",
+      "box": [
+        170,
+        1116,
+        248,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        251,
+        1116,
+        274,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "corrected",
+      "box": [
+        277,
+        1116,
+        336,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tests",
+      "box": [
+        340,
+        1116,
+        368,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        371,
+        1116,
+        394,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quizzes",
+      "box": [
+        397,
+        1116,
+        441,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        445,
+        1116,
+        457,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        459,
+        1116,
+        467,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "timely",
+      "box": [
+        470,
+        1116,
+        507,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "manner.",
+      "box": [
+        509,
+        1116,
+        558,
+        1130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conducted",
+      "box": [
+        96,
+        1131,
+        164,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        167,
+        1131,
+        203,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        207,
+        1131,
+        230,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "one-on-one",
+      "box": [
+        233,
+        1131,
+        305,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reading",
+      "box": [
+        309,
+        1131,
+        355,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        357,
+        1131,
+        380,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "writing",
+      "box": [
+        383,
+        1131,
+        425,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities.",
+      "box": [
+        428,
+        1131,
+        483,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        96,
+        1145,
+        163,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "excellent",
+      "box": [
+        166,
+        1145,
+        220,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rapport",
+      "box": [
+        223,
+        1145,
+        269,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        272,
+        1145,
+        299,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students.",
+      "box": [
+        302,
+        1145,
+        355,
+        1158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fostered",
+      "box": [
+        96,
+        1159,
+        151,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        154,
+        1159,
+        162,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classroom",
+      "box": [
+        165,
+        1159,
+        229,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "environment,",
+      "box": [
+        231,
+        1159,
+        309,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conducive",
+      "box": [
+        313,
+        1159,
+        375,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        378,
+        1159,
+        391,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        394,
+        1159,
+        442,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        445,
+        1159,
+        468,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "promoting",
+      "box": [
+        471,
+        1159,
+        534,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "excellent",
+      "box": [
+        537,
+        1159,
+        590,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        593,
+        1159,
+        637,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "engagement.",
+      "box": [
+        641,
+        1159,
+        716,
+        1173
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Participated",
+      "box": [
+        96,
+        1173,
+        169,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        172,
+        1173,
+        184,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "parent",
+      "box": [
+        187,
+        1173,
+        226,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        229,
+        1173,
+        252,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "faculty",
+      "box": [
+        255,
+        1173,
+        296,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conferences",
+      "box": [
+        299,
+        1173,
+        372,
+        1187
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Implemented",
+      "box": [
+        96,
+        1188,
+        175,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        179,
+        1188,
+        197,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "America's",
+      "box": [
+        201,
+        1188,
+        262,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Choice",
+      "box": [
+        265,
+        1188,
+        309,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Readers",
+      "box": [
+        313,
+        1188,
+        364,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        367,
+        1188,
+        390,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Writers",
+      "box": [
+        393,
+        1188,
+        439,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Workshop.",
+      "box": [
+        443,
+        1188,
+        513,
+        1201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Designed",
+      "box": [
+        96,
+        1202,
+        153,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        156,
+        1202,
+        195,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        198,
+        1202,
+        230,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "focused",
+      "box": [
+        233,
+        1202,
+        281,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        284,
+        1202,
+        301,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needs",
+      "box": [
+        304,
+        1202,
+        340,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        343,
+        1202,
+        366,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grade",
+      "box": [
+        369,
+        1202,
+        404,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "level.",
+      "box": [
+        407,
+        1202,
+        439,
+        1215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coordinated",
+      "box": [
+        96,
+        1216,
+        173,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "after",
+      "box": [
+        177,
+        1216,
+        204,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "school",
+      "box": [
+        208,
+        1216,
+        249,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tutoring",
+      "box": [
+        251,
+        1216,
+        298,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hours,",
+      "box": [
+        301,
+        1216,
+        338,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        342,
+        1216,
+        369,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "other",
+      "box": [
+        371,
+        1216,
+        403,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teachers",
+      "box": [
+        406,
+        1216,
+        458,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        461,
+        1216,
+        474,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "help",
+      "box": [
+        477,
+        1216,
+        503,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        506,
+        1216,
+        556,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        560,
+        1216,
+        571,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "need",
+      "box": [
+        574,
+        1216,
+        604,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        607,
+        1216,
+        621,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "extra",
+      "box": [
+        623,
+        1216,
+        654,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attention.",
+      "box": [
+        658,
+        1216,
+        713,
+        1230
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Established",
+      "box": [
+        96,
+        1230,
+        165,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        168,
+        1230,
+        191,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "enforced",
+      "box": [
+        195,
+        1230,
+        249,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rules",
+      "box": [
+        252,
+        1230,
+        281,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        284,
+        1230,
+        302,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "behavior",
+      "box": [
+        306,
+        1230,
+        359,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        362,
+        1230,
+        385,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "procedures",
+      "box": [
+        388,
+        1230,
+        458,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        461,
+        1230,
+        479,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "maintaining",
+      "box": [
+        482,
+        1230,
+        550,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "order",
+      "box": [
+        553,
+        1230,
+        587,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "among",
+      "box": [
+        590,
+        1230,
+        632,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        634,
+        1230,
+        681,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classes",
+      "box": [
+        685,
+        1230,
+        728,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        731,
+        1230,
+        745,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "34",
+      "box": [
+        747,
+        1230,
+        764,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students.",
+      "box": [
+        768,
+        1230,
+        821,
+        1244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Physically",
+      "box": [
+        96,
+        1245,
+        157,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        159,
+        1245,
+        182,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "verbally",
+      "box": [
+        186,
+        1245,
+        235,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interacted",
+      "box": [
+        237,
+        1245,
+        297,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        301,
+        1245,
+        327,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        330,
+        1245,
+        380,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "throughout",
+      "box": [
+        383,
+        1245,
+        449,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        452,
+        1245,
+        471,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "day",
+      "box": [
+        474,
+        1245,
+        498,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        500,
+        1245,
+        513,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "keep",
+      "box": [
+        516,
+        1245,
+        547,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "them",
+      "box": [
+        551,
+        1245,
+        582,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "engaged.",
+      "box": [
+        584,
+        1245,
+        639,
+        1258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Encouraged",
+      "box": [
+        96,
+        1259,
+        169,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        172,
+        1259,
+        223,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        226,
+        1259,
+        239,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "be",
+      "box": [
+        242,
+        1259,
+        258,
+        1272
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "understanding",
+      "box": [
+        261,
+        1259,
+        347,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        349,
+        1259,
+        363,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        365,
+        1259,
+        388,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "helpful",
+      "box": [
+        391,
+        1259,
+        432,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        435,
+        1259,
+        447,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "others.",
+      "box": [
+        451,
+        1259,
+        493,
+        1272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Prevention",
+      "box": [
+        55,
+        1285,
+        122,
+        1298
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Specialist",
+      "box": [
+        124,
+        1285,
+        182,
+        1298
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        55,
+        1299,
+        83,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2000",
+      "box": [
+        87,
+        1299,
+        120,
+        1312
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        123,
+        1299,
+        136,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        139,
+        1299,
+        167,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2002",
+      "box": [
+        170,
+        1299,
+        203,
+        1312
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        207,
+        1299,
+        268,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        270,
+        1299,
+        308,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        312,
+        1299,
+        328,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        331,
+        1299,
+        358,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        360,
+        1299,
+        364,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        368,
+        1299,
+        400,
+        1312
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Provided",
+      "box": [
+        96,
+        1325,
+        152,
+        1338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "state",
+      "box": [
+        155,
+        1325,
+        184,
+        1338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        188,
+        1325,
+        210,
+        1338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "federally",
+      "box": [
+        214,
+        1325,
+        267,
+        1338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mandated",
+      "box": [
+        269,
+        1325,
+        329,
+        1338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classroom",
+      "box": [
+        333,
+        1325,
+        397,
+        1338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "presentations.",
+      "box": [
+        398,
+        1325,
+        482,
+        1338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Performed",
+      "box": [
+        96,
+        1339,
+        161,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        164,
+        1339,
+        209,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "background",
+      "box": [
+        212,
+        1339,
+        285,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reviews",
+      "box": [
+        288,
+        1339,
+        336,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        339,
+        1339,
+        352,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "develop",
+      "box": [
+        355,
+        1339,
+        404,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tailored",
+      "box": [
+        407,
+        1339,
+        453,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lessons",
+      "box": [
+        457,
+        1339,
+        501,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        504,
+        1339,
+        541,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        545,
+        1339,
+        561,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        564,
+        1339,
+        608,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "needs.",
+      "box": [
+        611,
+        1339,
+        651,
+        1352
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Designed",
+      "box": [
+        96,
+        1353,
+        153,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        156,
+        1353,
+        195,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        198,
+        1353,
+        230,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "focused",
+      "box": [
+        233,
+        1353,
+        281,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        284,
+        1353,
+        301,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "age",
+      "box": [
+        304,
+        1353,
+        325,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        329,
+        1353,
+        352,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "level-appropriate",
+      "box": [
+        355,
+        1353,
+        460,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "material",
+      "box": [
+        463,
+        1353,
+        512,
+        1367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        1367,
+        148,
+        1381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        151,
+        1367,
+        178,
+        1381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        181,
+        1367,
+        231,
+        1381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        234,
+        1367,
+        246,
+        1381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "discussion",
+      "box": [
+        248,
+        1367,
+        311,
+        1381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "groups.",
+      "box": [
+        314,
+        1367,
+        359,
+        1381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        1382,
+        148,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        151,
+        1382,
+        178,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students,",
+      "box": [
+        181,
+        1382,
+        234,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        238,
+        1382,
+        250,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        252,
+        1382,
+        288,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        292,
+        1382,
+        314,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "individual",
+      "box": [
+        318,
+        1382,
+        376,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "counseling",
+      "box": [
+        378,
+        1382,
+        442,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sessions.",
+      "box": [
+        445,
+        1382,
+        499,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Organized",
+      "box": [
+        96,
+        1396,
+        159,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "school-wide",
+      "box": [
+        162,
+        1396,
+        238,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities",
+      "box": [
+        241,
+        1396,
+        293,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "including",
+      "box": [
+        297,
+        1396,
+        351,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bake",
+      "box": [
+        353,
+        1396,
+        384,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sales.",
+      "box": [
+        387,
+        1396,
+        421,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        1410,
+        148,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "closely",
+      "box": [
+        151,
+        1410,
+        194,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        197,
+        1410,
+        223,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "school",
+      "box": [
+        226,
+        1410,
+        267,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "administration.",
+      "box": [
+        269,
+        1410,
+        357,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        96,
+        1424,
+        163,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        166,
+        1424,
+        189,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "implemented",
+      "box": [
+        193,
+        1424,
+        270,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interesting",
+      "box": [
+        273,
+        1424,
+        335,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        338,
+        1424,
+        361,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interactive",
+      "box": [
+        364,
+        1424,
+        426,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        430,
+        1424,
+        478,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mediums",
+      "box": [
+        480,
+        1424,
+        534,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        538,
+        1424,
+        550,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "increase",
+      "box": [
+        554,
+        1424,
+        604,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        607,
+        1424,
+        651,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "understanding",
+      "box": [
+        655,
+        1424,
+        740,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        742,
+        1424,
+        756,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "course",
+      "box": [
+        759,
+        1424,
+        799,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "materials.",
+      "box": [
+        803,
+        1424,
+        861,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Alumni",
+      "box": [
+        55,
+        1450,
+        100,
+        1464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Peer",
+      "box": [
+        102,
+        1450,
+        131,
+        1464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Helper",
+      "box": [
+        134,
+        1450,
+        176,
+        1464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "January",
+      "box": [
+        55,
+        1464,
+        103,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997",
+      "box": [
+        106,
+        1464,
+        139,
+        1478
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        142,
+        1464,
+        155,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        158,
+        1464,
+        186,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2000",
+      "box": [
+        190,
+        1464,
+        222,
+        1478
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        226,
+        1464,
+        287,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        289,
+        1464,
+        327,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        331,
+        1464,
+        347,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        350,
+        1464,
+        377,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        379,
+        1464,
+        384,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        387,
+        1464,
+        419,
+        1478
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        1490,
+        148,
+        1503
+      ],
+      "label": "O"
+    },
+    {
+      "text": "closely",
+      "box": [
+        151,
+        1490,
+        194,
+        1503
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        197,
+        1490,
+        223,
+        1503
+      ],
+      "label": "O"
+    },
+    {
+      "text": "department",
+      "box": [
+        226,
+        1490,
+        295,
+        1503
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assistant",
+      "box": [
+        299,
+        1490,
+        354,
+        1503
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Principals.",
+      "box": [
+        357,
+        1490,
+        420,
+        1503
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assisted",
+      "box": [
+        96,
+        1504,
+        148,
+        1518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        151,
+        1504,
+        170,
+        1518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Prevention",
+      "box": [
+        173,
+        1504,
+        240,
+        1518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        242,
+        1504,
+        265,
+        1518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intervention",
+      "box": [
+        268,
+        1504,
+        342,
+        1518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Specialists.",
+      "box": [
+        344,
+        1504,
+        412,
+        1518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        1518,
+        148,
+        1532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        151,
+        1518,
+        178,
+        1532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "individual",
+      "box": [
+        181,
+        1518,
+        239,
+        1532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        241,
+        1518,
+        291,
+        1532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        295,
+        1518,
+        306,
+        1532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "counseling",
+      "box": [
+        309,
+        1518,
+        373,
+        1532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sessions.",
+      "box": [
+        375,
+        1518,
+        429,
+        1532
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        1533,
+        148,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        151,
+        1533,
+        178,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        181,
+        1533,
+        231,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        234,
+        1533,
+        246,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "discussion",
+      "box": [
+        248,
+        1533,
+        311,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "groups",
+      "box": [
+        314,
+        1533,
+        356,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Community",
+      "box": [
+        359,
+        1533,
+        430,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities,",
+      "box": [
+        433,
+        1533,
+        488,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "such",
+      "box": [
+        492,
+        1533,
+        521,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        523,
+        1533,
+        537,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bake",
+      "box": [
+        541,
+        1533,
+        572,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sales.",
+      "box": [
+        575,
+        1533,
+        609,
+        1546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        55,
+        1558,
+        118,
+        1572
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Master",
+      "box": [
+        55,
+        1573,
+        100,
+        1586
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        103,
+        1573,
+        117,
+        1586
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Science",
+      "box": [
+        119,
+        1573,
+        167,
+        1586
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ":",
+      "box": [
+        170,
+        1573,
+        175,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        178,
+        1573,
+        222,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        224,
+        1573,
+        247,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "District",
+      "box": [
+        250,
+        1573,
+        294,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administration",
+      "box": [
+        298,
+        1573,
+        387,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        389,
+        1573,
+        394,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2010",
+      "box": [
+        397,
+        1573,
+        430,
+        1586
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Touro",
+      "box": [
+        434,
+        1573,
+        472,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "College",
+      "box": [
+        475,
+        1573,
+        522,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        526,
+        1573,
+        542,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        545,
+        1573,
+        571,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        574,
+        1573,
+        578,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        582,
+        1573,
+        614,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        617,
+        1573,
+        622,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "United",
+      "box": [
+        625,
+        1573,
+        666,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "States",
+      "box": [
+        670,
+        1573,
+        708,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        711,
+        1573,
+        755,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        758,
+        1573,
+        780,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "District",
+      "box": [
+        784,
+        1573,
+        828,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administration",
+      "box": [
+        831,
+        1573,
+        920,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Master",
+      "box": [
+        55,
+        1587,
+        100,
+        1600
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        103,
+        1587,
+        117,
+        1600
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Science",
+      "box": [
+        119,
+        1587,
+        167,
+        1600
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ":",
+      "box": [
+        170,
+        1587,
+        175,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Literacy",
+      "box": [
+        178,
+        1587,
+        229,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        231,
+        1587,
+        235,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2005",
+      "box": [
+        239,
+        1587,
+        272,
+        1600
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Touro",
+      "box": [
+        275,
+        1587,
+        313,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "College",
+      "box": [
+        317,
+        1587,
+        364,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        367,
+        1587,
+        383,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        386,
+        1587,
+        413,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        416,
+        1587,
+        420,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        424,
+        1587,
+        456,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        459,
+        1587,
+        463,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "United",
+      "box": [
+        467,
+        1587,
+        508,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "States",
+      "box": [
+        511,
+        1587,
+        549,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Literacy",
+      "box": [
+        55,
+        1601,
+        106,
+        1615
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coursework",
+      "box": [
+        55,
+        1615,
+        133,
+        1629
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        136,
+        1615,
+        148,
+        1629
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        150,
+        1615,
+        212,
+        1629
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bachelor",
+      "box": [
+        55,
+        1630,
+        111,
+        1643
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        114,
+        1630,
+        128,
+        1643
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        130,
+        1630,
+        157,
+        1643
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ":",
+      "box": [
+        160,
+        1630,
+        165,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Political",
+      "box": [
+        167,
+        1630,
+        217,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Science",
+      "box": [
+        219,
+        1630,
+        267,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        270,
+        1630,
+        275,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2000",
+      "box": [
+        278,
+        1630,
+        311,
+        1643
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "St.",
+      "box": [
+        315,
+        1630,
+        332,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Francis",
+      "box": [
+        336,
+        1630,
+        381,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "College",
+      "box": [
+        384,
+        1630,
+        431,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        435,
+        1630,
+        451,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        454,
+        1630,
+        481,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        483,
+        1630,
+        487,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        491,
+        1630,
+        523,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        527,
+        1630,
+        531,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "United",
+      "box": [
+        535,
+        1630,
+        576,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "States",
+      "box": [
+        579,
+        1630,
+        617,
+        1643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Political",
+      "box": [
+        55,
+        1644,
+        105,
+        1657
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Science",
+      "box": [
+        107,
+        1644,
+        155,
+        1657
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coursework",
+      "box": [
+        55,
+        1658,
+        133,
+        1672
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        136,
+        1658,
+        148,
+        1672
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Psychology",
+      "box": [
+        150,
+        1658,
+        221,
+        1672
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coursework",
+      "box": [
+        55,
+        1672,
+        133,
+        1686
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        136,
+        1672,
+        148,
+        1686
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        150,
+        1672,
+        212,
+        1686
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coursework",
+      "box": [
+        55,
+        1687,
+        133,
+        1700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        136,
+        1687,
+        148,
+        1700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "History",
+      "box": [
+        150,
+        1687,
+        196,
+        1700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1701,
+        109,
+        1714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Phi",
+      "box": [
+        112,
+        1701,
+        133,
+        1714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Alpha",
+      "box": [
+        135,
+        1701,
+        172,
+        1714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theta",
+      "box": [
+        176,
+        1701,
+        210,
+        1714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1715,
+        109,
+        1729
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pi",
+      "box": [
+        112,
+        1715,
+        126,
+        1729
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sigma",
+      "box": [
+        128,
+        1715,
+        166,
+        1729
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Alpha",
+      "box": [
+        169,
+        1715,
+        206,
+        1729
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1729,
+        109,
+        1743
+      ],
+      "label": "O"
+    },
+    {
+      "text": "St.",
+      "box": [
+        112,
+        1729,
+        129,
+        1743
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Thomas",
+      "box": [
+        133,
+        1729,
+        182,
+        1743
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Moore",
+      "box": [
+        186,
+        1729,
+        229,
+        1743
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pre-Law",
+      "box": [
+        232,
+        1729,
+        288,
+        1743
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Society",
+      "box": [
+        290,
+        1729,
+        337,
+        1743
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional",
+      "box": [
+        55,
+        1744,
+        131,
+        1757
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Affiliations",
+      "box": [
+        133,
+        1744,
+        197,
+        1757
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1758,
+        109,
+        1771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "box": [
+        112,
+        1758,
+        165,
+        1771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Educators",
+      "box": [
+        167,
+        1758,
+        230,
+        1771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Association",
+      "box": [
+        233,
+        1758,
+        305,
+        1771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1772,
+        109,
+        1786
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        112,
+        1772,
+        126,
+        1786
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        128,
+        1772,
+        147,
+        1786
+      ],
+      "label": "O"
+    },
+    {
+      "text": "American",
+      "box": [
+        150,
+        1772,
+        210,
+        1786
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Psychological",
+      "box": [
+        213,
+        1772,
+        297,
+        1786
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Association",
+      "box": [
+        300,
+        1772,
+        372,
+        1786
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1786,
+        109,
+        1800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        112,
+        1786,
+        126,
+        1800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        128,
+        1786,
+        147,
+        1800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "American",
+      "box": [
+        150,
+        1786,
+        210,
+        1800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Irish",
+      "box": [
+        213,
+        1786,
+        241,
+        1800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teachers",
+      "box": [
+        243,
+        1786,
+        299,
+        1800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Association",
+      "box": [
+        303,
+        1786,
+        375,
+        1800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1801,
+        109,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        112,
+        1801,
+        126,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        128,
+        1801,
+        147,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Emerald",
+      "box": [
+        150,
+        1801,
+        201,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Society",
+      "box": [
+        205,
+        1801,
+        252,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "NYC",
+      "box": [
+        254,
+        1801,
+        289,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Department",
+      "box": [
+        293,
+        1801,
+        365,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        368,
+        1801,
+        382,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        384,
+        1801,
+        446,
+        1814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1815,
+        109,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        112,
+        1815,
+        126,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        128,
+        1815,
+        147,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Irish",
+      "box": [
+        150,
+        1815,
+        178,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "History",
+      "box": [
+        181,
+        1815,
+        227,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        229,
+        1815,
+        252,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cultural",
+      "box": [
+        255,
+        1815,
+        304,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        307,
+        1815,
+        352,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Committee",
+      "box": [
+        355,
+        1815,
+        422,
+        1828
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        55,
+        1829,
+        109,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        112,
+        1829,
+        126,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        128,
+        1829,
+        147,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Committee",
+      "box": [
+        150,
+        1829,
+        217,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        221,
+        1829,
+        239,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        242,
+        1829,
+        281,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        283,
+        1829,
+        306,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Economic",
+      "box": [
+        310,
+        1829,
+        371,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Justice",
+      "box": [
+        374,
+        1829,
+        415,
+        1843
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Community",
+      "box": [
+        55,
+        1847,
+        127,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leadership",
+      "box": [
+        129,
+        1847,
+        197,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Positions",
+      "box": [
+        201,
+        1847,
+        256,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "F.I.T.",
+      "box": [
+        55,
+        1863,
+        91,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        95,
+        1863,
+        131,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(Data",
+      "box": [
+        133,
+        1863,
+        168,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Inquiry",
+      "box": [
+        171,
+        1863,
+        215,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team)",
+      "box": [
+        218,
+        1863,
+        258,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Brinkley",
+      "box": [
+        261,
+        1863,
+        313,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Middle",
+      "box": [
+        316,
+        1863,
+        360,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School,",
+      "box": [
+        363,
+        1863,
+        410,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2014-2016",
+      "box": [
+        414,
+        1863,
+        485,
+        1876
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Positive",
+      "box": [
+        488,
+        1863,
+        536,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Behavior",
+      "box": [
+        540,
+        1863,
+        595,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intervention",
+      "box": [
+        598,
+        1863,
+        671,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Support",
+      "box": [
+        674,
+        1863,
+        724,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        727,
+        1863,
+        764,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coordinator,",
+      "box": [
+        766,
+        1863,
+        845,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Brinkley",
+      "box": [
+        848,
+        1863,
+        900,
+        1876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Middle",
+      "box": [
+        55,
+        1880,
+        99,
+        1893
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        103,
+        1880,
+        147,
+        1893
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2014-2016",
+      "box": [
+        149,
+        1880,
+        220,
+        1893
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "School",
+      "box": [
+        55,
+        1895,
+        100,
+        1909
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leadership",
+      "box": [
+        102,
+        1895,
+        170,
+        1909
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team,",
+      "box": [
+        173,
+        1895,
+        212,
+        1909
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Brinkley",
+      "box": [
+        216,
+        1895,
+        268,
+        1909
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Middle",
+      "box": [
+        270,
+        1895,
+        314,
+        1909
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School,",
+      "box": [
+        318,
+        1895,
+        364,
+        1909
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2014-2016",
+      "box": [
+        368,
+        1895,
+        439,
+        1909
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Ask",
+      "box": [
+        55,
+        1910,
+        81,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "For",
+      "box": [
+        85,
+        1910,
+        108,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "More",
+      "box": [
+        111,
+        1910,
+        146,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        149,
+        1910,
+        176,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        180,
+        1910,
+        216,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member,",
+      "box": [
+        218,
+        1910,
+        275,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Brinkley",
+      "box": [
+        278,
+        1910,
+        330,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Middle",
+      "box": [
+        333,
+        1910,
+        377,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School,",
+      "box": [
+        380,
+        1910,
+        427,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2013-2016",
+      "box": [
+        431,
+        1910,
+        502,
+        1923
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Voyager",
+      "box": [
+        505,
+        1910,
+        559,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Language",
+      "box": [
+        562,
+        1910,
+        621,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Interventionist,",
+      "box": [
+        624,
+        1910,
+        713,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Brinkley",
+      "box": [
+        717,
+        1910,
+        769,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Middle",
+      "box": [
+        772,
+        1910,
+        816,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School,",
+      "box": [
+        819,
+        1910,
+        866,
+        1923
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2013-2015",
+      "box": [
+        869,
+        1910,
+        941,
+        1923
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Volunteer,",
+      "box": [
+        55,
+        1924,
+        119,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        123,
+        1924,
+        150,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        152,
+        1924,
+        171,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Salvation",
+      "box": [
+        174,
+        1924,
+        232,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Army,",
+      "box": [
+        234,
+        1924,
+        273,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1993-2013",
+      "box": [
+        276,
+        1924,
+        348,
+        1938
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Served",
+      "box": [
+        55,
+        1938,
+        99,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        103,
+        1938,
+        120,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        122,
+        1938,
+        141,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        144,
+        1938,
+        188,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Based",
+      "box": [
+        191,
+        1938,
+        230,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Support",
+      "box": [
+        233,
+        1938,
+        283,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        286,
+        1938,
+        323,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at",
+      "box": [
+        325,
+        1938,
+        337,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bryant,",
+      "box": [
+        340,
+        1938,
+        385,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "High",
+      "box": [
+        388,
+        1938,
+        418,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School,",
+      "box": [
+        421,
+        1938,
+        467,
+        1952
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997-2002",
+      "box": [
+        471,
+        1938,
+        542,
+        1952
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Served",
+      "box": [
+        55,
+        1952,
+        99,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        103,
+        1952,
+        120,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        122,
+        1952,
+        141,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Comprehensive",
+      "box": [
+        144,
+        1952,
+        240,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        243,
+        1952,
+        305,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Plan",
+      "box": [
+        308,
+        1952,
+        335,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Committee,",
+      "box": [
+        338,
+        1952,
+        409,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intermediate",
+      "box": [
+        413,
+        1952,
+        489,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        492,
+        1952,
+        536,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "141,",
+      "box": [
+        539,
+        1952,
+        567,
+        1966
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2002-2007",
+      "box": [
+        571,
+        1952,
+        642,
+        1966
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Coordinator",
+      "box": [
+        55,
+        2034,
+        131,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        134,
+        2034,
+        152,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Big",
+      "box": [
+        155,
+        2034,
+        177,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Brothers/",
+      "box": [
+        180,
+        2034,
+        237,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Big",
+      "box": [
+        240,
+        2034,
+        262,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sisters,",
+      "box": [
+        264,
+        2034,
+        309,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intermediate",
+      "box": [
+        313,
+        2034,
+        389,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        392,
+        2034,
+        437,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "141,",
+      "box": [
+        439,
+        2034,
+        467,
+        2048
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2003-2007",
+      "box": [
+        471,
+        2034,
+        542,
+        2048
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Served",
+      "box": [
+        55,
+        2049,
+        99,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        103,
+        2049,
+        120,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        122,
+        2049,
+        141,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Data",
+      "box": [
+        144,
+        2049,
+        174,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analysis",
+      "box": [
+        178,
+        2049,
+        229,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Committee,",
+      "box": [
+        232,
+        2049,
+        303,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intermediate",
+      "box": [
+        307,
+        2049,
+        383,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        386,
+        2049,
+        430,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "141,",
+      "box": [
+        433,
+        2049,
+        461,
+        2062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2006-2007",
+      "box": [
+        465,
+        2049,
+        536,
+        2062
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Served",
+      "box": [
+        55,
+        2063,
+        99,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        103,
+        2063,
+        120,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        122,
+        2063,
+        141,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academic",
+      "box": [
+        144,
+        2063,
+        206,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intervention",
+      "box": [
+        210,
+        2063,
+        283,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Services",
+      "box": [
+        285,
+        2063,
+        338,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Committee,",
+      "box": [
+        341,
+        2063,
+        412,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Intermediate",
+      "box": [
+        416,
+        2063,
+        492,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        495,
+        2063,
+        539,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "141,",
+      "box": [
+        542,
+        2063,
+        570,
+        2076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2006-2007",
+      "box": [
+        574,
+        2063,
+        645,
+        2076
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "School",
+      "box": [
+        55,
+        2077,
+        100,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leadership",
+      "box": [
+        102,
+        2077,
+        170,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team,",
+      "box": [
+        173,
+        2077,
+        212,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        216,
+        2077,
+        276,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        278,
+        2077,
+        292,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        295,
+        2077,
+        343,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        346,
+        2077,
+        369,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        372,
+        2077,
+        438,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2007-2013",
+      "box": [
+        442,
+        2077,
+        513,
+        2091
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Data",
+      "box": [
+        516,
+        2077,
+        546,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analysis",
+      "box": [
+        550,
+        2077,
+        601,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Committee,",
+      "box": [
+        604,
+        2077,
+        675,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        679,
+        2077,
+        739,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        741,
+        2077,
+        755,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        758,
+        2077,
+        806,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        809,
+        2077,
+        832,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        835,
+        2077,
+        901,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2007-",
+      "box": [
+        905,
+        2077,
+        943,
+        2091
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2013",
+      "box": [
+        55,
+        2091,
+        88,
+        2105
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Data",
+      "box": [
+        92,
+        2091,
+        122,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coach",
+      "box": [
+        125,
+        2091,
+        167,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        169,
+        2091,
+        187,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        191,
+        2091,
+        209,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        213,
+        2091,
+        252,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        254,
+        2091,
+        299,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Department,",
+      "box": [
+        303,
+        2091,
+        379,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        382,
+        2091,
+        442,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        445,
+        2091,
+        459,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        461,
+        2091,
+        509,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        512,
+        2091,
+        535,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        539,
+        2091,
+        604,
+        2105
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2007-2013",
+      "box": [
+        608,
+        2091,
+        679,
+        2105
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "AVID",
+      "box": [
+        55,
+        2106,
+        95,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Site",
+      "box": [
+        98,
+        2106,
+        122,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coordinator,",
+      "box": [
+        125,
+        2106,
+        204,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        208,
+        2106,
+        268,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        270,
+        2106,
+        284,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        286,
+        2106,
+        334,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        338,
+        2106,
+        361,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        364,
+        2106,
+        430,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2009-2013",
+      "box": [
+        434,
+        2106,
+        505,
+        2119
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Department",
+      "box": [
+        508,
+        2106,
+        581,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Chair",
+      "box": [
+        584,
+        2106,
+        618,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        621,
+        2106,
+        639,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        643,
+        2106,
+        661,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        665,
+        2106,
+        704,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        706,
+        2106,
+        751,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Department,",
+      "box": [
+        754,
+        2106,
+        830,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        834,
+        2106,
+        894,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        897,
+        2106,
+        911,
+        2119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        55,
+        2120,
+        103,
+        2134
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        107,
+        2120,
+        130,
+        2134
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        133,
+        2120,
+        199,
+        2134
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2007-2009",
+      "box": [
+        203,
+        2120,
+        274,
+        2134
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Department",
+      "box": [
+        55,
+        2134,
+        128,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Chair",
+      "box": [
+        131,
+        2134,
+        165,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        168,
+        2134,
+        186,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        190,
+        2134,
+        208,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        212,
+        2134,
+        251,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        253,
+        2134,
+        298,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Department,",
+      "box": [
+        302,
+        2134,
+        378,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        381,
+        2134,
+        441,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        444,
+        2134,
+        458,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        460,
+        2134,
+        508,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        511,
+        2134,
+        534,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        538,
+        2134,
+        603,
+        2148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2010-2012",
+      "box": [
+        607,
+        2134,
+        678,
+        2148
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Building",
+      "box": [
+        55,
+        2148,
+        105,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Response",
+      "box": [
+        108,
+        2148,
+        168,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        171,
+        2148,
+        208,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member,",
+      "box": [
+        210,
+        2148,
+        267,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        270,
+        2148,
+        330,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        333,
+        2148,
+        347,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        349,
+        2148,
+        397,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        400,
+        2148,
+        423,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        427,
+        2148,
+        493,
+        2162
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2011-2013",
+      "box": [
+        496,
+        2148,
+        567,
+        2162
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "School",
+      "box": [
+        55,
+        2163,
+        100,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Safety",
+      "box": [
+        102,
+        2163,
+        142,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member,",
+      "box": [
+        144,
+        2163,
+        201,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Queens",
+      "box": [
+        205,
+        2163,
+        252,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Campus",
+      "box": [
+        255,
+        2163,
+        306,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "High",
+      "box": [
+        310,
+        2163,
+        339,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Schools,",
+      "box": [
+        342,
+        2163,
+        395,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2011-2012",
+      "box": [
+        398,
+        2163,
+        470,
+        2176
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Comprehensive",
+      "box": [
+        473,
+        2163,
+        569,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        572,
+        2163,
+        634,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Plan",
+      "box": [
+        636,
+        2163,
+        664,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Committee,",
+      "box": [
+        667,
+        2163,
+        738,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        741,
+        2163,
+        801,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        804,
+        2163,
+        818,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        820,
+        2163,
+        868,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        871,
+        2163,
+        894,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        55,
+        2177,
+        121,
+        2191
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2007-2013",
+      "box": [
+        125,
+        2177,
+        196,
+        2191
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Principals",
+      "box": [
+        55,
+        2191,
+        115,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cabinet,",
+      "box": [
+        118,
+        2191,
+        170,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        173,
+        2191,
+        234,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        236,
+        2191,
+        250,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        252,
+        2191,
+        300,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        304,
+        2191,
+        326,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        330,
+        2191,
+        396,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2011-2012",
+      "box": [
+        399,
+        2191,
+        471,
+        2205
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Senior",
+      "box": [
+        474,
+        2191,
+        514,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Adviser,",
+      "box": [
+        517,
+        2191,
+        569,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        573,
+        2191,
+        633,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        635,
+        2191,
+        649,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        652,
+        2191,
+        700,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        703,
+        2191,
+        726,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        729,
+        2191,
+        795,
+        2205
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2009-2012",
+      "box": [
+        799,
+        2191,
+        870,
+        2205
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Coordinator",
+      "box": [
+        55,
+        2205,
+        131,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        134,
+        2205,
+        148,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        150,
+        2205,
+        194,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Activities",
+      "box": [
+        197,
+        2205,
+        253,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(COSA),",
+      "box": [
+        256,
+        2205,
+        314,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        318,
+        2205,
+        378,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        380,
+        2205,
+        394,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        396,
+        2205,
+        444,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        448,
+        2205,
+        471,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        474,
+        2205,
+        540,
+        2219
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2009-2012",
+      "box": [
+        544,
+        2205,
+        615,
+        2219
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "After-school",
+      "box": [
+        55,
+        2220,
+        134,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        136,
+        2220,
+        159,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Saturday",
+      "box": [
+        162,
+        2220,
+        218,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        221,
+        2220,
+        265,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Regents",
+      "box": [
+        267,
+        2220,
+        316,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        320,
+        2220,
+        343,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Advanced",
+      "box": [
+        346,
+        2220,
+        409,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Placement",
+      "box": [
+        413,
+        2220,
+        476,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preparation,",
+      "box": [
+        479,
+        2220,
+        553,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Academy",
+      "box": [
+        557,
+        2220,
+        617,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        619,
+        2220,
+        633,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance",
+      "box": [
+        635,
+        2220,
+        683,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        687,
+        2220,
+        710,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        713,
+        2220,
+        779,
+        2233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2007-2013",
+      "box": [
+        783,
+        2220,
+        854,
+        2233
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        55,
+        2234,
+        88,
+        2248
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enthusiastic",
+      "box": [
+        55,
+        2248,
+        127,
+        2262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "people",
+      "box": [
+        130,
+        2248,
+        172,
+        2262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "person.",
+      "box": [
+        176,
+        2248,
+        221,
+        2262
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Goal",
+      "box": [
+        55,
+        2263,
+        87,
+        2276
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Oriented.",
+      "box": [
+        89,
+        2263,
+        147,
+        2276
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Self-motivated.",
+      "box": [
+        55,
+        2277,
+        149,
+        2290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        55,
+        2291,
+        92,
+        2305
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Player.",
+      "box": [
+        94,
+        2291,
+        136,
+        2305
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Additional",
+      "box": [
+        55,
+        2305,
+        120,
+        2319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Information",
+      "box": [
+        122,
+        2305,
+        193,
+        2319
+      ],
+      "label": "O"
+    },
+    {
+      "text": "N.Y.S.",
+      "box": [
+        96,
+        2331,
+        140,
+        2344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Permanent",
+      "box": [
+        144,
+        2331,
+        210,
+        2344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "License",
+      "box": [
+        213,
+        2331,
+        260,
+        2344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        263,
+        2331,
+        281,
+        2344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        284,
+        2331,
+        324,
+        2344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        326,
+        2331,
+        371,
+        2344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7-12",
+      "box": [
+        374,
+        2331,
+        405,
+        2344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "N.Y.S.",
+      "box": [
+        96,
+        2345,
+        140,
+        2359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional",
+      "box": [
+        144,
+        2345,
+        220,
+        2359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "License",
+      "box": [
+        222,
+        2345,
+        269,
+        2359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        272,
+        2345,
+        290,
+        2359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Literacy",
+      "box": [
+        294,
+        2345,
+        345,
+        2359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Specialist",
+      "box": [
+        347,
+        2345,
+        405,
+        2359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "k-12",
+      "box": [
+        409,
+        2345,
+        439,
+        2359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mississippi",
+      "box": [
+        96,
+        2359,
+        164,
+        2373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "License",
+      "box": [
+        166,
+        2359,
+        213,
+        2373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        217,
+        2359,
+        229,
+        2373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        231,
+        2359,
+        270,
+        2373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        272,
+        2359,
+        317,
+        2373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7-12",
+      "box": [
+        321,
+        2359,
+        352,
+        2373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mississippi",
+      "box": [
+        96,
+        2374,
+        164,
+        2387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "License",
+      "box": [
+        166,
+        2374,
+        213,
+        2387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        217,
+        2374,
+        229,
+        2387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Literacy",
+      "box": [
+        231,
+        2374,
+        282,
+        2387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "K-12Â",
+      "box": [
+        284,
+        2374,
+        331,
+        2387
+      ],
+      "label": "O"
+    }
+  ]
+}

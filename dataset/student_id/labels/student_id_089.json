@@ -1,0 +1,112 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_089.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "E6",
+      "box": [
+        826,
+        482,
+        867,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Aid  }",
+      "box": [
+        846,
+        289,
+        917,
+        326
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Ae",
+      "box": [
+        800,
+        304,
+        856,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RrCA",
+      "box": [
+        746,
+        313,
+        808,
+        353
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mun",
+      "box": [
+        700,
+        329,
+        761,
+        365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Anc",
+      "box": [
+        660,
+        343,
+        709,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "gzoz",
+      "box": [
+        579,
+        360,
+        639,
+        398
+      ],
+      "label": "O"
+    },
+    {
+      "text": "~BoEO2",
+      "box": [
+        852,
+        459,
+        931,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "enud",
+      "box": [
+        910,
+        609,
+        992,
+        660
+      ],
+      "label": "O"
+    },
+    {
+      "text": "nisieniun",
+      "box": [
+        857,
+        811,
+        964,
+        857
+      ],
+      "label": "O"
+    }
+  ]
+}

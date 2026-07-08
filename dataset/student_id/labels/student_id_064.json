@@ -1,0 +1,132 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_064.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "90L0 9z02 !",
+      "box": [
+        646,
+        390,
+        773,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mun",
+      "box": [
+        757,
+        419,
+        818,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "'Piica",
+      "box": [
+        801,
+        423,
+        868,
+        470
+      ],
+      "label": "O"
+    },
+    {
+      "text": "eid ,",
+      "box": [
+        856,
+        440,
+        913,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "]Aid",
+      "box": [
+        896,
+        440,
+        978,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "E9628246 Qi",
+      "box": [
+        815,
+        536,
+        960,
+        601
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UCPN",
+      "box": [
+        743,
+        629,
+        826,
+        681
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3iv",
+      "box": [
+        811,
+        650,
+        876,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PWEN",
+      "box": [
+        867,
+        659,
+        940,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nisietiun",
+      "box": [
+        695,
+        732,
+        806,
+        784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4inos",
+      "box": [
+        792,
+        756,
+        862,
+        795
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4IJON",
+      "box": [
+        853,
+        770,
+        920,
+        807
+      ],
+      "label": "O"
+    }
+  ]
+}

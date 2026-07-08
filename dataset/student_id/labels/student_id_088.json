@@ -1,0 +1,132 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_088.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "ash",
+      "box": [
+        7,
+        107,
+        45,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rita",
+      "box": [
+        3,
+        290,
+        87,
+        340
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "4493",
+      "box": [
+        129,
+        448,
+        173,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "19,",
+      "box": [
+        342,
+        598,
+        376,
+        623
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Unnersity",
+      "box": [
+        37,
+        84,
+        149,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "'20308",
+      "box": [
+        63,
+        454,
+        139,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":2025",
+      "box": [
+        365,
+        577,
+        433,
+        622
+      ],
+      "label": "O"
+    },
+    {
+      "text": "July \"",
+      "box": [
+        290,
+        596,
+        348,
+        637
+      ],
+      "label": "O"
+    },
+    {
+      "text": "unuil",
+      "box": [
+        239,
+        609,
+        302,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": ".Valid '",
+      "box": [
+        188,
+        620,
+        250,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dile ;",
+      "box": [
+        141,
+        635,
+        194,
+        668
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Explly E",
+      "box": [
+        78,
+        643,
+        150,
+        681
+      ],
+      "label": "O"
+    }
+  ]
+}

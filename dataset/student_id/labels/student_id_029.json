@@ -1,0 +1,142 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_029.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "40x 90-D",
+      "box": [
+        270,
+        171,
+        465,
+        231
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ueui",
+      "box": [
+        673,
+        253,
+        764,
+        295
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Eerene",
+      "box": [
+        575,
+        350,
+        746,
+        393
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Locbb Ltaior",
+      "box": [
+        520,
+        378,
+        746,
+        442
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Leng Q1",
+      "box": [
+        465,
+        418,
+        625,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "LutHoz =",
+      "box": [
+        289,
+        467,
+        459,
+        531
+      ],
+      "label": "O"
+    },
+    {
+      "text": "I : VMITJ",
+      "box": [
+        470,
+        485,
+        728,
+        556
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AIISVLVN 1 EV1NBIDAtHtE",
+      "box": [
+        93,
+        848,
+        553,
+        937
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vmuen",
+      "box": [
+        345,
+        220,
+        459,
+        271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jlr",
+      "box": [
+        576,
+        236,
+        688,
+        295
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Eeurtruu\"n",
+      "box": [
+        562,
+        290,
+        759,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "nu",
+      "box": [
+        326,
+        401,
+        427,
+        452
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(ann",
+      "box": [
+        618,
+        431,
+        735,
+        479
+      ],
+      "label": "O"
+    }
+  ]
+}

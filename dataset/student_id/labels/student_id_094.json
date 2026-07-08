@@ -1,0 +1,42 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_094.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Name: Michelle Mccormick",
+      "box": [
+        45,
+        326,
+        726,
+        382
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "University: Princeton University",
+      "box": [
+        40,
+        417,
+        854,
+        495
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Expiration: 23-01-2027",
+      "box": [
+        45,
+        525,
+        642,
+        587
+      ],
+      "label": "I-ORGANIZATION"
+    }
+  ]
+}

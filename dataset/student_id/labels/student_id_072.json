@@ -1,0 +1,52 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_072.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Universityof Newv South Wales",
+      "box": [
+        57,
+        314,
+        339,
+        339
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Williams",
+      "box": [
+        56,
+        418,
+        212,
+        459
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "ID: 85886468",
+      "box": [
+        53,
+        523,
+        295,
+        565
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Expiry Date' Valid until June 17,2026",
+      "box": [
+        57,
+        632,
+        401,
+        660
+      ],
+      "label": "I-ORGANIZATION"
+    }
+  ]
+}

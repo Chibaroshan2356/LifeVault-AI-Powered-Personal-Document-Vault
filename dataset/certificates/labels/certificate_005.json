@@ -1,0 +1,232 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_005.png",
+  "image_dimensions": [
+    1224,
+    1584
+  ],
+  "words": [
+    {
+      "text": "freeCodeCamp (()",
+      "box": [
+        318,
+        296,
+        694,
+        346
+      ],
+      "label": "O"
+    },
+    {
+      "text": "This certifies that",
+      "box": [
+        386,
+        359,
+        625,
+        382
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Debanik",
+      "box": [
+        336,
+        386,
+        500,
+        417
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Debnath",
+      "box": [
+        512,
+        385,
+        672,
+        417
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "successfully completed",
+      "box": [
+        343,
+        426,
+        620,
+        451
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        627,
+        429,
+        668,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Data",
+      "box": [
+        224,
+        455,
+        321,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analysis",
+      "box": [
+        337,
+        453,
+        522,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with Python",
+      "box": [
+        533,
+        451,
+        789,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developer Certification",
+      "box": [
+        243,
+        494,
+        533,
+        520
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on January",
+      "box": [
+        540,
+        495,
+        669,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6 ,",
+      "box": [
+        674,
+        498,
+        700,
+        516
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2024",
+      "box": [
+        712,
+        497,
+        766,
+        516
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "represent",
+      "box": [
+        304,
+        522,
+        390,
+        539
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "approximately 300 hours",
+      "box": [
+        421,
+        522,
+        632,
+        539
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of work",
+      "box": [
+        637,
+        522,
+        705,
+        537
+      ],
+      "label": "O"
+    },
+    {
+      "text": ")ovsd",
+      "box": [
+        446,
+        559,
+        577,
+        613
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Quincy Larson",
+      "box": [
+        450,
+        619,
+        560,
+        636
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Executive Director; freeCodeCamporg",
+      "box": [
+        380,
+        634,
+        630,
+        654
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Verify this certification at:",
+      "box": [
+        419,
+        672,
+        589,
+        688
+      ],
+      "label": "O"
+    },
+    {
+      "text": "https:I/freecodecamp org/certification/Debanik/data-analysis-with-python-v7",
+      "box": [
+        251,
+        688,
+        758,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ing",
+      "box": [
+        383,
+        520,
+        418,
+        539
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,1502 @@
+{
+  "document_metadata": {
+    "category": "Resume"
+  },
+  "image_filename": "resume_025.png",
+  "image_dimensions": [
+    595,
+    842
+  ],
+  "words": [
+    {
+      "text": "SUSHI",
+      "box": [
+        55,
+        34,
+        102,
+        47
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "CHEF",
+      "box": [
+        105,
+        34,
+        146,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Executive",
+      "box": [
+        55,
+        48,
+        115,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Profile",
+      "box": [
+        118,
+        48,
+        158,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "14",
+      "box": [
+        55,
+        62,
+        72,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "years",
+      "box": [
+        76,
+        62,
+        109,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "experience",
+      "box": [
+        112,
+        62,
+        178,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        182,
+        62,
+        193,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "high",
+      "box": [
+        196,
+        62,
+        221,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "end",
+      "box": [
+        224,
+        62,
+        247,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "restaurants",
+      "box": [
+        250,
+        62,
+        316,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        320,
+        62,
+        347,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        349,
+        62,
+        357,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "background",
+      "box": [
+        360,
+        62,
+        433,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        437,
+        62,
+        448,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "French,",
+      "box": [
+        451,
+        62,
+        498,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Japanese",
+      "box": [
+        501,
+        62,
+        557,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        561,
+        62,
+        584,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Peruvian",
+      "box": [
+        587,
+        62,
+        641,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cuisine.Â",
+      "box": [
+        644,
+        62,
+        704,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expertise",
+      "box": [
+        707,
+        62,
+        764,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        768,
+        62,
+        779,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        782,
+        62,
+        797,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "facets",
+      "box": [
+        799,
+        62,
+        835,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        838,
+        62,
+        852,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "kitchen",
+      "box": [
+        854,
+        62,
+        899,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management,",
+      "box": [
+        55,
+        76,
+        135,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "including",
+      "box": [
+        139,
+        76,
+        193,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Food",
+      "box": [
+        196,
+        76,
+        230,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cost",
+      "box": [
+        233,
+        76,
+        259,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Percentage,",
+      "box": [
+        262,
+        76,
+        334,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "labor",
+      "box": [
+        338,
+        76,
+        370,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cost",
+      "box": [
+        373,
+        76,
+        399,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "budgeting,",
+      "box": [
+        402,
+        76,
+        465,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "scheduling,",
+      "box": [
+        469,
+        76,
+        536,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "menu",
+      "box": [
+        540,
+        76,
+        574,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "developing",
+      "box": [
+        576,
+        76,
+        643,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        646,
+        76,
+        668,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategic",
+      "box": [
+        672,
+        76,
+        723,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "planning.Â",
+      "box": [
+        726,
+        76,
+        792,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional",
+      "box": [
+        55,
+        91,
+        131,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        133,
+        91,
+        201,
+        104
+      ],
+      "label": "O"
+    },
+    {
+      "text": "May",
+      "box": [
+        55,
+        105,
+        85,
+        119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2005",
+      "box": [
+        88,
+        105,
+        121,
+        119
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        55,
+        119,
+        68,
+        133
+      ],
+      "label": "O"
+    },
+    {
+      "text": "November",
+      "box": [
+        55,
+        134,
+        122,
+        147
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2011",
+      "box": [
+        125,
+        134,
+        158,
+        147
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        148,
+        117,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        148,
+        157,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        160,
+        148,
+        187,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        190,
+        148,
+        194,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        198,
+        148,
+        230,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sushi",
+      "box": [
+        233,
+        148,
+        267,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Chef",
+      "box": [
+        269,
+        148,
+        300,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "In",
+      "box": [
+        303,
+        148,
+        316,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "charge",
+      "box": [
+        319,
+        148,
+        360,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        363,
+        148,
+        377,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        379,
+        148,
+        409,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "operation",
+      "box": [
+        412,
+        148,
+        471,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        473,
+        148,
+        485,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        487,
+        148,
+        506,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sushi",
+      "box": [
+        509,
+        148,
+        540,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bar,",
+      "box": [
+        543,
+        148,
+        567,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "quality",
+      "box": [
+        571,
+        148,
+        612,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "control,",
+      "box": [
+        614,
+        148,
+        661,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monthly",
+      "box": [
+        665,
+        148,
+        714,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inventory,",
+      "box": [
+        716,
+        148,
+        776,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "menu",
+      "box": [
+        780,
+        148,
+        814,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "developing,",
+      "box": [
+        816,
+        148,
+        886,
+        161
+      ],
+      "label": "O"
+    },
+    {
+      "text": "scheduling",
+      "box": [
+        55,
+        162,
+        120,
+        176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        122,
+        162,
+        140,
+        176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10",
+      "box": [
+        143,
+        162,
+        160,
+        176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "employees.Â",
+      "box": [
+        163,
+        162,
+        244,
+        176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "November",
+      "box": [
+        55,
+        176,
+        122,
+        190
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2011",
+      "box": [
+        125,
+        176,
+        158,
+        190
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        55,
+        191,
+        68,
+        204
+      ],
+      "label": "O"
+    },
+    {
+      "text": "January",
+      "box": [
+        55,
+        205,
+        103,
+        218
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2015",
+      "box": [
+        106,
+        205,
+        139,
+        218
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        219,
+        117,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        219,
+        157,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        160,
+        219,
+        187,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        190,
+        219,
+        194,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        198,
+        219,
+        230,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Executive",
+      "box": [
+        233,
+        219,
+        292,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sous",
+      "box": [
+        296,
+        219,
+        326,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Chef",
+      "box": [
+        330,
+        219,
+        361,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "In",
+      "box": [
+        363,
+        219,
+        377,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "charge",
+      "box": [
+        379,
+        219,
+        420,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        424,
+        219,
+        437,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        440,
+        219,
+        470,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "operations,",
+      "box": [
+        472,
+        219,
+        540,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "menu",
+      "box": [
+        544,
+        219,
+        578,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "developing,",
+      "box": [
+        580,
+        219,
+        650,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Monthly",
+      "box": [
+        654,
+        219,
+        706,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "inventory,",
+      "box": [
+        708,
+        219,
+        768,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "scheduling",
+      "box": [
+        772,
+        219,
+        836,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        838,
+        219,
+        856,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "50",
+      "box": [
+        859,
+        219,
+        876,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "people,",
+      "box": [
+        880,
+        219,
+        925,
+        233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "January",
+      "box": [
+        55,
+        233,
+        103,
+        247
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2016",
+      "box": [
+        106,
+        233,
+        139,
+        247
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        55,
+        248,
+        68,
+        261
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Current",
+      "box": [
+        55,
+        262,
+        103,
+        275
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        276,
+        117,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        276,
+        157,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        160,
+        276,
+        187,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        190,
+        276,
+        194,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        198,
+        276,
+        230,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Corporate",
+      "box": [
+        233,
+        276,
+        297,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Chef",
+      "box": [
+        301,
+        276,
+        332,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "In",
+      "box": [
+        334,
+        276,
+        348,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Charge",
+      "box": [
+        350,
+        276,
+        395,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        398,
+        276,
+        412,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "daily",
+      "box": [
+        415,
+        276,
+        444,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "operations",
+      "box": [
+        447,
+        276,
+        511,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        514,
+        276,
+        528,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        531,
+        276,
+        545,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "restaurants,",
+      "box": [
+        548,
+        276,
+        618,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Menu",
+      "box": [
+        621,
+        276,
+        658,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "developing,",
+      "box": [
+        661,
+        276,
+        731,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Scheduling",
+      "box": [
+        734,
+        276,
+        801,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        804,
+        276,
+        822,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "90",
+      "box": [
+        825,
+        276,
+        842,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "people,",
+      "box": [
+        845,
+        276,
+        891,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Food",
+      "box": [
+        895,
+        276,
+        929,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cost",
+      "box": [
+        55,
+        290,
+        85,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Percentage,",
+      "box": [
+        89,
+        290,
+        161,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Labor",
+      "box": [
+        164,
+        290,
+        202,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cost",
+      "box": [
+        206,
+        290,
+        236,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "control,",
+      "box": [
+        239,
+        290,
+        286,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Hiring,",
+      "box": [
+        289,
+        290,
+        330,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Monthly",
+      "box": [
+        334,
+        290,
+        386,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Inventory.",
+      "box": [
+        388,
+        290,
+        450,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        55,
+        305,
+        118,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2006",
+      "box": [
+        55,
+        319,
+        88,
+        332
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Le",
+      "box": [
+        55,
+        333,
+        72,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cordon",
+      "box": [
+        76,
+        333,
+        125,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bleu",
+      "box": [
+        127,
+        333,
+        156,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        158,
+        333,
+        185,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        188,
+        333,
+        192,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        196,
+        333,
+        228,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        231,
+        333,
+        235,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "usa",
+      "box": [
+        239,
+        333,
+        260,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Associate",
+      "box": [
+        263,
+        333,
+        323,
+        347
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        327,
+        333,
+        341,
+        347
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        343,
+        333,
+        370,
+        347
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ":",
+      "box": [
+        373,
+        333,
+        378,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "culinary",
+      "box": [
+        380,
+        333,
+        428,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "arts",
+      "box": [
+        431,
+        333,
+        454,
+        347
+      ],
+      "label": "O"
+    }
+  ]
+}

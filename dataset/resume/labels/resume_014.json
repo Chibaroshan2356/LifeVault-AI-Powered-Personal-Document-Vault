@@ -1,0 +1,7152 @@
+{
+  "document_metadata": {
+    "category": "Resume"
+  },
+  "image_filename": "resume_014.png",
+  "image_dimensions": [
+    595,
+    842
+  ],
+  "words": [
+    {
+      "text": "THEATER",
+      "box": [
+        55,
+        34,
+        126,
+        47
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ARTS",
+      "box": [
+        128,
+        34,
+        168,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "TEACHER",
+      "box": [
+        171,
+        34,
+        244,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "&",
+      "box": [
+        246,
+        34,
+        260,
+        47
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PROGRAM",
+      "box": [
+        262,
+        34,
+        341,
+        47
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DIRECTOR",
+      "box": [
+        344,
+        34,
+        423,
+        47
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Summary",
+      "box": [
+        55,
+        48,
+        115,
+        62
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Passionate",
+      "box": [
+        55,
+        74,
+        121,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        124,
+        74,
+        147,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dedicated",
+      "box": [
+        150,
+        74,
+        210,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        214,
+        74,
+        261,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        264,
+        74,
+        291,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        295,
+        74,
+        345,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        348,
+        74,
+        375,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expertise",
+      "box": [
+        377,
+        74,
+        432,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        436,
+        74,
+        447,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "secondary",
+      "box": [
+        450,
+        74,
+        514,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "curriculum",
+      "box": [
+        516,
+        74,
+        581,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development,",
+      "box": [
+        583,
+        74,
+        665,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classroom",
+      "box": [
+        669,
+        74,
+        733,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management,",
+      "box": [
+        734,
+        74,
+        814,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "relationship",
+      "box": [
+        818,
+        74,
+        887,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "building,",
+      "box": [
+        891,
+        74,
+        941,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "continued",
+      "box": [
+        55,
+        88,
+        115,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "professional",
+      "box": [
+        118,
+        88,
+        192,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development",
+      "box": [
+        195,
+        88,
+        273,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        276,
+        88,
+        299,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        303,
+        88,
+        379,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        382,
+        88,
+        396,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        398,
+        88,
+        406,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "successful",
+      "box": [
+        410,
+        88,
+        472,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        474,
+        88,
+        521,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        525,
+        88,
+        551,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "program",
+      "box": [
+        555,
+        88,
+        609,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        610,
+        88,
+        628,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "over",
+      "box": [
+        631,
+        88,
+        659,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "six",
+      "box": [
+        663,
+        88,
+        680,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "years.",
+      "box": [
+        683,
+        88,
+        719,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Highlights",
+      "box": [
+        55,
+        114,
+        115,
+        127
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Valid",
+      "box": [
+        99,
+        130,
+        132,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        135,
+        130,
+        158,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Current",
+      "box": [
+        161,
+        130,
+        209,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teaching",
+      "box": [
+        212,
+        130,
+        268,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certification",
+      "box": [
+        270,
+        130,
+        346,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        348,
+        130,
+        360,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Texas",
+      "box": [
+        362,
+        130,
+        399,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Strong",
+      "box": [
+        99,
+        144,
+        141,
+        158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "communication",
+      "box": [
+        143,
+        144,
+        236,
+        158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills",
+      "box": [
+        238,
+        144,
+        268,
+        158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Talented",
+      "box": [
+        99,
+        158,
+        152,
+        172
+      ],
+      "label": "O"
+    },
+    {
+      "text": "public",
+      "box": [
+        155,
+        158,
+        192,
+        172
+      ],
+      "label": "O"
+    },
+    {
+      "text": "speaker",
+      "box": [
+        196,
+        158,
+        245,
+        172
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Talented",
+      "box": [
+        443,
+        130,
+        496,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mediator",
+      "box": [
+        499,
+        130,
+        553,
+        143
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Self-motivated",
+      "box": [
+        443,
+        144,
+        532,
+        158
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Results-oriented",
+      "box": [
+        443,
+        158,
+        542,
+        172
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accomplishments",
+      "box": [
+        55,
+        186,
+        163,
+        200
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dallas",
+      "box": [
+        96,
+        212,
+        134,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        137,
+        212,
+        184,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Center",
+      "box": [
+        188,
+        212,
+        230,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        233,
+        212,
+        246,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Project",
+      "box": [
+        249,
+        212,
+        294,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Discovery",
+      "box": [
+        298,
+        212,
+        361,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Partner",
+      "box": [
+        363,
+        212,
+        408,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        412,
+        212,
+        425,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Grant",
+      "box": [
+        428,
+        212,
+        463,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Recipient",
+      "box": [
+        466,
+        212,
+        523,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Local",
+      "box": [
+        96,
+        226,
+        132,
+        240
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        134,
+        226,
+        178,
+        240
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Council",
+      "box": [
+        181,
+        226,
+        229,
+        240
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Committee",
+      "box": [
+        231,
+        226,
+        298,
+        240
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        302,
+        226,
+        355,
+        240
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Freshman",
+      "box": [
+        96,
+        240,
+        157,
+        254
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Class",
+      "box": [
+        159,
+        240,
+        193,
+        254
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sponsor",
+      "box": [
+        197,
+        240,
+        249,
+        254
+      ],
+      "label": "O"
+    },
+    {
+      "text": "High",
+      "box": [
+        96,
+        255,
+        126,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        128,
+        255,
+        172,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U.I.L.",
+      "box": [
+        174,
+        255,
+        212,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "One",
+      "box": [
+        216,
+        255,
+        243,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Act",
+      "box": [
+        246,
+        255,
+        269,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Play",
+      "box": [
+        272,
+        255,
+        300,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Director",
+      "box": [
+        303,
+        255,
+        354,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Middle",
+      "box": [
+        96,
+        269,
+        140,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        143,
+        269,
+        187,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U.I.L.",
+      "box": [
+        190,
+        269,
+        227,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "One",
+      "box": [
+        231,
+        269,
+        258,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Act",
+      "box": [
+        261,
+        269,
+        284,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Play",
+      "box": [
+        287,
+        269,
+        315,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Director",
+      "box": [
+        318,
+        269,
+        369,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U.I.L.",
+      "box": [
+        96,
+        283,
+        133,
+        297
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theatrical",
+      "box": [
+        137,
+        283,
+        198,
+        297
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Design",
+      "box": [
+        201,
+        283,
+        244,
+        297
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sponsor",
+      "box": [
+        246,
+        283,
+        298,
+        297
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        302,
+        283,
+        324,
+        297
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coach",
+      "box": [
+        328,
+        283,
+        370,
+        297
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U.I.L.",
+      "box": [
+        96,
+        297,
+        133,
+        311
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Young",
+      "box": [
+        137,
+        297,
+        179,
+        311
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Film",
+      "box": [
+        182,
+        297,
+        210,
+        311
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Makers",
+      "box": [
+        212,
+        297,
+        260,
+        311
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sponsor",
+      "box": [
+        263,
+        297,
+        315,
+        311
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U.I.L.",
+      "box": [
+        96,
+        312,
+        133,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Prose",
+      "box": [
+        137,
+        312,
+        173,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        177,
+        312,
+        199,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Poetry",
+      "box": [
+        203,
+        312,
+        245,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Judge",
+      "box": [
+        247,
+        312,
+        283,
+        325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U.I.L.",
+      "box": [
+        96,
+        326,
+        133,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Young",
+      "box": [
+        137,
+        326,
+        179,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Film",
+      "box": [
+        182,
+        326,
+        210,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Makers",
+      "box": [
+        212,
+        326,
+        260,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Judge",
+      "box": [
+        263,
+        326,
+        299,
+        339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Texas",
+      "box": [
+        96,
+        340,
+        133,
+        354
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Educational",
+      "box": [
+        136,
+        340,
+        209,
+        354
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theatre",
+      "box": [
+        211,
+        340,
+        258,
+        354
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Association",
+      "box": [
+        261,
+        340,
+        333,
+        354
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        336,
+        340,
+        389,
+        354
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        96,
+        354,
+        146,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        149,
+        354,
+        163,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        165,
+        354,
+        184,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Month",
+      "box": [
+        188,
+        354,
+        230,
+        368
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Partner",
+      "box": [
+        96,
+        369,
+        141,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        144,
+        369,
+        171,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Student",
+      "box": [
+        173,
+        369,
+        221,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Council",
+      "box": [
+        224,
+        369,
+        272,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities",
+      "box": [
+        274,
+        369,
+        326,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Emergency",
+      "box": [
+        96,
+        383,
+        165,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Relocation",
+      "box": [
+        167,
+        383,
+        234,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        236,
+        383,
+        273,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        274,
+        383,
+        328,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Drama",
+      "box": [
+        96,
+        397,
+        138,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Club",
+      "box": [
+        141,
+        397,
+        171,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sponsor",
+      "box": [
+        174,
+        397,
+        227,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Musical",
+      "box": [
+        96,
+        411,
+        145,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        147,
+        411,
+        194,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Productions",
+      "box": [
+        198,
+        411,
+        271,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Booster",
+      "box": [
+        96,
+        426,
+        145,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Club",
+      "box": [
+        148,
+        426,
+        178,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        182,
+        426,
+        235,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Junior",
+      "box": [
+        96,
+        440,
+        133,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Class",
+      "box": [
+        136,
+        440,
+        170,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Prom",
+      "box": [
+        173,
+        440,
+        209,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sponsor",
+      "box": [
+        211,
+        440,
+        263,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        55,
+        466,
+        124,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        55,
+        480,
+        103,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        106,
+        480,
+        133,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        136,
+        480,
+        186,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        190,
+        480,
+        203,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program",
+      "box": [
+        206,
+        480,
+        261,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Director",
+      "box": [
+        262,
+        480,
+        313,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "August",
+      "box": [
+        55,
+        494,
+        99,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2008",
+      "box": [
+        102,
+        494,
+        135,
+        508
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        138,
+        494,
+        151,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Current",
+      "box": [
+        154,
+        494,
+        201,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Company",
+      "box": [
+        205,
+        494,
+        266,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        268,
+        494,
+        306,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        310,
+        494,
+        326,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        329,
+        494,
+        356,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        358,
+        494,
+        362,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        366,
+        494,
+        398,
+        508
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        96,
+        520,
+        143,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        146,
+        520,
+        173,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1-4,",
+      "box": [
+        177,
+        520,
+        203,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Technical",
+      "box": [
+        207,
+        520,
+        266,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        268,
+        520,
+        315,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        319,
+        520,
+        342,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        345,
+        520,
+        392,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        395,
+        520,
+        422,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Production",
+      "box": [
+        426,
+        520,
+        494,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        496,
+        520,
+        509,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grades",
+      "box": [
+        512,
+        520,
+        553,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9-12.",
+      "box": [
+        557,
+        520,
+        591,
+        533
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U.I.L.One",
+      "box": [
+        96,
+        534,
+        160,
+        548
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Act",
+      "box": [
+        163,
+        534,
+        186,
+        548
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Play",
+      "box": [
+        190,
+        534,
+        217,
+        548
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Director",
+      "box": [
+        220,
+        534,
+        271,
+        548
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U.I.L.",
+      "box": [
+        96,
+        548,
+        133,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Film",
+      "box": [
+        137,
+        548,
+        166,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Festival",
+      "box": [
+        167,
+        548,
+        216,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Contest",
+      "box": [
+        218,
+        548,
+        266,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sponsor",
+      "box": [
+        269,
+        548,
+        321,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        325,
+        548,
+        338,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Judge",
+      "box": [
+        341,
+        548,
+        377,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Direct",
+      "box": [
+        96,
+        563,
+        134,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fall",
+      "box": [
+        137,
+        563,
+        161,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Play",
+      "box": [
+        163,
+        563,
+        191,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Production",
+      "box": [
+        194,
+        563,
+        262,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "or",
+      "box": [
+        264,
+        563,
+        278,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Musical",
+      "box": [
+        281,
+        563,
+        331,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maintain",
+      "box": [
+        96,
+        577,
+        150,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "professional",
+      "box": [
+        152,
+        577,
+        227,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        229,
+        577,
+        252,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "student",
+      "box": [
+        255,
+        577,
+        299,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "memberships,",
+      "box": [
+        303,
+        577,
+        387,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "auditions,",
+      "box": [
+        390,
+        577,
+        448,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "travel",
+      "box": [
+        452,
+        577,
+        487,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        489,
+        577,
+        512,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "workshops",
+      "box": [
+        515,
+        577,
+        584,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Drama",
+      "box": [
+        96,
+        591,
+        138,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Club",
+      "box": [
+        141,
+        591,
+        171,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sponsor",
+      "box": [
+        174,
+        591,
+        227,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Maintain",
+      "box": [
+        96,
+        605,
+        150,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Drama",
+      "box": [
+        152,
+        605,
+        194,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Club",
+      "box": [
+        198,
+        605,
+        228,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Activity",
+      "box": [
+        231,
+        605,
+        279,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Funds",
+      "box": [
+        281,
+        605,
+        319,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        323,
+        605,
+        346,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "club",
+      "box": [
+        349,
+        605,
+        375,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities",
+      "box": [
+        378,
+        605,
+        430,
+        619
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Account",
+      "box": [
+        96,
+        620,
+        148,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Management",
+      "box": [
+        151,
+        620,
+        231,
+        633
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Supervisor",
+      "box": [
+        96,
+        634,
+        162,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        165,
+        634,
+        178,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        182,
+        634,
+        229,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        232,
+        634,
+        259,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Co-Sponsor",
+      "box": [
+        262,
+        634,
+        340,
+        647
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Continue",
+      "box": [
+        96,
+        648,
+        151,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional",
+      "box": [
+        154,
+        648,
+        230,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developmental",
+      "box": [
+        232,
+        648,
+        325,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Courses",
+      "box": [
+        327,
+        648,
+        378,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administrate",
+      "box": [
+        96,
+        662,
+        173,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Eustace",
+      "box": [
+        177,
+        662,
+        225,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "High",
+      "box": [
+        228,
+        662,
+        258,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        260,
+        662,
+        304,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Facebook",
+      "box": [
+        307,
+        662,
+        370,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        373,
+        662,
+        396,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "EHS",
+      "box": [
+        399,
+        662,
+        429,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        433,
+        662,
+        480,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        483,
+        662,
+        510,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Twitter",
+      "box": [
+        513,
+        662,
+        558,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pages",
+      "box": [
+        561,
+        662,
+        597,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Draft",
+      "box": [
+        96,
+        677,
+        128,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        131,
+        677,
+        154,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "publish",
+      "box": [
+        157,
+        677,
+        201,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Eustace",
+      "box": [
+        204,
+        677,
+        252,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ISD",
+      "box": [
+        255,
+        677,
+        282,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "\"The",
+      "box": [
+        284,
+        677,
+        313,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Yard\"",
+      "box": [
+        317,
+        677,
+        355,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        357,
+        677,
+        375,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        378,
+        677,
+        425,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        429,
+        677,
+        456,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Secondary",
+      "box": [
+        55,
+        706,
+        123,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English",
+      "box": [
+        125,
+        706,
+        169,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "III",
+      "box": [
+        171,
+        706,
+        187,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        191,
+        706,
+        204,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TAAS",
+      "box": [
+        207,
+        706,
+        248,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Language",
+      "box": [
+        251,
+        706,
+        310,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        314,
+        706,
+        341,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        344,
+        706,
+        394,
+        719
+      ],
+      "label": "O"
+    },
+    {
+      "text": "July",
+      "box": [
+        55,
+        720,
+        80,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2000",
+      "box": [
+        83,
+        720,
+        116,
+        734
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        119,
+        720,
+        132,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "August",
+      "box": [
+        135,
+        720,
+        178,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2002",
+      "box": [
+        182,
+        720,
+        214,
+        734
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        218,
+        720,
+        279,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        281,
+        720,
+        319,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        323,
+        720,
+        339,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        342,
+        720,
+        369,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        371,
+        720,
+        376,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        379,
+        720,
+        411,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Secondary",
+      "box": [
+        96,
+        746,
+        163,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English",
+      "box": [
+        165,
+        746,
+        209,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        212,
+        746,
+        225,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Literature;",
+      "box": [
+        228,
+        746,
+        291,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TAAS",
+      "box": [
+        295,
+        746,
+        335,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Language",
+      "box": [
+        339,
+        746,
+        398,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        401,
+        746,
+        428,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9th-11th",
+      "box": [
+        432,
+        746,
+        486,
+        759
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Preparatory",
+      "box": [
+        96,
+        760,
+        170,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        172,
+        760,
+        195,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Remediation",
+      "box": [
+        199,
+        760,
+        276,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TAAS",
+      "box": [
+        278,
+        760,
+        319,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Language",
+      "box": [
+        323,
+        760,
+        382,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        385,
+        760,
+        412,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tutoring",
+      "box": [
+        416,
+        760,
+        468,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TAAS",
+      "box": [
+        96,
+        774,
+        137,
+        788
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Testing",
+      "box": [
+        140,
+        774,
+        185,
+        788
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administrator",
+      "box": [
+        188,
+        774,
+        271,
+        788
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Set",
+      "box": [
+        96,
+        789,
+        117,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        120,
+        789,
+        143,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "communicated",
+      "box": [
+        146,
+        789,
+        235,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ground",
+      "box": [
+        238,
+        789,
+        281,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rules",
+      "box": [
+        284,
+        789,
+        313,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        317,
+        789,
+        335,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        338,
+        789,
+        357,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "classroom",
+      "box": [
+        360,
+        789,
+        424,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        426,
+        789,
+        463,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        466,
+        789,
+        483,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "respect",
+      "box": [
+        485,
+        789,
+        530,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        534,
+        789,
+        556,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "personal",
+      "box": [
+        560,
+        789,
+        613,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "responsibility.",
+      "box": [
+        615,
+        789,
+        698,
+        802
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Scheduled",
+      "box": [
+        96,
+        803,
+        160,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        163,
+        803,
+        186,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "held",
+      "box": [
+        190,
+        803,
+        215,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "parent-teacher",
+      "box": [
+        219,
+        803,
+        308,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conferences",
+      "box": [
+        312,
+        803,
+        385,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        388,
+        803,
+        401,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "keep",
+      "box": [
+        404,
+        803,
+        435,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "parents",
+      "box": [
+        439,
+        803,
+        484,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "up-to-date",
+      "box": [
+        487,
+        803,
+        553,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        557,
+        803,
+        574,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "children's",
+      "box": [
+        576,
+        803,
+        633,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "academic",
+      "box": [
+        636,
+        803,
+        695,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performance.",
+      "box": [
+        698,
+        803,
+        779,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mentored",
+      "box": [
+        96,
+        817,
+        157,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        160,
+        817,
+        183,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "counseled",
+      "box": [
+        187,
+        817,
+        248,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        251,
+        817,
+        301,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        305,
+        817,
+        331,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "adjustment",
+      "box": [
+        334,
+        817,
+        400,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        403,
+        817,
+        426,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "academic",
+      "box": [
+        430,
+        817,
+        488,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "problems.",
+      "box": [
+        491,
+        817,
+        552,
+        831
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Created",
+      "box": [
+        96,
+        831,
+        146,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        149,
+        831,
+        188,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        191,
+        831,
+        223,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        226,
+        831,
+        238,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "accordance",
+      "box": [
+        240,
+        831,
+        311,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        315,
+        831,
+        342,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "state",
+      "box": [
+        344,
+        831,
+        373,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "curriculum",
+      "box": [
+        376,
+        831,
+        441,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        443,
+        831,
+        466,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "school-wide",
+      "box": [
+        469,
+        831,
+        544,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "curriculum",
+      "box": [
+        548,
+        831,
+        613,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "standards.",
+      "box": [
+        614,
+        831,
+        677,
+        845
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Established",
+      "box": [
+        96,
+        846,
+        165,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "positive",
+      "box": [
+        168,
+        846,
+        215,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "relationships",
+      "box": [
+        219,
+        846,
+        294,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        298,
+        846,
+        324,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students,",
+      "box": [
+        327,
+        846,
+        381,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "parents,",
+      "box": [
+        384,
+        846,
+        433,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "colleagues",
+      "box": [
+        437,
+        846,
+        500,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        503,
+        846,
+        526,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "administrators.",
+      "box": [
+        530,
+        846,
+        619,
+        859
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coached",
+      "box": [
+        96,
+        860,
+        152,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        155,
+        860,
+        205,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        209,
+        860,
+        232,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reviewed",
+      "box": [
+        235,
+        860,
+        291,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "test",
+      "box": [
+        295,
+        860,
+        316,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "material",
+      "box": [
+        320,
+        860,
+        369,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        371,
+        860,
+        383,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "preparation",
+      "box": [
+        385,
+        860,
+        457,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        459,
+        860,
+        477,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Texas",
+      "box": [
+        480,
+        860,
+        517,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "state-wide",
+      "box": [
+        520,
+        860,
+        585,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "standardized",
+      "box": [
+        588,
+        860,
+        665,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tests.",
+      "box": [
+        669,
+        860,
+        700,
+        873
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Integrated",
+      "box": [
+        96,
+        874,
+        158,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "technology",
+      "box": [
+        161,
+        874,
+        229,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "into",
+      "box": [
+        231,
+        874,
+        254,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        257,
+        874,
+        276,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "curriculum",
+      "box": [
+        279,
+        874,
+        344,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        346,
+        874,
+        359,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "develop",
+      "box": [
+        362,
+        874,
+        411,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students'",
+      "box": [
+        415,
+        874,
+        467,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "word",
+      "box": [
+        471,
+        874,
+        504,
+        888
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "processing",
+      "box": [
+        507,
+        874,
+        574,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        576,
+        874,
+        599,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "research",
+      "box": [
+        602,
+        874,
+        655,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "skills.",
+      "box": [
+        658,
+        874,
+        691,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Secondary",
+      "box": [
+        55,
+        900,
+        123,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English",
+      "box": [
+        125,
+        900,
+        169,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "III",
+      "box": [
+        171,
+        900,
+        187,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&",
+      "box": [
+        191,
+        900,
+        204,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        207,
+        900,
+        254,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        257,
+        900,
+        284,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "I",
+      "box": [
+        287,
+        900,
+        293,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        297,
+        900,
+        347,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        55,
+        914,
+        83,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1998",
+      "box": [
+        87,
+        914,
+        120,
+        928
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        123,
+        914,
+        136,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": "July",
+      "box": [
+        139,
+        914,
+        164,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2000",
+      "box": [
+        166,
+        914,
+        199,
+        928
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        203,
+        914,
+        264,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        266,
+        914,
+        304,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        308,
+        914,
+        324,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        327,
+        914,
+        354,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        356,
+        914,
+        360,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        364,
+        914,
+        396,
+        928
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English",
+      "box": [
+        96,
+        940,
+        140,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "III",
+      "box": [
+        142,
+        940,
+        158,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        161,
+        940,
+        184,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Beginning",
+      "box": [
+        188,
+        940,
+        248,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        250,
+        940,
+        297,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        301,
+        940,
+        327,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        331,
+        940,
+        381,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        384,
+        940,
+        402,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grades",
+      "box": [
+        405,
+        940,
+        447,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9-12.",
+      "box": [
+        450,
+        940,
+        484,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CO-Sponsored",
+      "box": [
+        96,
+        1034,
+        192,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Thespians",
+      "box": [
+        196,
+        1034,
+        257,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Children's",
+      "box": [
+        96,
+        1048,
+        157,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Show",
+      "box": [
+        160,
+        1048,
+        197,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Production",
+      "box": [
+        200,
+        1048,
+        268,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Director",
+      "box": [
+        270,
+        1048,
+        321,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English",
+      "box": [
+        96,
+        1062,
+        140,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Department",
+      "box": [
+        142,
+        1062,
+        215,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "textbook",
+      "box": [
+        218,
+        1062,
+        273,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "adoption",
+      "box": [
+        276,
+        1062,
+        331,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": ".",
+      "box": [
+        334,
+        1062,
+        338,
+        1076
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Secondary",
+      "box": [
+        55,
+        1088,
+        123,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Student",
+      "box": [
+        125,
+        1088,
+        172,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        176,
+        1088,
+        226,
+        1101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "January",
+      "box": [
+        55,
+        1102,
+        103,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1998",
+      "box": [
+        106,
+        1102,
+        139,
+        1116
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        142,
+        1102,
+        155,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "April",
+      "box": [
+        158,
+        1102,
+        190,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1998",
+      "box": [
+        193,
+        1102,
+        226,
+        1116
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        229,
+        1102,
+        290,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        293,
+        1102,
+        330,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        334,
+        1102,
+        350,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        353,
+        1102,
+        380,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        382,
+        1102,
+        387,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        390,
+        1102,
+        422,
+        1116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Secondary",
+      "box": [
+        96,
+        1128,
+        163,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Student",
+      "box": [
+        165,
+        1128,
+        213,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        216,
+        1128,
+        266,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        269,
+        1128,
+        287,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        290,
+        1128,
+        338,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        341,
+        1128,
+        368,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "I",
+      "box": [
+        371,
+        1128,
+        377,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        380,
+        1128,
+        403,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English.III",
+      "box": [
+        406,
+        1128,
+        469,
+        1141
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Classroom",
+      "box": [
+        96,
+        1142,
+        164,
+        1156
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        165,
+        1142,
+        242,
+        1156
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Co-director",
+      "box": [
+        96,
+        1156,
+        169,
+        1170
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        172,
+        1156,
+        186,
+        1170
+      ],
+      "label": "O"
+    },
+    {
+      "text": "class",
+      "box": [
+        189,
+        1156,
+        219,
+        1170
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plays",
+      "box": [
+        222,
+        1156,
+        254,
+        1170
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assisted",
+      "box": [
+        96,
+        1171,
+        148,
+        1184
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        151,
+        1171,
+        178,
+        1184
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UIL",
+      "box": [
+        181,
+        1171,
+        207,
+        1184
+      ],
+      "label": "O"
+    },
+    {
+      "text": "one",
+      "box": [
+        210,
+        1171,
+        233,
+        1184
+      ],
+      "label": "O"
+    },
+    {
+      "text": "act",
+      "box": [
+        236,
+        1171,
+        255,
+        1184
+      ],
+      "label": "O"
+    },
+    {
+      "text": "play",
+      "box": [
+        258,
+        1171,
+        285,
+        1184
+      ],
+      "label": "O"
+    },
+    {
+      "text": "competition",
+      "box": [
+        287,
+        1171,
+        360,
+        1184
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Acting",
+      "box": [
+        55,
+        1200,
+        96,
+        1213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        99,
+        1200,
+        122,
+        1213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Creative",
+      "box": [
+        125,
+        1200,
+        177,
+        1213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dramatics",
+      "box": [
+        181,
+        1200,
+        243,
+        1213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        246,
+        1200,
+        293,
+        1213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        297,
+        1200,
+        347,
+        1213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "October",
+      "box": [
+        55,
+        1214,
+        108,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997",
+      "box": [
+        111,
+        1214,
+        144,
+        1228
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        147,
+        1214,
+        160,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "January",
+      "box": [
+        163,
+        1214,
+        211,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1998",
+      "box": [
+        214,
+        1214,
+        247,
+        1228
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        250,
+        1214,
+        311,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        314,
+        1214,
+        352,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        355,
+        1214,
+        371,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        374,
+        1214,
+        401,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        403,
+        1214,
+        408,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        412,
+        1214,
+        443,
+        1228
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teaching",
+      "box": [
+        96,
+        1240,
+        152,
+        1253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Artist:",
+      "box": [
+        154,
+        1240,
+        192,
+        1253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Acting",
+      "box": [
+        195,
+        1240,
+        236,
+        1253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "III",
+      "box": [
+        238,
+        1240,
+        254,
+        1253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        257,
+        1240,
+        280,
+        1253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Musical",
+      "box": [
+        283,
+        1240,
+        333,
+        1253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater.",
+      "box": [
+        335,
+        1240,
+        386,
+        1253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Implemented",
+      "box": [
+        96,
+        1254,
+        175,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lesson",
+      "box": [
+        179,
+        1254,
+        217,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans",
+      "box": [
+        220,
+        1254,
+        252,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        255,
+        1254,
+        267,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creative",
+      "box": [
+        269,
+        1254,
+        317,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dramatic",
+      "box": [
+        321,
+        1254,
+        374,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "projects,",
+      "box": [
+        377,
+        1254,
+        431,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "singing,",
+      "box": [
+        435,
+        1254,
+        479,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dancing,",
+      "box": [
+        483,
+        1254,
+        534,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        538,
+        1254,
+        560,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "voice.",
+      "box": [
+        564,
+        1254,
+        600,
+        1268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Conducted",
+      "box": [
+        96,
+        1268,
+        164,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "activities,",
+      "box": [
+        167,
+        1268,
+        223,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "instructed",
+      "box": [
+        227,
+        1268,
+        286,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "small",
+      "box": [
+        289,
+        1268,
+        322,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "groups,",
+      "box": [
+        324,
+        1268,
+        369,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        373,
+        1268,
+        396,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "provided",
+      "box": [
+        399,
+        1268,
+        454,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "whole",
+      "box": [
+        458,
+        1268,
+        495,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "class",
+      "box": [
+        498,
+        1268,
+        528,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "instruction.",
+      "box": [
+        532,
+        1268,
+        597,
+        1282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leader",
+      "box": [
+        96,
+        1282,
+        140,
+        1296
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        143,
+        1282,
+        157,
+        1296
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        159,
+        1282,
+        174,
+        1296
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        177,
+        1282,
+        212,
+        1296
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performances",
+      "box": [
+        216,
+        1282,
+        299,
+        1296
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        303,
+        1282,
+        325,
+        1296
+      ],
+      "label": "O"
+    },
+    {
+      "text": "exercises.",
+      "box": [
+        329,
+        1282,
+        389,
+        1296
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Acting",
+      "box": [
+        55,
+        1312,
+        96,
+        1325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teacher",
+      "box": [
+        99,
+        1312,
+        149,
+        1325
+      ],
+      "label": "O"
+    },
+    {
+      "text": "June",
+      "box": [
+        55,
+        1326,
+        83,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997",
+      "box": [
+        87,
+        1326,
+        120,
+        1339
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        123,
+        1326,
+        136,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "August",
+      "box": [
+        139,
+        1326,
+        182,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997",
+      "box": [
+        186,
+        1326,
+        218,
+        1339
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        222,
+        1326,
+        283,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        285,
+        1326,
+        323,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        327,
+        1326,
+        343,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        346,
+        1326,
+        373,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        375,
+        1326,
+        380,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        383,
+        1326,
+        415,
+        1339
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Elementary",
+      "box": [
+        96,
+        1352,
+        165,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Creative",
+      "box": [
+        167,
+        1352,
+        219,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dramatics",
+      "box": [
+        223,
+        1352,
+        285,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teaching",
+      "box": [
+        288,
+        1352,
+        339,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "artist",
+      "box": [
+        342,
+        1352,
+        372,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        375,
+        1352,
+        393,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Children's",
+      "box": [
+        396,
+        1352,
+        458,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Courtyard",
+      "box": [
+        461,
+        1352,
+        524,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Daycare",
+      "box": [
+        528,
+        1352,
+        580,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Centers.",
+      "box": [
+        583,
+        1352,
+        635,
+        1365
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Children's",
+      "box": [
+        96,
+        1366,
+        157,
+        1379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Summer",
+      "box": [
+        160,
+        1366,
+        212,
+        1379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Plays",
+      "box": [
+        215,
+        1366,
+        248,
+        1379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Whole",
+      "box": [
+        96,
+        1380,
+        137,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "class",
+      "box": [
+        140,
+        1380,
+        170,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "instruction",
+      "box": [
+        173,
+        1380,
+        237,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        239,
+        1380,
+        262,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "lead",
+      "box": [
+        265,
+        1380,
+        291,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "all",
+      "box": [
+        295,
+        1380,
+        309,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        312,
+        1380,
+        348,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performances",
+      "box": [
+        351,
+        1380,
+        434,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        438,
+        1380,
+        461,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "exercises.",
+      "box": [
+        464,
+        1380,
+        524,
+        1394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Secondary",
+      "box": [
+        55,
+        1409,
+        123,
+        1423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teaching",
+      "box": [
+        125,
+        1409,
+        181,
+        1423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Residency",
+      "box": [
+        184,
+        1409,
+        248,
+        1423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "January",
+      "box": [
+        55,
+        1424,
+        103,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997",
+      "box": [
+        106,
+        1424,
+        139,
+        1437
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        142,
+        1424,
+        155,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "May",
+      "box": [
+        158,
+        1424,
+        188,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997",
+      "box": [
+        191,
+        1424,
+        223,
+        1437
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        227,
+        1424,
+        288,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        290,
+        1424,
+        328,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        332,
+        1424,
+        348,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        351,
+        1424,
+        378,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        380,
+        1424,
+        385,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        388,
+        1424,
+        420,
+        1437
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mentor",
+      "box": [
+        96,
+        1449,
+        142,
+        1463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        145,
+        1449,
+        163,
+        1463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Speech",
+      "box": [
+        166,
+        1449,
+        213,
+        1463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        216,
+        1449,
+        239,
+        1463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "English",
+      "box": [
+        242,
+        1449,
+        286,
+        1463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "students",
+      "box": [
+        288,
+        1449,
+        339,
+        1463
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Instruction",
+      "box": [
+        96,
+        1464,
+        161,
+        1477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        163,
+        1464,
+        177,
+        1477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "small",
+      "box": [
+        180,
+        1464,
+        212,
+        1477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "groups,",
+      "box": [
+        214,
+        1464,
+        260,
+        1477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "whole",
+      "box": [
+        263,
+        1464,
+        300,
+        1477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "class",
+      "box": [
+        304,
+        1464,
+        334,
+        1477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "instruction",
+      "box": [
+        337,
+        1464,
+        400,
+        1477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "General",
+      "box": [
+        96,
+        1478,
+        145,
+        1491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Grading",
+      "box": [
+        147,
+        1478,
+        197,
+        1491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rubrics",
+      "box": [
+        200,
+        1478,
+        247,
+        1491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        250,
+        1478,
+        273,
+        1491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assessment",
+      "box": [
+        276,
+        1478,
+        349,
+        1491
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Secondary",
+      "box": [
+        55,
+        1507,
+        123,
+        1521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Teaching",
+      "box": [
+        125,
+        1507,
+        181,
+        1521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Internship",
+      "box": [
+        184,
+        1507,
+        244,
+        1521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "January",
+      "box": [
+        55,
+        1521,
+        103,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997",
+      "box": [
+        106,
+        1521,
+        139,
+        1535
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        142,
+        1521,
+        155,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "May",
+      "box": [
+        158,
+        1521,
+        188,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1997",
+      "box": [
+        191,
+        1521,
+        223,
+        1535
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        227,
+        1521,
+        288,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        290,
+        1521,
+        328,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        332,
+        1521,
+        348,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        351,
+        1521,
+        378,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        380,
+        1521,
+        385,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        388,
+        1521,
+        420,
+        1535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "One",
+      "box": [
+        96,
+        1547,
+        123,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        126,
+        1547,
+        143,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "one",
+      "box": [
+        145,
+        1547,
+        168,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "instruction,",
+      "box": [
+        171,
+        1547,
+        237,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "instructing",
+      "box": [
+        241,
+        1547,
+        303,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "small",
+      "box": [
+        306,
+        1547,
+        338,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "groups,",
+      "box": [
+        340,
+        1547,
+        386,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        389,
+        1547,
+        412,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "providing",
+      "box": [
+        416,
+        1547,
+        474,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "whole",
+      "box": [
+        476,
+        1547,
+        513,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "class",
+      "box": [
+        516,
+        1547,
+        546,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "instruction.",
+      "box": [
+        550,
+        1547,
+        616,
+        1560
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        55,
+        1573,
+        118,
+        1586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bachelor",
+      "box": [
+        55,
+        1587,
+        111,
+        1600
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        114,
+        1587,
+        128,
+        1600
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        130,
+        1587,
+        157,
+        1600
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "in",
+      "box": [
+        160,
+        1587,
+        172,
+        1600
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        174,
+        1587,
+        222,
+        1600
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        225,
+        1587,
+        252,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "box": [
+        255,
+        1587,
+        260,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        262,
+        1587,
+        309,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        313,
+        1587,
+        340,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        343,
+        1587,
+        347,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1998",
+      "box": [
+        351,
+        1587,
+        384,
+        1600
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "University",
+      "box": [
+        387,
+        1587,
+        449,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        452,
+        1587,
+        466,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Texas",
+      "box": [
+        468,
+        1587,
+        505,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at",
+      "box": [
+        508,
+        1587,
+        520,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arlington",
+      "box": [
+        523,
+        1587,
+        581,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        583,
+        1587,
+        599,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        602,
+        1587,
+        629,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        631,
+        1587,
+        636,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        639,
+        1587,
+        671,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        675,
+        1587,
+        679,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "US",
+      "box": [
+        683,
+        1587,
+        704,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GPA:",
+      "box": [
+        707,
+        1587,
+        743,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GPA:",
+      "box": [
+        745,
+        1587,
+        781,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3.74",
+      "box": [
+        784,
+        1587,
+        813,
+        1600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theater",
+      "box": [
+        55,
+        1612,
+        103,
+        1626
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        106,
+        1612,
+        133,
+        1626
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GPA:",
+      "box": [
+        136,
+        1612,
+        172,
+        1626
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3.74",
+      "box": [
+        174,
+        1612,
+        203,
+        1626
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Associate",
+      "box": [
+        55,
+        1638,
+        116,
+        1652
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        119,
+        1638,
+        133,
+        1652
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        135,
+        1638,
+        162,
+        1652
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ":",
+      "box": [
+        165,
+        1638,
+        170,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Liberal",
+      "box": [
+        172,
+        1638,
+        217,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        219,
+        1638,
+        246,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        249,
+        1638,
+        253,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1995",
+      "box": [
+        257,
+        1638,
+        290,
+        1652
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Tarrant",
+      "box": [
+        294,
+        1638,
+        339,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "County",
+      "box": [
+        342,
+        1638,
+        388,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Community",
+      "box": [
+        390,
+        1638,
+        462,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "College",
+      "box": [
+        464,
+        1638,
+        511,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        514,
+        1638,
+        530,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        534,
+        1638,
+        560,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        563,
+        1638,
+        567,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        571,
+        1638,
+        603,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        606,
+        1638,
+        611,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "US",
+      "box": [
+        614,
+        1638,
+        635,
+        1652
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GPA",
+      "box": [
+        55,
+        1664,
+        88,
+        1677
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3.83",
+      "box": [
+        91,
+        1664,
+        120,
+        1677
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Phi",
+      "box": [
+        55,
+        1689,
+        76,
+        1703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theta",
+      "box": [
+        79,
+        1689,
+        114,
+        1703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Kappa",
+      "box": [
+        117,
+        1689,
+        160,
+        1703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member,",
+      "box": [
+        163,
+        1689,
+        220,
+        1703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "P",
+      "box": [
+        224,
+        1689,
+        234,
+        1703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HI",
+      "box": [
+        237,
+        1689,
+        254,
+        1703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TAU",
+      "box": [
+        257,
+        1689,
+        290,
+        1703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Chapter",
+      "box": [
+        293,
+        1689,
+        343,
+        1703
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Honor",
+      "box": [
+        55,
+        1719,
+        96,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Graduate",
+      "box": [
+        99,
+        1719,
+        156,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":",
+      "box": [
+        159,
+        1719,
+        164,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Liberal",
+      "box": [
+        166,
+        1719,
+        211,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        213,
+        1719,
+        240,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mabank",
+      "box": [
+        243,
+        1719,
+        295,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "High",
+      "box": [
+        299,
+        1719,
+        328,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "School",
+      "box": [
+        331,
+        1719,
+        375,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        377,
+        1719,
+        393,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        396,
+        1719,
+        423,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        426,
+        1719,
+        430,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        434,
+        1719,
+        466,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        469,
+        1719,
+        473,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "US",
+      "box": [
+        477,
+        1719,
+        498,
+        1732
+      ],
+      "label": "O"
+    },
+    {
+      "text": "National",
+      "box": [
+        55,
+        1744,
+        109,
+        1758
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Honor",
+      "box": [
+        111,
+        1744,
+        151,
+        1758
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Society",
+      "box": [
+        154,
+        1744,
+        201,
+        1758
+      ],
+      "label": "O"
+    },
+    {
+      "text": "-",
+      "box": [
+        204,
+        1744,
+        210,
+        1758
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Top",
+      "box": [
+        214,
+        1744,
+        240,
+        1758
+      ],
+      "label": "O"
+    },
+    {
+      "text": "15",
+      "box": [
+        243,
+        1744,
+        260,
+        1758
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Student",
+      "box": [
+        55,
+        1770,
+        103,
+        1784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Council",
+      "box": [
+        106,
+        1770,
+        154,
+        1784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Officer",
+      "box": [
+        156,
+        1770,
+        199,
+        1784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        203,
+        1770,
+        226,
+        1784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        229,
+        1770,
+        282,
+        1784
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Drill",
+      "box": [
+        55,
+        1796,
+        82,
+        1809
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        85,
+        1796,
+        121,
+        1809
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dance",
+      "box": [
+        123,
+        1796,
+        163,
+        1809
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        166,
+        1796,
+        203,
+        1809
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Key",
+      "box": [
+        55,
+        1821,
+        83,
+        1835
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Club",
+      "box": [
+        86,
+        1821,
+        116,
+        1835
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Member",
+      "box": [
+        119,
+        1821,
+        172,
+        1835
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Key",
+      "box": [
+        55,
+        1847,
+        83,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Speaker",
+      "box": [
+        86,
+        1847,
+        138,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        141,
+        1847,
+        164,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "President",
+      "box": [
+        167,
+        1847,
+        225,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        228,
+        1847,
+        242,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Business",
+      "box": [
+        244,
+        1847,
+        297,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Office",
+      "box": [
+        301,
+        1847,
+        339,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professionals",
+      "box": [
+        342,
+        1847,
+        422,
+        1861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "French",
+      "box": [
+        55,
+        1873,
+        99,
+        1886
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Club",
+      "box": [
+        102,
+        1873,
+        132,
+        1886
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Latin",
+      "box": [
+        55,
+        1898,
+        87,
+        1912
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Club",
+      "box": [
+        90,
+        1898,
+        120,
+        1912
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Orvil",
+      "box": [
+        55,
+        1924,
+        88,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pirtle",
+      "box": [
+        90,
+        1924,
+        122,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Memorial",
+      "box": [
+        125,
+        1924,
+        185,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Scholarship",
+      "box": [
+        188,
+        1924,
+        259,
+        1938
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rotary",
+      "box": [
+        55,
+        1950,
+        98,
+        1963
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Club",
+      "box": [
+        101,
+        1950,
+        131,
+        1963
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        134,
+        1950,
+        148,
+        1963
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Athens,",
+      "box": [
+        150,
+        1950,
+        197,
+        1963
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Texas",
+      "box": [
+        201,
+        1950,
+        238,
+        1963
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TVCC",
+      "box": [
+        55,
+        2034,
+        98,
+        2047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        102,
+        2034,
+        141,
+        2047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sciences",
+      "box": [
+        143,
+        2034,
+        197,
+        2047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Scholarship",
+      "box": [
+        201,
+        2034,
+        272,
+        2047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Work",
+      "box": [
+        55,
+        2059,
+        92,
+        2073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Study",
+      "box": [
+        96,
+        2059,
+        133,
+        2073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program:",
+      "box": [
+        135,
+        2059,
+        192,
+        2073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Social",
+      "box": [
+        195,
+        2059,
+        234,
+        2073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sciences",
+      "box": [
+        236,
+        2059,
+        290,
+        2073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Division",
+      "box": [
+        294,
+        2059,
+        344,
+        2073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Department",
+      "box": [
+        346,
+        2059,
+        418,
+        2073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Chairman",
+      "box": [
+        422,
+        2059,
+        482,
+        2073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        55,
+        2085,
+        88,
+        2099
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Team",
+      "box": [
+        55,
+        2111,
+        92,
+        2124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Building",
+      "box": [
+        94,
+        2111,
+        144,
+        2124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program",
+      "box": [
+        55,
+        2136,
+        110,
+        2150
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Development",
+      "box": [
+        112,
+        2136,
+        193,
+        2150
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Management",
+      "box": [
+        55,
+        2162,
+        135,
+        2176
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Goal",
+      "box": [
+        55,
+        2188,
+        87,
+        2201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Setting",
+      "box": [
+        89,
+        2188,
+        132,
+        2201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        134,
+        2188,
+        157,
+        2201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Implementation",
+      "box": [
+        160,
+        2188,
+        255,
+        2201
+      ],
+      "label": "O"
+    }
+  ]
+}

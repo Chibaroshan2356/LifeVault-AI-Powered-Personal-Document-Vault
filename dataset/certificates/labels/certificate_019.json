@@ -1,0 +1,132 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_019.png",
+  "image_dimensions": [
+    659,
+    465
+  ],
+  "words": [
+    {
+      "text": "CERTIFICATE",
+      "box": [
+        503,
+        47,
+        962,
+        150
+      ],
+      "label": "O"
+    },
+    {
+      "text": "OF PARTICIPATION",
+      "box": [
+        537,
+        139,
+        959,
+        204
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "SINDAYEN John Michael",
+      "box": [
+        60,
+        378,
+        473,
+        434
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "has attendedthe",
+      "box": [
+        62,
+        462,
+        283,
+        505
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FREE Live Online Training -Coding For",
+      "box": [
+        60,
+        511,
+        637,
+        580
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Beginners",
+      "box": [
+        60,
+        593,
+        224,
+        649
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "on",
+      "box": [
+        65,
+        673,
+        101,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "February 11,2022",
+      "box": [
+        98,
+        660,
+        318,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "dser",
+      "box": [
+        95,
+        862,
+        168,
+        896
+      ],
+      "label": "O"
+    },
+    {
+      "text": "colcnix convcerncate",
+      "box": [
+        508,
+        907,
+        693,
+        924
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SIGNATURE",
+      "box": [
+        101,
+        909,
+        204,
+        939
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6233c03tog",
+      "box": [
+        461,
+        929,
+        561,
+        946
+      ],
+      "label": "O"
+    }
+  ]
+}

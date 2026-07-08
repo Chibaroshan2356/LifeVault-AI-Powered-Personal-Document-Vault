@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_092.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "McGIII University",
+      "box": [
+        57,
+        57,
+        217,
+        82
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Paul",
+      "box": [
+        57,
+        232,
+        104,
+        254
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID 88025372",
+      "box": [
+        54,
+        401,
+        182,
+        426
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expiry Date: Valid until November 03, 2024",
+      "box": [
+        57,
+        573,
+        448,
+        601
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "5 lexvigvel",
+      "box": [
+        650,
+        884,
+        939,
+        981
+      ],
+      "label": "O"
+    }
+  ]
+}

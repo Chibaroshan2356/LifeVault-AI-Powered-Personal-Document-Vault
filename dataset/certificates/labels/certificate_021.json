@@ -1,0 +1,162 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_021.png",
+  "image_dimensions": [
+    3200,
+    2380
+  ],
+  "words": [
+    {
+      "text": "Certificate no: UC-674758fe-abd4-4867-a3628-12f096d6adad",
+      "box": [
+        662,
+        85,
+        941,
+        100
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Udemy",
+      "box": [
+        51,
+        74,
+        226,
+        171
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Certificate url: ude my/UC-674758fe-abd4-4867-a628-12f096d6adad",
+      "box": [
+        624,
+        107,
+        941,
+        128
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Reference Number: 0004",
+      "box": [
+        823,
+        135,
+        942,
+        151
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "CERTIFICATE OF COMPLETION",
+      "box": [
+        58,
+        255,
+        323,
+        278
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Data Structure & Algorithm",
+      "box": [
+        54,
+        295,
+        822,
+        397
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "using C++ : Zero To Mastery",
+      "box": [
+        51,
+        383,
+        838,
+        492
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023",
+      "box": [
+        54,
+        489,
+        195,
+        565
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Instructors",
+      "box": [
+        58,
+        600,
+        133,
+        621
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ankit Thakran; Harsh Kajla",
+      "box": [
+        138,
+        597,
+        332,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Debanik Debnath",
+      "box": [
+        60,
+        803,
+        394,
+        855
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date",
+      "box": [
+        59,
+        882,
+        94,
+        903
+      ],
+      "label": "O"
+    },
+    {
+      "text": "July 28, 2023",
+      "box": [
+        99,
+        881,
+        196,
+        907
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Length",
+      "box": [
+        57,
+        912,
+        109,
+        939
+      ],
+      "label": "O"
+    },
+    {
+      "text": "64.5 total hours",
+      "box": [
+        115,
+        913,
+        231,
+        936
+      ],
+      "label": "O"
+    }
+  ]
+}

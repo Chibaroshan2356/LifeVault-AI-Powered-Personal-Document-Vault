@@ -1,0 +1,152 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_032.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "STAMFORD",
+      "box": [
+        387,
+        31,
+        821,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UNIVERSITY",
+      "box": [
+        390,
+        106,
+        850,
+        184
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "BANGLADESH",
+      "box": [
+        393,
+        178,
+        678,
+        225
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "I",
+      "box": [
+        256,
+        246,
+        331,
+        640
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "ZAHIRUL ISLAM",
+      "box": [
+        353,
+        659,
+        718,
+        709
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Program",
+      "box": [
+        225,
+        720,
+        387,
+        771
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "BSc [NEEE",
+      "box": [
+        487,
+        725,
+        696,
+        765
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "ID No",
+      "box": [
+        228,
+        771,
+        353,
+        818
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "EEE 025 05076",
+      "box": [
+        487,
+        771,
+        784,
+        821
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Blood Group",
+      "box": [
+        231,
+        818,
+        457,
+        870
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "AB (-Ve)",
+      "box": [
+        487,
+        821,
+        659,
+        868
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Datc",
+      "box": [
+        325,
+        868,
+        421,
+        909
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "JiDF( Ziir",
+      "box": [
+        484,
+        868,
+        743,
+        912
+      ],
+      "label": "O"
+    },
+    {
+      "text": "E",
+      "box": [
+        225,
+        864,
+        326,
+        920
+      ],
+      "label": "O"
+    }
+  ]
+}

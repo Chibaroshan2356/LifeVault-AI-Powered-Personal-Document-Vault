@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_015.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "1",
+      "box": [
+        400,
+        121,
+        437,
+        306
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4",
+      "box": [
+        401,
+        357,
+        432,
+        401
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        440,
+        131,
+        481,
+        462
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2",
+      "box": [
+        653,
+        518,
+        693,
+        556
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Il",
+      "box": [
+        307,
+        629,
+        445,
+        851
+      ],
+      "label": "O"
+    },
+    {
+      "text": "VJ",
+      "box": [
+        548,
+        460,
+        767,
+        882
+      ],
+      "label": "O"
+    }
+  ]
+}
