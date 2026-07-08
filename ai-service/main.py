@@ -8,6 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.routers.process import router as process_router
 from app.ocr.extractor import warmup_reader
+from app.layoutlm.router import router as layoutlm_router
+
 
 logging.basicConfig(
     level=settings.LOG_LEVEL,
@@ -55,3 +57,5 @@ async def root():
 
 
 app.include_router(process_router, tags=["Pipeline"])
+app.include_router(layoutlm_router, prefix="/layoutlm", tags=["LayoutLMv3 Evaluation"])
+
