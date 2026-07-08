@@ -1,0 +1,272 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_024.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "of",
+      "box": [
+        553,
+        231,
+        590,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Md.",
+      "box": [
+        112,
+        312,
+        175,
+        353
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "At ve",
+      "box": [
+        271,
+        462,
+        356,
+        506
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Bangladesh !",
+      "box": [
+        251,
+        178,
+        428,
+        256
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "University",
+      "box": [
+        407,
+        198,
+        562,
+        273
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Engineering",
+      "box": [
+        243,
+        217,
+        423,
+        298
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Fechndlogy",
+      "box": [
+        429,
+        240,
+        595,
+        323
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Dhaka",
+      "box": [
+        240,
+        259,
+        338,
+        318
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "1000 ,",
+      "box": [
+        342,
+        272,
+        435,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bangladesh",
+      "box": [
+        420,
+        287,
+        593,
+        360
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tuhin",
+      "box": [
+        171,
+        314,
+        276,
+        373
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Islam",
+      "box": [
+        261,
+        328,
+        363,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Department of",
+      "box": [
+        96,
+        345,
+        317,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Civil",
+      "box": [
+        303,
+        378,
+        374,
+        421
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Engineering",
+      "box": [
+        360,
+        381,
+        543,
+        456
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Shahid",
+      "box": [
+        89,
+        387,
+        204,
+        443
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Smrity",
+      "box": [
+        189,
+        400,
+        298,
+        462
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Hall",
+      "box": [
+        283,
+        415,
+        359,
+        468
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Blood",
+      "box": [
+        81,
+        429,
+        182,
+        484
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Group:",
+      "box": [
+        165,
+        440,
+        276,
+        502
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Student",
+      "box": [
+        548,
+        500,
+        649,
+        548
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Number",
+      "box": [
+        664,
+        514,
+        771,
+        567
+      ],
+      "label": "O"
+    },
+    {
+      "text": "P1008312047",
+      "box": [
+        534,
+        528,
+        857,
+        635
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "(",
+      "box": [
+        178,
+        550,
+        273,
+        599
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Provost",
+      "box": [
+        171,
+        581,
+        284,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "STUDENT",
+      "box": [
+        526,
+        587,
+        784,
+        681
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    }
+  ]
+}

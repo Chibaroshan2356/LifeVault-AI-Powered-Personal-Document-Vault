@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_082.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "King's College London",
+      "box": [
+        53,
+        53,
+        675,
+        132
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Brian Sanchez",
+      "box": [
+        57,
+        232,
+        198,
+        254
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID: 69102144",
+      "box": [
+        51,
+        401,
+        439,
+        464
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expiry Date: Valid rdrough 23rd Seplember 2026",
+      "box": [
+        57,
+        573,
+        498,
+        601
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "2",
+      "box": [
+        801,
+        904,
+        832,
+        939
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Z",
+      "box": [
+        689,
+        923,
+        735,
+        951
+      ],
+      "label": "O"
+    }
+  ]
+}

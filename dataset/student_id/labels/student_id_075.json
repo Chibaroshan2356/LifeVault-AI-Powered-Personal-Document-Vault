@@ -1,0 +1,102 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_075.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "dg",
+      "box": [
+        798,
+        379,
+        842,
+        410
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ezoc",
+      "box": [
+        675,
+        361,
+        735,
+        396
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "\"80qe4",
+      "box": [
+        725,
+        365,
+        804,
+        407
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pitd",
+      "box": [
+        837,
+        387,
+        892,
+        423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Aiid ]",
+      "box": [
+        881,
+        390,
+        953,
+        432
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Upogizt =",
+      "box": [
+        796,
+        490,
+        904,
+        535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "piea",
+      "box": [
+        731,
+        553,
+        913,
+        643
+      ],
+      "label": "O"
+    },
+    {
+      "text": "KwisjaNun",
+      "box": [
+        239,
+        561,
+        589,
+        701
+      ],
+      "label": "O"
+    },
+    {
+      "text": "eiquunio)",
+      "box": [
+        573,
+        625,
+        896,
+        751
+      ],
+      "label": "O"
+    }
+  ]
+}

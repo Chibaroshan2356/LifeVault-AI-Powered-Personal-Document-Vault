@@ -1,0 +1,82 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_014.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "HARVARD",
+      "box": [
+        431,
+        290,
+        812,
+        365
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "U N [ V E R $ [ TY",
+      "box": [
+        435,
+        353,
+        806,
+        390
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "STUDENT",
+      "box": [
+        478,
+        409,
+        764,
+        478
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "JULIA ROSE ANDO",
+      "box": [
+        114,
+        546,
+        440,
+        593
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "40865845 0",
+      "box": [
+        110,
+        585,
+        290,
+        635
+      ],
+      "label": "O"
+    },
+    {
+      "text": "05/31/2013",
+      "box": [
+        610,
+        595,
+        790,
+        640
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "HGSE",
+      "box": [
+        700,
+        675,
+        825,
+        721
+      ],
+      "label": "O"
+    }
+  ]
+}

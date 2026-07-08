@@ -1,0 +1,212 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_010.png",
+  "image_dimensions": [
+    1605,
+    1186
+  ],
+  "words": [
+    {
+      "text": "CERTIFICATE",
+      "box": [
+        69,
+        102,
+        252,
+        150
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "OF EXCELLENCE",
+      "box": [
+        71,
+        168,
+        297,
+        212
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "{qpues",
+      "box": [
+        849,
+        116,
+        942,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "This CERTIFICATE IS AWARDED To",
+      "box": [
+        70,
+        226,
+        241,
+        241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Debanik Debnath",
+      "box": [
+        54,
+        408,
+        299,
+        455
+      ],
+      "label": "O"
+    },
+    {
+      "text": "In",
+      "box": [
+        54,
+        480,
+        72,
+        502
+      ],
+      "label": "O"
+    },
+    {
+      "text": "recognition ofthe completion ofthe tutorial: String Pattern Matching: KMP Algorithm",
+      "box": [
+        71,
+        471,
+        738,
+        511
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Following are the the learning items; which are covered in this tutorial",
+      "box": [
+        55,
+        519,
+        597,
+        553
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "8 Video Tutorials",
+      "box": [
+        79,
+        575,
+        211,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1 Modules",
+      "box": [
+        251,
+        575,
+        332,
+        600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "04 December 2023",
+      "box": [
+        792,
+        575,
+        939,
+        600
+      ],
+      "label": "O"
+    },
+    {
+      "text": "OF",
+      "box": [
+        861,
+        762,
+        883,
+        782
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Anshuman Singh",
+      "box": [
+        58,
+        864,
+        193,
+        899
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7",
+      "box": [
+        910,
+        879,
+        922,
+        897
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8y",
+      "box": [
+        834,
+        897,
+        857,
+        920
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Co-founder SCALER 6",
+      "box": [
+        58,
+        912,
+        239,
+        939
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tulz5",
+      "box": [
+        50,
+        745,
+        184,
+        880
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(",
+      "box": [
+        793,
+        747,
+        868,
+        882
+      ],
+      "label": "O"
+    },
+    {
+      "text": ")",
+      "box": [
+        879,
+        747,
+        948,
+        885
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SCALER",
+      "box": [
+        850,
+        894,
+        912,
+        934
+      ],
+      "label": "O"
+    }
+  ]
+}

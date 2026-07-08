@@ -1,0 +1,162 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_021.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "IBA",
+      "box": [
+        353,
+        56,
+        481,
+        131
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Institute of Business Administration",
+      "box": [
+        360,
+        131,
+        731,
+        157
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "University of Dhaka",
+      "box": [
+        360,
+        160,
+        570,
+        192
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Post Graduate Diploma in",
+      "box": [
+        262,
+        234,
+        734,
+        284
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Garment Business (PGD-GB)",
+      "box": [
+        234,
+        282,
+        767,
+        329
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "R",
+      "box": [
+        250,
+        534,
+        300,
+        612
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Abdullah Alhamim",
+      "box": [
+        328,
+        671,
+        678,
+        718
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Roll Number: 10675",
+      "box": [
+        346,
+        725,
+        650,
+        765
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Batch:]",
+      "box": [
+        334,
+        768,
+        456,
+        806
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Section: 3",
+      "box": [
+        506,
+        768,
+        659,
+        806
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Abdullah olhemim",
+      "box": [
+        529,
+        837,
+        781,
+        881
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Director, IBA",
+      "box": [
+        235,
+        889,
+        389,
+        920
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature of Student",
+      "box": [
+        559,
+        890,
+        781,
+        931
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8",
+      "box": [
+        299,
+        368,
+        450,
+        546
+      ],
+      "label": "O"
+    },
+    {
+      "text": "work in",
+      "box": [
+        202,
+        420,
+        334,
+        560
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_025.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "6",
+      "box": [
+        365,
+        159,
+        429,
+        423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3",
+      "box": [
+        362,
+        425,
+        425,
+        592
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8",
+      "box": [
+        567,
+        592,
+        592,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        595,
+        570,
+        620,
+        664
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3",
+      "box": [
+        735,
+        576,
+        760,
+        623
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ki",
+      "box": [
+        559,
+        637,
+        681,
+        800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3",
+      "box": [
+        651,
+        748,
+        676,
+        789
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lnjanis",
+      "box": [
+        534,
+        800,
+        715,
+        843
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "document_metadata": {
+    "category": "Internship Certificate",
+    "holder_name": "Chiba Roshan A",
+    "organization": "Abc Solutions Private Limited",
+    "issue_date": "2026-06-12",
+    "role": "Software Developer"
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [800, 600],
+  "words": [
+    { "text": "ABC", "box": [50, 40, 90, 55], "label": "B-ORGANIZATION" },
+    { "text": "SOLUTIONS", "box": [100, 40, 190, 55], "label": "I-ORGANIZATION" },
+    { "text": "CERTIFICATE", "box": [300, 100, 400, 120], "label": "O" },
+    { "text": "OF", "box": [410, 100, 430, 120], "label": "O" },
+    { "text": "INTERNSHIP", "box": [440, 100, 540, 120], "label": "O" },
+    { "text": "Chiba", "box": [200, 180, 250, 195], "label": "B-HOLDER_NAME" },
+    { "text": "Roshan", "box": [260, 180, 310, 195], "label": "I-HOLDER_NAME" },
+    { "text": "Software", "box": [100, 240, 170, 255], "label": "B-DOCUMENT_TITLE" },
+    { "text": "Developer", "box": [180, 240, 250, 255], "label": "I-DOCUMENT_TITLE" }
+  ]
+}

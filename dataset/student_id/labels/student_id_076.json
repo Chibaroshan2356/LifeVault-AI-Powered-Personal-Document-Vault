@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_076.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Universityof Westemn Australia",
+      "box": [
+        57,
+        314,
+        339,
+        339
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Clay",
+      "box": [
+        57,
+        420,
+        104,
+        445
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "ID: 34998552",
+      "box": [
+        53,
+        526,
+        351,
+        578
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Explily Dale: Expiles October 2021",
+      "box": [
+        57,
+        635,
+        367,
+        660
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "~VBo-L",
+      "box": [
+        687,
+        891,
+        858,
+        961
+      ],
+      "label": "O"
+    }
+  ]
+}

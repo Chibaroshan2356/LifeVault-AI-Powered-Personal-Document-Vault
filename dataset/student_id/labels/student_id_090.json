@@ -1,0 +1,142 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_090.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "of Sao",
+      "box": [
+        243,
+        40,
+        412,
+        115
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ID:",
+      "box": [
+        14,
+        457,
+        95,
+        514
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Paulo",
+      "box": [
+        412,
+        11,
+        564,
+        87
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "University",
+      "box": [
+        0,
+        67,
+        246,
+        160
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Walker",
+      "box": [
+        141,
+        233,
+        289,
+        298
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Kristina",
+      "box": [
+        0,
+        260,
+        146,
+        323
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "44512454",
+      "box": [
+        92,
+        403,
+        365,
+        503
+      ],
+      "label": "O"
+    },
+    {
+      "text": "13th",
+      "box": [
+        817,
+        477,
+        984,
+        571
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        716,
+        512,
+        816,
+        590
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expires",
+      "box": [
+        453,
+        522,
+        718,
+        647
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Date:",
+      "box": [
+        256,
+        573,
+        453,
+        667
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Expiry",
+      "box": [
+        30,
+        608,
+        253,
+        716
+      ],
+      "label": "O"
+    },
+    {
+      "text": "~Vic",
+      "box": [
+        718,
+        821,
+        978,
+        925
+      ],
+      "label": "O"
+    }
+  ]
+}

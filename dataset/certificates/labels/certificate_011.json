@@ -1,0 +1,492 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_011.png",
+  "image_dimensions": [
+    841,
+    595
+  ],
+  "words": [
+    {
+      "text": "This",
+      "box": [
+        132,
+        1223,
+        153,
+        1271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "certificate",
+      "box": [
+        132,
+        1104,
+        153,
+        1217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "is",
+      "box": [
+        132,
+        1079,
+        153,
+        1098
+      ],
+      "label": "O"
+    },
+    {
+      "text": "presented",
+      "box": [
+        132,
+        960,
+        153,
+        1072
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        132,
+        931,
+        153,
+        954
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CHARULEELA",
+      "box": [
+        171,
+        1013,
+        205,
+        1271
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "S",
+      "box": [
+        171,
+        978,
+        205,
+        1003
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        232,
+        1239,
+        252,
+        1271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "successfully",
+      "box": [
+        232,
+        1094,
+        252,
+        1233
+      ],
+      "label": "O"
+    },
+    {
+      "text": "completing",
+      "box": [
+        232,
+        962,
+        252,
+        1087
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        232,
+        920,
+        252,
+        956
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        232,
+        824,
+        252,
+        914
+      ],
+      "label": "O"
+    },
+    {
+      "text": "path:",
+      "box": [
+        232,
+        762,
+        252,
+        818
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Machine",
+      "box": [
+        276,
+        1143,
+        304,
+        1271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Learning",
+      "box": [
+        276,
+        1005,
+        304,
+        1134
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Techniques",
+      "box": [
+        276,
+        823,
+        304,
+        996
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        276,
+        788,
+        304,
+        815
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MATLAB",
+      "box": [
+        276,
+        648,
+        304,
+        780
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Courses",
+      "box": [
+        336,
+        1203,
+        351,
+        1271
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "in",
+      "box": [
+        336,
+        1184,
+        351,
+        1199
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "this",
+      "box": [
+        336,
+        1149,
+        351,
+        1179
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        336,
+        1079,
+        351,
+        1144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "path:",
+      "box": [
+        336,
+        1033,
+        351,
+        1074
+      ],
+      "label": "O"
+    },
+    {
+      "text": "•",
+      "box": [
+        362,
+        1265,
+        377,
+        1271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Classification",
+      "box": [
+        362,
+        1144,
+        377,
+        1256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Methods",
+      "box": [
+        362,
+        1066,
+        377,
+        1139
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        362,
+        1027,
+        377,
+        1062
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Machine",
+      "box": [
+        362,
+        952,
+        377,
+        1023
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Learning",
+      "box": [
+        362,
+        876,
+        377,
+        948
+      ],
+      "label": "O"
+    },
+    {
+      "text": "•",
+      "box": [
+        388,
+        1265,
+        403,
+        1271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Regression",
+      "box": [
+        388,
+        1164,
+        403,
+        1256
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Methods",
+      "box": [
+        388,
+        1087,
+        403,
+        1159
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "with",
+      "box": [
+        388,
+        1047,
+        403,
+        1082
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Machine",
+      "box": [
+        388,
+        972,
+        403,
+        1043
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Learning",
+      "box": [
+        388,
+        896,
+        403,
+        968
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "•",
+      "box": [
+        414,
+        1265,
+        429,
+        1271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cluster",
+      "box": [
+        414,
+        1197,
+        429,
+        1256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analysis",
+      "box": [
+        414,
+        1124,
+        429,
+        1193
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        414,
+        1084,
+        429,
+        1119
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Machine",
+      "box": [
+        414,
+        1009,
+        429,
+        1080
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Learning",
+      "box": [
+        414,
+        933,
+        429,
+        1005
+      ],
+      "label": "O"
+    },
+    {
+      "text": "•",
+      "box": [
+        440,
+        1265,
+        456,
+        1271
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dimensionality",
+      "box": [
+        440,
+        1134,
+        456,
+        1256
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reduction",
+      "box": [
+        440,
+        1047,
+        456,
+        1130
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Techniques",
+      "box": [
+        440,
+        947,
+        456,
+        1042
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "6",
+      "box": [
+        608,
+        366,
+        627,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "December",
+      "box": [
+        608,
+        253,
+        627,
+        360
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025",
+      "box": [
+        608,
+        194,
+        627,
+        247
+      ],
+      "label": "B-ISSUE_DATE"
+    }
+  ]
+}

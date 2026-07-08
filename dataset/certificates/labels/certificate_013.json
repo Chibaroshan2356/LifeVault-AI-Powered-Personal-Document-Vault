@@ -1,0 +1,162 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_013.png",
+  "image_dimensions": [
+    14032,
+    9920
+  ],
+  "words": [
+    {
+      "text": "Crescent Skills Academy",
+      "box": [
+        403,
+        228,
+        599,
+        267
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "CERTIFICATE OF ACHIEVEMENT",
+      "box": [
+        182,
+        296,
+        819,
+        356
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "This certificate is awarded to",
+      "box": [
+        386,
+        375,
+        614,
+        404
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Twa GYlicole",
+      "box": [
+        196,
+        428,
+        536,
+        576
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "In",
+      "box": [
+        147,
+        610,
+        161,
+        629
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "acknowledgment ofyour exceptional dedication, perseverance, and commitment to excellence: Your remarkable",
+      "box": [
+        160,
+        604,
+        855,
+        637
+      ],
+      "label": "O"
+    },
+    {
+      "text": "performance and consistent pursuitofimprovement reflectyour passion for learning andyour drive to achieve success.",
+      "box": [
+        134,
+        630,
+        864,
+        663
+      ],
+      "label": "O"
+    },
+    {
+      "text": "This certificate stands as a symbol ofyour accomplishments andthe positive impact ofyour efforts",
+      "box": [
+        196,
+        658,
+        803,
+        689
+      ],
+      "label": "O"
+    },
+    {
+      "text": "James Wilson",
+      "box": [
+        176,
+        796,
+        274,
+        821
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Emma Johnson",
+      "box": [
+        724,
+        794,
+        830,
+        822
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program Coordinator",
+      "box": [
+        156,
+        845,
+        297,
+        877
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program Coordinator",
+      "box": [
+        708,
+        845,
+        850,
+        877
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(Gfkompson",
+      "box": [
+        520,
+        413,
+        822,
+        604
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Satifiec",
+      "box": [
+        532,
+        769,
+        579,
+        808
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certify",
+      "box": [
+        541,
+        847,
+        590,
+        881
+      ],
+      "label": "O"
+    }
+  ]
+}

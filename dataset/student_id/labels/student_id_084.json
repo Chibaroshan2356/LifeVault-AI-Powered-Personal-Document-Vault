@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_084.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "University of Sydney",
+      "box": [
+        53,
+        56,
+        712,
+        143
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Joeeph",
+      "box": [
+        57,
+        232,
+        129,
+        257
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "ID: 68139653",
+      "box": [
+        53,
+        403,
+        356,
+        453
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Expiry Date: Expiry Date: 05/07/2023",
+      "box": [
+        54,
+        573,
+        804,
+        629
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "A Koer e",
+      "box": [
+        659,
+        895,
+        942,
+        971
+      ],
+      "label": "I-ORGANIZATION"
+    }
+  ]
+}

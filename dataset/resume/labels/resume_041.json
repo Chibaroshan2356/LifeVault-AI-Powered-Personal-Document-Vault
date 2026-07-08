@@ -1,0 +1,6072 @@
+{
+  "document_metadata": {
+    "category": "Resume"
+  },
+  "image_filename": "resume_041.png",
+  "image_dimensions": [
+    595,
+    842
+  ],
+  "words": [
+    {
+      "text": "SENIOR",
+      "box": [
+        55,
+        34,
+        114,
+        47
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "INFORMATION",
+      "box": [
+        117,
+        34,
+        229,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "TECHNOLOGY",
+      "box": [
+        233,
+        34,
+        342,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "MANAGER",
+      "box": [
+        345,
+        34,
+        425,
+        47
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Executive",
+      "box": [
+        55,
+        48,
+        115,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Summary",
+      "box": [
+        118,
+        48,
+        177,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Results-focused",
+      "box": [
+        55,
+        74,
+        153,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Information",
+      "box": [
+        156,
+        74,
+        228,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Technology",
+      "box": [
+        230,
+        74,
+        302,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        305,
+        74,
+        381,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "professional",
+      "box": [
+        384,
+        74,
+        459,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "offering",
+      "box": [
+        461,
+        74,
+        508,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Twenty-Two",
+      "box": [
+        510,
+        74,
+        591,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "years",
+      "box": [
+        594,
+        74,
+        627,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        630,
+        74,
+        644,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "progressive",
+      "box": [
+        647,
+        74,
+        717,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "leadership",
+      "box": [
+        720,
+        74,
+        782,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "experience.",
+      "box": [
+        786,
+        74,
+        856,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Transforms",
+      "box": [
+        859,
+        74,
+        929,
+        87
+      ],
+      "label": "O"
+    },
+    {
+      "text": "high-potential",
+      "box": [
+        55,
+        88,
+        139,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "staff",
+      "box": [
+        141,
+        88,
+        168,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "into",
+      "box": [
+        170,
+        88,
+        193,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "outstanding",
+      "box": [
+        197,
+        88,
+        267,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "leaders",
+      "box": [
+        269,
+        88,
+        313,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "who",
+      "box": [
+        317,
+        88,
+        344,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "demonstrate",
+      "box": [
+        347,
+        88,
+        422,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        426,
+        88,
+        444,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creativity",
+      "box": [
+        448,
+        88,
+        504,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        506,
+        88,
+        529,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "savvy",
+      "box": [
+        533,
+        88,
+        568,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        571,
+        88,
+        594,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "is",
+      "box": [
+        597,
+        88,
+        607,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "critical",
+      "box": [
+        610,
+        88,
+        651,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        654,
+        88,
+        666,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "both",
+      "box": [
+        670,
+        88,
+        699,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "financial",
+      "box": [
+        701,
+        88,
+        751,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        753,
+        88,
+        776,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "operational",
+      "box": [
+        780,
+        88,
+        849,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "success.",
+      "box": [
+        851,
+        88,
+        902,
+        101
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accomplished",
+      "box": [
+        55,
+        102,
+        143,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager",
+      "box": [
+        146,
+        102,
+        201,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        205,
+        102,
+        232,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "extensive",
+      "box": [
+        234,
+        102,
+        290,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "experience",
+      "box": [
+        294,
+        102,
+        360,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        363,
+        102,
+        375,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "front-of-house",
+      "box": [
+        377,
+        102,
+        466,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        469,
+        102,
+        492,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "back-of-house",
+      "box": [
+        495,
+        102,
+        586,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "operations.",
+      "box": [
+        589,
+        102,
+        657,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Proven",
+      "box": [
+        661,
+        102,
+        706,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ability",
+      "box": [
+        708,
+        102,
+        745,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        747,
+        102,
+        760,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cut",
+      "box": [
+        764,
+        102,
+        782,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "costs",
+      "box": [
+        786,
+        102,
+        818,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        821,
+        102,
+        844,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "decrease",
+      "box": [
+        847,
+        102,
+        902,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "staff",
+      "box": [
+        906,
+        102,
+        933,
+        116
+      ],
+      "label": "O"
+    },
+    {
+      "text": "turnover.",
+      "box": [
+        55,
+        116,
+        110,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cultivates",
+      "box": [
+        114,
+        116,
+        174,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        178,
+        116,
+        185,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "company",
+      "box": [
+        189,
+        116,
+        246,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "culture",
+      "box": [
+        248,
+        116,
+        289,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        293,
+        116,
+        304,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "which",
+      "box": [
+        307,
+        116,
+        344,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "staff",
+      "box": [
+        346,
+        116,
+        373,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "members",
+      "box": [
+        375,
+        116,
+        431,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "feel",
+      "box": [
+        435,
+        116,
+        458,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "comfortable",
+      "box": [
+        460,
+        116,
+        533,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "voicing",
+      "box": [
+        537,
+        116,
+        581,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "questions",
+      "box": [
+        583,
+        116,
+        640,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        644,
+        116,
+        666,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "concerns,",
+      "box": [
+        670,
+        116,
+        729,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        732,
+        116,
+        746,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "well",
+      "box": [
+        749,
+        116,
+        775,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        778,
+        116,
+        791,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "contributing",
+      "box": [
+        795,
+        116,
+        867,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "new",
+      "box": [
+        869,
+        116,
+        896,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ideas",
+      "box": [
+        899,
+        116,
+        931,
+        130
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        55,
+        131,
+        78,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "drive",
+      "box": [
+        82,
+        131,
+        113,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "company",
+      "box": [
+        116,
+        131,
+        173,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "growth",
+      "box": [
+        176,
+        131,
+        219,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        222,
+        131,
+        239,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "challenging",
+      "box": [
+        241,
+        131,
+        308,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "others",
+      "box": [
+        311,
+        131,
+        349,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "beyond",
+      "box": [
+        352,
+        131,
+        398,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "just",
+      "box": [
+        401,
+        131,
+        423,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "doing",
+      "box": [
+        427,
+        131,
+        462,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        464,
+        131,
+        483,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "work,",
+      "box": [
+        486,
+        131,
+        523,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "but,",
+      "box": [
+        527,
+        131,
+        550,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        554,
+        131,
+        566,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "bring",
+      "box": [
+        570,
+        131,
+        602,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "creativity,",
+      "box": [
+        604,
+        131,
+        663,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ownership",
+      "box": [
+        667,
+        131,
+        730,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        733,
+        131,
+        756,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pride",
+      "box": [
+        760,
+        131,
+        791,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "i",
+      "box": [
+        795,
+        131,
+        800,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        802,
+        131,
+        821,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "work",
+      "box": [
+        824,
+        131,
+        857,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "we",
+      "box": [
+        860,
+        131,
+        879,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "do.",
+      "box": [
+        883,
+        131,
+        903,
+        144
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Core",
+      "box": [
+        55,
+        156,
+        87,
+        170
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Qualifications",
+      "box": [
+        91,
+        156,
+        173,
+        170
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Operations",
+      "box": [
+        99,
+        173,
+        167,
+        186
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        170,
+        173,
+        247,
+        186
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Staff",
+      "box": [
+        99,
+        187,
+        129,
+        201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "development",
+      "box": [
+        131,
+        187,
+        210,
+        201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Change",
+      "box": [
+        99,
+        201,
+        146,
+        215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        149,
+        201,
+        226,
+        215
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cross-functional",
+      "box": [
+        99,
+        215,
+        200,
+        229
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        203,
+        215,
+        234,
+        229
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        236,
+        215,
+        312,
+        229
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Supervision",
+      "box": [
+        99,
+        230,
+        171,
+        243
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        173,
+        230,
+        196,
+        243
+      ],
+      "label": "O"
+    },
+    {
+      "text": "training",
+      "box": [
+        200,
+        230,
+        245,
+        243
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sound",
+      "box": [
+        99,
+        244,
+        139,
+        258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "judgment",
+      "box": [
+        142,
+        244,
+        198,
+        258
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Computer-savvy",
+      "box": [
+        99,
+        258,
+        202,
+        272
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Calm",
+      "box": [
+        99,
+        272,
+        133,
+        286
+      ],
+      "label": "O"
+    },
+    {
+      "text": "under",
+      "box": [
+        135,
+        272,
+        170,
+        286
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pressure",
+      "box": [
+        173,
+        272,
+        226,
+        286
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Complex",
+      "box": [
+        99,
+        287,
+        156,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "problem",
+      "box": [
+        158,
+        287,
+        211,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "solving",
+      "box": [
+        213,
+        287,
+        256,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional",
+      "box": [
+        55,
+        315,
+        131,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        133,
+        315,
+        201,
+        328
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Senior",
+      "box": [
+        55,
+        329,
+        96,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Information",
+      "box": [
+        99,
+        329,
+        170,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Technology",
+      "box": [
+        172,
+        329,
+        245,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager",
+      "box": [
+        247,
+        329,
+        302,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        306,
+        329,
+        327,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2000",
+      "box": [
+        330,
+        329,
+        363,
+        342
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        366,
+        329,
+        379,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        382,
+        329,
+        404,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2016",
+      "box": [
+        406,
+        329,
+        439,
+        342
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        343,
+        117,
+        357
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        343,
+        157,
+        357
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        160,
+        343,
+        176,
+        357
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        180,
+        343,
+        206,
+        357
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        209,
+        343,
+        213,
+        357
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        217,
+        343,
+        249,
+        357
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program",
+      "box": [
+        96,
+        369,
+        151,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager",
+      "box": [
+        152,
+        369,
+        207,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        211,
+        369,
+        234,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "drove",
+      "box": [
+        237,
+        369,
+        273,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        276,
+        369,
+        299,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "finalized",
+      "box": [
+        303,
+        369,
+        352,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        355,
+        369,
+        363,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "major",
+      "box": [
+        366,
+        369,
+        402,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "project",
+      "box": [
+        405,
+        369,
+        450,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "initiative",
+      "box": [
+        453,
+        369,
+        502,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "consisting",
+      "box": [
+        505,
+        369,
+        565,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        568,
+        369,
+        582,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "migrating",
+      "box": [
+        584,
+        369,
+        640,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "13,000",
+      "box": [
+        643,
+        369,
+        687,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Exchange",
+      "box": [
+        691,
+        369,
+        750,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "On-Premise",
+      "box": [
+        753,
+        369,
+        828,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mail",
+      "box": [
+        831,
+        369,
+        857,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "users/accounts",
+      "box": [
+        96,
+        383,
+        185,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        189,
+        383,
+        201,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cloud",
+      "box": [
+        205,
+        383,
+        239,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        242,
+        383,
+        279,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "services",
+      "box": [
+        282,
+        383,
+        332,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(Office",
+      "box": [
+        335,
+        383,
+        378,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "365)",
+      "box": [
+        381,
+        383,
+        411,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program",
+      "box": [
+        415,
+        383,
+        469,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manager",
+      "box": [
+        471,
+        383,
+        526,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "responsible",
+      "box": [
+        530,
+        383,
+        599,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        602,
+        383,
+        620,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "implementation",
+      "box": [
+        623,
+        383,
+        716,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        718,
+        383,
+        741,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "management",
+      "box": [
+        744,
+        383,
+        821,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        824,
+        383,
+        838,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "systems",
+      "box": [
+        840,
+        383,
+        888,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "that",
+      "box": [
+        892,
+        383,
+        915,
+        397
+      ],
+      "label": "O"
+    },
+    {
+      "text": "allow",
+      "box": [
+        96,
+        397,
+        129,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Asset/Lease",
+      "box": [
+        132,
+        397,
+        207,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reporting,",
+      "box": [
+        211,
+        397,
+        275,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise",
+      "box": [
+        278,
+        397,
+        341,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Backup,",
+      "box": [
+        344,
+        397,
+        396,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Patch",
+      "box": [
+        399,
+        397,
+        435,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Management",
+      "box": [
+        438,
+        397,
+        517,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        520,
+        397,
+        543,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Application",
+      "box": [
+        547,
+        397,
+        618,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Distribution",
+      "box": [
+        620,
+        397,
+        692,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        694,
+        397,
+        707,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "over",
+      "box": [
+        710,
+        397,
+        738,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "10,000",
+      "box": [
+        741,
+        397,
+        786,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PC's",
+      "box": [
+        790,
+        397,
+        820,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "globally",
+      "box": [
+        823,
+        397,
+        871,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "utilizing",
+      "box": [
+        874,
+        397,
+        918,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cloud",
+      "box": [
+        96,
+        411,
+        130,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        133,
+        411,
+        170,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "solutions.",
+      "box": [
+        173,
+        411,
+        230,
+        425
+      ],
+      "label": "O"
+    },
+    {
+      "text": "IT",
+      "box": [
+        96,
+        426,
+        111,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Lead",
+      "box": [
+        114,
+        426,
+        146,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "role",
+      "box": [
+        149,
+        426,
+        173,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        177,
+        426,
+        199,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "stakeholder",
+      "box": [
+        203,
+        426,
+        274,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        277,
+        426,
+        289,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "reducing",
+      "box": [
+        292,
+        426,
+        345,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "our",
+      "box": [
+        347,
+        426,
+        368,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "global",
+      "box": [
+        371,
+        426,
+        409,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Data",
+      "box": [
+        412,
+        426,
+        441,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Center",
+      "box": [
+        445,
+        426,
+        487,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Footprint",
+      "box": [
+        490,
+        426,
+        547,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "from",
+      "box": [
+        551,
+        426,
+        581,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Twenty-Three",
+      "box": [
+        583,
+        426,
+        670,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        674,
+        426,
+        686,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Two",
+      "box": [
+        690,
+        426,
+        719,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Data",
+      "box": [
+        722,
+        426,
+        752,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Centers",
+      "box": [
+        755,
+        426,
+        804,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        807,
+        426,
+        819,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "North",
+      "box": [
+        821,
+        426,
+        859,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "America",
+      "box": [
+        861,
+        426,
+        913,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        917,
+        426,
+        940,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "One",
+      "box": [
+        96,
+        440,
+        123,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Communications",
+      "box": [
+        126,
+        440,
+        228,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Hub",
+      "box": [
+        231,
+        440,
+        258,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        261,
+        440,
+        273,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "each",
+      "box": [
+        275,
+        440,
+        305,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "global",
+      "box": [
+        308,
+        440,
+        346,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Region",
+      "box": [
+        348,
+        440,
+        392,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Long",
+      "box": [
+        394,
+        440,
+        427,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "term",
+      "box": [
+        430,
+        440,
+        459,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expertise",
+      "box": [
+        461,
+        440,
+        516,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        519,
+        440,
+        531,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Deployment",
+      "box": [
+        534,
+        440,
+        608,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        611,
+        440,
+        634,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Management",
+      "box": [
+        637,
+        440,
+        717,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        720,
+        440,
+        734,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        736,
+        440,
+        797,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Products",
+      "box": [
+        800,
+        440,
+        855,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "globally,",
+      "box": [
+        858,
+        440,
+        909,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "including,",
+      "box": [
+        96,
+        454,
+        153,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Server,",
+      "box": [
+        156,
+        454,
+        201,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Desktop,",
+      "box": [
+        205,
+        454,
+        262,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Office",
+      "box": [
+        265,
+        454,
+        303,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "365,",
+      "box": [
+        307,
+        454,
+        335,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(Mail,",
+      "box": [
+        339,
+        454,
+        376,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skype,",
+      "box": [
+        379,
+        454,
+        423,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Active",
+      "box": [
+        427,
+        454,
+        467,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Directory",
+      "box": [
+        470,
+        454,
+        529,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        532,
+        454,
+        554,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Federated",
+      "box": [
+        558,
+        454,
+        621,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Services)",
+      "box": [
+        624,
+        454,
+        682,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SQL",
+      "box": [
+        685,
+        454,
+        717,
+        468
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "and",
+      "box": [
+        719,
+        454,
+        742,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "System",
+      "box": [
+        745,
+        454,
+        792,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Center",
+      "box": [
+        794,
+        454,
+        836,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Management/Deployment",
+      "box": [
+        96,
+        469,
+        253,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "products.",
+      "box": [
+        256,
+        469,
+        314,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Well",
+      "box": [
+        96,
+        483,
+        126,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "versed",
+      "box": [
+        128,
+        483,
+        169,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        172,
+        483,
+        184,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Disaster",
+      "box": [
+        187,
+        483,
+        237,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Recovery",
+      "box": [
+        240,
+        483,
+        300,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "utilizing",
+      "box": [
+        303,
+        483,
+        348,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        350,
+        483,
+        397,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Data",
+      "box": [
+        400,
+        483,
+        430,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Centers",
+      "box": [
+        434,
+        483,
+        482,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        485,
+        483,
+        508,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Storage",
+      "box": [
+        511,
+        483,
+        559,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Arrays.",
+      "box": [
+        563,
+        483,
+        609,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Managed",
+      "box": [
+        55,
+        508,
+        114,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        117,
+        508,
+        149,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        150,
+        508,
+        164,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "[number]",
+      "box": [
+        166,
+        508,
+        223,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        226,
+        508,
+        240,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "professionals.Reduced",
+      "box": [
+        242,
+        508,
+        380,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        383,
+        508,
+        406,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "controlled",
+      "box": [
+        410,
+        508,
+        471,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "expenses",
+      "box": [
+        474,
+        508,
+        530,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        534,
+        508,
+        550,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "[actions].Defined",
+      "box": [
+        553,
+        508,
+        657,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategy",
+      "box": [
+        661,
+        508,
+        710,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        712,
+        508,
+        735,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "business",
+      "box": [
+        738,
+        508,
+        789,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plan",
+      "box": [
+        793,
+        508,
+        820,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        822,
+        508,
+        840,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "[business",
+      "box": [
+        843,
+        508,
+        899,
+        522
+      ],
+      "label": "O"
+    },
+    {
+      "text": "area].Directed",
+      "box": [
+        55,
+        523,
+        144,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": "strategic",
+      "box": [
+        147,
+        523,
+        198,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": "initiatives",
+      "box": [
+        202,
+        523,
+        257,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        260,
+        523,
+        273,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": "achieve",
+      "box": [
+        276,
+        523,
+        322,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": "[organizational",
+      "box": [
+        326,
+        523,
+        415,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": "objective].",
+      "box": [
+        418,
+        523,
+        482,
+        536
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Senior",
+      "box": [
+        55,
+        548,
+        96,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Information",
+      "box": [
+        99,
+        548,
+        170,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Systems",
+      "box": [
+        172,
+        548,
+        224,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional",
+      "box": [
+        227,
+        548,
+        302,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        305,
+        548,
+        326,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1996",
+      "box": [
+        329,
+        548,
+        362,
+        562
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        365,
+        548,
+        378,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        381,
+        548,
+        403,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1999",
+      "box": [
+        405,
+        548,
+        438,
+        562
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        563,
+        117,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        563,
+        157,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        160,
+        563,
+        176,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        180,
+        563,
+        206,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        209,
+        563,
+        213,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        217,
+        563,
+        249,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Developed",
+      "box": [
+        96,
+        588,
+        163,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "long",
+      "box": [
+        166,
+        588,
+        193,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        196,
+        588,
+        218,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "short-term",
+      "box": [
+        222,
+        588,
+        288,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "technology",
+      "box": [
+        289,
+        588,
+        357,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Server",
+      "box": [
+        359,
+        588,
+        400,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        403,
+        588,
+        426,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Storage",
+      "box": [
+        430,
+        588,
+        478,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plans,",
+      "box": [
+        481,
+        588,
+        517,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "formulated",
+      "box": [
+        520,
+        588,
+        586,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "policies",
+      "box": [
+        589,
+        588,
+        635,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        638,
+        588,
+        661,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "procedures,",
+      "box": [
+        665,
+        588,
+        738,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        741,
+        588,
+        764,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "provided",
+      "box": [
+        768,
+        588,
+        823,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "technology",
+      "box": [
+        826,
+        588,
+        893,
+        602
+      ],
+      "label": "O"
+    },
+    {
+      "text": "presentations",
+      "box": [
+        96,
+        603,
+        176,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        180,
+        603,
+        192,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "diverse",
+      "box": [
+        196,
+        603,
+        240,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "groups",
+      "box": [
+        243,
+        603,
+        285,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        288,
+        603,
+        302,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "internal",
+      "box": [
+        305,
+        603,
+        350,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "customers.",
+      "box": [
+        352,
+        603,
+        418,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Worked",
+      "box": [
+        96,
+        617,
+        148,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "closely",
+      "box": [
+        151,
+        617,
+        194,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "with",
+      "box": [
+        197,
+        617,
+        223,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Washington",
+      "box": [
+        226,
+        617,
+        299,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        302,
+        617,
+        333,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Agencies",
+      "box": [
+        337,
+        617,
+        393,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        396,
+        617,
+        408,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "regards",
+      "box": [
+        411,
+        617,
+        457,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        460,
+        617,
+        473,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sharing",
+      "box": [
+        476,
+        617,
+        520,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "healthcare",
+      "box": [
+        522,
+        617,
+        585,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        588,
+        617,
+        615,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        618,
+        617,
+        641,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "trusted",
+      "box": [
+        645,
+        617,
+        686,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "networks",
+      "box": [
+        690,
+        617,
+        747,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Supervised",
+      "box": [
+        750,
+        617,
+        819,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "team",
+      "box": [
+        822,
+        617,
+        854,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        855,
+        617,
+        869,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "technicians",
+      "box": [
+        871,
+        617,
+        938,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        96,
+        631,
+        107,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "deployment",
+      "box": [
+        110,
+        631,
+        181,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        185,
+        631,
+        207,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "support",
+      "box": [
+        211,
+        631,
+        258,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        261,
+        631,
+        275,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "network",
+      "box": [
+        277,
+        631,
+        328,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        332,
+        631,
+        355,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "technology",
+      "box": [
+        358,
+        631,
+        425,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "infrastructure.",
+      "box": [
+        428,
+        631,
+        511,
+        645
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Significant",
+      "box": [
+        96,
+        645,
+        158,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "design",
+      "box": [
+        161,
+        645,
+        201,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        204,
+        645,
+        227,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "execution",
+      "box": [
+        230,
+        645,
+        289,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        292,
+        645,
+        305,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Directory",
+      "box": [
+        308,
+        645,
+        367,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "based",
+      "box": [
+        369,
+        645,
+        406,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "services,",
+      "box": [
+        410,
+        645,
+        462,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "related",
+      "box": [
+        466,
+        645,
+        508,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "servers",
+      "box": [
+        511,
+        645,
+        555,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        559,
+        645,
+        582,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "business",
+      "box": [
+        585,
+        645,
+        636,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "systems",
+      "box": [
+        639,
+        645,
+        688,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Designed",
+      "box": [
+        691,
+        645,
+        748,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        751,
+        645,
+        774,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "monitored",
+      "box": [
+        778,
+        645,
+        840,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "server",
+      "box": [
+        843,
+        645,
+        881,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        885,
+        645,
+        907,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "storage",
+      "box": [
+        96,
+        660,
+        141,
+        673
+      ],
+      "label": "O"
+    },
+    {
+      "text": "systems,",
+      "box": [
+        144,
+        660,
+        196,
+        673
+      ],
+      "label": "O"
+    },
+    {
+      "text": "implemented",
+      "box": [
+        200,
+        660,
+        277,
+        673
+      ],
+      "label": "O"
+    },
+    {
+      "text": "fault",
+      "box": [
+        280,
+        660,
+        306,
+        673
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tolerance",
+      "box": [
+        310,
+        660,
+        366,
+        673
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        369,
+        660,
+        392,
+        673
+      ],
+      "label": "O"
+    },
+    {
+      "text": "redundancy.",
+      "box": [
+        395,
+        660,
+        470,
+        673
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Network",
+      "box": [
+        55,
+        685,
+        112,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Support",
+      "box": [
+        115,
+        685,
+        165,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Engineer",
+      "box": [
+        168,
+        685,
+        222,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        225,
+        685,
+        247,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1995",
+      "box": [
+        249,
+        685,
+        282,
+        699
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        285,
+        685,
+        298,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        302,
+        685,
+        323,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1996",
+      "box": [
+        326,
+        685,
+        359,
+        699
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        699,
+        117,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        699,
+        157,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        160,
+        699,
+        176,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        180,
+        699,
+        206,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        209,
+        699,
+        213,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        217,
+        699,
+        249,
+        713
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Provided",
+      "box": [
+        96,
+        725,
+        152,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "support",
+      "box": [
+        155,
+        725,
+        203,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        206,
+        725,
+        224,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "NT,",
+      "box": [
+        227,
+        725,
+        252,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Netware,",
+      "box": [
+        256,
+        725,
+        314,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Macintosh,",
+      "box": [
+        318,
+        725,
+        386,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cisco,",
+      "box": [
+        389,
+        725,
+        429,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3Com,",
+      "box": [
+        433,
+        725,
+        475,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        479,
+        725,
+        502,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bay",
+      "box": [
+        505,
+        725,
+        531,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "networks.",
+      "box": [
+        534,
+        725,
+        594,
+        739
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Clients",
+      "box": [
+        96,
+        739,
+        138,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "included",
+      "box": [
+        141,
+        739,
+        192,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "mid-size",
+      "box": [
+        196,
+        739,
+        247,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        250,
+        739,
+        263,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "large",
+      "box": [
+        266,
+        739,
+        296,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise",
+      "box": [
+        300,
+        739,
+        362,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Seattle-area",
+      "box": [
+        365,
+        739,
+        439,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "corporations.",
+      "box": [
+        443,
+        739,
+        524,
+        753
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Installations,",
+      "box": [
+        96,
+        754,
+        171,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "upgrades,",
+      "box": [
+        174,
+        754,
+        234,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "repairs,",
+      "box": [
+        238,
+        754,
+        284,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "configuration,",
+      "box": [
+        287,
+        754,
+        369,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        373,
+        754,
+        396,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "troubleshooting",
+      "box": [
+        399,
+        754,
+        494,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        496,
+        754,
+        513,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "multiple",
+      "box": [
+        515,
+        754,
+        562,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "platforms",
+      "box": [
+        566,
+        754,
+        623,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        626,
+        754,
+        649,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "infrastructures.",
+      "box": [
+        653,
+        754,
+        742,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Oversaw",
+      "box": [
+        96,
+        768,
+        153,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "network",
+      "box": [
+        155,
+        768,
+        206,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "systems,",
+      "box": [
+        210,
+        768,
+        262,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        265,
+        768,
+        288,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "implemented",
+      "box": [
+        292,
+        768,
+        369,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "firewall",
+      "box": [
+        372,
+        768,
+        417,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        420,
+        768,
+        442,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "other",
+      "box": [
+        446,
+        768,
+        478,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "network",
+      "box": [
+        481,
+        768,
+        532,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "security",
+      "box": [
+        536,
+        768,
+        584,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "functions.",
+      "box": [
+        586,
+        768,
+        644,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Senior",
+      "box": [
+        55,
+        794,
+        96,
+        807
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Technician",
+      "box": [
+        99,
+        794,
+        165,
+        807
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        167,
+        794,
+        189,
+        807
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1993",
+      "box": [
+        192,
+        794,
+        225,
+        807
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        228,
+        794,
+        241,
+        807
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        244,
+        794,
+        266,
+        807
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1995",
+      "box": [
+        268,
+        794,
+        301,
+        807
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        808,
+        117,
+        821
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        808,
+        157,
+        821
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        160,
+        808,
+        176,
+        821
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        180,
+        808,
+        206,
+        821
+      ],
+      "label": "O"
+    },
+    {
+      "text": "End",
+      "box": [
+        96,
+        833,
+        121,
+        847
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        124,
+        833,
+        138,
+        847
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        140,
+        833,
+        159,
+        847
+      ],
+      "label": "O"
+    },
+    {
+      "text": "line",
+      "box": [
+        162,
+        833,
+        183,
+        847
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hardware",
+      "box": [
+        187,
+        833,
+        245,
+        847
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        248,
+        833,
+        271,
+        847
+      ],
+      "label": "O"
+    },
+    {
+      "text": "software",
+      "box": [
+        274,
+        833,
+        327,
+        847
+      ],
+      "label": "O"
+    },
+    {
+      "text": "support.",
+      "box": [
+        331,
+        833,
+        382,
+        847
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Responsible",
+      "box": [
+        96,
+        848,
+        170,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        173,
+        848,
+        191,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "troubleshooting,",
+      "box": [
+        195,
+        848,
+        292,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "identifying,",
+      "box": [
+        296,
+        848,
+        360,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        364,
+        848,
+        387,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resolving",
+      "box": [
+        390,
+        848,
+        445,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "end",
+      "box": [
+        448,
+        848,
+        471,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "user",
+      "box": [
+        474,
+        848,
+        500,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hardware",
+      "box": [
+        503,
+        848,
+        561,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        565,
+        848,
+        588,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "application",
+      "box": [
+        591,
+        848,
+        658,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "issues.",
+      "box": [
+        661,
+        848,
+        700,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Trained",
+      "box": [
+        96,
+        862,
+        143,
+        876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        146,
+        862,
+        169,
+        876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "provided",
+      "box": [
+        172,
+        862,
+        228,
+        876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "technical",
+      "box": [
+        231,
+        862,
+        285,
+        876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "direction",
+      "box": [
+        287,
+        862,
+        342,
+        876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        344,
+        862,
+        357,
+        876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "junior",
+      "box": [
+        360,
+        862,
+        395,
+        876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "technicians.",
+      "box": [
+        398,
+        862,
+        468,
+        876
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        55,
+        888,
+        118,
+        901
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bachelor",
+      "box": [
+        55,
+        902,
+        111,
+        915
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        114,
+        902,
+        128,
+        915
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Science",
+      "box": [
+        130,
+        902,
+        178,
+        915
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ",",
+      "box": [
+        182,
+        902,
+        186,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Industrial",
+      "box": [
+        190,
+        902,
+        247,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Technology",
+      "box": [
+        249,
+        902,
+        321,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "East",
+      "box": [
+        324,
+        902,
+        351,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Carolina",
+      "box": [
+        354,
+        902,
+        406,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "University",
+      "box": [
+        410,
+        902,
+        472,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        474,
+        902,
+        490,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        493,
+        902,
+        520,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        522,
+        902,
+        527,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        531,
+        902,
+        562,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        566,
+        902,
+        570,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "USA",
+      "box": [
+        574,
+        902,
+        607,
+        915
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Industrial",
+      "box": [
+        55,
+        928,
+        113,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TechnologyCoursework",
+      "box": [
+        115,
+        928,
+        263,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        266,
+        928,
+        278,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "[Course",
+      "box": [
+        280,
+        928,
+        330,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name]",
+      "box": [
+        334,
+        928,
+        377,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Associate",
+      "box": [
+        55,
+        1034,
+        116,
+        1047
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        119,
+        1034,
+        133,
+        1047
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Arts",
+      "box": [
+        135,
+        1034,
+        162,
+        1047
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ",",
+      "box": [
+        165,
+        1034,
+        170,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Business",
+      "box": [
+        173,
+        1034,
+        227,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "University",
+      "box": [
+        230,
+        1034,
+        292,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        295,
+        1034,
+        308,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Phoenix/WIU",
+      "box": [
+        311,
+        1034,
+        396,
+        1047
+      ],
+      "label": "O"
+    },
+    {
+      "text": "BusinessCoursework",
+      "box": [
+        55,
+        1059,
+        185,
+        1073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        189,
+        1059,
+        200,
+        1073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Business",
+      "box": [
+        203,
+        1059,
+        256,
+        1073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administration",
+      "box": [
+        259,
+        1059,
+        349,
+        1073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        351,
+        1059,
+        374,
+        1073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Finance[Number]",
+      "box": [
+        377,
+        1059,
+        486,
+        1073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GPA",
+      "box": [
+        489,
+        1059,
+        522,
+        1073
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certifications",
+      "box": [
+        55,
+        1085,
+        136,
+        1099
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        55,
+        1111,
+        116,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certified",
+      "box": [
+        119,
+        1111,
+        172,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional/Administrator",
+      "box": [
+        176,
+        1111,
+        337,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CompTIA",
+      "box": [
+        340,
+        1111,
+        405,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "A+,",
+      "box": [
+        407,
+        1111,
+        432,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Network+,",
+      "box": [
+        436,
+        1111,
+        505,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Security",
+      "box": [
+        508,
+        1111,
+        559,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "+",
+      "box": [
+        562,
+        1111,
+        572,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Novell",
+      "box": [
+        575,
+        1111,
+        617,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Netware",
+      "box": [
+        619,
+        1111,
+        673,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Engineer",
+      "box": [
+        677,
+        1111,
+        730,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Citrix",
+      "box": [
+        733,
+        1111,
+        768,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administrator",
+      "box": [
+        771,
+        1111,
+        854,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Red",
+      "box": [
+        857,
+        1111,
+        883,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hat",
+      "box": [
+        887,
+        1111,
+        906,
+        1124
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administrator",
+      "box": [
+        55,
+        1125,
+        139,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CMA",
+      "box": [
+        142,
+        1125,
+        180,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(Certified",
+      "box": [
+        183,
+        1125,
+        241,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Management",
+      "box": [
+        244,
+        1125,
+        324,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accountant)",
+      "box": [
+        327,
+        1125,
+        402,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "conferred",
+      "box": [
+        405,
+        1125,
+        465,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        468,
+        1125,
+        485,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Institute",
+      "box": [
+        487,
+        1125,
+        535,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        539,
+        1125,
+        552,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Management",
+      "box": [
+        555,
+        1125,
+        634,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accountants",
+      "box": [
+        637,
+        1125,
+        714,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(IMA)",
+      "box": [
+        717,
+        1125,
+        758,
+        1138
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Affiliations",
+      "box": [
+        55,
+        1151,
+        120,
+        1164
+      ],
+      "label": "O"
+    },
+    {
+      "text": "VMware",
+      "box": [
+        55,
+        1176,
+        112,
+        1190
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Users",
+      "box": [
+        115,
+        1176,
+        151,
+        1190
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        154,
+        1176,
+        190,
+        1190
+      ],
+      "label": "O"
+    },
+    {
+      "text": "EMC",
+      "box": [
+        55,
+        1228,
+        90,
+        1241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Users",
+      "box": [
+        94,
+        1228,
+        130,
+        1241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "group",
+      "box": [
+        133,
+        1228,
+        169,
+        1241
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Association",
+      "box": [
+        55,
+        1279,
+        128,
+        1292
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        130,
+        1279,
+        144,
+        1292
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Information",
+      "box": [
+        146,
+        1279,
+        217,
+        1292
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Technology",
+      "box": [
+        220,
+        1279,
+        292,
+        1292
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professionals",
+      "box": [
+        295,
+        1279,
+        375,
+        1292
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Leadership",
+      "box": [
+        55,
+        1330,
+        124,
+        1344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Development",
+      "box": [
+        127,
+        1330,
+        209,
+        1344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program",
+      "box": [
+        212,
+        1330,
+        267,
+        1344
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        55,
+        1356,
+        88,
+        1369
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3Com,",
+      "box": [
+        55,
+        1382,
+        98,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "A+,",
+      "box": [
+        102,
+        1382,
+        126,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Active",
+      "box": [
+        130,
+        1382,
+        170,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Directory,",
+      "box": [
+        173,
+        1382,
+        235,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Backup,",
+      "box": [
+        239,
+        1382,
+        291,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bay",
+      "box": [
+        295,
+        1382,
+        320,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "networks,",
+      "box": [
+        323,
+        1382,
+        384,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "business",
+      "box": [
+        387,
+        1382,
+        438,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "systems,",
+      "box": [
+        442,
+        1382,
+        494,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cisco,",
+      "box": [
+        497,
+        1382,
+        537,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Citrix,",
+      "box": [
+        541,
+        1382,
+        578,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hardware,",
+      "box": [
+        582,
+        1382,
+        644,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "network",
+      "box": [
+        648,
+        1382,
+        699,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "systems,",
+      "box": [
+        702,
+        1382,
+        754,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Clients,",
+      "box": [
+        758,
+        1382,
+        803,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "direction,",
+      "box": [
+        807,
+        1382,
+        864,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Disaster",
+      "box": [
+        867,
+        1382,
+        918,
+        1395
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Recovery,",
+      "box": [
+        55,
+        1396,
+        118,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Engineer,",
+      "box": [
+        122,
+        1396,
+        179,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "firewall,",
+      "box": [
+        183,
+        1396,
+        230,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Hub,",
+      "box": [
+        234,
+        1396,
+        265,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Macintosh,",
+      "box": [
+        268,
+        1396,
+        336,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        340,
+        1396,
+        400,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Products,",
+      "box": [
+        403,
+        1396,
+        462,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        466,
+        1396,
+        526,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certified",
+      "box": [
+        530,
+        1396,
+        583,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Professional,",
+      "box": [
+        586,
+        1396,
+        664,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Exchange,",
+      "box": [
+        668,
+        1396,
+        731,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mail,",
+      "box": [
+        734,
+        1396,
+        766,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Office,",
+      "box": [
+        770,
+        1396,
+        811,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "NT,",
+      "box": [
+        815,
+        1396,
+        841,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enterprise,",
+      "box": [
+        844,
+        1396,
+        910,
+        1409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "network",
+      "box": [
+        55,
+        1410,
+        106,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "security,",
+      "box": [
+        110,
+        1410,
+        161,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Network,",
+      "box": [
+        164,
+        1410,
+        224,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "networks,",
+      "box": [
+        228,
+        1410,
+        289,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Netware,",
+      "box": [
+        293,
+        1410,
+        350,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Novell",
+      "box": [
+        354,
+        1410,
+        396,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Netware,",
+      "box": [
+        398,
+        1410,
+        456,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PC's,",
+      "box": [
+        460,
+        1410,
+        494,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "policies,",
+      "box": [
+        497,
+        1410,
+        547,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "presentations,",
+      "box": [
+        551,
+        1410,
+        635,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Red",
+      "box": [
+        638,
+        1410,
+        664,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hat,",
+      "box": [
+        668,
+        1410,
+        690,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "repairs,",
+      "box": [
+        694,
+        1410,
+        740,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Reporting,",
+      "box": [
+        743,
+        1410,
+        807,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "servers,",
+      "box": [
+        811,
+        1410,
+        859,
+        1424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SQL,",
+      "box": [
+        862,
+        1410,
+        897,
+        1424
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "software",
+      "box": [
+        55,
+        1424,
+        109,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "support,",
+      "box": [
+        112,
+        1424,
+        163,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "troubleshooting,",
+      "box": [
+        166,
+        1424,
+        264,
+        1438
+      ],
+      "label": "O"
+    },
+    {
+      "text": "upgrades",
+      "box": [
+        267,
+        1424,
+        323,
+        1438
+      ],
+      "label": "O"
+    }
+  ]
+}

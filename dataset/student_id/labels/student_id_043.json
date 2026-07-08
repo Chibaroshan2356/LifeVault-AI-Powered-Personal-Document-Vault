@@ -1,0 +1,52 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_043.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "1",
+      "box": [
+        371,
+        485,
+        418,
+        639
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8",
+      "box": [
+        454,
+        639,
+        482,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6'6",
+      "box": [
+        521,
+        659,
+        590,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        324,
+        484,
+        387,
+        668
+      ],
+      "label": "O"
+    }
+  ]
+}

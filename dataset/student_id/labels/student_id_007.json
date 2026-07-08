@@ -1,0 +1,92 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_007.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "PennCard",
+      "box": [
+        470,
+        242,
+        839,
+        335
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "UNIVERSHTY o PENNSYLVANIA",
+      "box": [
+        481,
+        323,
+        835,
+        354
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Graduate",
+      "box": [
+        407,
+        376,
+        593,
+        420
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Miko Gajewski",
+      "box": [
+        68,
+        620,
+        373,
+        676
+      ],
+      "label": "O"
+    },
+    {
+      "text": "EXPIRES:",
+      "box": [
+        628,
+        637,
+        831,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "S(u",
+      "box": [
+        360,
+        685,
+        410,
+        714
+      ],
+      "label": "O"
+    },
+    {
+      "text": "08/31/2026",
+      "box": [
+        623,
+        671,
+        825,
+        720
+      ],
+      "label": "B-EXPIRY_DATE"
+    },
+    {
+      "text": "W",
+      "box": [
+        631,
+        718,
+        671,
+        756
+      ],
+      "label": "O"
+    }
+  ]
+}

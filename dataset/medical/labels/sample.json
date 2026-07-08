@@ -1,0 +1,24 @@
+{
+  "document_metadata": {
+    "category": "Medical Record",
+    "patient_name": "Jane Doe",
+    "provider_name": "City Health Clinic",
+    "date_of_visit": "2026-06-25",
+    "diagnosis": "Acute Bronchitis",
+    "treatment": "Antibiotics and rest",
+    "total_amount": 150.00
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [800, 1000],
+  "words": [
+    { "text": "CITY", "box": [50, 40, 90, 55], "label": "B-PROVIDER_NAME" },
+    { "text": "HEALTH", "box": [100, 40, 150, 55], "label": "I-PROVIDER_NAME" },
+    { "text": "CLINIC", "box": [160, 40, 220, 55], "label": "I-PROVIDER_NAME" },
+    { "text": "Patient:", "box": [50, 90, 100, 105], "label": "O" },
+    { "text": "Jane", "box": [110, 90, 140, 105], "label": "B-HOLDER_NAME" },
+    { "text": "Doe", "box": [150, 90, 180, 105], "label": "I-HOLDER_NAME" },
+    { "text": "Diagnosis:", "box": [50, 140, 110, 155], "label": "O" },
+    { "text": "Acute", "box": [120, 140, 160, 155], "label": "B-DOCUMENT_TITLE" },
+    { "text": "Bronchitis", "box": [170, 140, 240, 155], "label": "I-DOCUMENT_TITLE" }
+  ]
+}

@@ -306,7 +306,7 @@ def _denoise_color(bgr: np.ndarray) -> np.ndarray:
         return cv2.fastNlMeansDenoisingColored(
             bgr,
             h=_DENOISE_H_LUMINANCE,
-            hForColorComponents=_DENOISE_H_COLOR,
+            hColor=_DENOISE_H_COLOR,
             templateWindowSize=7,
             searchWindowSize=21
         )

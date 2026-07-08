@@ -1,0 +1,132 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_004.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "ETHzurich",
+      "box": [
+        121,
+        262,
+        487,
+        343
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Ovcharova",
+      "box": [
+        117,
+        435,
+        306,
+        484
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Yustina",
+      "box": [
+        114,
+        475,
+        253,
+        521
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "22.02.2000",
+      "box": [
+        115,
+        556,
+        309,
+        600
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Gultig bis",
+      "box": [
+        670,
+        592,
+        773,
+        620
+      ],
+      "label": "O"
+    },
+    {
+      "text": "valid through",
+      "box": [
+        782,
+        592,
+        926,
+        623
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Studies",
+      "box": [
+        118,
+        640,
+        240,
+        678
+      ],
+      "label": "O"
+    },
+    {
+      "text": "05.03.2023",
+      "box": [
+        660,
+        642,
+        929,
+        698
+      ],
+      "label": "B-EXPIRY_DATE"
+    },
+    {
+      "text": "C2mBzsos",
+      "box": [
+        112,
+        696,
+        290,
+        771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Sc MSc",
+      "box": [
+        212,
+        696,
+        331,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "S",
+      "box": [
+        567,
+        642,
+        673,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "LASVZ",
+      "box": [
+        760,
+        695,
+        929,
+        757
+      ],
+      "label": "O"
+    }
+  ]
+}

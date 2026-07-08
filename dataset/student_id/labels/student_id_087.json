@@ -1,0 +1,52 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_087.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Monash University",
+      "box": [
+        57,
+        60,
+        232,
+        85
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rita",
+      "box": [
+        56,
+        231,
+        131,
+        271
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID 20308493",
+      "box": [
+        54,
+        401,
+        182,
+        426
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expiry Date: Valid until July 19,2025",
+      "box": [
+        57,
+        570,
+        392,
+        601
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    }
+  ]
+}

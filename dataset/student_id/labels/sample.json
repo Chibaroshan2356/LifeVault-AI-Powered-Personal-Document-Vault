@@ -1,0 +1,23 @@
+{
+  "document_metadata": {
+    "category": "Student ID",
+    "holder_name": "Chiba Roshan A",
+    "roll_number": "23ITR019",
+    "organization": "Kongu Engineering College",
+    "course": "Information Technology",
+    "valid_till": "2027-05-31"
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [500, 300],
+  "words": [
+    { "text": "KONGU", "box": [20, 20, 80, 35], "label": "B-ORGANIZATION" },
+    { "text": "ENGINEERING", "box": [90, 20, 190, 35], "label": "I-ORGANIZATION" },
+    { "text": "COLLEGE", "box": [200, 20, 260, 35], "label": "I-ORGANIZATION" },
+    { "text": "Name:", "box": [20, 70, 60, 85], "label": "O" },
+    { "text": "Chiba", "box": [70, 70, 110, 85], "label": "B-HOLDER_NAME" },
+    { "text": "Roshan", "box": [120, 70, 170, 85], "label": "I-HOLDER_NAME" },
+    { "text": "Roll", "box": [20, 110, 50, 125], "label": "O" },
+    { "text": "No:", "box": [60, 110, 80, 125], "label": "O" },
+    { "text": "23ITR019", "box": [90, 110, 160, 125], "label": "B-DOCUMENT_NUMBER" }
+  ]
+}

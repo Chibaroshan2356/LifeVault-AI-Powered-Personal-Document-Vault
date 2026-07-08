@@ -1,0 +1,26 @@
+{
+  "document_metadata": {
+    "category": "Passport",
+    "holder_name": "John Doe",
+    "passport_number": "Z1234567",
+    "nationality": "INDIAN",
+    "date_of_birth": "1990-01-01",
+    "gender": "M",
+    "place_of_issue": "NEW DELHI",
+    "issue_date": "2020-05-15",
+    "expiry_date": "2030-05-14",
+    "authority": "GOVT OF INDIA"
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [800, 600],
+  "words": [
+    { "text": "Passport", "box": [40, 20, 100, 35], "label": "O" },
+    { "text": "No.", "box": [110, 20, 130, 35], "label": "O" },
+    { "text": "Z1234567", "box": [140, 20, 220, 35], "label": "B-DOCUMENT_NUMBER" },
+    { "text": "Name:", "box": [40, 60, 80, 75], "label": "O" },
+    { "text": "JOHN", "box": [100, 60, 140, 75], "label": "B-HOLDER_NAME" },
+    { "text": "DOE", "box": [150, 60, 180, 75], "label": "I-HOLDER_NAME" },
+    { "text": "Nationality:", "box": [40, 100, 110, 115], "label": "O" },
+    { "text": "INDIAN", "box": [120, 100, 170, 115], "label": "B-NATIONALITY" }
+  ]
+}

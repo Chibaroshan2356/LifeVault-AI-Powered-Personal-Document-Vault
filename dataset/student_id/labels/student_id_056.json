@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_056.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "American International",
+      "box": [
+        57,
+        314,
+        695,
+        373
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "University",
+      "box": [
+        696,
+        300,
+        1000,
+        389
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Jackson",
+      "box": [
+        43,
+        418,
+        270,
+        489
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "ID 62027894",
+      "box": [
+        54,
+        526,
+        182,
+        554
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Expiry Date: Expires: November 2",
+      "box": [
+        53,
+        634,
+        1000,
+        709
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Hue",
+      "box": [
+        685,
+        907,
+        854,
+        967
+      ],
+      "label": "I-ORGANIZATION"
+    }
+  ]
+}

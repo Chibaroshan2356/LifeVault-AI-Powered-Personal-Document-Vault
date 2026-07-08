@@ -1,0 +1,92 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_096.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "LZoziLzizo",
+      "box": [
+        410,
+        385,
+        764,
+        549
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "KwisuaNun",
+      "box": [
+        214,
+        434,
+        514,
+        584
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": ":uontejida",
+      "box": [
+        740,
+        485,
+        1000,
+        614
+      ],
+      "label": "O"
+    },
+    {
+      "text": "pJeNeH",
+      "box": [
+        495,
+        518,
+        740,
+        651
+      ],
+      "label": "O"
+    },
+    {
+      "text": "znujeiaa",
+      "box": [
+        353,
+        579,
+        621,
+        724
+      ],
+      "label": "O"
+    },
+    {
+      "text": "KwisuaNun",
+      "box": [
+        737,
+        585,
+        1000,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "sapey)",
+      "box": [
+        598,
+        657,
+        837,
+        788
+      ],
+      "label": "O"
+    },
+    {
+      "text": ":aUeN",
+      "box": [
+        812,
+        717,
+        1000,
+        838
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card",
+    "holder_name": "John Doe",
+    "aadhaar_number": "1234 5678 9012",
+    "gender": "Male",
+    "date_of_birth": "1990-01-01",
+    "address": "123 Street Name, New Delhi"
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [600, 400],
+  "words": [
+    { "text": "GOVERNMENT", "box": [30, 20, 110, 35], "label": "O" },
+    { "text": "OF", "box": [120, 20, 135, 35], "label": "O" },
+    { "text": "INDIA", "box": [145, 20, 185, 35], "label": "O" },
+    { "text": "John", "box": [30, 80, 70, 95], "label": "B-HOLDER_NAME" },
+    { "text": "Doe", "box": [80, 80, 110, 95], "label": "I-HOLDER_NAME" },
+    { "text": "1234", "box": [30, 130, 70, 145], "label": "B-DOCUMENT_NUMBER" },
+    { "text": "5678", "box": [80, 130, 120, 145], "label": "I-DOCUMENT_NUMBER" },
+    { "text": "9012", "box": [130, 130, 170, 145], "label": "I-DOCUMENT_NUMBER" }
+  ]
+}

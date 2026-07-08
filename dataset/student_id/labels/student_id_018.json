@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_018.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "PKINCETON",
+      "box": [
+        251,
+        235,
+        506,
+        282
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "UNIVERSITY",
+      "box": [
+        251,
+        271,
+        506,
+        317
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Majora Carter",
+      "box": [
+        114,
+        450,
+        459,
+        510
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "940006976",
+      "box": [
+        115,
+        534,
+        346,
+        578
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FACULTY V",
+      "box": [
+        109,
+        596,
+        325,
+        643
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Expires 0116/2022",
+      "box": [
+        109,
+        653,
+        468,
+        700
+      ],
+      "label": "I-ORGANIZATION"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_011.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "W",
+      "box": [
+        879,
+        270,
+        951,
+        329
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1z0ziso",
+      "box": [
+        576,
+        307,
+        771,
+        382
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Eedra",
+      "box": [
+        775,
+        343,
+        871,
+        381
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "32444W41J",
+      "box": [
+        515,
+        612,
+        867,
+        718
+      ],
+      "label": "O"
+    },
+    {
+      "text": "JO",
+      "box": [
+        525,
+        681,
+        593,
+        731
+      ],
+      "label": "O"
+    },
+    {
+      "text": "XLISHAAINT",
+      "box": [
+        579,
+        678,
+        862,
+        760
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DOJuOWN",
+      "box": [
+        661,
+        236,
+        890,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ia)",
+      "box": [
+        862,
+        350,
+        945,
+        395
+      ],
+      "label": "O"
+    }
+  ]
+}

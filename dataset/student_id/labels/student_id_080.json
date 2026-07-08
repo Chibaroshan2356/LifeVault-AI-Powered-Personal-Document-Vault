@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_080.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "London School of Econom",
+      "box": [
+        54,
+        59,
+        773,
+        120
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ms.",
+      "box": [
+        57,
+        232,
+        160,
+        298
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Mr. John Brock",
+      "box": [
+        181,
+        226,
+        650,
+        309
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "ID 62085.484",
+      "box": [
+        54,
+        401,
+        182,
+        426
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expiry Date: Expires: December 2027",
+      "box": [
+        48,
+        570,
+        1000,
+        646
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "~hovoakoluy",
+      "box": [
+        656,
+        903,
+        901,
+        973
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_052.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "HAJEE MOHAMMAD DANESH SeleneeKNd",
+      "box": [
+        146,
+        193,
+        965,
+        243
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "TechnolOGy University (HsTui DiNaupury",
+      "box": [
+        121,
+        243,
+        992,
+        301
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "STUDENT ITTTTT (II",
+      "box": [
+        235,
+        314,
+        923,
+        370
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Namu",
+      "box": [
+        234,
+        390,
+        356,
+        431
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Md",
+      "box": [
+        501,
+        379,
+        582,
+        435
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Mojibur Rahman",
+      "box": [
+        595,
+        379,
+        970,
+        435
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Faculty",
+      "box": [
+        232,
+        432,
+        378,
+        481
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Cumoule Scen? A Frora\"ing",
+      "box": [
+        506,
+        432,
+        996,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Siuden R",
+      "box": [
+        234,
+        481,
+        450,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1502,026",
+      "box": [
+        509,
+        478,
+        681,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Degree",
+      "box": [
+        232,
+        529,
+        381,
+        579
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8 Bc in Cse",
+      "box": [
+        506,
+        525,
+        753,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dormiory 7",
+      "box": [
+        234,
+        578,
+        481,
+        618
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2 , Ranyar Nal",
+      "box": [
+        509,
+        570,
+        859,
+        615
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Valid Upio",
+      "box": [
+        234,
+        621,
+        446,
+        668
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Detchin\" 20-€",
+      "box": [
+        507,
+        615,
+        809,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dat 04 0650",
+      "box": [
+        0,
+        728,
+        212,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "5*uzid\"",
+      "box": [
+        740,
+        729,
+        840,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vuna 70+€",
+      "box": [
+        15,
+        768,
+        187,
+        806
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Heaarnon Den",
+      "box": [
+        682,
+        770,
+        951,
+        801
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_047.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "KLISNHAINA DV4a",
+      "box": [
+        250,
+        125,
+        775,
+        243
+      ],
+      "label": "O"
+    },
+    {
+      "text": "BRAC",
+      "box": [
+        454,
+        385,
+        617,
+        442
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "TY",
+      "box": [
+        210,
+        435,
+        289,
+        467
+      ],
+      "label": "O"
+    },
+    {
+      "text": "U",
+      "box": [
+        289,
+        473,
+        323,
+        498
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ASIF",
+      "box": [
+        364,
+        723,
+        410,
+        751
+      ],
+      "label": "O"
+    },
+    {
+      "text": "emcnl",
+      "box": [
+        532,
+        748,
+        576,
+        770
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pott",
+      "box": [
+        370,
+        764,
+        407,
+        785
+      ],
+      "label": "O"
+    },
+    {
+      "text": "g",
+      "box": [
+        351,
+        795,
+        373,
+        835
+      ],
+      "label": "O"
+    },
+    {
+      "text": "6'04?",
+      "box": [
+        420,
+        826,
+        464,
+        848
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TISHHAINn?",
+      "box": [
+        536,
+        244,
+        898,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UNIVEE",
+      "box": [
+        620,
+        346,
+        875,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "0 Ov",
+      "box": [
+        130,
+        466,
+        287,
+        558
+      ],
+      "label": "O"
+    },
+    {
+      "text": "University",
+      "box": [
+        543,
+        595,
+        703,
+        654
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "BRAC",
+      "box": [
+        453,
+        614,
+        555,
+        671
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "'SHAHRIAR",
+      "box": [
+        404,
+        701,
+        516,
+        744
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dinlota",
+      "box": [
+        462,
+        741,
+        520,
+        764
+      ],
+      "label": "O"
+    },
+    {
+      "text": "duala",
+      "box": [
+        423,
+        750,
+        465,
+        771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "0",
+      "box": [
+        343,
+        754,
+        370,
+        803
+      ],
+      "label": "O"
+    },
+    {
+      "text": "N4nl4",
+      "box": [
+        487,
+        757,
+        532,
+        775
+      ],
+      "label": "O"
+    },
+    {
+      "text": "induttny",
+      "box": [
+        426,
+        763,
+        490,
+        788
+      ],
+      "label": "O"
+    },
+    {
+      "text": "28an7",
+      "box": [
+        461,
+        785,
+        521,
+        814
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plod",
+      "box": [
+        381,
+        832,
+        420,
+        850
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AiCaln",
+      "box": [
+        467,
+        830,
+        537,
+        861
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mabe",
+      "box": [
+        382,
+        853,
+        434,
+        877
+      ],
+      "label": "O"
+    }
+  ]
+}

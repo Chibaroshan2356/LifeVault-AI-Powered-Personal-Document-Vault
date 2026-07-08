@@ -1,0 +1,21 @@
+{
+  "document_metadata": {
+    "category": "Educational Certificate",
+    "holder_name": "Chiba Roshan A",
+    "organization": "MongoDB",
+    "issue_date": "2025-05-12",
+    "certificate_name": "MongoDB Associate Developer"
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [1000, 700],
+  "words": [
+    { "text": "MongoDB", "box": [400, 50, 480, 70], "label": "B-ORGANIZATION" },
+    { "text": "Associate", "box": [300, 100, 390, 125], "label": "B-DOCUMENT_TITLE" },
+    { "text": "Developer", "box": [400, 100, 490, 125], "label": "I-DOCUMENT_TITLE" },
+    { "text": "This", "box": [100, 180, 130, 195], "label": "O" },
+    { "text": "is", "box": [140, 180, 155, 195], "label": "O" },
+    { "text": "certify", "box": [165, 180, 215, 195], "label": "O" },
+    { "text": "Chiba", "box": [350, 220, 400, 240], "label": "B-HOLDER_NAME" },
+    { "text": "Roshan", "box": [410, 220, 470, 240], "label": "I-HOLDER_NAME" }
+  ]
+}

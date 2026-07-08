@@ -1,0 +1,292 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_009.png",
+  "image_dimensions": [
+    842,
+    595
+  ],
+  "words": [
+    {
+      "text": "Kimberly",
+      "box": [
+        265,
+        396,
+        503,
+        599
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Nguyen",
+      "box": [
+        539,
+        396,
+        733,
+        599
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "CERTIFICATE",
+      "box": [
+        187,
+        123,
+        812,
+        256
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "OF",
+      "box": [
+        266,
+        258,
+        335,
+        330
+      ],
+      "label": "O"
+    },
+    {
+      "text": "APPRECIATION",
+      "box": [
+        351,
+        258,
+        732,
+        330
+      ],
+      "label": "O"
+    },
+    {
+      "text": "This",
+      "box": [
+        402,
+        366,
+        433,
+        394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Certificate",
+      "box": [
+        437,
+        366,
+        514,
+        394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "is",
+      "box": [
+        518,
+        366,
+        531,
+        394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "given",
+      "box": [
+        535,
+        366,
+        574,
+        394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to:",
+      "box": [
+        578,
+        366,
+        597,
+        394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Di",
+      "box": [
+        225,
+        849,
+        237,
+        869
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rector",
+      "box": [
+        239,
+        849,
+        279,
+        869
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "ALFREDO",
+      "box": [
+        192,
+        826,
+        253,
+        846
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "TORRES",
+      "box": [
+        260,
+        826,
+        312,
+        846
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Manager",
+      "box": [
+        718,
+        850,
+        776,
+        870
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "ESTELLE",
+      "box": [
+        692,
+        827,
+        750,
+        847
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "DARCY",
+      "box": [
+        757,
+        827,
+        801,
+        847
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "For",
+      "box": [
+        317,
+        609,
+        342,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "compl",
+      "box": [
+        350,
+        609,
+        397,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "eti",
+      "box": [
+        399,
+        609,
+        419,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ng",
+      "box": [
+        421,
+        609,
+        439,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        446,
+        609,
+        470,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "onl",
+      "box": [
+        478,
+        609,
+        501,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "i",
+      "box": [
+        504,
+        609,
+        507,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ne",
+      "box": [
+        509,
+        609,
+        526,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "real",
+      "box": [
+        534,
+        609,
+        564,
+        632
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "estate",
+      "box": [
+        571,
+        609,
+        621,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "course",
+      "box": [
+        629,
+        609,
+        682,
+        632
+      ],
+      "label": "O"
+    }
+  ]
+}

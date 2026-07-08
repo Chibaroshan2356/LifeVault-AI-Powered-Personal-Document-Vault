@@ -1,0 +1,28 @@
+{
+  "document_metadata": {
+    "category": "Fee Receipt",
+    "holder_name": "John Doe",
+    "organization": "Kongu Engineering College",
+    "receipt_number": "REC/2026/10243",
+    "roll_number": "23ITR047",
+    "issue_date": "2026-06-30",
+    "total_amount": 61500.00
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [800, 1100],
+  "words": [
+    { "text": "KONGU", "box": [50, 40, 110, 55], "label": "B-ORGANIZATION" },
+    { "text": "ENGINEERING", "box": [120, 40, 220, 55], "label": "I-ORGANIZATION" },
+    { "text": "COLLEGE", "box": [230, 40, 290, 55], "label": "I-ORGANIZATION" },
+    { "text": "FEE", "box": [50, 90, 80, 105], "label": "O" },
+    { "text": "RECEIPT", "box": [90, 90, 150, 105], "label": "O" },
+    { "text": "Receipt", "box": [50, 140, 90, 155], "label": "O" },
+    { "text": "No:", "box": [100, 140, 120, 155], "label": "O" },
+    { "text": "REC/2026/10243", "box": [130, 140, 240, 155], "label": "B-DOCUMENT_NUMBER" },
+    { "text": "Name:", "box": [50, 180, 80, 195], "label": "O" },
+    { "text": "John", "box": [90, 180, 120, 195], "label": "B-HOLDER_NAME" },
+    { "text": "Doe", "box": [130, 180, 160, 195], "label": "I-HOLDER_NAME" },
+    { "text": "Paid:", "box": [50, 300, 80, 315], "label": "O" },
+    { "text": "61500.00", "box": [90, 300, 160, 315], "label": "B-TOTAL_AMOUNT" }
+  ]
+}

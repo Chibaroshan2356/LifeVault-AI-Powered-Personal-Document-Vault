@@ -1,0 +1,52 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_071.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Jahangimnagar University",
+      "box": [
+        57,
+        314,
+        295,
+        339
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Samantha Wagner",
+      "box": [
+        57,
+        418,
+        232,
+        450
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "ID 38771906",
+      "box": [
+        54,
+        526,
+        182,
+        551
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expiry Date: Valid until 2023/08/07",
+      "box": [
+        51,
+        632,
+        885,
+        701
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    }
+  ]
+}

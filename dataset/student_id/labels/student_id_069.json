@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_069.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "uo sajidx3 :ajed Kidx3",
+      "box": [
+        385,
+        345,
+        967,
+        439
+      ],
+      "label": "O"
+    },
+    {
+      "text": "0Z 'Kinl Jo 4180",
+      "box": [
+        6,
+        390,
+        387,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "LERBLZZI @i",
+      "box": [
+        848,
+        560,
+        982,
+        592
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "104tiy",
+      "box": [
+        914,
+        732,
+        995,
+        764
+      ],
+      "label": "O"
+    },
+    {
+      "text": "uopuo7 abalo3 5,6u1x",
+      "box": [
+        279,
+        854,
+        1000,
+        987
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "document_metadata": {
+    "category": "Insurance Policy",
+    "insured_name": "Jane Doe",
+    "policy_number": "POL-98765432",
+    "insurance_company": "SafeGuard Insurance Corp",
+    "start_date": "2026-01-01",
+    "end_date": "2026-12-31",
+    "premium_amount": 450.00
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [800, 1000],
+  "words": [
+    { "text": "SAFEGUARD", "box": [50, 40, 130, 55], "label": "B-INSURANCE_COMPANY" },
+    { "text": "INSURANCE", "box": [140, 40, 220, 55], "label": "I-INSURANCE_COMPANY" },
+    { "text": "CORP", "box": [230, 40, 270, 55], "label": "I-INSURANCE_COMPANY" },
+    { "text": "Policy", "box": [50, 90, 95, 105], "label": "O" },
+    { "text": "No:", "box": [105, 90, 125, 105], "label": "O" },
+    { "text": "POL-98765432", "box": [135, 90, 245, 105], "label": "B-DOCUMENT_NUMBER" },
+    { "text": "Insured:", "box": [50, 130, 100, 145], "label": "O" },
+    { "text": "Jane", "box": [110, 130, 140, 145], "label": "B-HOLDER_NAME" },
+    { "text": "Doe", "box": [150, 130, 180, 145], "label": "I-HOLDER_NAME" }
+  ]
+}

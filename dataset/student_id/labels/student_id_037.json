@@ -1,0 +1,142 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_037.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "BRAC\"",
+      "box": [
+        296,
+        250,
+        534,
+        337
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "University",
+      "box": [
+        531,
+        232,
+        946,
+        368
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "MD: ASEER IRTIZA",
+      "box": [
+        42,
+        434,
+        457,
+        495
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Bachelor ol Scionce in'",
+      "box": [
+        46,
+        518,
+        404,
+        578
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "';",
+      "box": [
+        412,
+        496,
+        565,
+        571
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Electrical and Electronic Engincering",
+      "box": [
+        50,
+        556,
+        629,
+        623
+      ],
+      "label": "O"
+    },
+    {
+      "text": "&adenl I0",
+      "box": [
+        64,
+        632,
+        207,
+        664
+      ],
+      "label": "O"
+    },
+    {
+      "text": "49174046",
+      "box": [
+        257,
+        635,
+        389,
+        667
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bleod Groxn",
+      "box": [
+        68,
+        684,
+        243,
+        721
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ADe",
+      "box": [
+        267,
+        692,
+        342,
+        717
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Vallary",
+      "box": [
+        67,
+        729,
+        178,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "08 01-7023",
+      "box": [
+        270,
+        743,
+        417,
+        773
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        0,
+        481,
+        55,
+        704
+      ],
+      "label": "O"
+    }
+  ]
+}

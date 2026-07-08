@@ -1,0 +1,132 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_028.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "4L1nGlAaAGa UN/At Asllt",
+      "box": [
+        375,
+        60,
+        804,
+        117
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FAIEMA",
+      "box": [
+        273,
+        435,
+        417,
+        482
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "IUZ",
+      "box": [
+        437,
+        437,
+        512,
+        478
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "IWHAILA",
+      "box": [
+        531,
+        437,
+        684,
+        481
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Alett Iu 4uehen]",
+      "box": [
+        275,
+        501,
+        528,
+        540
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mun",
+      "box": [
+        570,
+        510,
+        657,
+        535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Juibgt44aui",
+      "box": [
+        271,
+        540,
+        478,
+        581
+      ],
+      "label": "O"
+    },
+    {
+      "text": "(eanannt",
+      "box": [
+        270,
+        575,
+        440,
+        620
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mu ruhiulode",
+      "box": [
+        270,
+        618,
+        453,
+        662
+      ],
+      "label": "O"
+    },
+    {
+      "text": "[Eabd dreatat",
+      "box": [
+        279,
+        676,
+        448,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "alieth E",
+      "box": [
+        565,
+        671,
+        668,
+        709
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4o 06-2041",
+      "box": [
+        565,
+        712,
+        743,
+        750
+      ],
+      "label": "O"
+    }
+  ]
+}

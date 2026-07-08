@@ -1,0 +1,152 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_048.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Dt",
+      "box": [
+        781,
+        432,
+        892,
+        479
+      ],
+      "label": "O"
+    },
+    {
+      "text": "KC",
+      "box": [
+        693,
+        446,
+        793,
+        525
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ovua",
+      "box": [
+        351,
+        560,
+        525,
+        631
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "C",
+      "box": [
+        78,
+        728,
+        131,
+        771
+      ],
+      "label": "O"
+    },
+    {
+      "text": "BRAC",
+      "box": [
+        198,
+        817,
+        365,
+        887
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        596,
+        140,
+        633,
+        242
+      ],
+      "label": "O"
+    },
+    {
+      "text": "etd",
+      "box": [
+        465,
+        233,
+        507,
+        253
+      ],
+      "label": "O"
+    },
+    {
+      "text": "aist",
+      "box": [
+        555,
+        240,
+        616,
+        280
+      ],
+      "label": "O"
+    },
+    {
+      "text": "'atidhvks =",
+      "box": [
+        453,
+        250,
+        568,
+        302
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ovja",
+      "box": [
+        410,
+        320,
+        518,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Kusuaniun",
+      "box": [
+        261,
+        349,
+        426,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HAAINO",
+      "box": [
+        109,
+        572,
+        348,
+        658
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UNIVERSI",
+      "box": [
+        120,
+        602,
+        411,
+        760
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UNIVERSITY",
+      "box": [
+        361,
+        761,
+        723,
+        867
+      ],
+      "label": "B-ORGANIZATION"
+    }
+  ]
+}

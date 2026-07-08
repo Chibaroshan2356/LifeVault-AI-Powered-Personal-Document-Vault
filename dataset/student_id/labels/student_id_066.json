@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_066.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": ":a1ea Kudx3 :ajed Kdx3",
+      "box": [
+        332,
+        257,
+        970,
+        357
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ZZoz/solLZ",
+      "box": [
+        40,
+        301,
+        339,
+        384
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "26s926L8 :Ql",
+      "box": [
+        634,
+        378,
+        978,
+        457
+      ],
+      "label": "O"
+    },
+    {
+      "text": "zeicny UC4icNv IN",
+      "box": [
+        798,
+        523,
+        985,
+        554
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nisioxun ICUOICN Inoes",
+      "box": [
+        748,
+        631,
+        996,
+        671
+      ],
+      "label": "O"
+    }
+  ]
+}

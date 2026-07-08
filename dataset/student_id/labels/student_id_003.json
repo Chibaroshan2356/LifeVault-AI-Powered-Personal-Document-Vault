@@ -1,0 +1,172 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_003.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Filippo",
+      "box": [
+        100,
+        553,
+        225,
+        596
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "walid through",
+      "box": [
+        765,
+        570,
+        903,
+        609
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Gullig bis",
+      "box": [
+        656,
+        592,
+        757,
+        623
+      ],
+      "label": "O"
+    },
+    {
+      "text": "24.09.1995",
+      "box": [
+        107,
+        607,
+        303,
+        673
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Doctoral",
+      "box": [
+        287,
+        670,
+        423,
+        720
+      ],
+      "label": "O"
+    },
+    {
+      "text": "21_",
+      "box": [
+        134,
+        784,
+        178,
+        821
+      ],
+      "label": "O"
+    },
+    {
+      "text": "zirich",
+      "box": [
+        211,
+        295,
+        437,
+        404
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Eh",
+      "box": [
+        69,
+        324,
+        225,
+        415
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Carmenati",
+      "box": [
+        88,
+        495,
+        281,
+        557
+      ],
+      "label": "O"
+    },
+    {
+      "text": "120222",
+      "box": [
+        765,
+        608,
+        926,
+        687
+      ],
+      "label": "O"
+    },
+    {
+      "text": "02.10",
+      "box": [
+        645,
+        626,
+        787,
+        699
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Student",
+      "box": [
+        414,
+        656,
+        541,
+        704
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CASvzz",
+      "box": [
+        743,
+        660,
+        936,
+        748
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Doktorand",
+      "box": [
+        118,
+        686,
+        279,
+        737
+      ],
+      "label": "O"
+    },
+    {
+      "text": "0-USYS",
+      "box": [
+        122,
+        717,
+        248,
+        765
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1-902-416",
+      "box": [
+        165,
+        770,
+        295,
+        818
+      ],
+      "label": "O"
+    }
+  ]
+}

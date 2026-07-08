@@ -1,0 +1,201 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LifeVault LayoutLMv3 Annotation Schema",
+  "description": "Unified JSON schema for validating LayoutLMv3 annotation files containing both document-level metadata and token-level spatial boxes.",
+  "type": "object",
+  "required": [
+    "document_metadata",
+    "image_filename",
+    "image_dimensions",
+    "words"
+  ],
+  "properties": {
+    "image_filename": { "type": "string" },
+    "image_dimensions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "type": "integer" }
+    },
+    "words": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["text", "box", "label"],
+        "properties": {
+          "text": { "type": "string" },
+          "box": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": { "type": "integer" }
+          },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "document_metadata": {
+      "type": "object",
+      "required": ["category"],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "Resume",
+            "Passport",
+            "PAN Card",
+            "Aadhaar Card",
+            "Student ID",
+            "Educational Certificate",
+            "Internship Certificate",
+            "Fee Receipt",
+            "Medical Record",
+            "Insurance Policy"
+          ]
+        }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "category": { "const": "Resume" },
+            "holder_name": { "type": "string" },
+            "email": { "type": "string", "format": "email" },
+            "phone": { "type": "string" },
+            "skills": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "education": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["institution", "degree"],
+                "properties": {
+                  "institution": { "type": "string" },
+                  "degree": { "type": "string" },
+                  "year": { "type": "string" }
+                }
+              }
+            },
+            "experience": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["company", "role"],
+                "properties": {
+                  "company": { "type": "string" },
+                  "role": { "type": "string" },
+                  "duration": { "type": "string" }
+                }
+              }
+            }
+          },
+          "required": ["holder_name"]
+        },
+        {
+          "properties": {
+            "category": { "const": "Passport" },
+            "holder_name": { "type": "string" },
+            "passport_number": { "type": "string", "pattern": "^[A-Z][0-9]{7}$" },
+            "nationality": { "type": "string" },
+            "date_of_birth": { "type": "string" },
+            "gender": { "type": "string", "enum": ["M", "F", "Other"] },
+            "place_of_issue": { "type": "string" },
+            "issue_date": { "type": "string" },
+            "expiry_date": { "type": "string" },
+            "authority": { "type": "string" }
+          },
+          "required": ["holder_name", "passport_number", "expiry_date"]
+        },
+        {
+          "properties": {
+            "category": { "const": "PAN Card" },
+            "holder_name": { "type": "string" },
+            "father_name": { "type": "string" },
+            "pan_number": { "type": "string", "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]$" },
+            "date_of_birth": { "type": "string" }
+          },
+          "required": ["holder_name", "pan_number"]
+        },
+        {
+          "properties": {
+            "category": { "const": "Aadhaar Card" },
+            "holder_name": { "type": "string" },
+            "aadhaar_number": { "type": "string", "pattern": "^[0-9]{4}\\s[0-9]{4}\\s[0-9]{4}$" },
+            "gender": { "type": "string", "enum": ["Male", "Female", "Other"] },
+            "date_of_birth": { "type": "string" },
+            "address": { "type": "string" }
+          },
+          "required": ["holder_name", "aadhaar_number"]
+        },
+        {
+          "properties": {
+            "category": { "const": "Student ID" },
+            "holder_name": { "type": "string" },
+            "roll_number": { "type": "string" },
+            "organization": { "type": "string" },
+            "course": { "type": "string" },
+            "valid_till": { "type": "string" }
+          },
+          "required": ["holder_name", "roll_number", "organization"]
+        },
+        {
+          "properties": {
+            "category": { "const": "Educational Certificate" },
+            "holder_name": { "type": "string" },
+            "organization": { "type": "string" },
+            "issue_date": { "type": "string" },
+            "certificate_name": { "type": "string" }
+          },
+          "required": ["holder_name", "organization", "certificate_name"]
+        },
+        {
+          "properties": {
+            "category": { "const": "Internship Certificate" },
+            "holder_name": { "type": "string" },
+            "organization": { "type": "string" },
+            "issue_date": { "type": "string" },
+            "role": { "type": "string" }
+          },
+          "required": ["holder_name", "organization", "role"]
+        },
+        {
+          "properties": {
+            "category": { "const": "Fee Receipt" },
+            "holder_name": { "type": "string" },
+            "organization": { "type": "string" },
+            "receipt_number": { "type": "string" },
+            "roll_number": { "type": "string" },
+            "issue_date": { "type": "string" },
+            "total_amount": { "type": "number" }
+          },
+          "required": ["holder_name", "organization", "total_amount"]
+        },
+        {
+          "properties": {
+            "category": { "const": "Medical Record" },
+            "patient_name": { "type": "string" },
+            "provider_name": { "type": "string" },
+            "date_of_visit": { "type": "string" },
+            "diagnosis": { "type": "string" },
+            "treatment": { "type": "string" },
+            "total_amount": { "type": "number" }
+          },
+          "required": ["patient_name", "provider_name", "date_of_visit"]
+        },
+        {
+          "properties": {
+            "category": { "const": "Insurance Policy" },
+            "insured_name": { "type": "string" },
+            "policy_number": { "type": "string" },
+            "insurance_company": { "type": "string" },
+            "start_date": { "type": "string" },
+            "end_date": { "type": "string" },
+            "premium_amount": { "type": "number" }
+          },
+          "required": ["insured_name", "policy_number", "insurance_company"]
+        }
+      ]
+    }
+  }
+}

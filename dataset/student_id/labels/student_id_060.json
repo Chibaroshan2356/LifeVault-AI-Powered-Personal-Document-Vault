@@ -1,0 +1,112 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_060.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "of",
+      "box": [
+        376,
+        307,
+        454,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Western Austral",
+      "box": [
+        451,
+        300,
+        968,
+        414
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Mr: Cynthia Hawkins",
+      "box": [
+        18,
+        381,
+        485,
+        470
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "ID:",
+      "box": [
+        4,
+        501,
+        95,
+        557
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "36096224",
+      "box": [
+        96,
+        495,
+        401,
+        584
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date:",
+      "box": [
+        142,
+        614,
+        275,
+        675
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023-11-04",
+      "box": [
+        378,
+        626,
+        654,
+        704
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "University",
+      "box": [
+        25,
+        257,
+        379,
+        384
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Expiry",
+      "box": [
+        0,
+        598,
+        146,
+        676
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Exp:",
+      "box": [
+        270,
+        620,
+        390,
+        691
+      ],
+      "label": "I-ORGANIZATION"
+    }
+  ]
+}

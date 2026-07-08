@@ -1,0 +1,162 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_046.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "cv1sq",
+      "box": [
+        67,
+        260,
+        292,
+        326
+      ],
+      "label": "O"
+    },
+    {
+      "text": "+8",
+      "box": [
+        262,
+        334,
+        318,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "026 [-uer-L0",
+      "box": [
+        523,
+        332,
+        757,
+        389
+      ],
+      "label": "O"
+    },
+    {
+      "text": "uo",
+      "box": [
+        793,
+        350,
+        856,
+        396
+      ],
+      "label": "O"
+    },
+    {
+      "text": "959096+024088-",
+      "box": [
+        23,
+        357,
+        328,
+        423
+      ],
+      "label": "O"
+    },
+    {
+      "text": "El0z-uer-Zi :",
+      "box": [
+        520,
+        393,
+        776,
+        451
+      ],
+      "label": "O"
+    },
+    {
+      "text": "uo",
+      "box": [
+        809,
+        412,
+        871,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "LEv-SE-LCL",
+      "box": [
+        768,
+        467,
+        979,
+        523
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "aMS UI \"%S*8",
+      "box": [
+        735,
+        529,
+        979,
+        585
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Injwex 'PW",
+      "box": [
+        748,
+        582,
+        979,
+        648
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Kipoyea",
+      "box": [
+        456,
+        614,
+        818,
+        792
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jejisibay",
+      "box": [
+        112,
+        184,
+        293,
+        260
+      ],
+      "label": "O"
+    },
+    {
+      "text": "alidxa",
+      "box": [
+        851,
+        343,
+        985,
+        406
+      ],
+      "label": "O"
+    },
+    {
+      "text": "anssi",
+      "box": [
+        868,
+        409,
+        985,
+        465
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ueseh",
+      "box": [
+        621,
+        573,
+        757,
+        634
+      ],
+      "label": "O"
+    }
+  ]
+}

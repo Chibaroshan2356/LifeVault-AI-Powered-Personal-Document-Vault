@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_100.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "1",
+      "box": [
+        542,
+        348,
+        598,
+        484
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ui",
+      "box": [
+        403,
+        459,
+        592,
+        657
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L",
+      "box": [
+        207,
+        112,
+        341,
+        642
+      ],
+      "label": "O"
+    },
+    {
+      "text": "J",
+      "box": [
+        268,
+        237,
+        411,
+        646
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        631,
+        543,
+        696,
+        756
+      ],
+      "label": "O"
+    }
+  ]
+}

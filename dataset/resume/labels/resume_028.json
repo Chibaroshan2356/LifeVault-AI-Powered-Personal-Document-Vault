@@ -1,0 +1,2152 @@
+{
+  "document_metadata": {
+    "category": "Resume"
+  },
+  "image_filename": "resume_028.png",
+  "image_dimensions": [
+    595,
+    842
+  ],
+  "words": [
+    {
+      "text": "CONSTRUCTION",
+      "box": [
+        55,
+        34,
+        180,
+        47
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Executive",
+      "box": [
+        55,
+        48,
+        115,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Summary",
+      "box": [
+        118,
+        48,
+        177,
+        62
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "To",
+      "box": [
+        55,
+        62,
+        73,
+        76
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "find",
+      "box": [
+        77,
+        62,
+        99,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "an",
+      "box": [
+        103,
+        62,
+        119,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "internship",
+      "box": [
+        121,
+        62,
+        179,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        183,
+        62,
+        194,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        197,
+        62,
+        215,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "profession",
+      "box": [
+        219,
+        62,
+        283,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "where",
+      "box": [
+        285,
+        62,
+        323,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "I",
+      "box": [
+        327,
+        62,
+        333,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "can",
+      "box": [
+        336,
+        62,
+        359,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "gain",
+      "box": [
+        361,
+        62,
+        387,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "experience",
+      "box": [
+        389,
+        62,
+        456,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        459,
+        62,
+        471,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        473,
+        62,
+        496,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "exposure",
+      "box": [
+        499,
+        62,
+        555,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        559,
+        62,
+        571,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        575,
+        62,
+        594,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "practice",
+      "box": [
+        597,
+        62,
+        646,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        650,
+        62,
+        663,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "product",
+      "box": [
+        666,
+        62,
+        714,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "design.",
+      "box": [
+        717,
+        62,
+        760,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Core",
+      "box": [
+        55,
+        76,
+        87,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Qualifications",
+      "box": [
+        91,
+        76,
+        173,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Adobe",
+      "box": [
+        58,
+        93,
+        101,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Photoshop",
+      "box": [
+        105,
+        93,
+        171,
+        106
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "and",
+      "box": [
+        174,
+        93,
+        197,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Illustrator",
+      "box": [
+        201,
+        93,
+        259,
+        106
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "AutoCAD",
+      "box": [
+        262,
+        93,
+        327,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        330,
+        93,
+        353,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Revit",
+      "box": [
+        356,
+        93,
+        388,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        391,
+        93,
+        452,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Word,",
+      "box": [
+        455,
+        93,
+        496,
+        106
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Excel",
+      "box": [
+        499,
+        93,
+        534,
+        106
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "and",
+      "box": [
+        537,
+        93,
+        559,
+        106
+      ],
+      "label": "O"
+    },
+    {
+      "text": "PowerPoint",
+      "box": [
+        563,
+        93,
+        635,
+        106
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Professional",
+      "box": [
+        55,
+        109,
+        131,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Experience",
+      "box": [
+        133,
+        109,
+        201,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Aug",
+      "box": [
+        55,
+        124,
+        82,
+        137
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2006",
+      "box": [
+        85,
+        124,
+        118,
+        137
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        121,
+        124,
+        134,
+        137
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Current",
+      "box": [
+        137,
+        124,
+        184,
+        137
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Castle",
+      "box": [
+        96,
+        149,
+        135,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Inspection",
+      "box": [
+        138,
+        149,
+        202,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Service",
+      "box": [
+        205,
+        149,
+        251,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Oregon",
+      "box": [
+        254,
+        149,
+        302,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        305,
+        149,
+        327,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "California",
+      "box": [
+        331,
+        149,
+        390,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "High",
+      "box": [
+        393,
+        149,
+        423,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Value",
+      "box": [
+        426,
+        149,
+        462,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Residential",
+      "box": [
+        465,
+        149,
+        532,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Insurance",
+      "box": [
+        535,
+        149,
+        594,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Appraiser",
+      "box": [
+        597,
+        149,
+        658,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Appraise",
+      "box": [
+        662,
+        149,
+        718,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "high",
+      "box": [
+        721,
+        149,
+        747,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "value",
+      "box": [
+        749,
+        149,
+        781,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "homes",
+      "box": [
+        785,
+        149,
+        825,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        828,
+        149,
+        840,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Oregon",
+      "box": [
+        842,
+        149,
+        890,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        893,
+        149,
+        915,
+        163
+      ],
+      "label": "O"
+    },
+    {
+      "text": "California",
+      "box": [
+        96,
+        163,
+        155,
+        177
+      ],
+      "label": "O"
+    },
+    {
+      "text": "for",
+      "box": [
+        158,
+        163,
+        176,
+        177
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        180,
+        163,
+        187,
+        177
+      ],
+      "label": "O"
+    },
+    {
+      "text": "replacement",
+      "box": [
+        191,
+        163,
+        265,
+        177
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cost.",
+      "box": [
+        268,
+        163,
+        298,
+        177
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Construction",
+      "box": [
+        55,
+        189,
+        135,
+        203
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jul",
+      "box": [
+        137,
+        189,
+        155,
+        203
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2005",
+      "box": [
+        157,
+        189,
+        190,
+        203
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        194,
+        189,
+        206,
+        203
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        210,
+        189,
+        232,
+        203
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2006",
+      "box": [
+        234,
+        189,
+        267,
+        203
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        203,
+        117,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        203,
+        157,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        160,
+        203,
+        176,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        180,
+        203,
+        206,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        209,
+        203,
+        213,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        217,
+        203,
+        249,
+        217
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Extensive",
+      "box": [
+        96,
+        229,
+        154,
+        243
+      ],
+      "label": "O"
+    },
+    {
+      "text": "remodeling",
+      "box": [
+        157,
+        229,
+        226,
+        243
+      ],
+      "label": "O"
+    },
+    {
+      "text": "project.",
+      "box": [
+        228,
+        229,
+        276,
+        243
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Nov",
+      "box": [
+        55,
+        255,
+        84,
+        268
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2004",
+      "box": [
+        87,
+        255,
+        120,
+        268
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        269,
+        117,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        269,
+        157,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        160,
+        269,
+        176,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        180,
+        269,
+        206,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        209,
+        269,
+        213,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        217,
+        269,
+        249,
+        282
+      ],
+      "label": "O"
+    },
+    {
+      "text": "internship",
+      "box": [
+        96,
+        295,
+        154,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "supporting",
+      "box": [
+        157,
+        295,
+        222,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interior",
+      "box": [
+        225,
+        295,
+        268,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "design/project",
+      "box": [
+        271,
+        295,
+        358,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "teams,",
+      "box": [
+        361,
+        295,
+        401,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "researching",
+      "box": [
+        404,
+        295,
+        475,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "materials,",
+      "box": [
+        477,
+        295,
+        535,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        539,
+        295,
+        561,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "organizing",
+      "box": [
+        565,
+        295,
+        627,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        629,
+        295,
+        648,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "materials",
+      "box": [
+        652,
+        295,
+        706,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "resource",
+      "box": [
+        709,
+        295,
+        762,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "library.",
+      "box": [
+        766,
+        295,
+        808,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Accounts",
+      "box": [
+        55,
+        320,
+        114,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Payable",
+      "box": [
+        117,
+        320,
+        166,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Assistant",
+      "box": [
+        169,
+        320,
+        225,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        228,
+        320,
+        250,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1999",
+      "box": [
+        252,
+        320,
+        285,
+        334
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "to",
+      "box": [
+        288,
+        320,
+        301,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jan",
+      "box": [
+        305,
+        320,
+        326,
+        334
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2000",
+      "box": [
+        329,
+        320,
+        362,
+        334
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Company",
+      "box": [
+        55,
+        335,
+        117,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        119,
+        335,
+        157,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        160,
+        335,
+        176,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        180,
+        335,
+        206,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        209,
+        335,
+        213,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        217,
+        335,
+        249,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Handling",
+      "box": [
+        96,
+        360,
+        151,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "petty",
+      "box": [
+        153,
+        360,
+        185,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cash,",
+      "box": [
+        188,
+        360,
+        219,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        223,
+        360,
+        250,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "entry,",
+      "box": [
+        253,
+        360,
+        288,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "payroll",
+      "box": [
+        292,
+        360,
+        335,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "distribution,",
+      "box": [
+        337,
+        360,
+        408,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        412,
+        360,
+        434,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "other",
+      "box": [
+        438,
+        360,
+        470,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "administrative",
+      "box": [
+        473,
+        360,
+        556,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "duties.",
+      "box": [
+        560,
+        360,
+        599,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Education",
+      "box": [
+        55,
+        386,
+        118,
+        399
+      ],
+      "label": "O"
+    },
+    {
+      "text": "BFA",
+      "box": [
+        55,
+        400,
+        87,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        90,
+        400,
+        94,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Product",
+      "box": [
+        98,
+        400,
+        147,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Design",
+      "box": [
+        150,
+        400,
+        193,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Present",
+      "box": [
+        196,
+        400,
+        242,
+        414
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "University",
+      "box": [
+        245,
+        400,
+        307,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        310,
+        400,
+        323,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Oregon",
+      "box": [
+        326,
+        400,
+        374,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        376,
+        400,
+        392,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        395,
+        400,
+        422,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        425,
+        400,
+        429,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        433,
+        400,
+        465,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Product",
+      "box": [
+        468,
+        400,
+        517,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Design",
+      "box": [
+        520,
+        400,
+        563,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Bachelor",
+      "box": [
+        55,
+        414,
+        111,
+        428
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "of",
+      "box": [
+        114,
+        414,
+        128,
+        428
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Interior",
+      "box": [
+        130,
+        414,
+        175,
+        428
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Architecture",
+      "box": [
+        179,
+        414,
+        254,
+        428
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": ",",
+      "box": [
+        257,
+        414,
+        262,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Business",
+      "box": [
+        265,
+        414,
+        318,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administration",
+      "box": [
+        322,
+        414,
+        411,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2005",
+      "box": [
+        414,
+        414,
+        446,
+        428
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "University",
+      "box": [
+        450,
+        414,
+        512,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        514,
+        414,
+        528,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Oregon",
+      "box": [
+        531,
+        414,
+        579,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        581,
+        414,
+        597,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        600,
+        414,
+        627,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        629,
+        414,
+        634,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        637,
+        414,
+        669,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Business",
+      "box": [
+        673,
+        414,
+        726,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Administration",
+      "box": [
+        729,
+        414,
+        819,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Undeclared",
+      "box": [
+        55,
+        429,
+        127,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2003",
+      "box": [
+        130,
+        429,
+        163,
+        442
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "1999",
+      "box": [
+        166,
+        429,
+        199,
+        442
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "University",
+      "box": [
+        203,
+        429,
+        265,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        267,
+        429,
+        281,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Washington",
+      "box": [
+        283,
+        429,
+        357,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ï¼​",
+      "box": [
+        359,
+        429,
+        375,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "City",
+      "box": [
+        378,
+        429,
+        405,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",",
+      "box": [
+        407,
+        429,
+        412,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "State",
+      "box": [
+        416,
+        429,
+        447,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Undeclared",
+      "box": [
+        451,
+        429,
+        522,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Objects",
+      "box": [
+        526,
+        429,
+        575,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        578,
+        429,
+        601,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Impacts",
+      "box": [
+        604,
+        429,
+        653,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Digital",
+      "box": [
+        657,
+        429,
+        697,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Illustration",
+      "box": [
+        699,
+        429,
+        763,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Interior",
+      "box": [
+        766,
+        429,
+        811,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Construction",
+      "box": [
+        814,
+        429,
+        893,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Elements",
+      "box": [
+        55,
+        443,
+        111,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Furniture",
+      "box": [
+        114,
+        443,
+        169,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theory",
+      "box": [
+        172,
+        443,
+        217,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        220,
+        443,
+        243,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Analysis",
+      "box": [
+        246,
+        443,
+        297,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Color",
+      "box": [
+        301,
+        443,
+        337,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Theory",
+      "box": [
+        340,
+        443,
+        385,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        387,
+        443,
+        410,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Application",
+      "box": [
+        414,
+        443,
+        485,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rome",
+      "box": [
+        487,
+        443,
+        524,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Program",
+      "box": [
+        528,
+        443,
+        582,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Skills",
+      "box": [
+        55,
+        457,
+        88,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "administrative",
+      "box": [
+        55,
+        471,
+        139,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "duties,",
+      "box": [
+        142,
+        471,
+        182,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Adobe",
+      "box": [
+        186,
+        471,
+        229,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Photoshop,",
+      "box": [
+        232,
+        471,
+        302,
+        485
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "AutoCAD,",
+      "box": [
+        306,
+        471,
+        373,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Color,",
+      "box": [
+        377,
+        471,
+        417,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "data",
+      "box": [
+        421,
+        471,
+        447,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "entry,",
+      "box": [
+        451,
+        471,
+        485,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Digital",
+      "box": [
+        489,
+        471,
+        529,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Illustration,",
+      "box": [
+        532,
+        471,
+        598,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Illustrator,",
+      "box": [
+        602,
+        471,
+        664,
+        485
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Inspection,",
+      "box": [
+        668,
+        471,
+        735,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Insurance,",
+      "box": [
+        738,
+        471,
+        801,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "interior",
+      "box": [
+        805,
+        471,
+        848,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "design,",
+      "box": [
+        851,
+        471,
+        894,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "materials,",
+      "box": [
+        55,
+        486,
+        113,
+        499
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Excel,",
+      "box": [
+        117,
+        486,
+        155,
+        499
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "PowerPoint,",
+      "box": [
+        158,
+        486,
+        234,
+        499
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "Microsoft",
+      "box": [
+        238,
+        486,
+        298,
+        499
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Word,",
+      "box": [
+        302,
+        486,
+        342,
+        499
+      ],
+      "label": "B-SKILL"
+    },
+    {
+      "text": "organizing,",
+      "box": [
+        346,
+        486,
+        411,
+        499
+      ],
+      "label": "O"
+    },
+    {
+      "text": "payroll,",
+      "box": [
+        415,
+        486,
+        460,
+        499
+      ],
+      "label": "O"
+    },
+    {
+      "text": "researching,",
+      "box": [
+        464,
+        486,
+        537,
+        499
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Revit",
+      "box": [
+        541,
+        486,
+        573,
+        499
+      ],
+      "label": "O"
+    }
+  ]
+}

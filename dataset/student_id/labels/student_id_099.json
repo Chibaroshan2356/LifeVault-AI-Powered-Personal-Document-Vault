@@ -1,0 +1,42 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_099.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Name: Laura Torres",
+      "box": [
+        45,
+        326,
+        545,
+        382
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "University: University of Cambridge",
+      "box": [
+        40,
+        415,
+        956,
+        495
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Expiration: 19-03-2025",
+      "box": [
+        43,
+        525,
+        639,
+        592
+      ],
+      "label": "I-ORGANIZATION"
+    }
+  ]
+}

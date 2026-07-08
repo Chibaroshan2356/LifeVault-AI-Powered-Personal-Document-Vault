@@ -1,0 +1,27 @@
+{
+  "document_metadata": {
+    "category": "Resume",
+    "holder_name": "Chiba Roshan A",
+    "email": "chibaroshan@example.com",
+    "phone": "+91 9876543210",
+    "skills": ["Python", "JavaScript", "React"],
+    "education": [
+      {
+        "institution": "Kongu Engineering College",
+        "degree": "B.Tech IT",
+        "year": "2027"
+      }
+    ]
+  },
+  "image_filename": "sample.png",
+  "image_dimensions": [800, 1000],
+  "words": [
+    { "text": "CHIBA", "box": [50, 50, 150, 75], "label": "B-HOLDER_NAME" },
+    { "text": "ROSHAN", "box": [160, 50, 280, 75], "label": "I-HOLDER_NAME" },
+    { "text": "A", "box": [290, 50, 310, 75], "label": "I-HOLDER_NAME" },
+    { "text": "chibaroshan@example.com", "box": [50, 90, 300, 110], "label": "B-EMAIL" },
+    { "text": "Skills:", "box": [50, 140, 110, 160], "label": "O" },
+    { "text": "Python,", "box": [130, 140, 200, 160], "label": "B-SKILL" },
+    { "text": "JavaScript", "box": [210, 140, 310, 160], "label": "B-SKILL" }
+  ]
+}

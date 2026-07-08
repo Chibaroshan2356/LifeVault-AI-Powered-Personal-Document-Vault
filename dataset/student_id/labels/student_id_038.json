@@ -1,0 +1,182 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_038.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "1",
+      "box": [
+        239,
+        220,
+        309,
+        518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tadid Ounisere",
+      "box": [
+        403,
+        375,
+        710,
+        470
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ECO",
+      "box": [
+        523,
+        479,
+        607,
+        510
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "2016481653",
+      "box": [
+        421,
+        518,
+        703,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        237,
+        514,
+        307,
+        696
+      ],
+      "label": "O"
+    },
+    {
+      "text": "This curd is the property of",
+      "box": [
+        321,
+        575,
+        712,
+        618
+      ],
+      "label": "O"
+    },
+    {
+      "text": "North South University",
+      "box": [
+        320,
+        609,
+        784,
+        670
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Plot;45 , Block: B, Bashundhara",
+      "box": [
+        321,
+        659,
+        768,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dhaka-[229 , Bangladesh:",
+      "box": [
+        318,
+        693,
+        687,
+        737
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Pleise retur (0 the abore",
+      "box": [
+        323,
+        735,
+        692,
+        767
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        242,
+        689,
+        301,
+        882
+      ],
+      "label": "O"
+    },
+    {
+      "text": "address or call:",
+      "box": [
+        318,
+        765,
+        546,
+        803
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8rn 2 506424u",
+      "box": [
+        564,
+        770,
+        773,
+        801
+      ],
+      "label": "O"
+    },
+    {
+      "text": "44",
+      "box": [
+        589,
+        832,
+        734,
+        892
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Authorized>enalut",
+      "box": [
+        504,
+        907,
+        776,
+        939
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ccnncd",
+      "box": [
+        640,
+        975,
+        700,
+        987
+      ],
+      "label": "O"
+    },
+    {
+      "text": "hy ( amScani r",
+      "box": [
+        701,
+        973,
+        817,
+        995
+      ],
+      "label": "O"
+    }
+  ]
+}

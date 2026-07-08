@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_091.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Universityof Dhaka",
+      "box": [
+        25,
+        328,
+        204,
+        360
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Mr Lisa Walsh",
+      "box": [
+        23,
+        439,
+        157,
+        464
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "ID 88 149134 _",
+      "box": [
+        17,
+        545,
+        148,
+        570
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Expily Dile: Valid Ihrough O5ih Auguin 2025",
+      "box": [
+        14,
+        654,
+        426,
+        682
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "%X",
+      "box": [
+        607,
+        939,
+        732,
+        998
+      ],
+      "label": "O"
+    },
+    {
+      "text": "M^",
+      "box": [
+        764,
+        920,
+        857,
+        985
+      ],
+      "label": "O"
+    }
+  ]
+}

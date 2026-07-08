@@ -1,0 +1,112 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_086.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Cor",
+      "box": [
+        26,
+        339,
+        64,
+        364
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "23rd",
+      "box": [
+        204,
+        598,
+        254,
+        626
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2023",
+      "box": [
+        295,
+        610,
+        351,
+        642
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Technological",
+      "box": [
+        37,
+        218,
+        396,
+        351
+      ],
+      "label": "O"
+    },
+    {
+      "text": "University",
+      "box": [
+        381,
+        271,
+        654,
+        390
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Dublin",
+      "box": [
+        639,
+        320,
+        817,
+        406
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "'73376499",
+      "box": [
+        14,
+        443,
+        128,
+        493
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dale",
+      "box": [
+        22,
+        565,
+        76,
+        601
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Validirdiouah",
+      "box": [
+        70,
+        572,
+        210,
+        624
+      ],
+      "label": "O"
+    },
+    {
+      "text": "July",
+      "box": [
+        247,
+        603,
+        304,
+        638
+      ],
+      "label": "O"
+    }
+  ]
+}

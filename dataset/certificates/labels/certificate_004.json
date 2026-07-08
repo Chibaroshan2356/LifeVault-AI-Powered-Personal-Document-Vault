@@ -1,0 +1,1272 @@
+{
+  "document_metadata": {
+    "category": "Certificate"
+  },
+  "image_filename": "certificate_004.png",
+  "image_dimensions": [
+    792,
+    612
+  ],
+  "words": [
+    {
+      "text": "Mar",
+      "box": [
+        99,
+        300,
+        122,
+        318
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "9,",
+      "box": [
+        127,
+        300,
+        137,
+        318
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2025",
+      "box": [
+        142,
+        300,
+        166,
+        318
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "CHIBA",
+      "box": [
+        99,
+        335,
+        202,
+        387
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ROSHAN",
+      "box": [
+        215,
+        335,
+        353,
+        387
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "A",
+      "box": [
+        366,
+        335,
+        387,
+        387
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Getting",
+      "box": [
+        99,
+        448,
+        163,
+        477
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Started",
+      "box": [
+        169,
+        448,
+        232,
+        477
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "with",
+      "box": [
+        239,
+        448,
+        277,
+        477
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Data",
+      "box": [
+        283,
+        448,
+        323,
+        477
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Analytics",
+      "box": [
+        329,
+        448,
+        409,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "on",
+      "box": [
+        416,
+        448,
+        437,
+        477
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AWS",
+      "box": [
+        443,
+        448,
+        482,
+        477
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "an",
+      "box": [
+        99,
+        495,
+        112,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "online",
+      "box": [
+        115,
+        495,
+        144,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "course",
+      "box": [
+        147,
+        495,
+        177,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "authorized",
+      "box": [
+        180,
+        495,
+        230,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "by",
+      "box": [
+        233,
+        495,
+        244,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Amazon",
+      "box": [
+        247,
+        495,
+        287,
+        513
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Web",
+      "box": [
+        290,
+        495,
+        310,
+        513
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Services",
+      "box": [
+        313,
+        495,
+        350,
+        513
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "and",
+      "box": [
+        353,
+        495,
+        371,
+        513
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "offered",
+      "box": [
+        374,
+        495,
+        407,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "through",
+      "box": [
+        410,
+        495,
+        448,
+        513
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coursera",
+      "box": [
+        451,
+        495,
+        493,
+        513
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "has",
+      "box": [
+        99,
+        410,
+        117,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "successfully",
+      "box": [
+        121,
+        410,
+        179,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "completed",
+      "box": [
+        183,
+        410,
+        234,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rafael",
+      "box": [
+        101,
+        766,
+        127,
+        782
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Lopes",
+      "box": [
+        129,
+        766,
+        153,
+        782
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Principal",
+      "box": [
+        101,
+        783,
+        140,
+        799
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Cloud",
+      "box": [
+        142,
+        783,
+        166,
+        799
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Technologist",
+      "box": [
+        169,
+        783,
+        221,
+        799
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "AWS",
+      "box": [
+        101,
+        800,
+        122,
+        816
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "Training",
+      "box": [
+        124,
+        800,
+        160,
+        816
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "&",
+      "box": [
+        162,
+        800,
+        168,
+        816
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "CertiÓcation",
+      "box": [
+        170,
+        800,
+        224,
+        816
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "Verify",
+      "box": [
+        888,
+        822,
+        921,
+        840
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at:",
+      "box": [
+        926,
+        822,
+        940,
+        840
+      ],
+      "label": "O"
+    },
+    {
+      "text": "https://coursera.org/verify/W3CUJ640K0NB",
+      "box": [
+        693,
+        838,
+        940,
+        856
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Cou",
+      "box": [
+        638,
+        863,
+        655,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rsera",
+      "box": [
+        657,
+        863,
+        681,
+        878
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "h",
+      "box": [
+        685,
+        863,
+        690,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "as",
+      "box": [
+        691,
+        863,
+        701,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "con",
+      "box": [
+        704,
+        863,
+        720,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "firmed",
+      "box": [
+        721,
+        863,
+        752,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "th",
+      "box": [
+        756,
+        863,
+        765,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "e",
+      "box": [
+        767,
+        863,
+        771,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "id",
+      "box": [
+        775,
+        863,
+        783,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "en",
+      "box": [
+        784,
+        863,
+        795,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tity",
+      "box": [
+        797,
+        863,
+        811,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        815,
+        863,
+        824,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "th",
+      "box": [
+        828,
+        863,
+        837,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "is",
+      "box": [
+        838,
+        863,
+        845,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        848,
+        863,
+        856,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d",
+      "box": [
+        858,
+        863,
+        863,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "iv",
+      "box": [
+        864,
+        863,
+        871,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "id",
+      "box": [
+        873,
+        863,
+        881,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "u",
+      "box": [
+        882,
+        863,
+        887,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "al",
+      "box": [
+        889,
+        863,
+        896,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "an",
+      "box": [
+        900,
+        863,
+        911,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "d",
+      "box": [
+        912,
+        863,
+        917,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "th",
+      "box": [
+        921,
+        863,
+        930,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "eir",
+      "box": [
+        932,
+        863,
+        944,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "p",
+      "box": [
+        814,
+        879,
+        820,
+        894
+      ],
+      "label": "O"
+    },
+    {
+      "text": "articip",
+      "box": [
+        821,
+        879,
+        851,
+        894
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ation",
+      "box": [
+        852,
+        879,
+        875,
+        894
+      ],
+      "label": "O"
+    },
+    {
+      "text": "in",
+      "box": [
+        879,
+        879,
+        887,
+        894
+      ],
+      "label": "O"
+    },
+    {
+      "text": "th",
+      "box": [
+        891,
+        879,
+        900,
+        894
+      ],
+      "label": "O"
+    },
+    {
+      "text": "e",
+      "box": [
+        902,
+        879,
+        907,
+        894
+      ],
+      "label": "O"
+    },
+    {
+      "text": "cou",
+      "box": [
+        910,
+        879,
+        926,
+        894
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rse.",
+      "box": [
+        927,
+        879,
+        944,
+        894
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "This",
+      "box": [
+        39,
+        918,
+        57,
+        934
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "certiÓcate",
+      "box": [
+        59,
+        918,
+        102,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "attests",
+      "box": [
+        104,
+        918,
+        133,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "to",
+      "box": [
+        135,
+        918,
+        144,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "the",
+      "box": [
+        145,
+        918,
+        159,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learner’s",
+      "box": [
+        161,
+        918,
+        197,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "completion",
+      "box": [
+        198,
+        918,
+        247,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "of",
+      "box": [
+        248,
+        918,
+        256,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "an",
+      "box": [
+        258,
+        918,
+        268,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "online",
+      "box": [
+        270,
+        918,
+        296,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "course",
+      "box": [
+        299,
+        918,
+        326,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "/",
+      "box": [
+        328,
+        918,
+        331,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "project",
+      "box": [
+        334,
+        918,
+        363,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "delivered",
+      "box": [
+        366,
+        918,
+        405,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "via",
+      "box": [
+        407,
+        918,
+        420,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Coursera.",
+      "box": [
+        422,
+        918,
+        461,
+        934
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "It",
+      "box": [
+        462,
+        918,
+        469,
+        934
+      ],
+      "label": "I-ORGANIZATION"
+    },
+    {
+      "text": "does",
+      "box": [
+        471,
+        918,
+        490,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "not",
+      "box": [
+        492,
+        918,
+        505,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "constitute",
+      "box": [
+        508,
+        918,
+        551,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "formal",
+      "box": [
+        553,
+        918,
+        581,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "enrollment",
+      "box": [
+        583,
+        918,
+        630,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at",
+      "box": [
+        632,
+        918,
+        640,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "any",
+      "box": [
+        642,
+        918,
+        658,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "university",
+      "box": [
+        659,
+        918,
+        702,
+        934
+      ],
+      "label": "B-ORGANIZATION"
+    },
+    {
+      "text": "or",
+      "box": [
+        704,
+        918,
+        713,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "entity",
+      "box": [
+        714,
+        918,
+        740,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "and",
+      "box": [
+        742,
+        918,
+        757,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "does",
+      "box": [
+        760,
+        918,
+        779,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "not",
+      "box": [
+        781,
+        918,
+        794,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "itself",
+      "box": [
+        797,
+        918,
+        818,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grant",
+      "box": [
+        819,
+        918,
+        842,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "academic",
+      "box": [
+        844,
+        918,
+        884,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "credit,",
+      "box": [
+        887,
+        918,
+        914,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "grades,",
+      "box": [
+        916,
+        918,
+        946,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "or",
+      "box": [
+        947,
+        918,
+        956,
+        934
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a",
+      "box": [
+        231,
+        935,
+        236,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "degree.",
+      "box": [
+        237,
+        935,
+        268,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Institutions",
+      "box": [
+        270,
+        935,
+        319,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "or",
+      "box": [
+        321,
+        935,
+        330,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "organizations",
+      "box": [
+        331,
+        935,
+        388,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "may,",
+      "box": [
+        390,
+        935,
+        409,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "at",
+      "box": [
+        411,
+        935,
+        419,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "their",
+      "box": [
+        421,
+        935,
+        442,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "discretion,",
+      "box": [
+        444,
+        935,
+        489,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "recognize",
+      "box": [
+        490,
+        935,
+        531,
+        951
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "this",
+      "box": [
+        533,
+        935,
+        549,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "learning",
+      "box": [
+        551,
+        935,
+        586,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "toward",
+      "box": [
+        588,
+        935,
+        618,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "their",
+      "box": [
+        620,
+        935,
+        641,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "own",
+      "box": [
+        643,
+        935,
+        661,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "programs",
+      "box": [
+        663,
+        935,
+        703,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "or",
+      "box": [
+        704,
+        935,
+        713,
+        951
+      ],
+      "label": "O"
+    },
+    {
+      "text": "credentials.",
+      "box": [
+        715,
+        935,
+        764,
+        951
+      ],
+      "label": "O"
+    }
+  ]
+}

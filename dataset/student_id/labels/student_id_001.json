@@ -1,0 +1,112 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_001.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "STUDENT",
+      "box": [
+        167,
+        289,
+        340,
+        332
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "GRADUATE",
+      "box": [
+        165,
+        325,
+        384,
+        365
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "TAUGHT",
+      "box": [
+        404,
+        325,
+        567,
+        365
+      ],
+      "label": "I-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "UC",
+      "box": [
+        657,
+        323,
+        798,
+        382
+      ],
+      "label": "I-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "Kieran Andrew",
+      "box": [
+        159,
+        389,
+        448,
+        445
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Young",
+      "box": [
+        157,
+        439,
+        287,
+        487
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dept of Space & Climate Physics",
+      "box": [
+        146,
+        570,
+        631,
+        618
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SN:",
+      "box": [
+        146,
+        618,
+        209,
+        659
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UPI:e",
+      "box": [
+        143,
+        668,
+        212,
+        706
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Expires: 23-SEP-2023",
+      "box": [
+        356,
+        668,
+        654,
+        709
+      ],
+      "label": "O"
+    }
+  ]
+}

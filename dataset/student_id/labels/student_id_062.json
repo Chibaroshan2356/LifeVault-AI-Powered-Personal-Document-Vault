@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_062.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "Carnegie Mellon Universily",
+      "box": [
+        57,
+        60,
+        314,
+        85
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Scolt",
+      "box": [
+        57,
+        232,
+        107,
+        254
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "ID 79879837",
+      "box": [
+        54,
+        401,
+        182,
+        426
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Expiry Date: Expires: November 2023",
+      "box": [
+        54,
+        573,
+        951,
+        639
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "nhnd_l",
+      "box": [
+        654,
+        889,
+        928,
+        985
+      ],
+      "label": "O"
+    }
+  ]
+}

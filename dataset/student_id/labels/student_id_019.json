@@ -1,0 +1,112 @@
+{
+  "document_metadata": {
+    "category": "Student ID"
+  },
+  "image_filename": "student_id_019.png",
+  "image_dimensions": [
+    640,
+    640
+  ],
+  "words": [
+    {
+      "text": "HARVARD",
+      "box": [
+        429,
+        239,
+        943,
+        351
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "U NTV E R $ [ T Y",
+      "box": [
+        437,
+        326,
+        932,
+        387
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "STUDENT",
+      "box": [
+        504,
+        417,
+        853,
+        501
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "06/13/70",
+      "box": [
+        593,
+        537,
+        770,
+        593
+      ],
+      "label": "B-ISSUE_DATE"
+    },
+    {
+      "text": "Vee:",
+      "box": [
+        125,
+        596,
+        243,
+        640
+      ],
+      "label": "O"
+    },
+    {
+      "text": "codc",
+      "box": [
+        260,
+        592,
+        407,
+        639
+      ],
+      "label": "O"
+    },
+    {
+      "text": "40- 56 =",
+      "box": [
+        75,
+        640,
+        306,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "33",
+      "box": [
+        443,
+        637,
+        503,
+        678
+      ],
+      "label": "O"
+    },
+    {
+      "text": "0430fse",
+      "box": [
+        668,
+        628,
+        904,
+        684
+      ],
+      "label": "O"
+    },
+    {
+      "text": "COLLEGE",
+      "box": [
+        659,
+        698,
+        939,
+        768
+      ],
+      "label": "B-ORGANIZATION"
+    }
+  ]
+}
