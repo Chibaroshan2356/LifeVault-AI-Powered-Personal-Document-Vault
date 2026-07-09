@@ -1,0 +1,182 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_008.png",
+  "image_dimensions": [
+    653,
+    1160
+  ],
+  "words": [
+    {
+      "text": "mTa @frz 4uG 4eTOT",
+      "box": [
+        301,
+        285,
+        604,
+        300
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Unique Idenlllicalion Authority of India",
+      "box": [
+        300,
+        300,
+        702,
+        317
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Gda",
+      "box": [
+        171,
+        322,
+        205,
+        329
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "S0: #tl, 277/63,&1-11, 67u-2, Eerre",
+      "box": [
+        169,
+        328,
+        555,
+        342
+      ],
+      "label": "O"
+    },
+    {
+      "text": "121001",
+      "box": [
+        234,
+        350,
+        301,
+        364
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Address-",
+      "box": [
+        169,
+        369,
+        249,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "S0: Narender Gera, 2F/63, Ward-11, NH-2,",
+      "box": [
+        169,
+        378,
+        537,
+        394
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fandabad, Fardabad,",
+      "box": [
+        169,
+        392,
+        353,
+        404
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Haryana",
+      "box": [
+        168,
+        400,
+        243,
+        417
+      ],
+      "label": "O"
+    },
+    {
+      "text": "121001",
+      "box": [
+        255,
+        402,
+        320,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2637 4125 5075",
+      "box": [
+        370,
+        468,
+        609,
+        491
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        372,
+        492,
+        411,
+        506
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9175, 9462,3982 1397",
+      "box": [
+        421,
+        492,
+        632,
+        506
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1947",
+      "box": [
+        234,
+        511,
+        283,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "helptuldaldovin",
+      "box": [
+        393,
+        511,
+        568,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "tttauca",
+      "box": [
+        649,
+        512,
+        753,
+        518
+      ],
+      "label": "O"
+    },
+    {
+      "text": "@edn",
+      "box": [
+        753,
+        510,
+        816,
+        521
+      ],
+      "label": "O"
+    }
+  ]
+}

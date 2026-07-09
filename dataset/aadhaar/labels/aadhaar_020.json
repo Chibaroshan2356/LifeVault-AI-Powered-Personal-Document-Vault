@@ -1,0 +1,142 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_020.png",
+  "image_dimensions": [
+    1080,
+    1598
+  ],
+  "words": [
+    {
+      "text": "HRTHenT",
+      "box": [
+        387,
+        320,
+        595,
+        345
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Government of India",
+      "box": [
+        321,
+        351,
+        663,
+        377
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "facrar Huttr",
+      "box": [
+        275,
+        386,
+        456,
+        418
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Dilkhush Meena",
+      "box": [
+        278,
+        418,
+        493,
+        443
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3H 44 / Year of Birth",
+      "box": [
+        276,
+        442,
+        578,
+        468
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1998",
+      "box": [
+        596,
+        446,
+        666,
+        466
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "5q",
+      "box": [
+        276,
+        473,
+        338,
+        499
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Male",
+      "box": [
+        353,
+        474,
+        422,
+        494
+      ],
+      "label": "B-GENDER"
+    },
+    {
+      "text": "6321",
+      "box": [
+        288,
+        635,
+        405,
+        669
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "8481",
+      "box": [
+        427,
+        635,
+        544,
+        670
+      ],
+      "label": "I-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "2058",
+      "box": [
+        567,
+        637,
+        691,
+        672
+      ],
+      "label": "I-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "HTER",
+      "box": [
+        9,
+        680,
+        195,
+        729
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HH3q4 &T3fdK",
+      "box": [
+        261,
+        681,
+        983,
+        742
+      ],
+      "label": "O"
+    }
+  ]
+}

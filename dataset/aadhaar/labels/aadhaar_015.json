@@ -1,0 +1,172 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_015.png",
+  "image_dimensions": [
+    1692,
+    1269
+  ],
+  "words": [
+    {
+      "text": "ZatEA",
+      "box": [
+        631,
+        109,
+        741,
+        137
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3;",
+      "box": [
+        745,
+        206,
+        802,
+        235
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Giovanned@Lidas",
+      "box": [
+        345,
+        212,
+        653,
+        261
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Rraranb",
+      "box": [
+        346,
+        278,
+        433,
+        322
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Shivabai",
+      "box": [
+        350,
+        323,
+        443,
+        358
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "JaA FfU / DOB",
+      "box": [
+        347,
+        368,
+        530,
+        409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "06/05/1958",
+      "box": [
+        536,
+        354,
+        657,
+        411
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "Aiam",
+      "box": [
+        348,
+        412,
+        419,
+        453
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Female",
+      "box": [
+        429,
+        415,
+        510,
+        449
+      ],
+      "label": "B-GENDER"
+    },
+    {
+      "text": "5947 1158 3638_",
+      "box": [
+        342,
+        595,
+        645,
+        667
+      ],
+      "label": "O"
+    },
+    {
+      "text": "30UT",
+      "box": [
+        166,
+        710,
+        315,
+        785
+      ],
+      "label": "O"
+    },
+    {
+      "text": "G",
+      "box": [
+        327,
+        732,
+        346,
+        751
+      ],
+      "label": "O"
+    },
+    {
+      "text": "31M",
+      "box": [
+        362,
+        698,
+        465,
+        768
+      ],
+      "label": "O"
+    },
+    {
+      "text": "31 3fu7T",
+      "box": [
+        624,
+        669,
+        865,
+        751
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Raana >7\"",
+      "box": [
+        516,
+        148,
+        694,
+        212
+      ],
+      "label": "O"
+    },
+    {
+      "text": "314d",
+      "box": [
+        476,
+        676,
+        614,
+        773
+      ],
+      "label": "O"
+    }
+  ]
+}

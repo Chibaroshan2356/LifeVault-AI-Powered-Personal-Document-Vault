@@ -1,0 +1,142 @@
+{
+  "document_metadata": {
+    "category": "PAN Card"
+  },
+  "image_filename": "pan_005.png",
+  "image_dimensions": [
+    578,
+    370
+  ],
+  "words": [
+    {
+      "text": "B1Zar] frntt",
+      "box": [
+        24,
+        37,
+        430,
+        148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HRT",
+      "box": [
+        626,
+        64,
+        771,
+        145
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ter",
+      "box": [
+        795,
+        64,
+        972,
+        135
+      ],
+      "label": "O"
+    },
+    {
+      "text": "INCOME TAX DEPARTMENT",
+      "box": [
+        17,
+        172,
+        429,
+        248
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "GOVT OF INDIA",
+      "box": [
+        633,
+        167,
+        972,
+        248
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "D MANIKANDAN",
+      "box": [
+        46,
+        267,
+        306,
+        321
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "DURAISAMY",
+      "box": [
+        41,
+        394,
+        242,
+        459
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "16/07/1986",
+      "box": [
+        41,
+        524,
+        224,
+        589
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "Parmanent Accouni Numbor",
+      "box": [
+        43,
+        608,
+        396,
+        651
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "BNZPM2SOIF",
+      "box": [
+        41,
+        643,
+        269,
+        713
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "mnakamalbv",
+      "box": [
+        117,
+        743,
+        408,
+        848
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "Signature",
+      "box": [
+        38,
+        881,
+        173,
+        945
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        946,
+        759,
+        974,
+        932
+      ],
+      "label": "O"
+    }
+  ]
+}

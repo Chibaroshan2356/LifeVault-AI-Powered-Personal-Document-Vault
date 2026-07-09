@@ -1,0 +1,72 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_018.png",
+  "image_dimensions": [
+    574,
+    154
+  ],
+  "words": [
+    {
+      "text": "Address:",
+      "box": [
+        8,
+        32,
+        273,
+        279
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DIO SANT PARSHAD UPPAL, WZ-171",
+      "box": [
+        0,
+        227,
+        942,
+        500
+      ],
+      "label": "B-ADDRESS"
+    },
+    {
+      "text": "M-7, FIRST FLOR, HARI NAGAR, Hari",
+      "box": [
+        0,
+        474,
+        935,
+        733
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "Nagar, South West Delhi;",
+      "box": [
+        0,
+        720,
+        604,
+        1000
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "Delhi",
+      "box": [
+        632,
+        707,
+        771,
+        941
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "110064",
+      "box": [
+        799,
+        694,
+        991,
+        941
+      ],
+      "label": "I-ADDRESS"
+    }
+  ]
+}

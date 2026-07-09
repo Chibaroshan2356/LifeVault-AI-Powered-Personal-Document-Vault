@@ -1,0 +1,242 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_019.png",
+  "image_dimensions": [
+    1024,
+    653
+  ],
+  "words": [
+    {
+      "text": "HRr fdRhez Yauiat wifererur",
+      "box": [
+        215,
+        10,
+        666,
+        78
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Unique Identification Authority of India",
+      "box": [
+        215,
+        87,
+        805,
+        154
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "DH",
+      "box": [
+        891,
+        124,
+        922,
+        154
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Y:",
+      "box": [
+        40,
+        240,
+        98,
+        304
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jo #Wr 347 , 41-9109",
+      "box": [
+        38,
+        286,
+        385,
+        381
+      ],
+      "label": "O"
+    },
+    {
+      "text": "W58 5ll; &i",
+      "box": [
+        437,
+        287,
+        609,
+        370
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        14,
+        300,
+        43,
+        511
+      ],
+      "label": "O"
+    },
+    {
+      "text": "#R & aR, H12 d2 /all,",
+      "box": [
+        38,
+        353,
+        403,
+        448
+      ],
+      "label": "O"
+    },
+    {
+      "text": "@aail - 110064",
+      "box": [
+        39,
+        422,
+        226,
+        506
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Address:",
+      "box": [
+        47,
+        506,
+        198,
+        568
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        14,
+        508,
+        44,
+        620
+      ],
+      "label": "B-ADDRESS"
+    },
+    {
+      "text": "DIO SANT PARSHAD UPPAL, WZ-171",
+      "box": [
+        41,
+        554,
+        573,
+        617
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "M-7 , FIRST FLOR, HARI NAGAR, Hari",
+      "box": [
+        41,
+        611,
+        569,
+        675
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "ZNagaFiBoUtFVOGst belRi; NeGm",
+      "box": [
+        9,
+        609,
+        479,
+        745
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "110064",
+      "box": [
+        493,
+        666,
+        598,
+        721
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "2926 7171 1723",
+      "box": [
+        127,
+        770,
+        346,
+        825
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        109,
+        817,
+        148,
+        857
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9134 2711 0491 7382",
+      "box": [
+        160,
+        814,
+        375,
+        857
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1947",
+      "box": [
+        123,
+        912,
+        193,
+        961
+      ],
+      "label": "O"
+    },
+    {
+      "text": "help@uidai gov.in",
+      "box": [
+        350,
+        898,
+        600,
+        960
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "wW:",
+      "box": [
+        714,
+        906,
+        792,
+        946
+      ],
+      "label": "O"
+    },
+    {
+      "text": "uidai gov.in",
+      "box": [
+        785,
+        891,
+        950,
+        955
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "4-0,",
+      "box": [
+        377,
+        298,
+        446,
+        376
+      ],
+      "label": "O"
+    }
+  ]
+}

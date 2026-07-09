@@ -1,0 +1,222 @@
+{
+  "document_metadata": {
+    "category": "PAN Card"
+  },
+  "image_filename": "pan_002.png",
+  "image_dimensions": [
+    1183,
+    749
+  ],
+  "words": [
+    {
+      "text": "3114asr]f&trt",
+      "box": [
+        24,
+        54,
+        413,
+        169
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HRT",
+      "box": [
+        608,
+        72,
+        746,
+        152
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TTR",
+      "box": [
+        772,
+        72,
+        950,
+        146
+      ],
+      "label": "O"
+    },
+    {
+      "text": "INCOME TAX DEPARTMENT",
+      "box": [
+        18,
+        166,
+        409,
+        240
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "GOVT OF INDIA",
+      "box": [
+        614,
+        156,
+        944,
+        236
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "TI4T T1 7GEHT &T8",
+      "box": [
+        270,
+        275,
+        581,
+        341
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Permanent Account Number Card",
+      "box": [
+        220,
+        343,
+        631,
+        396
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "BXAPCIOOOL",
+      "box": [
+        302,
+        416,
+        554,
+        475
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "At4",
+      "box": [
+        27,
+        579,
+        76,
+        614
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        89,
+        579,
+        153,
+        616
+      ],
+      "label": "O"
+    },
+    {
+      "text": "CHUNARA MANISH KANUBHAI",
+      "box": [
+        29,
+        618,
+        403,
+        666
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Tua #1 AT4",
+      "box": [
+        26,
+        696,
+        176,
+        750
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Father'$ Name",
+      "box": [
+        191,
+        707,
+        344,
+        750
+      ],
+      "label": "O"
+    },
+    {
+      "text": "KANUBHAI ISHWARBHAI CHUNARA",
+      "box": [
+        29,
+        751,
+        465,
+        799
+      ],
+      "label": "B-FATHER_NAME"
+    },
+    {
+      "text": "26082018",
+      "box": [
+        846,
+        777,
+        956,
+        819
+      ],
+      "label": "O"
+    },
+    {
+      "text": "37 31",
+      "box": [
+        30,
+        838,
+        126,
+        878
+      ],
+      "label": "O"
+    },
+    {
+      "text": "anra /",
+      "box": [
+        126,
+        827,
+        217,
+        885
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date ol Birth",
+      "box": [
+        30,
+        870,
+        160,
+        913
+      ],
+      "label": "O"
+    },
+    {
+      "text": "13/09/1996",
+      "box": [
+        30,
+        922,
+        168,
+        965
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "8771&4{ / Signature",
+      "box": [
+        332,
+        935,
+        540,
+        986
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MMudrish",
+      "box": [
+        371,
+        835,
+        508,
+        942
+      ],
+      "label": "O"
+    }
+  ]
+}

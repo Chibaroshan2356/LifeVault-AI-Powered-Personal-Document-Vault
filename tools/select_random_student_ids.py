@@ -6,8 +6,8 @@ copy/extract them to dataset/student_id/images/ with sequential renaming,
 and write the dataset/student_id/selected_files.csv manifest.
 
 Usage:
-    python tools/select_random_student_ids.py --source "C:\\Users\\Prathiksha\\Downloads\\archive (4).zip"
-    python tools/select_random_student_ids.py --source "C:\\Users\\Prathiksha\\Downloads\\archive (4).zip" --seed 42 --count 100
+    python tools/select_random_student_ids.py --source "D:\\LifeVault AI\\kiro\\LifeVault\\dataset\\student_id\\raw\\archive (7).zip"
+    python tools/select_random_student_ids.py --source "D:\\LifeVault AI\kiro\\LifeVault\\dataset\\student_id\\raw\\archive (7).zip" --seed 42 --count 100
 """
 
 import os

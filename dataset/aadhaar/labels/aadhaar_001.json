@@ -1,0 +1,192 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_001.png",
+  "image_dimensions": [
+    805,
+    381
+  ],
+  "words": [
+    {
+      "text": "G1o",
+      "box": [
+        431,
+        76,
+        495,
+        118
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FTFTA",
+      "box": [
+        505,
+        70,
+        587,
+        123
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Government of India",
+      "box": [
+        388,
+        118,
+        623,
+        194
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "7rTHI}4157",
+      "box": [
+        363,
+        212,
+        473,
+        254
+      ],
+      "label": "O"
+    },
+    {
+      "text": "NAJMA KHATUN",
+      "box": [
+        361,
+        259,
+        525,
+        312
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "344   %iralt",
+      "box": [
+        431,
+        317,
+        525,
+        370
+      ],
+      "label": "O"
+    },
+    {
+      "text": "fm1",
+      "box": [
+        532,
+        322,
+        575,
+        370
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Falher",
+      "box": [
+        363,
+        380,
+        428,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UMMAR ALI MIYA",
+      "box": [
+        438,
+        380,
+        607,
+        427
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ST TF",
+      "box": [
+        363,
+        443,
+        440,
+        485
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Year of Birth",
+      "box": [
+        453,
+        438,
+        567,
+        490
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1994",
+      "box": [
+        577,
+        438,
+        627,
+        490
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "4Ft",
+      "box": [
+        359,
+        496,
+        413,
+        548
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Female",
+      "box": [
+        423,
+        496,
+        498,
+        548
+      ],
+      "label": "B-GENDER"
+    },
+    {
+      "text": "4072 65233592",
+      "box": [
+        371,
+        732,
+        657,
+        826
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "@14Ta",
+      "box": [
+        180,
+        868,
+        309,
+        968
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HTHTaT  41CA wfw",
+      "box": [
+        372,
+        824,
+        827,
+        965
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Fol",
+      "box": [
+        360,
+        315,
+        409,
+        374
+      ],
+      "label": "O"
+    }
+  ]
+}

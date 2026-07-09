@@ -1,0 +1,162 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_010.png",
+  "image_dimensions": [
+    1600,
+    1020
+  ],
+  "words": [
+    {
+      "text": "HRT HER",
+      "box": [
+        345,
+        24,
+        532,
+        78
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Government of India",
+      "box": [
+        285,
+        86,
+        591,
+        148
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "378rr",
+      "box": [
+        870,
+        101,
+        949,
+        137
+      ],
+      "label": "O"
+    },
+    {
+      "text": "a 8q",
+      "box": [
+        335,
+        251,
+        453,
+        310
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        23,
+        261,
+        55,
+        472
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Drishti Uppal",
+      "box": [
+        335,
+        336,
+        550,
+        414
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "292871711723",
+      "box": [
+        886,
+        392,
+        972,
+        415
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "Jzfafr / DOB: 14/10/2002",
+      "box": [
+        333,
+        412,
+        761,
+        488
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8",
+      "box": [
+        25,
+        475,
+        52,
+        583
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HieaT / FEMALE",
+      "box": [
+        334,
+        510,
+        591,
+        569
+      ],
+      "label": "O"
+    },
+    {
+      "text": "!",
+      "box": [
+        28,
+        586,
+        53,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mobile No:: 9810823094",
+      "box": [
+        336,
+        595,
+        713,
+        658
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2926 7171 1723",
+      "box": [
+        330,
+        711,
+        700,
+        800
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID : 9134 2711 0491 7382",
+      "box": [
+        332,
+        794,
+        701,
+        852
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Hr 37UR , 4h 4aiat",
+      "box": [
+        267,
+        875,
+        763,
+        989
+      ],
+      "label": "O"
+    }
+  ]
+}

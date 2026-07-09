@@ -1,0 +1,232 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_017.png",
+  "image_dimensions": [
+    640,
+    408
+  ],
+  "words": [
+    {
+      "text": "HRd @aRIz",
+      "box": [
+        221,
+        29,
+        425,
+        88
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9RJT",
+      "box": [
+        432,
+        46,
+        517,
+        90
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Marrut",
+      "box": [
+        523,
+        29,
+        650,
+        98
+      ],
+      "label": "O"
+    },
+    {
+      "text": "'Unique Identification Authority of -India",
+      "box": [
+        214,
+        80,
+        785,
+        171
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "ARDHAAR",
+      "box": [
+        848,
+        139,
+        948,
+        174
+      ],
+      "label": "O"
+    },
+    {
+      "text": "\"lt",
+      "box": [
+        42,
+        174,
+        85,
+        208
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7at, 205/63, 93-11, 07-2, 4ieiaic,",
+      "box": [
+        96,
+        196,
+        582,
+        269
+      ],
+      "label": "O"
+    },
+    {
+      "text": "5rETIE",
+      "box": [
+        34,
+        240,
+        137,
+        299
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8h",
+      "box": [
+        39,
+        296,
+        110,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "121001",
+      "box": [
+        125,
+        284,
+        218,
+        343
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Address:",
+      "box": [
+        32,
+        355,
+        156,
+        419
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SIO: Narender Gera, 2FI63, Ward-11, NH-2,",
+      "box": [
+        34,
+        401,
+        556,
+        470
+      ],
+      "label": "B-ADDRESS"
+    },
+    {
+      "text": "Faridabad, Fardabad;",
+      "box": [
+        34,
+        441,
+        300,
+        512
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "Haryana",
+      "box": [
+        28,
+        482,
+        142,
+        556
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "121001",
+      "box": [
+        157,
+        492,
+        248,
+        541
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "2637 4125 5075",
+      "box": [
+        323,
+        767,
+        657,
+        855
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        318,
+        852,
+        375,
+        916
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9175,9462, 3902 1387",
+      "box": [
+        390,
+        852,
+        687,
+        916
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1047",
+      "box": [
+        129,
+        938,
+        195,
+        968
+      ],
+      "label": "O"
+    },
+    {
+      "text": "helpeuldoldoutn",
+      "box": [
+        353,
+        931,
+        598,
+        975
+      ],
+      "label": "O"
+    },
+    {
+      "text": "wwtr Uldal-aovln",
+      "box": [
+        710,
+        938,
+        939,
+        977
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SIO:",
+      "box": [
+        31,
+        191,
+        95,
+        256
+      ],
+      "label": "O"
+    }
+  ]
+}

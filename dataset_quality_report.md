@@ -1,6 +1,6 @@
 # LifeVault Dataset Quality Report
 
-> Generated: 2026-07-04 15:44:59
+> Generated: 2026-07-09 12:02:30
 > Tool: `training/validate_dataset.py`
 
 ---
@@ -9,10 +9,10 @@
 
 | Metric | Value |
 |--------|-------|
-| Total Annotation Files | 181 |
-| Valid Files (no errors) | 181 |
+| Total Annotation Files | 208 |
+| Valid Files (no errors) | 208 |
 | Files with Errors | 0 |
-| Total Tokens | 40281 |
+| Total Tokens | 40864 |
 | Dataset Readiness Score | **100.0%** |
 | Training Status | **✅ READY** |
 
@@ -27,8 +27,8 @@
 |----------|-------|--------|--------|
 | resume | 51 | 38574 | ✅ 0 |
 | passport | 1 | 8 | ✅ 0 |
-| pan | 1 | 8 | ✅ 0 |
-| aadhaar | 1 | 8 | ✅ 0 |
+| pan | 7 | 112 | ✅ 0 |
+| aadhaar | 22 | 487 | ✅ 0 |
 | student_id | 101 | 1075 | ✅ 0 |
 | certificates | 22 | 568 | ✅ 0 |
 | internship | 1 | 9 | ✅ 0 |
@@ -45,11 +45,15 @@ Counts the occurrences of each **B-** entity label (first token of each entity s
 | Entity Label | Count | Coverage |
 |-------------|-------|----------|
 | `B-ISSUE_DATE` | 419 | ████████████████████ |
+| `B-DOCUMENT_TITLE` | 179 | █████████ |
+| `B-HOLDER_NAME` | 158 | ████████ |
 | `B-SKILL` | 150 | ████████ |
-| `B-DOCUMENT_TITLE` | 142 | ███████ |
-| `B-HOLDER_NAME` | 136 | ███████ |
 | `B-ORGANIZATION` | 82 | ████ |
-| `B-DOCUMENT_NUMBER` | 12 | █ |
+| `B-DOCUMENT_NUMBER` | 40 | ██ |
+| `B-DATE_OF_BIRTH` | 9 | █ |
+| `B-GENDER` | 7 | █ |
+| `B-ADDRESS` | 7 | █ |
+| `B-FATHER_NAME` | 4 | █ |
 | `B-EXPIRY_DATE` | 3 | █ |
 | `B-EMAIL` | 1 | █ |
 | `B-NATIONALITY` | 1 | █ |
@@ -61,17 +65,22 @@ Counts the occurrences of each **B-** entity label (first token of each entity s
 
 | Label | Count |
 |-------|-------|
-| `O` | 38768 |
+| `O` | 39192 |
 | `B-ISSUE_DATE` | 419 |
-| `I-HOLDER_NAME` | 246 |
-| `I-DOCUMENT_TITLE` | 222 |
+| `I-HOLDER_NAME` | 251 |
+| `I-DOCUMENT_TITLE` | 229 |
+| `B-DOCUMENT_TITLE` | 179 |
+| `B-HOLDER_NAME` | 158 |
 | `B-SKILL` | 150 |
-| `B-DOCUMENT_TITLE` | 142 |
-| `B-HOLDER_NAME` | 136 |
 | `I-ORGANIZATION` | 88 |
 | `B-ORGANIZATION` | 82 |
-| `B-DOCUMENT_NUMBER` | 12 |
-| `I-DOCUMENT_NUMBER` | 4 |
+| `B-DOCUMENT_NUMBER` | 40 |
+| `I-ADDRESS` | 25 |
+| `I-DOCUMENT_NUMBER` | 12 |
+| `B-DATE_OF_BIRTH` | 9 |
+| `B-GENDER` | 7 |
+| `B-ADDRESS` | 7 |
+| `B-FATHER_NAME` | 4 |
 | `B-EXPIRY_DATE` | 3 |
 | `I-PROVIDER_NAME` | 2 |
 | `I-INSURANCE_COMPANY` | 2 |
@@ -87,8 +96,11 @@ Counts the occurrences of each **B-** entity label (first token of each entity s
 
 The following entity types have **B- tokens but no I- continuations** (all entities are single-token — this is normal for short fields):
 
+- `B-DATE_OF_BIRTH` (no matching `I-DATE_OF_BIRTH` found)
 - `B-EMAIL` (no matching `I-EMAIL` found)
 - `B-EXPIRY_DATE` (no matching `I-EXPIRY_DATE` found)
+- `B-FATHER_NAME` (no matching `I-FATHER_NAME` found)
+- `B-GENDER` (no matching `I-GENDER` found)
 - `B-ISSUE_DATE` (no matching `I-ISSUE_DATE` found)
 - `B-NATIONALITY` (no matching `I-NATIONALITY` found)
 - `B-SKILL` (no matching `I-SKILL` found)
