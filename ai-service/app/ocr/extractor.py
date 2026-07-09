@@ -35,15 +35,16 @@ def warmup_reader() -> None:
 
 
 
-def extract_text_from_images(images: List[Image.Image]) -> Tuple[str, float]:
+def extract_text_from_images(images: List[Image.Image]) -> Tuple[str, float, List[dict]]:
     """
     Run OCR on a list of PIL images.
-    Returns (full_text, mean_confidence).
+    Returns (full_text, mean_confidence, words_with_boxes).
     """
     start  = time.time()
     reader = _get_reader()
     all_text   = []
     confidences = []
+    words_with_boxes = []
 
     for i, img in enumerate(images):
         try:
@@ -54,10 +55,20 @@ def extract_text_from_images(images: List[Image.Image]) -> Tuple[str, float]:
 
             results = reader.readtext(buf.read(), detail=1, paragraph=False)
 
-            for (_bbox, text, conf) in results:
-                if text.strip():
-                    all_text.append(text.strip())
+            for (bbox, text, conf) in results:
+                text_clean = text.strip()
+                if text_clean:
+                    all_text.append(text_clean)
                     confidences.append(conf)
+                    
+                    # Convert EasyOCR 4-point box to [x0, y0, x1, y1] bounding box
+                    xs = [pt[0] for pt in bbox]
+                    ys = [pt[1] for pt in bbox]
+                    words_with_boxes.append({
+                        "text": text_clean,
+                        "box": [int(min(xs)), int(min(ys)), int(max(xs)), int(max(ys))],
+                        "page": i
+                    })
 
             logger.debug(f"Page {i+1}: extracted {len(results)} text regions")
 
@@ -69,31 +80,43 @@ def extract_text_from_images(images: List[Image.Image]) -> Tuple[str, float]:
     elapsed    = round(time.time() - start, 3)
 
     logger.info(f"OCR complete: {len(full_text)} chars, confidence={mean_conf}, time={elapsed}s")
-    return full_text, mean_conf
+    return full_text, mean_conf, words_with_boxes
 
 
-def extract_text_from_pdf_direct(pdf_bytes: bytes) -> Tuple[str, float]:
+def extract_text_from_pdf_direct(pdf_bytes: bytes) -> Tuple[str, float, List[dict]]:
     """
     Extract text directly from PDF (no OCR needed for text-based PDFs).
     Falls back to image OCR if no text found.
-    Returns (text, confidence) — confidence is 1.0 for direct extraction.
+    Returns (text, confidence, words_with_boxes).
     """
     try:
         import fitz
         doc   = fitz.open(stream=pdf_bytes, filetype="pdf")
         pages = []
-        for page in doc:
+        words_with_boxes = []
+        for page_num, page in enumerate(doc):
             text = page.get_text("text")
             if text.strip():
                 pages.append(text.strip())
+            
+            # Extract word-level tokens and boxes
+            for w in page.get_text("words"):
+                x0, y0, x1, y1, word = w[0], w[1], w[2], w[3], w[4]
+                word_clean = word.strip()
+                if word_clean:
+                    words_with_boxes.append({
+                        "text": word_clean,
+                        "box": [int(x0), int(y0), int(x1), int(y1)],
+                        "page": page_num
+                    })
         doc.close()
 
         if pages:
             full_text = "\n\n".join(pages)
             logger.info(f"PDF direct text extraction: {len(full_text)} chars")
-            return full_text, 1.0
+            return full_text, 1.0, words_with_boxes
 
     except Exception as e:
         logger.warning(f"PDF direct extraction failed: {e}")
 
-    return "", 0.0
+    return "", 0.0, []

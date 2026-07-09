@@ -1,6 +1,5 @@
 # Set default behavior to automatically normalize line endings
 * text=auto
-
 # Force Unix line endings for source files
 *.ts text eol=lf
 *.js text eol=lf
@@ -15,7 +14,6 @@
 *.env text eol=lf
 *.env.example text eol=lf
 *.sh text eol=lf
-
 # Binary files
 *.png binary
 *.jpg binary
@@ -28,3 +26,4 @@
 *.pth binary
 *.h5 binary
 *.pkl binary
+*.safetensors filter=lfs diff=lfs merge=lfs -text
