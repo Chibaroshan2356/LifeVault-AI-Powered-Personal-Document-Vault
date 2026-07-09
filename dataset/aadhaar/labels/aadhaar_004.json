@@ -1,0 +1,62 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_004.png",
+  "image_dimensions": [
+    704,
+    184
+  ],
+  "words": [
+    {
+      "text": "Address:",
+      "box": [
+        26,
+        38,
+        245,
+        244
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SIO: Narender Gera, 2FI63, Ward-11, NH-2,",
+      "box": [
+        22,
+        206,
+        980,
+        500
+      ],
+      "label": "B-ADDRESS"
+    },
+    {
+      "text": "Faridabad, Faridabad,",
+      "box": [
+        24,
+        391,
+        509,
+        663
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "Haryana",
+      "box": [
+        19,
+        592,
+        220,
+        853
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "121001",
+      "box": [
+        248,
+        614,
+        413,
+        820
+      ],
+      "label": "I-ADDRESS"
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_014.png",
+  "image_dimensions": [
+    852,
+    1280
+  ],
+  "words": [
+    {
+      "text": "HTET?",
+      "box": [
+        590,
+        111,
+        663,
+        125
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4nadty falne WEFTT}wifutut",
+      "box": [
+        275,
+        143,
+        687,
+        167
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HRd",
+      "box": [
+        380,
+        170,
+        462,
+        190
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HrET",
+      "box": [
+        474,
+        170,
+        579,
+        190
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Unique Idonultlcntlan",
+      "box": [
+        278,
+        189,
+        496,
+        205
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "uthoritpforlla",
+      "box": [
+        515,
+        189,
+        684,
+        202
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Govarnment of Indlia",
+      "box": [
+        362,
+        203,
+        598,
+        225
+      ],
+      "label": "O"
+    },
+    {
+      "text": "amIt 4",
+      "box": [
+        301,
+        235,
+        388,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enrollmont No:; 1028/12018/20141",
+      "box": [
+        402,
+        231,
+        656,
+        247
+      ],
+      "label": "O"
+    },
+    {
+      "text": "abu1 $AR JT",
+      "box": [
+        339,
+        322,
+        444,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Varun Kumar Gora",
+      "box": [
+        339,
+        336,
+        463,
+        349
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "SIO: Narendor Gora",
+      "box": [
+        339,
+        349,
+        470,
+        361
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3 2F/63 Ward-|1, NH-2",
+      "box": [
+        320,
+        361,
+        480,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Faridabad",
+      "box": [
+        339,
+        375,
+        407,
+        386
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Faridabad NIT Farldabad Farldabad",
+      "box": [
+        339,
+        385,
+        571,
+        399
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Haryana 121001",
+      "box": [
+        339,
+        399,
+        447,
+        413
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MN1O4B74055DF",
+      "box": [
+        362,
+        436,
+        487,
+        449
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3114D1 31ER %hiai",
+      "box": [
+        281,
+        506,
+        467,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Your Aadhaar No.",
+      "box": [
+        492,
+        507,
+        673,
+        526
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2637",
+      "box": [
+        327,
+        532,
+        421,
+        560
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "4125",
+      "box": [
+        433,
+        532,
+        526,
+        560
+      ],
+      "label": "I-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "5075",
+      "box": [
+        538,
+        532,
+        632,
+        560
+      ],
+      "label": "I-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "3Tarr",
+      "box": [
+        299,
+        571,
+        369,
+        586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "311H 3laht #T afeqT",
+      "box": [
+        403,
+        564,
+        664,
+        587
+      ],
+      "label": "O"
+    },
+    {
+      "text": "98-",
+      "box": [
+        667,
+        599,
+        705,
+        614
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ATd",
+      "box": [
+        470,
+        617,
+        510,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "UR",
+      "box": [
+        517,
+        619,
+        569,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GOVERNMENT OFINDIA",
+      "box": [
+        437,
+        630,
+        599,
+        642
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "arut FAR 7u",
+      "box": [
+        390,
+        649,
+        496,
+        663
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Varun Kumar Gera",
+      "box": [
+        390,
+        663,
+        531,
+        675
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Year of Birth :2003",
+      "box": [
+        451,
+        675,
+        571,
+        688
+      ],
+      "label": "O"
+    },
+    {
+      "text": "574",
+      "box": [
+        390,
+        689,
+        419,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Male",
+      "box": [
+        430,
+        688,
+        465,
+        700
+      ],
+      "label": "B-GENDER"
+    },
+    {
+      "text": "26374125 5075",
+      "box": [
+        382,
+        746,
+        570,
+        765
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "314",
+      "box": [
+        303,
+        780,
+        372,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3T9",
+      "box": [
+        407,
+        780,
+        456,
+        796
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3174t #1 afeoR",
+      "box": [
+        457,
+        775,
+        666,
+        800
+      ],
+      "label": "O"
+    }
+  ]
+}

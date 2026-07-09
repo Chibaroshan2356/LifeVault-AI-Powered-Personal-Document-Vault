@@ -1,0 +1,202 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_007.png",
+  "image_dimensions": [
+    1043,
+    619
+  ],
+  "words": [
+    {
+      "text": "aRaiy @rz 4euiat 4feqruT",
+      "box": [
+        250,
+        27,
+        677,
+        88
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Unique Identification Authority of India",
+      "box": [
+        249,
+        93,
+        810,
+        159
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "AADHAAR",
+      "box": [
+        871,
+        124,
+        971,
+        156
+      ],
+      "label": "O"
+    },
+    {
+      "text": "T:",
+      "box": [
+        63,
+        174,
+        116,
+        216
+      ],
+      "label": "O"
+    },
+    {
+      "text": "WO: #X, 237-53, ar 11-47K3,2, 4iarz,",
+      "box": [
+        64,
+        201,
+        607,
+        266
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7ar,",
+      "box": [
+        61,
+        250,
+        165,
+        308
+      ],
+      "label": "O"
+    },
+    {
+      "text": "37t",
+      "box": [
+        61,
+        297,
+        145,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "121001",
+      "box": [
+        162,
+        300,
+        255,
+        348
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Address:",
+      "box": [
+        61,
+        369,
+        185,
+        429
+      ],
+      "label": "O"
+    },
+    {
+      "text": "WIO: Narender Gera, 2F-63, WARD 11-NH,2,",
+      "box": [
+        62,
+        411,
+        599,
+        470
+      ],
+      "label": "B-ADDRESS"
+    },
+    {
+      "text": "Faridabad Faridabad,",
+      "box": [
+        59,
+        455,
+        325,
+        513
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "Haryana",
+      "box": [
+        59,
+        500,
+        169,
+        562
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "121001",
+      "box": [
+        186,
+        504,
+        278,
+        549
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "3223 3999 4990",
+      "box": [
+        348,
+        765,
+        674,
+        846
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        345,
+        859,
+        400,
+        907
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9152 5094 1065.6905",
+      "box": [
+        417,
+        848,
+        706,
+        909
+      ],
+      "label": "O"
+    },
+    {
+      "text": "help@uidai-govin",
+      "box": [
+        376,
+        919,
+        617,
+        966
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "www_uidal govin",
+      "box": [
+        730,
+        911,
+        949,
+        953
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1947",
+      "box": [
+        152,
+        938,
+        217,
+        970
+      ],
+      "label": "O"
+    }
+  ]
+}

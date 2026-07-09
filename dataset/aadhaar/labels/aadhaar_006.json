@@ -1,0 +1,202 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_006.png",
+  "image_dimensions": [
+    1931,
+    1132
+  ],
+  "words": [
+    {
+      "text": "8RT",
+      "box": [
+        303,
+        29,
+        375,
+        72
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TrTT",
+      "box": [
+        384,
+        32,
+        473,
+        71
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Government of India",
+      "box": [
+        250,
+        82,
+        529,
+        129
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "# TT",
+      "box": [
+        319,
+        193,
+        400,
+        250
+      ],
+      "label": "O"
+    },
+    {
+      "text": "[",
+      "box": [
+        24,
+        189,
+        52,
+        374
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Manju Gera",
+      "box": [
+        320,
+        248,
+        460,
+        307
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "8",
+      "box": [
+        861,
+        244,
+        880,
+        345
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Ty FuIDOB: 08/07/1970",
+      "box": [
+        320,
+        302,
+        626,
+        358
+      ],
+      "label": "O"
+    },
+    {
+      "text": "nRali FEMALE",
+      "box": [
+        320,
+        360,
+        503,
+        409
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8",
+      "box": [
+        863,
+        345,
+        885,
+        433
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        21,
+        373,
+        51,
+        475
+      ],
+      "label": "O"
+    },
+    {
+      "text": "I",
+      "box": [
+        22,
+        477,
+        48,
+        664
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        862,
+        442,
+        894,
+        637
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3223 3999 4990",
+      "box": [
+        311,
+        760,
+        634,
+        840
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID : 9152 5094 1065 6905",
+      "box": [
+        308,
+        852,
+        668,
+        905
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ATT",
+      "box": [
+        199,
+        911,
+        296,
+        977
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3ru< ,",
+      "box": [
+        319,
+        921,
+        474,
+        976
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AfT",
+      "box": [
+        493,
+        910,
+        584,
+        970
+      ],
+      "label": "O"
+    },
+    {
+      "text": "96 TT",
+      "box": [
+        610,
+        923,
+        778,
+        979
+      ],
+      "label": "O"
+    }
+  ]
+}

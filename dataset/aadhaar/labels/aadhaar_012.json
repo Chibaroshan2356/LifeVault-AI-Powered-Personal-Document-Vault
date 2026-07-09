@@ -1,0 +1,202 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_012.png",
+  "image_dimensions": [
+    653,
+    1160
+  ],
+  "words": [
+    {
+      "text": "HRT HTR",
+      "box": [
+        338,
+        275,
+        485,
+        290
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Government of India",
+      "box": [
+        290,
+        293,
+        534,
+        307
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "8ui",
+      "box": [
+        353,
+        330,
+        396,
+        340
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MR T",
+      "box": [
+        395,
+        326,
+        482,
+        343
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Varun Kumar Gera",
+      "box": [
+        353,
+        343,
+        543,
+        359
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        822,
+        340,
+        840,
+        371
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        108,
+        328,
+        130,
+        411
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FMADoB:",
+      "box": [
+        349,
+        355,
+        502,
+        396
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2407/2003",
+      "box": [
+        494,
+        357,
+        614,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        819,
+        369,
+        843,
+        400
+      ],
+      "label": "O"
+    },
+    {
+      "text": "I",
+      "box": [
+        111,
+        411,
+        133,
+        464
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        819,
+        400,
+        840,
+        456
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2637 4125 5075",
+      "box": [
+        343,
+        489,
+        618,
+        513
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        341,
+        514,
+        387,
+        530
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9175,9462 3982 1397",
+      "box": [
+        399,
+        514,
+        641,
+        530
+      ],
+      "label": "O"
+    },
+    {
+      "text": "#rT",
+      "box": [
+        255,
+        531,
+        332,
+        549
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3utz",
+      "box": [
+        353,
+        535,
+        476,
+        549
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tft",
+      "box": [
+        493,
+        529,
+        572,
+        550
+      ],
+      "label": "O"
+    },
+    {
+      "text": "deart",
+      "box": [
+        592,
+        537,
+        730,
+        550
+      ],
+      "label": "O"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "document_metadata": {
+    "category": "PAN Card"
+  },
+  "image_filename": "pan_004.png",
+  "image_dimensions": [
+    697,
+    406
+  ],
+  "words": [
+    {
+      "text": "Bl8r",
+      "box": [
+        48,
+        0,
+        248,
+        76
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tep",
+      "box": [
+        274,
+        0,
+        434,
+        81
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FHIRd",
+      "box": [
+        634,
+        0,
+        774,
+        71
+      ],
+      "label": "O"
+    },
+    {
+      "text": "KRcpr",
+      "box": [
+        791,
+        0,
+        967,
+        68
+      ],
+      "label": "O"
+    },
+    {
+      "text": "INCOME TaX DEPARTMENT",
+      "box": [
+        44,
+        115,
+        434,
+        209
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "GOVT. OF INDIA",
+      "box": [
+        638,
+        100,
+        959,
+        194
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "SANJAY KUMAR PRAJAPATI",
+      "box": [
+        63,
+        221,
+        527,
+        300
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "DUKHiyA PRASHAD PRAJAPATI",
+      "box": [
+        61,
+        322,
+        583,
+        411
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "02/06/1990",
+      "box": [
+        61,
+        448,
+        241,
+        529
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "Penmanent Account Number",
+      "box": [
+        54,
+        522,
+        413,
+        586
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "BJQPP5524G",
+      "box": [
+        63,
+        605,
+        340,
+        701
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "82",
+      "box": [
+        86,
+        783,
+        152,
+        852
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Signature",
+      "box": [
+        54,
+        866,
+        183,
+        926
+      ],
+      "label": "O"
+    }
+  ]
+}

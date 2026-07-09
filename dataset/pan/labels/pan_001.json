@@ -1,0 +1,182 @@
+{
+  "document_metadata": {
+    "category": "PAN Card"
+  },
+  "image_filename": "pan_001.png",
+  "image_dimensions": [
+    1180,
+    764
+  ],
+  "words": [
+    {
+      "text": "3iazr  fatt",
+      "box": [
+        46,
+        61,
+        455,
+        179
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HRT",
+      "box": [
+        625,
+        91,
+        766,
+        175
+      ],
+      "label": "O"
+    },
+    {
+      "text": "rER",
+      "box": [
+        792,
+        94,
+        968,
+        172
+      ],
+      "label": "O"
+    },
+    {
+      "text": "INCOME TAX DEPARTMENT",
+      "box": [
+        39,
+        171,
+        453,
+        255
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "GOVT OF INDIA",
+      "box": [
+        633,
+        183,
+        959,
+        256
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "terre drri& #T3'",
+      "box": [
+        367,
+        282,
+        671,
+        346
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Permanent Account Number Card",
+      "box": [
+        329,
+        349,
+        709,
+        403
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "ELWPM8089J",
+      "box": [
+        389,
+        443,
+        637,
+        509
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "74l Name",
+      "box": [
+        77,
+        514,
+        207,
+        561
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RAHUL MISHRA",
+      "box": [
+        79,
+        568,
+        277,
+        609
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "fyar *7 74/ Father's Name",
+      "box": [
+        73,
+        663,
+        399,
+        718
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SATENDRA MISHRA",
+      "box": [
+        78,
+        715,
+        329,
+        763
+      ],
+      "label": "B-FATHER_NAME"
+    },
+    {
+      "text": "Zsh4",
+      "box": [
+        537,
+        772,
+        657,
+        842
+      ],
+      "label": "O"
+    },
+    {
+      "text": "T4 #ara / Date of Birth",
+      "box": [
+        78,
+        836,
+        412,
+        888
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L",
+      "box": [
+        938,
+        759,
+        968,
+        941
+      ],
+      "label": "O"
+    },
+    {
+      "text": "30/01/1997",
+      "box": [
+        72,
+        883,
+        248,
+        941
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "ETrI Signature",
+      "box": [
+        458,
+        884,
+        677,
+        942
+      ],
+      "label": "O"
+    }
+  ]
+}

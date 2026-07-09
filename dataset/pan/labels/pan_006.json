@@ -1,0 +1,222 @@
+{
+  "document_metadata": {
+    "category": "PAN Card"
+  },
+  "image_filename": "pan_006.png",
+  "image_dimensions": [
+    626,
+    423
+  ],
+  "words": [
+    {
+      "text": "314*r",
+      "box": [
+        11,
+        68,
+        244,
+        153
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ftT",
+      "box": [
+        265,
+        52,
+        445,
+        156
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HRT",
+      "box": [
+        658,
+        75,
+        801,
+        151
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TTr",
+      "box": [
+        824,
+        75,
+        993,
+        146
+      ],
+      "label": "O"
+    },
+    {
+      "text": "INCOME TAX DEPARTMENT",
+      "box": [
+        1,
+        158,
+        448,
+        248
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "GOVT OF INDIA",
+      "box": [
+        670,
+        160,
+        996,
+        236
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "terrf UT HG4T Te",
+      "box": [
+        357,
+        278,
+        702,
+        349
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Permanent Account Number Card",
+      "box": [
+        289,
+        345,
+        763,
+        408
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "BLAPTO864M",
+      "box": [
+        389,
+        420,
+        675,
+        505
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "414",
+      "box": [
+        20,
+        546,
+        78,
+        583
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        91,
+        536,
+        170,
+        583
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TANKNATH",
+      "box": [
+        19,
+        581,
+        191,
+        638
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "fu =1 314",
+      "box": [
+        19,
+        690,
+        198,
+        747
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Father' $ Name",
+      "box": [
+        210,
+        680,
+        392,
+        737
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MOTIkHAR",
+      "box": [
+        20,
+        735,
+        188,
+        799
+      ],
+      "label": "B-FATHER_NAME"
+    },
+    {
+      "text": "47",
+      "box": [
+        23,
+        858,
+        87,
+        895
+      ],
+      "label": "O"
+    },
+    {
+      "text": "au",
+      "box": [
+        140,
+        836,
+        230,
+        893
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Date ot Birth",
+      "box": [
+        239,
+        832,
+        396,
+        893
+      ],
+      "label": "O"
+    },
+    {
+      "text": "26574",
+      "box": [
+        474,
+        841,
+        664,
+        917
+      ],
+      "label": "O"
+    },
+    {
+      "text": "01/01/1965",
+      "box": [
+        20,
+        891,
+        226,
+        966
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "#FM7817 / Signature",
+      "box": [
+        471,
+        921,
+        696,
+        983
+      ],
+      "label": "O"
+    }
+  ]
+}

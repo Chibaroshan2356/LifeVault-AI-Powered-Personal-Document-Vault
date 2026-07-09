@@ -1,0 +1,412 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_011.png",
+  "image_dimensions": [
+    743,
+    1280
+  ],
+  "words": [
+    {
+      "text": "FJTHT<",
+      "box": [
+        623,
+        170,
+        718,
+        190
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TRa flve YuvTmiftteitut",
+      "box": [
+        257,
+        200,
+        744,
+        232
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HRdWdT",
+      "box": [
+        378,
+        228,
+        623,
+        257
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Adentitlcation",
+      "box": [
+        349,
+        251,
+        518,
+        267
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Thoritafundla",
+      "box": [
+        553,
+        257,
+        736,
+        271
+      ],
+      "label": "I-HOLDER_NAME"
+    },
+    {
+      "text": "Government of Indla",
+      "box": [
+        359,
+        266,
+        636,
+        292
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "711477 57",
+      "box": [
+        286,
+        297,
+        388,
+        310
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enrollment No:: 1028/12018/20140",
+      "box": [
+        405,
+        296,
+        705,
+        317
+      ],
+      "label": "O"
+    },
+    {
+      "text": "T4 5TR TT",
+      "box": [
+        329,
+        389,
+        450,
+        403
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8",
+      "box": [
+        305,
+        392,
+        324,
+        424
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Narender",
+      "box": [
+        329,
+        403,
+        405,
+        414
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Gera",
+      "box": [
+        458,
+        403,
+        499,
+        416
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SIO: Bhim Saln",
+      "box": [
+        329,
+        414,
+        448,
+        428
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2F/63 Ward-11, NH-2",
+      "box": [
+        329,
+        428,
+        493,
+        442
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Faridabad",
+      "box": [
+        328,
+        440,
+        410,
+        454
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Faridabad NIT Faridabad Faridabad",
+      "box": [
+        329,
+        455,
+        598,
+        469
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Haryana 121001",
+      "box": [
+        325,
+        467,
+        456,
+        481
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        309,
+        481,
+        317,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "JIIII",
+      "box": [
+        341,
+        487,
+        403,
+        506
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MN1O487O169DF",
+      "box": [
+        352,
+        503,
+        499,
+        519
+      ],
+      "label": "O"
+    },
+    {
+      "text": "311441 311YRR5hid",
+      "box": [
+        255,
+        578,
+        473,
+        596
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Your Aadhaar No.",
+      "box": [
+        503,
+        579,
+        710,
+        598
+      ],
+      "label": "O"
+    },
+    {
+      "text": "5630 6001",
+      "box": [
+        310,
+        602,
+        539,
+        630
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1190",
+      "box": [
+        555,
+        603,
+        663,
+        632
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3T4R",
+      "box": [
+        275,
+        641,
+        356,
+        657
+      ],
+      "label": "O"
+    },
+    {
+      "text": "314 31ah #T afeaT",
+      "box": [
+        398,
+        637,
+        697,
+        660
+      ],
+      "label": "O"
+    },
+    {
+      "text": "28",
+      "box": [
+        703,
+        674,
+        744,
+        689
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FRYR",
+      "box": [
+        528,
+        691,
+        590,
+        702
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GOVERNMENT OF INDIA",
+      "box": [
+        434,
+        702,
+        620,
+        714
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "7 SHR j",
+      "box": [
+        378,
+        719,
+        499,
+        735
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Narender Kumar Gera",
+      "box": [
+        376,
+        734,
+        572,
+        748
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Year ol Birth : 1967",
+      "box": [
+        450,
+        749,
+        588,
+        760
+      ],
+      "label": "O"
+    },
+    {
+      "text": "564",
+      "box": [
+        378,
+        761,
+        410,
+        772
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Male",
+      "box": [
+        426,
+        760,
+        467,
+        772
+      ],
+      "label": "B-GENDER"
+    },
+    {
+      "text": "5630 6001",
+      "box": [
+        371,
+        818,
+        508,
+        837
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1190",
+      "box": [
+        516,
+        818,
+        584,
+        837
+      ],
+      "label": "O"
+    },
+    {
+      "text": "31AR",
+      "box": [
+        273,
+        853,
+        353,
+        869
+      ],
+      "label": "O"
+    },
+    {
+      "text": "314 31atf} #1 3feaR",
+      "box": [
+        395,
+        846,
+        693,
+        872
+      ],
+      "label": "O"
+    },
+    {
+      "text": "plque",
+      "box": [
+        255,
+        247,
+        356,
+        267
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Kumar 5",
+      "box": [
+        399,
+        401,
+        460,
+        417
+      ],
+      "label": "O"
+    }
+  ]
+}

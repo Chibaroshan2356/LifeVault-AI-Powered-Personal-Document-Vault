@@ -16,7 +16,10 @@ LABELS = [
     "B-EMAIL", "I-EMAIL",
     "B-SKILL", "I-SKILL",
     "B-INSURANCE_COMPANY", "I-INSURANCE_COMPANY",
-    "B-PROVIDER_NAME", "I-PROVIDER_NAME"
+    "B-PROVIDER_NAME", "I-PROVIDER_NAME",
+    "B-GENDER", "I-GENDER",
+    "B-ADDRESS", "I-ADDRESS",
+    "B-FATHER_NAME", "I-FATHER_NAME"
 ]
 
 LABEL2ID = {label: i for i, label in enumerate(LABELS)}

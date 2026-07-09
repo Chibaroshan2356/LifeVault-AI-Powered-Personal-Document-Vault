@@ -1,0 +1,202 @@
+{
+  "document_metadata": {
+    "category": "PAN Card"
+  },
+  "image_filename": "pan_003.png",
+  "image_dimensions": [
+    954,
+    608
+  ],
+  "words": [
+    {
+      "text": "314ezr",
+      "box": [
+        19,
+        67,
+        222,
+        149
+      ],
+      "label": "O"
+    },
+    {
+      "text": "fert",
+      "box": [
+        243,
+        52,
+        409,
+        151
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HRT",
+      "box": [
+        616,
+        69,
+        763,
+        148
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TET",
+      "box": [
+        790,
+        69,
+        976,
+        151
+      ],
+      "label": "O"
+    },
+    {
+      "text": "INCOME TAX DEPARTMENT",
+      "box": [
+        9,
+        159,
+        407,
+        231
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "GOVT OF INDIA",
+      "box": [
+        623,
+        159,
+        969,
+        231
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "TeITi (d1 TCHT &Ts",
+      "box": [
+        351,
+        271,
+        676,
+        338
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Permanent Account Number Card",
+      "box": [
+        289,
+        338,
+        724,
+        399
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "BGYPJ0129A",
+      "box": [
+        364,
+        421,
+        624,
+        490
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "774",
+      "box": [
+        36,
+        521,
+        80,
+        554
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Name",
+      "box": [
+        90,
+        519,
+        153,
+        562
+      ],
+      "label": "O"
+    },
+    {
+      "text": "JALDEEP",
+      "box": [
+        35,
+        565,
+        165,
+        615
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Tt <1 74",
+      "box": [
+        33,
+        651,
+        174,
+        700
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Father' $ Name",
+      "box": [
+        182,
+        661,
+        333,
+        707
+      ],
+      "label": "O"
+    },
+    {
+      "text": "RAJENDER",
+      "box": [
+        31,
+        694,
+        189,
+        753
+      ],
+      "label": "B-FATHER_NAME"
+    },
+    {
+      "text": "TA &1 7TTA/ Date 0i Birth",
+      "box": [
+        31,
+        815,
+        332,
+        868
+      ],
+      "label": "O"
+    },
+    {
+      "text": "18/03/1996",
+      "box": [
+        31,
+        856,
+        206,
+        927
+      ],
+      "label": "B-DATE_OF_BIRTH"
+    },
+    {
+      "text": "Tarert / Signature",
+      "box": [
+        439,
+        922,
+        645,
+        973
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Aua",
+      "box": [
+        474,
+        831,
+        570,
+        912
+      ],
+      "label": "O"
+    }
+  ]
+}

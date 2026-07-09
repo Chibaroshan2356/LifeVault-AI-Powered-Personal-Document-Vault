@@ -1,0 +1,422 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_009.png",
+  "image_dimensions": [
+    1275,
+    1650
+  ],
+  "words": [
+    {
+      "text": "HRTT",
+      "box": [
+        425,
+        183,
+        465,
+        198
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TRrR",
+      "box": [
+        469,
+        187,
+        513,
+        196
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Government of India",
+      "box": [
+        397,
+        198,
+        542,
+        215
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "a&9a",
+      "box": [
+        421,
+        236,
+        478,
+        252
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        276,
+        239,
+        290,
+        289
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Drishti Uppal",
+      "box": [
+        421,
+        256,
+        523,
+        273
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "JaTf4",
+      "box": [
+        420,
+        275,
+        492,
+        290
+      ],
+      "label": "O"
+    },
+    {
+      "text": "DOB: 14/10/2002",
+      "box": [
+        498,
+        276,
+        620,
+        292
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        278,
+        290,
+        290,
+        314
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Hieaht",
+      "box": [
+        420,
+        295,
+        467,
+        311
+      ],
+      "label": "O"
+    },
+    {
+      "text": "FEMALE",
+      "box": [
+        474,
+        295,
+        542,
+        312
+      ],
+      "label": "B-GENDER"
+    },
+    {
+      "text": "1",
+      "box": [
+        280,
+        315,
+        290,
+        341
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Mobile No:: 9810823094",
+      "box": [
+        421,
+        315,
+        598,
+        331
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2926 7171 1723",
+      "box": [
+        419,
+        343,
+        595,
+        365
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        421,
+        363,
+        447,
+        375
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9134 2711 0491 7382",
+      "box": [
+        454,
+        362,
+        594,
+        376
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tv 3TUTr, 4i 4u1G",
+      "box": [
+        389,
+        382,
+        623,
+        408
+      ],
+      "label": "O"
+    },
+    {
+      "text": "ARrir fakrez46qiet Mfeirut",
+      "box": [
+        367,
+        558,
+        583,
+        575
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Unique Identification Authority of India",
+      "box": [
+        367,
+        575,
+        650,
+        593
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Q:",
+      "box": [
+        283,
+        614,
+        309,
+        629
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Jjo taW1r 3451 ,41-9109 #-1, IiZe 5ailz, &",
+      "box": [
+        283,
+        624,
+        557,
+        646
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        272,
+        628,
+        284,
+        678
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TR m-",
+      "box": [
+        283,
+        641,
+        334,
+        663
+      ],
+      "label": "O"
+    },
+    {
+      "text": "71e dz fil,",
+      "box": [
+        359,
+        642,
+        453,
+        661
+      ],
+      "label": "O"
+    },
+    {
+      "text": "eaa",
+      "box": [
+        283,
+        653,
+        316,
+        678
+      ],
+      "label": "O"
+    },
+    {
+      "text": "110064",
+      "box": [
+        323,
+        659,
+        373,
+        677
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Address:",
+      "box": [
+        285,
+        676,
+        359,
+        690
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        272,
+        678,
+        284,
+        703
+      ],
+      "label": "B-ADDRESS"
+    },
+    {
+      "text": "DIO SANT PARSHAD UPPAL, WZ-171",
+      "box": [
+        283,
+        687,
+        538,
+        703
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "M-7 , FIRST FLOR, HARI NAGAR, Hari",
+      "box": [
+        283,
+        700,
+        536,
+        717
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "ZNagaFIRGutFLOt Deli;",
+      "box": [
+        269,
+        701,
+        450,
+        732
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "Delhi",
+      "box": [
+        453,
+        713,
+        492,
+        728
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "110064",
+      "box": [
+        499,
+        714,
+        549,
+        726
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "2926 7171 1723",
+      "box": [
+        323,
+        738,
+        429,
+        752
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        316,
+        750,
+        336,
+        760
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9134 2711 0491 7382",
+      "box": [
+        341,
+        749,
+        443,
+        760
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1947",
+      "box": [
+        320,
+        771,
+        355,
+        783
+      ],
+      "label": "O"
+    },
+    {
+      "text": "help@uidaigov in",
+      "box": [
+        430,
+        767,
+        552,
+        784
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "www:",
+      "box": [
+        607,
+        771,
+        642,
+        781
+      ],
+      "label": "O"
+    },
+    {
+      "text": ",uidai-govin",
+      "box": [
+        637,
+        766,
+        718,
+        783
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "TR,",
+      "box": [
+        328,
+        643,
+        363,
+        662
+      ],
+      "label": "O"
+    }
+  ]
+}

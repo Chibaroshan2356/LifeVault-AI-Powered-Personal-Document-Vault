@@ -1,0 +1,102 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_016.png",
+  "image_dimensions": [
+    300,
+    190
+  ],
+  "words": [
+    {
+      "text": "7AAR TU",
+      "box": [
+        326,
+        231,
+        480,
+        273
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Yann Klme Gar",
+      "box": [
+        323,
+        278,
+        563,
+        342
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "JA 4 do8: 2407,200",
+      "box": [
+        326,
+        336,
+        640,
+        378
+      ],
+      "label": "O"
+    },
+    {
+      "text": "54' MAle",
+      "box": [
+        323,
+        384,
+        463,
+        447
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2637 4125 5075",
+      "box": [
+        316,
+        784,
+        656,
+        868
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "MRilld 382iz",
+      "box": [
+        310,
+        868,
+        676,
+        931
+      ],
+      "label": "O"
+    },
+    {
+      "text": "HTUT ,",
+      "box": [
+        323,
+        931,
+        483,
+        1000
+      ],
+      "label": "O"
+    },
+    {
+      "text": "7",
+      "box": [
+        496,
+        921,
+        603,
+        994
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TL",
+      "box": [
+        613,
+        927,
+        696,
+        998
+      ],
+      "label": "O"
+    }
+  ]
+}

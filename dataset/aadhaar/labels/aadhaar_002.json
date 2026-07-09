@@ -1,0 +1,412 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_002.png",
+  "image_dimensions": [
+    1275,
+    1650
+  ],
+  "words": [
+    {
+      "text": "HTT",
+      "box": [
+        388,
+        100,
+        434,
+        115
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TTTT",
+      "box": [
+        438,
+        102,
+        493,
+        113
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Government of India",
+      "box": [
+        353,
+        115,
+        528,
+        131
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "31TUr",
+      "box": [
+        706,
+        118,
+        753,
+        127
+      ],
+      "label": "O"
+    },
+    {
+      "text": "4M #HR T",
+      "box": [
+        398,
+        147,
+        490,
+        166
+      ],
+      "label": "O"
+    },
+    {
+      "text": "L",
+      "box": [
+        223,
+        149,
+        237,
+        201
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Varun Kumar Gera",
+      "box": [
+        398,
+        164,
+        533,
+        179
+      ],
+      "label": "O"
+    },
+    {
+      "text": "54 fu/DOB: 24/07/2003",
+      "box": [
+        398,
+        179,
+        583,
+        195
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        728,
+        164,
+        742,
+        221
+      ],
+      "label": "O"
+    },
+    {
+      "text": "5ou MALE",
+      "box": [
+        398,
+        196,
+        480,
+        213
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1",
+      "box": [
+        223,
+        201,
+        236,
+        229
+      ],
+      "label": "O"
+    },
+    {
+      "text": "I",
+      "box": [
+        221,
+        228,
+        237,
+        281
+      ],
+      "label": "O"
+    },
+    {
+      "text": "I",
+      "box": [
+        727,
+        220,
+        742,
+        273
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2637 4125 5075",
+      "box": [
+        392,
+        308,
+        587,
+        331
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        389,
+        333,
+        421,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9175 9462 3982 1397",
+      "box": [
+        431,
+        333,
+        603,
+        347
+      ],
+      "label": "O"
+    },
+    {
+      "text": "AtT",
+      "box": [
+        327,
+        349,
+        382,
+        366
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "3rut< ,",
+      "box": [
+        394,
+        349,
+        489,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "A€",
+      "box": [
+        498,
+        349,
+        556,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "96@1",
+      "box": [
+        567,
+        350,
+        668,
+        367
+      ],
+      "label": "O"
+    },
+    {
+      "text": "#Rdy fanrez",
+      "box": [
+        324,
+        533,
+        447,
+        551
+      ],
+      "label": "O"
+    },
+    {
+      "text": "940 4iferarrut",
+      "box": [
+        451,
+        535,
+        586,
+        553
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Unique Identification Authority of India",
+      "box": [
+        322,
+        551,
+        669,
+        573
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "AADHAAR",
+      "box": [
+        708,
+        567,
+        769,
+        576
+      ],
+      "label": "O"
+    },
+    {
+      "text": "T:",
+      "box": [
+        210,
+        573,
+        244,
+        587
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SIQ: #a+, 235/63, d-11, 0703-2, Frialra,",
+      "box": [
+        210,
+        583,
+        545,
+        605
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tra4i,",
+      "box": [
+        209,
+        596,
+        275,
+        615
+      ],
+      "label": "O"
+    },
+    {
+      "text": "84'",
+      "box": [
+        210,
+        613,
+        258,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "121001",
+      "box": [
+        266,
+        612,
+        323,
+        627
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Address:",
+      "box": [
+        210,
+        632,
+        285,
+        650
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SIO: Narender Gera, 2F/63, Ward-11, NH-2,",
+      "box": [
+        209,
+        645,
+        529,
+        667
+      ],
+      "label": "B-ADDRESS"
+    },
+    {
+      "text": "Faridabad, Fardabad;",
+      "box": [
+        210,
+        659,
+        371,
+        676
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "Haryana",
+      "box": [
+        208,
+        671,
+        276,
+        691
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "121001",
+      "box": [
+        285,
+        673,
+        341,
+        688
+      ],
+      "label": "I-ADDRESS"
+    },
+    {
+      "text": "2637 4125 5075",
+      "box": [
+        386,
+        755,
+        590,
+        782
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "VID",
+      "box": [
+        382,
+        780,
+        421,
+        800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "9175 9462 3982 1397",
+      "box": [
+        428,
+        783,
+        607,
+        800
+      ],
+      "label": "O"
+    },
+    {
+      "text": "1947",
+      "box": [
+        269,
+        806,
+        308,
+        816
+      ],
+      "label": "O"
+    },
+    {
+      "text": "helpeuldai-gov In",
+      "box": [
+        405,
+        804,
+        556,
+        820
+      ],
+      "label": "O"
+    },
+    {
+      "text": "www-uidal.govin",
+      "box": [
+        623,
+        807,
+        761,
+        818
+      ],
+      "label": "O"
+    }
+  ]
+}

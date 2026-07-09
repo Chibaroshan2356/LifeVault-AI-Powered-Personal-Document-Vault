@@ -1,0 +1,352 @@
+{
+  "document_metadata": {
+    "category": "Aadhaar Card"
+  },
+  "image_filename": "aadhaar_013.png",
+  "image_dimensions": [
+    1045,
+    1280
+  ],
+  "words": [
+    {
+      "text": "3ie?",
+      "box": [
+        730,
+        233,
+        797,
+        249
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TRdu falriez TuIt Xiftthtut",
+      "box": [
+        466,
+        266,
+        816,
+        296
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TRTTTFT",
+      "box": [
+        556,
+        294,
+        729,
+        320
+      ],
+      "label": "B-HOLDER_NAME"
+    },
+    {
+      "text": "Unlque Idendliication Authority of Indla",
+      "box": [
+        465,
+        313,
+        818,
+        342
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Government of India",
+      "box": [
+        542,
+        332,
+        740,
+        355
+      ],
+      "label": "I-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Tnih- 471",
+      "box": [
+        488,
+        366,
+        563,
+        378
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Enrollmont No:: 1028/12018/20141",
+      "box": [
+        576,
+        360,
+        794,
+        379
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tul $n JI",
+      "box": [
+        523,
+        457,
+        613,
+        471
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Varun Kumar Gora",
+      "box": [
+        523,
+        471,
+        628,
+        482
+      ],
+      "label": "O"
+    },
+    {
+      "text": "8",
+      "box": [
+        506,
+        469,
+        519,
+        492
+      ],
+      "label": "O"
+    },
+    {
+      "text": "SIO: Narender Gera",
+      "box": [
+        523,
+        483,
+        634,
+        496
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3 2F/63 Ward-11, NH-2",
+      "box": [
+        508,
+        495,
+        644,
+        510
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Faridabad",
+      "box": [
+        523,
+        510,
+        582,
+        521
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Faridabad NIT Faridabad Faridabad",
+      "box": [
+        523,
+        521,
+        720,
+        535
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Haryana 121001",
+      "box": [
+        523,
+        535,
+        617,
+        549
+      ],
+      "label": "O"
+    },
+    {
+      "text": "MNI04874055DF",
+      "box": [
+        544,
+        574,
+        649,
+        586
+      ],
+      "label": "O"
+    },
+    {
+      "text": "3114J1 37lu1r #rqi",
+      "box": [
+        476,
+        648,
+        633,
+        667
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Your Aadhaar No.",
+      "box": [
+        656,
+        646,
+        809,
+        665
+      ],
+      "label": "O"
+    },
+    {
+      "text": "2637",
+      "box": [
+        515,
+        674,
+        594,
+        702
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "4125",
+      "box": [
+        605,
+        674,
+        686,
+        702
+      ],
+      "label": "I-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "5075",
+      "box": [
+        695,
+        671,
+        776,
+        700
+      ],
+      "label": "I-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "MeR",
+      "box": [
+        491,
+        712,
+        551,
+        731
+      ],
+      "label": "O"
+    },
+    {
+      "text": "374",
+      "box": [
+        579,
+        712,
+        623,
+        731
+      ],
+      "label": "O"
+    },
+    {
+      "text": "aiait #T afaT",
+      "box": [
+        624,
+        705,
+        802,
+        734
+      ],
+      "label": "O"
+    },
+    {
+      "text": "TRTHTT",
+      "box": [
+        634,
+        760,
+        724,
+        774
+      ],
+      "label": "O"
+    },
+    {
+      "text": "GOVErNMENt OF INDIA",
+      "box": [
+        608,
+        772,
+        747,
+        789
+      ],
+      "label": "B-DOCUMENT_TITLE"
+    },
+    {
+      "text": "Tu1 SHR JRT",
+      "box": [
+        569,
+        796,
+        659,
+        810
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Varun Kumar Gera",
+      "box": [
+        569,
+        808,
+        691,
+        821
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Year of Birth :2003",
+      "box": [
+        622,
+        822,
+        724,
+        835
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Tot",
+      "box": [
+        571,
+        836,
+        594,
+        849
+      ],
+      "label": "O"
+    },
+    {
+      "text": "Male",
+      "box": [
+        603,
+        836,
+        634,
+        847
+      ],
+      "label": "B-GENDER"
+    },
+    {
+      "text": "2637 41255075",
+      "box": [
+        566,
+        895,
+        725,
+        915
+      ],
+      "label": "B-DOCUMENT_NUMBER"
+    },
+    {
+      "text": "aalt",
+      "box": [
+        495,
+        931,
+        556,
+        950
+      ],
+      "label": "O"
+    },
+    {
+      "text": "314 #rah #1 #faT",
+      "box": [
+        585,
+        926,
+        807,
+        948
+      ],
+      "label": "O"
+    }
+  ]
+}
