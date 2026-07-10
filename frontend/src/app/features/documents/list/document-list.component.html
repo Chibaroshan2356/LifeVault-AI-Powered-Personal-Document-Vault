@@ -1,150 +1,106 @@
-<!--
-  DocumentListComponent — My Documents Page
--->
 <div class="list-page">
-
   <!-- Header -->
   <div class="page-header">
     <div>
       <a routerLink="/dashboard" class="back-link">
-        <mat-icon>arrow_back</mat-icon> Dashboard
+        <mat-icon>arrow_back</mat-icon>
+        <span>Workspace Home</span>
       </a>
-      <h1>My Documents</h1>
-      <p>{{ documents.length }} document{{ documents.length !== 1 ? 's' : '' }} stored</p>
+      <h1>Document Archive</h1>
+      <p>{{ documents.length }} document{{ documents.length !== 1 ? 's' : '' }} stored in your vault</p>
     </div>
     <div class="header-actions">
-      <button mat-stroked-button routerLink="/documents/search">
-        <mat-icon>search</mat-icon> Search
+      <button class="search-btn" routerLink="/documents/search">
+        <mat-icon>search</mat-icon>
+        <span>Filter & Search</span>
       </button>
-      <button mat-raised-button color="primary" routerLink="/documents/upload">
-        <mat-icon>upload_file</mat-icon> Upload
+      <button class="upload-btn" routerLink="/documents/upload">
+        <mat-icon>add</mat-icon>
+        <span>Upload File</span>
       </button>
     </div>
   </div>
 
-  <!-- Loading -->
-  @if (isLoading) {
-    <div class="center-state">
-      <mat-spinner diameter="48" />
-      <p>Loading documents…</p>
+  <!-- Loading state (Skeleton Loader) -->
+  <div class="skeleton-loader-container" *ngIf="isLoading">
+    <div class="skeleton-table">
+      <div class="skeleton-header">
+        <div class="skeleton-col"></div>
+        <div class="skeleton-col"></div>
+        <div class="skeleton-col"></div>
+        <div class="skeleton-col"></div>
+        <div class="skeleton-col"></div>
+      </div>
+      <div class="skeleton-row" *ngFor="let i of [1,2,3,4,5]">
+        <div class="skeleton-cell icon shimmer"></div>
+        <div class="skeleton-cell name shimmer"></div>
+        <div class="skeleton-cell category shimmer"></div>
+        <div class="skeleton-cell size shimmer"></div>
+        <div class="skeleton-cell status shimmer"></div>
+      </div>
     </div>
-  }
+  </div>
 
-  <!-- Error -->
-  @if (!isLoading && errorMsg) {
-    <div class="error-state">
-      <mat-icon>error_outline</mat-icon>
-      <p>{{ errorMsg }}</p>
-      <button mat-stroked-button (click)="loadDocuments()">Retry</button>
+  <!-- Error state -->
+  <div class="error-state" *ngIf="!isLoading && errorMsg">
+    <mat-icon>error_outline</mat-icon>
+    <h2>Failed to load documents</h2>
+    <p>{{ errorMsg }}</p>
+    <button class="retry-btn" (click)="loadDocuments()">Retry</button>
+  </div>
+
+  <!-- Empty state -->
+  <div class="empty-state" *ngIf="!isLoading && !errorMsg && documents.length === 0">
+    <mat-icon>folder_open</mat-icon>
+    <h2>Archive is empty</h2>
+    <p>Upload files to start automatic indexing and classification.</p>
+    <button class="retry-btn" routerLink="/documents/upload">
+      <mat-icon>add</mat-icon>
+      <span>Upload Now</span>
+    </button>
+  </div>
+
+  <!-- Documents Grid (Google Drive / Vercel style) -->
+  <div class="files-grid" *ngIf="!isLoading && !errorMsg && documents.length > 0">
+    <div class="file-card" *ngFor="let doc of documents; let idx = index" [routerLink]="['/documents', doc._id]" [style.animation-delay]="(idx * 0.04) + 's'">
+      <div class="file-card-header">
+        <div class="file-icon-box" [class.pdf]="doc.mimeType === 'application/pdf'">
+          <mat-icon>{{ doc.mimeType === 'application/pdf' ? 'picture_as_pdf' : 'insert_photo' }}</mat-icon>
+        </div>
+        <button mat-icon-button class="delete-icon-btn" (click)="deleteDocument(doc); $event.stopPropagation()" [matTooltip]="'Delete Document'">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+      
+      <div class="file-card-body">
+        <h3 class="file-name-label" [matTooltip]="doc.originalFileName">{{ doc.originalFileName }}</h3>
+        <div class="file-details-row">
+          <span class="file-category-badge">{{ doc.category }}</span>
+          <span class="file-size-label">{{ formatSize(doc.fileSize) }}</span>
+        </div>
+      </div>
+
+      <div class="file-card-footer">
+        <span class="status-indicator-pill" [attr.data-status]="doc.status">
+          {{ getStatusLabel(doc.status) }}
+        </span>
+        <span class="file-date">{{ formatDate(doc.uploadedAt) }}</span>
+      </div>
     </div>
-  }
-
-  <!-- Empty -->
-  @if (!isLoading && !errorMsg && documents.length === 0) {
-    <div class="empty-state">
-      <mat-icon>cloud_upload</mat-icon>
-      <h2>No documents yet</h2>
-      <p>Upload your first document to get started.</p>
-      <button mat-raised-button color="primary" routerLink="/documents/upload">
-        <mat-icon>add</mat-icon> Upload Now
-      </button>
-    </div>
-  }
-
-  <!-- Table -->
-  @if (!isLoading && !errorMsg && documents.length > 0) {
-    <div class="table-card">
-      <table mat-table [dataSource]="documents" class="doc-table">
-
-        <!-- Icon -->
-        <ng-container matColumnDef="icon">
-          <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let doc">
-            <mat-icon class="file-icon" [class.pdf]="doc.mimeType === 'application/pdf'">
-              {{ getFileIcon(doc.mimeType) }}
-            </mat-icon>
-          </td>
-        </ng-container>
-
-        <!-- Name -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Name</th>
-          <td mat-cell *matCellDef="let doc">
-            <a class="doc-name" [routerLink]="['/documents', doc._id]" [matTooltip]="doc.originalFileName">
-              {{ doc.originalFileName }}
-            </a>
-          </td>
-        </ng-container>
-
-        <!-- Category -->
-        <ng-container matColumnDef="category">
-          <th mat-header-cell *matHeaderCellDef>Category</th>
-          <td mat-cell *matCellDef="let doc">
-            <span class="category">{{ doc.category }}</span>
-          </td>
-        </ng-container>
-
-        <!-- Size -->
-        <ng-container matColumnDef="size">
-          <th mat-header-cell *matHeaderCellDef>Size</th>
-          <td mat-cell *matCellDef="let doc" class="muted">
-            {{ formatSize(doc.fileSize) }}
-          </td>
-        </ng-container>
-
-        <!-- Status -->
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef>Status</th>
-          <td mat-cell *matCellDef="let doc">
-            <span class="status-badge" [attr.data-status]="doc.status">
-              {{ getStatusLabel(doc.status) }}
-            </span>
-          </td>
-        </ng-container>
-
-        <!-- Uploaded -->
-        <ng-container matColumnDef="uploaded">
-          <th mat-header-cell *matHeaderCellDef>Uploaded</th>
-          <td mat-cell *matCellDef="let doc" class="muted">
-            {{ formatDate(doc.uploadedAt) }}
-          </td>
-        </ng-container>
-
-        <!-- Actions -->
-        <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef></th>
-          <td mat-cell *matCellDef="let doc">
-            <button
-              mat-icon-button
-              class="delete-btn"
-              [matTooltip]="'Delete ' + doc.originalFileName"
-              (click)="deleteDocument(doc)"
-            >
-              <mat-icon>delete_outline</mat-icon>
-            </button>
-          </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-    </div>
-  }
-
+  </div>
 </div>
 
-<!-- Material Delete Confirmation Dialog -->
+<!-- Delete Confirmation Dialog Template -->
 <ng-template #deleteConfirmDialog>
-  <h2 mat-dialog-title>Delete Document</h2>
-  <mat-dialog-content>
-    <p>Are you sure you want to permanently delete "{{ documentToDelete?.originalFileName }}"?</p>
-    <p style="color: #c62828; font-size: 0.85rem; margin-top: 8px; display: flex; align-items: center; gap: 4px;">
-      <mat-icon style="font-size: 16px; width: 16px; height: 16px;">warning</mat-icon>
-      This action cannot be undone.
-    </p>
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-raised-button color="warn" [mat-dialog-close]="true">Delete</button>
-  </mat-dialog-actions>
+  <div class="dialog-content-wrapper">
+    <h2 mat-dialog-title>Delete Document</h2>
+    <mat-dialog-content>
+      <p>Are you sure you want to permanently delete <strong>{{ documentToDelete?.originalFileName }}</strong>?</p>
+      <p class="warning-text">This action cannot be undone and will delete all extracted AI metadata.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close class="cancel-dialog-btn">Cancel</button>
+      <button mat-button [mat-dialog-close]="true" class="delete-dialog-btn" color="warn">Delete</button>
+    </mat-dialog-actions>
+  </div>
 </ng-template>

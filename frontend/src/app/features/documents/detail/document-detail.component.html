@@ -1,0 +1,444 @@
+<div class="detail-container">
+  <!-- Header -->
+  <header class="detail-header">
+    <div class="header-left">
+      <a routerLink="/documents" class="back-link">
+        <mat-icon>arrow_back</mat-icon>
+        <span>My Documents</span>
+      </a>
+      <div class="title-row">
+        <h1>{{ doc?.originalFileName ?? 'Loading Document...' }}</h1>
+        <span class="category-badge" *ngIf="doc">{{ doc.category }}</span>
+      </div>
+    </div>
+    <div class="header-actions" *ngIf="doc">
+      <a [href]="rawFileUrl" target="_blank" download class="action-btn download" matRipple>
+        <mat-icon>download</mat-icon>
+        <span>Download File</span>
+      </a>
+      <button class="action-btn delete-btn-header" (click)="deleteDocument()" matRipple>
+        <mat-icon>delete_outline</mat-icon>
+        <span>Delete Document</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Error State -->
+  <div class="error-panel" *ngIf="error">
+    <mat-icon>error_outline</mat-icon>
+    <p>{{ error }}</p>
+    <a routerLink="/documents" class="back-home-btn">Return to Documents</a>
+  </div>
+
+  <!-- Loading State -->
+  <div class="loading-panel" *ngIf="loading && !error">
+    <mat-progress-bar mode="query" color="primary"></mat-progress-bar>
+    <p>Loading document details…</p>
+  </div>
+
+  <!-- Details Layout -->
+  <div class="details-layout" *ngIf="doc && !loading">
+    <!-- Left Column: File Preview & AI Interaction Canvas -->
+    <div class="preview-column">
+      <div class="card preview-card">
+        <div class="card-header">
+          <div class="header-title-section">
+            <h2>Analysis Canvas</h2>
+            <span class="file-size">{{ formatSize(doc.fileSize) }} · {{ doc.mimeType }}</span>
+          </div>
+
+          <!-- Diagnostic Controls -->
+          <div class="diagnostic-controls" *ngIf="doc.status === 'READY'">
+            <!-- View Mode Switch -->
+            <div class="view-mode-tabs">
+              <button class="mode-tab-btn" 
+                      [class.active]="currentViewMode === 'interactive'" 
+                      (click)="toggleViewMode('interactive')">
+                <mat-icon>auto_awesome</mat-icon>
+                <span>Interactive AI</span>
+              </button>
+              <button class="mode-tab-btn" 
+                      [class.active]="currentViewMode === 'native'" 
+                      (click)="toggleViewMode('native')"
+                      *ngIf="isPdf">
+                <mat-icon>visibility</mat-icon>
+                <span>Native PDF</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Toolbar for AI Toggles -->
+        <div class="ai-toolbar" *ngIf="doc.status === 'READY' && currentViewMode === 'interactive'">
+          <button class="tool-btn" [class.active]="showAIRegions" (click)="showAIRegions = !showAIRegions">
+            <mat-icon>filter_center_focus</mat-icon>
+            <span>AI Regions</span>
+          </button>
+          <button class="tool-btn" [class.active]="showConfidenceHeatmap" (click)="showConfidenceHeatmap = !showConfidenceHeatmap">
+            <mat-icon>grid_on</mat-icon>
+            <span>Confidence Heatmap</span>
+          </button>
+          <button class="tool-btn" [class.active]="showOCR" (click)="showOCR = !showOCR">
+            <mat-icon>spellcheck</mat-icon>
+            <span>OCR Bounding Boxes</span>
+          </button>
+        </div>
+
+        <div class="preview-body" [class.interactive-mode]="currentViewMode === 'interactive'">
+          <!-- Processing state -->
+          <div class="processing-overlay" *ngIf="doc.status !== 'READY' && doc.status !== 'FAILED'">
+            <div class="overlay-spinner">
+              <mat-icon class="pulse-icon">auto_awesome</mat-icon>
+            </div>
+            <h3>AI Analysis in Progress</h3>
+            <p>LayoutLMv3 is performing OCR and document indexing. The results will appear shortly.</p>
+          </div>
+
+          <!-- Failed state -->
+          <div class="processing-overlay failed" *ngIf="doc.status === 'FAILED'">
+            <mat-icon class="error-icon">error_outline</mat-icon>
+            <h3>Analysis Failed</h3>
+            <p>{{ doc.errorMessage || 'An unknown error occurred during AI processing.' }}</p>
+          </div>
+
+          <!-- Ready Interactive Preview Wrapper -->
+          <ng-container *ngIf="doc.status === 'READY'">
+            <div class="media-preview" *ngIf="fileUrl">
+              <!-- Laser Scanner Signature Overlay -->
+              <div class="laser-scanner" *ngIf="showLaserScanner">
+                <div class="laser-beam"></div>
+              </div>
+
+              <!-- Native View -->
+              <iframe [src]="fileUrl" *ngIf="currentViewMode === 'native' && isPdf" class="pdf-preview" frameborder="0"></iframe>
+
+              <!-- Interactive View -->
+              <div class="interactive-viewport-wrapper" *ngIf="currentViewMode === 'interactive'">
+                
+                <!-- Simulated document canvas sheet representing document text coordinates -->
+                <div class="document-simulated-sheet" [class.blur-bg]="showLaserScanner">
+                  <div class="sheet-watermark-glow"></div>
+                  
+                  <div class="sheet-header">
+                    <mat-icon class="gov-seal">fingerprint</mat-icon>
+                    <div class="seal-text">
+                      <span class="main-title">LIFEVAULT AIWORKSPACE</span>
+                      <span class="sub-title">DOCUMENT LAYOUT EXTRACTION MATRIX</span>
+                    </div>
+                  </div>
+
+                  <!-- Mock visual anchors to make it look like a scanned document sheet -->
+                  <div class="sheet-scanned-avatar" *ngIf="doc.category === 'Aadhaar Card' || doc.category === 'PAN Card'">
+                    <mat-icon>photo_camera_back</mat-icon>
+                    <span class="lbl">ANCHOR</span>
+                  </div>
+
+                  <div class="sheet-barcode-strip" *ngIf="doc.category === 'Aadhaar Card'">
+                    <div class="bar" *ngFor="let b of [1,2,3,4,5,6,7,8,9,10]"></div>
+                  </div>
+
+                  <!-- Real-time dynamic OCR word overlays -->
+                  <ng-container *ngIf="showOCR">
+                    <div class="ocr-word-overlay" 
+                         *ngFor="let word of ocrWords"
+                         [style.top.%]="word.top"
+                         [style.left.%]="word.left"
+                         [style.width.%]="word.width"
+                         [style.height.%]="word.height"
+                         [matTooltip]="'OCR Word: ' + word.text + ' | Confidence: ' + word.confidence + '%'">
+                      <span class="ocr-char">{{ word.text }}</span>
+                    </div>
+                  </ng-container>
+
+                  <!-- Real-time AI region overlays -->
+                  <ng-container *ngIf="showAIRegions">
+                    <div class="ai-region-overlay"
+                         *ngFor="let reg of regions"
+                         [class.active]="activeRegionId === reg.id"
+                         [class.heatmap]="showConfidenceHeatmap"
+                         [class.low-conf]="reg.confidence < 80"
+                         [class.med-conf]="reg.confidence >= 80 && reg.confidence < 95"
+                         [class.high-conf]="reg.confidence >= 95"
+                         [style.top.%]="reg.top"
+                         [style.left.%]="reg.left"
+                         [style.width.%]="reg.width"
+                         [style.height.%]="reg.height"
+                         (mouseenter)="onHoverRegion(reg.id)"
+                         (mouseleave)="onHoverRegion(null)">
+                      <div class="region-meta-tag" *ngIf="!showConfidenceHeatmap">
+                        <span class="tag-title">{{ reg.label }}</span>
+                      </div>
+                      <div class="confidence-heatmap-tag" *ngIf="showConfidenceHeatmap">
+                        <span>{{ reg.confidence }}% AI</span>
+                      </div>
+                    </div>
+                  </ng-container>
+                  
+                  <!-- Fallback raw layout content description -->
+                  <div class="sheet-description-box">
+                    <p class="description-heading">DOCUMENT METADATA MATRIX</p>
+                    <p class="description-text">{{ doc.ocrText ? (doc.ocrText | slice:0:220) + '...' : 'Metadata coordinates compiled successfully.' }}</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Raw OCR Text Card -->
+      <div class="card ocr-card" *ngIf="doc.ocrText">
+        <div class="card-header">
+          <h2>Extracted Text</h2>
+          <span class="confidence-tag" [ngClass]="confidenceClass">
+            {{ showLaserScanner ? animatedConfidence : confidencePercent }}% AI Confidence
+          </span>
+        </div>
+        <div class="ocr-text-body">
+          <pre class="ocr-pre">{{ doc.ocrText }}</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: AI Analytics & Extracted Values -->
+    <div class="metadata-column">
+      
+      <!-- Document Quality & Summary Card -->
+      <div class="card summary-card">
+        <div class="card-header">
+          <h2>AI Document Summary</h2>
+          <div class="quality-badge" [class.excellent]="getQualityScore() >= 90" [class.good]="getQualityScore() >= 75 && getQualityScore() < 90" [class.poor]="getQualityScore() < 75">
+            <span class="pct">{{ getQualityScore() }}%</span>
+            <span class="lbl">{{ getQualityLabel(getQualityScore()) }} Quality</span>
+          </div>
+        </div>
+        <div class="summary-body">
+          <p class="summary-desc">{{ getAiSummary() }}</p>
+        </div>
+      </div>
+
+      <!-- AI Extracted Fields -->
+      <div class="card fields-card">
+        <div class="card-header">
+          <h2>Extracted Metadata</h2>
+          <button class="improve-btn" [routerLink]="['/documents/training']" [queryParams]="{ docId: doc._id }" matRipple>
+            <mat-icon>model_training</mat-icon>
+            <span>Correct AI</span>
+          </button>
+        </div>
+
+        <div class="fields-body">
+          <!-- Low Confidence Alert -->
+          <div class="confidence-alert" *ngIf="doc.ocrConfidence > 0 && doc.ocrConfidence < 0.7">
+            <mat-icon>warning_amber</mat-icon>
+            <div class="alert-content">
+              <h4>Low OCR Confidence ({{ confidencePercent }}%)</h4>
+              <p>The text recognition quality is below the recommended threshold. Please review the values.</p>
+            </div>
+          </div>
+
+          <div class="metadata-list" *ngIf="hasMetadata; else noMeta">
+            
+            <div class="meta-field-interactive" 
+                 *ngIf="doc.metadata.holderName"
+                 [class.active]="activeRegionId === 'holderName'"
+                 (mouseenter)="onHoverRegion('holderName')"
+                 (mouseleave)="onHoverRegion(null)"
+                 (click)="highlightField('holderName')">
+              <div class="field-meta-row">
+                <span class="label">Holder Name</span>
+                <span class="value">{{ doc.metadata.holderName }}</span>
+              </div>
+              <div class="confidence-progress-row">
+                <div class="confidence-track">
+                  <div class="confidence-fill" 
+                       [style.width.%]="getFieldConfidence('holderName')" 
+                       [class]="getConfidenceColorClass(getFieldConfidence('holderName'))"></div>
+                </div>
+                <span class="confidence-percent">{{ getFieldConfidence('holderName') }}% confidence</span>
+              </div>
+            </div>
+
+            <div class="meta-field-interactive" 
+                 *ngIf="doc.metadata.documentName"
+                 [class.active]="activeRegionId === 'documentName'"
+                 (mouseenter)="onHoverRegion('documentName')"
+                 (mouseleave)="onHoverRegion(null)"
+                 (click)="highlightField('documentName')">
+              <div class="field-meta-row">
+                <span class="label">Document Name</span>
+                <span class="value">{{ doc.metadata.documentName }}</span>
+              </div>
+              <div class="confidence-progress-row">
+                <div class="confidence-track">
+                  <div class="confidence-fill" 
+                       [style.width.%]="getFieldConfidence('documentName')" 
+                       [class]="getConfidenceColorClass(getFieldConfidence('documentName'))"></div>
+                </div>
+                <span class="confidence-percent">{{ getFieldConfidence('documentName') }}% confidence</span>
+              </div>
+            </div>
+
+            <div class="meta-field-interactive" 
+                 *ngIf="doc.metadata.organization"
+                 [class.active]="activeRegionId === 'organization'"
+                 (mouseenter)="onHoverRegion('organization')"
+                 (mouseleave)="onHoverRegion(null)"
+                 (click)="highlightField('organization')">
+              <div class="field-meta-row">
+                <span class="label">Organization / Issuer</span>
+                <span class="value">{{ doc.metadata.organization }}</span>
+              </div>
+              <div class="confidence-progress-row">
+                <div class="confidence-track">
+                  <div class="confidence-fill" 
+                       [style.width.%]="getFieldConfidence('organization')" 
+                       [class]="getConfidenceColorClass(getFieldConfidence('organization'))"></div>
+                </div>
+                <span class="confidence-percent">{{ getFieldConfidence('organization') }}% confidence</span>
+              </div>
+            </div>
+
+            <div class="meta-field-interactive" 
+                 *ngIf="doc.metadata.documentNumber"
+                 [class.active]="activeRegionId === 'documentNumber'"
+                 (mouseenter)="onHoverRegion('documentNumber')"
+                 (mouseleave)="onHoverRegion(null)"
+                 (click)="highlightField('documentNumber')">
+              <div class="field-meta-row">
+                <span class="label">Document Number</span>
+                <span class="value">{{ doc.metadata.documentNumber }}</span>
+              </div>
+              <div class="confidence-progress-row">
+                <div class="confidence-track">
+                  <div class="confidence-fill" 
+                       [style.width.%]="getFieldConfidence('documentNumber')" 
+                       [class]="getConfidenceColorClass(getFieldConfidence('documentNumber'))"></div>
+                </div>
+                <span class="confidence-percent">{{ getFieldConfidence('documentNumber') }}% confidence</span>
+              </div>
+            </div>
+
+            <div class="meta-field-interactive" 
+                 *ngIf="doc.metadata.issueDate"
+                 [class.active]="activeRegionId === 'issueDate'"
+                 (mouseenter)="onHoverRegion('issueDate')"
+                 (mouseleave)="onHoverRegion(null)"
+                 (click)="highlightField('issueDate')">
+              <div class="field-meta-row">
+                <span class="label">Issue Date</span>
+                <span class="value">{{ doc.metadata.issueDate | date:'mediumDate' }}</span>
+              </div>
+              <div class="confidence-progress-row">
+                <div class="confidence-track">
+                  <div class="confidence-fill" 
+                       [style.width.%]="getFieldConfidence('issueDate')" 
+                       [class]="getConfidenceColorClass(getFieldConfidence('issueDate'))"></div>
+                </div>
+                <span class="confidence-percent">{{ getFieldConfidence('issueDate') }}% confidence</span>
+              </div>
+            </div>
+
+            <div class="meta-field-interactive" 
+                 *ngIf="doc.metadata.expiryDate"
+                 [class.active]="activeRegionId === 'expiryDate'"
+                 (mouseenter)="onHoverRegion('expiryDate')"
+                 (mouseleave)="onHoverRegion(null)"
+                 (click)="highlightField('expiryDate')">
+              <div class="field-meta-row">
+                <span class="label">Expiry Date</span>
+                <span class="value">{{ doc.metadata.expiryDate | date:'mediumDate' }}</span>
+              </div>
+              <div class="confidence-progress-row">
+                <div class="confidence-track">
+                  <div class="confidence-fill" 
+                       [style.width.%]="getFieldConfidence('expiryDate')" 
+                       [class]="getConfidenceColorClass(getFieldConfidence('expiryDate'))"></div>
+                </div>
+                <span class="confidence-percent">{{ getFieldConfidence('expiryDate') }}% confidence</span>
+              </div>
+            </div>
+
+          </div>
+
+          <ng-template #noMeta>
+            <div class="no-meta-state">
+              <mat-icon>search_off</mat-icon>
+              <p>AI couldn't confidently extract everything. Review highlighted fields.</p>
+              <button class="retry-btn" [routerLink]="['/documents/training']" [queryParams]="{ docId: doc._id }">
+                <mat-icon>model_training</mat-icon>
+                <span>Review Now</span>
+              </button>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+      <!-- Smart AI Suggestions Panel -->
+      <div class="card suggestions-card">
+        <div class="card-header">
+          <h2>Smart AI Suggestions</h2>
+        </div>
+        <div class="suggestions-body">
+          <div class="suggestion-item" *ngFor="let suggestion of getSuggestions()">
+            <mat-icon class="sparkle-icon">auto_awesome</mat-icon>
+            <span class="sugg-text">{{ suggestion }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Inference Engine Insights -->
+      <div class="card insights-card">
+        <div class="card-header">
+          <h2>AI Insights</h2>
+        </div>
+        <div class="insights-body">
+          <div class="insight-row" *ngFor="let insight of getInsightsList()">
+            <span class="lbl">{{ insight.label }}</span>
+            <span class="val">{{ insight.value }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Processing History Timeline -->
+      <div class="card timeline-card" *ngIf="doc.processingHistory && doc.processingHistory.length > 0">
+        <div class="card-header">
+          <h2>Processing History</h2>
+        </div>
+        <div class="timeline-body">
+          <div class="timeline">
+            <div class="timeline-item" *ngFor="let step of doc.processingHistory" [class.failed]="step.status === 'failed'">
+              <div class="timeline-marker">
+                <mat-icon>{{ step.status === 'completed' ? 'check' : step.status === 'failed' ? 'close' : 'hourglass_empty' }}</mat-icon>
+              </div>
+              <div class="timeline-content">
+                <span class="stage">{{ step.stage }}</span>
+                <div class="meta">
+                  <span class="time">{{ step.timestamp | date:'HH:mm:ss' }}</span>
+                  <span class="duration" *ngIf="step.durationMs">{{ step.durationMs }}ms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Delete Confirmation Dialog Template -->
+<ng-template #deleteConfirmDialog>
+  <div class="dialog-content-wrapper">
+    <h2 mat-dialog-title>Delete Document</h2>
+    <mat-dialog-content>
+      <p>Are you sure you want to permanently delete <strong>{{ doc?.originalFileName }}</strong>?</p>
+      <p class="warning-text">This action cannot be undone and will delete all extracted AI metadata.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close class="cancel-dialog-btn">Cancel</button>
+      <button mat-button [mat-dialog-close]="true" class="delete-dialog-btn" color="warn">Delete</button>
+    </mat-dialog-actions>
+  </div>
+</ng-template>

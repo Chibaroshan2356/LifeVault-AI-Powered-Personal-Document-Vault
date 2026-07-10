@@ -1,109 +1,128 @@
-<!--
-  DocumentUploadComponent — Upload Page
--->
 <div class="upload-page">
-
   <!-- Header -->
   <div class="page-header">
     <a routerLink="/documents" class="back-link">
-      <mat-icon>arrow_back</mat-icon> My Documents
+      <mat-icon>arrow_back</mat-icon>
+      <span>My Documents</span>
     </a>
     <h1>Upload Document</h1>
-    <p>Supported formats: {{ allowedLabels }} — Max {{ maxSizeLabel }}</p>
+    <p>Supported: {{ allowedLabels }} · Max {{ maxSizeLabel }}</p>
   </div>
 
   <!-- Upload card -->
   <div class="upload-card">
-
     <!-- Drop zone -->
-    @if (uploadState === 'idle' || uploadState === 'error') {
+    <div *ngIf="uploadState === 'idle' || uploadState === 'error'">
       <div
         class="drop-zone"
         [class.drag-over]="isDragOver"
         [class.has-file]="selectedFile"
         (click)="!selectedFile && openFilePicker()"
       >
-        @if (!selectedFile) {
-          <!-- Empty state -->
+        <div *ngIf="!selectedFile" class="flex-col flex-center" style="gap: 12px; width: 100%;">
           <mat-icon class="drop-icon">cloud_upload</mat-icon>
-          <p class="drop-title">Drag &amp; Drop your document here</p>
+          <p class="drop-title">Drag & drop your file here</p>
           <p class="drop-sub">or</p>
-          <button mat-stroked-button color="primary" (click)="openFilePicker()">
-            <mat-icon>folder_open</mat-icon> Choose File
+          <button class="choose-btn" (click)="openFilePicker()">
+            <mat-icon>folder_open</mat-icon>
+            <span>Choose File</span>
           </button>
           <p class="drop-hint">{{ allowedLabels }} up to {{ maxSizeLabel }}</p>
-        } @else {
-          <!-- File selected -->
-          <div class="selected-file">
-            <mat-icon class="file-icon" [class.pdf]="selectedFile.type === 'application/pdf'">
-              {{ fileIcon }}
-            </mat-icon>
-            <div class="file-info">
-              <span class="file-name">{{ selectedFile.name }}</span>
-              <span class="file-meta">{{ fileSizeLabel }} · {{ selectedFile.type }}</span>
-            </div>
-            <button mat-icon-button class="remove-btn" (click)="clearSelection()">
-              <mat-icon>close</mat-icon>
-            </button>
+        </div>
+
+        <div *ngIf="selectedFile" class="selected-file">
+          <mat-icon class="file-icon" [class.pdf]="selectedFile.type === 'application/pdf'">
+            {{ selectedFile.type === 'application/pdf' ? 'picture_as_pdf' : 'insert_drive_file' }}
+          </mat-icon>
+          <div class="file-info">
+            <span class="file-name">{{ selectedFile.name }}</span>
+            <span class="file-meta">{{ fileSizeLabel }} · {{ selectedFile.type || 'Unknown Type' }}</span>
           </div>
-        }
+          <button mat-icon-button class="remove-btn" (click)="clearSelection(); $event.stopPropagation()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
       </div>
 
       <!-- Validation error -->
-      @if (validationError) {
-        <div class="validation-error">
-          <mat-icon>error_outline</mat-icon>
-          {{ validationError }}
-        </div>
-      }
+      <div class="validation-error" *ngIf="validationError">
+        <mat-icon>error_outline</mat-icon>
+        <span>{{ validationError }}</span>
+      </div>
 
       <!-- Action buttons -->
       <div class="actions">
-        <button mat-button routerLink="/documents">Cancel</button>
+        <button class="cancel-btn" routerLink="/documents">Cancel</button>
         <button
-          mat-raised-button color="primary"
+          class="upload-action-btn"
           [disabled]="!selectedFile"
           (click)="upload()"
         >
-          <mat-icon>upload</mat-icon> Upload Document
+          <mat-icon>upload</mat-icon>
+          <span>Upload Document</span>
         </button>
       </div>
-    }
+    </div>
 
     <!-- Uploading state -->
-    @if (uploadState === 'uploading') {
-      <div class="uploading-state">
-        <mat-icon class="uploading-icon">hourglass_top</mat-icon>
-        <p class="uploading-title">Uploading {{ selectedFile?.name }}…</p>
-        <mat-progress-bar
-          mode="determinate"
-          [value]="uploadPercent"
-          color="primary"
-        />
-        <p class="uploading-pct">{{ uploadPercent }}%</p>
+    <div class="uploading-state" *ngIf="uploadState === 'uploading'">
+      <mat-icon class="uploading-icon">hourglass_top</mat-icon>
+      <p class="uploading-title">Uploading {{ selectedFile?.name }}…</p>
+      <mat-progress-bar
+        mode="determinate"
+        [value]="uploadPercent"
+        class="full-width"
+      ></mat-progress-bar>
+      <p class="uploading-pct">{{ uploadPercent }}%</p>
+    </div>
+
+    <!-- Processing state -->
+    <div class="processing-state" *ngIf="uploadState === 'processing'">
+      <div class="loader-circle flex-center">
+        <span class="processing-glow"></span>
+        <mat-icon class="pulse-icon">insights</mat-icon>
       </div>
-    }
+      <p class="processing-title">AI Processing Pipeline Active</p>
+      <p class="processing-sub">Please wait while the vault indexes and extracts document content.</p>
+
+      <div class="steps">
+        <div class="step active done">
+          <mat-icon class="step-icon">check_circle</mat-icon>
+          <span class="step-label">File uploaded to storage</span>
+        </div>
+        <div class="step" [class.active]="processingStatus === 'ocr'" [class.done]="processingStatus === 'layoutlm' || processingStatus === 'ready'">
+          <mat-icon class="step-icon">{{ (processingStatus === 'layoutlm' || processingStatus === 'ready') ? 'check_circle' : 'hourglass_empty' }}</mat-icon>
+          <span class="step-label">Extracting document text (EasyOCR)</span>
+        </div>
+        <div class="step" [class.active]="processingStatus === 'layoutlm'" [class.done]="processingStatus === 'ready'">
+          <mat-icon class="step-icon">{{ (processingStatus === 'ready') ? 'check_circle' : 'hourglass_empty' }}</mat-icon>
+          <span class="step-label">Running LayoutLMv3 AI layout parser</span>
+        </div>
+        <div class="step" [class.active]="processingStatus === 'ready'" [class.done]="processingStatus === 'ready'">
+          <mat-icon class="step-icon">{{ (processingStatus === 'ready') ? 'check_circle' : 'hourglass_empty' }}</mat-icon>
+          <span class="step-label">Indexing metadata & finalising validation</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Success state -->
-    @if (uploadState === 'success') {
-      <div class="success-state">
-        <mat-icon class="success-icon">check_circle</mat-icon>
-        <p class="success-title">Upload complete!</p>
-        <p class="success-sub">Your document has been stored and is queued for processing.</p>
-        <button mat-raised-button color="primary" routerLink="/documents">
-          <mat-icon>folder</mat-icon> View My Documents
-        </button>
-      </div>
-    }
+    <div class="success-state" *ngIf="uploadState === 'success'">
+      <mat-icon class="success-icon">check_circle</mat-icon>
+      <p class="success-title">Upload complete!</p>
+      <p class="success-sub">Your document has been stored and is queued for processing.</p>
+      <button class="view-docs-btn" routerLink="/documents">
+        <mat-icon>folder</mat-icon>
+        <span>View My Documents</span>
+      </button>
+    </div>
 
     <!-- Hidden file input -->
     <input
-      #fileInput
       type="file"
-      accept=".pdf,.jpg,.jpeg,.png"
-      class="hidden-input"
+      #fileInput
+      style="display: none;"
       (change)="onFileInputChange($event)"
+      accept="application/pdf,image/jpeg,image/png"
     />
-
   </div>
 </div>

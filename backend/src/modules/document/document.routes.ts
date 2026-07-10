@@ -38,7 +38,7 @@ documentRouter.use(authenticate);
 /** Stricter rate limit for uploads: 20 per 15 minutes per user IP */
 const uploadLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max:      20,
+  max:      process.env.NODE_ENV === 'development' ? 1000 : 20,
   message:  { success: false, message: 'Too many upload requests. Please wait.' },
 });
 

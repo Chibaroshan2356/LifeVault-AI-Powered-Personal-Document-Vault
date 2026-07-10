@@ -16,8 +16,8 @@ import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  // Default: redirect to login
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  // Default redirect
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
 
   // Public: auth pages
   {
@@ -26,24 +26,28 @@ export const routes: Routes = [
       import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
 
-  // Protected: dashboard
+  // Protected Shell
   {
-    path: 'dashboard',
+    path: '',
     canActivate: [authGuard],
     loadComponent: () =>
-      import('./features/dashboard/dashboard.component').then(
-        (m) => m.DashboardComponent,
-      ),
-    title: 'LifeVault – Dashboard',
-  },
-
-  // Protected: documents (list, upload, search, detail)
-  {
-    path: 'documents',
-    canActivate: [authGuard],
-    loadChildren: () =>
-      import('./features/documents/documents.routes').then((m) => m.DOCUMENTS_ROUTES),
-    title: 'LifeVault – Documents',
+      import('./features/layout/layout.component').then((m) => m.LayoutComponent),
+    children: [
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./features/dashboard/dashboard.component').then(
+            (m) => m.DashboardComponent,
+          ),
+        title: 'LifeVault – Dashboard',
+      },
+      {
+        path: 'documents',
+        loadChildren: () =>
+          import('./features/documents/documents.routes').then((m) => m.DOCUMENTS_ROUTES),
+        title: 'LifeVault – Documents',
+      },
+    ]
   },
 
   // Convenience alias: /search → /documents/search
