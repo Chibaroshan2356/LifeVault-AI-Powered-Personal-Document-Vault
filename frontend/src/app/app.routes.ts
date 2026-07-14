@@ -4,8 +4,9 @@
  * Route hierarchy:
  *  /auth/login       → LoginComponent      (public)
  *  /auth/register    → RegisterComponent   (public)
- *  /dashboard        → DashboardComponent  (protected)
- *  /documents        → Document feature    (protected)
+ *  /welcome          → WelcomeComponent    (protected, no layout shell)
+ *  /dashboard        → DashboardComponent  (protected, inside layout shell)
+ *  /documents        → Document feature    (protected, inside layout shell)
  *  /documents/search → DocumentSearchComponent (protected, aliased at /search)
  *  /search           → redirect → /documents/search (convenience alias)
  *  **                → NotFoundComponent
@@ -16,8 +17,8 @@ import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  // Default redirect
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  // Default redirect → cinematic welcome page
+  { path: '', redirectTo: 'welcome', pathMatch: 'full' },
 
   // Public: auth pages
   {
@@ -26,7 +27,16 @@ export const routes: Routes = [
       import('./features/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
 
-  // Protected Shell
+  // Protected: Cinematic Welcome Page (no layout shell)
+  {
+    path: 'welcome',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./features/welcome/welcome.component').then((m) => m.WelcomeComponent),
+    title: 'LifeVault – Welcome',
+  },
+
+  // Protected Shell (with sidebar + layout)
   {
     path: '',
     canActivate: [authGuard],

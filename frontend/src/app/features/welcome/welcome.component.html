@@ -1,0 +1,167 @@
+<!-- Cinematic Welcome / Entry Page (/welcome) -->
+<section class="welcome-page" (mousemove)="onMouseMove($event)">
+
+  <!-- ════ Cinematic Background ════ -->
+  <div class="bg-canvas">
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <div class="star-field"></div>
+    <div class="volumetric-light vl-center"></div>
+    <div class="volumetric-light vl-right"></div>
+  </div>
+
+  <!-- ════ Glass Content Panel ════ -->
+  <div class="glass-panel">
+
+    <!-- ══ LEFT PANEL ══ -->
+    <div class="left-panel">
+
+      <!-- Brand wordmark -->
+      <div class="brand-wordmark" [class.visible]="showTag1">
+        <span class="brand-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="#3b82f6" stroke-width="1.5"/>
+            <circle cx="14" cy="14" r="7"  fill="#3b82f6" opacity="0.25"/>
+            <circle cx="14" cy="14" r="3"  fill="#60a5fa"/>
+          </svg>
+        </span>
+        <span class="brand-name">LifeVault <span class="brand-ai">AI</span></span>
+      </div>
+
+      <!-- Animated taglines -->
+      <div class="taglines">
+        <h1 class="tagline" [class.visible]="showTag1">Protect.</h1>
+        <h1 class="tagline accent" [class.visible]="showTag2">Understand.</h1>
+        <h1 class="tagline" [class.visible]="showTag3">Organize.</h1>
+      </div>
+
+      <!-- Subtitle -->
+      <p class="sub-caption" [class.visible]="showSub">
+        Your personal AI document intelligence platform.
+      </p>
+
+      <!-- Technology badges -->
+      <div class="tech-badges" [class.visible]="showBadges">
+        <span class="badge">EasyOCR</span>
+        <span class="badge">LayoutLMv3</span>
+        <span class="badge primary">AI Powered</span>
+        <span class="badge">Secure Vault</span>
+      </div>
+
+      <!-- ══ AI Scanning Widget ══ -->
+      <div class="scanner-widget" [class.visible]="showScanner">
+
+        <!-- Scanning ring SVG -->
+        <div class="scan-ring-wrapper">
+          <svg class="scan-ring" viewBox="0 0 120 120" width="120" height="120">
+            <!-- Track -->
+            <circle cx="60" cy="60" r="52" class="ring-track"/>
+            <!-- Animated fill -->
+            <circle cx="60" cy="60" r="52" class="ring-fill"
+              [class.stage-scanning]="scanStage === 'scanning'"
+              [class.stage-verified]="scanStage === 'verified' || scanStage === 'ready'"
+            />
+            <!-- Spinning arc -->
+            <circle cx="60" cy="60" r="52" class="ring-spin"
+              [class.active]="scanStage === 'scanning'"
+            />
+          </svg>
+
+          <!-- Inner content -->
+          <div class="scan-inner">
+            <!-- Initializing -->
+            <ng-container *ngIf="scanStage === 'initializing'">
+              <div class="scan-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="scan-label">Initializing AI</span>
+            </ng-container>
+
+            <!-- Scanning -->
+            <ng-container *ngIf="scanStage === 'scanning'">
+              <svg class="scan-icon" width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"
+                      fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+                <circle cx="12" cy="12" r="4" fill="#3b82f6" opacity="0.7"/>
+              </svg>
+              <span class="scan-label scanning">Scanning Identity...</span>
+            </ng-container>
+
+            <!-- Verified -->
+            <ng-container *ngIf="scanStage === 'verified' || scanStage === 'ready'">
+              <svg class="scan-icon verified-check" width="30" height="30" viewBox="0 0 24 24" fill="none">
+                <path d="M20 6L9 17l-5-5" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="scan-label verified">Identity Verified</span>
+            </ng-container>
+          </div>
+        </div>
+
+        <!-- Welcome name (visible after verified) -->
+        <div class="welcome-name" [class.visible]="scanStage === 'verified' || scanStage === 'ready'">
+          <span class="welcome-greeting">Welcome back,</span>
+          <strong class="user-name-display">{{ userName }}</strong>
+        </div>
+
+      </div>
+
+      <!-- ══ Enter Vault Button ══ -->
+      <div class="cta-group" [class.visible]="showBtn">
+
+        <button
+          id="enter-vault-btn"
+          class="enter-vault-btn"
+          [class.stage-initializing]="scanStage === 'initializing'"
+          [class.stage-scanning]="scanStage === 'scanning'"
+          [class.stage-verified]="scanStage === 'verified'"
+          [class.stage-ready]="scanStage === 'ready'"
+          [disabled]="scanStage !== 'ready'"
+          (click)="enterVault()"
+        >
+          <span class="btn-glow-ring"></span>
+          <span class="btn-content">
+            <ng-container [ngSwitch]="scanStage">
+              <span *ngSwitchCase="'initializing'" class="btn-label">
+                <span class="btn-dot-loader"><i></i><i></i><i></i></span>
+                Initializing...
+              </span>
+              <span *ngSwitchCase="'scanning'" class="btn-label">
+                <span class="btn-dot-loader"><i></i><i></i><i></i></span>
+                Scanning...
+              </span>
+              <span *ngSwitchCase="'verified'" class="btn-label vault-ready">
+                Vault Ready
+              </span>
+              <span *ngSwitchCase="'ready'" class="btn-label enter-label">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="margin-right:8px">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Enter Vault
+              </span>
+            </ng-container>
+          </span>
+        </button>
+
+        <a class="learn-more-link" href="https://github.com/Chibaroshan2356" target="_blank" rel="noopener">
+          View on GitHub →
+        </a>
+      </div>
+
+    </div>
+    <!-- end .left-panel -->
+
+    <!-- ══ RIGHT PANEL ══ -->
+    <div class="right-panel">
+      <canvas #welcomeCanvas class="three-canvas"></canvas>
+
+      <!-- Floating lens flare hints -->
+      <div class="lens-flare lf-1"></div>
+      <div class="lens-flare lf-2"></div>
+    </div>
+    <!-- end .right-panel -->
+
+  </div>
+  <!-- end .glass-panel -->
+
+</section>
