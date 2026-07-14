@@ -1,5 +1,5 @@
 <!-- ============================================================
-     LifeVault AI — Cinematic Welcome Page v2
+     LifeVault AI — Cinematic Welcome Page v3
      /welcome — appears after login, before dashboard
      ============================================================ -->
 
@@ -28,7 +28,7 @@
   <!-- ══════════════ GLASS PANEL ══════════════ -->
   <div class="glass-panel">
 
-    <!-- ════ LEFT PANEL ════ -->
+    <!-- ════ LEFT PANEL (Minimalist AI Portal) ════ -->
     <div class="left-panel">
 
       <!-- Brand -->
@@ -44,7 +44,7 @@
           <span class="brand-name">LifeVault</span>
           <span class="brand-ai">AI</span>
         </div>
-        <div class="brand-version">v2.4.1</div>
+        <div class="brand-version">v3.0.0</div>
       </div>
 
       <!-- Tagline stack -->
@@ -56,123 +56,21 @@
 
       <!-- Subtitle -->
       <p class="sub-caption" [class.visible]="showSub">
-        Your personal AI document intelligence platform.
+        LifeVault AI secures every important document using multimodal AI.
       </p>
 
       <!-- Tech badges -->
       <div class="badges" [class.visible]="showBadges">
         <span class="badge">EasyOCR</span>
         <span class="badge">LayoutLMv3</span>
-        <span class="badge primary">AI Powered</span>
-        <span class="badge">Secure Vault</span>
+        <span class="badge primary">Secure Vault</span>
       </div>
-
-      <!-- ════ BOOT SEQUENCE ════ -->
-      <div class="boot-panel" [class.visible]="showBoot" [class.complete]="bootComplete">
-        <!-- Progress bar -->
-        <div class="boot-progress-track">
-          <div class="boot-progress-fill" [style.width.%]="bootProgress"></div>
-          <div class="boot-progress-glow" [style.left.%]="bootProgress"></div>
-        </div>
-
-        <!-- Boot lines -->
-        <div class="boot-lines">
-          <div *ngFor="let line of visibleBootLines; let i = index; let last = last"
-               class="boot-line"
-               [class.last]="last"
-               [class.type-ready]="line.type === 'ready'"
-               [class.type-online]="line.type === 'online'">
-            <span class="boot-icon">
-              <ng-container [ngSwitch]="line.type">
-                <span *ngSwitchCase="'init'"  class="dot-pulse"></span>
-                <span *ngSwitchCase="'online'" class="dot-check">✓</span>
-                <span *ngSwitchCase="'ready'"  class="dot-star">★</span>
-              </ng-container>
-            </span>
-            <span class="boot-text">{{ line.text }}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ════ IDENTITY PANEL ════ -->
-      <div class="identity-panel" [class.visible]="showIdentity">
-
-        <!-- Scanning ring + name -->
-        <div class="identity-header">
-          <!-- Mini scan ring SVG -->
-          <div class="scan-ring-wrap">
-            <svg class="scan-ring-svg" viewBox="0 0 72 72" width="72" height="72">
-              <circle cx="36" cy="36" r="30" class="ring-track"/>
-              <circle cx="36" cy="36" r="30" class="ring-fill"
-                [class.scanning]="scanStage === 'scanning'"
-                [class.verified]="scanStage === 'verified' || scanStage === 'ready'"/>
-              <circle cx="36" cy="36" r="30" class="ring-arc"
-                [class.active]="scanStage === 'scanning'"/>
-            </svg>
-            <div class="scan-icon-inner">
-              <span *ngIf="scanStage === 'initializing'" class="scan-spinner">
-                <span></span><span></span><span></span>
-              </span>
-              <svg *ngIf="scanStage === 'scanning'" width="20" height="20" viewBox="0 0 24 24" fill="none" class="scan-radar">
-                <circle cx="12" cy="12" r="10" stroke="#60a5fa" stroke-width="1.5"/>
-                <circle cx="12" cy="12" r="4"  fill="#3b82f6" opacity="0.6"/>
-              </svg>
-              <svg *ngIf="scanStage === 'verified' || scanStage === 'ready'" width="22" height="22" viewBox="0 0 24 24" fill="none" class="check-pop">
-                <path d="M20 6L9 17l-5-5" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Name & status -->
-          <div class="identity-info">
-            <div class="identity-greeting">Welcome back</div>
-            <div class="identity-name">{{ userName }}</div>
-
-            <div class="identity-status-badges">
-              <span class="id-badge" [class.scanning]="scanStage === 'scanning'"
-                    [class.verified]="scanStage === 'verified' || scanStage === 'ready'">
-                <ng-container [ngSwitch]="scanStage">
-                  <span *ngSwitchCase="'initializing'">Initializing...</span>
-                  <span *ngSwitchCase="'scanning'">Scanning Identity...</span>
-                  <span *ngSwitchCase="'verified'">Identity Verified ✓</span>
-                  <span *ngSwitchCase="'ready'">Identity Verified ✓</span>
-                </ng-container>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Detail rows (visible once verified) -->
-        <div class="identity-details" [class.visible]="scanStage === 'verified' || scanStage === 'ready'">
-          <div class="detail-row">
-            <span class="dr-label">Vault Integrity</span>
-            <span class="dr-value secure">Secure</span>
-          </div>
-          <div class="detail-row">
-            <span class="dr-label">Documents Protected</span>
-            <span class="dr-value count">11</span>
-          </div>
-          <div class="detail-row">
-            <span class="dr-label">AI Status</span>
-            <span class="dr-value ai">
-              <span class="ai-dot"></span> Ready
-            </span>
-          </div>
-        </div>
-
-      </div>
-      <!-- end .identity-panel -->
 
       <!-- ════ ENTER VAULT BUTTON ════ -->
       <div class="cta-wrap" [class.visible]="showBtn">
-
         <button
           id="enter-vault-btn"
-          class="vault-btn"
-          [class.stage-loading]="scanStage === 'initializing' || scanStage === 'scanning'"
-          [class.stage-verified]="scanStage === 'verified'"
-          [class.stage-ready]="scanStage === 'ready'"
-          [disabled]="scanStage !== 'ready'"
+          class="vault-btn stage-ready"
           (click)="enterVault()">
 
           <!-- Corner lines (animated border) -->
@@ -188,29 +86,13 @@
           <!-- Shine sweep -->
           <span class="btn-shine"></span>
 
-          <!-- Glow ring behind button (ready state) -->
+          <!-- Glow ring behind button -->
           <span class="btn-bloom"></span>
 
           <!-- Content -->
           <span class="btn-inner">
-            <span class="btn-top" [ngSwitch]="scanStage">
-              <span *ngSwitchCase="'initializing'">
-                <i class="ldot"></i><i class="ldot"></i><i class="ldot"></i>
-                Initializing
-              </span>
-              <span *ngSwitchCase="'scanning'">
-                <i class="ldot"></i><i class="ldot"></i><i class="ldot"></i>
-                Scanning
-              </span>
-              <span *ngSwitchCase="'verified'">VAULT READY</span>
-              <span *ngSwitchCase="'ready'">ENTER VAULT</span>
-            </span>
-            <span class="btn-sub" [ngSwitch]="scanStage">
-              <span *ngSwitchCase="'initializing'">Please wait...</span>
-              <span *ngSwitchCase="'scanning'">Verifying identity...</span>
-              <span *ngSwitchCase="'verified'">Preparing environment...</span>
-              <span *ngSwitchCase="'ready'">Ready →</span>
-            </span>
+            <span class="btn-top">ENTER VAULT</span>
+            <span class="btn-sub">Ready →</span>
           </span>
         </button>
 
@@ -222,14 +104,9 @@
     </div>
     <!-- end .left-panel -->
 
-    <!-- ════ RIGHT PANEL (Three.js) ════ -->
+    <!-- ════ RIGHT PANEL (Organic Liquid Crystal Nucleus) ════ -->
     <div class="right-panel">
       <canvas #welcomeCanvas class="scene-canvas"></canvas>
-
-      <!-- Ingestion label that appears when card flies in -->
-      <div class="ingestion-tag">
-        <span class="ing-dot"></span> AI Processing...
-      </div>
 
       <!-- Lens flares -->
       <div class="lens-flare lf-1"></div>
