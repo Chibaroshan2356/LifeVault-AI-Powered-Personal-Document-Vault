@@ -1,11 +1,15 @@
 /**
- * welcome.component.ts — Premium Apple-Style Welcome Page
+ * welcome.component.ts — Premium Cinematic AI Core Landing Page (v8)
  *
- * Implements a true 3D holographic glass vault using Three.js:
- *  • Central rotating 3D crystal core (icosahedron) with inner lock shield hologram
- *  • 5 orbiting holographic hexagonal nodes (Lock, Fingerprint, Shield, Microchip, Database)
- *  • Interactive neon line connections matching the nodes to the core
- *  • Volumetric point lights, drifting particles, base rings, and mouse parallax
+ * Implements a true 3D holographic glass display case containing a nested
+ * energy crystal core in Three.js.
+ *
+ * Visual highlights:
+ *  • Nested Glass Core: Inner cyan glowing energy core + Outer icosahedron glass core rotating on opposite axes.
+ *  • 6 Orbiting Security Nodes: Lock, Shield, Fingerprint, Chip, Database, Cloud (Hexagonal glowing badges).
+ *  • Dynamic Occlusion Layering: Lines connect nodes to core, passing behind glass faces correctly.
+ *  • Expanding base ripples: Flat rings scale up and fade out dynamically.
+ *  • Cinematic camera drift: 3D sinus-breathing position tracking + mouse parallax.
  */
 import {
   Component,
@@ -52,14 +56,16 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private animationFrameId!: number;
   private resizeObs!: ResizeObserver;
 
-  // Render objects
+  // Render nodes
   private vaultGroup: any;
-  private crystalCore: any;
+  private innerEnergy: any;
+  private midFaceted: any;
+  private outerFaceted: any;
   private particles: any;
-  private rings: any[] = [];
+  private ripples: any[] = [];
   private orbitNodes: any[] = [];
   private connectionLines: any;
-  private innerLight: any;
+  private pointLight: any;
 
   // Interactivity
   private targetMouseX = 0;
@@ -132,7 +138,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   // ═════════════════════════════════════════════════════════════
-  //  THREE.JS RENDER BLOCK
+  //  THREE.JS CINEMATIC AI CORE RENDERER
   // ═════════════════════════════════════════════════════════════
 
   private loadThreeJs(): Promise<void> {
@@ -167,127 +173,151 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
     this.camera.position.set(0, 0, 8.5);
 
-    // Group to host all vault elements
+    // Main vault/core group
     this.vaultGroup = new THREE.Group();
     this.scene.add(this.vaultGroup);
 
-    // ── Lights ──
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.40);
+    // ── Lighting ──
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.38);
     this.scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0x60a5fa, 0.90);
-    dirLight.position.set(5, 5, 5);
-    this.scene.add(dirLight);
+    const keyLight = new THREE.DirectionalLight(0x06b6d4, 1.1); // Cyan Key Light
+    keyLight.position.set(5, 5, 5);
+    this.scene.add(keyLight);
 
-    const dirLightLeft = new THREE.DirectionalLight(0x8b5cf6, 0.55);
-    dirLightLeft.position.set(-5, 3, -5);
-    this.scene.add(dirLightLeft);
+    const fillLight = new THREE.DirectionalLight(0x8b5cf6, 0.65); // Purple Fill Light
+    fillLight.position.set(-5, 3, -5);
+    this.scene.add(fillLight);
 
-    this.innerLight = new THREE.PointLight(0x0ea5e9, 5.0, 10.0);
-    this.innerLight.position.set(0, 0, 0);
-    this.vaultGroup.add(this.innerLight);
+    // Inner glowing light core
+    this.pointLight = new THREE.PointLight(0x3b82f6, 6.0, 10.0); // Blue Rim Light effect
+    this.pointLight.position.set(0, 0, 0);
+    this.vaultGroup.add(this.pointLight);
 
-    // ── Build Vault Cube (Thick glowing glass lines) ──
-    const cubeSize = 2.4;
-    const boxGeo = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
-    
-    const glassMat = new THREE.MeshPhysicalMaterial({
+    // ── Luxury Display Case (Thick double glass walls) ──
+    const caseS = 2.45;
+    const outerBox = new THREE.BoxGeometry(caseS, caseS, caseS);
+    const caseMat = new THREE.MeshPhysicalMaterial({
       color: 0x1e3a8a,
       transparent: true,
-      opacity: 0.16,
-      roughness: 0.1,
+      opacity: 0.14,
+      roughness: 0.12,
       metalness: 0.9,
       clearcoat: 1.0,
       side: THREE.DoubleSide
     });
-    const vaultMesh = new THREE.Mesh(boxGeo, glassMat);
-    this.vaultGroup.add(vaultMesh);
+    const outerMesh = new THREE.Mesh(outerBox, caseMat);
+    this.vaultGroup.add(outerMesh);
 
-    // Glowing double edge wireframes
-    const edgesGeo = new THREE.EdgesGeometry(boxGeo);
-    const lineMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
-    const edgeLines = new THREE.LineSegments(edgesGeo, lineMat);
-    this.vaultGroup.add(edgeLines);
+    // Glowing thick edge segments
+    const edgesOuter = new THREE.EdgesGeometry(outerBox);
+    const linesOuter = new THREE.LineSegments(
+      edgesOuter,
+      new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 })
+    );
+    this.vaultGroup.add(linesOuter);
 
-    const edgesGeoInner = new THREE.EdgesGeometry(new THREE.BoxGeometry(cubeSize - 0.04, cubeSize - 0.04, cubeSize - 0.04));
-    const lineMatInner = new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 1 });
-    const edgeLinesInner = new THREE.LineSegments(edgesGeoInner, lineMatInner);
-    this.vaultGroup.add(edgeLinesInner);
+    const edgesInner = new THREE.EdgesGeometry(new THREE.BoxGeometry(caseS - 0.05, caseS - 0.05, caseS - 0.05));
+    const linesInner = new THREE.LineSegments(
+      edgesInner,
+      new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 1 })
+    );
+    this.vaultGroup.add(linesInner);
 
-    // ── Vault Door (Swung open right) ──
+    // Open Door panel (pivoted on right edge)
     const doorGroup = new THREE.Group();
-    doorGroup.position.set(cubeSize / 2, 0, cubeSize / 2);
-    doorGroup.rotation.y = 0.55; // 32 degrees swung open
-    
-    const doorPanelGeo = new THREE.BoxGeometry(cubeSize, cubeSize, 0.04);
-    const doorPanel = new THREE.Mesh(doorPanelGeo, glassMat);
-    doorPanel.position.set(-cubeSize / 2, 0, 0);
+    doorGroup.position.set(caseS / 2, 0, caseS / 2);
+    doorGroup.rotation.y = 0.55;
+
+    const doorPanelGeo = new THREE.BoxGeometry(caseS, caseS, 0.04);
+    const doorPanel = new THREE.Mesh(doorPanelGeo, caseMat);
+    doorPanel.position.set(-caseS / 2, 0, 0);
     doorGroup.add(doorPanel);
 
-    const doorEdges = new THREE.LineSegments(new THREE.EdgesGeometry(doorPanelGeo), lineMat);
-    doorEdges.position.set(-cubeSize / 2, 0, 0);
+    const doorEdges = new THREE.LineSegments(new THREE.EdgesGeometry(doorPanelGeo), linesOuter.material);
+    doorEdges.position.set(-caseS / 2, 0, 0);
     doorGroup.add(doorEdges);
 
-    // Lock wheel/gear
-    const wheelGeo = new THREE.TorusGeometry(0.30, 0.04, 8, 32);
-    const wheelMat = new THREE.MeshStandardMaterial({ color: 0x60a5fa, metalness: 0.8, roughness: 0.2 });
-    const wheel = new THREE.Mesh(wheelGeo, wheelMat);
-    wheel.position.set(-cubeSize / 2, 0, 0.04);
-    doorGroup.add(wheel);
+    // Gear Lock handle
+    const gearGeo = new THREE.TorusGeometry(0.32, 0.04, 8, 32);
+    const gearMat = new THREE.MeshStandardMaterial({ color: 0x60a5fa, metalness: 0.9, roughness: 0.1 });
+    const gear = new THREE.Mesh(gearGeo, gearMat);
+    gear.position.set(-caseS / 2, 0, 0.04);
+    doorGroup.add(gear);
 
-    const axleGeo = new THREE.CylinderGeometry(0.06, 0.06, 0.15, 12);
-    const axle = new THREE.Mesh(axleGeo, wheelMat);
+    const axleGeo = new THREE.CylinderGeometry(0.05, 0.05, 0.16, 12);
+    const axle = new THREE.Mesh(axleGeo, gearMat);
     axle.rotation.x = Math.PI / 2;
-    axle.position.set(-cubeSize / 2, 0, 0.04);
+    axle.position.set(-caseS / 2, 0, 0.04);
     doorGroup.add(axle);
 
     this.vaultGroup.add(doorGroup);
 
-    // ── Central Crystal Core (Icosahedron Double Mesh) ──
-    const crystalGeo = new THREE.IcosahedronGeometry(0.55, 0);
-    const crystalMat = new THREE.MeshPhysicalMaterial({
+    // ── Nested Procedural AI energy Core ──
+    // Layer 1: Emissive inner core sphere
+    const coreSphereGeo = new THREE.SphereGeometry(0.28, 16, 16);
+    const coreSphereMat = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.95,
+      blending: THREE.AdditiveBlending
+    });
+    this.innerEnergy = new THREE.Mesh(coreSphereGeo, coreSphereMat);
+    this.vaultGroup.add(this.innerEnergy);
+
+    // Layer 2: Faceted translucent mid core (Icosahedron)
+    const facetedGeo = new THREE.IcosahedronGeometry(0.52, 0);
+    const facetedMat = new THREE.MeshPhysicalMaterial({
       color: 0x0ea5e9,
       transparent: true,
-      opacity: 0.28,
+      opacity: 0.35,
       roughness: 0.1,
-      metalness: 0.9,
+      metalness: 0.95,
       clearcoat: 1.0,
       side: THREE.DoubleSide
     });
-    this.crystalCore = new THREE.Mesh(crystalGeo, crystalMat);
-    this.vaultGroup.add(this.crystalCore);
+    this.midFaceted = new THREE.Mesh(facetedGeo, facetedMat);
+    this.vaultGroup.add(this.midFaceted);
 
-    const crystalEdges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(crystalGeo),
+    // Outer wireframe edge geometry on mid core
+    const midEdges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(facetedGeo),
       new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 2 })
     );
-    this.crystalCore.add(crystalEdges);
+    this.midFaceted.add(midEdges);
 
-    // Inner lock shield hologram inside crystal core
-    const shieldTex = this.createLockShieldTexture();
-    const shieldGeo = new THREE.PlaneGeometry(0.48, 0.48);
-    const shieldMat = new THREE.MeshBasicMaterial({
-      map: shieldTex,
+    // Layer 3: Larger outer faceted core (Icosahedron 1 level recursion)
+    const outerFacetedGeo = new THREE.IcosahedronGeometry(0.70, 1);
+    const outerFacetedMat = new THREE.MeshPhysicalMaterial({
+      color: 0x8b5cf6,
       transparent: true,
-      side: THREE.DoubleSide,
-      blending: THREE.AdditiveBlending,
-      opacity: 0.85
+      opacity: 0.20,
+      roughness: 0.08,
+      metalness: 0.9,
+      side: THREE.DoubleSide
     });
-    const shieldHolo = new THREE.Mesh(shieldGeo, shieldMat);
-    this.crystalCore.add(shieldHolo);
+    this.outerFaceted = new THREE.Mesh(outerFacetedGeo, outerFacetedMat);
+    this.vaultGroup.add(this.outerFaceted);
 
-    // ── Orbiting Hexagonal Badge Nodes ──
+    const outerEdges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(outerFacetedGeo),
+      new THREE.LineBasicMaterial({ color: 0xc084fc, linewidth: 1 })
+    );
+    this.outerFaceted.add(outerEdges);
+
+    // ── Orbiting Hexagonal security Badge Nodes ──
     const nodes = [
-      { type: 'lock',        color: '#8b5cf6', orbitR: 1.1, phase: 0.0,  yOff: -0.2 },
-      { type: 'fingerprint', color: '#06b6d4', orbitR: 0.95, phase: 1.25, yOff:  0.3 },
-      { type: 'shield',      color: '#3b82f6', orbitR: 1.05, phase: 2.50, yOff: -0.4 },
-      { type: 'chip',        color: '#06b6d4', orbitR: 0.9,  phase: 3.75, yOff:  0.2 },
-      { type: 'database',    color: '#3b82f6', orbitR: 1.0,  phase: 5.00, yOff: -0.1 },
+      { type: 'shield',      color: '#3b82f6', orbitR: 1.15, phase: 0.00,  yOff: -0.3 },
+      { type: 'fingerprint', color: '#06b6d4', orbitR: 0.98, phase: 1.05, yOff:  0.4 },
+      { type: 'neural',      color: '#8b5cf6', orbitR: 1.08, phase: 2.10, yOff: -0.2 },
+      { type: 'chip',        color: '#06b6d4', orbitR: 0.90,  phase: 3.15, yOff:  0.3 },
+      { type: 'database',    color: '#3b82f6', orbitR: 1.02, phase: 4.20, yOff: -0.4 },
+      { type: 'lock',        color: '#8b5cf6', orbitR: 1.10, phase: 5.25, yOff:  0.1 },
     ];
 
     nodes.forEach(node => {
       const tex = this.createNodeTexture(node.type, node.color);
-      const nodeGeo = new THREE.PlaneGeometry(0.36, 0.36);
+      const nodeGeo = new THREE.PlaneGeometry(0.32, 0.32);
       const nodeMat = new THREE.MeshBasicMaterial({
         map: tex,
         transparent: true,
@@ -316,42 +346,56 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     
     this.connectionLines = new THREE.LineSegments(
       lineGeometry,
-      new THREE.LineBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.4 })
+      new THREE.LineBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.45 })
     );
     this.vaultGroup.add(this.connectionLines);
 
-    // ── Concentric Base Rings ──
-    const ringGeo = new THREE.TorusGeometry(1.9, 0.015, 8, 64);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.35 });
-    const ring1 = new THREE.Mesh(ringGeo, ringMat);
-    ring1.rotation.x = Math.PI / 2;
-    ring1.position.y = -cubeSize / 2 - 0.25;
-    this.vaultGroup.add(ring1);
-    this.rings.push(ring1);
-
-    const ringGeo2 = new THREE.TorusGeometry(1.5, 0.01, 8, 64);
-    const ringMat2 = new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.25 });
-    const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
-    ring2.rotation.x = Math.PI / 2;
-    ring2.position.y = -cubeSize / 2 - 0.25;
-    this.vaultGroup.add(ring2);
-    this.rings.push(ring2);
-
-    // ── Drifting Particles ──
-    const particleCount = 180;
-    const particleGeo = new THREE.BufferGeometry();
-    const pos = new Float32Array(particleCount * 3);
-    
-    for (let i = 0; i < particleCount * 3; i += 3) {
-      pos[i]     = (Math.random() - 0.5) * 6; // X
-      pos[i + 1] = (Math.random() - 0.5) * 5; // Y
-      pos[i + 2] = (Math.random() - 0.5) * 4; // Z
+    // ── Concentric Base platform with expanding ripples ──
+    // Expanding rings
+    const ringCount = 3;
+    const rGeo = new THREE.TorusGeometry(1.6, 0.012, 8, 64);
+    for (let i = 0; i < ringCount; i++) {
+      const rMat = new THREE.MeshBasicMaterial({
+        color: 0x0ea5e9,
+        transparent: true,
+        opacity: 0.35,
+        blending: THREE.AdditiveBlending
+      });
+      const ring = new THREE.Mesh(rGeo, rMat);
+      ring.rotation.x = Math.PI / 2;
+      ring.position.y = -caseS / 2 - 0.22;
+      
+      const rData = {
+        mesh: ring,
+        phase: (i / ringCount) * Math.PI,
+        baseScale: 0.2 + (i / ringCount) * 0.8
+      };
+      this.vaultGroup.add(ring);
+      this.ripples.push(rData);
     }
-    
-    particleGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+
+    // Static platform outline disk
+    const outerDisk = new THREE.Mesh(
+      new THREE.TorusGeometry(1.8, 0.018, 8, 64),
+      new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.4 })
+    );
+    outerDisk.rotation.x = Math.PI / 2;
+    outerDisk.position.y = -caseS / 2 - 0.22;
+    this.vaultGroup.add(outerDisk);
+
+    // ── Drifting Volumetric starfield particles ──
+    const particleCount = 200;
+    const particleGeo = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    for (let i = 0; i < particleCount * 3; i += 3) {
+      positions[i]     = (Math.random() - 0.5) * 7.5;
+      positions[i + 1] = (Math.random() - 0.5) * 6.0;
+      positions[i + 2] = (Math.random() - 0.5) * 5.0;
+    }
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     const pMat = new THREE.PointsMaterial({
       color: 0x60a5fa,
-      size: 0.02,
+      size: 0.018,
       transparent: true,
       opacity: 0.65,
       blending: THREE.AdditiveBlending
@@ -369,7 +413,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
       side: THREE.DoubleSide
     });
     const topBeam = new THREE.Mesh(coneGeo, coneMat);
-    topBeam.position.y = cubeSize / 2 + 1.25;
+    topBeam.position.y = caseS / 2 + 1.25;
     topBeam.rotation.x = Math.PI;
     this.vaultGroup.add(topBeam);
 
@@ -378,7 +422,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.resizeObs.observe(pEl);
   }
 
-  // Helper to draw hexagonal nodes with custom security vector icons
+  // Draw hexagonal node badge textures with clean security vector icons
   private createNodeTexture(type: string, colorHex: string): any {
     const THREE = window.THREE;
     const canvas = document.createElement('canvas');
@@ -386,11 +430,11 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     canvas.height = 128;
     const ctx = canvas.getContext('2d')!;
 
-    const cx = 64, cy = 64, r = 50;
+    const cx = 64, cy = 64, r = 52;
 
-    // Draw glowing hexagon border
+    // Glowing hexagon outline
     ctx.strokeStyle = colorHex;
-    ctx.lineWidth = 4.0;
+    ctx.lineWidth = 4.5;
     ctx.beginPath();
     for (let i = 0; i < 6; i++) {
       const angle = (i / 6) * Math.PI * 2 - Math.PI / 6;
@@ -401,73 +445,75 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     ctx.closePath();
     ctx.stroke();
 
-    // Fill with translucent dark base
-    ctx.fillStyle = 'rgba(8, 16, 45, 0.88)';
+    // Semi-transparent base
+    ctx.fillStyle = 'rgba(6, 12, 38, 0.90)';
     ctx.fill();
 
-    // Draw vector icons based on type
+    // Security vector icons
     ctx.strokeStyle = '#ffffff';
     ctx.fillStyle = '#ffffff';
     ctx.lineWidth = 3.5;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
 
-    if (type === 'lock') {
-      // Lock icon
+    if (type === 'shield') {
       ctx.beginPath();
-      ctx.rect(42, 54, 44, 32);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(64, 54, 16, Math.PI, 0);
+      ctx.moveTo(64, 32);
+      ctx.lineTo(84, 40);
+      ctx.lineTo(84, 66);
+      ctx.quadraticCurveTo(84, 88, 64, 98);
+      ctx.quadraticCurveTo(44, 88, 44, 66);
+      ctx.lineTo(44, 40);
+      ctx.closePath();
       ctx.stroke();
     } else if (type === 'fingerprint') {
-      // Fingerprint lines
       ctx.beginPath();
       ctx.arc(64, 64, 24, Math.PI, Math.PI * 2); ctx.stroke();
       ctx.beginPath();
       ctx.arc(64, 64, 14, Math.PI, Math.PI * 2); ctx.stroke();
       ctx.beginPath();
       ctx.arc(64, 64, 4, Math.PI, Math.PI * 2);  ctx.stroke();
-    } else if (type === 'shield') {
-      // Shield
+    } else if (type === 'neural') {
+      // Linked node circles
+      ctx.fillRect(60, 36, 8, 8);
+      ctx.fillRect(40, 72, 8, 8);
+      ctx.fillRect(80, 72, 8, 8);
       ctx.beginPath();
-      ctx.moveTo(64, 34);
-      ctx.lineTo(84, 42);
-      ctx.lineTo(84, 66);
-      ctx.quadraticCurveTo(84, 88, 64, 98);
-      ctx.quadraticCurveTo(44, 88, 44, 66);
-      ctx.lineTo(44, 42);
-      ctx.closePath();
+      ctx.moveTo(64, 40); ctx.lineTo(44, 76);
+      ctx.moveTo(64, 40); ctx.lineTo(84, 76);
       ctx.stroke();
     } else if (type === 'chip') {
-      // Microchip
       ctx.beginPath();
       ctx.rect(44, 44, 40, 40);
       ctx.stroke();
-      // Pins
       const pins = [32, 40, 48, 80, 88, 96];
-      pins.forEach(pin => {
-        ctx.fillRect(pin - 2, 34, 4, 10);
-        ctx.fillRect(pin - 2, 84, 4, 10);
-        ctx.fillRect(34, pin - 2, 10, 4);
-        ctx.fillRect(84, pin - 2, 10, 4);
+      pins.forEach(p => {
+        ctx.fillRect(p - 2, 34, 4, 10);
+        ctx.fillRect(p - 2, 84, 4, 10);
+        ctx.fillRect(34, p - 2, 10, 4);
+        ctx.fillRect(84, p - 2, 10, 4);
       });
     } else if (type === 'database') {
-      // Database cylinder stack
       ctx.beginPath();
       this.drawEllipse(ctx, 64, 44, 20, 8); ctx.stroke();
       this.drawEllipse(ctx, 64, 64, 20, 8); ctx.stroke();
       this.drawEllipse(ctx, 64, 84, 20, 8); ctx.stroke();
-      // Cylinders outlines
       ctx.beginPath();
-      ctx.moveTo(44, 44); ctx.lineTo(44, 84); ctx.stroke();
-      ctx.moveTo(84, 44); ctx.lineTo(84, 84); ctx.stroke();
+      ctx.moveTo(44, 44); ctx.lineTo(44, 84);
+      ctx.moveTo(84, 44); ctx.lineTo(84, 84);
+      ctx.stroke();
+    } else if (type === 'lock') {
+      ctx.beginPath();
+      ctx.rect(42, 54, 44, 32);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(64, 54, 16, Math.PI, 0);
+      ctx.stroke();
     }
 
     return new THREE.CanvasTexture(canvas);
   }
 
-  // Draw ellipse helper
   private drawEllipse(ctx: CanvasRenderingContext2D, cx: number, cy: number, rx: number, ry: number): void {
     ctx.save();
     ctx.beginPath();
@@ -475,46 +521,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     ctx.scale(rx / ry, 1);
     ctx.arc(0, 0, ry, 0, Math.PI * 2);
     ctx.restore();
-  }
-
-  // Create Lock Shield Hologram texture
-  private createLockShieldTexture(): any {
-    const THREE = window.THREE;
-    const canvas = document.createElement('canvas');
-    canvas.width = 128;
-    canvas.height = 128;
-    const ctx = canvas.getContext('2d')!;
-
-    ctx.strokeStyle = '#06b6d4';
-    ctx.lineWidth = 5.0;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-
-    // Draw Shield
-    ctx.beginPath();
-    ctx.moveTo(64, 24);
-    ctx.lineTo(92, 32);
-    ctx.lineTo(92, 70);
-    ctx.quadraticCurveTo(92, 98, 64, 110);
-    ctx.quadraticCurveTo(36, 98, 36, 70);
-    ctx.lineTo(36, 32);
-    ctx.closePath();
-    ctx.stroke();
-
-    // Fill shield with translucent glow
-    ctx.fillStyle = 'rgba(6, 182, 212, 0.12)';
-    ctx.fill();
-
-    // Draw Lock shape inside shield
-    ctx.fillStyle = '#ffffff';
-    ctx.fillRect(52, 66, 24, 18);
-    ctx.beginPath();
-    ctx.arc(64, 66, 8, Math.PI, 0);
-    ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = 3.5;
-    ctx.stroke();
-
-    return new THREE.CanvasTexture(canvas);
   }
 
   private resize(): void {
@@ -533,28 +539,46 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     const t = performance.now() * 0.001;
 
-    // Mouse parallax easing
-    this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.06;
-    this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.06;
+    // Mouse parallax eased camera interpolation
+    this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.05;
+    this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.05;
 
-    // Vault rotations (combines Y rotation + parallax)
+    // Eased camera positioning & slow zoom breathing drift
+    if (this.camera) {
+      this.camera.position.x = Math.sin(t * 0.4) * 0.4 + this.currentMouseX * 1.5;
+      this.camera.position.y = Math.cos(t * 0.3) * 0.3 + this.currentMouseY * 1.0;
+      this.camera.position.z = 8.2 + Math.sin(t * 0.2) * 0.25;
+      this.camera.lookAt(0, 0.1, 0);
+    }
+
+    // Vault float bobbing
     if (this.vaultGroup) {
-      this.vaultGroup.rotation.y = t * 0.06 + this.currentMouseX * 0.15;
-      this.vaultGroup.rotation.x = -0.10 + this.currentMouseY * 0.08;
-      
-      // Floating offset
-      this.vaultGroup.position.y = Math.sin(t * 1.5) * 0.10;
+      this.vaultGroup.rotation.y = t * 0.06;
+      this.vaultGroup.rotation.x = -0.10;
+      this.vaultGroup.position.y = Math.sin(t * 1.6) * 0.11;
     }
 
-    // Rotate core crystal
-    if (this.crystalCore) {
-      this.crystalCore.rotation.y = -t * 0.15;
-      this.crystalCore.rotation.z = Math.sin(t * 0.5) * 0.1;
+    // Nested core rotations (Mid core CW, Outer core CCW)
+    if (this.midFaceted) {
+      this.midFaceted.rotation.y = t * 0.20;
+      this.midFaceted.rotation.z = Math.sin(t * 0.5) * 0.08;
+    }
+    if (this.outerFaceted) {
+      this.outerFaceted.rotation.y = -t * 0.12;
+      this.outerFaceted.rotation.x = Math.cos(t * 0.6) * 0.1;
     }
 
-    // Concentric base rings rotation
-    this.rings.forEach((ring, idx) => {
-      ring.rotation.z = t * (idx === 0 ? 0.20 : -0.15);
+    // Inner emissive core breath scaling
+    if (this.innerEnergy) {
+      const scaleVal = 0.95 + Math.sin(t * 4.0) * 0.15;
+      this.innerEnergy.scale.set(scaleVal, scaleVal, scaleVal);
+    }
+
+    // Concentric base energy rings expanding ripples
+    this.ripples.forEach(rip => {
+      const ringScale = (rip.baseScale + t * 0.25) % 1.5;
+      rip.mesh.scale.set(ringScale, ringScale, ringScale);
+      rip.mesh.material.opacity = 0.40 * (1.0 - (ringScale / 1.5));
     });
 
     // Update connection lines vertex array
@@ -562,23 +586,20 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // Animate badge nodes (3D orbits inside vault)
     this.orbitNodes.forEach((node, idx) => {
-      const angle = t * 0.35 + node.phase;
+      const angle = t * 0.28 + node.phase;
       node.mesh.position.x = Math.cos(angle) * node.orbitR;
       node.mesh.position.z = Math.sin(angle) * node.orbitR;
-      node.mesh.position.y = node.yOff + Math.sin(t * 1.5 + node.phase) * 0.06;
+      node.mesh.position.y = node.yOff + Math.sin(t * 1.4 + node.phase) * 0.08;
       
-      // Face camera
+      // Keep hex node cards facing the camera
       node.mesh.quaternion.copy(this.camera.quaternion);
 
       // Line vertices (start: core (0,0,0), end: node)
       const pIdx = idx * 6;
-      
-      // Start point (crystal core centered on 0,0,0)
       linePositions[pIdx]     = 0;
       linePositions[pIdx + 1] = 0;
       linePositions[pIdx + 2] = 0;
       
-      // End point (node position)
       linePositions[pIdx + 3] = node.mesh.position.x;
       linePositions[pIdx + 4] = node.mesh.position.y;
       linePositions[pIdx + 5] = node.mesh.position.z;
@@ -586,22 +607,22 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.connectionLines.geometry.attributes.position.needsUpdate = true;
 
-    // Pulse inner core light
-    if (this.innerLight) {
-      this.innerLight.intensity = 4.0 + Math.sin(t * 4.0) * 1.0;
+    // Pulse inner core point light
+    if (this.pointLight) {
+      this.pointLight.intensity = 5.0 + Math.sin(t * 4.0) * 1.5;
     }
 
-    // Drift particles
+    // Slow drifting nebula particles
     if (this.particles) {
-      const positions = this.particles.geometry.attributes.position.array;
-      for (let i = 1; i < positions.length; i += 3) {
-        positions[i] -= 0.002;
-        if (positions[i] < -2.5) {
-          positions[i] = 2.5;
+      const posArr = this.particles.geometry.attributes.position.array;
+      for (let i = 1; i < posArr.length; i += 3) {
+        posArr[i] -= 0.002;
+        if (posArr[i] < -2.8) {
+          posArr[i] = 2.8;
         }
       }
       this.particles.geometry.attributes.position.needsUpdate = true;
-      this.particles.rotation.y = t * 0.012;
+      this.particles.rotation.y = t * 0.010;
     }
 
     this.renderer.render(this.scene, this.camera);
