@@ -1,5 +1,5 @@
 <!-- ============================================================
-     LifeVault AI — Premium Apple-Style Welcome Page
+     LifeVault AI — Cinematic Welcome Page v8 (Option C Exact)
      ============================================================ -->
 
 <section class="welcome-page"
@@ -18,10 +18,10 @@
     <div class="starfield"></div>
   </div>
 
-  <!-- ══════════════ MINIMAL TWO-COLUMN CONTAINER ══════════════ -->
+  <!-- ══════════════ TWO-COLUMN CONTAINER ══════════════ -->
   <div class="welcome-container">
 
-    <!-- ════ LEFT COLUMN: BRAND & ENTER ACTION ════ -->
+    <!-- ════ LEFT COLUMN: BRAND, WELCOME CARD & ENTER ACTION ════ -->
     <div class="content-column">
       
       <!-- Brand Logo -->
@@ -55,7 +55,38 @@
       <div class="tech-pills" [class.visible]="showBadges">
         <span class="pill">EasyOCR</span>
         <span class="pill">LayoutLMv3</span>
-        <span class="pill primary">Secure Vault</span>
+        <span class="pill primary">AI Powered</span>
+        <span class="pill">Secure Vault</span>
+      </div>
+
+      <!-- ════ USER WELCOME STATUS CARD ════ -->
+      <div class="user-welcome-card" [class.visible]="showBrand">
+        <div class="welcome-header">
+          <div class="chk-wrap">
+            <svg viewBox="0 0 24 24" fill="none" class="check-icon">
+              <path d="M20 6L9 17l-5-5" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="user-details">
+            <span class="welcome-greeting">Welcome back,</span>
+            <span class="welcome-name">{{ userName }}</span>
+            <span class="verified-status">Identity Verified ✓</span>
+          </div>
+        </div>
+        
+        <div class="welcome-stats">
+          <div class="stat-col">
+            <span class="stat-val">11</span>
+            <span class="stat-lbl">Documents Protected</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-val secure">Secure</span>
+            <span class="stat-lbl">Vault Status</span>
+            <span class="ai-status">
+              <span class="status-dot"></span> AI Ready
+            </span>
+          </div>
+        </div>
       </div>
 
       <!-- CTA Enter Vault Button -->
@@ -63,7 +94,7 @@
         <button id="enter-vault-btn" class="enter-btn" (click)="enterVault()">
           <span class="btn-bloom"></span>
           <span class="btn-shine"></span>
-          <span class="btn-content">Enter Vault</span>
+          <span class="btn-content">→ Enter Vault</span>
         </button>
       </div>
 

@@ -5,11 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 // Colors
-$navy:        #080b16;
+$navy:        #040610;
 $blue:        #2563eb;
 $blue-l:      #3b82f6;
 $cyan:        #06b6d4;
 $violet:      #8b5cf6;
+$green:       #22c55e;
 $white:       #f8fafc;
 $slate:       #94a3b8;
 
@@ -101,7 +102,7 @@ $slate:       #94a3b8;
   position: relative;
   z-index: 1;
   display: flex;
-  width: min(1340px, 94vw);
+  width: min(1380px, 96vw);
   height: 85vh;
   align-items: center;
   justify-content: space-between;
@@ -110,7 +111,7 @@ $slate:       #94a3b8;
 
 // Left Column: Text & CTA
 .content-column {
-  width: 44%;
+  width: 42%;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -123,7 +124,7 @@ $slate:       #94a3b8;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   @include fade-up(0s);
 
   .brand-logo {
@@ -152,7 +153,7 @@ $slate:       #94a3b8;
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
-              transform 0.75 cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
   &.visible { opacity: 1; transform: translateY(0); }
 }
 .headline {
@@ -177,7 +178,7 @@ $slate:       #94a3b8;
   font-size: 15px;
   color: rgba(148, 163, 184, 0.75);
   line-height: 1.6;
-  margin: 0 0 28px;
+  margin: 0 0 24px;
   max-width: 380px;
   @include fade-up(0.18s);
 }
@@ -187,7 +188,7 @@ $slate:       #94a3b8;
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   @include fade-up(0.24s);
 }
 .pill {
@@ -206,9 +207,109 @@ $slate:       #94a3b8;
   }
 }
 
+// ── User Welcome Status Card ──────────────────────────────────────
+.user-welcome-card {
+  background: rgba(8, 16, 45, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+  @include fade-up(0.26s);
+}
+
+.welcome-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.chk-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1.5px solid rgba(34, 197, 94, 0.25);
+  flex-shrink: 0;
+}
+.check-icon {
+  width: 14px; height: 14px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+.welcome-greeting {
+  font-size: 10px;
+  color: $slate;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.welcome-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.verified-status {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: $green;
+  margin-top: 2px;
+}
+
+.welcome-stats {
+  display: flex;
+  justify-content: space-between;
+}
+.stat-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+
+  &:last-child {
+    align-items: flex-end;
+  }
+}
+.stat-val {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+
+  &.secure {
+    color: $green;
+  }
+}
+.stat-lbl {
+  font-size: 9px;
+  color: $slate;
+}
+.ai-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 600;
+  color: $cyan;
+  margin-top: 2px;
+}
+.status-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: $green;
+  animation: ai-pulse 2s ease-in-out infinite;
+}
+
 // CTA Wrapper
 .cta-wrap {
-  @include fade-up(0.3s);
+  @include fade-up(0.32s);
 }
 
 // Premium Keynote Enter Button
@@ -219,7 +320,7 @@ $slate:       #94a3b8;
   justify-content: center;
   width: 100%;
   max-width: 260px;
-  height: 50px;
+  height: 52px;
   border: none;
   border-radius: 8px;
   background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #06b6d4 100%);
@@ -234,7 +335,7 @@ $slate:       #94a3b8;
   .btn-bloom {
     position: absolute; inset: -4px;
     border-radius: 12px;
-    opacity: 0.2;
+    opacity: 0.25;
     background: conic-gradient(from 0deg, $blue, $cyan, $violet, $blue);
     filter: blur(6px);
     animation: spin-loop 4s linear infinite;
@@ -281,7 +382,6 @@ $slate:       #94a3b8;
   display: flex;
   align-items: center;
   justify-content: center;
-  // Blend naturally into background — NO borders or frames
   border: none;
   background: transparent;
 }
@@ -319,6 +419,10 @@ $slate:       #94a3b8;
   0%     { background-position: 200% 0; }
   50%    { background-position: -50% 0; }
   100%   { background-position: 200% 0; }
+}
+@keyframes ai-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50%      { transform: scale(1.25); opacity: 1; }
 }
 
 // Responsive layout

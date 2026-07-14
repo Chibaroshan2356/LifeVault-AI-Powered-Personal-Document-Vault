@@ -2,12 +2,10 @@
  * welcome.component.ts — Premium Apple-Style Welcome Page
  *
  * Implements a true 3D holographic glass vault using Three.js:
- *  • Loads Three.js dynamically via CDN
- *  • Renders a translucent physical glass cube vault with neon edge glows
- *  • Incorporates a slightly open door pivoted on the right with gear wheel handle
- *  • Houses 5 high-fidelity floating document texture panels (Aadhaar, Passport, etc.)
- *  • Adds thin energy rings, a central laser light cylinder, particles, and soft light beams
- *  • Integrates responsive resizing and target-easing mouse parallax
+ *  • Central rotating 3D crystal core (icosahedron) with inner lock shield hologram
+ *  • 5 orbiting holographic hexagonal nodes (Lock, Fingerprint, Shield, Microchip, Database)
+ *  • Interactive neon line connections matching the nodes to the core
+ *  • Volumetric point lights, drifting particles, base rings, and mouse parallax
  */
 import {
   Component,
@@ -56,10 +54,11 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // Render objects
   private vaultGroup: any;
-  private coreLaser: any;
+  private crystalCore: any;
   private particles: any;
   private rings: any[] = [];
-  private docCards: any[] = [];
+  private orbitNodes: any[] = [];
+  private connectionLines: any;
   private innerLight: any;
 
   // Interactivity
@@ -133,7 +132,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   // ═════════════════════════════════════════════════════════════
-  //  THREE.JS HOLOGRAPHIC SCENE
+  //  THREE.JS RENDER BLOCK
   // ═════════════════════════════════════════════════════════════
 
   private loadThreeJs(): Promise<void> {
@@ -173,29 +172,29 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.scene.add(this.vaultGroup);
 
     // ── Lights ──
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.40);
     this.scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0x60a5fa, 0.85);
+    const dirLight = new THREE.DirectionalLight(0x60a5fa, 0.90);
     dirLight.position.set(5, 5, 5);
     this.scene.add(dirLight);
 
-    const dirLightLeft = new THREE.DirectionalLight(0x8b5cf6, 0.5);
+    const dirLightLeft = new THREE.DirectionalLight(0x8b5cf6, 0.55);
     dirLightLeft.position.set(-5, 3, -5);
     this.scene.add(dirLightLeft);
 
-    this.innerLight = new THREE.PointLight(0x06b6d4, 4.0, 8.0);
+    this.innerLight = new THREE.PointLight(0x0ea5e9, 5.0, 10.0);
     this.innerLight.position.set(0, 0, 0);
     this.vaultGroup.add(this.innerLight);
 
-    // ── Build Vault Cube (Double Glow Outlines) ──
-    const cubeSize = 2.2;
+    // ── Build Vault Cube (Thick glowing glass lines) ──
+    const cubeSize = 2.4;
     const boxGeo = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
     
     const glassMat = new THREE.MeshPhysicalMaterial({
       color: 0x1e3a8a,
       transparent: true,
-      opacity: 0.18,
+      opacity: 0.16,
       roughness: 0.1,
       metalness: 0.9,
       clearcoat: 1.0,
@@ -204,25 +203,22 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const vaultMesh = new THREE.Mesh(boxGeo, glassMat);
     this.vaultGroup.add(vaultMesh);
 
-    // Glowing edge lines
+    // Glowing double edge wireframes
     const edgesGeo = new THREE.EdgesGeometry(boxGeo);
-    const lineMat = new THREE.LineBasicMaterial({ color: 0x60a5fa, linewidth: 2 });
+    const lineMat = new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 });
     const edgeLines = new THREE.LineSegments(edgesGeo, lineMat);
     this.vaultGroup.add(edgeLines);
 
-    // Inner double outline frame
-    const edgesGeoInner = new THREE.EdgesGeometry(new THREE.BoxGeometry(cubeSize - 0.05, cubeSize - 0.05, cubeSize - 0.05));
+    const edgesGeoInner = new THREE.EdgesGeometry(new THREE.BoxGeometry(cubeSize - 0.04, cubeSize - 0.04, cubeSize - 0.04));
     const lineMatInner = new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 1 });
     const edgeLinesInner = new THREE.LineSegments(edgesGeoInner, lineMatInner);
     this.vaultGroup.add(edgeLinesInner);
 
     // ── Vault Door (Swung open right) ──
     const doorGroup = new THREE.Group();
-    // Pivot on the right-front edge of the vault
     doorGroup.position.set(cubeSize / 2, 0, cubeSize / 2);
     doorGroup.rotation.y = 0.55; // 32 degrees swung open
     
-    // Door panel centered on local offset
     const doorPanelGeo = new THREE.BoxGeometry(cubeSize, cubeSize, 0.04);
     const doorPanel = new THREE.Mesh(doorPanelGeo, glassMat);
     doorPanel.position.set(-cubeSize / 2, 0, 0);
@@ -233,7 +229,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     doorGroup.add(doorEdges);
 
     // Lock wheel/gear
-    const wheelGeo = new THREE.TorusGeometry(0.28, 0.04, 8, 32);
+    const wheelGeo = new THREE.TorusGeometry(0.30, 0.04, 8, 32);
     const wheelMat = new THREE.MeshStandardMaterial({ color: 0x60a5fa, metalness: 0.8, roughness: 0.2 });
     const wheel = new THREE.Mesh(wheelGeo, wheelMat);
     wheel.position.set(-cubeSize / 2, 0, 0.04);
@@ -247,95 +243,128 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.vaultGroup.add(doorGroup);
 
-    // ── Core Laser Cylinder ──
-    const cylinderGeo = new THREE.CylinderGeometry(0.04, 0.04, cubeSize * 0.95, 16);
-    const cylinderMat = new THREE.MeshBasicMaterial({
-      color: 0x06b6d4,
+    // ── Central Crystal Core (Icosahedron Double Mesh) ──
+    const crystalGeo = new THREE.IcosahedronGeometry(0.55, 0);
+    const crystalMat = new THREE.MeshPhysicalMaterial({
+      color: 0x0ea5e9,
       transparent: true,
-      opacity: 0.45,
-      blending: THREE.AdditiveBlending
+      opacity: 0.28,
+      roughness: 0.1,
+      metalness: 0.9,
+      clearcoat: 1.0,
+      side: THREE.DoubleSide
     });
-    this.coreLaser = new THREE.Mesh(cylinderGeo, cylinderMat);
-    this.vaultGroup.add(this.coreLaser);
+    this.crystalCore = new THREE.Mesh(crystalGeo, crystalMat);
+    this.vaultGroup.add(this.crystalCore);
 
-    // ── Orbiting Document Cards ──
-    const docs = [
-      { name: 'Aadhaar',     color: '#22c55e', bx: -0.55, by: -0.45, bz: -0.25, phase: 0.0 },
-      { name: 'Passport',    color: '#3b82f6', bx:  0.45, by: -0.25, bz:  0.30, phase: 1.2 },
-      { name: 'PAN Card',    color: '#eab308', bx: -0.10, by:  0.35, bz: -0.40, phase: 2.5 },
-      { name: 'Resume',      color: '#a855f7', bx: -0.50, by:  0.20, bz:  0.25, phase: 3.7 },
-      { name: 'Certificate', color: '#06b6d4', bx:  0.40, by:  0.30, bz: -0.20, phase: 5.0 },
+    const crystalEdges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(crystalGeo),
+      new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 2 })
+    );
+    this.crystalCore.add(crystalEdges);
+
+    // Inner lock shield hologram inside crystal core
+    const shieldTex = this.createLockShieldTexture();
+    const shieldGeo = new THREE.PlaneGeometry(0.48, 0.48);
+    const shieldMat = new THREE.MeshBasicMaterial({
+      map: shieldTex,
+      transparent: true,
+      side: THREE.DoubleSide,
+      blending: THREE.AdditiveBlending,
+      opacity: 0.85
+    });
+    const shieldHolo = new THREE.Mesh(shieldGeo, shieldMat);
+    this.crystalCore.add(shieldHolo);
+
+    // ── Orbiting Hexagonal Badge Nodes ──
+    const nodes = [
+      { type: 'lock',        color: '#8b5cf6', orbitR: 1.1, phase: 0.0,  yOff: -0.2 },
+      { type: 'fingerprint', color: '#06b6d4', orbitR: 0.95, phase: 1.25, yOff:  0.3 },
+      { type: 'shield',      color: '#3b82f6', orbitR: 1.05, phase: 2.50, yOff: -0.4 },
+      { type: 'chip',        color: '#06b6d4', orbitR: 0.9,  phase: 3.75, yOff:  0.2 },
+      { type: 'database',    color: '#3b82f6', orbitR: 1.0,  phase: 5.00, yOff: -0.1 },
     ];
 
-    docs.forEach(doc => {
-      const tex = this.createCardTexture(doc.name, doc.color);
-      const cardGeo = new THREE.PlaneGeometry(0.68, 0.46);
-      const cardMat = new THREE.MeshBasicMaterial({
+    nodes.forEach(node => {
+      const tex = this.createNodeTexture(node.type, node.color);
+      const nodeGeo = new THREE.PlaneGeometry(0.36, 0.36);
+      const nodeMat = new THREE.MeshBasicMaterial({
         map: tex,
         transparent: true,
         side: THREE.DoubleSide,
-        opacity: 0.90
+        opacity: 0.95
       });
-      const cardMesh = new THREE.Mesh(cardGeo, cardMat);
-      cardMesh.position.set(doc.bx, doc.by, doc.bz);
+      const nodeMesh = new THREE.Mesh(nodeGeo, nodeMat);
       
-      const cardData = {
-        mesh: cardMesh,
-        bx: doc.bx,
-        by: doc.by,
-        bz: doc.bz,
-        phase: doc.phase
+      const nodeData = {
+        mesh: nodeMesh,
+        type: node.type,
+        color: node.color,
+        orbitR: node.orbitR,
+        phase: node.phase,
+        yOff: node.yOff
       };
       
-      this.docCards.push(cardData);
-      this.vaultGroup.add(cardMesh);
+      this.orbitNodes.push(nodeData);
+      this.vaultGroup.add(nodeMesh);
     });
 
-    // ── Base Rings ──
-    const ringGeo = new THREE.TorusGeometry(2.0, 0.015, 8, 64);
+    // ── Orbiting lines connection setup ──
+    const lineGeometry = new THREE.BufferGeometry();
+    const linePositions = new Float32Array(nodes.length * 2 * 3); // 2 points per line (core -> node)
+    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
+    
+    this.connectionLines = new THREE.LineSegments(
+      lineGeometry,
+      new THREE.LineBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.4 })
+    );
+    this.vaultGroup.add(this.connectionLines);
+
+    // ── Concentric Base Rings ──
+    const ringGeo = new THREE.TorusGeometry(1.9, 0.015, 8, 64);
     const ringMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.35 });
     const ring1 = new THREE.Mesh(ringGeo, ringMat);
     ring1.rotation.x = Math.PI / 2;
-    ring1.position.y = -cubeSize / 2 - 0.2;
+    ring1.position.y = -cubeSize / 2 - 0.25;
     this.vaultGroup.add(ring1);
     this.rings.push(ring1);
 
-    const ringGeo2 = new THREE.TorusGeometry(1.6, 0.01, 8, 64);
+    const ringGeo2 = new THREE.TorusGeometry(1.5, 0.01, 8, 64);
     const ringMat2 = new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.25 });
     const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
     ring2.rotation.x = Math.PI / 2;
-    ring2.position.y = -cubeSize / 2 - 0.2;
+    ring2.position.y = -cubeSize / 2 - 0.25;
     this.vaultGroup.add(ring2);
     this.rings.push(ring2);
 
     // ── Drifting Particles ──
     const particleCount = 180;
     const particleGeo = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
+    const pos = new Float32Array(particleCount * 3);
     
     for (let i = 0; i < particleCount * 3; i += 3) {
-      positions[i]     = (Math.random() - 0.5) * 6; // X
-      positions[i + 1] = (Math.random() - 0.5) * 5; // Y
-      positions[i + 2] = (Math.random() - 0.5) * 4; // Z
+      pos[i]     = (Math.random() - 0.5) * 6; // X
+      pos[i + 1] = (Math.random() - 0.5) * 5; // Y
+      pos[i + 2] = (Math.random() - 0.5) * 4; // Z
     }
     
-    particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
     const pMat = new THREE.PointsMaterial({
       color: 0x60a5fa,
-      size: 0.022,
+      size: 0.02,
       transparent: true,
-      opacity: 0.7,
+      opacity: 0.65,
       blending: THREE.AdditiveBlending
     });
     this.particles = new THREE.Points(particleGeo, pMat);
     this.scene.add(this.particles);
 
-    // ── Volumetric Light Shafts (Top/Bottom additive cones) ──
-    const coneGeo = new THREE.ConeGeometry(0.6, 2.5, 32, 1, true);
+    // Volumetric cones
+    const coneGeo = new THREE.ConeGeometry(0.55, 2.5, 32, 1, true);
     const coneMat = new THREE.MeshBasicMaterial({
       color: 0x0ea5e9,
       transparent: true,
-      opacity: 0.06,
+      opacity: 0.05,
       blending: THREE.AdditiveBlending,
       side: THREE.DoubleSide
     });
@@ -349,60 +378,143 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.resizeObs.observe(pEl);
   }
 
-  private createCardTexture(title: string, colorHex: string): any {
+  // Helper to draw hexagonal nodes with custom security vector icons
+  private createNodeTexture(type: string, colorHex: string): any {
     const THREE = window.THREE;
     const canvas = document.createElement('canvas');
-    canvas.width = 160;
-    canvas.height = 110;
+    canvas.width = 128;
+    canvas.height = 128;
     const ctx = canvas.getContext('2d')!;
 
-    // Translucent backing gradient
-    const grad = ctx.createLinearGradient(0, 0, 160, 110);
-    grad.addColorStop(0, 'rgba(8, 16, 45, 0.95)');
-    grad.addColorStop(1, 'rgba(5, 10, 30, 0.95)');
-    ctx.fillStyle = grad;
-    
-    // Rounded rect
-    ctx.beginPath();
-    this.drawRoundedRect(ctx, 0, 0, 160, 110, 8);
-    ctx.fill();
+    const cx = 64, cy = 64, r = 50;
 
-    // Outline
+    // Draw glowing hexagon border
     ctx.strokeStyle = colorHex;
-    ctx.lineWidth = 2.0;
+    ctx.lineWidth = 4.0;
+    ctx.beginPath();
+    for (let i = 0; i < 6; i++) {
+      const angle = (i / 6) * Math.PI * 2 - Math.PI / 6;
+      const x = cx + Math.cos(angle) * r;
+      const y = cy + Math.sin(angle) * r;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.closePath();
     ctx.stroke();
 
-    // Title banner strip
-    ctx.fillStyle = colorHex;
-    ctx.beginPath();
-    this.drawRoundedRect(ctx, 0, 0, 160, 24, [8, 8, 0, 0] as any);
+    // Fill with translucent dark base
+    ctx.fillStyle = 'rgba(8, 16, 45, 0.88)';
     ctx.fill();
 
-    // Document Name text
+    // Draw vector icons based on type
+    ctx.strokeStyle = '#ffffff';
     ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 11px Inter, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(title, 80, 12);
+    ctx.lineWidth = 3.5;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
 
-    // Mock lines
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
-    ctx.fillRect(15, 45, 130, 8);
-    ctx.fillRect(15, 63, 130, 8);
-    ctx.fillRect(15, 81, 80, 8);
+    if (type === 'lock') {
+      // Lock icon
+      ctx.beginPath();
+      ctx.rect(42, 54, 44, 32);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(64, 54, 16, Math.PI, 0);
+      ctx.stroke();
+    } else if (type === 'fingerprint') {
+      // Fingerprint lines
+      ctx.beginPath();
+      ctx.arc(64, 64, 24, Math.PI, Math.PI * 2); ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(64, 64, 14, Math.PI, Math.PI * 2); ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(64, 64, 4, Math.PI, Math.PI * 2);  ctx.stroke();
+    } else if (type === 'shield') {
+      // Shield
+      ctx.beginPath();
+      ctx.moveTo(64, 34);
+      ctx.lineTo(84, 42);
+      ctx.lineTo(84, 66);
+      ctx.quadraticCurveTo(84, 88, 64, 98);
+      ctx.quadraticCurveTo(44, 88, 44, 66);
+      ctx.lineTo(44, 42);
+      ctx.closePath();
+      ctx.stroke();
+    } else if (type === 'chip') {
+      // Microchip
+      ctx.beginPath();
+      ctx.rect(44, 44, 40, 40);
+      ctx.stroke();
+      // Pins
+      const pins = [32, 40, 48, 80, 88, 96];
+      pins.forEach(pin => {
+        ctx.fillRect(pin - 2, 34, 4, 10);
+        ctx.fillRect(pin - 2, 84, 4, 10);
+        ctx.fillRect(34, pin - 2, 10, 4);
+        ctx.fillRect(84, pin - 2, 10, 4);
+      });
+    } else if (type === 'database') {
+      // Database cylinder stack
+      ctx.beginPath();
+      this.drawEllipse(ctx, 64, 44, 20, 8); ctx.stroke();
+      this.drawEllipse(ctx, 64, 64, 20, 8); ctx.stroke();
+      this.drawEllipse(ctx, 64, 84, 20, 8); ctx.stroke();
+      // Cylinders outlines
+      ctx.beginPath();
+      ctx.moveTo(44, 44); ctx.lineTo(44, 84); ctx.stroke();
+      ctx.moveTo(84, 44); ctx.lineTo(84, 84); ctx.stroke();
+    }
 
     return new THREE.CanvasTexture(canvas);
   }
 
-  private drawRoundedRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number | number[]): void {
-    const rt = Array.isArray(r) ? r : [r, r, r, r];
-    const [tl, tr, br, bl] = rt;
-    ctx.moveTo(x + tl, y);
-    ctx.arcTo(x + w, y,     x + w, y + h, tr);
-    ctx.arcTo(x + w, y + h, x,     y + h, br);
-    ctx.arcTo(x,     y + h, x,     y,     bl);
-    ctx.arcTo(x,     y,     x + w, y,     tl);
+  // Draw ellipse helper
+  private drawEllipse(ctx: CanvasRenderingContext2D, cx: number, cy: number, rx: number, ry: number): void {
+    ctx.save();
+    ctx.beginPath();
+    ctx.translate(cx, cy);
+    ctx.scale(rx / ry, 1);
+    ctx.arc(0, 0, ry, 0, Math.PI * 2);
+    ctx.restore();
+  }
+
+  // Create Lock Shield Hologram texture
+  private createLockShieldTexture(): any {
+    const THREE = window.THREE;
+    const canvas = document.createElement('canvas');
+    canvas.width = 128;
+    canvas.height = 128;
+    const ctx = canvas.getContext('2d')!;
+
+    ctx.strokeStyle = '#06b6d4';
+    ctx.lineWidth = 5.0;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    // Draw Shield
+    ctx.beginPath();
+    ctx.moveTo(64, 24);
+    ctx.lineTo(92, 32);
+    ctx.lineTo(92, 70);
+    ctx.quadraticCurveTo(92, 98, 64, 110);
+    ctx.quadraticCurveTo(36, 98, 36, 70);
+    ctx.lineTo(36, 32);
     ctx.closePath();
+    ctx.stroke();
+
+    // Fill shield with translucent glow
+    ctx.fillStyle = 'rgba(6, 182, 212, 0.12)';
+    ctx.fill();
+
+    // Draw Lock shape inside shield
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(52, 66, 24, 18);
+    ctx.beginPath();
+    ctx.arc(64, 66, 8, Math.PI, 0);
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 3.5;
+    ctx.stroke();
+
+    return new THREE.CanvasTexture(canvas);
   }
 
   private resize(): void {
@@ -425,52 +537,71 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.06;
     this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.06;
 
-    // Vault rotations (combines linear + parallax offsets)
+    // Vault rotations (combines Y rotation + parallax)
     if (this.vaultGroup) {
-      this.vaultGroup.rotation.y = t * 0.08 + this.currentMouseX * 0.15;
-      this.vaultGroup.rotation.x = -0.12 + this.currentMouseY * 0.10;
+      this.vaultGroup.rotation.y = t * 0.06 + this.currentMouseX * 0.15;
+      this.vaultGroup.rotation.x = -0.10 + this.currentMouseY * 0.08;
       
       // Floating offset
-      this.vaultGroup.position.y = Math.sin(t * 1.5) * 0.12;
+      this.vaultGroup.position.y = Math.sin(t * 1.5) * 0.10;
+    }
+
+    // Rotate core crystal
+    if (this.crystalCore) {
+      this.crystalCore.rotation.y = -t * 0.15;
+      this.crystalCore.rotation.z = Math.sin(t * 0.5) * 0.1;
     }
 
     // Concentric base rings rotation
     this.rings.forEach((ring, idx) => {
-      ring.rotation.z = t * (idx === 0 ? 0.25 : -0.18);
+      ring.rotation.z = t * (idx === 0 ? 0.20 : -0.15);
     });
 
-    // Animate doc cards (individual floating bobbing inside vault)
-    this.docCards.forEach(card => {
-      card.mesh.position.y = card.by + Math.sin(t * 1.6 + card.phase) * 0.08;
-      card.mesh.position.x = card.bx + Math.cos(t * 1.1 + card.phase) * 0.05;
-      card.mesh.rotation.y = Math.sin(t * 0.5 + card.phase) * 0.08;
-      // Auto-face camera
-      card.mesh.quaternion.copy(this.camera.quaternion);
+    // Update connection lines vertex array
+    const linePositions = this.connectionLines.geometry.attributes.position.array;
+
+    // Animate badge nodes (3D orbits inside vault)
+    this.orbitNodes.forEach((node, idx) => {
+      const angle = t * 0.35 + node.phase;
+      node.mesh.position.x = Math.cos(angle) * node.orbitR;
+      node.mesh.position.z = Math.sin(angle) * node.orbitR;
+      node.mesh.position.y = node.yOff + Math.sin(t * 1.5 + node.phase) * 0.06;
+      
+      // Face camera
+      node.mesh.quaternion.copy(this.camera.quaternion);
+
+      // Line vertices (start: core (0,0,0), end: node)
+      const pIdx = idx * 6;
+      
+      // Start point (crystal core centered on 0,0,0)
+      linePositions[pIdx]     = 0;
+      linePositions[pIdx + 1] = 0;
+      linePositions[pIdx + 2] = 0;
+      
+      // End point (node position)
+      linePositions[pIdx + 3] = node.mesh.position.x;
+      linePositions[pIdx + 4] = node.mesh.position.y;
+      linePositions[pIdx + 5] = node.mesh.position.z;
     });
 
-    // Core laser cylinder pulse
-    if (this.coreLaser) {
-      const laserScale = 0.85 + Math.sin(t * 4.0) * 0.15;
-      this.coreLaser.scale.x = laserScale;
-      this.coreLaser.scale.z = laserScale;
-    }
+    this.connectionLines.geometry.attributes.position.needsUpdate = true;
 
-    // Inner core point light pulsing
+    // Pulse inner core light
     if (this.innerLight) {
-      this.innerLight.intensity = 3.5 + Math.sin(t * 3.0) * 0.8;
+      this.innerLight.intensity = 4.0 + Math.sin(t * 4.0) * 1.0;
     }
 
-    // Slow drift starfield particles
+    // Drift particles
     if (this.particles) {
       const positions = this.particles.geometry.attributes.position.array;
       for (let i = 1; i < positions.length; i += 3) {
-        positions[i] -= 0.002; // Float down slightly
+        positions[i] -= 0.002;
         if (positions[i] < -2.5) {
-          positions[i] = 2.5; // Loop back
+          positions[i] = 2.5;
         }
       }
       this.particles.geometry.attributes.position.needsUpdate = true;
-      this.particles.rotation.y = t * 0.015;
+      this.particles.rotation.y = t * 0.012;
     }
 
     this.renderer.render(this.scene, this.camera);
@@ -493,4 +624,3 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.renderer?.dispose();
   }
 }
-
