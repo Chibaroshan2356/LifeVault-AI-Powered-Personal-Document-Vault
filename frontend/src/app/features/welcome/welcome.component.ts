@@ -216,17 +216,19 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
         // Draw original image onto offscreen
         octx.drawImage(this.vaultImg, 0, 0, imgW, imgH);
 
-        // Apply feathered radial mask to erase corners and edges
+        // Apply feathered radial mask to erase corners and edges completely
         octx.save();
         octx.globalCompositeOperation = 'destination-in';
-        const mask = octx.createRadialGradient(imgW / 2, imgH / 2, 0, imgW / 2, imgH / 2, imgW * 0.44);
+        const maskRadius = Math.min(imgW, imgH) * 0.47;
+        const mask = octx.createRadialGradient(imgW / 2, imgH / 2, 0, imgW / 2, imgH / 2, maskRadius);
         mask.addColorStop(0.0, 'rgba(0,0,0,1.0)');
-        mask.addColorStop(0.70, 'rgba(0,0,0,1.0)');
-        mask.addColorStop(0.88, 'rgba(0,0,0,0.5)');
-        mask.addColorStop(0.98, 'rgba(0,0,0,0.0)');
+        mask.addColorStop(0.55, 'rgba(0,0,0,1.0)');
+        mask.addColorStop(0.78, 'rgba(0,0,0,0.4)');
+        mask.addColorStop(0.92, 'rgba(0,0,0,0.0)');
         octx.fillStyle = mask;
         octx.fillRect(0, 0, imgW, imgH);
         octx.restore();
+
 
         // Render offscreen result onto main canvas using screen blend
         ctx.save();
