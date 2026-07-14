@@ -1,12 +1,13 @@
 /**
- * welcome.component.ts — Cinematic Welcome Page v6 (Option C Exact Mockup Visual)
+ * welcome.component.ts — Premium Apple-Style Welcome Page
  *
- * Renders the exact user-uploaded vault centerpiece asset with dynamic layers:
- *  • Base concentric rings rotating below
- *  • Drifting particles (depth-layered)
- *  • Specalized specular neon laser sweep moving vertically across the vault
- *  • Easing mouse parallax on the centerpiece layout
- *  • 60 FPS performance
+ * Implements a true 3D holographic glass vault using Three.js:
+ *  • Loads Three.js dynamically via CDN
+ *  • Renders a translucent physical glass cube vault with neon edge glows
+ *  • Incorporates a slightly open door pivoted on the right with gear wheel handle
+ *  • Houses 5 high-fidelity floating document texture panels (Aadhaar, Passport, etc.)
+ *  • Adds thin energy rings, a central laser light cylinder, particles, and soft light beams
+ *  • Integrates responsive resizing and target-easing mouse parallax
  */
 import {
   Component,
@@ -24,13 +25,6 @@ import { AuthService }  from '../auth/services/auth.service';
 
 declare const window: any;
 
-export type ScanStage = 'ready';
-
-interface Particle {
-  x: number; y: number; vx: number; vy: number;
-  alpha: number; size: number; life: number; maxLife: number;
-}
-
 @Component({
   selector: 'app-welcome',
   standalone: true,
@@ -43,7 +37,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // ── UI State ─────────────────────────────────────────────────
   userName   = 'User';
-  scanStage: ScanStage = 'ready';
   isLeaving  = false;
   isLoaded   = false;
 
@@ -54,26 +47,26 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   showBadges   = false;
   showBtn      = false;
 
-  // ── Render Context ───────────────────────────────────────────
-  private cvs!: HTMLCanvasElement;
-  private ctx!: CanvasRenderingContext2D;
-  private elapsed       = 0;
-  private lastFrameTime = 0;
-  private animId!:        number;
-  private pts:            Particle[] = [];
-  private resizeObs!:     ResizeObserver;
-  private lw = 800;
-  private lh = 700;
+  // ── Three.js Context ─────────────────────────────────────────
+  private renderer: any;
+  private scene: any;
+  private camera: any;
+  private animationFrameId!: number;
+  private resizeObs!: ResizeObserver;
 
-  // Pre-rendered exact vault asset
-  private vaultImg = new Image();
-  private imgLoaded = false;
+  // Render objects
+  private vaultGroup: any;
+  private coreLaser: any;
+  private particles: any;
+  private rings: any[] = [];
+  private docCards: any[] = [];
+  private innerLight: any;
 
-  // Parallax vectors
-  private mx = 0;
-  private my = 0;
-  private targetMx = 0;
-  private targetMy = 0;
+  // Interactivity
+  private targetMouseX = 0;
+  private targetMouseY = 0;
+  private currentMouseX = 0;
+  private currentMouseY = 0;
 
   constructor(
     private readonly authService: AuthService,
@@ -85,24 +78,21 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
     this.resolveUserName();
     this.runStaggeredReveal();
-    // Load the exact vault centerpiece asset
-    this.vaultImg.src = 'assets/holographic_vault_core.png';
-    this.vaultImg.onload = () => {
-      this.imgLoaded = true;
-    };
   }
 
   ngAfterViewInit(): void {
-    this.initCanvas();
-    requestAnimationFrame(() => {
+    this.loadThreeJs().then(() => {
+      this.initThree();
+      this.animate();
       this.isLoaded = true;
       this.cdr.markForCheck();
     });
   }
 
   ngOnDestroy(): void {
-    cancelAnimationFrame(this.animId);
+    cancelAnimationFrame(this.animationFrameId);
     this.resizeObs?.disconnect();
+    this.cleanupThree();
   }
 
   private resolveUserName(): void {
@@ -124,10 +114,10 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private runStaggeredReveal(): void {
     setTimeout(() => { this.showBrand   = true; this.cdr.markForCheck(); }, 100);
-    setTimeout(() => { this.showTagline = true; this.cdr.markForCheck(); }, 250);
-    setTimeout(() => { this.showSub     = true; this.cdr.markForCheck(); }, 400);
-    setTimeout(() => { this.showBadges  = true; this.cdr.markForCheck(); }, 550);
-    setTimeout(() => { this.showBtn     = true; this.cdr.markForCheck(); }, 700);
+    setTimeout(() => { this.showTagline = true; this.cdr.markForCheck(); }, 200);
+    setTimeout(() => { this.showSub     = true; this.cdr.markForCheck(); }, 300);
+    setTimeout(() => { this.showBadges  = true; this.cdr.markForCheck(); }, 400);
+    setTimeout(() => { this.showBtn     = true; this.cdr.markForCheck(); }, 500);
   }
 
   enterVault(): void {
@@ -138,182 +128,369 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(e: MouseEvent): void {
-    this.targetMx = ((e.clientX - window.innerWidth  / 2) / window.innerWidth)  * 2;
-    this.targetMy = -((e.clientY - window.innerHeight / 2) / window.innerHeight) * 2;
+    this.targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    this.targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
   }
 
   // ═════════════════════════════════════════════════════════════
-  //  CANVAS RENDER ENGINE
+  //  THREE.JS HOLOGRAPHIC SCENE
   // ═════════════════════════════════════════════════════════════
 
-  private initCanvas(): void {
-    const el = this.canvasRef.nativeElement;
-    this.cvs = el;
-    this.ctx = el.getContext('2d')!;
-    this.sizeCanvas();
-
-    this.pts = Array.from({ length: 50 }, () => this.makeParticle(true));
-    this.lastFrameTime = performance.now();
-    this.tick();
-
-    this.resizeObs = new ResizeObserver(() => this.sizeCanvas());
-    this.resizeObs.observe(el.parentElement!);
-  }
-
-  private sizeCanvas(): void {
-    const p = this.cvs.parentElement!;
-    this.lw = p.clientWidth  || 800;
-    this.lh = p.clientHeight || 700;
-    this.cvs.width  = this.lw;
-    this.cvs.height = this.lh;
-  }
-
-  private tick(): void {
-    this.animId = requestAnimationFrame(() => this.tick());
-    const now = performance.now();
-    const dt  = Math.min((now - this.lastFrameTime) / 1000, 0.05);
-    this.lastFrameTime = now;
-    this.elapsed += dt;
-
-    this.mx += (this.targetMx - this.mx) * 0.05;
-    this.my += (this.targetMy - this.my) * 0.05;
-
-    this.drawFrame(dt);
-  }
-
-  private drawFrame(dt: number): void {
-    const ctx = this.ctx;
-    const W = this.lw, H = this.lh;
-    const t = this.elapsed;
-
-    ctx.clearRect(0, 0, W, H);
-
-    // Parallax centering + float
-    const cx = W * 0.50 + this.mx * 30;
-    const cy = H * 0.50 - this.my * 25;
-    const floatY = Math.sin(t * (Math.PI * 2 / 8)) * 10;
-    const ncy = cy + floatY;
-
-    const S = Math.min(W * 0.95, H * 0.95);
-
-    // ── 1. Concentric base rings ──
-    this.drawBaseRings(ctx, cx, ncy + S * 0.32, S * 0.45, t);
-
-    // ── 2. Background particles ──
-    this.drawParticles(ctx, W, H, dt, false);
-
-    // ── 3. Draw pre-rendered premium 3D Glass Vault asset ──
-    if (this.imgLoaded) {
-      ctx.save();
-      const pulseScale = 1.0 + Math.sin(t * 1.5) * 0.01;
-      const imgW = S * 0.92 * pulseScale;
-      const imgH = S * 0.72 * pulseScale; // Maintain exact crop aspect ratio
-      
-      ctx.shadowColor = 'rgba(59, 130, 246, 0.3)';
-      ctx.shadowBlur = 50;
-      ctx.drawImage(this.vaultImg, cx - imgW / 2, ncy - imgH / 2, imgW, imgH);
-      ctx.restore();
-    }
-
-    // ── 4. Laser scan sweeps ──
-    this.drawLaserScanner(ctx, cx, ncy, S * 0.92, S * 0.72, t);
-
-    // ── 5. Foreground particles ──
-    this.drawParticles(ctx, W, H, dt, true);
-  }
-
-  // ── Concentric Base Rings ──────────────────────────────────────
-  private drawBaseRings(ctx: CanvasRenderingContext2D, cx: number, cy: number, maxR: number, t: number): void {
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.scale(1, 0.22);
-
-    const colors = ['rgba(6,182,212,0.30)', 'rgba(37,99,235,0.18)', 'rgba(139,92,246,0.08)'];
-    colors.forEach((col, idx) => {
-      const r = maxR * (1.0 - idx * 0.28) * (1.0 + Math.sin(t * 1.5 + idx) * 0.01);
-      ctx.beginPath();
-      ctx.arc(0, 0, r, 0, Math.PI * 2);
-      ctx.strokeStyle = col;
-      ctx.lineWidth = 2.0 - idx * 0.5;
-      ctx.stroke();
-    });
-
-    ctx.restore();
-  }
-
-  // ── Specular Laser Scanner Sweep ───────────────────────────────
-  private drawLaserScanner(ctx: CanvasRenderingContext2D, cx: number, cy: number, w: number, h: number, t: number): void {
-    const minY = cy - h / 2;
-    const maxY = cy + h / 2;
-
-    const cycle = (t % 5.0) / 5.0; // 5 seconds sweep cycle
-    if (cycle < 0.75) {
-      const sy = minY + (cycle / 0.75) * (maxY - minY);
-      const intensity = Math.sin((cycle / 0.75) * Math.PI) * 0.45;
-
-      const g = ctx.createLinearGradient(cx - w / 2, sy, cx + w / 2, sy);
-      g.addColorStop(0, 'rgba(96,165,250,0)');
-      g.addColorStop(0.2, `rgba(96,165,250,${intensity})`);
-      g.addColorStop(0.5, `rgba(190,220,255,${intensity * 1.5})`);
-      g.addColorStop(0.8, `rgba(96,165,250,${intensity})`);
-      g.addColorStop(1, 'rgba(96,165,250,0)');
-
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(cx - w / 2, sy);
-      ctx.lineTo(cx + w / 2, sy);
-      ctx.strokeStyle = g;
-      ctx.lineWidth = 2.5;
-      ctx.stroke();
-
-      // Soft light beam shadow underneath scanner line
-      const beamG = ctx.createLinearGradient(0, sy, 0, sy + 30);
-      beamG.addColorStop(0, `rgba(6,182,212,${intensity * 0.25})`);
-      beamG.addColorStop(1, 'rgba(0,0,0,0)');
-      ctx.fillStyle = beamG;
-      ctx.fillRect(cx - w / 2, sy, w, 30);
-
-      ctx.restore();
-    }
-  }
-
-  // ── Particles ──────────────────────────────────────────────────
-  private makeParticle(randomLife = false): Particle {
-    const W = this.lw || 800, H = this.lh || 700;
-    return {
-      x:       Math.random() * W,
-      y:       Math.random() * H,
-      vx:      (Math.random() - 0.5) * 0.12,
-      vy:      -(Math.random() * 0.35 + 0.05),
-      alpha:   Math.random() * 0.45 + 0.08,
-      size:    Math.random() * 1.5 + 0.4,
-      life:    randomLife ? Math.random() * 6 : 0,
-      maxLife: 6 + Math.random() * 6,
-    };
-  }
-
-  private drawParticles(ctx: CanvasRenderingContext2D, W: number, H: number, dt: number, fg: boolean): void {
-    this.pts.forEach((p, idx) => {
-      const isFg = p.size > 1.0;
-      if (isFg !== fg) return;
-
-      p.life += dt;
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.life > p.maxLife || p.y < -10 || p.x < -10 || p.x > W + 10) {
-        this.pts[idx] = this.makeParticle(false);
+  private loadThreeJs(): Promise<void> {
+    return new Promise((resolve) => {
+      if (window.THREE) {
+        resolve();
         return;
       }
-
-      const ratio = p.life / p.maxLife;
-      const alphaFactor = ratio < 0.1 ? ratio / 0.1 : ratio > 0.9 ? (1 - ratio) / 0.1 : 1;
-      const a = p.alpha * alphaFactor;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(147,197,253,${a})`;
-      ctx.fill();
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+      script.onload = () => resolve();
+      document.body.appendChild(script);
     });
   }
+
+  private initThree(): void {
+    const THREE = window.THREE;
+    const canvas = this.canvasRef.nativeElement;
+    const pEl = canvas.parentElement!;
+    const w = pEl.clientWidth || 800;
+    const h = pEl.clientHeight || 700;
+
+    // Renderer
+    this.renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    this.renderer.setSize(w, h);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Scene
+    this.scene = new THREE.Scene();
+
+    // Camera
+    this.camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
+    this.camera.position.set(0, 0, 8.5);
+
+    // Group to host all vault elements
+    this.vaultGroup = new THREE.Group();
+    this.scene.add(this.vaultGroup);
+
+    // ── Lights ──
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.35);
+    this.scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0x60a5fa, 0.85);
+    dirLight.position.set(5, 5, 5);
+    this.scene.add(dirLight);
+
+    const dirLightLeft = new THREE.DirectionalLight(0x8b5cf6, 0.5);
+    dirLightLeft.position.set(-5, 3, -5);
+    this.scene.add(dirLightLeft);
+
+    this.innerLight = new THREE.PointLight(0x06b6d4, 4.0, 8.0);
+    this.innerLight.position.set(0, 0, 0);
+    this.vaultGroup.add(this.innerLight);
+
+    // ── Build Vault Cube (Double Glow Outlines) ──
+    const cubeSize = 2.2;
+    const boxGeo = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+    
+    const glassMat = new THREE.MeshPhysicalMaterial({
+      color: 0x1e3a8a,
+      transparent: true,
+      opacity: 0.18,
+      roughness: 0.1,
+      metalness: 0.9,
+      clearcoat: 1.0,
+      side: THREE.DoubleSide
+    });
+    const vaultMesh = new THREE.Mesh(boxGeo, glassMat);
+    this.vaultGroup.add(vaultMesh);
+
+    // Glowing edge lines
+    const edgesGeo = new THREE.EdgesGeometry(boxGeo);
+    const lineMat = new THREE.LineBasicMaterial({ color: 0x60a5fa, linewidth: 2 });
+    const edgeLines = new THREE.LineSegments(edgesGeo, lineMat);
+    this.vaultGroup.add(edgeLines);
+
+    // Inner double outline frame
+    const edgesGeoInner = new THREE.EdgesGeometry(new THREE.BoxGeometry(cubeSize - 0.05, cubeSize - 0.05, cubeSize - 0.05));
+    const lineMatInner = new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 1 });
+    const edgeLinesInner = new THREE.LineSegments(edgesGeoInner, lineMatInner);
+    this.vaultGroup.add(edgeLinesInner);
+
+    // ── Vault Door (Swung open right) ──
+    const doorGroup = new THREE.Group();
+    // Pivot on the right-front edge of the vault
+    doorGroup.position.set(cubeSize / 2, 0, cubeSize / 2);
+    doorGroup.rotation.y = 0.55; // 32 degrees swung open
+    
+    // Door panel centered on local offset
+    const doorPanelGeo = new THREE.BoxGeometry(cubeSize, cubeSize, 0.04);
+    const doorPanel = new THREE.Mesh(doorPanelGeo, glassMat);
+    doorPanel.position.set(-cubeSize / 2, 0, 0);
+    doorGroup.add(doorPanel);
+
+    const doorEdges = new THREE.LineSegments(new THREE.EdgesGeometry(doorPanelGeo), lineMat);
+    doorEdges.position.set(-cubeSize / 2, 0, 0);
+    doorGroup.add(doorEdges);
+
+    // Lock wheel/gear
+    const wheelGeo = new THREE.TorusGeometry(0.28, 0.04, 8, 32);
+    const wheelMat = new THREE.MeshStandardMaterial({ color: 0x60a5fa, metalness: 0.8, roughness: 0.2 });
+    const wheel = new THREE.Mesh(wheelGeo, wheelMat);
+    wheel.position.set(-cubeSize / 2, 0, 0.04);
+    doorGroup.add(wheel);
+
+    const axleGeo = new THREE.CylinderGeometry(0.06, 0.06, 0.15, 12);
+    const axle = new THREE.Mesh(axleGeo, wheelMat);
+    axle.rotation.x = Math.PI / 2;
+    axle.position.set(-cubeSize / 2, 0, 0.04);
+    doorGroup.add(axle);
+
+    this.vaultGroup.add(doorGroup);
+
+    // ── Core Laser Cylinder ──
+    const cylinderGeo = new THREE.CylinderGeometry(0.04, 0.04, cubeSize * 0.95, 16);
+    const cylinderMat = new THREE.MeshBasicMaterial({
+      color: 0x06b6d4,
+      transparent: true,
+      opacity: 0.45,
+      blending: THREE.AdditiveBlending
+    });
+    this.coreLaser = new THREE.Mesh(cylinderGeo, cylinderMat);
+    this.vaultGroup.add(this.coreLaser);
+
+    // ── Orbiting Document Cards ──
+    const docs = [
+      { name: 'Aadhaar',     color: '#22c55e', bx: -0.55, by: -0.45, bz: -0.25, phase: 0.0 },
+      { name: 'Passport',    color: '#3b82f6', bx:  0.45, by: -0.25, bz:  0.30, phase: 1.2 },
+      { name: 'PAN Card',    color: '#eab308', bx: -0.10, by:  0.35, bz: -0.40, phase: 2.5 },
+      { name: 'Resume',      color: '#a855f7', bx: -0.50, by:  0.20, bz:  0.25, phase: 3.7 },
+      { name: 'Certificate', color: '#06b6d4', bx:  0.40, by:  0.30, bz: -0.20, phase: 5.0 },
+    ];
+
+    docs.forEach(doc => {
+      const tex = this.createCardTexture(doc.name, doc.color);
+      const cardGeo = new THREE.PlaneGeometry(0.68, 0.46);
+      const cardMat = new THREE.MeshBasicMaterial({
+        map: tex,
+        transparent: true,
+        side: THREE.DoubleSide,
+        opacity: 0.90
+      });
+      const cardMesh = new THREE.Mesh(cardGeo, cardMat);
+      cardMesh.position.set(doc.bx, doc.by, doc.bz);
+      
+      const cardData = {
+        mesh: cardMesh,
+        bx: doc.bx,
+        by: doc.by,
+        bz: doc.bz,
+        phase: doc.phase
+      };
+      
+      this.docCards.push(cardData);
+      this.vaultGroup.add(cardMesh);
+    });
+
+    // ── Base Rings ──
+    const ringGeo = new THREE.TorusGeometry(2.0, 0.015, 8, 64);
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.35 });
+    const ring1 = new THREE.Mesh(ringGeo, ringMat);
+    ring1.rotation.x = Math.PI / 2;
+    ring1.position.y = -cubeSize / 2 - 0.2;
+    this.vaultGroup.add(ring1);
+    this.rings.push(ring1);
+
+    const ringGeo2 = new THREE.TorusGeometry(1.6, 0.01, 8, 64);
+    const ringMat2 = new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.25 });
+    const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
+    ring2.rotation.x = Math.PI / 2;
+    ring2.position.y = -cubeSize / 2 - 0.2;
+    this.vaultGroup.add(ring2);
+    this.rings.push(ring2);
+
+    // ── Drifting Particles ──
+    const particleCount = 180;
+    const particleGeo = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    
+    for (let i = 0; i < particleCount * 3; i += 3) {
+      positions[i]     = (Math.random() - 0.5) * 6; // X
+      positions[i + 1] = (Math.random() - 0.5) * 5; // Y
+      positions[i + 2] = (Math.random() - 0.5) * 4; // Z
+    }
+    
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const pMat = new THREE.PointsMaterial({
+      color: 0x60a5fa,
+      size: 0.022,
+      transparent: true,
+      opacity: 0.7,
+      blending: THREE.AdditiveBlending
+    });
+    this.particles = new THREE.Points(particleGeo, pMat);
+    this.scene.add(this.particles);
+
+    // ── Volumetric Light Shafts (Top/Bottom additive cones) ──
+    const coneGeo = new THREE.ConeGeometry(0.6, 2.5, 32, 1, true);
+    const coneMat = new THREE.MeshBasicMaterial({
+      color: 0x0ea5e9,
+      transparent: true,
+      opacity: 0.06,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide
+    });
+    const topBeam = new THREE.Mesh(coneGeo, coneMat);
+    topBeam.position.y = cubeSize / 2 + 1.25;
+    topBeam.rotation.x = Math.PI;
+    this.vaultGroup.add(topBeam);
+
+    // Handle Resize
+    this.resizeObs = new ResizeObserver(() => this.resize());
+    this.resizeObs.observe(pEl);
+  }
+
+  private createCardTexture(title: string, colorHex: string): any {
+    const THREE = window.THREE;
+    const canvas = document.createElement('canvas');
+    canvas.width = 160;
+    canvas.height = 110;
+    const ctx = canvas.getContext('2d')!;
+
+    // Translucent backing gradient
+    const grad = ctx.createLinearGradient(0, 0, 160, 110);
+    grad.addColorStop(0, 'rgba(8, 16, 45, 0.95)');
+    grad.addColorStop(1, 'rgba(5, 10, 30, 0.95)');
+    ctx.fillStyle = grad;
+    
+    // Rounded rect
+    ctx.beginPath();
+    this.drawRoundedRect(ctx, 0, 0, 160, 110, 8);
+    ctx.fill();
+
+    // Outline
+    ctx.strokeStyle = colorHex;
+    ctx.lineWidth = 2.0;
+    ctx.stroke();
+
+    // Title banner strip
+    ctx.fillStyle = colorHex;
+    ctx.beginPath();
+    this.drawRoundedRect(ctx, 0, 0, 160, 24, [8, 8, 0, 0] as any);
+    ctx.fill();
+
+    // Document Name text
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 11px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(title, 80, 12);
+
+    // Mock lines
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+    ctx.fillRect(15, 45, 130, 8);
+    ctx.fillRect(15, 63, 130, 8);
+    ctx.fillRect(15, 81, 80, 8);
+
+    return new THREE.CanvasTexture(canvas);
+  }
+
+  private drawRoundedRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number | number[]): void {
+    const rt = Array.isArray(r) ? r : [r, r, r, r];
+    const [tl, tr, br, bl] = rt;
+    ctx.moveTo(x + tl, y);
+    ctx.arcTo(x + w, y,     x + w, y + h, tr);
+    ctx.arcTo(x + w, y + h, x,     y + h, br);
+    ctx.arcTo(x,     y + h, x,     y,     bl);
+    ctx.arcTo(x,     y,     x + w, y,     tl);
+    ctx.closePath();
+  }
+
+  private resize(): void {
+    const canvas = this.canvasRef.nativeElement;
+    const pEl = canvas.parentElement!;
+    const w = pEl.clientWidth;
+    const h = pEl.clientHeight;
+
+    this.camera.aspect = w / h;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(w, h);
+  }
+
+  private animate(): void {
+    this.animationFrameId = requestAnimationFrame(() => this.animate());
+
+    const t = performance.now() * 0.001;
+
+    // Mouse parallax easing
+    this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.06;
+    this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.06;
+
+    // Vault rotations (combines linear + parallax offsets)
+    if (this.vaultGroup) {
+      this.vaultGroup.rotation.y = t * 0.08 + this.currentMouseX * 0.15;
+      this.vaultGroup.rotation.x = -0.12 + this.currentMouseY * 0.10;
+      
+      // Floating offset
+      this.vaultGroup.position.y = Math.sin(t * 1.5) * 0.12;
+    }
+
+    // Concentric base rings rotation
+    this.rings.forEach((ring, idx) => {
+      ring.rotation.z = t * (idx === 0 ? 0.25 : -0.18);
+    });
+
+    // Animate doc cards (individual floating bobbing inside vault)
+    this.docCards.forEach(card => {
+      card.mesh.position.y = card.by + Math.sin(t * 1.6 + card.phase) * 0.08;
+      card.mesh.position.x = card.bx + Math.cos(t * 1.1 + card.phase) * 0.05;
+      card.mesh.rotation.y = Math.sin(t * 0.5 + card.phase) * 0.08;
+      // Auto-face camera
+      card.mesh.quaternion.copy(this.camera.quaternion);
+    });
+
+    // Core laser cylinder pulse
+    if (this.coreLaser) {
+      const laserScale = 0.85 + Math.sin(t * 4.0) * 0.15;
+      this.coreLaser.scale.x = laserScale;
+      this.coreLaser.scale.z = laserScale;
+    }
+
+    // Inner core point light pulsing
+    if (this.innerLight) {
+      this.innerLight.intensity = 3.5 + Math.sin(t * 3.0) * 0.8;
+    }
+
+    // Slow drift starfield particles
+    if (this.particles) {
+      const positions = this.particles.geometry.attributes.position.array;
+      for (let i = 1; i < positions.length; i += 3) {
+        positions[i] -= 0.002; // Float down slightly
+        if (positions[i] < -2.5) {
+          positions[i] = 2.5; // Loop back
+        }
+      }
+      this.particles.geometry.attributes.position.needsUpdate = true;
+      this.particles.rotation.y = t * 0.015;
+    }
+
+    this.renderer.render(this.scene, this.camera);
+  }
+
+  private cleanupThree(): void {
+    const THREE = window.THREE;
+    if (!THREE || !this.scene) return;
+
+    this.scene.traverse((obj: any) => {
+      if (obj.geometry) obj.geometry.dispose();
+      if (obj.material) {
+        if (Array.isArray(obj.material)) {
+          obj.material.forEach((m: any) => m.dispose());
+        } else {
+          obj.material.dispose();
+        }
+      }
+    });
+    this.renderer?.dispose();
+  }
 }
+
