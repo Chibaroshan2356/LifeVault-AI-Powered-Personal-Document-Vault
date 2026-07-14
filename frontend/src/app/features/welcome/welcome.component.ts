@@ -196,60 +196,58 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const zoomScale = 1.0 + Math.sin(t * (Math.PI * 2 / 12)) * 0.02;
     const S = Math.min(W * 1.05, H * 1.05) * zoomScale;
 
-    // ── 1. Concentric base rings (ripples) ──
-    this.drawBaseRings(ctx, cx, ncy + S * 0.35, S * 0.44, t);
-
-    // ── 2. Background particles ──
+    // ── 1. Background particles ──
     this.drawParticles(ctx, W, H, dt, false);
 
-    // ── 3. Draw pre-rendered exact vault image ──
+    // ── 2. Draw pre-rendered exact vault image ──
     if (this.imgLoaded) {
-      ctx.save();
-      ctx.globalCompositeOperation = 'screen'; // Merges dark edges seamlessly with background
       const pulseScale = 1.0 + Math.sin(t * 1.5) * 0.008;
-      const imgW = S * 0.72 * pulseScale; // Adjusted base scaling multiplier for square crop
+      const imgW = Math.round(S * 0.72 * pulseScale);
       const aspect = this.vaultImg.height / this.vaultImg.width || 0.829;
-      const imgH = imgW * aspect;
-      
-      ctx.shadowColor = 'rgba(59, 130, 246, 0.35)';
-      ctx.shadowBlur = 60;
-      ctx.drawImage(this.vaultImg, cx - imgW / 2, ncy - imgH / 2, imgW, imgH);
-      ctx.restore();
+      const imgH = Math.round(imgW * aspect);
+
+      if (imgW > 0 && imgH > 0) {
+        // Create offscreen canvas to mask square image edges
+        const offscreen = document.createElement('canvas');
+        offscreen.width = imgW;
+        offscreen.height = imgH;
+        const octx = offscreen.getContext('2d')!;
+
+        // Draw original image onto offscreen
+        octx.drawImage(this.vaultImg, 0, 0, imgW, imgH);
+
+        // Apply feathered radial mask to erase corners and edges
+        octx.save();
+        octx.globalCompositeOperation = 'destination-in';
+        const mask = octx.createRadialGradient(imgW / 2, imgH / 2, 0, imgW / 2, imgH / 2, imgW * 0.44);
+        mask.addColorStop(0.0, 'rgba(0,0,0,1.0)');
+        mask.addColorStop(0.70, 'rgba(0,0,0,1.0)');
+        mask.addColorStop(0.88, 'rgba(0,0,0,0.5)');
+        mask.addColorStop(0.98, 'rgba(0,0,0,0.0)');
+        octx.fillStyle = mask;
+        octx.fillRect(0, 0, imgW, imgH);
+        octx.restore();
+
+        // Render offscreen result onto main canvas using screen blend
+        ctx.save();
+        ctx.globalCompositeOperation = 'screen';
+        ctx.shadowColor = 'rgba(59, 130, 246, 0.35)';
+        ctx.shadowBlur = 60;
+        ctx.drawImage(offscreen, cx - imgW / 2, ncy - imgH / 2);
+        ctx.restore();
+      }
     }
 
-
-    // ── 4. Laser scan sweeps ──
+    // ── 3. Laser scan sweeps ──
     const drawW = S * 0.72;
     const aspect = this.vaultImg.height / this.vaultImg.width || 0.829;
     const drawH = drawW * aspect;
     this.drawLaserScanner(ctx, cx, ncy, drawW, drawH, t);
 
-    // ── 5. Foreground particles ──
+    // ── 4. Foreground particles ──
     this.drawParticles(ctx, W, H, dt, true);
-
   }
 
-  // ── Concentric Base Rings (Expanding ripples) ──────────────────
-  private drawBaseRings(ctx: CanvasRenderingContext2D, cx: number, cy: number, maxR: number, t: number): void {
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.scale(1, 0.22);
-
-    const colors = ['rgba(6,182,212,0.30)', 'rgba(37,99,235,0.18)', 'rgba(139,92,246,0.08)'];
-    colors.forEach((col, idx) => {
-      const scaleCycle = ((t * 0.3 + idx * 0.33) % 1.0);
-      const r = maxR * scaleCycle;
-      const alpha = 0.45 * (1.0 - scaleCycle);
-
-      ctx.beginPath();
-      ctx.arc(0, 0, r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(6,182,212,${alpha})`;
-      ctx.lineWidth = 2.0;
-      ctx.stroke();
-    });
-
-    ctx.restore();
-  }
 
   // ── Specular Laser Scanner Sweep ───────────────────────────────
   private drawLaserScanner(ctx: CanvasRenderingContext2D, cx: number, cy: number, w: number, h: number, t: number): void {
