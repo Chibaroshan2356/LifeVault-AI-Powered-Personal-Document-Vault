@@ -206,9 +206,9 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.imgLoaded) {
       ctx.save();
       const pulseScale = 1.0 + Math.sin(t * 1.5) * 0.008;
-      const imgW = S * 0.94 * pulseScale;
-      // Option C mockup aspect ratio is 1024 / 513 = 1.996 (near 2:1)
-      const imgH = (imgW / 1.996);
+      const imgW = S * 0.72 * pulseScale; // Adjusted base scaling multiplier for square crop
+      const aspect = this.vaultImg.height / this.vaultImg.width || 0.829;
+      const imgH = imgW * aspect;
       
       ctx.shadowColor = 'rgba(59, 130, 246, 0.35)';
       ctx.shadowBlur = 60;
@@ -217,12 +217,14 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     // ── 4. Laser scan sweeps ──
-    const imgW = S * 0.94;
-    const imgH = (imgW / 1.996);
-    this.drawLaserScanner(ctx, cx, ncy, imgW, imgH, t);
+    const drawW = S * 0.72;
+    const aspect = this.vaultImg.height / this.vaultImg.width || 0.829;
+    const drawH = drawW * aspect;
+    this.drawLaserScanner(ctx, cx, ncy, drawW, drawH, t);
 
     // ── 5. Foreground particles ──
     this.drawParticles(ctx, W, H, dt, true);
+
   }
 
   // ── Concentric Base Rings (Expanding ripples) ──────────────────
