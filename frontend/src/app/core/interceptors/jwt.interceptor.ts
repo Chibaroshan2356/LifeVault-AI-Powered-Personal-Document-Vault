@@ -12,16 +12,26 @@ import { inject } from '@angular/core';
 import { catchError, switchMap, throwError } from 'rxjs';
 import { TokenStorageService } from '../services/token-storage.service';
 import { AuthService } from '../../features/auth/services/auth.service';
+import { Router } from '@angular/router';
 
 export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
   const tokenStorage = inject(TokenStorageService);
   const authService = inject(AuthService);
+  const router = inject(Router);
   const token = tokenStorage.getAccessToken();
 
   // Attach token if available — skip auth endpoints to avoid circular calls
   const isAuthEndpoint = req.url.includes('/auth/login') ||
                          req.url.includes('/auth/register') ||
                          req.url.includes('/auth/refresh');
+
+  // If the tokens are expired and we have no valid refresh token, redirect immediately
+  if (!isAuthEndpoint && tokenStorage.isRefreshTokenExpired()) {
+    tokenStorage.clear();
+    authService.logout().subscribe();
+    router.navigate(['/auth/login']);
+    return throwError(() => new HttpErrorResponse({ status: 401, statusText: 'Unauthorized' }));
+  }
 
   const authReq = token && !isAuthEndpoint
     ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } })
@@ -44,6 +54,7 @@ export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
           }),
           catchError((refreshErr) => {
             authService.logout().subscribe();
+            router.navigate(['/auth/login']);
             return throwError(() => refreshErr);
           })
         );

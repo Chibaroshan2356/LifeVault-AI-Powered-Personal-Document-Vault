@@ -1,0 +1,77 @@
+<div class="shell">
+  <!-- Modern Floating Glass Sidebar -->
+  <aside class="sidebar" (mousemove)="onSidebarMouseMove($event)">
+    <!-- Brand Header with Animated Orb -->
+    <div class="brand">
+      <div class="brand-orb-container">
+        <div class="brand-orb-core"></div>
+        <div class="brand-orb-ring-1"></div>
+        <div class="brand-orb-ring-2"></div>
+      </div>
+      <span class="brand-name">LifeVault</span>
+      <span class="ai-badge">AI</span>
+    </div>
+
+    <!-- Navigation Menu (Arc / macOS Dock-style) -->
+    <nav class="nav-menu">
+      <a class="nav-item" routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" matRipple>
+        <i class="lucide-layout-dashboard"></i>
+        <span>Dashboard</span>
+        <span class="active-indicator-glow"></span>
+      </a>
+      <a class="nav-item" routerLink="/documents" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" matRipple>
+        <i class="lucide-folder"></i>
+        <span>Documents</span>
+        <span class="active-indicator-glow"></span>
+      </a>
+      <a class="nav-item" routerLink="/documents/search" routerLinkActive="active" matRipple>
+        <i class="lucide-search"></i>
+        <span>Search</span>
+        <span class="active-indicator-glow"></span>
+      </a>
+      <a class="nav-item" routerLink="/documents/training" routerLinkActive="active" matRipple>
+        <i class="lucide-cpu"></i>
+        <span>AI Training Center</span>
+        <span class="active-indicator-glow"></span>
+      </a>
+    </nav>
+
+    <!-- Theme Toggler, Signout and User profile card -->
+    <div class="sidebar-footer">
+      <button class="footer-action" (click)="toggleTheme()" matRipple>
+        <i [class]="isDarkTheme ? 'lucide-sun' : 'lucide-moon'"></i>
+        <span>{{ isDarkTheme ? 'Light Mode' : 'Dark Mode' }}</span>
+      </button>
+      
+      <button class="footer-action signout" (click)="logout()" matRipple>
+        <i class="lucide-log-out"></i>
+        <span>Sign Out</span>
+      </button>
+
+      <!-- Premium Glass User Card -->
+      <div class="user-card-glass" *ngIf="userName">
+        <div class="user-info-row">
+          <div class="avatar">
+            {{ userName.charAt(0).toUpperCase() }}
+          </div>
+          <div class="user-details">
+            <span class="name">{{ userName }}</span>
+            <span class="email">{{ userEmail }}</span>
+          </div>
+        </div>
+        
+        <div class="ai-online-row">
+          <span class="online-pulse-dot"></span>
+          <span class="online-text">AI Engine Online</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Viewport -->
+  <main class="main-viewport">
+    <div class="scroll-container">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

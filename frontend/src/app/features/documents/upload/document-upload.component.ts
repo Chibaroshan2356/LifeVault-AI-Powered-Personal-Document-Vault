@@ -9,7 +9,7 @@
  *  - After upload: navigate to document list
  */
 import {
-  Component, ElementRef, ViewChild, HostListener
+  Component, ElementRef, ViewChild, HostListener, OnDestroy
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
@@ -17,8 +17,10 @@ import { MatIconModule }           from '@angular/material/icon';
 import { MatButtonModule }         from '@angular/material/button';
 import { MatProgressBarModule }    from '@angular/material/progress-bar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { Subscription, interval, switchMap } from 'rxjs';
 
 import { DocumentService } from '../services/document.service';
+import { DocumentStatus } from '../models/document.models';
 
 const ALLOWED_TYPES    = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
 const ALLOWED_LABELS   = 'PDF, JPG, PNG';
@@ -36,14 +38,16 @@ const MAX_SIZE_LABEL   = '10 MB';
   templateUrl: './document-upload.component.html',
   styleUrl:    './document-upload.component.scss',
 })
-export class DocumentUploadComponent {
+export class DocumentUploadComponent implements OnDestroy {
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
 
   isDragOver    = false;
   selectedFile: File | null = null;
   validationError = '';
-  uploadState: 'idle' | 'uploading' | 'success' | 'error' = 'idle';
+  uploadState: 'idle' | 'uploading' | 'processing' | 'success' | 'error' = 'idle';
   uploadPercent = 0;
+  processingStatus: 'uploading' | 'ocr' | 'layoutlm' | 'ready' | 'failed' = 'uploading';
+  private pollSubscription?: Subscription;
 
   readonly allowedLabels = ALLOWED_LABELS;
   readonly maxSizeLabel  = MAX_SIZE_LABEL;
@@ -53,6 +57,12 @@ export class DocumentUploadComponent {
     private readonly router:     Router,
     private readonly snackbar:   MatSnackBar,
   ) {}
+
+  ngOnDestroy(): void {
+    if (this.pollSubscription) {
+      this.pollSubscription.unsubscribe();
+    }
+  }
 
   // ── Drag & Drop ────────────────────────────────────────────────
 
@@ -124,14 +134,14 @@ export class DocumentUploadComponent {
           this.uploadPercent = event.percent ?? 0;
         }
         if (event.type === 'complete') {
-          this.uploadState = 'success';
-          this.snackbar.open('Document uploaded successfully!', 'View', {
-            duration:           4000,
-            panelClass:         ['snackbar-success'],
-            horizontalPosition: 'right',
-            verticalPosition:   'top',
-          });
-          setTimeout(() => this.router.navigate(['/documents']), 1500);
+          this.uploadState = 'processing';
+          this.processingStatus = 'ocr';
+          if (event.documentId) {
+            this.pollProcessing(event.documentId);
+          } else {
+            this.uploadState = 'success';
+            setTimeout(() => this.router.navigate(['/documents']), 1500);
+          }
         }
       },
       error: (err) => {
@@ -145,6 +155,56 @@ export class DocumentUploadComponent {
         });
       },
     });
+  }
+
+  pollProcessing(docId: string): void {
+    if (this.pollSubscription) {
+      this.pollSubscription.unsubscribe();
+    }
+
+    this.pollSubscription = interval(1500)
+      .pipe(
+        switchMap(() => this.docService.getById(docId))
+      )
+      .subscribe({
+        next: (doc) => {
+          if (doc.status === DocumentStatus.READY) {
+            this.processingStatus = 'ready';
+            this.uploadState = 'success';
+            if (this.pollSubscription) {
+              this.pollSubscription.unsubscribe();
+              this.pollSubscription = undefined;
+            }
+          } else if (doc.status === DocumentStatus.FAILED) {
+            this.processingStatus = 'failed';
+            this.uploadState = 'error';
+            this.validationError = 'AI processing failed: ' + (doc.errorMessage || 'OCR or LayoutLMv3 failed.');
+            if (this.pollSubscription) {
+              this.pollSubscription.unsubscribe();
+              this.pollSubscription = undefined;
+            }
+          } else if (
+            doc.status === DocumentStatus.OCR_PENDING ||
+            doc.status === DocumentStatus.OCR_COMPLETED
+          ) {
+            this.processingStatus = 'ocr';
+          } else if (
+            doc.status === DocumentStatus.EXTRACTION_PENDING ||
+            doc.status === DocumentStatus.CLASSIFICATION_PENDING ||
+            doc.status === DocumentStatus.EXTRACTION_COMPLETED
+          ) {
+            this.processingStatus = 'layoutlm';
+          }
+        },
+        error: () => {
+          this.uploadState = 'success';
+          if (this.pollSubscription) {
+            this.pollSubscription.unsubscribe();
+            this.pollSubscription = undefined;
+          }
+          setTimeout(() => this.router.navigate(['/documents']), 1500);
+        }
+      });
   }
 
   // ── Helpers ────────────────────────────────────────────────────

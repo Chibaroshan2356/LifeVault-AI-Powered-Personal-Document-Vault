@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.form.value).pipe(
       finalize(() => (this.isLoading = false)),
     ).subscribe({
-      next: () => this.router.navigate(['/dashboard']),
+      next: () => this.router.navigate(['/welcome']),
       error: (err) => {
         this.errorMessage =
           err?.error?.message ||

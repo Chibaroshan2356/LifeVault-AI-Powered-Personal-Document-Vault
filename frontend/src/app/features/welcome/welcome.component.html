@@ -1,0 +1,210 @@
+<!-- ============================================================
+     LifeVault AI — Cinematic Welcome Page v4 (Holographic Vault)
+     /welcome — appears after login, before dashboard
+     ============================================================ -->
+
+<section class="welcome-page"
+  [class.is-loaded]="isLoaded"
+  [class.is-leaving]="isLeaving"
+  (mousemove)="onMouseMove($event)">
+
+  <!-- ══════════════ CINEMATIC BACKGROUND ══════════════ -->
+  <div class="bg-canvas">
+    <!-- Aurora layers -->
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <!-- Star field -->
+    <div class="star-field"></div>
+    <!-- Fog layer -->
+    <div class="fog-layer"></div>
+    <!-- Light beams -->
+    <div class="light-beam lb-1"></div>
+    <div class="light-beam lb-2"></div>
+    <!-- Volumetric center glow -->
+    <div class="vol-light"></div>
+  </div>
+
+  <!-- ══════════════ GLASS PANEL ══════════════ -->
+  <div class="glass-panel">
+
+    <!-- ════ LEFT COLUMN: BRAND & IDENTITY ════ -->
+    <div class="left-panel">
+
+      <!-- Badge Option -->
+      <div class="option-badge-wrap" [class.visible]="showBrand">
+        <span class="option-badge">OPTION C</span>
+        <span class="option-label">HOLOGRAPHIC VAULT</span>
+      </div>
+
+      <!-- Brand -->
+      <div class="brand" [class.visible]="showBrand">
+        <div class="brand-orb">
+          <svg width="24" height="24" viewBox="0 0 26 26" fill="none">
+            <circle cx="13" cy="13" r="12" stroke="#3b82f6" stroke-width="1.2" opacity="0.8"/>
+            <circle cx="13" cy="13" r="6"  fill="#3b82f6" opacity="0.18"/>
+            <circle cx="13" cy="13" r="2.5" fill="#60a5fa"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">LifeVault</span>
+          <span class="brand-ai">AI</span>
+        </div>
+      </div>
+
+      <!-- Tagline stack -->
+      <div class="tagline-stack" [class.visible]="showTagline">
+        <h1 class="tagline t1">Protect.</h1>
+        <h1 class="tagline t2">Understand.</h1>
+        <h1 class="tagline t3">Organize.</h1>
+      </div>
+
+      <!-- Subtitle -->
+      <p class="sub-caption" [class.visible]="showSub">
+        Your personal AI document intelligence platform.
+      </p>
+
+      <!-- Tech badges -->
+      <div class="badges" [class.visible]="showBadges">
+        <span class="badge">EasyOCR</span>
+        <span class="badge">LayoutLMv3</span>
+        <span class="badge primary">AI Powered</span>
+        <span class="badge">Secure Vault</span>
+      </div>
+
+      <!-- ════ USER WELCOME STATUS CARD ════ -->
+      <div class="user-welcome-card" [class.visible]="showBrand">
+        <div class="welcome-header">
+          <div class="chk-wrap">
+            <svg viewBox="0 0 24 24" fill="none" class="check-icon">
+              <path d="M20 6L9 17l-5-5" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="user-details">
+            <span class="welcome-greeting">Welcome back,</span>
+            <span class="welcome-name">{{ userName }}</span>
+            <span class="verified-status">Identity Verified ✓</span>
+          </div>
+        </div>
+        
+        <div class="welcome-stats">
+          <div class="stat-col">
+            <span class="stat-val">11</span>
+            <span class="stat-lbl">Documents Protected</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-val secure">Secure</span>
+            <span class="stat-lbl">Vault Status</span>
+            <span class="ai-status">
+              <span class="status-dot"></span> AI Ready
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ ENTER VAULT BUTTON ════ -->
+      <div class="cta-wrap" [class.visible]="showBtn">
+        <button
+          id="enter-vault-btn"
+          class="vault-btn stage-ready"
+          (click)="enterVault()">
+
+          <!-- Corner lines (animated border) -->
+          <span class="corner-line tl-h"></span>
+          <span class="corner-line tl-v"></span>
+          <span class="corner-line tr-h"></span>
+          <span class="corner-line tr-v"></span>
+          <span class="corner-line bl-h"></span>
+          <span class="corner-line bl-v"></span>
+          <span class="corner-line br-h"></span>
+          <span class="corner-line br-v"></span>
+
+          <!-- Shine sweep -->
+          <span class="btn-shine"></span>
+
+          <!-- Glow ring behind button -->
+          <span class="btn-bloom"></span>
+
+          <!-- Content -->
+          <span class="btn-inner">
+            <span class="btn-top">→ Enter Vault</span>
+          </span>
+        </button>
+      </div>
+
+    </div>
+    <!-- end .left-panel -->
+
+    <!-- ════ CENTER COLUMN: HOLOGRAPHIC 3D VAULT ════ -->
+    <div class="center-panel">
+      <canvas #welcomeCanvas class="scene-canvas"></canvas>
+    </div>
+
+    <!-- ════ RIGHT COLUMN: VAULT FEATURES ════ -->
+    <div class="right-panel">
+      <div class="features-sidebar" [class.visible]="showBadges">
+        
+        <!-- Feature 1 -->
+        <div class="feature-item">
+          <div class="feat-icon-wrap">
+            <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <div class="feat-content">
+            <h4 class="feat-title">AI Document Intelligence</h4>
+            <p class="feat-desc">Powered by advanced AI models</p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-item">
+          <div class="feat-icon-wrap">
+            <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="feat-content">
+            <h4 class="feat-title">Secure & Private</h4>
+            <p class="feat-desc">Bank-level encryption</p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-item">
+          <div class="feat-icon-wrap">
+            <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <div class="feat-content">
+            <h4 class="feat-title">Smart Organization</h4>
+            <p class="feat-desc">Auto-categorize & tag</p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-item">
+          <div class="feat-icon-wrap">
+            <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </div>
+          <div class="feat-content">
+            <h4 class="feat-title">Expiry Alerts</h4>
+            <p class="feat-desc">Never miss important dates</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- end .glass-panel -->
+
+  <!-- White flash overlay for vault entry -->
+  <div class="entry-flash" [class.active]="isLeaving"></div>
+
+</section>

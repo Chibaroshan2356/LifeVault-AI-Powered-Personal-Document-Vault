@@ -13,7 +13,7 @@
  */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, tap, catchError, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, tap, catchError, throwError, shareReplay } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { environment } from '../../../../environments/environment';
@@ -44,6 +44,7 @@ const initialState: AuthState = {
 export class AuthService {
   private readonly apiUrl = `${environment.apiUrl}/auth`;
   private readonly usersUrl = `${environment.apiUrl}/users`;
+  private refreshSubscription$: Observable<ApiResponse<RefreshResponse>> | null = null;
 
   /** Reactive state — subscribe to know if user is logged in */
   private readonly _authState$ = new BehaviorSubject<AuthState>(initialState);

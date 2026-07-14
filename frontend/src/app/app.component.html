@@ -1,8 +1,10 @@
-<!--
-  AppComponent - Application Shell
+<!-- Immersive WebGL Background Canvas (Floats behind layout shell content) -->
+<div #backgroundCanvas class="global-3d-bg">
+  <div class="light-glow glow-top-left"></div>
+  <div class="light-glow glow-top-right"></div>
+  <div class="light-glow glow-bottom-center"></div>
+  <div class="light-glow glow-orb-behind"></div>
+</div>
 
-  This is the root component template. It contains only the router outlet.
-  All feature-specific layouts (nav, sidebar, footer) will be added
-  per-feature when those modules are implemented.
--->
+<!-- Route outlet view shell -->
 <router-outlet></router-outlet>

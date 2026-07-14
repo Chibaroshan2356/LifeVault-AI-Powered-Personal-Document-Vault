@@ -43,4 +43,25 @@ export class TokenStorageService {
   hasTokens(): boolean {
     return !!this.getAccessToken();
   }
+
+  isTokenExpired(token: string | null): boolean {
+    if (!token) return true;
+    try {
+      const parts = token.split('.');
+      if (parts.length !== 3) return true;
+      const payload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')));
+      if (!payload.exp) return false;
+      return Date.now() > (payload.exp * 1000);
+    } catch {
+      return true;
+    }
+  }
+
+  isAccessTokenExpired(): boolean {
+    return this.isTokenExpired(this.getAccessToken());
+  }
+
+  isRefreshTokenExpired(): boolean {
+    return this.isTokenExpired(this.getRefreshToken());
+  }
 }

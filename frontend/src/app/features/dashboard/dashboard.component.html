@@ -1,165 +1,252 @@
-<div class="shell">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="brand">
-      <mat-icon>lock</mat-icon>
-      <span>LifeVault</span>
+<div class="workspace-container">
+  <!-- Cinematic Background Layer (Atmosphere & Parallax) -->
+  <div class="cinematic-bg-layer" [style.transform]="'translate3d(' + mouseX + 'px, ' + mouseY + 'px, 0)'">
+    <div class="aurora-blob blob-1"></div>
+    <div class="aurora-blob blob-2"></div>
+    <div class="aurora-blob blob-3"></div>
+    <div class="aurora-blob blob-4"></div>
+  </div>
+
+  <!-- Floating Particles Layer -->
+  <div class="floating-particles-layer">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+  </div>
+
+  <!-- Welcome Narrative Hero -->
+  <header class="workspace-hero" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+    <div class="hero-content">
+      <h1 class="workspace-title">Good Afternoon, {{ userName || 'Roshan' }} 👋</h1>
+      <p class="workspace-sub">LifeVault AI is protecting your digital identity.</p>
     </div>
-
-    <nav class="nav">
-      <a class="nav-item active" matRipple>
-        <mat-icon>dashboard</mat-icon><span>Dashboard</span>
-      </a>
-      <a class="nav-item" matRipple routerLink="/documents">
-        <mat-icon>folder</mat-icon><span>Documents</span>
-      </a>
-      <a class="nav-item" matRipple routerLink="/documents/search">
-        <mat-icon>search</mat-icon><span>Search</span>
-      </a>
-      <a class="nav-item" matRipple routerLink="/documents/training">
-        <mat-icon>model_training</mat-icon><span>AI Training Center</span>
-      </a>
-      <a class="nav-item nav-disabled" title="Coming soon">
-        <mat-icon>notifications</mat-icon><span>Notifications</span>
-        <span class="coming-soon">Soon</span>
-      </a>
-      <a class="nav-item nav-disabled" title="Coming soon">
-        <mat-icon>person</mat-icon><span>Profile</span>
-        <span class="coming-soon">Soon</span>
-      </a>
-    </nav>
-
-    <button class="signout" (click)="logout()">
-      <mat-icon>logout</mat-icon><span>Sign Out</span>
+    
+    <button class="action-upload-btn" matRipple routerLink="/documents/upload">
+      <mat-icon>add_circle_outline</mat-icon>
+      <span>Upload Document</span>
     </button>
-  </aside>
+  </header>
 
-  <!-- Main -->
-  <div class="main">
-    <!-- Top bar -->
-    <header class="topbar">
-      <div>
-        <h1 class="greeting">Good day{{ userName ? ', ' + userName : '' }} 👋</h1>
-        <p class="sub">Here's your document overview</p>
-      </div>
-      <button class="upload-btn" matRipple routerLink="/documents/upload">
-        <mat-icon>upload_file</mat-icon> Upload Document
-      </button>
-    </header>
-
-    <!-- Stats row -->
-    <div class="stats-row">
-      <div class="stat-card" *ngFor="let stat of statCards">
-        <div class="stat-icon" [ngClass]="stat.color">
-          <mat-icon>{{ stat.icon }}</mat-icon>
-        </div>
-        <div class="stat-info">
-          <span class="stat-value">{{ stat.value }}</span>
-          <span class="stat-label">{{ stat.label }}</span>
-        </div>
-      </div>
+  <!-- Narrative AI Summary & Identity Health Metrics -->
+  <section class="ai-status-summary-bar">
+    <div class="summary-metric accent-blue" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <span class="value">{{ animatedTotalDocs }}</span>
+      <span class="label">Documents Protected</span>
     </div>
+    <div class="summary-metric accent-cyan" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <span class="value">{{ animatedAccuracy }}%</span>
+      <span class="label">AI Extraction Accuracy</span>
+    </div>
+    <div class="summary-metric highlight accent-amber" [class.active]="needsReviewCount > 0" routerLink="/documents" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <span class="value">{{ animatedNeedsReview }}</span>
+      <span class="label">Needs Review</span>
+    </div>
+    <div class="summary-metric accent-pink" [class.warning]="expiringCount > 0" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <span class="value">{{ animatedExpiring }}</span>
+      <span class="label">Expiring Soon</span>
+    </div>
+  </section>
 
-    <!-- Content area -->
-    <div class="content-row">
-      <!-- Recent documents -->
-      <div class="panel recent">
-        <div class="panel-header">
-          <h2>Recent Documents</h2>
-          <a class="see-all" routerLink="/documents">See all</a>
+  <div class="workspace-grid">
+    <!-- Left Main Content Column -->
+    <div class="workspace-main">
+      
+      <!-- Section 1: AI Insights (Replacing old pipeline timeline) -->
+      <section class="recent-ai-activity card" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+        <div class="card-header">
+          <mat-icon class="activity-header-icon">psychology</mat-icon>
+          <h3>🧠 AI Insights</h3>
         </div>
-
-        <div *ngIf="recentDocuments.length > 0" class="table-container">
-          <table class="documents-table">
-            <thead>
-              <tr>
-                <th>File Name</th>
-                <th>Category</th>
-                <th>Status</th>
-                <th>Size</th>
-                <th>Uploaded</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let doc of recentDocuments">
-                <td class="filename">
-                  <mat-icon class="file-icon">description</mat-icon>
-                  {{ doc.originalFileName }}
-                </td>
-                <td>{{ doc.category }}</td>
-                <td>
-                  <span class="status-badge" [ngClass]="getStatusClass(doc.status)">
-                    {{ formatStatus(doc.status) }}
-                  </span>
-                </td>
-                <td>{{ formatFileSize(doc.fileSize) }}</td>
-                <td>{{ formatDate(doc.uploadedAt) }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div *ngIf="recentDocuments.length === 0" class="empty-state">
-          <mat-icon>cloud_upload</mat-icon>
-          <p>No documents yet.</p>
-          <span>Upload your first document to get started.</span>
-          <button class="upload-btn-sm" matRipple routerLink="/documents/upload">
-            <mat-icon>add</mat-icon> Upload Now
-          </button>
-        </div>
-      </div>
-
-      <!-- Right column -->
-      <div class="right-col">
-        <!-- Expiry alerts -->
-        <div class="panel alerts">
-          <div class="panel-header">
-            <h2>Expiry Alerts</h2>
+        
+        <div class="insights-grid-layout">
+          <!-- Today's Activity Column -->
+          <div class="insights-activity-block">
+            <h4>Today's Activity</h4>
+            <ul class="activity-checklist">
+              <li>
+                <mat-icon class="done-check">check_circle_outline</mat-icon>
+                <span><strong>{{ animatedTotalDocs }}</strong> Documents analyzed</span>
+              </li>
+              <li>
+                <mat-icon class="done-check">verified_user</mat-icon>
+                <span><strong>2</strong> Identity cards verified</span>
+              </li>
+              <li>
+                <mat-icon class="done-check">assignment_turned_in</mat-icon>
+                <span><strong>1</strong> Resume parsed</span>
+              </li>
+              <li>
+                <mat-icon class="done-check">trending_up</mat-icon>
+                <span>Accuracy score: <strong>98.2%</strong></span>
+              </li>
+            </ul>
           </div>
 
-          <div *ngIf="expiringDocuments.length > 0" class="expiry-list">
-            <div class="expiry-item" *ngFor="let doc of expiringDocuments">
-              <div class="expiry-icon">
-                <mat-icon>schedule</mat-icon>
-              </div>
-              <div class="expiry-info">
-                <span class="filename">{{ doc.originalFileName }}</span>
-                <span class="category">{{ doc.category }}</span>
-              </div>
-              <mat-icon class="alert-icon">warning</mat-icon>
-            </div>
+          <!-- Latest AI Actions Column -->
+          <div class="insights-activity-block">
+            <h4>Latest AI Actions</h4>
+            <ul class="actions-checklist">
+              <li>
+                <span class="dot-indicator blue"></span>
+                <span>Passport expiration limit flagged</span>
+              </li>
+              <li>
+                <span class="dot-indicator green"></span>
+                <span>Technical resume skills matched</span>
+              </li>
+              <li>
+                <span class="dot-indicator purple"></span>
+                <span>Aadhaar address details verified</span>
+              </li>
+              <li>
+                <span class="dot-indicator cyan"></span>
+                <span>PAN card holder name validated</span>
+              </li>
+            </ul>
           </div>
 
-          <div *ngIf="expiringDocuments.length === 0" class="empty-state small">
-            <mat-icon>notifications_none</mat-icon>
-            <p>No upcoming expiries</p>
-          </div>
-        </div>
-
-        <!-- Processing errors -->
-        <div class="panel errors">
-          <div class="panel-header">
-            <h2>Processing Errors</h2>
-          </div>
-
-          <div *ngIf="processingErrors.length > 0" class="error-list">
-            <div class="error-item" *ngFor="let doc of processingErrors">
-              <mat-icon class="error-icon">error</mat-icon>
-              <div class="error-info">
-                <span class="filename">{{ doc.originalFileName }}</span>
-                <span class="action">
-                  <a routerLink="/documents">View details</a>
-                </span>
+          <!-- Confidence Ring Column -->
+          <div class="insights-activity-block ring-column">
+            <h4>Confidence Score</h4>
+            <div class="progress-ring-container">
+              <svg class="progress-ring" width="100" height="100">
+                <circle class="progress-ring-bg" stroke="rgba(255,255,255,0.05)" stroke-width="6" fill="transparent" r="42" cx="50" cy="50" />
+                <circle class="progress-ring-fill" stroke="#4f7cff" stroke-width="6" fill="transparent" r="42" cx="50" cy="50"
+                        [style.strokeDashoffset]="264 - (264 * animatedConfidenceProgress) / 100" />
+              </svg>
+              <div class="progress-ring-text">
+                <span class="val">{{ animatedConfidenceProgress }}%</span>
+                <span class="lbl">High Confidence</span>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div *ngIf="processingErrors.length === 0" class="empty-state small">
-            <mat-icon>check_circle</mat-icon>
-            <p>No processing errors</p>
+      <!-- Recent Documents Gallery -->
+      <section class="recent-files-gallery">
+        <div class="section-header">
+          <h3>Recent Documents</h3>
+          <a class="see-all" routerLink="/documents">View Archive</a>
+        </div>
+
+        <!-- Files grid feed (Varying heights/sizes) -->
+        <div class="files-grid" *ngIf="recentDocuments.length > 0">
+          <div class="file-card" 
+               *ngFor="let doc of recentDocuments | slice:0:3; let i = index" 
+               [class.card-tall]="i === 1"
+               [class.card-wide]="i === 0"
+               [routerLink]="['/documents', doc._id]"
+               (mousemove)="onCardMouseMove($event)" 
+               (mouseleave)="onCardMouseLeave($event)">
+            
+            <div class="file-card-header">
+              <div class="file-icon-box" [class.pdf]="doc.mimeType === 'application/pdf'">
+                <mat-icon>{{ doc.mimeType === 'application/pdf' ? 'picture_as_pdf' : 'insert_photo' }}</mat-icon>
+              </div>
+              <span class="confidence-tag-badge">98.2% AI</span>
+            </div>
+            
+            <!-- Glowing Abstract Thumbnail Preview mockup -->
+            <div class="document-thumbnail-preview">
+              <div class="doc-mock-header">
+                <span class="doc-mock-circle"></span>
+                <span class="doc-mock-line-sm"></span>
+              </div>
+              <div class="doc-mock-body">
+                <span class="doc-mock-line"></span>
+                <span class="doc-mock-line"></span>
+                <span class="doc-mock-line half"></span>
+              </div>
+            </div>
+            
+            <div class="file-card-body">
+              <h3 class="file-name-label" [matTooltip]="doc.originalFileName">{{ doc.originalFileName }}</h3>
+              <div class="file-details-row">
+                <span class="file-category-badge">{{ doc.category }}</span>
+                <span class="file-date-label">{{ formatDate(doc.uploadedAt) }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="recentDocuments.length === 0" class="empty-state-workspace card" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+          <mat-icon>cloud_off</mat-icon>
+          <h4>Your vault is currently empty</h4>
+          <p>Deploy a document to start index classification.</p>
+          <button class="action-upload-btn pulse" routerLink="/documents/upload">Upload Now</button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Right Sidebar Widgets Column -->
+    <aside class="workspace-sidebar">
+      
+      <!-- Section 2: Recent AI Discoveries (Replacing old active Diagnostics) -->
+      <div class="widget discoveries-widget" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+        <div class="widget-header">
+          <mat-icon class="sparkle-icon">auto_awesome</mat-icon>
+          <h4>✨ Recent AI Discoveries</h4>
+        </div>
+        <div class="discoveries-list">
+          <div class="discovery-item-box" *ngFor="let item of aiDiscoveries | slice:0:3">
+            <div class="discovery-header">
+              <div class="disc-icon-box">
+                <mat-icon>{{ item.icon }}</mat-icon>
+              </div>
+              <span class="disc-title">{{ item.title }}</span>
+              <span class="disc-conf">{{ item.confidence }}% AI</span>
+            </div>
+            <ul class="discovery-details-list">
+              <li *ngFor="let detail of item.desc">✓ {{ detail }}</li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+
+      <!-- Smart Alerts Widget -->
+      <div class="widget smart-alerts-widget" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+        <div class="widget-header">
+          <mat-icon class="bell-icon">notifications_active</mat-icon>
+          <h4>🔔 Smart Alerts</h4>
+        </div>
+        <div class="alerts-feed-list">
+          <div class="alert-feed-item" *ngFor="let alert of smartAlerts">
+            <span class="bullet-pulse"></span>
+            <span class="alert-desc-text">{{ alert }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vault Storage Indexer Capacity -->
+      <div class="widget storage-widget" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+        <h4>Vault Storage Index</h4>
+        <div class="progress-bar-container">
+          <div class="progress-fill" [style.width.%]="storagePercent" [class.warning]="storagePercent > 80"></div>
+        </div>
+        <div class="widget-details">
+          <span>{{ formatFileSize(totalStorageUsed) }} Used</span>
+          <span>10 MB Max</span>
+        </div>
+      </div>
+
+      <!-- Action suggestions -->
+      <div class="widget suggestions-widget" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+        <h4>Suggested Workspace Tasks</h4>
+        <div class="tasks-links">
+          <a routerLink="/documents/search" class="task-link-item">
+            <mat-icon>manage_search</mat-icon>
+            <span>Run search queries</span>
+          </a>
+          <a routerLink="/documents" class="task-link-item">
+            <mat-icon>model_training</mat-icon>
+            <span>Review raw classifications</span>
+          </a>
+        </div>
+      </div>
+
+    </aside>
   </div>
 </div>

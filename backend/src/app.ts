@@ -49,6 +49,10 @@ export const createApp = (): Application => {
     helmet({
       // Allow Swagger UI to load its inline scripts and styles
       contentSecurityPolicy: process.env.NODE_ENV === 'production' ? undefined : false,
+      // Disable frameguard in development to allow previewing documents in iframes from localhost:4200
+      frameguard:            process.env.NODE_ENV === 'production' ? { action: 'sameorigin' } : false,
+      // Allow cross-origin resource requests for preview files/images
+      crossOriginResourcePolicy: { policy: 'cross-origin' },
     }),
   );
 
@@ -68,7 +72,7 @@ export const createApp = (): Application => {
   // ----------------------------------------------------------------
   app.use('/api', rateLimit({
     windowMs: 15 * 60 * 1000,
-    max: 100,
+    max:      process.env.NODE_ENV === 'development' ? 10000 : 100,
     standardHeaders: true,
     legacyHeaders: false,
     message: { success: false, message: 'Too many requests — try again after 15 minutes' },
