@@ -1,15 +1,13 @@
 /**
- * welcome.component.ts — Premium Cinematic AI Core Landing Page (v8)
+ * welcome.component.ts — Premium Cinematic AI Core Landing Page (v9)
  *
- * Implements a true 3D holographic glass display case containing a nested
- * energy crystal core in Three.js.
- *
- * Visual highlights:
- *  • Nested Glass Core: Inner cyan glowing energy core + Outer icosahedron glass core rotating on opposite axes.
- *  • 6 Orbiting Security Nodes: Lock, Shield, Fingerprint, Chip, Database, Cloud (Hexagonal glowing badges).
- *  • Dynamic Occlusion Layering: Lines connect nodes to core, passing behind glass faces correctly.
- *  • Expanding base ripples: Flat rings scale up and fade out dynamically.
- *  • Cinematic camera drift: 3D sinus-breathing position tracking + mouse parallax.
+ * Implements a hybrid 2D canvas overlay engine that draws the exact cropped
+ * mockup vault image with dynamic layers:
+ *  • Eased mouse parallax on the centerpiece layout
+ *  • Sinusoidal float bobbing and slight zoom breathing (cinematic camera drift)
+ *  • Concentric base rings rotating below the vault
+ *  • Moving light/laser scan sweeps
+ *  • Drifting foreground & background particles
  */
 import {
   Component,
@@ -26,6 +24,11 @@ import { Router }       from '@angular/router';
 import { AuthService }  from '../auth/services/auth.service';
 
 declare const window: any;
+
+interface Particle {
+  x: number; y: number; vx: number; vy: number;
+  alpha: number; size: number; life: number; maxLife: number;
+}
 
 @Component({
   selector: 'app-welcome',
@@ -49,29 +52,26 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   showBadges   = false;
   showBtn      = false;
 
-  // ── Three.js Context ─────────────────────────────────────────
-  private renderer: any;
-  private scene: any;
-  private camera: any;
-  private animationFrameId!: number;
-  private resizeObs!: ResizeObserver;
+  // ── Render Context ───────────────────────────────────────────
+  private cvs!: HTMLCanvasElement;
+  private ctx!: CanvasRenderingContext2D;
+  private elapsed       = 0;
+  private lastFrameTime = 0;
+  private animId!:        number;
+  private pts:            Particle[] = [];
+  private resizeObs!:     ResizeObserver;
+  private lw = 800;
+  private lh = 700;
 
-  // Render nodes
-  private vaultGroup: any;
-  private innerEnergy: any;
-  private midFaceted: any;
-  private outerFaceted: any;
-  private particles: any;
-  private ripples: any[] = [];
-  private orbitNodes: any[] = [];
-  private connectionLines: any;
-  private pointLight: any;
+  // Pre-rendered exact vault asset
+  private vaultImg = new Image();
+  private imgLoaded = false;
 
-  // Interactivity
-  private targetMouseX = 0;
-  private targetMouseY = 0;
-  private currentMouseX = 0;
-  private currentMouseY = 0;
+  // Parallax vectors
+  private mx = 0;
+  private my = 0;
+  private targetMx = 0;
+  private targetMy = 0;
 
   constructor(
     private readonly authService: AuthService,
@@ -83,21 +83,24 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit(): void {
     this.resolveUserName();
     this.runStaggeredReveal();
+    // Load the exact vault centerpiece asset
+    this.vaultImg.src = 'assets/holographic_vault_core.png';
+    this.vaultImg.onload = () => {
+      this.imgLoaded = true;
+    };
   }
 
   ngAfterViewInit(): void {
-    this.loadThreeJs().then(() => {
-      this.initThree();
-      this.animate();
+    this.initCanvas();
+    requestAnimationFrame(() => {
       this.isLoaded = true;
       this.cdr.markForCheck();
     });
   }
 
   ngOnDestroy(): void {
-    cancelAnimationFrame(this.animationFrameId);
+    cancelAnimationFrame(this.animId);
     this.resizeObs?.disconnect();
-    this.cleanupThree();
   }
 
   private resolveUserName(): void {
@@ -133,515 +136,190 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(e: MouseEvent): void {
-    this.targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
-    this.targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+    this.targetMx = ((e.clientX - window.innerWidth  / 2) / window.innerWidth)  * 2;
+    this.targetMy = -((e.clientY - window.innerHeight / 2) / window.innerHeight) * 2;
   }
 
   // ═════════════════════════════════════════════════════════════
-  //  THREE.JS CINEMATIC AI CORE RENDERER
+  //  CANVAS RENDER ENGINE
   // ═════════════════════════════════════════════════════════════
 
-  private loadThreeJs(): Promise<void> {
-    return new Promise((resolve) => {
-      if (window.THREE) {
-        resolve();
-        return;
-      }
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-      script.onload = () => resolve();
-      document.body.appendChild(script);
-    });
+  private initCanvas(): void {
+    const el = this.canvasRef.nativeElement;
+    this.cvs = el;
+    this.ctx = el.getContext('2d')!;
+    this.sizeCanvas();
+
+    this.pts = Array.from({ length: 70 }, () => this.makeParticle(true));
+    this.lastFrameTime = performance.now();
+    this.tick();
+
+    this.resizeObs = new ResizeObserver(() => this.sizeCanvas());
+    this.resizeObs.observe(el.parentElement!);
   }
 
-  private initThree(): void {
-    const THREE = window.THREE;
-    const canvas = this.canvasRef.nativeElement;
-    const pEl = canvas.parentElement!;
-    const w = pEl.clientWidth || 800;
-    const h = pEl.clientHeight || 700;
-
-    // Renderer
-    this.renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    this.renderer.setSize(w, h);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    // Scene
-    this.scene = new THREE.Scene();
-
-    // Camera
-    this.camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
-    this.camera.position.set(0, 0, 8.5);
-
-    // Main vault/core group
-    this.vaultGroup = new THREE.Group();
-    this.scene.add(this.vaultGroup);
-
-    // ── Lighting ──
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.38);
-    this.scene.add(ambientLight);
-
-    const keyLight = new THREE.DirectionalLight(0x06b6d4, 1.1); // Cyan Key Light
-    keyLight.position.set(5, 5, 5);
-    this.scene.add(keyLight);
-
-    const fillLight = new THREE.DirectionalLight(0x8b5cf6, 0.65); // Purple Fill Light
-    fillLight.position.set(-5, 3, -5);
-    this.scene.add(fillLight);
-
-    // Inner glowing light core
-    this.pointLight = new THREE.PointLight(0x3b82f6, 6.0, 10.0); // Blue Rim Light effect
-    this.pointLight.position.set(0, 0, 0);
-    this.vaultGroup.add(this.pointLight);
-
-    // ── Luxury Display Case (Thick double glass walls) ──
-    const caseS = 2.45;
-    const outerBox = new THREE.BoxGeometry(caseS, caseS, caseS);
-    const caseMat = new THREE.MeshPhysicalMaterial({
-      color: 0x1e3a8a,
-      transparent: true,
-      opacity: 0.14,
-      roughness: 0.12,
-      metalness: 0.9,
-      clearcoat: 1.0,
-      side: THREE.DoubleSide
-    });
-    const outerMesh = new THREE.Mesh(outerBox, caseMat);
-    this.vaultGroup.add(outerMesh);
-
-    // Glowing thick edge segments
-    const edgesOuter = new THREE.EdgesGeometry(outerBox);
-    const linesOuter = new THREE.LineSegments(
-      edgesOuter,
-      new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 })
-    );
-    this.vaultGroup.add(linesOuter);
-
-    const edgesInner = new THREE.EdgesGeometry(new THREE.BoxGeometry(caseS - 0.05, caseS - 0.05, caseS - 0.05));
-    const linesInner = new THREE.LineSegments(
-      edgesInner,
-      new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 1 })
-    );
-    this.vaultGroup.add(linesInner);
-
-    // Open Door panel (pivoted on right edge)
-    const doorGroup = new THREE.Group();
-    doorGroup.position.set(caseS / 2, 0, caseS / 2);
-    doorGroup.rotation.y = 0.55;
-
-    const doorPanelGeo = new THREE.BoxGeometry(caseS, caseS, 0.04);
-    const doorPanel = new THREE.Mesh(doorPanelGeo, caseMat);
-    doorPanel.position.set(-caseS / 2, 0, 0);
-    doorGroup.add(doorPanel);
-
-    const doorEdges = new THREE.LineSegments(new THREE.EdgesGeometry(doorPanelGeo), linesOuter.material);
-    doorEdges.position.set(-caseS / 2, 0, 0);
-    doorGroup.add(doorEdges);
-
-    // Gear Lock handle
-    const gearGeo = new THREE.TorusGeometry(0.32, 0.04, 8, 32);
-    const gearMat = new THREE.MeshStandardMaterial({ color: 0x60a5fa, metalness: 0.9, roughness: 0.1 });
-    const gear = new THREE.Mesh(gearGeo, gearMat);
-    gear.position.set(-caseS / 2, 0, 0.04);
-    doorGroup.add(gear);
-
-    const axleGeo = new THREE.CylinderGeometry(0.05, 0.05, 0.16, 12);
-    const axle = new THREE.Mesh(axleGeo, gearMat);
-    axle.rotation.x = Math.PI / 2;
-    axle.position.set(-caseS / 2, 0, 0.04);
-    doorGroup.add(axle);
-
-    this.vaultGroup.add(doorGroup);
-
-    // ── Nested Procedural AI energy Core ──
-    // Layer 1: Emissive inner core sphere
-    const coreSphereGeo = new THREE.SphereGeometry(0.28, 16, 16);
-    const coreSphereMat = new THREE.MeshBasicMaterial({
-      color: 0xffffff,
-      transparent: true,
-      opacity: 0.95,
-      blending: THREE.AdditiveBlending
-    });
-    this.innerEnergy = new THREE.Mesh(coreSphereGeo, coreSphereMat);
-    this.vaultGroup.add(this.innerEnergy);
-
-    // Layer 2: Faceted translucent mid core (Icosahedron)
-    const facetedGeo = new THREE.IcosahedronGeometry(0.52, 0);
-    const facetedMat = new THREE.MeshPhysicalMaterial({
-      color: 0x0ea5e9,
-      transparent: true,
-      opacity: 0.35,
-      roughness: 0.1,
-      metalness: 0.95,
-      clearcoat: 1.0,
-      side: THREE.DoubleSide
-    });
-    this.midFaceted = new THREE.Mesh(facetedGeo, facetedMat);
-    this.vaultGroup.add(this.midFaceted);
-
-    // Outer wireframe edge geometry on mid core
-    const midEdges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(facetedGeo),
-      new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 2 })
-    );
-    this.midFaceted.add(midEdges);
-
-    // Layer 3: Larger outer faceted core (Icosahedron 1 level recursion)
-    const outerFacetedGeo = new THREE.IcosahedronGeometry(0.70, 1);
-    const outerFacetedMat = new THREE.MeshPhysicalMaterial({
-      color: 0x8b5cf6,
-      transparent: true,
-      opacity: 0.20,
-      roughness: 0.08,
-      metalness: 0.9,
-      side: THREE.DoubleSide
-    });
-    this.outerFaceted = new THREE.Mesh(outerFacetedGeo, outerFacetedMat);
-    this.vaultGroup.add(this.outerFaceted);
-
-    const outerEdges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(outerFacetedGeo),
-      new THREE.LineBasicMaterial({ color: 0xc084fc, linewidth: 1 })
-    );
-    this.outerFaceted.add(outerEdges);
-
-    // ── Orbiting Hexagonal security Badge Nodes ──
-    const nodes = [
-      { type: 'shield',      color: '#3b82f6', orbitR: 1.15, phase: 0.00,  yOff: -0.3 },
-      { type: 'fingerprint', color: '#06b6d4', orbitR: 0.98, phase: 1.05, yOff:  0.4 },
-      { type: 'neural',      color: '#8b5cf6', orbitR: 1.08, phase: 2.10, yOff: -0.2 },
-      { type: 'chip',        color: '#06b6d4', orbitR: 0.90,  phase: 3.15, yOff:  0.3 },
-      { type: 'database',    color: '#3b82f6', orbitR: 1.02, phase: 4.20, yOff: -0.4 },
-      { type: 'lock',        color: '#8b5cf6', orbitR: 1.10, phase: 5.25, yOff:  0.1 },
-    ];
-
-    nodes.forEach(node => {
-      const tex = this.createNodeTexture(node.type, node.color);
-      const nodeGeo = new THREE.PlaneGeometry(0.32, 0.32);
-      const nodeMat = new THREE.MeshBasicMaterial({
-        map: tex,
-        transparent: true,
-        side: THREE.DoubleSide,
-        opacity: 0.95
-      });
-      const nodeMesh = new THREE.Mesh(nodeGeo, nodeMat);
-      
-      const nodeData = {
-        mesh: nodeMesh,
-        type: node.type,
-        color: node.color,
-        orbitR: node.orbitR,
-        phase: node.phase,
-        yOff: node.yOff
-      };
-      
-      this.orbitNodes.push(nodeData);
-      this.vaultGroup.add(nodeMesh);
-    });
-
-    // ── Orbiting lines connection setup ──
-    const lineGeometry = new THREE.BufferGeometry();
-    const linePositions = new Float32Array(nodes.length * 2 * 3); // 2 points per line (core -> node)
-    lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
-    
-    this.connectionLines = new THREE.LineSegments(
-      lineGeometry,
-      new THREE.LineBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.45 })
-    );
-    this.vaultGroup.add(this.connectionLines);
-
-    // ── Concentric Base platform with expanding ripples ──
-    // Expanding rings
-    const ringCount = 3;
-    const rGeo = new THREE.TorusGeometry(1.6, 0.012, 8, 64);
-    for (let i = 0; i < ringCount; i++) {
-      const rMat = new THREE.MeshBasicMaterial({
-        color: 0x0ea5e9,
-        transparent: true,
-        opacity: 0.35,
-        blending: THREE.AdditiveBlending
-      });
-      const ring = new THREE.Mesh(rGeo, rMat);
-      ring.rotation.x = Math.PI / 2;
-      ring.position.y = -caseS / 2 - 0.22;
-      
-      const rData = {
-        mesh: ring,
-        phase: (i / ringCount) * Math.PI,
-        baseScale: 0.2 + (i / ringCount) * 0.8
-      };
-      this.vaultGroup.add(ring);
-      this.ripples.push(rData);
-    }
-
-    // Static platform outline disk
-    const outerDisk = new THREE.Mesh(
-      new THREE.TorusGeometry(1.8, 0.018, 8, 64),
-      new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.4 })
-    );
-    outerDisk.rotation.x = Math.PI / 2;
-    outerDisk.position.y = -caseS / 2 - 0.22;
-    this.vaultGroup.add(outerDisk);
-
-    // ── Drifting Volumetric starfield particles ──
-    const particleCount = 200;
-    const particleGeo = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
-    for (let i = 0; i < particleCount * 3; i += 3) {
-      positions[i]     = (Math.random() - 0.5) * 7.5;
-      positions[i + 1] = (Math.random() - 0.5) * 6.0;
-      positions[i + 2] = (Math.random() - 0.5) * 5.0;
-    }
-    particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const pMat = new THREE.PointsMaterial({
-      color: 0x60a5fa,
-      size: 0.018,
-      transparent: true,
-      opacity: 0.65,
-      blending: THREE.AdditiveBlending
-    });
-    this.particles = new THREE.Points(particleGeo, pMat);
-    this.scene.add(this.particles);
-
-    // Volumetric cones
-    const coneGeo = new THREE.ConeGeometry(0.55, 2.5, 32, 1, true);
-    const coneMat = new THREE.MeshBasicMaterial({
-      color: 0x0ea5e9,
-      transparent: true,
-      opacity: 0.05,
-      blending: THREE.AdditiveBlending,
-      side: THREE.DoubleSide
-    });
-    const topBeam = new THREE.Mesh(coneGeo, coneMat);
-    topBeam.position.y = caseS / 2 + 1.25;
-    topBeam.rotation.x = Math.PI;
-    this.vaultGroup.add(topBeam);
-
-    // Handle Resize
-    this.resizeObs = new ResizeObserver(() => this.resize());
-    this.resizeObs.observe(pEl);
+  private sizeCanvas(): void {
+    const p = this.cvs.parentElement!;
+    this.lw = p.clientWidth  || 800;
+    this.lh = p.clientHeight || 700;
+    this.cvs.width  = this.lw;
+    this.cvs.height = this.lh;
   }
 
-  // Draw hexagonal node badge textures with clean security vector icons
-  private createNodeTexture(type: string, colorHex: string): any {
-    const THREE = window.THREE;
-    const canvas = document.createElement('canvas');
-    canvas.width = 128;
-    canvas.height = 128;
-    const ctx = canvas.getContext('2d')!;
+  private tick(): void {
+    this.animId = requestAnimationFrame(() => this.tick());
+    const now = performance.now();
+    const dt  = Math.min((now - this.lastFrameTime) / 1000, 0.05);
+    this.lastFrameTime = now;
+    this.elapsed += dt;
 
-    const cx = 64, cy = 64, r = 52;
+    this.mx += (this.targetMx - this.mx) * 0.05;
+    this.my += (this.targetMy - this.my) * 0.05;
 
-    // Glowing hexagon outline
-    ctx.strokeStyle = colorHex;
-    ctx.lineWidth = 4.5;
-    ctx.beginPath();
-    for (let i = 0; i < 6; i++) {
-      const angle = (i / 6) * Math.PI * 2 - Math.PI / 6;
-      const x = cx + Math.cos(angle) * r;
-      const y = cy + Math.sin(angle) * r;
-      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-    }
-    ctx.closePath();
-    ctx.stroke();
-
-    // Semi-transparent base
-    ctx.fillStyle = 'rgba(6, 12, 38, 0.90)';
-    ctx.fill();
-
-    // Security vector icons
-    ctx.strokeStyle = '#ffffff';
-    ctx.fillStyle = '#ffffff';
-    ctx.lineWidth = 3.5;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-
-    if (type === 'shield') {
-      ctx.beginPath();
-      ctx.moveTo(64, 32);
-      ctx.lineTo(84, 40);
-      ctx.lineTo(84, 66);
-      ctx.quadraticCurveTo(84, 88, 64, 98);
-      ctx.quadraticCurveTo(44, 88, 44, 66);
-      ctx.lineTo(44, 40);
-      ctx.closePath();
-      ctx.stroke();
-    } else if (type === 'fingerprint') {
-      ctx.beginPath();
-      ctx.arc(64, 64, 24, Math.PI, Math.PI * 2); ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(64, 64, 14, Math.PI, Math.PI * 2); ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(64, 64, 4, Math.PI, Math.PI * 2);  ctx.stroke();
-    } else if (type === 'neural') {
-      // Linked node circles
-      ctx.fillRect(60, 36, 8, 8);
-      ctx.fillRect(40, 72, 8, 8);
-      ctx.fillRect(80, 72, 8, 8);
-      ctx.beginPath();
-      ctx.moveTo(64, 40); ctx.lineTo(44, 76);
-      ctx.moveTo(64, 40); ctx.lineTo(84, 76);
-      ctx.stroke();
-    } else if (type === 'chip') {
-      ctx.beginPath();
-      ctx.rect(44, 44, 40, 40);
-      ctx.stroke();
-      const pins = [32, 40, 48, 80, 88, 96];
-      pins.forEach(p => {
-        ctx.fillRect(p - 2, 34, 4, 10);
-        ctx.fillRect(p - 2, 84, 4, 10);
-        ctx.fillRect(34, p - 2, 10, 4);
-        ctx.fillRect(84, p - 2, 10, 4);
-      });
-    } else if (type === 'database') {
-      ctx.beginPath();
-      this.drawEllipse(ctx, 64, 44, 20, 8); ctx.stroke();
-      this.drawEllipse(ctx, 64, 64, 20, 8); ctx.stroke();
-      this.drawEllipse(ctx, 64, 84, 20, 8); ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(44, 44); ctx.lineTo(44, 84);
-      ctx.moveTo(84, 44); ctx.lineTo(84, 84);
-      ctx.stroke();
-    } else if (type === 'lock') {
-      ctx.beginPath();
-      ctx.rect(42, 54, 44, 32);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.arc(64, 54, 16, Math.PI, 0);
-      ctx.stroke();
-    }
-
-    return new THREE.CanvasTexture(canvas);
+    this.drawFrame(dt);
   }
 
-  private drawEllipse(ctx: CanvasRenderingContext2D, cx: number, cy: number, rx: number, ry: number): void {
+  private drawFrame(dt: number): void {
+    const ctx = this.ctx;
+    const W = this.lw, H = this.lh;
+    const t = this.elapsed;
+
+    ctx.clearRect(0, 0, W, H);
+
+    // Parallax centering + Float bobbing
+    const cx = W * 0.50 + this.mx * 32;
+    const cy = H * 0.50 - this.my * 26;
+    const floatY = Math.sin(t * (Math.PI * 2 / 7)) * 12;
+    const ncy = cy + floatY;
+
+    // Zoom breathing scale
+    const zoomScale = 1.0 + Math.sin(t * (Math.PI * 2 / 12)) * 0.02;
+    const S = Math.min(W * 1.05, H * 1.05) * zoomScale;
+
+    // ── 1. Concentric base rings (ripples) ──
+    this.drawBaseRings(ctx, cx, ncy + S * 0.35, S * 0.44, t);
+
+    // ── 2. Background particles ──
+    this.drawParticles(ctx, W, H, dt, false);
+
+    // ── 3. Draw pre-rendered exact vault image ──
+    if (this.imgLoaded) {
+      ctx.save();
+      const pulseScale = 1.0 + Math.sin(t * 1.5) * 0.008;
+      const imgW = S * 0.94 * pulseScale;
+      // Option C mockup aspect ratio is 1024 / 513 = 1.996 (near 2:1)
+      const imgH = (imgW / 1.996);
+      
+      ctx.shadowColor = 'rgba(59, 130, 246, 0.35)';
+      ctx.shadowBlur = 60;
+      ctx.drawImage(this.vaultImg, cx - imgW / 2, ncy - imgH / 2, imgW, imgH);
+      ctx.restore();
+    }
+
+    // ── 4. Laser scan sweeps ──
+    const imgW = S * 0.94;
+    const imgH = (imgW / 1.996);
+    this.drawLaserScanner(ctx, cx, ncy, imgW, imgH, t);
+
+    // ── 5. Foreground particles ──
+    this.drawParticles(ctx, W, H, dt, true);
+  }
+
+  // ── Concentric Base Rings (Expanding ripples) ──────────────────
+  private drawBaseRings(ctx: CanvasRenderingContext2D, cx: number, cy: number, maxR: number, t: number): void {
     ctx.save();
-    ctx.beginPath();
     ctx.translate(cx, cy);
-    ctx.scale(rx / ry, 1);
-    ctx.arc(0, 0, ry, 0, Math.PI * 2);
+    ctx.scale(1, 0.22);
+
+    const colors = ['rgba(6,182,212,0.30)', 'rgba(37,99,235,0.18)', 'rgba(139,92,246,0.08)'];
+    colors.forEach((col, idx) => {
+      const scaleCycle = ((t * 0.3 + idx * 0.33) % 1.0);
+      const r = maxR * scaleCycle;
+      const alpha = 0.45 * (1.0 - scaleCycle);
+
+      ctx.beginPath();
+      ctx.arc(0, 0, r, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(6,182,212,${alpha})`;
+      ctx.lineWidth = 2.0;
+      ctx.stroke();
+    });
+
     ctx.restore();
   }
 
-  private resize(): void {
-    const canvas = this.canvasRef.nativeElement;
-    const pEl = canvas.parentElement!;
-    const w = pEl.clientWidth;
-    const h = pEl.clientHeight;
+  // ── Specular Laser Scanner Sweep ───────────────────────────────
+  private drawLaserScanner(ctx: CanvasRenderingContext2D, cx: number, cy: number, w: number, h: number, t: number): void {
+    const minY = cy - h / 2.5;
+    const maxY = cy + h / 2.5;
 
-    this.camera.aspect = w / h;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(w, h);
+    const cycle = (t % 5.0) / 5.0; // 5 seconds sweep cycle
+    if (cycle < 0.75) {
+      const sy = minY + (cycle / 0.75) * (maxY - minY);
+      const intensity = Math.sin((cycle / 0.75) * Math.PI) * 0.55;
+
+      const g = ctx.createLinearGradient(cx - w / 2.5, sy, cx + w / 2.5, sy);
+      g.addColorStop(0, 'rgba(96,165,250,0)');
+      g.addColorStop(0.2, `rgba(96,165,250,${intensity})`);
+      g.addColorStop(0.5, `rgba(190,220,255,${intensity * 1.6})`);
+      g.addColorStop(0.8, `rgba(96,165,250,${intensity})`);
+      g.addColorStop(1, 'rgba(96,165,250,0)');
+
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(cx - w / 2.5, sy);
+      ctx.lineTo(cx + w / 2.5, sy);
+      ctx.strokeStyle = g;
+      ctx.lineWidth = 3.0;
+      ctx.stroke();
+
+      // Soft light beam shadow underneath scanner line
+      const beamG = ctx.createLinearGradient(0, sy, 0, sy + 35);
+      beamG.addColorStop(0, `rgba(6,182,212,${intensity * 0.28})`);
+      beamG.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = beamG;
+      ctx.fillRect(cx - w / 2.5, sy, w / 1.25, 35);
+
+      ctx.restore();
+    }
   }
 
-  private animate(): void {
-    this.animationFrameId = requestAnimationFrame(() => this.animate());
-
-    const t = performance.now() * 0.001;
-
-    // Mouse parallax eased camera interpolation
-    this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.05;
-    this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.05;
-
-    // Eased camera positioning & slow zoom breathing drift
-    if (this.camera) {
-      this.camera.position.x = Math.sin(t * 0.4) * 0.4 + this.currentMouseX * 1.5;
-      this.camera.position.y = Math.cos(t * 0.3) * 0.3 + this.currentMouseY * 1.0;
-      this.camera.position.z = 8.2 + Math.sin(t * 0.2) * 0.25;
-      this.camera.lookAt(0, 0.1, 0);
-    }
-
-    // Vault float bobbing
-    if (this.vaultGroup) {
-      this.vaultGroup.rotation.y = t * 0.06;
-      this.vaultGroup.rotation.x = -0.10;
-      this.vaultGroup.position.y = Math.sin(t * 1.6) * 0.11;
-    }
-
-    // Nested core rotations (Mid core CW, Outer core CCW)
-    if (this.midFaceted) {
-      this.midFaceted.rotation.y = t * 0.20;
-      this.midFaceted.rotation.z = Math.sin(t * 0.5) * 0.08;
-    }
-    if (this.outerFaceted) {
-      this.outerFaceted.rotation.y = -t * 0.12;
-      this.outerFaceted.rotation.x = Math.cos(t * 0.6) * 0.1;
-    }
-
-    // Inner emissive core breath scaling
-    if (this.innerEnergy) {
-      const scaleVal = 0.95 + Math.sin(t * 4.0) * 0.15;
-      this.innerEnergy.scale.set(scaleVal, scaleVal, scaleVal);
-    }
-
-    // Concentric base energy rings expanding ripples
-    this.ripples.forEach(rip => {
-      const ringScale = (rip.baseScale + t * 0.25) % 1.5;
-      rip.mesh.scale.set(ringScale, ringScale, ringScale);
-      rip.mesh.material.opacity = 0.40 * (1.0 - (ringScale / 1.5));
-    });
-
-    // Update connection lines vertex array
-    const linePositions = this.connectionLines.geometry.attributes.position.array;
-
-    // Animate badge nodes (3D orbits inside vault)
-    this.orbitNodes.forEach((node, idx) => {
-      const angle = t * 0.28 + node.phase;
-      node.mesh.position.x = Math.cos(angle) * node.orbitR;
-      node.mesh.position.z = Math.sin(angle) * node.orbitR;
-      node.mesh.position.y = node.yOff + Math.sin(t * 1.4 + node.phase) * 0.08;
-      
-      // Keep hex node cards facing the camera
-      node.mesh.quaternion.copy(this.camera.quaternion);
-
-      // Line vertices (start: core (0,0,0), end: node)
-      const pIdx = idx * 6;
-      linePositions[pIdx]     = 0;
-      linePositions[pIdx + 1] = 0;
-      linePositions[pIdx + 2] = 0;
-      
-      linePositions[pIdx + 3] = node.mesh.position.x;
-      linePositions[pIdx + 4] = node.mesh.position.y;
-      linePositions[pIdx + 5] = node.mesh.position.z;
-    });
-
-    this.connectionLines.geometry.attributes.position.needsUpdate = true;
-
-    // Pulse inner core point light
-    if (this.pointLight) {
-      this.pointLight.intensity = 5.0 + Math.sin(t * 4.0) * 1.5;
-    }
-
-    // Slow drifting nebula particles
-    if (this.particles) {
-      const posArr = this.particles.geometry.attributes.position.array;
-      for (let i = 1; i < posArr.length; i += 3) {
-        posArr[i] -= 0.002;
-        if (posArr[i] < -2.8) {
-          posArr[i] = 2.8;
-        }
-      }
-      this.particles.geometry.attributes.position.needsUpdate = true;
-      this.particles.rotation.y = t * 0.010;
-    }
-
-    this.renderer.render(this.scene, this.camera);
+  // ── Particles ──────────────────────────────────────────────────
+  private makeParticle(randomLife = false): Particle {
+    const W = this.lw || 800, H = this.lh || 700;
+    return {
+      x:       Math.random() * W,
+      y:       Math.random() * H,
+      vx:      (Math.random() - 0.5) * 0.12,
+      vy:      -(Math.random() * 0.35 + 0.05),
+      alpha:   Math.random() * 0.45 + 0.08,
+      size:    Math.random() * 1.5 + 0.4,
+      life:    randomLife ? Math.random() * 6 : 0,
+      maxLife: 6 + Math.random() * 6,
+    };
   }
 
-  private cleanupThree(): void {
-    const THREE = window.THREE;
-    if (!THREE || !this.scene) return;
+  private drawParticles(ctx: CanvasRenderingContext2D, W: number, H: number, dt: number, fg: boolean): void {
+    this.pts.forEach((p, idx) => {
+      const isFg = p.size > 1.0;
+      if (isFg !== fg) return;
 
-    this.scene.traverse((obj: any) => {
-      if (obj.geometry) obj.geometry.dispose();
-      if (obj.material) {
-        if (Array.isArray(obj.material)) {
-          obj.material.forEach((m: any) => m.dispose());
-        } else {
-          obj.material.dispose();
-        }
+      p.life += dt;
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.life > p.maxLife || p.y < -10 || p.x < -10 || p.x > W + 10) {
+        this.pts[idx] = this.makeParticle(false);
+        return;
       }
+
+      const ratio = p.life / p.maxLife;
+      const alphaFactor = ratio < 0.1 ? ratio / 0.1 : ratio > 0.9 ? (1 - ratio) / 0.1 : 1;
+      const a = p.alpha * alphaFactor;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(147,197,253,${a})`;
+      ctx.fill();
     });
-    this.renderer?.dispose();
   }
 }
