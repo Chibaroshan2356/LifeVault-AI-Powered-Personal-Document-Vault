@@ -1,9 +1,8 @@
 /**
- * welcome.component.ts — Cinematic AI Welcome Page (v3)
+ * welcome.component.ts — Cinematic Welcome Page v4 (Holographic Vault)
  *
- * Implements a premium, Apple-style procedural morphing liquid crystal nucleus.
- * Eliminates rigid wireframe boxes and cluttered diagnostic overlays.
- * Left panel is minimal, spacious, and breathes.
+ * Implements a high-fidelity 3D Holographic Vault (glass cube) in Canvas 2D.
+ * Splits layout into three distinct columns matching Option C exactly.
  */
 import {
   Component,
@@ -23,6 +22,7 @@ declare const window: any;
 
 export type ScanStage = 'ready';
 
+interface Pt2 { x: number; y: number; depth: number; }
 interface Particle {
   x: number; y: number; vx: number; vy: number;
   alpha: number; size: number; life: number; maxLife: number;
@@ -68,13 +68,13 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private targetMx = 0;
   private targetMy = 0;
 
-  // ── Holographic Orbiting Documents ───────────────────────────
+  // ── Holographic Document Cards ───────────────────────────────
   private readonly DOCS = [
-    { name: 'Aadhaar',     rgb: '245,158,11',  orbitR: 0.65, speed:  0.42, phase: 0.00, yOffset: -0.15 },
-    { name: 'Passport',    rgb: '255,107,107',  orbitR: 0.55, speed: -0.48, phase: 1.25, yOffset:  0.08 },
-    { name: 'PAN Card',    rgb: '34,197,94',    orbitR: 0.68, speed:  0.38, phase: 2.50, yOffset:  0.22 },
-    { name: 'Resume',      rgb: '59,130,246',   orbitR: 0.50, speed: -0.52, phase: 3.75, yOffset: -0.28 },
-    { name: 'Certificate', rgb: '167,139,250',  orbitR: 0.60, speed:  0.45, phase: 5.00, yOffset:  0.32 },
+    { name: 'Aadhaar',     rgb: '34, 197, 94',  ox: -65, oy: -55, oz: -30, phrase: 0.0 },
+    { name: 'Passport',    rgb: '59, 130, 246', ox:  55, oy: -35, oz:  40, phrase: 1.2 },
+    { name: 'PAN Card',    rgb: '245, 158, 11', ox: -10, oy:  45, oz: -50, phrase: 2.5 },
+    { name: 'Resume',      rgb: '168, 85, 247', ox: -60, oy:  25, oz:  35, phrase: 3.7 },
+    { name: 'Certificate', rgb: '6, 182, 212',  ox:  50, oy:  40, oz: -25, phrase: 5.0 },
   ];
 
   constructor(
@@ -140,7 +140,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   // ═════════════════════════════════════════════════════════════
-  //  CANVAS RENDER SYSTEM
+  //  3D HOLOGRAPHIC VAULT RENDERER
   // ═════════════════════════════════════════════════════════════
 
   private initCanvas(): void {
@@ -149,8 +149,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.ctx = el.getContext('2d')!;
     this.sizeCanvas();
 
-    // Setup initial particle system
-    this.pts = Array.from({ length: 80 }, () => this.makeParticle(true));
+    this.pts = Array.from({ length: 50 }, () => this.makeParticle(true));
     this.lastFrameTime = performance.now();
     this.tick();
 
@@ -173,11 +172,27 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.lastFrameTime = now;
     this.elapsed += dt;
 
-    // Smooth ease on mouse parallax
-    this.mx += (this.targetMx - this.mx) * 0.08;
-    this.my += (this.targetMy - this.my) * 0.08;
+    this.mx += (this.targetMx - this.mx) * 0.06;
+    this.my += (this.targetMy - this.my) * 0.06;
 
     this.drawFrame(dt);
+  }
+
+  // Perspective Projection
+  private proj(x: number, y: number, z: number, rY: number, rX: number, CX: number, CY: number): Pt2 {
+    const cY = Math.cos(rY), sY = Math.sin(rY);
+    const cX = Math.cos(rX), sX = Math.sin(rX);
+
+    // Rotate Y
+    const x1 = x * cY - z * sY;
+    const z1 = x * sY + z * cY;
+    // Rotate X
+    const y2 = y * cX - z1 * sX;
+    const z2 = y * sX + z1 * cX;
+
+    const fov = 850;
+    const pz  = z2 + fov;
+    return { x: CX + x1 * fov / pz, y: CY + y2 * fov / pz, depth: z2 };
   }
 
   private drawFrame(dt: number): void {
@@ -187,383 +202,266 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     ctx.clearRect(0, 0, W, H);
 
-    const cx = W * 0.50 + this.mx * 25;
-    const cy = H * 0.48 - this.my * 20;
+    const CX = W * 0.50;
+    const CY = H * 0.50;
 
-    // Organic floating offset
-    const floatY = Math.sin(t * (Math.PI * 2 / 8)) * 14;
-    const floatX = Math.cos(t * (Math.PI * 2 / 12)) * 6;
-    const ncx = cx + floatX;
-    const ncy = cy + floatY;
+    // Float + rotation variables
+    const floatY = Math.sin(t * (Math.PI * 2 / 8)) * 12;
+    const CYf    = CY + floatY;
+    const rotY   = t * (Math.PI * 2 / 38) + this.mx * 0.12;
+    const rotX   = -0.15 + this.my * 0.06;
 
-    // Dynamic base sizing
-    const S = Math.min(W * 0.88, H * 0.82);
-    const nucleusRadius = S * 0.16;
+    const P = (x: number, y: number, z: number) => this.proj(x, y, z, rotY, rotX, CX, CYf);
 
-    // ── 1. Volumetric Back Glow ──
-    this.drawBackGlow(ctx, ncx, ncy, nucleusRadius * 3, t);
+    // Size dimensions
+    const cubeS = Math.min(W * 0.55, H * 0.55);
+    const hw = cubeS * 0.5;
+    const hh = cubeS * 0.5;
+    const hd = cubeS * 0.5;
 
-    // ── 2. Background Star Particles ──
-    this.drawParticles(ctx, W, H, dt, ncx, ncy, nucleusRadius);
+    // Base coordinates
+    const bTL = P(-hw, -hh, -hd); const bTR = P( hw, -hh, -hd);
+    const bBR = P( hw,  hh, -hd); const bBL = P(-hw,  hh, -hd);
+    const fTL = P(-hw, -hh,  hd); const fTR = P( hw, -hh,  hd);
+    const fBR = P( hw,  hh,  hd); const fBL = P(-hw,  hh,  hd);
+    const ctr = P(0, 0, 0);
 
-    // ── 3. Light Rays / Caustics ──
-    this.drawLightRays(ctx, ncx, ncy, S * 0.6, t);
+    // ── 1. Energy Ring ──
+    this.drawConcentricRings(ctx, CX, CYf + hh + 20, hw * 1.5, t);
 
-    // ── 4. Energy rings ──
-    this.drawEnergyRings(ctx, ncx, ncy, nucleusRadius, t);
+    // ── 2. Background particles ──
+    this.drawParticles(ctx, W, H, dt, false);
 
-    // ── 5. Orbiting Document Cards ──
-    const cardPts = this.drawOrbitingCards(ctx, ncx, ncy, S * 0.55, t);
+    // ── 3. Back & Side Glass Faces ──
+    this.drawFace(ctx, [bTL, bTR, bBR, bBL], 'rgba(10,35,90,0.18)', 'rgba(96,165,250,0.30)', 1.5);
+    this.drawFace(ctx, [bTL, fTL, fBL, bBL], 'rgba(8,25,75,0.12)', 'rgba(96,165,250,0.22)', 1.2);
+    this.drawFace(ctx, [bTR, fTR, fBR, bBR], 'rgba(8,25,75,0.12)', 'rgba(96,165,250,0.22)', 1.2);
 
-    // ── 6. Neon Connection Lines ──
-    this.drawTrails(ctx, ncx, ncy, cardPts, t);
+    // ── 4. Inner core energy column ──
+    this.drawEnergyColumn(ctx, ctr.x, ctr.y, hh * 1.6, t);
 
-    // ── 7. Liquid Glass Nucleus (Organic Morphing Blob) ──
-    this.drawLiquidCrystalCore(ctx, ncx, ncy, nucleusRadius, t);
+    // ── 5. Orbiting/Floating document panels ──
+    const docPoints = this.drawDocumentPanels(ctx, P, t);
+
+    // ── 6. Top & Bottom face ──
+    this.drawFace(ctx, [bTL, bTR, fTR, fTL], 'rgba(20,50,130,0.18)', 'rgba(147,197,253,0.38)', 1.5);
+    this.drawFace(ctx, [bBL, bBR, fBR, fBL], 'rgba(5,20,60,0.10)', 'rgba(34,211,238,0.22)', 1.0);
+
+    // ── 7. Front face glass ──
+    this.drawFace(ctx, [fTL, fTR, fBR, fBL], 'rgba(59,130,246,0.02)', 'rgba(96,165,250,0.18)', 0.8);
+
+    // ── 8. Vault Door (Hinged right, swung open 35 deg) ──
+    this.drawVaultDoor(ctx, P, hw, hh, hd, fTR, fBR, fTL, fBL, t);
+
+    // ── 9. Cube outlines / Double glows ──
+    this.drawDoubleOutlines(ctx, { bTL, bTR, bBR, bBL, fTL, fTR, fBR, fBL });
+
+    // ── 10. Foreground particles ──
+    this.drawParticles(ctx, W, H, dt, true);
   }
 
-  // ── Volumetric Back Glow ──────────────────────────────────────
-  private drawBackGlow(ctx: CanvasRenderingContext2D, cx: number, cy: number, r: number, t: number): void {
-    const breathe = 1.0 + Math.sin(t * 1.8) * 0.08;
-    const gr = r * breathe;
-    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, gr);
-    g.addColorStop(0.0, 'rgba(37,99,235,0.22)');
-    g.addColorStop(0.4, 'rgba(139,92,246,0.12)');
-    g.addColorStop(0.7, 'rgba(6,182,212,0.06)');
-    g.addColorStop(1.0, 'rgba(0,0,0,0)');
-
-    ctx.save();
+  // ── Face ──────────────────────────────────────────────────────
+  private drawFace(ctx: CanvasRenderingContext2D, pts: Pt2[], fill: string, stroke: string, lw: number): void {
     ctx.beginPath();
-    ctx.arc(cx, cy, gr, 0, Math.PI * 2);
-    ctx.fillStyle = g;
+    pts.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
+    ctx.closePath();
+    ctx.fillStyle = fill;
     ctx.fill();
+    ctx.strokeStyle = stroke;
+    ctx.lineWidth = lw;
+    ctx.stroke();
+  }
+
+  // ── Concentric Base Rings ──────────────────────────────────────
+  private drawConcentricRings(ctx: CanvasRenderingContext2D, cx: number, cy: number, maxR: number, t: number): void {
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.scale(1, 0.22); // Perspective angle
+
+    const colors = ['rgba(6,182,212,0.35)', 'rgba(37,99,235,0.22)', 'rgba(139,92,246,0.12)'];
+    colors.forEach((col, idx) => {
+      const r = maxR * (1.0 - idx * 0.25) * (1.0 + Math.sin(t * 1.5 + idx) * 0.02);
+      ctx.beginPath();
+      ctx.arc(0, 0, r, 0, Math.PI * 2);
+      ctx.strokeStyle = col;
+      ctx.lineWidth = 2.5 - idx * 0.5;
+      ctx.stroke();
+    });
+
     ctx.restore();
   }
 
-  // ── Light Rays / Caustics ─────────────────────────────────────
-  private drawLightRays(ctx: CanvasRenderingContext2D, cx: number, cy: number, length: number, t: number): void {
-    const rays = [
-      { baseAngle: -0.6, speed: 0.05, rgb: '96,165,250',  width: 0.8 },
-      { baseAngle:  0.8, speed: -0.04, rgb: '167,139,250', width: 0.6 },
-      { baseAngle: -2.2, speed: 0.03, rgb: '34,211,238',  width: 0.7 },
-      { baseAngle:  2.6, speed: -0.06, rgb: '129,140,248', width: 0.5 },
-    ];
+  // ── Energy Column ──────────────────────────────────────────────
+  private drawEnergyColumn(ctx: CanvasRenderingContext2D, cx: number, cy: number, h: number, t: number): void {
+    const pulse = 0.85 + 0.15 * Math.sin(t * 2.5);
+    const w = 24 * pulse;
 
-    rays.forEach(ray => {
-      const angle = ray.baseAngle + Math.sin(t * ray.speed) * 0.15;
-      const alpha = 0.07 + 0.03 * Math.sin(t * 1.2 + ray.baseAngle);
+    const g = ctx.createLinearGradient(cx - w, 0, cx + w, 0);
+    g.addColorStop(0, 'rgba(6,182,212,0)');
+    g.addColorStop(0.3, 'rgba(6,182,212,0.18)');
+    g.addColorStop(0.5, 'rgba(190,240,255,0.35)');
+    g.addColorStop(0.7, 'rgba(6,182,212,0.18)');
+    g.addColorStop(1, 'rgba(6,182,212,0)');
 
-      const ex = cx + Math.cos(angle) * length;
-      const ey = cy + Math.sin(angle) * length;
+    ctx.fillStyle = g;
+    ctx.fillRect(cx - w, cy - h / 2, w * 2, h);
 
-      const g = ctx.createLinearGradient(cx, cy, ex, ey);
-      g.addColorStop(0, `rgba(${ray.rgb},${alpha})`);
-      g.addColorStop(0.6, `rgba(${ray.rgb},${alpha * 0.3})`);
-      g.addColorStop(1, 'rgba(0,0,0,0)');
-
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(cx, cy);
-      // Construct a wide soft triangle/cone
-      const perpAngle = angle + Math.PI / 2;
-      const w = length * 0.18 * ray.width;
-      ctx.lineTo(ex + Math.cos(perpAngle) * w, ey + Math.sin(perpAngle) * w);
-      ctx.lineTo(ex - Math.cos(perpAngle) * w, ey - Math.sin(perpAngle) * w);
-      ctx.closePath();
-      ctx.fillStyle = g;
-      ctx.fill();
-      ctx.restore();
-    });
-  }
-
-  // ── Energy Rings (Slow rotating orbital rings) ────────────────
-  private drawEnergyRings(ctx: CanvasRenderingContext2D, cx: number, cy: number, baseR: number, t: number): void {
-    const rings = [
-      { r: baseR * 1.5, rotSpeed: 0.12,  tilt: 0.28, color: 'rgba(96,165,250,0.22)' },
-      { r: baseR * 1.9, rotSpeed: -0.08, tilt: -0.35, color: 'rgba(167,139,250,0.18)' },
-      { r: baseR * 2.3, rotSpeed: 0.06,  tilt: 0.15, color: 'rgba(34,211,238,0.15)' },
-    ];
-
-    rings.forEach(ring => {
-      ctx.save();
-      ctx.translate(cx, cy);
-      ctx.rotate(ring.tilt);
-      ctx.scale(1, 0.28); // Flatten to create 3D orbit illusion
-      ctx.rotate(t * ring.rotSpeed);
-
-      // Main ring outline
-      ctx.beginPath();
-      ctx.arc(0, 0, ring.r, 0, Math.PI * 2);
-      ctx.strokeStyle = ring.color;
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-
-      // Accent orbiting dot on the ring
-      ctx.beginPath();
-      ctx.arc(ring.r, 0, 3, 0, Math.PI * 2);
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = '#60a5fa';
-      ctx.shadowBlur = 8;
-      ctx.fill();
-
-      ctx.restore();
-    });
-  }
-
-  // ── Orbiting Document Cards ───────────────────────────────────
-  private drawOrbitingCards(
-    ctx: CanvasRenderingContext2D,
-    cx: number,
-    cy: number,
-    orbitWidth: number,
-    t: number,
-  ): { x: number; y: number; z: number; rgb: string }[] {
-    return this.DOCS.map(doc => {
-      const angle = t * doc.speed + doc.phase;
-      // Orbit path
-      const ox = Math.cos(angle) * orbitWidth * doc.orbitR;
-      const oz = Math.sin(angle) * orbitWidth * doc.orbitR * 0.45; // 3D projection flattening
-      const oy = doc.yOffset * orbitWidth * 0.8 + Math.sin(t * 0.45 + doc.phase) * 15;
-
-      // Project onto 2D viewport
-      const fov = 800;
-      const scale = fov / (fov + oz);
-      const px = cx + ox * scale;
-      const py = cy + oy * scale;
-
-      const CW = 50 * scale;
-      const CH = 34 * scale;
-      const CR = 5 * scale;
-
-      // Card face rendering
-      ctx.save();
-      ctx.translate(px, py);
-
-      // Glass base
-      ctx.beginPath();
-      this.rr(ctx, -CW / 2, -CH / 2, CW, CH, CR);
-      ctx.fillStyle = 'rgba(10,22,60,0.86)';
-      ctx.strokeStyle = `rgba(${doc.rgb},0.6)`;
-      ctx.lineWidth = 1;
-      ctx.shadowColor = `rgba(${doc.rgb},0.6)`;
-      ctx.shadowBlur = 8;
-      ctx.fill();
-      ctx.stroke();
-
-      // Top color indicator strip
-      ctx.beginPath();
-      this.rr(ctx, -CW / 2, -CH / 2, CW, 8 * scale, [CR, CR, 0, 0] as any);
-      ctx.fillStyle = `rgba(${doc.rgb},0.8)`;
-      ctx.fill();
-
-      // Text label
-      ctx.fillStyle = '#ffffff';
-      ctx.font = `bold ${Math.max(6, Math.round(7.5 * scale))}px Inter, sans-serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(doc.name, 0, 7 * scale);
-
-      // Abstract internal lines
-      ctx.fillStyle = 'rgba(255,255,255,0.08)';
-      ctx.fillRect(-CW / 2 + 5, 17 * scale, CW - 10, 3 * scale);
-      ctx.fillRect(-CW / 2 + 5, 23 * scale, (CW - 10) * 0.65, 3 * scale);
-
-      ctx.restore();
-
-      return { x: px, y: py, z: oz, rgb: doc.rgb };
-    });
-  }
-
-  // ── Trails / Connection Lines ─────────────────────────────────
-  private drawTrails(
-    ctx: CanvasRenderingContext2D,
-    ncx: number,
-    ncy: number,
-    cards: { x: number; y: number; z: number; rgb: string }[],
-    t: number,
-  ): void {
-    cards.forEach((c, idx) => {
-      // Behind-core rendering check to dim lines behind nucleus
-      const isBehind = c.z > 0;
-      const alpha = isBehind ? 0.08 : 0.24 + Math.sin(t * 1.5 + idx) * 0.06;
-
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(ncx, ncy);
-      ctx.lineTo(c.x, c.y);
-
-      const grad = ctx.createLinearGradient(ncx, ncy, c.x, c.y);
-      grad.addColorStop(0, `rgba(96,165,250,${alpha})`);
-      grad.addColorStop(1, `rgba(${c.rgb},${alpha})`);
-
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-
-      // Orbit anchor point
-      ctx.beginPath();
-      ctx.arc(c.x, c.y, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${c.rgb},0.8)`;
-      ctx.fill();
-
-      ctx.restore();
-    });
-  }
-
-  // ── Procedural Liquid Glass Nucleus (Organic Morphing Blob) ──
-  private drawLiquidCrystalCore(
-    ctx: CanvasRenderingContext2D,
-    cx: number,
-    cy: number,
-    baseR: number,
-    t: number,
-  ): void {
-    const nodes = 10;
-    const scale = 1.0 + Math.sin(t * 0.8) * 0.03; // Breathing scale
-
-    const getBlobPoints = (timeOffset: number, amplitude: number) => {
-      const pts: { x: number; y: number }[] = [];
-      for (let i = 0; i < nodes; i++) {
-        const angle = (i / nodes) * Math.PI * 2;
-        // Composite sine-wave noise functions to simulate fluid blob morphology
-        const noise =
-          Math.sin(angle * 3 + t * 1.2 + timeOffset) * 0.12 +
-          Math.cos(angle * 2 - t * 0.8 + timeOffset * 2.0) * 0.08 +
-          Math.sin(angle * 5 + t * 2.2) * 0.04;
-
-        const radius = baseR * scale * (1.0 + noise * amplitude);
-        pts.push({
-          x: cx + Math.cos(angle) * radius,
-          y: cy + Math.sin(angle) * radius,
-        });
-      }
-      return pts;
-    };
-
-    // Draw cardinal splines connecting nodes smoothly
-    const drawBlobPath = (pts: { x: number; y: number }[]) => {
-      ctx.beginPath();
-      ctx.moveTo(pts[0].x, pts[0].y);
-      for (let i = 0; i < pts.length; i++) {
-        const nextIdx = (i + 1) % pts.length;
-        const xc = (pts[i].x + pts[nextIdx].x) / 2;
-        const yc = (pts[i].y + pts[nextIdx].y) / 2;
-        ctx.quadraticCurveTo(pts[i].x, pts[i].y, xc, yc);
-      }
-      ctx.closePath();
-    };
-
-    ctx.save();
-
-    // 1. Layer 1: Ambient Fresnel backing glow shadow
-    const pts1 = getBlobPoints(0, 1.0);
-    drawBlobPath(pts1);
-    const grad1 = ctx.createRadialGradient(cx, cy, 0, cx, cy, baseR * 1.6);
-    grad1.addColorStop(0, 'rgba(59,130,246,0.3)');
-    grad1.addColorStop(0.5, 'rgba(139,92,246,0.18)');
-    grad1.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = grad1;
-    ctx.fill();
-
-    // 2. Layer 2: Main refractive glass body (deep blue/purple liquid)
-    const pts2 = getBlobPoints(Math.PI * 0.25, 0.85);
-    drawBlobPath(pts2);
-    const grad2 = ctx.createLinearGradient(cx - baseR, cy - baseR, cx + baseR, cy + baseR);
-    grad2.addColorStop(0, 'rgba(15,23,42,0.92)');
-    grad2.addColorStop(0.5, 'rgba(30,58,138,0.75)');
-    grad2.addColorStop(1, 'rgba(88,28,135,0.85)');
-    ctx.fillStyle = grad2;
-    ctx.fill();
-
-    // Glowing rim border
-    ctx.strokeStyle = 'rgba(147,197,253,0.38)';
+    // Inner core laser beam
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - h / 2);
+    ctx.lineTo(cx, cy + h / 2);
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
     ctx.lineWidth = 1.5;
     ctx.stroke();
-
-    // 3. Layer 3: Vibrant neon inner core fluid
-    const pts3 = getBlobPoints(Math.PI * 0.75, 0.6);
-    drawBlobPath(pts3);
-    const grad3 = ctx.createRadialGradient(cx, cy, 0, cx, cy, baseR * 0.95);
-    grad3.addColorStop(0, 'rgba(6,182,212,0.45)');
-    grad3.addColorStop(0.4, 'rgba(59,130,246,0.25)');
-    grad3.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = grad3;
-    ctx.fill();
-
-    // 4. Layer 4: Glass Fresnel top highlight reflections
-    const pts4 = getBlobPoints(-Math.PI * 0.4, 0.9);
-    drawBlobPath(pts4);
-    const grad4 = ctx.createLinearGradient(cx - baseR * 0.6, cy - baseR * 0.8, cx + baseR * 0.3, cy + baseR * 0.3);
-    grad4.addColorStop(0, 'rgba(255,255,255,0.22)');
-    grad4.addColorStop(0.3, 'rgba(255,255,255,0.06)');
-    grad4.addColorStop(0.7, 'rgba(255,255,255,0)');
-    ctx.fillStyle = grad4;
-    ctx.fill();
-
-    // Sharp specular rim reflections (WWDC style)
-    ctx.beginPath();
-    // Sub-segment of highlight
-    for (let a = -2; a < 0.5; a += 0.1) {
-      const rad = baseR * scale * (1 + (Math.sin(a * 3 + t * 1.2) * 0.12) * 0.9);
-      const rx = cx + Math.cos(a) * (rad - 3.5);
-      const ry = cy + Math.sin(a) * (rad - 3.5);
-      if (a === -2) ctx.moveTo(rx, ry); else ctx.lineTo(rx, ry);
-    }
-    ctx.strokeStyle = 'rgba(255,255,255,0.45)';
-    ctx.lineWidth = 1.0;
-    ctx.stroke();
-
-    ctx.restore();
   }
 
-  // ── Particle System ───────────────────────────────────────────
+  // ── Orbiting Document Panels ──────────────────────────────────
+  private drawDocumentPanels(
+    ctx: CanvasRenderingContext2D,
+    P: (x: number, y: number, z: number) => Pt2,
+    t: number,
+  ): { x: number; y: number }[] {
+    return this.DOCS.map(doc => {
+      // Bobbing inside vault coordinates
+      const bx = doc.ox + Math.sin(t * 1.1 + doc.phrase) * 10;
+      const by = doc.oy + Math.cos(t * 0.95 + doc.phrase) * 12;
+      const bz = doc.oz + Math.sin(t * 1.35 + doc.phrase) * 10;
+
+      const p = P(bx, by, bz);
+      const scale = 850 / (850 + bz);
+
+      const CW = 62 * scale;
+      const CH = 46 * scale;
+      const CR = 5 * scale;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+
+      // Glass panel backing
+      ctx.beginPath();
+      this.rr(ctx, -CW / 2, -CH / 2, CW, CH, CR);
+      ctx.fillStyle = `rgba(8,16,45,0.85)`;
+      ctx.strokeStyle = `rgba(${doc.rgb}, 0.7)`;
+      ctx.lineWidth = 1.2;
+      ctx.fill();
+      ctx.stroke();
+
+      // Top colored accent
+      ctx.beginPath();
+      this.rr(ctx, -CW / 2, -CH / 2, CW, 12 * scale, [CR, CR, 0, 0] as any);
+      ctx.fillStyle = `rgba(${doc.rgb}, 0.8)`;
+      ctx.fill();
+
+      // Name label
+      ctx.fillStyle = '#ffffff';
+      ctx.font = `bold ${Math.max(7, Math.round(9 * scale))}px Inter, sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(doc.name, 0, 6 * scale);
+
+      // Mock text details
+      ctx.fillStyle = 'rgba(255,255,255,0.08)';
+      ctx.fillRect(-CW / 2 + 6, 23 * scale, CW - 12, 3.5 * scale);
+      ctx.fillRect(-CW / 2 + 6, 31 * scale, (CW - 12) * 0.6, 3.5 * scale);
+
+      ctx.restore();
+
+      return { x: p.x, y: p.y };
+    });
+  }
+
+  // ── Vault Door (Open Door right) ──────────────────────────────
+  private drawVaultDoor(
+    ctx: CanvasRenderingContext2D,
+    P: (x: number, y: number, z: number) => Pt2,
+    hw: number, hh: number, hd: number,
+    fTR: Pt2, fBR: Pt2, fTL: Pt2, fBL: Pt2,
+    t: number,
+  ): void {
+    const angle = 0.55; // 32 degrees open
+    const dw = hw * 2;
+    const dxEnd = -hw + dw * Math.cos(angle);
+    const dzEnd = hd - dw * Math.sin(angle);
+
+    // Projected door nodes
+    const dTL = P(dxEnd, -hh, dzEnd);
+    const dBL = P(dxEnd, hh, dzEnd);
+
+    // Door glass face
+    this.drawFace(ctx, [dTL, fTR, fBR, dBL], 'rgba(37,99,235,0.14)', 'rgba(96,165,250,0.45)', 1.5);
+
+    // Lock circular wheel plate on door
+    const hx = (dTL.x + fTR.x * 2.2) / 3.2;
+    const hy = (dTL.y + fTR.y + dBL.y + fBR.y) / 4;
+    
+    // Outer gear wheel
+    ctx.beginPath();
+    ctx.arc(hx, hy, 10, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+    ctx.lineWidth = 1.8;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(hx, hy, 4, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(96,165,250,0.85)';
+    ctx.fill();
+  }
+
+  // ── Double outlines (Futuristic glass panels thick edges) ─────
+  private drawDoubleOutlines(ctx: CanvasRenderingContext2D, V: Record<string, Pt2>): void {
+    const edges = [
+      [V['bTL'], V['bTR']], [V['bTR'], V['bBR']], [V['bBR'], V['bBL']], [V['bBL'], V['bTL']],
+      [V['fTL'], V['fTR']], [V['fTR'], V['fBR']], [V['fBR'], V['fBL']], [V['fBL'], V['fTL']],
+      [V['bTL'], V['fTL']], [V['bTR'], V['fTR']], [V['bBR'], V['fBR']], [V['bBL'], V['fBL']],
+    ];
+
+    ctx.strokeStyle = 'rgba(96,165,250,0.4)';
+    ctx.lineWidth = 1.0;
+    edges.forEach(([a, b]) => {
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    });
+
+    // Draw secondary offset outlines to make borders double-layered (glowing look)
+    ctx.strokeStyle = 'rgba(6,182,212,0.15)';
+    ctx.lineWidth = 2.5;
+    edges.forEach(([a, b]) => {
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    });
+  }
+
+  // ── Particles ──────────────────────────────────────────────────
   private makeParticle(randomLife = false): Particle {
     const W = this.lw || 800, H = this.lh || 700;
     return {
       x:       Math.random() * W,
       y:       Math.random() * H,
-      vx:      (Math.random() - 0.5) * 0.22,
-      vy:      -(Math.random() * 0.35 + 0.08),
-      alpha:   Math.random() * 0.42 + 0.08,
-      size:    Math.random() * 2.2 + 0.3,
-      life:    randomLife ? Math.random() * 5 : 0,
-      maxLife: 6 + Math.random() * 8,
+      vx:      (Math.random() - 0.5) * 0.15,
+      vy:      -(Math.random() * 0.3 + 0.05),
+      alpha:   Math.random() * 0.4 + 0.1,
+      size:    Math.random() * 1.5 + 0.4,
+      life:    randomLife ? Math.random() * 6 : 0,
+      maxLife: 6 + Math.random() * 6,
     };
   }
 
-  private drawParticles(
-    ctx: CanvasRenderingContext2D,
-    W: number,
-    H: number,
-    dt: number,
-    ncx: number,
-    ncy: number,
-    coreR: number,
-  ): void {
+  private drawParticles(ctx: CanvasRenderingContext2D, W: number, H: number, dt: number, fg: boolean): void {
     this.pts.forEach((p, idx) => {
+      // Split front vs back
+      const isFg = p.size > 1.0;
+      if (isFg !== fg) return;
+
       p.life += dt;
       p.x += p.vx;
       p.y += p.vy;
 
-      // Reset when particle exits boundaries
       if (p.life > p.maxLife || p.y < -10 || p.x < -10 || p.x > W + 10) {
         this.pts[idx] = this.makeParticle(false);
         return;
       }
 
-      // Fade transitions
       const ratio = p.life / p.maxLife;
-      const alphaFactor = ratio < 0.15 ? ratio / 0.15 : ratio > 0.85 ? (1 - ratio) / 0.15 : 1;
+      const alphaFactor = ratio < 0.1 ? ratio / 0.1 : ratio > 0.9 ? (1 - ratio) / 0.1 : 1;
       const a = p.alpha * alphaFactor;
-
-      // Orbit/gravitational pull toward core
-      const dx = ncx - p.x;
-      const dy = ncy - p.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist > coreR && dist < coreR * 4) {
-        p.vx += (dx / dist) * 0.015 * dt;
-        p.vy += (dy / dist) * 0.015 * dt;
-      }
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
