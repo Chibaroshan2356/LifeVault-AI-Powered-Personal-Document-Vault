@@ -205,6 +205,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     // ── 3. Draw pre-rendered exact vault image ──
     if (this.imgLoaded) {
       ctx.save();
+      ctx.globalCompositeOperation = 'screen'; // Merges dark edges seamlessly with background
       const pulseScale = 1.0 + Math.sin(t * 1.5) * 0.008;
       const imgW = S * 0.72 * pulseScale; // Adjusted base scaling multiplier for square crop
       const aspect = this.vaultImg.height / this.vaultImg.width || 0.829;
@@ -215,6 +216,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
       ctx.drawImage(this.vaultImg, cx - imgW / 2, ncy - imgH / 2, imgW, imgH);
       ctx.restore();
     }
+
 
     // ── 4. Laser scan sweeps ──
     const drawW = S * 0.72;
