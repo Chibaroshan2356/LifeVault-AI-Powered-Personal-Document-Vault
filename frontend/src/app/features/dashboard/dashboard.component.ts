@@ -72,7 +72,6 @@ interface DocumentItem {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('bgLayer') bgLayerRef!: ElementRef<HTMLDivElement>;
 
   userName = '';
   statCards: StatCard[] = [
@@ -125,8 +124,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     // Attach mouse interaction listeners outside Angular zone to bypass Change Detection
     this.ngZone.runOutsideAngular(() => {
-      window.addEventListener('mousemove', this.onDocumentMouseMoveThrottled);
-
       // Select all cards and metrics elements to bind hover spotlight styles
       const root = this.elRef.nativeElement;
       const elements = root.querySelectorAll(
@@ -142,7 +139,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener('mousemove', this.onDocumentMouseMoveThrottled);
     this.cardElements.forEach(card => {
       card.removeEventListener('mousemove', this.onCardMouseMove);
       card.removeEventListener('mouseleave', this.onCardMouseLeave);
@@ -150,20 +146,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   // ── Interactivity Handlers (Outside Angular Zone) ─────────────
-  private onDocumentMouseMoveThrottled = (event: MouseEvent): void => {
-    const now = performance.now();
-    if (now - this.lastMouseUpdateTime >= 50) {
-      this.lastMouseUpdateTime = now;
-      const x = (event.clientX / window.innerWidth) - 0.5;
-      const y = (event.clientY / window.innerHeight) - 0.5;
-      const mx = x * 6;
-      const my = y * 6;
-
-      if (this.bgLayerRef?.nativeElement) {
-        this.bgLayerRef.nativeElement.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
-      }
-    }
-  };
 
   private onCardMouseMove = (event: MouseEvent): void => {
     const card = event.currentTarget as HTMLElement;
