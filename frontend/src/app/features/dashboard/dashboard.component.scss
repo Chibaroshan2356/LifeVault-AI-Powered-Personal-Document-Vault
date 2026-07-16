@@ -876,8 +876,8 @@
   gap: var(--sp-lg);
   
   .file-card {
-    backdrop-filter: blur(30px) saturate(180%) brightness(1.08) !important;
-    -webkit-backdrop-filter: blur(30px) saturate(180%) brightness(1.08) !important;
+    backdrop-filter: blur(12px) saturate(180%) brightness(1.08) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) brightness(1.08) !important;
     background: rgba(255, 255, 255, 0.06) !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.25) !important;

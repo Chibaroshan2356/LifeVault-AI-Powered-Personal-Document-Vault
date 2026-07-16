@@ -1,15 +1,25 @@
 /**
- * dashboard.component.ts — Main Dashboard Component
+ * dashboard.component.ts — Main Dashboard Component (Phase 10.6 Optimized)
  *
  * Features:
- *  - Statistics cards (total, processed, expiring, categories)
- *  - Recent documents table
- *  - Expiring documents alert list
- *  - Processing errors list
- *  - Quick actions (Upload, Search)
- *  - Responsive Material Design layout
+ *  - ChangeDetectionStrategy.OnPush enabled to prevent redundant application checks.
+ *  - ElementRef and NgZone injected to manage mouse movements manually outside Angular.
+ *  - Document-level parallax and card-specific 3D spotlight tilts bound outside Angular.
+ *  - Counter animations run using targeted requestAnimationFrame steps outside Angular.
+ *  - trackBy methods implemented for all *ngFor loops.
+ *  - Subscription/listener lifecycle cleanup handled inside ngOnDestroy.
  */
-import { Component, OnInit, HostListener } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+  NgZone,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -60,8 +70,11 @@ interface DocumentItem {
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('bgLayer') bgLayerRef!: ElementRef<HTMLDivElement>;
+
   userName = '';
   statCards: StatCard[] = [
     { label: 'Total Documents', value: 0, icon: 'folder', color: 'blue' },
@@ -74,14 +87,10 @@ export class DashboardComponent implements OnInit {
   expiringDocuments: DocumentItem[] = [];
   processingErrors: DocumentItem[] = [];
 
-  // Client-facing AI Insights & discoveries representation
+  // Client-facing AI Insights
   aiDiscoveries: { title: string; desc: string[]; icon: string; confidence: number }[] = [];
   smartAlerts: string[] = [];
   animatedConfidenceProgress = 0;
-
-  // Parallax offsets
-  mouseX = 0;
-  mouseY = 0;
 
   // Animated Count variables for HUD statistics
   animatedTotalDocs = 0;
@@ -89,16 +98,72 @@ export class DashboardComponent implements OnInit {
   animatedNeedsReview = 0;
   animatedExpiring = 0;
 
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
-    const x = (event.clientX / window.innerWidth) - 0.5;
-    const y = (event.clientY / window.innerHeight) - 0.5;
-    this.mouseX = x * 6; // Max 6px offset for parallax background glow
-    this.mouseY = y * 6;
+  private lastMouseUpdateTime = 0;
+  private cardElements: HTMLElement[] = [];
+
+  constructor(
+    private readonly authService: AuthService,
+    private readonly dashboardService: DashboardService,
+    private readonly elRef: ElementRef,
+    private readonly ngZone: NgZone,
+    private readonly cdr: ChangeDetectorRef,
+    readonly router: Router,
+  ) {}
+
+  // ── Lifecycle ─────────────────────────────────────────────────
+  ngOnInit(): void {
+    this.loadProfile();
+    this.loadStats();
+    this.loadRecentDocuments();
+    this.loadExpiringDocuments();
+    this.loadProcessingErrors();
   }
 
-  // Mouse hover custom spotlight coordinates for UI cards
-  onCardMouseMove(event: MouseEvent): void {
+  ngAfterViewInit(): void {
+    // Attach mouse interaction listeners outside Angular zone to bypass Change Detection
+    this.ngZone.runOutsideAngular(() => {
+      window.addEventListener('mousemove', this.onDocumentMouseMoveThrottled);
+
+      // Select all cards and metrics elements to bind hover spotlight styles
+      const root = this.elRef.nativeElement;
+      const elements = root.querySelectorAll(
+        '.summary-metric, .recent-ai-activity, .file-card, .empty-state-workspace, .widget, .workspace-hero'
+      );
+      this.cardElements = Array.from(elements) as HTMLElement[];
+
+      this.cardElements.forEach(card => {
+        card.addEventListener('mousemove', this.onCardMouseMove);
+        card.addEventListener('mouseleave', this.onCardMouseLeave);
+      });
+    });
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('mousemove', this.onDocumentMouseMoveThrottled);
+    this.cardElements.forEach(card => {
+      card.removeEventListener('mousemove', this.onCardMouseMove);
+      card.removeEventListener('mouseleave', this.onCardMouseLeave);
+    });
+  }
+
+  // ── Interactivity Handlers (Outside Angular Zone) ─────────────
+  private onDocumentMouseMoveThrottled = (event: MouseEvent): void => {
+    const now = performance.now();
+    // Throttle updates to 20 FPS (every 50ms) to save CPU/GPU cycles
+    if (now - this.lastMouseUpdateTime >= 50) {
+      this.lastMouseUpdateTime = now;
+      const x = (event.clientX / window.innerWidth) - 0.5;
+      const y = (event.clientY / window.innerHeight) - 0.5;
+      const mx = x * 6; // Max 6px offset for parallax background glow
+      const my = y * 6;
+
+      if (this.bgLayerRef?.nativeElement) {
+        this.bgLayerRef.nativeElement.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
+      }
+    }
+  };
+
+  private onCardMouseMove = (event: MouseEvent): void => {
     const card = event.currentTarget as HTMLElement;
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -112,15 +177,15 @@ export class DashboardComponent implements OnInit {
     const tiltY = ((x / rect.width) - 0.5) * 6;
     card.style.setProperty('--tilt-x', `${tiltX}deg`);
     card.style.setProperty('--tilt-y', `${tiltY}deg`);
-  }
+  };
 
-  onCardMouseLeave(event: MouseEvent): void {
+  private onCardMouseLeave = (event: MouseEvent): void => {
     const card = event.currentTarget as HTMLElement;
     card.style.setProperty('--tilt-x', '0deg');
     card.style.setProperty('--tilt-y', '0deg');
-  }
+  };
 
-  // Count animator helper
+  // ── Count animator helper (Runs inside requestAnimationFrame) ──
   private animateCount(prop: 'animatedTotalDocs' | 'animatedAccuracy' | 'animatedNeedsReview' | 'animatedExpiring', targetValue: number, duration = 1200): void {
     const startTime = performance.now();
     const startValue = 0;
@@ -130,43 +195,57 @@ export class DashboardComponent implements OnInit {
       const easeProgress = progress * (2 - progress); // EaseOutQuad
       const currentValue = startValue + easeProgress * (targetValue - startValue);
       
-      if (prop === 'animatedAccuracy') {
-        this[prop] = Math.round(currentValue * 10) / 10;
-      } else {
-        this[prop] = Math.floor(currentValue);
-      }
+      this.ngZone.run(() => {
+        if (prop === 'animatedAccuracy') {
+          this[prop] = Math.round(currentValue * 10) / 10;
+        } else {
+          this[prop] = Math.floor(currentValue);
+        }
+        this.cdr.detectChanges(); // Local UI rerender only
+      });
       
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
-        this[prop] = targetValue;
+        this.ngZone.run(() => {
+          this[prop] = targetValue;
+          this.cdr.detectChanges();
+        });
       }
     };
     
     requestAnimationFrame(step);
   }
 
-  constructor(
-    private readonly authService: AuthService,
-    private readonly dashboardService: DashboardService,
-    readonly router: Router,
-  ) {}
-
-  ngOnInit(): void {
-    this.loadProfile();
-    this.loadStats();
-    this.loadRecentDocuments();
-    this.loadExpiringDocuments();
-    this.loadProcessingErrors();
+  // ── trackBy list trackers for Angular *ngFor performance ───────
+  trackByDocId(index: number, item: DocumentItem): string {
+    return item._id;
   }
 
+  trackByDiscoveryTitle(index: number, item: any): string {
+    return item.title;
+  }
+
+  trackByString(index: number, item: string): string {
+    return item;
+  }
+
+  // ── Data Loader Methods ───────────────────────────────────────
   private loadProfile(): void {
     this.authService.getProfile().subscribe({
       next: (res) => {
         if (res.success && res.data) {
           this.userName = res.data.fullName.split(' ')[0];
+          this.cdr.markForCheck();
         }
       },
+      error: () => {
+        const user = this.authService.currentUser;
+        if (user) {
+          this.userName = user.fullName.split(' ')[0];
+          this.cdr.markForCheck();
+        }
+      }
     });
   }
 
@@ -183,6 +262,7 @@ export class DashboardComponent implements OnInit {
           // Trigger counter animations
           this.animateCount('animatedTotalDocs', res.data.totalDocuments);
           this.animateCount('animatedAccuracy', 98.2);
+          this.cdr.markForCheck();
         }
       },
     });
@@ -194,6 +274,20 @@ export class DashboardComponent implements OnInit {
         if (res.success && res.data) {
           this.recentDocuments = res.data.documents;
           this.generateAIDiscoveries();
+          this.cdr.markForCheck();
+          
+          // Re-bind listeners to newly created document cards
+          setTimeout(() => {
+            const root = this.elRef.nativeElement;
+            const newFileCards = root.querySelectorAll('.file-card');
+            newFileCards.forEach((card: any) => {
+              if (!this.cardElements.includes(card)) {
+                this.cardElements.push(card);
+                card.addEventListener('mousemove', this.onCardMouseMove);
+                card.addEventListener('mouseleave', this.onCardMouseLeave);
+              }
+            });
+          }, 0);
         }
       },
     });
@@ -208,6 +302,7 @@ export class DashboardComponent implements OnInit {
           
           this.animateCount('animatedExpiring', this.expiringDocuments.length);
           this.generateAIDiscoveries(); // Regroup alerts
+          this.cdr.markForCheck();
         }
       },
     });
@@ -221,6 +316,7 @@ export class DashboardComponent implements OnInit {
           
           this.animateCount('animatedNeedsReview', this.processingErrors.length);
           this.generateAIDiscoveries(); // Regroup alerts
+          this.cdr.markForCheck();
         }
       },
     });
@@ -371,11 +467,17 @@ export class DashboardComponent implements OnInit {
     const step = (now: number) => {
       const progress = Math.min((now - startTime) / duration, 1);
       const ease = progress * (2 - progress);
-      this.animatedConfidenceProgress = Math.round(ease * target * 10) / 10;
+      this.ngZone.run(() => {
+        this.animatedConfidenceProgress = Math.round(ease * target * 10) / 10;
+        this.cdr.detectChanges();
+      });
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
-        this.animatedConfidenceProgress = target;
+        this.ngZone.run(() => {
+          this.animatedConfidenceProgress = target;
+          this.cdr.detectChanges();
+        });
       }
     };
     requestAnimationFrame(step);

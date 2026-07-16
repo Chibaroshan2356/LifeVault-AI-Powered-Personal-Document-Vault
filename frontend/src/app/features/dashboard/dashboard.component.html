@@ -1,6 +1,6 @@
 <div class="workspace-container">
   <!-- Cinematic Background Layer (Atmosphere & Parallax) -->
-  <div class="cinematic-bg-layer" [style.transform]="'translate3d(' + mouseX + 'px, ' + mouseY + 'px, 0)'">
+  <div #bgLayer class="cinematic-bg-layer">
     <div class="aurora-blob blob-1"></div>
     <div class="aurora-blob blob-2"></div>
     <div class="aurora-blob blob-3"></div>
@@ -16,7 +16,7 @@
   </div>
 
   <!-- Welcome Narrative Hero -->
-  <header class="workspace-hero" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+  <header class="workspace-hero">
     <div class="hero-content">
       <h1 class="workspace-title">Good Afternoon, {{ userName || 'Roshan' }} 👋</h1>
       <p class="workspace-sub">LifeVault AI is protecting your digital identity.</p>
@@ -30,19 +30,19 @@
 
   <!-- Narrative AI Summary & Identity Health Metrics -->
   <section class="ai-status-summary-bar">
-    <div class="summary-metric accent-blue" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+    <div class="summary-metric accent-blue">
       <span class="value">{{ animatedTotalDocs }}</span>
       <span class="label">Documents Protected</span>
     </div>
-    <div class="summary-metric accent-cyan" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+    <div class="summary-metric accent-cyan">
       <span class="value">{{ animatedAccuracy }}%</span>
       <span class="label">AI Extraction Accuracy</span>
     </div>
-    <div class="summary-metric highlight accent-amber" [class.active]="needsReviewCount > 0" routerLink="/documents" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+    <div class="summary-metric highlight accent-amber" [class.active]="needsReviewCount > 0" routerLink="/documents">
       <span class="value">{{ animatedNeedsReview }}</span>
       <span class="label">Needs Review</span>
     </div>
-    <div class="summary-metric accent-pink" [class.warning]="expiringCount > 0" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+    <div class="summary-metric accent-pink" [class.warning]="expiringCount > 0">
       <span class="value">{{ animatedExpiring }}</span>
       <span class="label">Expiring Soon</span>
     </div>
@@ -53,7 +53,7 @@
     <div class="workspace-main">
       
       <!-- Section 1: AI Insights (Replacing old pipeline timeline) -->
-      <section class="recent-ai-activity card" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <section class="recent-ai-activity card">
         <div class="card-header">
           <mat-icon class="activity-header-icon">psychology</mat-icon>
           <h3>🧠 AI Insights</h3>
@@ -134,12 +134,10 @@
         <!-- Files grid feed (Varying heights/sizes) -->
         <div class="files-grid" *ngIf="recentDocuments.length > 0">
           <div class="file-card" 
-               *ngFor="let doc of recentDocuments | slice:0:3; let i = index" 
+               *ngFor="let doc of recentDocuments | slice:0:3; let i = index; trackBy: trackByDocId" 
                [class.card-tall]="i === 1"
                [class.card-wide]="i === 0"
-               [routerLink]="['/documents', doc._id]"
-               (mousemove)="onCardMouseMove($event)" 
-               (mouseleave)="onCardMouseLeave($event)">
+               [routerLink]="['/documents', doc._id]">
             
             <div class="file-card-header">
               <div class="file-icon-box" [class.pdf]="doc.mimeType === 'application/pdf'">
@@ -171,7 +169,7 @@
           </div>
         </div>
 
-        <div *ngIf="recentDocuments.length === 0" class="empty-state-workspace card" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+        <div *ngIf="recentDocuments.length === 0" class="empty-state-workspace card">
           <mat-icon>cloud_off</mat-icon>
           <h4>Your vault is currently empty</h4>
           <p>Deploy a document to start index classification.</p>
@@ -185,13 +183,13 @@
     <aside class="workspace-sidebar">
       
       <!-- Section 2: Recent AI Discoveries (Replacing old active Diagnostics) -->
-      <div class="widget discoveries-widget" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <div class="widget discoveries-widget">
         <div class="widget-header">
           <mat-icon class="sparkle-icon">auto_awesome</mat-icon>
           <h4>✨ Recent AI Discoveries</h4>
         </div>
         <div class="discoveries-list">
-          <div class="discovery-item-box" *ngFor="let item of aiDiscoveries | slice:0:3">
+          <div class="discovery-item-box" *ngFor="let item of aiDiscoveries | slice:0:3; trackBy: trackByDiscoveryTitle">
             <div class="discovery-header">
               <div class="disc-icon-box">
                 <mat-icon>{{ item.icon }}</mat-icon>
@@ -200,20 +198,20 @@
               <span class="disc-conf">{{ item.confidence }}% AI</span>
             </div>
             <ul class="discovery-details-list">
-              <li *ngFor="let detail of item.desc">✓ {{ detail }}</li>
+              <li *ngFor="let detail of item.desc; trackBy: trackByString">✓ {{ detail }}</li>
             </ul>
           </div>
         </div>
       </div>
 
       <!-- Smart Alerts Widget -->
-      <div class="widget smart-alerts-widget" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <div class="widget smart-alerts-widget">
         <div class="widget-header">
           <mat-icon class="bell-icon">notifications_active</mat-icon>
           <h4>🔔 Smart Alerts</h4>
         </div>
         <div class="alerts-feed-list">
-          <div class="alert-feed-item" *ngFor="let alert of smartAlerts">
+          <div class="alert-feed-item" *ngFor="let alert of smartAlerts; trackBy: trackByString">
             <span class="bullet-pulse"></span>
             <span class="alert-desc-text">{{ alert }}</span>
           </div>
@@ -221,7 +219,7 @@
       </div>
 
       <!-- Vault Storage Indexer Capacity -->
-      <div class="widget storage-widget" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <div class="widget storage-widget">
         <h4>Vault Storage Index</h4>
         <div class="progress-bar-container">
           <div class="progress-fill" [style.width.%]="storagePercent" [class.warning]="storagePercent > 80"></div>
@@ -233,7 +231,7 @@
       </div>
 
       <!-- Action suggestions -->
-      <div class="widget suggestions-widget" (mousemove)="onCardMouseMove($event)" (mouseleave)="onCardMouseLeave($event)">
+      <div class="widget suggestions-widget">
         <h4>Suggested Workspace Tasks</h4>
         <div class="tasks-links">
           <a routerLink="/documents/search" class="task-link-item">
