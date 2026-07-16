@@ -6,13 +6,10 @@
   max-width: var(--max-width);
   margin: 0 auto;
 
-  // Staggered entrance: each direct child fades up in sequence
-  & > *:nth-child(1) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both; }
-  & > *:nth-child(2) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
-  & > *:nth-child(3) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
-  & > *:nth-child(4) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
-  & > *:nth-child(5) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both; }
-  & > *:nth-child(n+6){ animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both; }
+  // Staggered entrance: each direct child fades up in sequence matching user delay guidelines
+  & > *:nth-child(1) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+  & > *:nth-child(2) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both; }
+  & > *:nth-child(3) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both; }
 }
 
 @keyframes dashboard-enter {
@@ -1629,7 +1626,8 @@
     stroke-dasharray: 264;
     transform: rotate(-90deg);
     transform-origin: 50px 50px;
-    transition: stroke-dashoffset 0.8s ease-out;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: stroke-dashoffset;
     filter: drop-shadow(0 0 6px rgba(79, 124, 255, 0.8));
   }
 

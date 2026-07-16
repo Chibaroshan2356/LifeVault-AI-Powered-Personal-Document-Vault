@@ -1,13 +1,12 @@
 /**
- * dashboard.component.ts — Main Dashboard Component (Phase 10.6 Optimized)
+ * dashboard.component.ts — Main Dashboard Component (Phase 10.6 Staggered Startup Optimized)
  *
- * Features:
- *  - ChangeDetectionStrategy.OnPush enabled to prevent redundant application checks.
- *  - ElementRef and NgZone injected to manage mouse movements manually outside Angular.
- *  - Document-level parallax and card-specific 3D spotlight tilts bound outside Angular.
- *  - Counter animations run using targeted requestAnimationFrame steps outside Angular.
- *  - trackBy methods implemented for all *ngFor loops.
- *  - Subscription/listener lifecycle cleanup handled inside ngOnDestroy.
+ * Implements startup animations staggering and single loop numeric counters:
+ *  - 0 ms: Background continues rendering smoothly.
+ *  - 200 ms: Hero entrance animation (handled via CSS delay).
+ *  - 400 ms: Cards entrance animations (handled via CSS delay).
+ *  - 600 ms: CSS hardware-accelerated Confidence Ring transition starts.
+ *  - 800 ms: Unified requestAnimationFrame numeric counters loop starts (combines all stats and text counter).
  */
 import {
   Component,
@@ -90,6 +89,9 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   // Client-facing AI Insights
   aiDiscoveries: { title: string; desc: string[]; icon: string; confidence: number }[] = [];
   smartAlerts: string[] = [];
+  
+  // Staggered CSS-driven confidence ring
+  confidenceValue = 0;
   animatedConfidenceProgress = 0;
 
   // Animated Count variables for HUD statistics
@@ -100,6 +102,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private lastMouseUpdateTime = 0;
   private cardElements: HTMLElement[] = [];
+  private statsData: any = null;
 
   constructor(
     private readonly authService: AuthService,
@@ -149,12 +152,11 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   // ── Interactivity Handlers (Outside Angular Zone) ─────────────
   private onDocumentMouseMoveThrottled = (event: MouseEvent): void => {
     const now = performance.now();
-    // Throttle updates to 20 FPS (every 50ms) to save CPU/GPU cycles
     if (now - this.lastMouseUpdateTime >= 50) {
       this.lastMouseUpdateTime = now;
       const x = (event.clientX / window.innerWidth) - 0.5;
       const y = (event.clientY / window.innerHeight) - 0.5;
-      const mx = x * 6; // Max 6px offset for parallax background glow
+      const mx = x * 6;
       const my = y * 6;
 
       if (this.bgLayerRef?.nativeElement) {
@@ -172,8 +174,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     card.style.setProperty('--mouse-x', `${x}px`);
     card.style.setProperty('--mouse-y', `${y}px`);
 
-    // 3D tilt calculation
-    const tiltX = -((y / rect.height) - 0.5) * 6; // Max 3deg tilt
+    const tiltX = -((y / rect.height) - 0.5) * 6;
     const tiltY = ((x / rect.width) - 0.5) * 6;
     card.style.setProperty('--tilt-x', `${tiltX}deg`);
     card.style.setProperty('--tilt-y', `${tiltY}deg`);
@@ -185,30 +186,60 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     card.style.setProperty('--tilt-y', '0deg');
   };
 
-  // ── Count animator helper (Runs inside requestAnimationFrame) ──
-  private animateCount(prop: 'animatedTotalDocs' | 'animatedAccuracy' | 'animatedNeedsReview' | 'animatedExpiring', targetValue: number, duration = 1200): void {
+  // ── Staggered Startup Animation Trigger ───────────────────────
+  private triggerStaggeredAnimations(): void {
+    if (!this.statsData) return;
+
+    // 0 ms: Background globe animations are running on the GPU
+    // 200 ms: Hero panel enters sequentially (CSS delay)
+    // 400 ms: Summary cards metrics enter sequentially (CSS delay)
+
+    // 600 ms: Trigger CSS hardware-accelerated Confidence Ring transition
+    setTimeout(() => {
+      this.confidenceValue = 98.2;
+      this.cdr.markForCheck();
+    }, 600);
+
+    // 800 ms: Start single unified counters animation loop (runs outside Angular Zone)
+    setTimeout(() => {
+      this.animateAllCounters({
+        totalDocs: this.statsData.totalDocuments,
+        accuracy: 98.2,
+        expiring: this.expiringDocuments.length,
+        needsReview: this.processingErrors.length,
+        confidenceProgress: 98.2,
+      });
+    }, 800);
+  }
+
+  // ── Unified numeric counter animator (Only 1 loop instead of 4) 
+  private animateAllCounters(targets: { totalDocs: number; accuracy: number; expiring: number; needsReview: number; confidenceProgress: number }): void {
     const startTime = performance.now();
-    const startValue = 0;
+    const duration = 1200;
     
     const step = (now: number) => {
       const progress = Math.min((now - startTime) / duration, 1);
       const easeProgress = progress * (2 - progress); // EaseOutQuad
-      const currentValue = startValue + easeProgress * (targetValue - startValue);
       
       this.ngZone.run(() => {
-        if (prop === 'animatedAccuracy') {
-          this[prop] = Math.round(currentValue * 10) / 10;
-        } else {
-          this[prop] = Math.floor(currentValue);
-        }
-        this.cdr.detectChanges(); // Local UI rerender only
+        this.animatedTotalDocs = Math.floor(easeProgress * targets.totalDocs);
+        this.animatedAccuracy = Math.round(easeProgress * targets.accuracy * 10) / 10;
+        this.animatedExpiring = Math.floor(easeProgress * targets.expiring);
+        this.animatedNeedsReview = Math.floor(easeProgress * targets.needsReview);
+        this.animatedConfidenceProgress = Math.round(easeProgress * targets.confidenceProgress * 10) / 10;
+        
+        this.cdr.detectChanges(); // Local UI updates
       });
       
       if (progress < 1) {
         requestAnimationFrame(step);
       } else {
         this.ngZone.run(() => {
-          this[prop] = targetValue;
+          this.animatedTotalDocs = targets.totalDocs;
+          this.animatedAccuracy = targets.accuracy;
+          this.animatedExpiring = targets.expiring;
+          this.animatedNeedsReview = targets.needsReview;
+          this.animatedConfidenceProgress = targets.confidenceProgress;
           this.cdr.detectChanges();
         });
       }
@@ -253,15 +284,14 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     this.dashboardService.getStats().subscribe({
       next: (res) => {
         if (res.success && res.data) {
+          this.statsData = res.data;
           this.statCards[0].value = res.data.totalDocuments;
           this.statCards[1].value = res.data.byStatus.find(
             (s) => s.status === 'READY',
           )?.count ?? 0;
           this.statCards[3].value = res.data.byCategory.length;
 
-          // Trigger counter animations
-          this.animateCount('animatedTotalDocs', res.data.totalDocuments);
-          this.animateCount('animatedAccuracy', 98.2);
+          this.triggerStaggeredAnimations();
           this.cdr.markForCheck();
         }
       },
@@ -276,7 +306,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           this.generateAIDiscoveries();
           this.cdr.markForCheck();
           
-          // Re-bind listeners to newly created document cards
           setTimeout(() => {
             const root = this.elRef.nativeElement;
             const newFileCards = root.querySelectorAll('.file-card');
@@ -300,8 +329,8 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           this.expiringDocuments = res.data.documents;
           this.statCards[2].value = this.expiringDocuments.length;
           
-          this.animateCount('animatedExpiring', this.expiringDocuments.length);
-          this.generateAIDiscoveries(); // Regroup alerts
+          this.triggerStaggeredAnimations();
+          this.generateAIDiscoveries();
           this.cdr.markForCheck();
         }
       },
@@ -314,8 +343,8 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         if (res.success && res.data) {
           this.processingErrors = res.data.documents;
           
-          this.animateCount('animatedNeedsReview', this.processingErrors.length);
-          this.generateAIDiscoveries(); // Regroup alerts
+          this.triggerStaggeredAnimations();
+          this.generateAIDiscoveries();
           this.cdr.markForCheck();
         }
       },
@@ -355,7 +384,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   get storagePercent(): number {
-    const limit = 10 * 1024 * 1024; // 10 MB limit for free tier demo
+    const limit = 10 * 1024 * 1024;
     const used = this.totalStorageUsed;
     return Math.min(Math.round((used / limit) * 100), 100);
   }
@@ -428,7 +457,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
-    // Fallbacks if vault is empty to guarantee portofolio presentation data
     if (this.aiDiscoveries.length === 0) {
       this.aiDiscoveries = [
         { title: 'Passport', icon: 'flight_takeoff', confidence: 99, desc: ['Nationality detected', 'Expiry: 2032'] },
@@ -438,7 +466,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
       ];
     }
 
-    // Smart Alerts Logic
     if (hasPAN && hasAadhaar) {
       this.smartAlerts.push('Aadhaar and PAN names match successfully');
     }
@@ -449,7 +476,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
       this.smartAlerts.push('Passport expires soon (requires action)');
     }
     
-    // Add default alerts to keep HUD metrics looking clean
     if (this.smartAlerts.length === 0) {
       this.smartAlerts = [
         'Aadhaar and PAN name matching verified',
@@ -457,29 +483,5 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         'Missing phone number in active Resume'
       ];
     }
-
-    this.animateProgressRing(98.2);
-  }
-
-  private animateProgressRing(target: number): void {
-    const startTime = performance.now();
-    const duration = 1500;
-    const step = (now: number) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      const ease = progress * (2 - progress);
-      this.ngZone.run(() => {
-        this.animatedConfidenceProgress = Math.round(ease * target * 10) / 10;
-        this.cdr.detectChanges();
-      });
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        this.ngZone.run(() => {
-          this.animatedConfidenceProgress = target;
-          this.cdr.detectChanges();
-        });
-      }
-    };
-    requestAnimationFrame(step);
   }
 }
