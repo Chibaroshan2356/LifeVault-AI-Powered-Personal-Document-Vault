@@ -1,10 +1,10 @@
-<div #backgroundCanvas class="global-3d-bg" [style.display]="isWelcomePage ? 'none' : 'block'">
+<div class="global-3d-bg" [style.display]="isWelcomePage ? 'none' : 'block'">
+  <canvas #bgCanvas class="particles-canvas"></canvas>
   <div class="light-glow glow-top-left"></div>
   <div class="light-glow glow-top-right"></div>
   <div class="light-glow glow-bottom-center"></div>
   <div class="light-glow glow-orb-behind"></div>
 </div>
-
 
 <!-- Route outlet view shell -->
 <router-outlet></router-outlet>
