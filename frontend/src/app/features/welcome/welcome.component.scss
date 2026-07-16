@@ -1,48 +1,46 @@
 /* ================================================================
-   welcome.component.scss — Cinematic Welcome Page v4 (Holographic Vault)
+   welcome.component.scss — Premium Minimal Apple-Style Welcome Page
    ================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-// ── Tokens ────────────────────────────────────────────────────────
-$navy:    #030712;
-$blue:    #2563eb;
-$blue-l:  #3b82f6;
-$cyan:    #06b6d4;
-$violet:  #8b5cf6;
-$green:   #22c55e;
-$white:   #f9fafb;
-$slate:   #94a3b8;
-$font-mono: 'JetBrains Mono', monospace;
+// Colors
+$navy:        #040610;
+$blue:        #2563eb;
+$blue-l:      #3b82f6;
+$cyan:        #06b6d4;
+$violet:      #8b5cf6;
+$green:       #22c55e;
+$white:       #f8fafc;
+$slate:       #94a3b8;
 
-// ── Helpers ───────────────────────────────────────────────────────
-@mixin fade-up($d: 0s) {
+@mixin fade-up($delay: 0s) {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.6s ease $d, transform 0.6s ease $d;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) $delay,
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) $delay;
   &.visible { opacity: 1; transform: translateY(0); }
 }
 
-// ── Page shell ────────────────────────────────────────────────────
 .welcome-page {
   position: fixed;
   inset: 0;
   width: 100vw; height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  z-index: 9999;
+  overflow: hidden;
+  background: $navy;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', system-ui, sans-serif;
-  z-index: 9999;
-  overflow: hidden;
 
   &.is-leaving {
     pointer-events: none;
-
-    .glass-panel {
-      transition: opacity 1.0s cubic-bezier(0.4, 0, 0.2, 1),
-                  transform 1.0s cubic-bezier(0.4, 0, 0.2, 1);
+    .welcome-container {
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                  transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
       opacity: 0;
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
   }
 }
@@ -52,251 +50,159 @@ $font-mono: 'JetBrains Mono', monospace;
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: $navy;
-  overflow: hidden;
+  pointer-events: none;
 }
 
-// Aurora layers
-.aurora {
+// Volumetric glows
+.glow-light {
   position: absolute;
   border-radius: 50%;
   filter: blur(140px);
-  pointer-events: none;
+  opacity: 0.12;
   will-change: transform;
 }
-.aurora-1 {
-  width: 80vw; height: 80vh;
-  top: -20vh; left: -20vw;
-  background: radial-gradient(circle, rgba(37,99,235,0.20) 0%, transparent 68%);
-  animation: a1 30s ease-in-out infinite alternate;
-}
-.aurora-2 {
-  width: 75vw; height: 75vh;
-  top: -15vh; right: -15vw;
-  background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 65%);
-  animation: a2 38s ease-in-out infinite alternate;
-}
-.aurora-3 {
+.gl-royal {
   width: 70vw; height: 70vh;
-  bottom: -20vh; left: 10vw;
-  background: radial-gradient(circle, rgba(6,182,212,0.12) 0%, transparent 65%);
-  animation: a3 45s ease-in-out infinite alternate;
+  top: -20vh; left: -20vw;
+  background: radial-gradient(circle, $blue 0%, transparent 70%);
+  animation: bg-drift 32s ease-in-out infinite alternate;
+}
+.gl-cyan {
+  width: 60vw; height: 60vh;
+  top: -10vh; right: -15vw;
+  background: radial-gradient(circle, $cyan 0%, transparent 70%);
+  animation: bg-drift 28s ease-in-out 4s infinite alternate;
+}
+.gl-indigo {
+  width: 65vw; height: 65vh;
+  bottom: -25vh; left: 15vw;
+  background: radial-gradient(circle, $violet 0%, transparent 70%);
+  animation: bg-drift 36s ease-in-out infinite alternate;
+}
+.gl-center {
+  width: 50vw; height: 50vh;
+  top: 25vh; right: 10vw;
+  background: radial-gradient(circle, $blue-l 0%, transparent 70%);
+  opacity: 0.08;
 }
 
-// Star field
-.star-field {
+// Starfield
+.starfield {
   position: absolute; inset: 0;
   background-image:
-    radial-gradient(1px 1px at 8%   14%, rgba(255,255,255,0.3) 0%, transparent 100%),
-    radial-gradient(1px 1px at 22%  7%,  rgba(255,255,255,0.2) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 28% 43%, rgba(147,197,253,0.3) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 76% 41%, rgba(216,180,254,0.2) 0%, transparent 100%);
-  animation: twinkle 12s ease-in-out infinite alternate;
+    radial-gradient(1px 1px at 15% 12%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 25%, rgba(255,255,255,0.15) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 70% 55%, rgba(147,197,253,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.2) 0%, transparent 100%);
+  opacity: 0.8;
 }
 
-// Fog layer
-.fog-layer {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 60%, rgba(59,130,246,0.03) 0%, transparent 60%);
-  animation: fog-drift 60s ease-in-out infinite alternate;
-}
-
-// Light beams
-.light-beam {
-  position: absolute;
-  width: 2px;
-  background: linear-gradient(to bottom, transparent, rgba(96,165,250,0.06) 40%, rgba(96,165,250,0.01) 80%, transparent);
-  pointer-events: none;
-}
-.lb-1 {
-  height: 70vh; top: -10vh; left: 30%;
-  transform: rotate(-8deg);
-  animation: beam-pulse 15s ease-in-out infinite alternate;
-}
-.lb-2 {
-  height: 60vh; top: 5vh; right: 20%;
-  transform: rotate(6deg);
-  animation: beam-pulse 20s ease-in-out 3s infinite alternate;
-}
-
-// Volumetric center glow behind vault
-.vol-light {
-  position: absolute;
-  width: 60vw; height: 60vh;
-  top: 15vh; left: 20vw;
-  background: radial-gradient(ellipse, rgba(59,130,246,0.06) 0%, transparent 60%);
-  animation: vl-drift 22s ease-in-out infinite alternate;
-}
-
-// ── Glass Panel ───────────────────────────────────────────────────
-.glass-panel {
+// ── Two Column Layout ─────────────────────────────────────────────
+.welcome-container {
   position: relative;
   z-index: 1;
   display: flex;
-  width: min(1440px, 98vw);
-  height: min(840px, 92vh);
-  border-radius: 24px;
-  backdrop-filter: blur(40px) saturate(160%);
-  -webkit-backdrop-filter: blur(40px) saturate(160%);
-  background: linear-gradient(
-    145deg,
-    rgba(3, 7, 18, 0.75) 0%,
-    rgba(6, 10, 24, 0.88) 100%
-  );
-  border: 1px solid rgba(255,255,255,0.08);
-  border-top: 1px solid rgba(255,255,255,0.15);
-  box-shadow:
-    0 40px 120px rgba(0,0,0,0.70),
-    0 0 60px rgba(59,130,246,0.04);
-  overflow: hidden;
-
-  // Entry fade-in
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease 0.1s, transform 0.8s ease 0.1s;
-
-  .is-loaded & {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  // Soft reflection sweep across panel
-  &::before {
-    content: '';
-    position: absolute; inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(110deg,
-      transparent 20%, rgba(255,255,255,0.015) 40%,
-      rgba(255,255,255,0.04) 50%, rgba(255,255,255,0.015) 60%, transparent 80%);
-    background-size: 200% 100%;
-    background-position: -100% 0;
-    pointer-events: none;
-    z-index: 10;
-    animation: panel-sweep 12s 2s infinite linear;
-  }
+  width: min(1380px, 96vw);
+  height: 85vh;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-// ── Column 1: Left Panel ──────────────────────────────────────────
-.left-panel {
-  width: 32%;
+// Left Column: Text & CTA
+.content-column {
+  width: 42%;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px 32px 50px 60px;
-  position: relative;
-  z-index: 2;
+  padding: 0;
 }
 
-// Option Badge
-.option-badge-wrap {
+// Brand Header
+.brand-header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 10px;
+  margin-bottom: 36px;
   @include fade-up(0s);
-}
-.option-badge {
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 3px 8px;
-  border-radius: 4px;
-}
-.option-label {
-  font-size: 10px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.5px;
-}
 
-// Brand
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 30px;
-  @include fade-up(0.05s);
-
-  .brand-orb {
+  .brand-logo {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 28px; height: 28px;
   }
-
   .brand-name {
-    font-size: 14.5px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     color: $white;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
   }
-
   .brand-ai {
-    font-size: 14.5px;
-    font-weight: 800;
+    font-size: 15px;
+    font-weight: 700;
     color: $blue-l;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
   }
 }
 
-// Tagline
-.tagline-stack {
-  margin-bottom: 16px;
+// Headline Typography (Apple/Linear Style)
+.headline-stack {
+  margin-bottom: 20px;
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.65s ease 0.1s, transform 0.65s ease 0.1s;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s,
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
   &.visible { opacity: 1; transform: translateY(0); }
 }
-.tagline {
-  font-size: clamp(38px, 3.6vw, 48px);
-  font-weight: 900;
-  line-height: 1.08;
+.headline {
+  font-size: clamp(40px, 4vw, 54px);
+  font-weight: 800;
+  line-height: 1.06;
   letter-spacing: -2px;
   margin: 0;
   color: $white;
   display: block;
 
-  &.t2 {
-    background: linear-gradient(135deg, $blue-l 0%, $cyan 60%, #93c5fd 100%);
+  &.h2 {
+    background: linear-gradient(135deg, $blue-l 0%, $cyan 65%, #a5f3fc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 }
 
-// Sub caption
-.sub-caption {
-  font-size: 13.5px;
-  color: rgba(148,163,184,0.7);
-  line-height: 1.5;
-  margin: 0 0 20px;
-  @include fade-up(0.12s);
+// Subtitle
+.subtitle {
+  font-size: 15px;
+  color: rgba(148, 163, 184, 0.75);
+  line-height: 1.6;
+  margin: 0 0 24px;
+  max-width: 380px;
+  @include fade-up(0.18s);
 }
 
-// Badges
-.badges {
+// Tech pills
+.tech-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 7px;
   margin-bottom: 30px;
-  @include fade-up(0.15s);
+  @include fade-up(0.24s);
 }
-.badge {
-  font-size: 9.5px;
+.pill {
+  font-size: 10px;
   font-weight: 600;
-  padding: 4px 10px;
+  padding: 4px 11px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: $slate;
 
   &.primary {
-    background: rgba(59,130,246,0.08);
-    border-color: rgba(59,130,246,0.18);
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.22);
     color: $blue-l;
   }
 }
@@ -307,8 +213,9 @@ $font-mono: 'JetBrains Mono', monospace;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   padding: 16px;
-  margin-bottom: 24px;
-  @include fade-up(0.18s);
+  margin-bottom: 32px;
+  backdrop-filter: blur(10px);
+  @include fade-up(0.26s);
 }
 
 .welcome-header {
@@ -400,53 +307,30 @@ $font-mono: 'JetBrains Mono', monospace;
   animation: ai-pulse 2s ease-in-out infinite;
 }
 
-// CTA / Enter Vault Button
+// CTA Wrapper
 .cta-wrap {
-  @include fade-up(0.2s);
+  @include fade-up(0.32s);
 }
 
-.vault-btn {
+// Premium Keynote Enter Button
+.enter-btn {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 280px;
+  max-width: 260px;
   height: 52px;
   border: none;
   border-radius: 8px;
   background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #06b6d4 100%);
   box-shadow:
-    0 0 20px rgba(59,130,246,0.35),
-    0 0 40px rgba(59,130,246,0.12),
-    0 1px 0 rgba(255,255,255,0.2) inset;
+    0 0 30px rgba(59, 130, 246, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.2) inset;
   cursor: pointer;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  .corner-line {
-    position: absolute;
-    background: rgba(255,255,255,0.35);
-    transition: all 0.5s ease;
-  }
-  .tl-h, .tr-h, .bl-h, .br-h { height: 1px; width: 16px; }
-  .tl-v, .tr-v, .bl-v, .br-v { width: 1px; height: 16px; }
-  .tl-h { top: 0; left: 0; }
-  .tl-v { top: 0; left: 0; }
-  .tr-h { top: 0; right: 0; }
-  .tr-v { top: 0; right: 0; }
-  .bl-h { bottom: 0; left: 0; }
-  .bl-v { bottom: 0; left: 0; }
-  .br-h { bottom: 0; right: 0; }
-  .br-v { bottom: 0; right: 0; }
-
-  .btn-shine {
-    position: absolute; inset: 0;
-    background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.06) 50%, transparent 65%);
-    background-size: 200% 100%;
-    background-position: 200% 0;
-    animation: shine-sweep 3s ease-in-out infinite;
-  }
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
   .btn-bloom {
     position: absolute; inset: -4px;
@@ -454,15 +338,18 @@ $font-mono: 'JetBrains Mono', monospace;
     opacity: 0.25;
     background: conic-gradient(from 0deg, $blue, $cyan, $violet, $blue);
     filter: blur(6px);
-    animation: bloom-spin 4s linear infinite;
+    animation: spin-loop 4s linear infinite;
   }
-
-  .btn-inner {
+  .btn-shine {
+    position: absolute; inset: 0;
+    background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.06) 50%, transparent 65%);
+    background-size: 200% 100%;
+    background-position: 200% 0;
+    animation: shine-sweep 3s ease-in-out infinite;
+  }
+  .btn-content {
     position: relative;
     z-index: 2;
-  }
-
-  .btn-top {
     font-size: 13.5px;
     font-weight: 700;
     color: #ffffff;
@@ -472,133 +359,42 @@ $font-mono: 'JetBrains Mono', monospace;
   &:hover {
     transform: translateY(-2px);
     box-shadow:
-      0 0 35px rgba(59,130,246,0.5),
-      0 0 60px rgba(59,130,246,0.2),
-      0 1px 0 rgba(255,255,255,0.25) inset;
+      0 0 40px rgba(59, 130, 246, 0.45),
+      0 0 60px rgba(59, 130, 246, 0.15),
+      0 1px 0 rgba(255, 255, 255, 0.25) inset;
   }
   &:active {
-    transform: translateY(-1px) scale(0.99);
+    transform: translateY(-0.5px) scale(0.99);
   }
 }
 
-.secondary-link {
-  font-size: 11px;
-  color: rgba(148,163,184,0.35);
-  text-decoration: none;
-  text-align: center;
-  max-width: 280px;
-  display: block;
-  margin-top: 12px;
-  &:hover { color: $blue-l; }
-}
-
-// ── Column 2: Center Panel (WebGL Canvas) ────────────────────────
-.center-panel {
-  width: 48%;
-  flex-shrink: 0;
+// Right Column: Canvas Hero
+.hero-column {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  overflow: hidden;
 }
-
-.scene-canvas {
+.canvas-container {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+}
+.three-canvas {
   width: 100%; height: 100%;
   display: block;
 }
 
-// ── Column 3: Right Panel (Features List) ────────────────────────
-.right-panel {
-  width: 20%;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px 40px 40px 10px;
-  z-index: 2;
-}
-
-.features-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.65s ease 0.2s, transform 0.65s ease 0.2s;
-  &.visible { opacity: 1; transform: translateY(0); }
-}
-
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateX(4px);
-    .feat-icon-wrap {
-      border-color: rgba(96, 165, 250, 0.4);
-      background: rgba(59, 130, 246, 0.12);
-      color: $blue-l;
-    }
-  }
-}
-
-.feat-icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: $slate;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
-}
-.feat-icon {
-  width: 18px; height: 18px;
-}
-
-.feat-content {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.feat-title {
-  font-size: 12.5px;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
-}
-.feat-desc {
-  font-size: 10px;
-  color: rgba(148, 163, 184, 0.65);
-  margin: 0;
-}
-
-// Lens flares
-.lens-flare {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-.lf-1 {
-  width: 200px; height: 200px;
-  top: 15%; right: 25%;
-  background: radial-gradient(circle, rgba(96,165,250,0.10) 0%, transparent 70%);
-  filter: blur(25px);
-}
-.lf-2 {
-  width: 150px; height: 150px;
-  bottom: 20%; left: 15%;
-  background: radial-gradient(circle, rgba(139,92,246,0.08) 0%, transparent 70%);
-  filter: blur(18px);
-}
-
-// ── White flash overlay ───────────────────────────────────────────
+// White transition flash
 .entry-flash {
   position: fixed; inset: 0;
   z-index: 10000;
-  background: #fff;
+  background: #ffffff;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
@@ -610,55 +406,42 @@ $font-mono: 'JetBrains Mono', monospace;
   }
 }
 
-// ── Animations ────────────────────────────────────────────────────
-@keyframes a1  { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(10vw,8vh) scale(1.15); } }
-@keyframes a2  { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(-8vw,12vh) scale(1.10); } }
-@keyframes a3  { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(6vw,-10vh) scale(1.20); } }
-@keyframes twinkle { 0% { opacity: 0.4; } 100% { opacity: 0.8; } }
-@keyframes fog-drift { 0% { transform: translate(0,0); } 100% { transform: translate(5vw,-3vh); } }
-@keyframes beam-pulse { 0% { opacity: 0.3; } 100% { opacity: 0.8; } }
-@keyframes vl-drift { 0% { transform: scale(1) translate(0,0); } 100% { transform: scale(1.1) translate(-2vw,2vh); } }
-
-@keyframes panel-sweep {
-  0%     { background-position: -100% 0; }
-  45%,100%{ background-position: 200% 0; }
+// Keyframes
+@keyframes bg-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(6vw, 4vh) scale(1.1); }
 }
-
-@keyframes ai-pulse {
-  0%,100% { transform: scale(1); opacity: 0.9; }
-  50%     { transform: scale(1.3); opacity: 1; }
-}
-
-@keyframes bloom-spin {
+@keyframes spin-loop {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
-
 @keyframes shine-sweep {
   0%     { background-position: 200% 0; }
   50%    { background-position: -50% 0; }
   100%   { background-position: 200% 0; }
 }
-
-// ── Responsive ────────────────────────────────────────────────────
-@media (max-width: 1200px) {
-  .left-panel { width: 40%; }
-  .center-panel { width: 60%; }
-  .right-panel { display: none; }
+@keyframes ai-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50%      { transform: scale(1.25); opacity: 1; }
 }
 
+// Responsive layout
 @media (max-width: 960px) {
-  .glass-panel {
+  .welcome-container {
     flex-direction: column;
     height: auto;
-    min-height: 94vh;
-    width: 95vw;
-    border-radius: 20px;
+    padding: 60px 20px;
+    gap: 20px;
   }
-  .left-panel {
+  .content-column {
     width: 100%;
-    padding: 30px;
+    align-items: center;
+    text-align: center;
   }
-  .center-panel { width: 100%; height: 45vh; }
-  .right-panel { display: none; }
+  .hero-column {
+    width: 100%;
+    height: 48vh;
+  }
+  .subtitle { max-width: 100%; }
+  .enter-btn { max-width: 100%; }
 }
