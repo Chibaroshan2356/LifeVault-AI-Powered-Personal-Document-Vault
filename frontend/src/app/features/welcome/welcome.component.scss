@@ -65,19 +65,19 @@ $slate:       #94a3b8;
   width: 70vw; height: 70vh;
   top: -20vh; left: -20vw;
   background: radial-gradient(circle, $blue 0%, transparent 70%);
-  animation: bg-drift 32s ease-in-out infinite alternate;
+  animation: bg-drift 75s ease-in-out infinite alternate;
 }
 .gl-cyan {
   width: 60vw; height: 60vh;
   top: -10vh; right: -15vw;
   background: radial-gradient(circle, $cyan 0%, transparent 70%);
-  animation: bg-drift 28s ease-in-out 4s infinite alternate;
+  animation: bg-drift 68s ease-in-out 4s infinite alternate;
 }
 .gl-indigo {
   width: 65vw; height: 65vh;
   bottom: -25vh; left: 15vw;
   background: radial-gradient(circle, $violet 0%, transparent 70%);
-  animation: bg-drift 36s ease-in-out infinite alternate;
+  animation: bg-drift 84s ease-in-out infinite alternate;
 }
 .gl-center {
   width: 50vw; height: 50vh;

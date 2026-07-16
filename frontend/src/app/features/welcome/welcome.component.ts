@@ -1,5 +1,5 @@
 /**
- * welcome.component.ts — Premium Apple-Style Welcome Page
+ * welcome.component.ts — Premium Apple-Style Welcome Page (Phase 10.5 Optimized)
  *
  * Implements a true 3D holographic glass vault using Three.js:
  *  • Central rotating 3D crystal core (icosahedron) with inner lock shield hologram
@@ -7,6 +7,15 @@
  *  • Interactive neon line connections matching the nodes to the core
  *  • Volumetric point lights, drifting particles, base rings, and mouse parallax
  *  • Completely programmatic - NO flat image backdrop drawing
+ *
+ * Performance Optimizations:
+ *  1. Runs animation loop outside Angular Zone using NgZone.runOutsideAngular() to avoid continuous change detection triggers.
+ *  2. Manually registers throttled mousemove listener (20 FPS update limit) outside Angular to prevent layout thrashing.
+ *  3. Limits geometries to low-poly models (outer core level 0 icosahedron, low-segment spheres/cones/tori) keeping triangles < 10k.
+ *  4. Reduces ambient particle count to 80, using slightly larger glowing particles.
+ *  5. Streamlines lighting to exactly 1 AmbientLight, 1 DirectionalLight, and 1 PointLight.
+ *  6. Pauses rendering loop on window blur, window focus loss, or tab visibility change.
+ *  7. Automatically switches frame rate: 60 FPS during active interaction, falling back to 30 FPS when idle for > 4s.
  */
 import {
   Component,
@@ -16,7 +25,7 @@ import {
   ElementRef,
   ViewChild,
   ChangeDetectorRef,
-  HostListener,
+  NgZone,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router }       from '@angular/router';
@@ -64,21 +73,26 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private connectionLines: any;
   private pointLight: any;
 
-  // Interactivity
+  // Interactivity / State Tracking
   private targetMouseX = 0;
   private targetMouseY = 0;
   private currentMouseX = 0;
   private currentMouseY = 0;
-
   private isTabActive = true;
-  private visibilityListener = (): void => {
-    this.isTabActive = document.visibilityState === 'visible';
-  };
+
+  // Frame Limiter & Idle Detection State
+  private lastFrameTime = 0;
+  private lastMouseUpdateTime = 0;
+  private lastInteractionTime = 0;
+
+  // Handlers for manual cleanup
+  private visibilityListener!: () => void;
 
   constructor(
     private readonly authService: AuthService,
     private readonly router:      Router,
     private readonly cdr:         ChangeDetectorRef,
+    private readonly ngZone:      NgZone,
   ) {}
 
   // ── Lifecycle ─────────────────────────────────────────────────
@@ -89,18 +103,30 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.loadThreeJs().then(() => {
-      this.initThree();
-      document.addEventListener('visibilitychange', this.visibilityListener);
-      this.animate();
+      // Execute Three.js rendering setup and event bindings completely outside Angular Zone
+      this.ngZone.runOutsideAngular(() => {
+        this.initThree();
+        this.setupVisibilityListeners();
+        window.addEventListener('mousemove', this.onMouseMoveThrottled);
+        
+        // Mark initial time states
+        const initialTime = performance.now();
+        this.lastFrameTime = initialTime;
+        this.lastInteractionTime = initialTime;
+        
+        this.animate();
+      });
+
       this.isLoaded = true;
-      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     });
   }
 
   ngOnDestroy(): void {
     cancelAnimationFrame(this.animationFrameId);
     this.resizeObs?.disconnect();
-    document.removeEventListener('visibilitychange', this.visibilityListener);
+    this.cleanupVisibilityListeners();
+    window.removeEventListener('mousemove', this.onMouseMoveThrottled);
     this.cleanupThree();
   }
 
@@ -113,7 +139,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
         next: (res: any) => {
           if (res.data?.fullName) {
             this.userName = res.data.fullName.split(' ')[0];
-            this.cdr.markForCheck();
+            this.cdr.detectChanges();
           }
         },
         error: () => {},
@@ -122,23 +148,47 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private runStaggeredReveal(): void {
-    setTimeout(() => { this.showBrand   = true; this.cdr.markForCheck(); }, 100);
-    setTimeout(() => { this.showTagline = true; this.cdr.markForCheck(); }, 200);
-    setTimeout(() => { this.showSub     = true; this.cdr.markForCheck(); }, 300);
-    setTimeout(() => { this.showBadges  = true; this.cdr.markForCheck(); }, 400);
-    setTimeout(() => { this.showBtn     = true; this.cdr.markForCheck(); }, 500);
+    setTimeout(() => { this.showBrand   = true; this.cdr.detectChanges(); }, 100);
+    setTimeout(() => { this.showTagline = true; this.cdr.detectChanges(); }, 200);
+    setTimeout(() => { this.showSub     = true; this.cdr.detectChanges(); }, 300);
+    setTimeout(() => { this.showBadges  = true; this.cdr.detectChanges(); }, 400);
+    setTimeout(() => { this.showBtn     = true; this.cdr.detectChanges(); }, 500);
   }
 
   enterVault(): void {
     this.isLeaving = true;
-    this.cdr.markForCheck();
+    this.cdr.detectChanges();
     setTimeout(() => this.router.navigate(['/dashboard']), 1200);
   }
 
-  @HostListener('mousemove', ['$event'])
-  onMouseMove(e: MouseEvent): void {
-    this.targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
-    this.targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+  // ── Interactivity Event Listener (Outside Angular Zone) ───────
+  private onMouseMoveThrottled = (e: MouseEvent): void => {
+    const now = performance.now();
+    // Throttle coord updates to maximum 20 FPS (every 50ms) to save CPU cycles
+    if (now - this.lastMouseUpdateTime >= 50) {
+      this.targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+      this.targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+      this.lastMouseUpdateTime = now;
+      this.lastInteractionTime = now; // wakes render rate back to 60 FPS
+    }
+  };
+
+  private setupVisibilityListeners(): void {
+    this.visibilityListener = () => {
+      // Pause animations if tab is hidden OR browser window lost focus
+      this.isTabActive = document.visibilityState === 'visible' && document.hasFocus();
+    };
+    document.addEventListener('visibilitychange', this.visibilityListener);
+    window.addEventListener('focus', this.visibilityListener);
+    window.addEventListener('blur', this.visibilityListener);
+  }
+
+  private cleanupVisibilityListeners(): void {
+    if (this.visibilityListener) {
+      document.removeEventListener('visibilitychange', this.visibilityListener);
+      window.removeEventListener('focus', this.visibilityListener);
+      window.removeEventListener('blur', this.visibilityListener);
+    }
   }
 
   // ═════════════════════════════════════════════════════════════
@@ -165,10 +215,10 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     const w = pEl.clientWidth || 800;
     const h = pEl.clientHeight || 700;
 
-    // Renderer
-    this.renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    // Renderer — High-performance settings with shadow mapping disabled
+    this.renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: 'high-performance' });
     this.renderer.setSize(w, h);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // capped at 1.5x pixel ratio for layout density stability
 
     // Scene
     this.scene = new THREE.Scene();
@@ -181,23 +231,19 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.vaultGroup = new THREE.Group();
     this.scene.add(this.vaultGroup);
 
-    // ── Lighting ──
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.40);
+    // ── Lighting (Consolidated to Ambient, single Directional, and single PointLight) ──
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.50);
     this.scene.add(ambientLight);
 
-    const keyLight = new THREE.DirectionalLight(0x06b6d4, 1.25); // Cyan Key Light
-    keyLight.position.set(5, 5, 5);
-    this.scene.add(keyLight);
+    const dirLight = new THREE.DirectionalLight(0x06b6d4, 1.50); // Cyan main key light
+    dirLight.position.set(5, 5, 5);
+    this.scene.add(dirLight);
 
-    const fillLight = new THREE.DirectionalLight(0x8b5cf6, 0.70); // Purple Fill Light
-    fillLight.position.set(-5, 3, -5);
-    this.scene.add(fillLight);
-
-    this.pointLight = new THREE.PointLight(0x3b82f6, 6.0, 10.0);
+    this.pointLight = new THREE.PointLight(0x3b82f6, 5.0, 8.0);
     this.pointLight.position.set(0, 0, 0);
     this.vaultGroup.add(this.pointLight);
 
-    // ── Luxury Display Case (Thick glass walls) ──
+    // ── Display Case Vault (Thick glass walls) ──
     const caseS = 2.40;
     const outerBox = new THREE.BoxGeometry(caseS, caseS, caseS);
     const caseMat = new THREE.MeshPhysicalMaterial({
@@ -205,18 +251,18 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
       transparent: true,
       opacity: 0.16,
       roughness: 0.10,
-      metalness: 0.9,
+      metalness: 0.90,
       clearcoat: 1.0,
       side: THREE.DoubleSide
     });
     const outerMesh = new THREE.Mesh(outerBox, caseMat);
     this.vaultGroup.add(outerMesh);
 
-    // Glowing double edges wireframes
+    // Glowing double outer edges
     const edgesOuter = new THREE.EdgesGeometry(outerBox);
     const linesOuter = new THREE.LineSegments(
       edgesOuter,
-      new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 2 })
+      new THREE.LineBasicMaterial({ color: 0x3b82f6, linewidth: 1.5 })
     );
     this.vaultGroup.add(linesOuter);
 
@@ -241,14 +287,14 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     doorEdges.position.set(-caseS / 2, 0, 0);
     doorGroup.add(doorEdges);
 
-    // Gear Lock
-    const gearGeo = new THREE.TorusGeometry(0.30, 0.04, 8, 32);
+    // Low-poly Gear Lock
+    const gearGeo = new THREE.TorusGeometry(0.30, 0.04, 4, 16);
     const gearMat = new THREE.MeshStandardMaterial({ color: 0x60a5fa, metalness: 0.9, roughness: 0.1 });
     const gear = new THREE.Mesh(gearGeo, gearMat);
     gear.position.set(-caseS / 2, 0, 0.04);
     doorGroup.add(gear);
 
-    const axleGeo = new THREE.CylinderGeometry(0.05, 0.05, 0.16, 12);
+    const axleGeo = new THREE.CylinderGeometry(0.05, 0.05, 0.16, 8);
     const axle = new THREE.Mesh(axleGeo, gearMat);
     axle.rotation.x = Math.PI / 2;
     axle.position.set(-caseS / 2, 0, 0.04);
@@ -256,9 +302,9 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.vaultGroup.add(doorGroup);
 
-    // ── Nested Procedural AI energy Core ──
-    // Layer 1: Emissive inner core sphere
-    const coreSphereGeo = new THREE.SphereGeometry(0.28, 16, 16);
+    // ── Nested Procedural AI energy Core (Low-Poly Geometries) ──
+    // Layer 1: Emissive inner core sphere (low-segment sphere)
+    const coreSphereGeo = new THREE.SphereGeometry(0.28, 8, 8);
     const coreSphereMat = new THREE.MeshBasicMaterial({
       color: 0xffffff,
       transparent: true,
@@ -268,7 +314,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.innerEnergy = new THREE.Mesh(coreSphereGeo, coreSphereMat);
     this.vaultGroup.add(this.innerEnergy);
 
-    // Layer 2: Faceted translucent mid core (Icosahedron)
+    // Layer 2: Faceted translucent mid core (Icosahedron - 20 triangles)
     const facetedGeo = new THREE.IcosahedronGeometry(0.52, 0);
     const facetedMat = new THREE.MeshPhysicalMaterial({
       color: 0x0ea5e9,
@@ -284,12 +330,12 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     const midEdges = new THREE.LineSegments(
       new THREE.EdgesGeometry(facetedGeo),
-      new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 2 })
+      new THREE.LineBasicMaterial({ color: 0x06b6d4, linewidth: 1.5 })
     );
     this.midFaceted.add(midEdges);
 
-    // Layer 3: Larger outer faceted core (Icosahedron 1 level recursion)
-    const outerFacetedGeo = new THREE.IcosahedronGeometry(0.70, 1);
+    // Layer 3: Outer core (Low detail level icosahedron)
+    const outerFacetedGeo = new THREE.IcosahedronGeometry(0.70, 0);
     const outerFacetedMat = new THREE.MeshPhysicalMaterial({
       color: 0x8b5cf6,
       transparent: true,
@@ -352,8 +398,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     );
     this.vaultGroup.add(this.connectionLines);
 
-    // ── Concentric Base Platform Rings ──
-    const ringGeo = new THREE.TorusGeometry(1.8, 0.015, 8, 64);
+    // ── Concentric Base Platform Rings (Low poly geometry - segments reduced to 24) ──
+    const ringGeo = new THREE.TorusGeometry(1.8, 0.015, 3, 24);
     const ringMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.35 });
     const ring1 = new THREE.Mesh(ringGeo, ringMat);
     ring1.rotation.x = Math.PI / 2;
@@ -361,7 +407,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.vaultGroup.add(ring1);
     this.rings.push(ring1);
 
-    const ringGeo2 = new THREE.TorusGeometry(1.4, 0.01, 8, 64);
+    const ringGeo2 = new THREE.TorusGeometry(1.4, 0.01, 3, 24);
     const ringMat2 = new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.25 });
     const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
     ring2.rotation.x = Math.PI / 2;
@@ -369,8 +415,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.vaultGroup.add(ring2);
     this.rings.push(ring2);
 
-    // ── Drifting Particles ──
-    const particleCount = 200;
+    // ── Drifting Particles (Reduced count: 80 particles, slightly larger for visibility) ──
+    const particleCount = 80;
     const particleGeo = new THREE.BufferGeometry();
     const pos = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount * 3; i += 3) {
@@ -381,16 +427,16 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     particleGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
     const pMat = new THREE.PointsMaterial({
       color: 0x60a5fa,
-      size: 0.018,
+      size: 0.035, // larger glowing points
       transparent: true,
-      opacity: 0.65,
+      opacity: 0.70,
       blending: THREE.AdditiveBlending
     });
     this.particles = new THREE.Points(particleGeo, pMat);
     this.scene.add(this.particles);
 
-    // Volumetric cones
-    const coneGeo = new THREE.ConeGeometry(0.55, 2.5, 32, 1, true);
+    // Low-poly Volumetric Cones
+    const coneGeo = new THREE.ConeGeometry(0.55, 2.5, 6, 1, true);
     const coneMat = new THREE.MeshBasicMaterial({
       color: 0x0ea5e9,
       transparent: true,
@@ -516,13 +562,27 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.renderer.setSize(w, h);
   }
 
+  // ── Render loop (Capped frame rate and running outside Angular zone) ──
   private animate(): void {
     this.animationFrameId = requestAnimationFrame(() => this.animate());
 
     if (!this.isTabActive) return;
 
-    const t = performance.now() * 0.001;
+    const now = performance.now();
+    // Idle rate limiter: drop to 30 FPS if user has been inactive/idle for > 4s
+    const isIdle = (now - this.lastInteractionTime) >= 4000;
+    const targetFPS = isIdle ? 30 : 60;
+    const frameInterval = 1000 / targetFPS;
 
+    const elapsed = now - this.lastFrameTime;
+    if (elapsed >= frameInterval) {
+      // Adjust last frame border timestamp with overflow jitter correction
+      this.lastFrameTime = now - (elapsed % frameInterval);
+      this.renderFrame(now * 0.001);
+    }
+  }
+
+  private renderFrame(t: number): void {
     // Mouse parallax eased camera interpolation
     this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.05;
     this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.05;
