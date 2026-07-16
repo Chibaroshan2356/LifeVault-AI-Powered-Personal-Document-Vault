@@ -20,27 +20,42 @@ export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
   const token = tokenStorage.getAccessToken();
 
-  // Attach token if available — skip auth endpoints to avoid circular calls
   const isAuthEndpoint = req.url.includes('/auth/login') ||
                          req.url.includes('/auth/register') ||
                          req.url.includes('/auth/refresh');
 
-  // If the tokens are expired and we have no valid refresh token, redirect immediately
-  if (!isAuthEndpoint && tokenStorage.isRefreshTokenExpired()) {
+  const isLogoutRequest = req.url.includes('/auth/logout');
+
+  // Skip token attachment for login, register, and refresh endpoints
+  if (isAuthEndpoint) {
+    return next(req);
+  }
+
+  // Attach access token to outgoing request if available
+  const authReq = token
+    ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } })
+    : req;
+
+  // If it is a logout request, process directly without any refresh or recursive logout fallback checks
+  if (isLogoutRequest) {
+    return next(authReq);
+  }
+
+  // If the refresh token is expired, clear local storage and redirect immediately
+  if (tokenStorage.isRefreshTokenExpired()) {
     tokenStorage.clear();
-    authService.logout().subscribe();
+    authService.logout().subscribe({
+      next: () => {},
+      error: () => {}
+    });
     router.navigate(['/auth/login']);
     return throwError(() => new HttpErrorResponse({ status: 401, statusText: 'Unauthorized' }));
   }
 
-  const authReq = token && !isAuthEndpoint
-    ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } })
-    : req;
-
   return next(authReq).pipe(
     catchError((error: HttpErrorResponse) => {
-      // 401 on non-auth endpoints: token likely expired — refresh and retry
-      if (error.status === 401 && !isAuthEndpoint) {
+      // 401 on non-auth endpoints: access token expired — refresh and retry
+      if (error.status === 401) {
         return authService.refreshToken().pipe(
           switchMap((res) => {
             const newToken = res.data?.accessToken;
@@ -53,7 +68,11 @@ export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
             return throwError(() => error);
           }),
           catchError((refreshErr) => {
-            authService.logout().subscribe();
+            // Refresh failed: session invalid — perform local clear and redirect
+            authService.logout().subscribe({
+              next: () => {},
+              error: () => {}
+            });
             router.navigate(['/auth/login']);
             return throwError(() => refreshErr);
           })
