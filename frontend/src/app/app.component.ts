@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, ElementRef, ViewChild, HostListener } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 declare const window: any;
 
@@ -12,8 +13,18 @@ declare const window: any;
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'LifeVault';
+  isWelcomePage = false;
 
   @ViewChild('backgroundCanvas', { static: true }) backgroundCanvas!: ElementRef<HTMLDivElement>;
+
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.isWelcomePage = event.urlAfterRedirects.includes('/welcome');
+    });
+  }
+
 
   // Three.js instances
   private renderer: any;
@@ -329,8 +340,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private animate = (): void => {
-    // Only perform WebGL rendering calculations if tab is active (saves CPU/GPU when inactive)
-    if (this.isTabActive) {
+    // Only perform WebGL rendering calculations if tab is active and not on the welcome page (saves CPU/GPU)
+    if (this.isTabActive && !this.isWelcomePage) {
       this.renderFrame();
     }
     this.animationFrameId = requestAnimationFrame(this.animate);

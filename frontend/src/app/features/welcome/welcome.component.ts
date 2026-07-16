@@ -70,6 +70,11 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private currentMouseX = 0;
   private currentMouseY = 0;
 
+  private isTabActive = true;
+  private visibilityListener = (): void => {
+    this.isTabActive = document.visibilityState === 'visible';
+  };
+
   constructor(
     private readonly authService: AuthService,
     private readonly router:      Router,
@@ -85,6 +90,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.loadThreeJs().then(() => {
       this.initThree();
+      document.addEventListener('visibilitychange', this.visibilityListener);
       this.animate();
       this.isLoaded = true;
       this.cdr.markForCheck();
@@ -94,6 +100,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     cancelAnimationFrame(this.animationFrameId);
     this.resizeObs?.disconnect();
+    document.removeEventListener('visibilitychange', this.visibilityListener);
     this.cleanupThree();
   }
 
@@ -511,6 +518,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private animate(): void {
     this.animationFrameId = requestAnimationFrame(() => this.animate());
+
+    if (!this.isTabActive) return;
 
     const t = performance.now() * 0.001;
 
