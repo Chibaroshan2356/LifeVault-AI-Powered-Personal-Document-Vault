@@ -27,6 +27,9 @@
   width: var(--sidebar-width);
   height: calc(100vh - 40px);
   margin: 20px 10px 20px 20px; /* Floating space away from edges */
+  transform: translate3d(0, 0, 0); /* Promotes to an isolated GPU compositor layer */
+  backface-visibility: hidden;
+  will-change: transform;
   background: linear-gradient(
     135deg,
     rgba(23, 37, 84, 0.45) 0%,
@@ -424,6 +427,9 @@
   padding: 20px var(--sp-xl) 20px var(--sp-md);
   position: relative;
   z-index: 2;
+  contain: paint; /* Tells browser that children do not render outside bounds (no paint leakage) */
+  transform: translate3d(0, 0, 0); /* Promotes the scroll container to its own GPU compositor layer */
+  will-change: transform;
 }
 
 /* Animations */

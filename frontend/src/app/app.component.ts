@@ -1,4 +1,20 @@
-import { Component, OnInit, OnDestroy, ElementRef, ViewChild, HostListener } from '@angular/core';
+/**
+ * app.component.ts — Main App Component (Phase 10.6 Optimized)
+ *
+ * Implements a background WebGL scene using Three.js with optimizations:
+ *  - 70% reduction in background particle count (from 400 to 120).
+ *  - All event listeners (mousemove, scroll, visibility) bound outside Angular Zone to bypass change detection checks completely.
+ *  - Throttled input coordinates calculations (20 FPS update rate limit).
+ *  - Frame rate cap: 30 FPS when user is idle, waking up to 60 FPS during scroll or mouse movements.
+ */
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ElementRef,
+  ViewChild,
+  NgZone,
+} from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
 
@@ -16,15 +32,6 @@ export class AppComponent implements OnInit, OnDestroy {
   isWelcomePage = false;
 
   @ViewChild('backgroundCanvas', { static: true }) backgroundCanvas!: ElementRef<HTMLDivElement>;
-
-  constructor(private router: Router) {
-    this.router.events.pipe(
-      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      this.isWelcomePage = event.urlAfterRedirects.includes('/welcome');
-    });
-  }
-
 
   // Three.js instances
   private renderer: any;
@@ -49,23 +56,68 @@ export class AppComponent implements OnInit, OnDestroy {
   private currentMouseX = 0;
   private currentMouseY = 0;
 
+  // Frame limiter state
+  private lastFrameTime = 0;
+  private lastMouseUpdateTime = 0;
+  private lastInteractionTime = 0;
+
+  private visibilityListener = (): void => {
+    this.isTabActive = document.visibilityState === 'visible' && document.hasFocus();
+  };
+
+  private onMouseMoveThrottled = (event: MouseEvent): void => {
+    const now = performance.now();
+    if (now - this.lastMouseUpdateTime >= 50) {
+      this.targetMouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      this.targetMouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+      this.lastMouseUpdateTime = now;
+      this.lastInteractionTime = now; // wakes up loop to 60 FPS
+    }
+  };
+
+  private onScrollThrottled = (): void => {
+    this.lastInteractionTime = performance.now(); // wakes up loop to 60 FPS
+  };
+
+  constructor(
+    private readonly router: Router,
+    private readonly ngZone: NgZone
+  ) {
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.isWelcomePage = event.urlAfterRedirects.includes('/welcome');
+    });
+  }
+
   ngOnInit(): void {
     this.loadThreeJs().then(() => {
-      this.initThree();
-      this.animate();
-      this.setupVisibilityListener();
+      this.ngZone.runOutsideAngular(() => {
+        this.initThree();
+        
+        // Manual event bindings completely outside Angular Zone to bypass CD checks
+        window.addEventListener('mousemove', this.onMouseMoveThrottled);
+        window.addEventListener('scroll', this.onScrollThrottled, { capture: true, passive: true });
+        document.addEventListener('visibilitychange', this.visibilityListener);
+        window.addEventListener('focus', this.visibilityListener);
+        window.addEventListener('blur', this.visibilityListener);
+
+        const now = performance.now();
+        this.lastFrameTime = now;
+        this.lastInteractionTime = now;
+
+        this.animate();
+      });
     });
   }
 
   ngOnDestroy(): void {
+    window.removeEventListener('mousemove', this.onMouseMoveThrottled);
+    window.removeEventListener('scroll', this.onScrollThrottled, { capture: true });
+    document.removeEventListener('visibilitychange', this.visibilityListener);
+    window.removeEventListener('focus', this.visibilityListener);
+    window.removeEventListener('blur', this.visibilityListener);
     this.cleanupThree();
-  }
-
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
-    // Only capture small offset angle mapping (a few degrees rotation)
-    this.targetMouseX = (event.clientX / window.innerWidth) * 2 - 1;
-    this.targetMouseY = -(event.clientY / window.innerHeight) * 2 + 1;
   }
 
   private loadThreeJs(): Promise<void> {
@@ -181,7 +233,7 @@ export class AppComponent implements OnInit, OnDestroy {
     // 3. Renderer
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
     this.renderer.setSize(width, height);
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     container.appendChild(this.renderer.domElement);
 
@@ -191,22 +243,22 @@ export class AppComponent implements OnInit, OnDestroy {
     this.scene.add(this.orbGroup);
 
     // A. Glass Core Sphere (Scaled up 2.25x)
-    const coreGeo = new THREE.SphereGeometry(3.6, 64, 64);
+    const coreGeo = new THREE.SphereGeometry(3.6, 32, 32);
     const coreMat = new THREE.MeshBasicMaterial({
       color: 0x4f7cff,
       transparent: true,
-      opacity: 0.22, // Faint 22% opacity signature glow
+      opacity: 0.22,
     });
     this.innerCore = new THREE.Mesh(coreGeo, coreMat);
     this.orbGroup.add(this.innerCore);
 
     // B. Rotating Wireframe Globe (Scaled up 2.2x)
-    const wireGeo = new THREE.IcosahedronGeometry(4.6, 2);
+    const wireGeo = new THREE.IcosahedronGeometry(4.6, 1);
     const wireMat = new THREE.MeshBasicMaterial({
       color: 0x62c7ff,
       wireframe: true,
       transparent: true,
-      opacity: 0.12 // Reduced wireframe clutter
+      opacity: 0.12
     });
     this.outerWireframe = new THREE.Mesh(wireGeo, wireMat);
     this.orbGroup.add(this.outerWireframe);
@@ -221,7 +273,7 @@ export class AppComponent implements OnInit, OnDestroy {
     
     for (let i = 0; i < 3; i++) {
       const rSize = 5.2 + i * 0.8;
-      const torGeo = new THREE.TorusGeometry(rSize, 0.03, 16, 100);
+      const torGeo = new THREE.TorusGeometry(rSize, 0.03, 8, 48);
       const ringMesh = new THREE.Mesh(torGeo, torMat);
       
       const pivot = new THREE.Group();
@@ -247,12 +299,12 @@ export class AppComponent implements OnInit, OnDestroy {
       const cardMat = new THREE.MeshBasicMaterial({
         map: texture,
         transparent: true,
-        opacity: 0.22, // Faint ghost documents
+        opacity: 0.22,
         side: THREE.DoubleSide
       });
 
       const mesh = new THREE.Mesh(cardGeo, cardMat);
-      const orbitRadius = 6.5 + idx * 0.5; // Orbit path scaled out to bypass core sphere
+      const orbitRadius = 6.5 + idx * 0.5;
       const initialAngle = (idx * Math.PI * 2) / cardTitles.length;
 
       mesh.position.set(Math.cos(initialAngle) * orbitRadius, 0, Math.sin(initialAngle) * orbitRadius);
@@ -279,13 +331,12 @@ export class AppComponent implements OnInit, OnDestroy {
       });
     });
 
-    // 5. Star Dust / Floating Particles
-    const particleCount = 400;
+    // 5. Star Dust / Floating Particles (70% Reduction: from 400 to 120 particles)
+    const particleCount = 120;
     const particleGeo = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
-      // Spawn particles spherically around centerpiece
       const u = Math.random();
       const v = Math.random();
       const theta = u * 2.0 * Math.PI;
@@ -300,7 +351,7 @@ export class AppComponent implements OnInit, OnDestroy {
     particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     const pTex = this.createParticleTexture();
     const particleMat = new THREE.PointsMaterial({
-      size: 0.12,
+      size: 0.14,
       map: pTex,
       transparent: true,
       opacity: 0.6,
@@ -333,18 +384,22 @@ export class AppComponent implements OnInit, OnDestroy {
     this.renderer.setSize(width, height);
   };
 
-  private setupVisibilityListener(): void {
-    document.addEventListener('visibilitychange', () => {
-      this.isTabActive = document.visibilityState === 'visible';
-    });
-  }
-
   private animate = (): void => {
-    // Only perform WebGL rendering calculations if tab is active and not on the welcome page (saves CPU/GPU)
-    if (this.isTabActive && !this.isWelcomePage) {
+    this.animationFrameId = requestAnimationFrame(this.animate);
+
+    if (!this.isTabActive || this.isWelcomePage) return;
+
+    const now = performance.now();
+    // Cap to 30 FPS when user is idle (no mouse/scroll for 3s), otherwise render at 60 FPS
+    const isIdle = (now - this.lastInteractionTime) >= 3000;
+    const targetFPS = isIdle ? 30 : 60;
+    const frameInterval = 1000 / targetFPS;
+
+    const elapsed = now - this.lastFrameTime;
+    if (elapsed >= frameInterval) {
+      this.lastFrameTime = now - (elapsed % frameInterval);
       this.renderFrame();
     }
-    this.animationFrameId = requestAnimationFrame(this.animate);
   };
 
   private renderFrame(): void {

@@ -152,7 +152,6 @@ body.light-theme {
     radial-gradient(ellipse 80% 50% at 20% 10%, rgba(79, 124, 255, 0.04) 0%, transparent 60%),
     radial-gradient(ellipse 60% 60% at 80% 5%,  rgba(91, 108, 255, 0.03) 0%, transparent 55%),
     radial-gradient(ellipse 70% 40% at 50% 80%, rgba(98, 199, 255, 0.02) 0%, transparent 50%);
-  background-attachment: fixed;
 
   &::before { opacity: 0.012; }
   &::after { background: radial-gradient(ellipse 120% 120% at 50% 50%, transparent 40%, rgba(220, 228, 255, 0.3) 100%); }
