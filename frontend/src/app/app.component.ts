@@ -1,11 +1,12 @@
 /**
- * app.component.ts — Main App Component (Phase 10.6 Optimized)
+ * app.component.ts — Main App Component (Phase 10.6 WebGL Optimized)
  *
- * Implements a background WebGL scene using Three.js with optimizations:
- *  - 70% reduction in background particle count (from 400 to 120).
- *  - All event listeners (mousemove, scroll, visibility) bound outside Angular Zone to bypass change detection checks completely.
- *  - Throttled input coordinates calculations (20 FPS update rate limit).
- *  - Frame rate cap: 30 FPS when user is idle, waking up to 60 FPS during scroll or mouse movements.
+ * Implements a background WebGL scene using Three.js with complete rendering optimizations:
+ *  - Disables antialiasing and limits precision to 'mediump' to reduce GPU load.
+ *  - WebGL execution runs entirely outside Angular Zone.
+ *  - Removed all scroll event listeners so scrolling never triggers renderer adjustments or GPU syncs.
+ *  - Replaced dynamic BufferGeometry position updates with static Line Trails and pivot Groups.
+ *  - Eliminated object allocations inside the render loop.
  */
 import {
   Component,
@@ -56,10 +57,9 @@ export class AppComponent implements OnInit, OnDestroy {
   private currentMouseX = 0;
   private currentMouseY = 0;
 
-  // Frame limiter state
+  // Frame control state
   private lastFrameTime = 0;
   private lastMouseUpdateTime = 0;
-  private lastInteractionTime = 0;
 
   private visibilityListener = (): void => {
     this.isTabActive = document.visibilityState === 'visible' && document.hasFocus();
@@ -71,12 +71,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.targetMouseX = (event.clientX / window.innerWidth) * 2 - 1;
       this.targetMouseY = -(event.clientY / window.innerHeight) * 2 + 1;
       this.lastMouseUpdateTime = now;
-      this.lastInteractionTime = now; // wakes up loop to 60 FPS
     }
-  };
-
-  private onScrollThrottled = (): void => {
-    this.lastInteractionTime = performance.now(); // wakes up loop to 60 FPS
   };
 
   constructor(
@@ -95,17 +90,13 @@ export class AppComponent implements OnInit, OnDestroy {
       this.ngZone.runOutsideAngular(() => {
         this.initThree();
         
-        // Manual event bindings completely outside Angular Zone to bypass CD checks
+        // Manual mouse and visibility listeners outside Angular Zone
         window.addEventListener('mousemove', this.onMouseMoveThrottled);
-        window.addEventListener('scroll', this.onScrollThrottled, { capture: true, passive: true });
         document.addEventListener('visibilitychange', this.visibilityListener);
         window.addEventListener('focus', this.visibilityListener);
         window.addEventListener('blur', this.visibilityListener);
 
-        const now = performance.now();
-        this.lastFrameTime = now;
-        this.lastInteractionTime = now;
-
+        this.lastFrameTime = performance.now();
         this.animate();
       });
     });
@@ -113,7 +104,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     window.removeEventListener('mousemove', this.onMouseMoveThrottled);
-    window.removeEventListener('scroll', this.onScrollThrottled, { capture: true });
     document.removeEventListener('visibilitychange', this.visibilityListener);
     window.removeEventListener('focus', this.visibilityListener);
     window.removeEventListener('blur', this.visibilityListener);
@@ -142,7 +132,6 @@ export class AppComponent implements OnInit, OnDestroy {
     const ctx = canvas.getContext('2d');
 
     if (ctx) {
-      // Rounded card fill
       const grad = ctx.createLinearGradient(0, 0, 256, 340);
       grad.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
       grad.addColorStop(0.5, 'rgba(255, 255, 255, 0.03)');
@@ -184,7 +173,7 @@ export class AppComponent implements OnInit, OnDestroy {
       ctx.font = '11px sans-serif';
       ctx.fillText('Secure Cloud Storage', 32, 75);
 
-      // Dummy content details
+      // Content mockup
       ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
       ctx.fillRect(32, 105, 192, 8);
       ctx.fillRect(32, 125, 192, 8);
@@ -222,7 +211,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const width = container.clientWidth || window.innerWidth;
     const height = container.clientHeight || window.innerHeight;
 
-    // 1. Scene with subtle space fog
+    // 1. Scene with space fog
     this.scene = new THREE.Scene();
     this.scene.fog = new THREE.FogExp2(0x03050c, 0.015);
 
@@ -230,19 +219,25 @@ export class AppComponent implements OnInit, OnDestroy {
     this.camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 100);
     this.camera.position.set(0, 0, 12);
 
-    // 3. Renderer
-    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+    // 3. Renderer with high performance flags and disabled antialias
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: false,
+      alpha: true,
+      powerPreference: "high-performance",
+      precision: "mediump",
+      preserveDrawingBuffer: false,
+    });
     this.renderer.setSize(width, height);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     container.appendChild(this.renderer.domElement);
 
-    // 4. Core group (position it in the top-right background, partially behind hero)
+    // 4. Core group (position it in the top-right background)
     this.orbGroup = new THREE.Group();
     this.orbGroup.position.set(5.2, 3.0, -1.0);
     this.scene.add(this.orbGroup);
 
-    // A. Glass Core Sphere (Scaled up 2.25x)
+    // A. Glass Core Sphere
     const coreGeo = new THREE.SphereGeometry(3.6, 32, 32);
     const coreMat = new THREE.MeshBasicMaterial({
       color: 0x4f7cff,
@@ -252,7 +247,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.innerCore = new THREE.Mesh(coreGeo, coreMat);
     this.orbGroup.add(this.innerCore);
 
-    // B. Rotating Wireframe Globe (Scaled up 2.2x)
+    // B. Rotating Wireframe Globe (AI Core Outer Wire)
     const wireGeo = new THREE.IcosahedronGeometry(4.6, 1);
     const wireMat = new THREE.MeshBasicMaterial({
       color: 0x62c7ff,
@@ -263,7 +258,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.outerWireframe = new THREE.Mesh(wireGeo, wireMat);
     this.orbGroup.add(this.outerWireframe);
 
-    // C. Halo Torus Rings (Scaled up 2x, line thickness adjusted)
+    // C. Static Torus Rings
     const torMat = new THREE.MeshBasicMaterial({
       color: 0x6a5bff,
       transparent: true,
@@ -283,7 +278,7 @@ export class AppComponent implements OnInit, OnDestroy {
       this.ringGroups.push(pivot);
     }
 
-    // D. Orbiting Document Cards (translucent & glowing)
+    // D. Orbiting Document Cards via pivot Group hierarchy (avoids CPU calculations and GPU vertex updates)
     const cardTitles = [
       { name: 'Passport', color: '#ff6b6b' },
       { name: 'Aadhaar', color: '#62c7ff' },
@@ -306,32 +301,36 @@ export class AppComponent implements OnInit, OnDestroy {
       const mesh = new THREE.Mesh(cardGeo, cardMat);
       const orbitRadius = 6.5 + idx * 0.5;
       const initialAngle = (idx * Math.PI * 2) / cardTitles.length;
+      const heightOffset = (idx - 2) * 0.4;
 
-      mesh.position.set(Math.cos(initialAngle) * orbitRadius, 0, Math.sin(initialAngle) * orbitRadius);
-      this.orbGroup.add(mesh);
+      // Pivot Group orbiting Y-axis
+      const pivot = new THREE.Group();
+      pivot.rotation.y = initialAngle;
+      this.orbGroup.add(pivot);
 
-      // Light Trail Line
+      // Static position inside pivot Group coordinate space
+      mesh.position.set(orbitRadius, heightOffset, 0);
+      pivot.add(mesh);
+
+      // Light Trail Line statically placed inside pivot Group (never requires dynamic buffer updates)
       const trailMat = new THREE.LineBasicMaterial({
         color: new THREE.Color(info.color),
         transparent: true,
         opacity: 0.10
       });
-      const trailPoints = [new THREE.Vector3(0, 0, 0), mesh.position.clone()];
-      const trailGeo = new THREE.BufferGeometry().setFromPoints(trailPoints);
+      const points = [new THREE.Vector3(0, 0, 0), new THREE.Vector3(orbitRadius, heightOffset, 0)];
+      const trailGeo = new THREE.BufferGeometry().setFromPoints(points);
       const lineTrail = new THREE.Line(trailGeo, trailMat);
-      this.orbGroup.add(lineTrail);
+      pivot.add(lineTrail);
 
       this.documentCards.push({
+        pivot,
         mesh,
-        radius: orbitRadius,
-        speed: 0.25 + idx * 0.05,
-        angle: initialAngle,
-        heightOffset: (idx - 2) * 0.4,
-        lineTrail
+        speed: 0.25 + idx * 0.05
       });
     });
 
-    // 5. Star Dust / Floating Particles (70% Reduction: from 400 to 120 particles)
+    // 5. Star Dust / Floating Particles
     const particleCount = 120;
     const particleGeo = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
@@ -390,12 +389,9 @@ export class AppComponent implements OnInit, OnDestroy {
     if (!this.isTabActive || this.isWelcomePage) return;
 
     const now = performance.now();
-    // Cap to 30 FPS when user is idle (no mouse/scroll for 3s), otherwise render at 60 FPS
-    const isIdle = (now - this.lastInteractionTime) >= 3000;
-    const targetFPS = isIdle ? 30 : 60;
-    const frameInterval = 1000 / targetFPS;
-
+    const frameInterval = 1000 / 60; // Smooth 60 FPS target render loop
     const elapsed = now - this.lastFrameTime;
+
     if (elapsed >= frameInterval) {
       this.lastFrameTime = now - (elapsed % frameInterval);
       this.renderFrame();
@@ -410,12 +406,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.05;
     this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.05;
 
-    // Small, subtle rotation of centerpiece based on mouse (only a few degrees)
+    // Centerpiece parent rotation and floating updates
     if (this.orbGroup) {
       this.orbGroup.rotation.y = time * 0.08 + this.currentMouseX * 0.15;
       this.orbGroup.rotation.x = Math.sin(time * 0.06) * 0.1 + this.currentMouseY * 0.12;
-      
-      // Gentle floating up and down offset relative to its new top-right position
       this.orbGroup.position.y = 3.0 + Math.sin(time * 0.8) * 0.15;
     }
 
@@ -425,40 +419,19 @@ export class AppComponent implements OnInit, OnDestroy {
       this.innerCore.scale.set(pulse, pulse, pulse);
     }
 
-    // Wireframe slow counter-rotation
+    // Wireframe counter-rotation
     if (this.outerWireframe) {
       this.outerWireframe.rotation.y = -time * 0.1;
       this.outerWireframe.rotation.z = time * 0.05;
     }
 
-    // Individual torus rings spin
-    this.ringGroups.forEach((pivot, idx) => {
-      pivot.rotation.x += 0.0015 * (idx + 1);
-      pivot.rotation.y += 0.0008 * (idx + 1);
-    });
-
-    // Orbiting document cards rotation and coordinate trails recalculations
+    // Update document card rotations (faces camera using lookAt)
     this.documentCards.forEach((card) => {
-      card.angle += 0.006 * card.speed;
-      const newX = Math.cos(card.angle) * card.radius;
-      const newZ = Math.sin(card.angle) * card.radius;
-      const newY = Math.sin(card.angle * 2.2) * 0.3 + card.heightOffset;
-      
-      card.mesh.position.set(newX, newY, newZ);
-      
-      // Face camera vector
+      card.pivot.rotation.y += 0.0012 * card.speed;
       card.mesh.lookAt(this.camera.position);
-
-      if (card.lineTrail) {
-        const positions = card.lineTrail.geometry.attributes.position.array;
-        positions[3] = newX;
-        positions[4] = newY;
-        positions[5] = newZ;
-        card.lineTrail.geometry.attributes.position.needsUpdate = true;
-      }
     });
 
-    // Drifting background star field
+    // Drifting star field rotation
     if (this.particleSystem) {
       this.particleSystem.rotation.y = -time * 0.015;
     }
@@ -477,7 +450,6 @@ export class AppComponent implements OnInit, OnDestroy {
         this.renderer.dispose();
       }
       
-      // Traverse scene and dispose geometries, materials and textures
       this.scene.traverse((object: any) => {
         if (!object.isMesh && !object.isPoints && !object.isLine) return;
         
