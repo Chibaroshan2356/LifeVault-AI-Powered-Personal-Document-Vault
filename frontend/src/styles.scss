@@ -152,7 +152,6 @@ body.light-theme {
     radial-gradient(ellipse 80% 50% at 20% 10%, rgba(79, 124, 255, 0.04) 0%, transparent 60%),
     radial-gradient(ellipse 60% 60% at 80% 5%,  rgba(91, 108, 255, 0.03) 0%, transparent 55%),
     radial-gradient(ellipse 70% 40% at 50% 80%, rgba(98, 199, 255, 0.02) 0%, transparent 50%);
-  background-attachment: fixed;
 
   &::before { opacity: 0.012; }
   &::after { background: radial-gradient(ellipse 120% 120% at 50% 50%, transparent 40%, rgba(220, 228, 255, 0.3) 100%); }
@@ -280,8 +279,8 @@ button:active, .action-btn:active, .nav-item:active, .file-card:active, .action-
    ================================================================ */
 /* Premium frosted glass surfaces */
 .card, .panel, .widget {
-  backdrop-filter: blur(30px) saturate(180%) brightness(1.08) !important;
-  -webkit-backdrop-filter: blur(30px) saturate(180%) brightness(1.08) !important;
+  backdrop-filter: blur(12px) saturate(180%) brightness(1.08) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(180%) brightness(1.08) !important;
   background: rgba(255, 255, 255, 0.06) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   border-top: 1px solid rgba(255, 255, 255, 0.25) !important; /* Top edge thin highlight */
@@ -293,8 +292,8 @@ button:active, .action-btn:active, .nav-item:active, .file-card:active, .action-
 }
 
 .workspace-hero {
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
   background: linear-gradient(
     135deg,
     rgba(79, 124, 255, 0.08) 0%,
@@ -311,7 +310,7 @@ button:active, .action-btn:active, .nav-item:active, .file-card:active, .action-
 
 body.light-theme {
   .card, .panel, .widget {
-    backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
     background: rgba(255, 255, 255, 0.72) !important;
     border: 1px solid rgba(79, 124, 255, 0.1) !important;
     box-shadow: 0 8px 32px rgba(79, 124, 255, 0.06), 0 1px 0 rgba(255,255,255,0.9) inset !important;

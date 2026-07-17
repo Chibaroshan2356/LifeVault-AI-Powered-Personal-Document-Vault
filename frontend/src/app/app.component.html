@@ -1,5 +1,5 @@
-<!-- Immersive WebGL Background Canvas (Floats behind layout shell content) -->
-<div #backgroundCanvas class="global-3d-bg">
+<div class="global-3d-bg" [style.display]="isWelcomePage ? 'none' : 'block'">
+  <canvas #bgCanvas class="particles-canvas"></canvas>
   <div class="light-glow glow-top-left"></div>
   <div class="light-glow glow-top-right"></div>
   <div class="light-glow glow-bottom-center"></div>

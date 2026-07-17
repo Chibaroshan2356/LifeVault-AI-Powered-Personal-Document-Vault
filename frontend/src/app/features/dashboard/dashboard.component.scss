@@ -6,13 +6,10 @@
   max-width: var(--max-width);
   margin: 0 auto;
 
-  // Staggered entrance: each direct child fades up in sequence
-  & > *:nth-child(1) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both; }
-  & > *:nth-child(2) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both; }
-  & > *:nth-child(3) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
-  & > *:nth-child(4) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
-  & > *:nth-child(5) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both; }
-  & > *:nth-child(n+6){ animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both; }
+  // Staggered entrance: each direct child fades up in sequence matching user delay guidelines
+  & > *:nth-child(1) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+  & > *:nth-child(2) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both; }
+  & > *:nth-child(3) { animation: dashboard-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both; }
 }
 
 @keyframes dashboard-enter {
@@ -876,8 +873,8 @@
   gap: var(--sp-lg);
   
   .file-card {
-    backdrop-filter: blur(30px) saturate(180%) brightness(1.08) !important;
-    -webkit-backdrop-filter: blur(30px) saturate(180%) brightness(1.08) !important;
+    backdrop-filter: blur(12px) saturate(180%) brightness(1.08) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(180%) brightness(1.08) !important;
     background: rgba(255, 255, 255, 0.06) !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.25) !important;
@@ -1094,176 +1091,6 @@
 .workspace-container {
   position: relative;
   overflow: visible;
-}
-
-.cinematic-bg-layer {
-  position: fixed;   /* fixed so it stays behind page content as user scrolls */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: -1;       /* behind everything else in the layout */
-  overflow: hidden;
-  will-change: transform;
-  transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* ── Organic mesh gradient blobs ── */
-.aurora-blob {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  will-change: transform;
-
-  /* Royal Blue — large diffuse blob top-left */
-  &.blob-1 {
-    width: 1400px;
-    height: 1000px;
-    top: -400px;
-    left: -400px;
-    background: radial-gradient(ellipse at center,
-      rgba(79, 124, 255, 0.05) 0%,
-      rgba(91, 108, 255, 0.03) 30%,
-      transparent 70%
-    );
-    filter: blur(280px);
-    animation: mesh-drift-1 90s ease-in-out infinite alternate;
-  }
-
-  /* Indigo / Violet — large blob top-right */
-  &.blob-2 {
-    width: 1200px;
-    height: 1200px;
-    top: -300px;
-    right: -500px;
-    background: radial-gradient(ellipse at center,
-      rgba(106, 91, 255, 0.04) 0%,
-      rgba(91, 108, 255, 0.02) 35%,
-      transparent 68%
-    );
-    filter: blur(320px);
-    animation: mesh-drift-2 110s ease-in-out infinite alternate;
-  }
-
-  /* Azure / Cyan — mid-screen accent */
-  &.blob-3 {
-    width: 1000px;
-    height: 800px;
-    top: 30%;
-    left: 35%;
-    background: radial-gradient(ellipse at center,
-      rgba(98, 199, 255, 0.03) 0%,
-      rgba(79, 124, 255, 0.02) 40%,
-      transparent 70%
-    );
-    filter: blur(250px);
-    animation: mesh-drift-3 75s ease-in-out infinite alternate;
-  }
-
-  /* Deep blue — lower-right anchor */
-  &.blob-4 {
-    width: 1500px;
-    height: 900px;
-    bottom: -350px;
-    right: -300px;
-    background: radial-gradient(ellipse at center,
-      rgba(59, 130, 246, 0.04) 0%,
-      rgba(99, 102, 241, 0.02) 35%,
-      transparent 68%
-    );
-    filter: blur(350px);
-    animation: mesh-drift-4 120s ease-in-out infinite alternate;
-  }
-}
-
-@keyframes mesh-drift-1 {
-  0%   { transform: translate(0px, 0px)   scale(1);    }
-  25%  { transform: translate(80px, 50px) scale(1.08); }
-  50%  { transform: translate(50px, 100px) scale(1.05); }
-  75%  { transform: translate(-30px, 70px) scale(1.12); }
-  100% { transform: translate(-60px, -20px) scale(0.97); }
-}
-
-@keyframes mesh-drift-2 {
-  0%   { transform: translate(0px, 0px)    scale(1);    }
-  33%  { transform: translate(-100px, 60px) scale(1.10); }
-  66%  { transform: translate(-50px, -80px) scale(0.93); }
-  100% { transform: translate(70px, 40px)   scale(1.06); }
-}
-
-@keyframes mesh-drift-3 {
-  0%   { transform: translate(0px, 0px)   scale(1); }
-  40%  { transform: translate(60px, -90px) scale(1.07); }
-  70%  { transform: translate(-70px, -40px) scale(0.96); }
-  100% { transform: translate(30px, 80px)  scale(1.04); }
-}
-
-@keyframes mesh-drift-4 {
-  0%   { transform: translate(0px, 0px)     scale(1);    }
-  30%  { transform: translate(-80px, -60px) scale(1.05); }
-  60%  { transform: translate(60px, -100px) scale(0.95); }
-  100% { transform: translate(30px, 50px)   scale(1.08); }
-}
-
-/* ── Floating drift particles (kept minimal) ── */
-.floating-particles-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.particle {
-  position: absolute;
-  bottom: -20px;
-  border-radius: 50%;
-  pointer-events: none;
-  will-change: transform;
-
-  &.p1 {
-    width: 3px; height: 3px;
-    left: 18%;
-    background: rgba(98, 199, 255, 0.4);
-    box-shadow: 0 0 6px rgba(98, 199, 255, 0.5);
-    animation: drift 60s infinite linear;
-    animation-delay: 4s;
-  }
-
-  &.p2 {
-    width: 2px; height: 2px;
-    left: 48%;
-    background: rgba(79, 124, 255, 0.4);
-    box-shadow: 0 0 5px rgba(79, 124, 255, 0.5);
-    animation: drift 80s infinite linear;
-    animation-delay: 15s;
-  }
-
-  &.p3 {
-    width: 3px; height: 3px;
-    left: 72%;
-    background: rgba(142, 231, 255, 0.35);
-    box-shadow: 0 0 6px rgba(142, 231, 255, 0.4);
-    animation: drift 70s infinite linear;
-    animation-delay: 8s;
-  }
-
-  &.p4 {
-    width: 2px; height: 2px;
-    left: 89%;
-    background: rgba(79, 124, 255, 0.35);
-    box-shadow: 0 0 4px rgba(79, 124, 255, 0.4);
-    animation: drift 90s infinite linear;
-    animation-delay: 22s;
-  }
-}
-
-@keyframes drift {
-  0%   { transform: translateY(0) translateX(0);      opacity: 0; }
-  8%   { opacity: 0.5; }
-  92%  { opacity: 0.5; }
-  100% { transform: translateY(-900px) translateX(50px); opacity: 0; }
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -1629,7 +1456,8 @@
     stroke-dasharray: 264;
     transform: rotate(-90deg);
     transform-origin: 50px 50px;
-    transition: stroke-dashoffset 0.8s ease-out;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: stroke-dashoffset;
     filter: drop-shadow(0 0 6px rgba(79, 124, 255, 0.8));
   }
 

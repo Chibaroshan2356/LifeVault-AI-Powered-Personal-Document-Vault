@@ -7,6 +7,18 @@
   pointer-events: none; /* Clicks completely bypass to interactive UI elements */
   overflow: hidden;
   background-color: #0F172F; /* Deep navy base canvas background */
+  transform: translate3d(0, 0, 0); /* Promotes to an isolated GPU compositor layer */
+  backface-visibility: hidden;
+  canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+  }
   
   /* Layered light sources */
   .light-glow {

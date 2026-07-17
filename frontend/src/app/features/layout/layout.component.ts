@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+  NgZone,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,15 +30,28 @@ import { AuthService } from '../auth/services/auth.service';
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   userName = '';
   userEmail = '';
   isDarkTheme = true; // default dark first
 
+  private sidebarMouseMoveListener = (event: MouseEvent): void => {
+    const sidebar = event.currentTarget as HTMLElement;
+    const rect = sidebar.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    sidebar.style.setProperty('--mouse-x', `${x}px`);
+    sidebar.style.setProperty('--mouse-y', `${y}px`);
+  };
+
   constructor(
     private readonly authService: AuthService,
     private readonly router: Router,
+    private readonly elRef: ElementRef,
+    private readonly ngZone: NgZone,
+    private readonly cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -37,13 +59,30 @@ export class LayoutComponent implements OnInit {
     this.applyTheme();
   }
 
+  ngAfterViewInit(): void {
+    // Register the mouse movement listener outside Angular Zone to bypass change detection checks
+    this.ngZone.runOutsideAngular(() => {
+      const sidebarEl = this.elRef.nativeElement.querySelector('.sidebar');
+      if (sidebarEl) {
+        sidebarEl.addEventListener('mousemove', this.sidebarMouseMoveListener);
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    const sidebarEl = this.elRef.nativeElement.querySelector('.sidebar');
+    if (sidebarEl) {
+      sidebarEl.removeEventListener('mousemove', this.sidebarMouseMoveListener);
+    }
+  }
+
   private loadProfile(): void {
-    // Attempt profile load
     this.authService.getProfile().subscribe({
       next: (res) => {
         if (res.success && res.data) {
           this.userName = res.data.fullName;
           this.userEmail = res.data.email;
+          this.cdr.markForCheck();
         }
       },
       error: () => {
@@ -52,6 +91,7 @@ export class LayoutComponent implements OnInit {
         if (user) {
           this.userName = user.fullName;
           this.userEmail = user.email;
+          this.cdr.markForCheck();
         }
       }
     });
@@ -60,6 +100,7 @@ export class LayoutComponent implements OnInit {
   toggleTheme(): void {
     this.isDarkTheme = !this.isDarkTheme;
     this.applyTheme();
+    this.cdr.markForCheck();
   }
 
   private applyTheme(): void {
@@ -82,14 +123,5 @@ export class LayoutComponent implements OnInit {
         this.router.navigate(['/auth/login']);
       }
     });
-  }
-
-  onSidebarMouseMove(event: MouseEvent): void {
-    const sidebar = event.currentTarget as HTMLElement;
-    const rect = sidebar.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    sidebar.style.setProperty('--mouse-x', `${x}px`);
-    sidebar.style.setProperty('--mouse-y', `${y}px`);
   }
 }
