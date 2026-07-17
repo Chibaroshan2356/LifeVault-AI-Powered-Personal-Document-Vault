@@ -116,12 +116,10 @@
           <a class="see-all" routerLink="/documents">View Archive</a>
         </div>
 
-        <!-- Files grid feed (Varying heights/sizes) -->
+        <!-- Files grid feed (Uniform sizing) -->
         <div class="files-grid" *ngIf="recentDocuments.length > 0">
           <div class="file-card" 
                *ngFor="let doc of recentDocuments | slice:0:3; let i = index; trackBy: trackByDocId" 
-               [class.card-tall]="i === 1"
-               [class.card-wide]="i === 0"
                [routerLink]="['/documents', doc._id]">
             
             <div class="file-card-header">

@@ -19,7 +19,7 @@
         <span>Dashboard</span>
         <span class="active-indicator-glow"></span>
       </a>
-      <a class="nav-item" routerLink="/documents" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" matRipple>
+      <a class="nav-item" routerLink="/documents" [class.active]="isDocumentsActive()" matRipple>
         <i class="lucide-folder"></i>
         <span>Documents</span>
         <span class="active-indicator-glow"></span>

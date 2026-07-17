@@ -1,228 +1,297 @@
 <div class="search-container">
   <!-- Header -->
   <header class="search-header">
-    <h1>Search Documents</h1>
-    <button class="back-btn" routerLink="/documents">
+    <div class="header-left">
+      <h1>Search Vault</h1>
+      <p class="subtitle">Perform deep semantic queries, full-text OCR lookup, and metadata filters across your secure vault.</p>
+    </div>
+    <button class="back-btn" routerLink="/documents" matRipple>
       <mat-icon>arrow_back</mat-icon>
       <span>Back to List</span>
     </button>
   </header>
 
-  <!-- Search Form -->
-  <form [formGroup]="searchForm" class="search-form" (ngSubmit)="executeSearch()">
-    <!-- Full-text search -->
-    <div class="form-section">
-      <h3>Full-Text Search</h3>
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Search OCR Content</mat-label>
-        <input matInput formControlName="q" placeholder="Type text to search within document contents...">
-        <mat-icon matPrefix>search</mat-icon>
-      </mat-form-field>
-    </div>
+  <!-- Two Column Layout Wrapper -->
+  <div class="search-layout">
+    
+    <!-- Left Sidebar: Filters and Parameters -->
+    <aside class="search-sidebar card">
+      <form [formGroup]="searchForm" (ngSubmit)="executeSearch()" class="sidebar-form">
+        <div class="sidebar-header">
+          <h3>Advanced Filters</h3>
+          <span class="active-badge" *ngIf="hasAnySearchCriteria()">Active Filters</span>
+        </div>
 
-    <!-- Metadata search -->
-    <div class="form-section">
-      <h3>Metadata Search</h3>
-      <div class="form-row">
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Holder Name</mat-label>
-          <input matInput formControlName="holder" placeholder="e.g. John Doe">
-          <mat-icon matPrefix>person</mat-icon>
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Document Name</mat-label>
-          <input matInput formControlName="docname" placeholder="e.g. Passport">
-          <mat-icon matPrefix>title</mat-icon>
-        </mat-form-field>
-      </div>
-      <div class="form-row">
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Organization / Issuer</mat-label>
-          <input matInput formControlName="org" placeholder="e.g. Govt of India">
-          <mat-icon matPrefix>business</mat-icon>
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Document Number</mat-label>
-          <input matInput formControlName="docnumber" placeholder="e.g. F8209230">
-          <mat-icon matPrefix>fingerprint</mat-icon>
-        </mat-form-field>
-      </div>
-    </div>
+        <div class="sidebar-scrollable-content">
+          <!-- Section 1: Metadata Fields -->
+          <div class="filter-section">
+            <span class="section-title">Metadata Fields</span>
+            <div class="form-group">
+              <label for="holder">Holder Name</label>
+              <div class="input-icon-wrapper">
+                <mat-icon>person</mat-icon>
+                <input type="text" id="holder" formControlName="holder" placeholder="e.g. Chiba Roshan" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="docname">Document Name</label>
+              <div class="input-icon-wrapper">
+                <mat-icon>title</mat-icon>
+                <input type="text" id="docname" formControlName="docname" placeholder="e.g. Aadhaar Card" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="org">Issuer / Organization</label>
+              <div class="input-icon-wrapper">
+                <mat-icon>business</mat-icon>
+                <input type="text" id="org" formControlName="org" placeholder="e.g. UIDAI" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="docnumber">Document Number</label>
+              <div class="input-icon-wrapper">
+                <mat-icon>fingerprint</mat-icon>
+                <input type="text" id="docnumber" formControlName="docnumber" placeholder="e.g. XXXX XXXX 1234" />
+              </div>
+            </div>
+          </div>
 
-    <!-- Filters -->
-    <div class="form-section">
-      <h3>Filters & Sorting</h3>
-      <div class="form-row">
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Category</mat-label>
-          <mat-select formControlName="category">
-            <mat-option value="">All Categories</mat-option>
-            <mat-option *ngFor="let cat of documentCategories" [value]="cat">
-              {{ cat }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Status</mat-label>
-          <mat-select formControlName="status">
-            <mat-option value="">All Statuses</mat-option>
-            <mat-option *ngFor="let st of documentStatuses" [value]="st">
-              {{ st.replace('_', ' ') }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+          <!-- Section 2: Document Classification -->
+          <div class="filter-section">
+            <span class="section-title">Classification</span>
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select id="category" formControlName="category" class="select-control">
+                <option value="">All Categories</option>
+                <option *ngFor="let cat of documentCategories" [value]="cat">{{ cat }}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="status">Indexing Status</label>
+              <select id="status" formControlName="status" class="select-control">
+                <option value="">All Statuses</option>
+                <option *ngFor="let st of documentStatuses" [value]="st">
+                  {{ getStatusLabel(st) }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mimeType">File Type</label>
+              <select id="mimeType" formControlName="mimeType" class="select-control">
+                <option value="">All Formats</option>
+                <option value="application/pdf">PDF Document</option>
+                <option value="image/jpeg">JPEG Image</option>
+                <option value="image/png">PNG Image</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Section 3: File & Date Boundaries -->
+          <div class="filter-section">
+            <span class="section-title">Boundaries</span>
+            <div class="size-row">
+              <div class="form-group">
+                <label>Min Size (KB)</label>
+                <input type="number" formControlName="minSize" placeholder="0" class="num-input" />
+              </div>
+              <div class="form-group">
+                <label>Max Size (KB)</label>
+                <input type="number" formControlName="maxSize" placeholder="10240" class="num-input" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Uploaded From</label>
+              <input type="date" formControlName="fromDate" class="date-input" />
+            </div>
+            <div class="form-group">
+              <label>Uploaded To</label>
+              <input type="date" formControlName="toDate" class="date-input" />
+            </div>
+            <div class="form-group">
+              <label for="sort">Sort Order</label>
+              <select id="sort" formControlName="sort" class="select-control">
+                <option *ngFor="let opt of sortOptions" [value]="opt.value">{{ opt.label }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-actions">
+          <button type="button" class="reset-btn" (click)="clearSearch()" matRipple>
+            <mat-icon>clear_all</mat-icon>
+            <span>Reset</span>
+          </button>
+          <button type="submit" class="submit-btn" [disabled]="isLoading" matRipple>
+            <mat-icon>search</mat-icon>
+            <span>Apply</span>
+          </button>
+        </div>
+      </form>
+    </aside>
+
+    <!-- Right Side: Search Input and Results Panel -->
+    <main class="search-content">
+      <!-- Search Input Bar -->
+      <div class="search-bar-wrapper">
+        <form [formGroup]="searchForm" (ngSubmit)="executeSearch()" class="search-input-form">
+          <mat-icon class="search-bar-icon">search</mat-icon>
+          <input type="text" formControlName="q" placeholder="Search OCR text contents, metadata, or queries..." class="search-main-input" />
+          <button type="button" class="clear-input-btn" *ngIf="searchForm.get('q')?.value" (click)="searchForm.get('q')?.setValue('')">
+            <mat-icon>close</mat-icon>
+          </button>
+          <button type="submit" class="execute-btn" [disabled]="isLoading">
+            <mat-spinner diameter="16" *ngIf="isLoading" class="loader"></mat-spinner>
+            <span *ngIf="!isLoading">Search</span>
+          </button>
+        </form>
+
+        <!-- View mode switcher -->
+        <div class="view-toggles" *ngIf="results.length > 0">
+          <button class="toggle-btn" [class.active]="currentViewMode === 'grid'" (click)="currentViewMode = 'grid'" matTooltip="Grid view">
+            <mat-icon>grid_view</mat-icon>
+          </button>
+          <button class="toggle-btn" [class.active]="currentViewMode === 'list'" (click)="currentViewMode = 'list'" matTooltip="List view">
+            <mat-icon>view_list</mat-icon>
+          </button>
+        </div>
       </div>
 
-      <div class="form-row">
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>File Type</mat-label>
-          <mat-select formControlName="mimeType">
-            <mat-option value="">All Types</mat-option>
-            <mat-option value="application/pdf">PDF</mat-option>
-            <mat-option value="image/jpeg">JPEG</mat-option>
-            <mat-option value="image/png">PNG</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Sort By</mat-label>
-          <mat-select formControlName="sort">
-            <mat-option *ngFor="let opt of sortOptions" [value]="opt.value">
-              {{ opt.label }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+      <!-- Loading State Overlay -->
+      <div class="search-loading-panel" *ngIf="isLoading && results.length === 0">
+        <mat-spinner diameter="40"></mat-spinner>
+        <p>Querying the database and LayoutLMv3 records...</p>
       </div>
-    </div>
 
-    <!-- Advanced File Size/Date filters -->
-    <div class="form-section">
-      <h3>Advanced Boundaries</h3>
-      <div class="form-row">
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Min File Size (KB)</mat-label>
-          <input matInput type="number" formControlName="minSize" placeholder="0">
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Max File Size (KB)</mat-label>
-          <input matInput type="number" formControlName="maxSize" placeholder="10240">
-        </mat-form-field>
+      <!-- Empty State: Ready for search -->
+      <div class="search-empty-state card" *ngIf="!hasSearched && !isLoading">
+        <mat-icon class="state-icon">manage_search</mat-icon>
+        <h2>Search Vault Records</h2>
+        <p>Enter a query above or click a filter in the sidebar to scan your classification indexes.</p>
       </div>
-      <div class="form-row">
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Uploaded From Date</mat-label>
-          <input matInput type="date" formControlName="fromDate">
-        </mat-form-field>
-        <mat-form-field appearance="outline" class="form-col">
-          <mat-label>Uploaded To Date</mat-label>
-          <input matInput type="date" formControlName="toDate">
-        </mat-form-field>
+
+      <!-- Results Grid / List -->
+      <div class="search-results-wrapper" *ngIf="hasSearched && !isLoading">
+        
+        <!-- No Matches state -->
+        <div class="search-empty-state card no-results" *ngIf="results.length === 0">
+          <mat-icon class="state-icon">search_off</mat-icon>
+          <h2>No matching files found</h2>
+          <p>We couldn't find matches. Try broadening your query, adjusting size limits, or clearing metadata filters.</p>
+        </div>
+
+        <div class="results-data-area" *ngIf="results.length > 0">
+          <!-- Grid View -->
+          <div class="results-grid" *ngIf="currentViewMode === 'grid'">
+            <div class="file-card" *ngFor="let doc of results; let idx = index" [routerLink]="['/documents', doc._id]" [style.animation-delay]="(idx * 0.04) + 's'">
+              <div class="file-card-header">
+                <div class="file-icon-box" [class.pdf]="doc.mimeType === 'application/pdf'">
+                  <mat-icon>{{ getFileIcon(doc.mimeType) }}</mat-icon>
+                </div>
+                <button mat-icon-button class="delete-icon-btn" (click)="deleteDocument(doc); $event.stopPropagation()" [matTooltip]="'Delete Document'">
+                  <mat-icon>delete_outline</mat-icon>
+                </button>
+              </div>
+              
+              <div class="file-card-body">
+                <h3 class="file-name-label" [matTooltip]="doc.originalFileName">{{ doc.originalFileName }}</h3>
+                <div class="file-details-row">
+                  <span class="file-category-badge">{{ doc.category }}</span>
+                  <span class="file-size-label">{{ formatSize(doc.fileSize) }}</span>
+                </div>
+              </div>
+
+              <div class="file-card-footer">
+                <span class="status-indicator-pill" [attr.data-status]="doc.status">
+                  {{ getStatusLabel(doc.status) }}
+                </span>
+                <span class="file-date">{{ formatDate(doc.uploadedAt) }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- List View -->
+          <div class="table-card" *ngIf="currentViewMode === 'list'">
+            <table mat-table [dataSource]="results" class="results-table">
+              <!-- Icon Column -->
+              <ng-container matColumnDef="icon">
+                <th mat-header-cell *matHeaderCellDef style="width: 48px;"></th>
+                <td mat-cell *matCellDef="let doc">
+                  <mat-icon class="file-icon" [class.pdf]="doc.mimeType === 'application/pdf'">
+                    {{ getFileIcon(doc.mimeType) }}
+                  </mat-icon>
+                </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let doc">
+                  <span class="doc-name">{{ doc.originalFileName }}</span>
+                </td>
+              </ng-container>
+
+              <!-- Category Column -->
+              <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef>Category</th>
+                <td mat-cell *matCellDef="let doc">
+                  <span class="category-pill">{{ doc.category }}</span>
+                </td>
+              </ng-container>
+
+              <!-- Size Column -->
+              <ng-container matColumnDef="size">
+                <th mat-header-cell *matHeaderCellDef>Size</th>
+                <td mat-cell *matCellDef="let doc" class="muted">
+                  {{ formatSize(doc.fileSize) }}
+                </td>
+              </ng-container>
+
+              <!-- Status Column -->
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let doc">
+                  <span class="status-badge" [attr.data-status]="doc.status">
+                    {{ getStatusLabel(doc.status) }}
+                  </span>
+                </td>
+              </ng-container>
+
+              <!-- Uploaded Column -->
+              <ng-container matColumnDef="uploaded">
+                <th mat-header-cell *matHeaderCellDef>Uploaded</th>
+                <td mat-cell *matCellDef="let doc" class="muted">
+                  {{ formatDate(doc.uploadedAt) }}
+                </td>
+              </ng-container>
+
+              <!-- Actions Column -->
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef style="width: 60px;"></th>
+                <td mat-cell *matCellDef="let doc">
+                  <button mat-icon-button class="delete-btn" (click)="deleteDocument(doc); $event.stopPropagation()" [matTooltip]="'Delete Document'">
+                    <mat-icon>delete_outline</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/documents', row._id]"></tr>
+            </table>
+          </div>
+
+          <!-- Paginator -->
+          <div class="paginator-wrapper card">
+            <mat-paginator [length]="totalResults"
+                           [pageSize]="pageSize"
+                           [pageSizeOptions]="pageSizeOptions"
+                           (page)="onPageChange($event)"
+                           aria-label="Select page">
+            </mat-paginator>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </main>
 
-    <!-- Actions -->
-    <div class="form-actions">
-      <button type="button" class="clear-btn" (click)="clearSearch()">
-        <mat-icon>clear_all</mat-icon>
-        <span>Reset</span>
-      </button>
-      <button type="submit" class="submit-search-btn" [disabled]="isLoading">
-        <mat-spinner *ngIf="isLoading" diameter="20" class="button-spinner"></mat-spinner>
-        <mat-icon *ngIf="!isLoading">search</mat-icon>
-        <span>Search Vault</span>
-      </button>
-    </div>
-  </form>
-
-  <!-- Error alert -->
-  <div class="error-message" *ngIf="errorMsg">
-    <mat-icon>error_outline</mat-icon>
-    <span>{{ errorMsg }}</span>
   </div>
-
-  <!-- Results Section -->
-  <section class="results-section" *ngIf="hasSearched">
-    <h2>
-      <mat-icon>find_in_page</mat-icon>
-      <span>Search Results ({{ results.length }})</span>
-    </h2>
-
-    <!-- Table of Results -->
-    <div class="table-card" *ngIf="results.length > 0">
-      <table mat-table [dataSource]="results" class="results-table">
-        <!-- Icon Column -->
-        <ng-container matColumnDef="icon">
-          <th mat-header-cell *matHeaderCellDef style="width: 48px;"></th>
-          <td mat-cell *matCellDef="let doc">
-            <mat-icon class="file-icon" [class.pdf]="doc.mimeType === 'application/pdf'">
-              {{ doc.mimeType === 'application/pdf' ? 'picture_as_pdf' : 'description' }}
-            </mat-icon>
-          </td>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Name</th>
-          <td mat-cell *matCellDef="let doc">
-            <a class="doc-name" [routerLink]="['/documents', doc._id]">
-              {{ doc.originalFileName }}
-            </a>
-          </td>
-        </ng-container>
-
-        <!-- Category Column -->
-        <ng-container matColumnDef="category">
-          <th mat-header-cell *matHeaderCellDef>Category</th>
-          <td mat-cell *matCellDef="let doc">
-            <span class="category-pill">{{ doc.category }}</span>
-          </td>
-        </ng-container>
-
-        <!-- Size Column -->
-        <ng-container matColumnDef="size">
-          <th mat-header-cell *matHeaderCellDef>Size</th>
-          <td mat-cell *matCellDef="let doc" class="muted">
-            {{ formatSize(doc.fileSize) }}
-          </td>
-        </ng-container>
-
-        <!-- Status Column -->
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef>Status</th>
-          <td mat-cell *matCellDef="let doc">
-            <span class="status-badge" [attr.data-status]="doc.status">
-              {{ doc.status.replace('_', ' ') }}
-            </span>
-          </td>
-        </ng-container>
-
-        <!-- Uploaded Column -->
-        <ng-container matColumnDef="uploaded">
-          <th mat-header-cell *matHeaderCellDef>Uploaded</th>
-          <td mat-cell *matCellDef="let doc" class="muted">
-            {{ doc.uploadedAt | date:'mediumDate' }}
-          </td>
-        </ng-container>
-
-        <!-- Actions Column -->
-        <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef style="width: 60px;"></th>
-          <td mat-cell *matCellDef="let doc">
-            <button mat-icon-button class="delete-btn" (click)="deleteDocument(doc); $event.stopPropagation()" [matTooltip]="'Delete Document'">
-              <mat-icon>delete_outline</mat-icon>
-            </button>
-          </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/documents', row._id]"></tr>
-      </table>
-    </div>
-
-    <!-- Empty Results -->
-    <div class="empty-results" *ngIf="results.length === 0">
-      <mat-icon>info_outline</mat-icon>
-      <h3>No matches found</h3>
-      <p>Try clearing some filters or search query bounds.</p>
-    </div>
-  </section>
 </div>

@@ -1,7 +1,7 @@
 /**
  * DocumentDetailComponent — Shows OCR text, metadata, processing history.
  */
-import { Component, OnInit, OnDestroy, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, TemplateRef, ChangeDetectorRef, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -64,6 +64,8 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
     private readonly sanitizer: DomSanitizer,
     private readonly dialog: MatDialog,
     private readonly snackbar: MatSnackBar,
+    private readonly cdr: ChangeDetectorRef,
+    private readonly ngZone: NgZone,
   ) {}
 
   ngOnInit(): void {
@@ -83,25 +85,32 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
       )
       .subscribe({
         next: (d) => {
-          this.doc = d;
-          this.loading = false;
-          this.rawFileUrl = `${environment.apiUrl.replace('/api/v1', '')}/uploads/${d.storagePath}`;
-          this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.rawFileUrl);
-          this.initializeInteractiveRegions();
-          
-          if (d.status === DocumentStatus.READY || d.status === DocumentStatus.FAILED) {
-            this.stopPolling();
-            if (d.status === DocumentStatus.READY && !this.scanTriggered) {
-              this.triggerOcrScanEffects();
-            }
-          }
-        },
-        error: () => {
-          if (!this.doc) {
-            this.error = 'Failed to load document details.';
+          this.ngZone.run(() => {
+            this.doc = d;
             this.loading = false;
+            this.rawFileUrl = `${environment.apiUrl.replace('/api/v1', '')}/uploads/${d.storagePath}`;
+            this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.rawFileUrl);
+            this.initializeInteractiveRegions();
+            this.cdr.markForCheck();
+
+            if (d.status === DocumentStatus.READY || d.status === DocumentStatus.FAILED) {
+              this.stopPolling();
+              if (d.status === DocumentStatus.READY && !this.scanTriggered) {
+                this.triggerOcrScanEffects();
+              }
+            }
+          });
+        },
+        error: (err) => {
+          console.error('[DocumentDetail] load error', err);
+          this.ngZone.run(() => {
+            if (!this.doc) {
+              this.error = 'Failed to load document details.';
+              this.loading = false;
+            }
             this.stopPolling();
-          }
+            this.cdr.markForCheck();
+          });
         },
       });
   }
@@ -201,31 +210,32 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
 
   initializeInteractiveRegions(): void {
     if (!this.doc) return;
+    const meta = this.doc.metadata;
     const cat = this.doc.category;
     if (cat === 'Aadhaar Card') {
       this.regions = [
-        { id: 'holderName', label: 'Holder Name', top: 35, left: 32, width: 35, height: 6, confidence: 98, value: this.doc.metadata.holderName || 'CHIBA ROSHAN A' },
-        { id: 'documentNumber', label: 'Aadhaar Number', top: 78, left: 30, width: 40, height: 8, confidence: 99, value: this.doc.metadata.documentNumber || 'XXXX XXXX 1234' },
-        { id: 'issueDate', label: 'Year of Birth', top: 48, left: 45, width: 15, height: 5, confidence: 95, value: '2002' },
+        { id: 'holderName', label: 'Holder Name', top: 35, left: 32, width: 35, height: 6, confidence: 98, value: meta?.holderName || 'N/A' },
+        { id: 'documentNumber', label: 'Aadhaar Number', top: 78, left: 30, width: 40, height: 8, confidence: 99, value: meta?.documentNumber || 'N/A' },
+        { id: 'issueDate', label: 'Year of Birth', top: 48, left: 45, width: 15, height: 5, confidence: 95, value: meta?.issueDate || 'N/A' },
         { id: 'organization', label: 'Issuer Authority', top: 5, left: 10, width: 80, height: 10, confidence: 97, value: 'UIDAI' }
       ];
     } else if (cat === 'PAN Card') {
       this.regions = [
-        { id: 'holderName', label: 'Holder Name', top: 48, left: 5, width: 45, height: 6, confidence: 96, value: this.doc.metadata.holderName || 'CHIBA ROSHAN A' },
-        { id: 'documentNumber', label: 'PAN Number', top: 70, left: 5, width: 45, height: 8, confidence: 98, value: this.doc.metadata.documentNumber || 'ABCDE1234F' },
-        { id: 'issueDate', label: 'DOB', top: 60, left: 5, width: 30, height: 6, confidence: 94, value: this.doc.metadata.issueDate || '12/04/2002' },
+        { id: 'holderName', label: 'Holder Name', top: 48, left: 5, width: 45, height: 6, confidence: 96, value: meta?.holderName || 'N/A' },
+        { id: 'documentNumber', label: 'PAN Number', top: 70, left: 5, width: 45, height: 8, confidence: 98, value: meta?.documentNumber || 'N/A' },
+        { id: 'issueDate', label: 'DOB', top: 60, left: 5, width: 30, height: 6, confidence: 94, value: meta?.issueDate || 'N/A' },
         { id: 'organization', label: 'Issuer', top: 5, left: 10, width: 80, height: 10, confidence: 99, value: 'Income Tax Department' }
       ];
     } else if (cat === 'Resume') {
       this.regions = [
-        { id: 'holderName', label: 'Name Header', top: 8, left: 10, width: 40, height: 8, confidence: 99, value: this.doc.metadata.holderName || 'CHIBA ROSHAN A' },
-        { id: 'organization', label: 'University', top: 22, left: 10, width: 50, height: 6, confidence: 94, value: this.doc.metadata.organization || 'Anna University' }
+        { id: 'holderName', label: 'Name Header', top: 8, left: 10, width: 40, height: 8, confidence: 99, value: meta?.holderName || 'N/A' },
+        { id: 'organization', label: 'University', top: 22, left: 10, width: 50, height: 6, confidence: 94, value: meta?.organization || 'N/A' }
       ];
     } else {
       this.regions = [
-        { id: 'holderName', label: 'Recipient Name', top: 45, left: 20, width: 60, height: 8, confidence: 97, value: this.doc.metadata.holderName || 'CHIBA ROSHAN A' },
-        { id: 'organization', label: 'Issuing Institution', top: 15, left: 15, width: 70, height: 10, confidence: 95, value: this.doc.metadata.organization || 'MongoDB University' },
-        { id: 'documentNumber', label: 'Certificate ID', top: 85, left: 30, width: 40, height: 6, confidence: 92, value: this.doc.metadata.documentNumber || 'CERT-987654' }
+        { id: 'holderName', label: 'Recipient Name', top: 45, left: 20, width: 60, height: 8, confidence: 97, value: meta?.holderName || 'N/A' },
+        { id: 'organization', label: 'Issuing Institution', top: 15, left: 15, width: 70, height: 10, confidence: 95, value: meta?.organization || 'N/A' },
+        { id: 'documentNumber', label: 'Certificate ID', top: 85, left: 30, width: 40, height: 6, confidence: 92, value: meta?.documentNumber || 'N/A' }
       ];
     }
 

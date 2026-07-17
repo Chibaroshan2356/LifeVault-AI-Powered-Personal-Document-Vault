@@ -124,4 +124,11 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
   }
+
+  isDocumentsActive(): boolean {
+    const url = this.router.url;
+    return url.startsWith('/documents') &&
+           !url.startsWith('/documents/search') &&
+           !url.startsWith('/documents/training');
+  }
 }

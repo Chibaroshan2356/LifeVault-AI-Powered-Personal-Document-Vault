@@ -1,7 +1,7 @@
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, ChangeDetectorRef, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, ActivatedRoute } from '@angular/router';
+import { RouterLink, ActivatedRoute, Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -65,10 +65,13 @@ export class DocumentTrainingComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
+    private readonly router: Router,
     private readonly docService: DocumentService,
     private readonly trainingService: TrainingDocumentService,
     private readonly snackbar: MatSnackBar,
-    private readonly sanitizer: DomSanitizer
+    private readonly sanitizer: DomSanitizer,
+    private readonly cdr: ChangeDetectorRef,
+    private readonly ngZone: NgZone,
   ) {}
 
   ngOnInit(): void {
@@ -82,47 +85,53 @@ export class DocumentTrainingComponent implements OnInit {
     this.isLoading = true;
     this.docService.getById(docId).subscribe({
       next: (doc) => {
-        this.isLoading = false;
-        this.hasResult = true;
-        this.storagePath = doc.storagePath;
-        this.ocrText = doc.ocrText || '';
-        this.aiCategory = doc.category || '';
-        this.aiConfidence = doc.ocrConfidence || 1.0;
-        
-        this.aiMetadata = {
-          holderName: doc.metadata?.holderName,
-          organization: doc.metadata?.organization,
-          documentName: doc.metadata?.documentName,
-          documentNumber: doc.metadata?.documentNumber,
-          issueDate: doc.metadata?.issueDate,
-          expiryDate: doc.metadata?.expiryDate,
-        };
+        this.ngZone.run(() => {
+          this.isLoading = false;
+          this.hasResult = true;
+          this.storagePath = doc.storagePath;
+          this.ocrText = doc.ocrText || '';
+          this.aiCategory = doc.category || '';
+          this.aiConfidence = doc.ocrConfidence || 1.0;
 
-        this.aiVersionInfo = doc.aiVersionInfo || {
-          ocr_engine: 'EasyOCR',
-          ocr_version: '1.7.2',
-          classification_model: 'RuleBased',
-          classification_version: '1.0',
-        };
+          this.aiMetadata = {
+            holderName: doc.metadata?.holderName,
+            organization: doc.metadata?.organization,
+            documentName: doc.metadata?.documentName,
+            documentNumber: doc.metadata?.documentNumber,
+            issueDate: doc.metadata?.issueDate,
+            expiryDate: doc.metadata?.expiryDate,
+          };
 
-        this.formCategory = this.aiCategory || DocumentCategory.OTHER;
-        this.formHolder = this.aiMetadata.holderName || '';
-        this.formOrganization = this.aiMetadata.organization || '';
-        this.formDocumentName = this.aiMetadata.documentName || '';
-        this.formDocumentNumber = this.aiMetadata.documentNumber || '';
-        this.formIssueDate = this.formatDateForInput(this.aiMetadata.issueDate);
-        this.formExpiryDate = this.formatDateForInput(this.aiMetadata.expiryDate);
+          this.aiVersionInfo = doc.aiVersionInfo || {
+            ocr_engine: 'EasyOCR',
+            ocr_version: '1.7.2',
+            classification_model: 'RuleBased',
+            classification_version: '1.0',
+          };
 
-        this.selectedFile = { name: doc.originalFileName } as any;
-        this.fileType = doc.mimeType === 'application/pdf' ? 'pdf' : 'image';
-        
-        const staticBaseUrl = environment.apiUrl.replace('/api/v1', '');
-        const fileUrl = `${staticBaseUrl}/uploads/${doc.storagePath}`;
-        this.filePreviewUrl = this.sanitizer.bypassSecurityTrustResourceUrl(fileUrl);
+          this.formCategory = this.aiCategory || DocumentCategory.OTHER;
+          this.formHolder = this.aiMetadata.holderName || '';
+          this.formOrganization = this.aiMetadata.organization || '';
+          this.formDocumentName = this.aiMetadata.documentName || '';
+          this.formDocumentNumber = this.aiMetadata.documentNumber || '';
+          this.formIssueDate = this.formatDateForInput(this.aiMetadata.issueDate);
+          this.formExpiryDate = this.formatDateForInput(this.aiMetadata.expiryDate);
+
+          this.selectedFile = { name: doc.originalFileName } as any;
+          this.fileType = doc.mimeType === 'application/pdf' ? 'pdf' : 'image';
+
+          const staticBaseUrl = environment.apiUrl.replace('/api/v1', '');
+          const fileUrl = `${staticBaseUrl}/uploads/${doc.storagePath}`;
+          this.filePreviewUrl = this.sanitizer.bypassSecurityTrustResourceUrl(fileUrl);
+          this.cdr.markForCheck();
+        });
       },
       error: (err) => {
-        this.isLoading = false;
-        this.snackbar.open('Failed to load existing document for QA review.', 'Close', { duration: 5000 });
+        this.ngZone.run(() => {
+          this.isLoading = false;
+          this.cdr.markForCheck();
+          this.snackbar.open('Failed to load existing document for QA review.', 'Close', { duration: 5000 });
+        });
       }
     });
   }
@@ -230,17 +239,36 @@ export class DocumentTrainingComponent implements OnInit {
     this.isLoading = true;
     this.trainingService.saveCorrections(dto).subscribe({
       next: (res) => {
-        this.isLoading = false;
-        this.snackbar.open('Review approved! Data stored as training sample.', 'Close', {
-          duration: 4000,
+        this.ngZone.run(() => {
+          this.isLoading = false;
+          this.snackbar.open('Review approved! Data stored as training sample.', 'Close', {
+            duration: 4000,
+          });
+          this.reset();
+          this.cdr.markForCheck();
+          // Navigate back to documents list as QA loop is finished
+          this.docService.getById(this.route.snapshot.queryParamMap.get('docId') || '').subscribe({
+            next: () => {
+              this.ngZone.run(() => {
+                this.router.navigate(['/documents']);
+              });
+            },
+            error: () => {
+              this.ngZone.run(() => {
+                this.router.navigate(['/documents']);
+              });
+            }
+          });
         });
-        this.reset();
       },
       error: (err) => {
-        this.isLoading = false;
-        const msg = err.error?.message || 'Failed to save review corrections.';
-        this.snackbar.open(msg, 'Close', {
-          duration: 5000,
+        this.ngZone.run(() => {
+          this.isLoading = false;
+          this.cdr.markForCheck();
+          const msg = err.error?.message || 'Failed to save review corrections.';
+          this.snackbar.open(msg, 'Close', {
+            duration: 5000,
+          });
         });
       }
     });

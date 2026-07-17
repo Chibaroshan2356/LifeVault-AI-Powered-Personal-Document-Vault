@@ -14,10 +14,10 @@
   /* Fonts */
   --font-sans: 'Outfit', 'Inter', 'Roboto', sans-serif;
   
-  /* Modern Colors - Indigo & Pink Accent */
-  --color-primary:       #6366f1; /* Modern Indigo */
-  --color-primary-light: #818cf8;
-  --color-primary-dark:  #4f46e5;
+  /* Modern Colors - Cyber Purple & Pink Accent */
+  --color-primary:       #a78bfa; /* Cyber Purple */
+  --color-primary-light: #c084fc; /* Cyber Lavender */
+  --color-primary-dark:  #7c3aed; /* Cyber Violet */
   --color-accent:        #ec4899; /* Pink */
   --color-warn:          #ef4444; /* Coral Red */
   --color-success:       #10b981; /* Emerald Green */
@@ -48,10 +48,11 @@
   --color-surface:       rgba(255, 255, 255, 0.06);
   --color-surface-glass: rgba(255, 255, 255, 0.04);
   --color-border:        rgba(255, 255, 255, 0.15);
+  --color-dropdown-bg:   #0d1117; /* Solid dark background for selects/options in dark mode */
 
   --color-text:          #F8FAFC; /* Primary Almost White */
   --color-text-muted:    #CBD5E1; /* Secondary Slate */
-  --color-text-disabled: #94A3B8; /* Muted Slate */
+  --color-text-disabled: #A2B3C6; /* Brightened secondary/muted slate for readable contrast */
 
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.6);
   --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
@@ -77,6 +78,7 @@ body.light-theme {
   --color-surface:       #ffffff;
   --color-surface-glass: rgba(255, 255, 255, 0.8);
   --color-border:        #e2e8f0; /* Slate 200 */
+  --color-dropdown-bg:   #ffffff; /* Solid light background for selects/options in light mode */
   
   --color-text:          #0f172a; /* Slate 900 */
   --color-text-muted:    #64748b; /* Slate 500 */
@@ -158,10 +160,23 @@ body.light-theme {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-primary-light);
   text-decoration: none;
   transition: var(--transition-smooth);
-  &:hover { color: var(--color-primary-light); }
+  
+  &:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+body.light-theme a {
+  color: var(--color-primary);
+  
+  &:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
 }
 
 :focus-visible {
@@ -318,6 +333,47 @@ body.light-theme {
   .workspace-hero {
     background: rgba(255, 255, 255, 0.8) !important;
     border: 1px solid rgba(79, 124, 255, 0.15) !important;
+  }
+}
+
+/* ── Global Browser Autofill Overrides for Dark Mode ── */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0px 1000px #0a0c16 inset !important; /* Dark solid fill to match premium input wrapper */
+}
+
+/* Reset autofill styles specifically for Light Theme */
+body.light-theme {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active {
+    -webkit-text-fill-color: #0f172a !important;
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  }
+}
+
+/* ── Global Angular Material Focused Outline Inner Divider Fix ── */
+::ng-deep {
+  .mat-mdc-form-field.mat-focused {
+    .mdc-notched-outline__leading {
+      border-right: none !important;
+      border-right-width: 0 !important;
+    }
+    .mdc-notched-outline__notch {
+      border-left: none !important;
+      border-right: none !important;
+      border-left-width: 0 !important;
+      border-right-width: 0 !important;
+    }
+    .mdc-notched-outline__trailing {
+      border-left: none !important;
+      border-left-width: 0 !important;
+    }
   }
 }
 
