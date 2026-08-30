@@ -16,8 +16,22 @@ import { aiClient }        from './ai-client.service';
 import { logger }          from '../utils/logger';
 import { DocumentStatus, ProcessingStage, ProcessingStageStatus } from './enums';
 import type { OCRJobPayload } from './interfaces';
+import { SMART_FOLDER_MAPPING, SmartFolderType } from '../config/smart-folders.config';
 
 const storage = new LocalStorageService();
+
+const safeParseDate = (dateVal: any): Date | undefined => {
+  if (!dateVal) return undefined;
+  if (dateVal instanceof Date) {
+    return isNaN(dateVal.getTime()) ? undefined : dateVal;
+  }
+  const str = String(dateVal).trim();
+  if (!str || str.toLowerCase() === 'invalid date' || str.toLowerCase() === 'n/a') {
+    return undefined;
+  }
+  const parsed = new Date(str);
+  return isNaN(parsed.getTime()) ? undefined : parsed;
+};
 
 export async function ocrJobHandler(payload: OCRJobPayload): Promise<void> {
   const { documentId, userId, filePath, mimeType } = payload;
@@ -86,25 +100,25 @@ export async function ocrJobHandler(payload: OCRJobPayload): Promise<void> {
     // ── 4. Store results in MongoDB ─────────────────────────────
     const durationMs = Date.now() - startTime;
 
+    const smartFolder = SMART_FOLDER_MAPPING[result.document_type] ?? SmartFolderType.OTHER;
+
     await DocumentModel.findByIdAndUpdate(documentId, {
       status:        DocumentStatus.READY,
       ocrText:       result.ocr_text,
       ocrConfidence: result.ocr_confidence,
       category:      result.document_type,
+      smartFolder,
 
       metadata: {
         holderName:     result.metadata.holderName     ?? undefined,
         documentName:   result.metadata.documentName   ?? undefined,
         organization:   result.metadata.organization   ?? undefined,
         documentNumber: result.metadata.documentNumber ?? undefined,
-        issueDate:      result.metadata.issueDate
-          ? new Date(result.metadata.issueDate) : undefined,
-        expiryDate:     result.metadata.expiryDate
-          ? new Date(result.metadata.expiryDate) : undefined,
+        issueDate:      safeParseDate(result.metadata.issueDate),
+        expiryDate:     safeParseDate(result.metadata.expiryDate),
       },
 
-      expiryDate: result.metadata.expiryDate
-        ? new Date(result.metadata.expiryDate) : null,
+      expiryDate: safeParseDate(result.metadata.expiryDate) ?? null,
 
       aiVersionInfo: {
         ocrEngine:             result.version_info.ocr_engine,
@@ -124,6 +138,8 @@ export async function ocrJobHandler(payload: OCRJobPayload): Promise<void> {
         },
       },
     });
+
+    // ── 5. Smart Folder assignment is handled above in the MongoDB update ──
 
     logger.info('OCR job completed', {
       documentId,

@@ -12,10 +12,11 @@
  *  /api/v1/notifications/.. → notification     (Sprint 10)
  */
 import { Router } from 'express';
-import { authRouter }      from './auth/auth.routes';
-import { userRouter }      from './user/user.routes';
-import { documentRouter }  from './document/document.routes';
-import { dashboardRouter } from './document/dashboard.routes';
+import { authRouter }        from './auth/auth.routes';
+import { userRouter }        from './user/user.routes';
+import { documentRouter }    from './document/document.routes';
+import { dashboardRouter }   from './document/dashboard.routes';
+import { smartFolderRouter } from './smart-folder/smart-folder.routes';
 
 export const apiRouter = Router();
 
@@ -31,15 +32,17 @@ apiRouter.get('/', (_req, res) => {
       dashboard:     '/api/v1/dashboard',
       search:        '/api/v1/search',
       notifications: '/api/v1/notifications',
+      smartFolders:  '/api/v1/smart-folders',
     },
     docs: '/api-docs',
   });
 });
 
-apiRouter.use('/auth',      authRouter);
-apiRouter.use('/users',     userRouter);
-apiRouter.use('/documents', documentRouter);
-apiRouter.use('/dashboard', dashboardRouter);
+apiRouter.use('/auth',          authRouter);
+apiRouter.use('/users',         userRouter);
+apiRouter.use('/documents',     documentRouter);
+apiRouter.use('/dashboard',     dashboardRouter);
+apiRouter.use('/smart-folders', smartFolderRouter);
 
 // Mounted in subsequent sprints:
 // apiRouter.use('/documents',     documentRouter);

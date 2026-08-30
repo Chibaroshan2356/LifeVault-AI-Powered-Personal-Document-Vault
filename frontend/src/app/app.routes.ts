@@ -57,6 +57,12 @@ export const routes: Routes = [
           import('./features/documents/documents.routes').then((m) => m.DOCUMENTS_ROUTES),
         title: 'LifeVault – Documents',
       },
+      {
+        path: 'smart-folders',
+        loadChildren: () =>
+          import('./features/smart-folders/smart-folders.routes').then((m) => m.SMART_FOLDERS_ROUTES),
+        title: 'LifeVault – Smart Folders',
+      },
     ]
   },
 

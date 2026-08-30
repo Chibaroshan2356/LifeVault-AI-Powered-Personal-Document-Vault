@@ -24,30 +24,20 @@
         <span>Documents</span>
         <span class="active-indicator-glow"></span>
       </a>
+      <a class="nav-item" routerLink="/smart-folders" routerLinkActive="active" matRipple>
+        <i class="lucide-folder-open"></i>
+        <span>Smart Folders</span>
+        <span class="active-indicator-glow"></span>
+      </a>
       <a class="nav-item" routerLink="/documents/search" routerLinkActive="active" matRipple>
         <i class="lucide-search"></i>
         <span>Search</span>
         <span class="active-indicator-glow"></span>
       </a>
-      <a class="nav-item" routerLink="/documents/training" routerLinkActive="active" matRipple>
-        <i class="lucide-cpu"></i>
-        <span>AI Training Center</span>
-        <span class="active-indicator-glow"></span>
-      </a>
     </nav>
 
-    <!-- Theme Toggler, Signout and User profile card -->
+    <!-- User profile card + Sign Out -->
     <div class="sidebar-footer">
-      <button class="footer-action" (click)="toggleTheme()" matRipple>
-        <i [class]="isDarkTheme ? 'lucide-sun' : 'lucide-moon'"></i>
-        <span>{{ isDarkTheme ? 'Light Mode' : 'Dark Mode' }}</span>
-      </button>
-      
-      <button class="footer-action signout" (click)="logout()" matRipple>
-        <i class="lucide-log-out"></i>
-        <span>Sign Out</span>
-      </button>
-
       <!-- Premium Glass User Card -->
       <div class="user-card-glass" *ngIf="userName">
         <div class="user-info-row">
@@ -64,6 +54,11 @@
           <span class="online-pulse-dot"></span>
           <span class="online-text">AI Engine Online</span>
         </div>
+
+        <button class="footer-action signout" (click)="logout()" matRipple>
+          <i class="lucide-log-out"></i>
+          <span>Sign Out</span>
+        </button>
       </div>
     </div>
   </aside>
