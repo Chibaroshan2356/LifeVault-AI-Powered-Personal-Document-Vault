@@ -137,11 +137,15 @@ class AuthService {
     const decoded = jwtService.verifyRefreshToken(dto.refreshToken);
 
     // 2. Check the token exists in DB
-    //    Find all active tokens for this user and check hashes
+    //    Only check the most recently created tokens to keep bcrypt overhead low.
+    //    The active session token is always one of the latest — checking 3 is sufficient
+    //    and avoids O(N) comparisons when a user has many historical tokens.
     const storedTokens = await RefreshTokenModel.find({
-      userId: decoded.sub,
+      userId:    decoded.sub,
       expiresAt: { $gt: new Date() },
-    });
+    })
+      .sort({ createdAt: -1 })
+      .limit(5);
 
     let tokenRecord = null;
     for (const stored of storedTokens) {

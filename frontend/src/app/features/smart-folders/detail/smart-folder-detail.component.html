@@ -1,0 +1,77 @@
+<section class="sfd-page">
+
+  <!-- Back Navigation -->
+  <a class="sfd-back" routerLink="/smart-folders" matRipple>
+    <mat-icon>arrow_back</mat-icon>
+    <span>Smart Folders</span>
+  </a>
+
+  <!-- Loading -->
+  <div class="sfd-loading" *ngIf="isLoading">
+    <div class="sfd-header-skeleton"></div>
+    <div class="sfd-list-skeleton">
+      <div class="sfd-row-skeleton" *ngFor="let i of [1,2,3,4]"></div>
+    </div>
+  </div>
+
+  <!-- Error -->
+  <div class="sfd-error" *ngIf="!isLoading && error">
+    <mat-icon>error_outline</mat-icon>
+    <p>{{ error }}</p>
+    <button class="sfd-retry-btn" (click)="load()">Try Again</button>
+  </div>
+
+  <ng-container *ngIf="!isLoading && !error && folder">
+
+    <!-- Folder Header -->
+    <div class="sfd-header" [style.--folder-color]="getColor()">
+      <div class="sfd-header-emoji">{{ folder.emoji }}</div>
+      <div>
+        <h1 class="sfd-folder-title">{{ folder.folderName }}</h1>
+        <p class="sfd-folder-subtitle">
+          {{ folder.documents.length }} {{ folder.documents.length === 1 ? 'document' : 'documents' }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="sfd-empty" *ngIf="folder.documents.length === 0">
+      <div class="sfd-empty-icon">📭</div>
+      <p>No documents in this folder yet.</p>
+      <p class="sfd-empty-hint">Upload new documents and they'll be automatically sorted here.</p>
+    </div>
+
+    <!-- Document List -->
+    <div class="sfd-list" *ngIf="folder.documents.length > 0">
+      <div
+        class="sfd-doc-row"
+        *ngFor="let doc of folder.documents; trackBy: trackByDoc"
+        (click)="openDocument(doc)"
+        matRipple
+        role="button"
+        [attr.aria-label]="'Open ' + doc.originalFileName"
+      >
+        <div class="sfd-doc-icon" [style.color]="getColor()">
+          <mat-icon>{{ getMimeIcon(doc.mimeType) }}</mat-icon>
+        </div>
+        <div class="sfd-doc-info">
+          <span class="sfd-doc-name">{{ doc.originalFileName }}</span>
+          <span class="sfd-doc-meta">
+            <span class="sfd-doc-category">{{ doc.category }}</span>
+            <span class="sfd-sep">·</span>
+            <span>{{ formatSize(doc.fileSize) }}</span>
+            <span class="sfd-sep">·</span>
+            <span>{{ doc.createdAt | date:'d MMM y' }}</span>
+            <span *ngIf="doc.metadata?.holderName" class="sfd-sep">·</span>
+            <span *ngIf="doc.metadata?.holderName" class="sfd-holder">👤 {{ doc.metadata!.holderName }}</span>
+          </span>
+        </div>
+        <div class="sfd-doc-status" [class]="'status-' + doc.status.toLowerCase()">
+          {{ doc.status }}
+        </div>
+        <mat-icon class="sfd-doc-arrow">chevron_right</mat-icon>
+      </div>
+    </div>
+
+  </ng-container>
+</section>

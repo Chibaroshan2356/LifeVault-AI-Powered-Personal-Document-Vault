@@ -9,7 +9,7 @@
  *  - Pagination
  *  - Results navigate to detail page on click
  */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, NgZone } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
@@ -50,6 +50,7 @@ export class DocumentSearchComponent implements OnInit {
   results: DocumentListItem[] = [];
   isLoading = false;
   errorMsg = '';
+  currentViewMode: 'grid' | 'list' = 'grid';
   hasSearched = false;
 
   // Pagination
@@ -87,6 +88,8 @@ export class DocumentSearchComponent implements OnInit {
     private readonly snackbar: MatSnackBar,
     private readonly router: Router,
     private readonly route: ActivatedRoute,
+    private readonly cdr: ChangeDetectorRef,
+    private readonly ngZone: NgZone,
   ) {
     this.searchForm = this.fb.group({
       q:        [''],
@@ -148,14 +151,21 @@ export class DocumentSearchComponent implements OnInit {
 
     this.docService.search(searchParams).subscribe({
       next: ({ documents, pagination }) => {
-        this.results = documents;
-        this.totalResults = pagination.total;
-        this.hasSearched = true;
-        this.isLoading = false;
+        this.ngZone.run(() => {
+          this.results = documents;
+          this.totalResults = pagination.total;
+          this.hasSearched = true;
+          this.isLoading = false;
+          this.cdr.markForCheck();
+        });
       },
-      error: () => {
-        this.errorMsg = 'Search failed. Please try again.';
-        this.isLoading = false;
+      error: (err) => {
+        console.error('[DocumentSearch] Search error', err);
+        this.ngZone.run(() => {
+          this.errorMsg = 'Search failed. Please try again.';
+          this.isLoading = false;
+          this.cdr.markForCheck();
+        });
       },
     });
   }
@@ -175,11 +185,17 @@ export class DocumentSearchComponent implements OnInit {
 
     this.docService.search(searchParams).subscribe({
       next: ({ documents, pagination }) => {
-        this.results = documents;
-        this.totalResults = pagination.total;
+        this.ngZone.run(() => {
+          this.results = documents;
+          this.totalResults = pagination.total;
+          this.cdr.markForCheck();
+        });
       },
-      error: () => {
-        this.snackbar.open('Failed to load page', 'Dismiss', { duration: 3000 });
+      error: (err) => {
+        console.error('[DocumentSearch] Pagination load error', err);
+        this.ngZone.run(() => {
+          this.snackbar.open('Failed to load page', 'Dismiss', { duration: 3000 });
+        });
       },
     });
   }
@@ -214,14 +230,19 @@ export class DocumentSearchComponent implements OnInit {
     console.log('Sending delete API request for:', doc._id);
     this.docService.delete(doc._id).subscribe({
       next: () => {
-        console.log('Document deleted successfully from DB and storage');
-        this.results = this.results.filter((d) => d._id !== doc._id);
-        this.totalResults--;
-        this.snackbar.open('Document deleted', 'OK', { duration: 3000 });
+        this.ngZone.run(() => {
+          console.log('Document deleted successfully from DB and storage');
+          this.results = this.results.filter((d) => d._id !== doc._id);
+          this.totalResults--;
+          this.snackbar.open('Document deleted', 'OK', { duration: 3000 });
+          this.cdr.markForCheck();
+        });
       },
       error: (err) => {
         console.error('Delete request failed:', err);
-        this.snackbar.open('Failed to delete document', 'Dismiss', { duration: 3000 });
+        this.ngZone.run(() => {
+          this.snackbar.open('Failed to delete document', 'Dismiss', { duration: 3000 });
+        });
       },
     });
   }
@@ -249,7 +270,7 @@ export class DocumentSearchComponent implements OnInit {
     return params;
   }
 
-  private hasAnySearchCriteria(): boolean {
+  hasAnySearchCriteria(): boolean {
     const { q, holder, docname, org, docnumber, category, status, mimeType, minSize, maxSize, fromDate, toDate } = this.searchForm.value;
     return !!(q?.trim() || holder?.trim() || docname?.trim() || org?.trim() || docnumber?.trim() || category || status || mimeType || minSize || maxSize || fromDate || toDate);
   }

@@ -33,9 +33,8 @@ import { AuthService } from '../auth/services/auth.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
-  userName = '';
+  userName  = '';
   userEmail = '';
-  isDarkTheme = true; // default dark first
 
   private sidebarMouseMoveListener = (event: MouseEvent): void => {
     const sidebar = event.currentTarget as HTMLElement;
@@ -56,7 +55,9 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     this.loadProfile();
-    this.applyTheme();
+    // Always dark theme
+    document.body.classList.add('dark-theme');
+    document.body.classList.remove('light-theme');
   }
 
   ngAfterViewInit(): void {
@@ -97,22 +98,6 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  toggleTheme(): void {
-    this.isDarkTheme = !this.isDarkTheme;
-    this.applyTheme();
-    this.cdr.markForCheck();
-  }
-
-  private applyTheme(): void {
-    const body = document.body;
-    if (this.isDarkTheme) {
-      body.classList.add('dark-theme');
-      body.classList.remove('light-theme');
-    } else {
-      body.classList.add('light-theme');
-      body.classList.remove('dark-theme');
-    }
-  }
 
   logout(): void {
     this.authService.logout().subscribe({
@@ -123,5 +108,12 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
         this.router.navigate(['/auth/login']);
       }
     });
+  }
+
+  isDocumentsActive(): boolean {
+    const url = this.router.url;
+    return url.startsWith('/documents') &&
+           !url.startsWith('/documents/search') &&
+           !url.startsWith('/documents/training');
   }
 }

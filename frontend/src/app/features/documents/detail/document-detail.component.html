@@ -114,26 +114,29 @@
 
               <!-- Interactive View -->
               <div class="interactive-viewport-wrapper" *ngIf="currentViewMode === 'interactive'">
-                
-                <!-- Simulated document canvas sheet representing document text coordinates -->
+                               <!-- Simulated document canvas sheet representing document text coordinates -->
                 <div class="document-simulated-sheet" [class.blur-bg]="showLaserScanner">
-                  <div class="sheet-watermark-glow"></div>
+                  <!-- Actual Document Background (PDF or Image) -->
+                  <iframe [src]="fileUrl" *ngIf="isPdf" class="sheet-background-media pdf" frameborder="0"></iframe>
+                  <img [src]="rawFileUrl" *ngIf="isImage" class="sheet-background-media image" alt="Document Background" />
+
+                  <div class="sheet-watermark-glow" *ngIf="!isPdf && !isImage"></div>
                   
-                  <div class="sheet-header">
+                  <div class="sheet-header" *ngIf="!isPdf && !isImage">
                     <mat-icon class="gov-seal">fingerprint</mat-icon>
                     <div class="seal-text">
-                      <span class="main-title">LIFEVAULT AIWORKSPACE</span>
+                      <span class="main-title">LIFEVAULT AI WORKSPACE</span>
                       <span class="sub-title">DOCUMENT LAYOUT EXTRACTION MATRIX</span>
                     </div>
                   </div>
 
                   <!-- Mock visual anchors to make it look like a scanned document sheet -->
-                  <div class="sheet-scanned-avatar" *ngIf="doc.category === 'Aadhaar Card' || doc.category === 'PAN Card'">
+                  <div class="sheet-scanned-avatar" *ngIf="(!isPdf && !isImage) && (doc.category === 'Aadhaar Card' || doc.category === 'PAN Card')">
                     <mat-icon>photo_camera_back</mat-icon>
                     <span class="lbl">ANCHOR</span>
                   </div>
 
-                  <div class="sheet-barcode-strip" *ngIf="doc.category === 'Aadhaar Card'">
+                  <div class="sheet-barcode-strip" *ngIf="(!isPdf && !isImage) && doc.category === 'Aadhaar Card'">
                     <div class="bar" *ngFor="let b of [1,2,3,4,5,6,7,8,9,10]"></div>
                   </div>
 
@@ -175,7 +178,7 @@
                   </ng-container>
                   
                   <!-- Fallback raw layout content description -->
-                  <div class="sheet-description-box">
+                  <div class="sheet-description-box" *ngIf="!isPdf && !isImage">
                     <p class="description-heading">DOCUMENT METADATA MATRIX</p>
                     <p class="description-text">{{ doc.ocrText ? (doc.ocrText | slice:0:220) + '...' : 'Metadata coordinates compiled successfully.' }}</p>
                   </div>
@@ -199,6 +202,57 @@
           <pre class="ocr-pre">{{ doc.ocrText }}</pre>
         </div>
       </div>
+
+      <!-- Insights and History Side-by-Side Row -->
+      <div class="insights-timeline-row" *ngIf="doc.processingHistory && doc.processingHistory.length > 0; else insightsOnly">
+        <div class="card insights-card">
+          <div class="card-header">
+            <h2>AI Insights</h2>
+          </div>
+          <div class="insights-body">
+            <div class="insight-row" *ngFor="let insight of getInsightsList()">
+              <span class="lbl">{{ insight.label }}</span>
+              <span class="val">{{ insight.value }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card timeline-card">
+          <div class="card-header">
+            <h2>Processing History</h2>
+          </div>
+          <div class="timeline-body">
+            <div class="timeline">
+              <div class="timeline-item" *ngFor="let step of doc.processingHistory" [class.failed]="step.status === 'failed'">
+                <div class="timeline-marker">
+                  <mat-icon>{{ step.status === 'completed' ? 'check' : step.status === 'failed' ? 'close' : 'hourglass_empty' }}</mat-icon>
+                </div>
+                <div class="timeline-content">
+                  <span class="stage">{{ step.stage }}</span>
+                  <div class="meta">
+                    <span class="time">{{ step.timestamp | date:'dd MMM yyyy, HH:mm:ss' }}</span>
+                    <span class="duration" *ngIf="step.durationMs">{{ step.durationMs }}ms</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #insightsOnly>
+        <div class="card insights-card">
+          <div class="card-header">
+            <h2>AI Insights</h2>
+          </div>
+          <div class="insights-body">
+            <div class="insight-row" *ngFor="let insight of getInsightsList()">
+              <span class="lbl">{{ insight.label }}</span>
+              <span class="val">{{ insight.value }}</span>
+            </div>
+          </div>
+        </div>
+      </ng-template>
     </div>
 
     <!-- Right Column: AI Analytics & Extracted Values -->
@@ -387,43 +441,6 @@
           </div>
         </div>
       </div>
-
-      <!-- AI Inference Engine Insights -->
-      <div class="card insights-card">
-        <div class="card-header">
-          <h2>AI Insights</h2>
-        </div>
-        <div class="insights-body">
-          <div class="insight-row" *ngFor="let insight of getInsightsList()">
-            <span class="lbl">{{ insight.label }}</span>
-            <span class="val">{{ insight.value }}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Processing History Timeline -->
-      <div class="card timeline-card" *ngIf="doc.processingHistory && doc.processingHistory.length > 0">
-        <div class="card-header">
-          <h2>Processing History</h2>
-        </div>
-        <div class="timeline-body">
-          <div class="timeline">
-            <div class="timeline-item" *ngFor="let step of doc.processingHistory" [class.failed]="step.status === 'failed'">
-              <div class="timeline-marker">
-                <mat-icon>{{ step.status === 'completed' ? 'check' : step.status === 'failed' ? 'close' : 'hourglass_empty' }}</mat-icon>
-              </div>
-              <div class="timeline-content">
-                <span class="stage">{{ step.stage }}</span>
-                <div class="meta">
-                  <span class="time">{{ step.timestamp | date:'HH:mm:ss' }}</span>
-                  <span class="duration" *ngIf="step.durationMs">{{ step.durationMs }}ms</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
     </div>
   </div>
 </div>

@@ -59,6 +59,7 @@ export interface IDocument extends Document {
   aiVersionInfo:     IAIVersionInfo | null;
   expiryDate:        Date | null;
   errorMessage:      string | null;
+  smartFolder?:      string;
   createdAt:         Date;
   updatedAt:         Date;
 }
@@ -179,6 +180,12 @@ const DocumentSchema = new Schema<IDocument>(
     errorMessage: {
       type:    String,
       default: null,
+    },
+
+    smartFolder: {
+      type:    String,
+      default: 'Other',
+      index:   true,
     },
   },
   {

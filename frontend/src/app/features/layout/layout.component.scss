@@ -191,8 +191,8 @@
   align-items: center;
   gap: var(--sp-md);
   padding: 12px var(--sp-md);
-  color: var(--color-sidebar-text);
-  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 1;
   border-radius: var(--radius-md);
   text-decoration: none;
   font-size: 14px;
@@ -282,8 +282,8 @@
   align-items: center;
   gap: var(--sp-md);
   padding: 10px var(--sp-md);
-  color: var(--color-sidebar-text);
-  opacity: 0.65;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 1;
   border-radius: var(--radius-sm);
   font-size: 13.5px;
   font-weight: 600;
@@ -407,6 +407,25 @@
       letter-spacing: 0.3px;
     }
   }
+
+  /* Sign Out button placed inside card */
+  .footer-action.signout {
+    width: 100%;
+    margin-top: 2px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 10px;
+    background: transparent;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    justify-content: flex-start;
+    font-size: 12px;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+      background: rgba(239, 68, 68, 0.08);
+      color: #fca5a5;
+    }
+  }
 }
 
 /* Shell Viewport Structure */
@@ -462,5 +481,65 @@
 @media (max-width: 768px) {
   .sidebar {
     display: none; /* hidden on small tablets/mobile */
+  }
+}
+
+/* ── Smart Folders Sidebar Additions ──────────────────────────── */
+
+.nav-section-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0.6rem 0;
+}
+
+.nav-section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.38;
+  padding: 0.1rem 0.5rem 0.4rem;
+}
+
+.nav-item-folder {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 0.7rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+
+  .folder-emoji {
+    font-size: 1rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .folder-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+  }
+
+  .folder-count {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    min-width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &.active {
+    background: rgba(99, 102, 241, 0.18);
+    .folder-count {
+      background: rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+    }
   }
 }

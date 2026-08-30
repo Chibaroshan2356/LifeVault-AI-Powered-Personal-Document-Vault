@@ -1,0 +1,98 @@
+<div class="sf-shell">
+
+  <!-- LEFT: Folder List Panel -->
+  <aside class="sf-sidebar">
+    <div class="sf-sidebar-header">
+      <div class="sf-sidebar-title-row">
+        <span class="sf-sidebar-icon">🗂️</span>
+        <h1 class="sf-sidebar-title">Smart Folders</h1>
+      </div>
+      <p class="sf-sidebar-sub">AI-organized categories</p>
+    </div>
+
+    <!-- Folder skeleton -->
+    <div class="sf-folder-skeletons" *ngIf="isFoldersLoading">
+      <div class="sf-folder-skel" *ngFor="let i of [1,2,3,4,5,6,7]"></div>
+    </div>
+
+    <!-- Folder nav list -->
+    <nav class="sf-folder-nav" *ngIf="!isFoldersLoading">
+      <button
+        *ngFor="let folder of folders; trackBy: trackByFolder"
+        class="sf-folder-btn"
+        [class.selected]="selectedFolder?.id === folder.id"
+        [style.--fc]="getColor(folder.name)"
+        (click)="selectFolder(folder)"
+        matRipple
+      >
+        <span class="sf-folder-emoji">{{ folder.emoji }}</span>
+        <span class="sf-folder-label">{{ folder.name }}</span>
+        <span class="sf-folder-pill">{{ folder.count }}</span>
+      </button>
+    </nav>
+  </aside>
+
+  <!-- RIGHT: Document List Panel -->
+  <main class="sf-content" *ngIf="selectedFolder">
+    <!-- Header -->
+    <div class="sf-content-header" [style.--fc]="getColor(selectedFolder.name)">
+      <div class="sf-content-title-row">
+        <span class="sf-content-emoji">{{ selectedFolder.emoji }}</span>
+        <div>
+          <h2 class="sf-content-title">{{ selectedFolder.name }}</h2>
+          <p class="sf-content-sub">{{ selectedFolder.count }} {{ selectedFolder.count === 1 ? 'document' : 'documents' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="sf-doc-skeletons" *ngIf="isDocsLoading">
+      <div class="sf-doc-skel" *ngFor="let i of [1,2,3,4,5]"></div>
+    </div>
+
+    <!-- Error -->
+    <div class="sf-doc-error" *ngIf="!isDocsLoading && docsError">
+      <mat-icon>error_outline</mat-icon>
+      <p>{{ docsError }}</p>
+    </div>
+
+    <!-- Empty -->
+    <div class="sf-doc-empty" *ngIf="!isDocsLoading && !docsError && folderDocuments.length === 0">
+      <div class="sf-doc-empty-icon">📭</div>
+      <p>No documents in this folder yet.</p>
+      <p class="sf-doc-empty-hint">Upload documents and they'll be automatically sorted here.</p>
+    </div>
+
+    <!-- Document rows -->
+    <div class="sf-doc-list" *ngIf="!isDocsLoading && !docsError && folderDocuments.length > 0">
+      <div
+        class="sf-doc-row"
+        *ngFor="let doc of folderDocuments; trackBy: trackByDoc"
+        (click)="openDocument(doc)"
+        matRipple
+        role="button"
+      >
+        <div class="sf-doc-icon" [style.color]="getColor(selectedFolder.name)">
+          <mat-icon>{{ getMimeIcon(doc.mimeType) }}</mat-icon>
+        </div>
+        <div class="sf-doc-info">
+          <span class="sf-doc-name">{{ doc.originalFileName }}</span>
+          <div class="sf-doc-meta">
+            <span class="sf-doc-cat">{{ doc.category }}</span>
+            <span class="sf-sep">·</span>
+            <span>{{ formatSize(doc.fileSize) }}</span>
+            <span class="sf-sep">·</span>
+            <span>{{ doc.createdAt | date:'d MMM y' }}</span>
+            <ng-container *ngIf="doc.metadata?.holderName">
+              <span class="sf-sep">·</span>
+              <span class="sf-holder">👤 {{ doc.metadata!.holderName }}</span>
+            </ng-container>
+          </div>
+        </div>
+        <div class="sf-doc-status" [class]="'s-' + doc.status.toLowerCase()">{{ doc.status }}</div>
+        <mat-icon class="sf-doc-arrow">chevron_right</mat-icon>
+      </div>
+    </div>
+  </main>
+
+</div>

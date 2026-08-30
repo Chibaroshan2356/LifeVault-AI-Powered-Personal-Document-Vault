@@ -16,7 +16,7 @@
     display: inline-flex;
     align-items: center;
     gap: var(--sp-xs);
-    color: var(--color-primary);
+    color: #a5b4fc;
     text-decoration: none;
     font-size: 13px;
     font-weight: 600;
@@ -30,7 +30,7 @@
     }
 
     &:hover {
-      color: var(--color-primary-light);
+      color: #ffffff;
     }
   }
 
@@ -684,14 +684,36 @@
   width: 90%;
   max-width: 480px;
   aspect-ratio: 1 / 1.414; /* Standard A4 proportion */
-  background: var(--color-surface);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #111827; /* Solid dark grey background to mimic dark mode paper */
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: hidden;
   padding: var(--sp-xl);
   transition: filter 0.3s ease;
+  
+  :host-context(body.light-theme) & {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .sheet-background-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Render behind boxes */
+    pointer-events: none; /* Let pointer events pass to interactive boxes */
+    border: none;
+    opacity: 0.95;
+    
+    &.pdf {
+      background: #ffffff; // Keep PDF iframe viewer area white for maximum contrast
+    }
+  }
   
   &.blur-bg {
     filter: blur(1px);
@@ -815,6 +837,7 @@
 /* ── Overlays: OCR Word box ── */
 .ocr-word-overlay {
   position: absolute;
+  z-index: 5;
   border: 1px solid rgba(139, 92, 246, 0.35);
   background: rgba(139, 92, 246, 0.06);
   border-radius: 2px;
@@ -848,6 +871,7 @@
 /* ── Overlays: AI Region box ── */
 .ai-region-overlay {
   position: absolute;
+  z-index: 5;
   border: 1.5px solid var(--color-primary-light);
   background: rgba(99, 102, 241, 0.05);
   border-radius: 3px;
@@ -1084,6 +1108,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--sp-sm);
+    padding: var(--sp-md) var(--sp-lg);
   }
   
   .insight-row {
@@ -1106,5 +1131,24 @@
     &:last-child {
       border: none;
     }
+  }
+}
+
+/* ── Insights & History Side-by-Side Row ── */
+.insights-timeline-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Side-by-side grid, slightly wider for insights labels */
+  gap: var(--sp-lg);
+  margin-bottom: var(--sp-lg);
+  align-items: stretch;
+  width: 100%;
+
+  .card {
+    margin-bottom: 0 !important; /* Reset bottom margins since row wrapper handles spacing */
+    height: 100%;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
   }
 }

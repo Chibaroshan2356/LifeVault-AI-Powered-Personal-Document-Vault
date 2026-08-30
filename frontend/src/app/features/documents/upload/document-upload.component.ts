@@ -9,7 +9,7 @@
  *  - After upload: navigate to document list
  */
 import {
-  Component, ElementRef, ViewChild, HostListener, OnDestroy
+  Component, ElementRef, ViewChild, HostListener, OnDestroy, ChangeDetectorRef, NgZone
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
@@ -56,6 +56,8 @@ export class DocumentUploadComponent implements OnDestroy {
     private readonly docService: DocumentService,
     private readonly router:     Router,
     private readonly snackbar:   MatSnackBar,
+    private readonly cdr:        ChangeDetectorRef,
+    private readonly ngZone:     NgZone,
   ) {}
 
   ngOnDestroy(): void {
@@ -130,28 +132,36 @@ export class DocumentUploadComponent implements OnDestroy {
 
     this.docService.upload(this.selectedFile).subscribe({
       next: (event) => {
-        if (event.type === 'progress') {
-          this.uploadPercent = event.percent ?? 0;
-        }
-        if (event.type === 'complete') {
-          this.uploadState = 'processing';
-          this.processingStatus = 'ocr';
-          if (event.documentId) {
-            this.pollProcessing(event.documentId);
-          } else {
-            this.uploadState = 'success';
-            setTimeout(() => this.router.navigate(['/documents']), 1500);
+        this.ngZone.run(() => {
+          if (event.type === 'progress') {
+            this.uploadPercent = event.percent ?? 0;
+            this.cdr.markForCheck();
           }
-        }
+          if (event.type === 'complete') {
+            this.uploadState = 'processing';
+            this.processingStatus = 'ocr';
+            this.cdr.markForCheck();
+            if (event.documentId) {
+              this.pollProcessing(event.documentId);
+            } else {
+              this.uploadState = 'success';
+              this.cdr.markForCheck();
+              setTimeout(() => this.ngZone.run(() => this.router.navigate(['/documents'])), 1500);
+            }
+          }
+        });
       },
       error: (err) => {
-        this.uploadState = 'error';
-        const msg = err?.error?.message ?? 'Upload failed. Please try again.';
-        this.snackbar.open(msg, 'Dismiss', {
-          duration:           5000,
-          panelClass:         ['snackbar-error'],
-          horizontalPosition: 'right',
-          verticalPosition:   'top',
+        this.ngZone.run(() => {
+          this.uploadState = 'error';
+          const msg = err?.error?.message ?? 'Upload failed. Please try again.';
+          this.snackbar.open(msg, 'Dismiss', {
+            duration:           5000,
+            panelClass:         ['snackbar-error'],
+            horizontalPosition: 'right',
+            verticalPosition:   'top',
+          });
+          this.cdr.markForCheck();
         });
       },
     });
@@ -168,41 +178,50 @@ export class DocumentUploadComponent implements OnDestroy {
       )
       .subscribe({
         next: (doc) => {
-          if (doc.status === DocumentStatus.READY) {
-            this.processingStatus = 'ready';
-            this.uploadState = 'success';
-            if (this.pollSubscription) {
-              this.pollSubscription.unsubscribe();
-              this.pollSubscription = undefined;
+          this.ngZone.run(() => {
+            if (doc.status === DocumentStatus.READY) {
+              this.processingStatus = 'ready';
+              this.uploadState = 'success';
+              this.cdr.markForCheck();
+              if (this.pollSubscription) {
+                this.pollSubscription.unsubscribe();
+                this.pollSubscription = undefined;
+              }
+            } else if (doc.status === DocumentStatus.FAILED) {
+              this.processingStatus = 'failed';
+              this.uploadState = 'error';
+              this.validationError = 'AI processing failed: ' + (doc.errorMessage || 'OCR or LayoutLMv3 failed.');
+              this.cdr.markForCheck();
+              if (this.pollSubscription) {
+                this.pollSubscription.unsubscribe();
+                this.pollSubscription = undefined;
+              }
+            } else if (
+              doc.status === DocumentStatus.OCR_PENDING ||
+              doc.status === DocumentStatus.OCR_COMPLETED
+            ) {
+              this.processingStatus = 'ocr';
+              this.cdr.markForCheck();
+            } else if (
+              doc.status === DocumentStatus.EXTRACTION_PENDING ||
+              doc.status === DocumentStatus.CLASSIFICATION_PENDING ||
+              doc.status === DocumentStatus.EXTRACTION_COMPLETED
+            ) {
+              this.processingStatus = 'layoutlm';
+              this.cdr.markForCheck();
             }
-          } else if (doc.status === DocumentStatus.FAILED) {
-            this.processingStatus = 'failed';
-            this.uploadState = 'error';
-            this.validationError = 'AI processing failed: ' + (doc.errorMessage || 'OCR or LayoutLMv3 failed.');
-            if (this.pollSubscription) {
-              this.pollSubscription.unsubscribe();
-              this.pollSubscription = undefined;
-            }
-          } else if (
-            doc.status === DocumentStatus.OCR_PENDING ||
-            doc.status === DocumentStatus.OCR_COMPLETED
-          ) {
-            this.processingStatus = 'ocr';
-          } else if (
-            doc.status === DocumentStatus.EXTRACTION_PENDING ||
-            doc.status === DocumentStatus.CLASSIFICATION_PENDING ||
-            doc.status === DocumentStatus.EXTRACTION_COMPLETED
-          ) {
-            this.processingStatus = 'layoutlm';
-          }
+          });
         },
         error: () => {
-          this.uploadState = 'success';
-          if (this.pollSubscription) {
-            this.pollSubscription.unsubscribe();
-            this.pollSubscription = undefined;
-          }
-          setTimeout(() => this.router.navigate(['/documents']), 1500);
+          this.ngZone.run(() => {
+            this.uploadState = 'success';
+            this.cdr.markForCheck();
+            if (this.pollSubscription) {
+              this.pollSubscription.unsubscribe();
+              this.pollSubscription = undefined;
+            }
+            setTimeout(() => this.ngZone.run(() => this.router.navigate(['/documents'])), 1500);
+          });
         }
       });
   }

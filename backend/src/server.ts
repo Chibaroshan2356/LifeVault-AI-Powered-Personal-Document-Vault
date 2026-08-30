@@ -16,6 +16,7 @@ import { createApp }       from './app';
 import { logger }          from './utils/logger';
 import { jobQueue }        from './common/job-queue.service';
 import { ocrJobHandler }   from './common/ocr-worker';
+import { smartFolderService } from './modules/smart-folder/smart-folder.service';
 
 const PORT = parseInt(process.env.PORT ?? '3000', 10);
 
@@ -24,6 +25,9 @@ const PORT = parseInt(process.env.PORT ?? '3000', 10);
     validateConfig();
 
     await connectDatabase();
+
+    // Run Smart Folder category migration on startup (idempotent)
+    await smartFolderService.migrateExistingDocumentsToSmartFolders();
 
     // Register OCR handler BEFORE starting HTTP server
     jobQueue.register(ocrJobHandler);
