@@ -84,26 +84,26 @@ def preprocess_binarized(file_bytes: bytes, mime_type: str) -> List[Image.Image]
 # PDF HANDLING
 # ══════════════════════════════════════════════════════════════════
 
-def _pdf_to_images(pdf_bytes: bytes) -> List[Image.Image]:
-    """Render each PDF page to a PIL Image using PyMuPDF at high DPI,
-    then run each page through the enhancement pipeline."""
+def _pdf_to_images(pdf_bytes: bytes, max_pages: int = 5) -> List[Image.Image]:
+    """Render PDF pages to PIL Images using PyMuPDF.
+    Caps rendering to first max_pages to prevent timeout on large documents."""
     try:
         import fitz  # PyMuPDF
         doc = fitz.open(stream=pdf_bytes, filetype="pdf")
         images = []
         for page_idx, page in enumerate(doc):
+            if page_idx >= max_pages:
+                break
             mat = fitz.Matrix(_PDF_SCALE_FACTOR, _PDF_SCALE_FACTOR)
             pix = page.get_pixmap(matrix=mat)
             img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
 
-            # Run enhancement pipeline on rendered page
-            enhanced = _enhance_pil_image(img)
-            images.append(enhanced)
-            logger.debug(f"PDF page {page_idx + 1}: rendered & enhanced "
-                         f"({pix.width}x{pix.height})")
+            # PyMuPDF rendered pages are already clean digital vectors — no slow denoising needed
+            images.append(img)
+            logger.debug(f"PDF page {page_idx + 1}: rendered ({pix.width}x{pix.height})")
 
         doc.close()
-        logger.info(f"PDF rendered to {len(images)} enhanced page(s)")
+        logger.info(f"PDF rendered to {len(images)} page(s) in milliseconds")
         return images if images else [Image.new("RGB", (800, 600), "white")]
 
     except Exception as e:

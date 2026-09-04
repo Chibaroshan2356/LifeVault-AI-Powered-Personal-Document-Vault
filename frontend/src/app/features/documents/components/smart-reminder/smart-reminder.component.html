@@ -1,0 +1,66 @@
+<div class="sr-card" *ngIf="!isLoading && hasReminder && reminder">
+
+  <!-- Low confidence warning -->
+  <div class="sr-warning" *ngIf="reminder.lowConfidence">
+    <mat-icon>warning_amber</mat-icon>
+    <span>Possible date detected — please verify before enabling reminder.</span>
+  </div>
+
+  <!-- Card header -->
+  <div class="sr-header">
+    <div class="sr-header-left">
+      <span class="sr-icon">⏰</span>
+      <div>
+        <h3 class="sr-title">Smart Reminder</h3>
+        <span class="sr-event-label">{{ reminder.eventLabel }}</span>
+      </div>
+    </div>
+    <!-- Status badge -->
+    <div class="sr-status-badge" [class.expired]="isExpired" [class.active]="!isExpired && reminder.enabled" [class.disabled]="!reminder.enabled && !isExpired">
+      <span *ngIf="isExpired">🔴 Expired</span>
+      <span *ngIf="!isExpired && reminder.enabled">🟢 Active</span>
+      <span *ngIf="!isExpired && !reminder.enabled">⚪ Disabled</span>
+    </div>
+  </div>
+
+  <!-- Event date row -->
+  <div class="sr-date-row">
+    <div class="sr-date-block">
+      <span class="sr-date-label">Event Date</span>
+      <span class="sr-date-value">{{ reminder.eventDate | date:'d MMMM yyyy' }}</span>
+    </div>
+    <div class="sr-days-block" *ngIf="!isExpired">
+      <span class="sr-days-num">{{ daysRemaining }}</span>
+      <span class="sr-days-label">days left</span>
+    </div>
+  </div>
+
+  <!-- Reminder intervals (only if enabled) -->
+  <div class="sr-intervals" *ngIf="reminder.enabled && !isExpired">
+    <div class="sr-meta-line">
+      <span class="sr-meta-item">
+        <mat-icon>schedule</mat-icon> Notification Time: {{ reminder.notificationTime || '09:00' }}
+      </span>
+    </div>
+    <div class="sr-chips">
+      <span class="sr-chip" *ngFor="let iv of reminder.intervals" [class.off]="!iv.enabled">
+        {{ iv.daysBefore === 0 ? 'On day' : iv.daysBefore + 'd before' }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="sr-actions">
+    <button class="sr-edit-btn" (click)="openEditDialog()">
+      <mat-icon>edit</mat-icon>
+      Edit Reminder
+    </button>
+    <button class="sr-toggle-btn" *ngIf="reminder.enabled && !isExpired" (click)="disableReminder()">
+      Disable
+    </button>
+    <button class="sr-toggle-btn enable" *ngIf="!reminder.enabled && !isExpired" (click)="enableReminder()">
+      Enable
+    </button>
+  </div>
+
+</div>

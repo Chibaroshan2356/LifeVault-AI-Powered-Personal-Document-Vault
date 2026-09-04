@@ -429,6 +429,15 @@
         </div>
       </div>
 
+      <!-- Smart Reminder Card -->
+      <app-smart-reminder
+        #smartReminder
+        *ngIf="doc.status === 'READY'"
+        [documentId]="doc._id"
+        [docCategory]="doc.category"
+        [ocrConfidence]="doc.ocrConfidence">
+      </app-smart-reminder>
+
       <!-- Smart AI Suggestions Panel -->
       <div class="card suggestions-card">
         <div class="card-header">
@@ -438,6 +447,14 @@
           <div class="suggestion-item" *ngFor="let suggestion of getSuggestions()">
             <mat-icon class="sparkle-icon">auto_awesome</mat-icon>
             <span class="sugg-text">{{ suggestion }}</span>
+          </div>
+
+          <!-- Manual Reminder Trigger (shown when no reminder is active yet) -->
+          <div class="manual-reminder-box" *ngIf="!smartReminder?.hasReminder">
+            <button class="manual-reminder-btn" (click)="openManualReminder()" matRipple>
+              <mat-icon>add_alarm</mat-icon>
+              <span>+ Add Reminder Manually</span>
+            </button>
           </div>
         </div>
       </div>

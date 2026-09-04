@@ -35,6 +35,7 @@ import { DocumentListItem, DocumentStatus } from '../models/document.models';
 export class DocumentListComponent implements OnInit, OnDestroy {
   @ViewChild('deleteConfirmDialog') deleteConfirmDialog!: TemplateRef<any>;
   documents: DocumentListItem[] = [];
+  totalCount = 0;
   isLoading = true;
   errorMsg  = '';
   documentToDelete?: DocumentListItem;
@@ -68,15 +69,16 @@ export class DocumentListComponent implements OnInit, OnDestroy {
         startWith(0),
         switchMap(() => {
           console.log('[DocumentList] switchMap → calling docService.list()');
-          return this.docService.list();
+          return this.docService.list(1, 50);
         })
       )
       .subscribe({
-        next: ({ documents }) => {
-          console.log('[DocumentList] next: received', documents.length, 'documents');
+        next: ({ documents, pagination }) => {
+          console.log('[DocumentList] next: received', documents.length, 'documents, total:', pagination.total);
           this.ngZone.run(() => {
-            this.documents = documents;
-            this.isLoading = false;
+            this.documents  = documents;
+            this.totalCount = pagination.total;
+            this.isLoading  = false;
             this.cdr.markForCheck();
 
             const hasProcessing = documents.some(

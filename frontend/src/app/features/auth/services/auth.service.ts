@@ -1,37 +1,32 @@
 /**
- * auth.service.ts — Authentication Service
+ * auth.service.ts — Authentication Business Logic
  *
- * Manages the authentication state (AuthState) and communicates
- * with the backend auth API.
- *
- * State is held in a BehaviorSubject so any component can react
- * to login/logout events via authState$ observable.
- *
- * Usage:
- *   authService.login(credentials).subscribe(...)
- *   authService.authState$.pipe(map(s => s.isAuthenticated))
+ * Handles:
+ *  - Login, register, logout
+ *  - Token refresh (invoked by JwtInterceptor)
+ *  - User profile loading
+ *  - Exposing reactive auth state via BehaviorSubject
  */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, tap, catchError, throwError, shareReplay } from 'rxjs';
 import { Router } from '@angular/router';
-
+import { BehaviorSubject, Observable, throwError, of } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
 import { TokenStorageService } from '../../../core/services/token-storage.service';
-import type {
-  AuthState,
+import {
   LoginRequest,
   LoginResponse,
   RegisterRequest,
   RefreshResponse,
   User,
+  ApiResponse,
 } from '../../../shared/models/auth.models';
 
-/** Standard API envelope */
-interface ApiResponse<T> {
-  success: boolean;
-  message: string;
-  data?:   T;
+export interface AuthState {
+  isAuthenticated: boolean;
+  user:            User | null;
+  accessToken:     string | null;
 }
 
 const initialState: AuthState = {
@@ -44,7 +39,6 @@ const initialState: AuthState = {
 export class AuthService {
   private readonly apiUrl = `${environment.apiUrl}/auth`;
   private readonly usersUrl = `${environment.apiUrl}/users`;
-  private refreshSubscription$: Observable<ApiResponse<RefreshResponse>> | null = null;
 
   /** Reactive state — subscribe to know if user is logged in */
   private readonly _authState$ = new BehaviorSubject<AuthState>(initialState);
@@ -82,6 +76,7 @@ export class AuthService {
             this.tokenStorage.saveTokens(
               res.data.accessToken,
               res.data.refreshToken,
+              res.data.user,
             );
             this._authState$.next({
               isAuthenticated: true,
@@ -107,7 +102,7 @@ export class AuthService {
         catchError(() => {
           // Even if the request fails, clear local state
           this.clearSession();
-          return throwError(() => new Error('Logout failed'));
+          return of({ success: true, message: 'Logged out', data: null });
         }),
       );
   }
@@ -145,7 +140,18 @@ export class AuthService {
   getProfile(): Observable<ApiResponse<User>> {
     return this.http
       .get<ApiResponse<User>>(`${this.usersUrl}/profile`)
-      .pipe(catchError(this.handleError));
+      .pipe(
+        tap((res) => {
+          if (res.success && res.data) {
+            this.tokenStorage.saveUser(res.data);
+            this._authState$.next({
+              ...this._authState$.value,
+              user: res.data,
+            });
+          }
+        }),
+        catchError(this.handleError),
+      );
   }
 
   // ------------------------------------------------------------------
@@ -167,14 +173,11 @@ export class AuthService {
 
   private restoreSession(): void {
     const token = this.tokenStorage.getAccessToken();
+    const user  = this.tokenStorage.getUser();
     if (token) {
-      // Restore minimal authenticated state from stored token.
-      // Profile is fetched lazily when the dashboard loads.
-      // We do NOT call the API here — it would fire a 401 on every
-      // page load if the token expired, causing a redirect loop.
       this._authState$.next({
         isAuthenticated: true,
-        user:            null,
+        user:            user || null,
         accessToken:     token,
       });
     }

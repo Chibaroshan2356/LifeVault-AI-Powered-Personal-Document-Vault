@@ -219,7 +219,10 @@ export class DocumentTrainingComponent implements OnInit {
   saveCorrections(): void {
     if (!this.storagePath) return;
 
+    const docId = this.route.snapshot.queryParamMap.get('docId') || undefined;
+
     const dto = {
+      documentId: docId,
       originalFilePath: this.storagePath,
       ocrText: this.ocrText,
       aiCategory: this.aiCategory,
@@ -241,24 +244,16 @@ export class DocumentTrainingComponent implements OnInit {
       next: (res) => {
         this.ngZone.run(() => {
           this.isLoading = false;
-          this.snackbar.open('Review approved! Data stored as training sample.', 'Close', {
+          this.snackbar.open('Metadata corrected and saved successfully!', 'Close', {
             duration: 4000,
           });
           this.reset();
           this.cdr.markForCheck();
-          // Navigate back to documents list as QA loop is finished
-          this.docService.getById(this.route.snapshot.queryParamMap.get('docId') || '').subscribe({
-            next: () => {
-              this.ngZone.run(() => {
-                this.router.navigate(['/documents']);
-              });
-            },
-            error: () => {
-              this.ngZone.run(() => {
-                this.router.navigate(['/documents']);
-              });
-            }
-          });
+          if (docId) {
+            this.router.navigate(['/documents', docId]);
+          } else {
+            this.router.navigate(['/documents']);
+          }
         });
       },
       error: (err) => {

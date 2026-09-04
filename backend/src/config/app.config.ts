@@ -21,6 +21,13 @@ export interface AppConfig {
   aiServiceTimeout:     number;
   corsOrigin:           string;
   logLevel:             string;
+
+  /* Gmail SMTP Email Configuration */
+  emailHost:            string;
+  emailPort:            number;
+  emailUser:            string;
+  emailPassword:        string;
+  emailFrom:            string;
 }
 
 export const appConfig: AppConfig = {
@@ -35,9 +42,15 @@ export const appConfig: AppConfig = {
   allowedFileTypes:   (process.env.ALLOWED_FILE_TYPES   || 'application/pdf,image/jpeg,image/png,image/jpg').split(','),
   uploadDir:           process.env.UPLOAD_DIR           || 'uploads',
   aiServiceUrl:        process.env.AI_SERVICE_URL       || 'http://localhost:8000',
-  aiServiceTimeout:    parseInt(process.env.AI_SERVICE_TIMEOUT || '30000', 10),
+  aiServiceTimeout:    parseInt(process.env.AI_SERVICE_TIMEOUT || '180000', 10),
   corsOrigin:          process.env.CORS_ORIGIN          || 'http://localhost:4200',
   logLevel:            process.env.LOG_LEVEL            || 'debug',
+
+  emailHost:           process.env.EMAIL_HOST            || '',
+  emailPort:           parseInt(process.env.EMAIL_PORT   || '587', 10),
+  emailUser:           process.env.EMAIL_USER            || '',
+  emailPassword:       process.env.EMAIL_PASSWORD        || '',
+  emailFrom:           process.env.EMAIL_FROM            || 'LifeVault Reminders <chibaroshan2387@gmail.com>',
 };
 
 /** Fail fast in production if critical secrets are missing */

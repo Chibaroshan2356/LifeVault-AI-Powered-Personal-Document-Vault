@@ -19,7 +19,7 @@ export type AllowedMimeType = typeof ALLOWED_MIME_TYPES[number];
 /** Query params for GET /documents (list + filters) */
 export const ListDocumentsSchema = z.object({
   page:     z.coerce.number().int().min(1).default(1),
-  limit:    z.coerce.number().int().min(1).max(50).default(10),
+  limit:    z.coerce.number().int().min(1).max(100).default(50),
   category: z.string().optional(),
   status:   z.string().optional(),
 });

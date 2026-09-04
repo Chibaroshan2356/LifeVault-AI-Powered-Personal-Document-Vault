@@ -88,7 +88,7 @@ export class DocumentService {
   }
 
   /** List documents (paginated) */
-  list(page = 1, limit = 10): Observable<{ documents: DocumentListItem[]; pagination: PaginationMeta }> {
+  list(page = 1, limit = 50): Observable<{ documents: DocumentListItem[]; pagination: PaginationMeta }> {
     return this.http
       .get<ApiResponse<DocumentListItem[]>>(`${this.url}?page=${page}&limit=${limit}`)
       .pipe(

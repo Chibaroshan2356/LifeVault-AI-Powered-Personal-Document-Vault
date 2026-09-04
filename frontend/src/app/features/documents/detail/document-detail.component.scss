@@ -1100,6 +1100,43 @@
       line-height: 1.4;
     }
   }
+
+  .manual-reminder-box {
+    margin-top: 4px;
+    display: flex;
+  }
+
+  .manual-reminder-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px dashed rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.08);
+    color: #a5b4fc;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    width: 100%;
+    justify-content: center;
+
+    &:hover {
+      background: rgba(99, 102, 241, 0.18);
+      border-color: #6366f1;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    mat-icon {
+      font-size: 16px !important;
+      width: 16px;
+      height: 16px;
+      color: #818cf8;
+    }
+  }
 }
 
 /* ── Insights Card ── */

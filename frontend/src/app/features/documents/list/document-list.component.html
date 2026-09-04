@@ -7,7 +7,7 @@
         <span>Workspace Home</span>
       </a>
       <h1>Document Archive</h1>
-      <p>{{ documents.length }} document{{ documents.length !== 1 ? 's' : '' }} stored in your vault</p>
+      <p>{{ totalCount || documents.length }} document{{ (totalCount || documents.length) !== 1 ? 's' : '' }} stored in your vault</p>
     </div>
     <div class="header-actions">
       <button class="search-btn" routerLink="/documents/search">
@@ -51,10 +51,12 @@
 
   <!-- Empty state -->
   <div class="empty-state" *ngIf="!isLoading && !errorMsg && documents.length === 0">
-    <mat-icon>folder_open</mat-icon>
+    <div class="empty-icon-circle">
+      <mat-icon class="main-empty-icon">folder_open</mat-icon>
+    </div>
     <h2>Archive is empty</h2>
     <p>Upload files to start automatic indexing and classification.</p>
-    <button class="retry-btn" routerLink="/documents/upload">
+    <button class="empty-action-btn" routerLink="/documents/upload">
       <mat-icon>add</mat-icon>
       <span>Upload Now</span>
     </button>

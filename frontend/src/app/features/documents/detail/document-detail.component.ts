@@ -15,8 +15,10 @@ import { Subscription, interval, startWith, switchMap } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { DocumentService } from '../services/document.service';
+import { ReminderService }  from '../services/reminder.service';
 import { DocumentDetail, DocumentStatus, DocumentMetadata } from '../models/document.models';
 import { environment } from '../../../../environments/environment';
+import { SmartReminderComponent } from '../components/smart-reminder/smart-reminder.component';
 
 @Component({
   selector: 'app-document-detail',
@@ -31,6 +33,7 @@ import { environment } from '../../../../environments/environment';
     MatDialogModule,
     MatSnackBarModule,
     MatTooltipModule,
+    SmartReminderComponent,
   ],
   templateUrl: './document-detail.component.html',
   styleUrl: './document-detail.component.scss',
@@ -56,11 +59,19 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
   currentViewMode: 'interactive' | 'native' = 'interactive';
 
   @ViewChild('deleteConfirmDialog') deleteConfirmDialog!: TemplateRef<any>;
+  @ViewChild('smartReminder') smartReminder?: SmartReminderComponent;
+
+  openManualReminder(): void {
+    if (this.smartReminder) {
+      this.smartReminder.openEditDialog(true);
+    }
+  }
 
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly docService: DocumentService,
+    private readonly reminderService: ReminderService,
     private readonly sanitizer: DomSanitizer,
     private readonly dialog: MatDialog,
     private readonly snackbar: MatSnackBar,
@@ -69,8 +80,15 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    this.startPolling(id);
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      if (id) {
+        this.stopPolling();
+        this.startPolling(id);
+      }
+    });
+    // Request browser notification permission for reminders
+    this.reminderService.requestBrowserNotificationPermission();
   }
 
   ngOnDestroy(): void {
@@ -81,7 +99,7 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
     this.pollSubscription = interval(3000)
       .pipe(
         startWith(0),
-        switchMap(() => this.docService.getById(id))
+        switchMap(() => this.docService.getById(id)),
       )
       .subscribe({
         next: (d) => {
@@ -91,7 +109,7 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
             this.rawFileUrl = `${environment.apiUrl.replace('/api/v1', '')}/uploads/${d.storagePath}`;
             this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.rawFileUrl);
             this.initializeInteractiveRegions();
-            this.cdr.markForCheck();
+            this.cdr.detectChanges();
 
             if (d.status === DocumentStatus.READY || d.status === DocumentStatus.FAILED) {
               this.stopPolling();
@@ -319,8 +337,8 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
   getSuggestions(): string[] {
     if (!this.doc) return [];
     const suggestions: string[] = [];
-    if (!this.doc.metadata.expiryDate) {
-      suggestions.push('No expiry date detected. Consider adding manually if applicable.');
+    if (!this.doc.expiryDate && !this.doc.metadata?.expiryDate) {
+      suggestions.push('No expiry, renewal, warranty, guarantee, or due date detected.');
     }
     if (this.confidencePercent < 80) {
       suggestions.push('Low overall OCR confidence. Select fields to verify layout alignment.');

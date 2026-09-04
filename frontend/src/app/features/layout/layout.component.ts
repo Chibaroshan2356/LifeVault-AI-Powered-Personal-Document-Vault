@@ -1,20 +1,22 @@
 import {
   Component,
-  OnInit,
+  ElementRef,
   AfterViewInit,
   OnDestroy,
-  ElementRef,
-  NgZone,
-  ChangeDetectorRef,
+  OnInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  NgZone,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRippleModule } from '@angular/material/core';
-
+import { Subscription } from 'rxjs';
 import { AuthService } from '../auth/services/auth.service';
+import { NotificationBellComponent } from '../notifications/notification-bell.component';
 
 @Component({
   selector: 'app-layout',
@@ -26,7 +28,9 @@ import { AuthService } from '../auth/services/auth.service';
     RouterLinkActive,
     MatIconModule,
     MatButtonModule,
+    MatTooltipModule,
     MatRippleModule,
+    NotificationBellComponent,
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
@@ -35,6 +39,7 @@ import { AuthService } from '../auth/services/auth.service';
 export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   userName  = '';
   userEmail = '';
+  private authSub?: Subscription;
 
   private sidebarMouseMoveListener = (event: MouseEvent): void => {
     const sidebar = event.currentTarget as HTMLElement;
@@ -54,7 +59,21 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.loadProfile();
+    // Reactively update user name & email whenever auth state changes (login, logout, switch account)
+    this.authSub = this.authService.authState$.subscribe((state) => {
+      if (state.user) {
+        this.userName  = state.user.fullName;
+        this.userEmail = state.user.email;
+        this.cdr.detectChanges();
+      } else if (state.isAuthenticated) {
+        this.loadProfile();
+      } else {
+        this.userName  = '';
+        this.userEmail = '';
+        this.cdr.detectChanges();
+      }
+    });
+
     // Always dark theme
     document.body.classList.add('dark-theme');
     document.body.classList.remove('light-theme');
@@ -71,6 +90,7 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.authSub?.unsubscribe();
     const sidebarEl = this.elRef.nativeElement.querySelector('.sidebar');
     if (sidebarEl) {
       sidebarEl.removeEventListener('mousemove', this.sidebarMouseMoveListener);
@@ -81,23 +101,21 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
     this.authService.getProfile().subscribe({
       next: (res) => {
         if (res.success && res.data) {
-          this.userName = res.data.fullName;
+          this.userName  = res.data.fullName;
           this.userEmail = res.data.email;
-          this.cdr.markForCheck();
+          this.cdr.detectChanges();
         }
       },
       error: () => {
-        // Safe fallback if user state is empty
         const user = this.authService.currentUser;
         if (user) {
-          this.userName = user.fullName;
+          this.userName  = user.fullName;
           this.userEmail = user.email;
-          this.cdr.markForCheck();
+          this.cdr.detectChanges();
         }
-      }
+      },
     });
   }
-
 
   logout(): void {
     this.authService.logout().subscribe({
@@ -106,7 +124,7 @@ export class LayoutComponent implements OnInit, AfterViewInit, OnDestroy {
       },
       error: () => {
         this.router.navigate(['/auth/login']);
-      }
+      },
     });
   }
 

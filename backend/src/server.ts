@@ -16,7 +16,8 @@ import { createApp }       from './app';
 import { logger }          from './utils/logger';
 import { jobQueue }        from './common/job-queue.service';
 import { ocrJobHandler }   from './common/ocr-worker';
-import { smartFolderService } from './modules/smart-folder/smart-folder.service';
+import { smartFolderService }    from './modules/smart-folder/smart-folder.service';
+import { startReminderScheduler } from './modules/reminder/reminder-scheduler.service';
 
 const PORT = parseInt(process.env.PORT ?? '3000', 10);
 
@@ -32,6 +33,9 @@ const PORT = parseInt(process.env.PORT ?? '3000', 10);
     // Register OCR handler BEFORE starting HTTP server
     jobQueue.register(ocrJobHandler);
     logger.info('✅ OCR job handler registered');
+
+    // Start the hourly Smart Reminder scheduler
+    startReminderScheduler();
 
     const app    = createApp();
     const server = app.listen(PORT, () => {
