@@ -3,13 +3,12 @@ import { v4 as uuidv4 } from 'uuid';
 import mongoose from 'mongoose';
 import { TrainingDocumentModel } from './training-document.model';
 import { DocumentModel } from './document.model';
-import { LocalStorageService } from '../../common/local-storage.service';
+import { StorageFactory } from '../../common/storage.factory';
+import { appConfig } from '../../config/app.config';
 import { aiClient, AIProcessResult } from '../../common/ai-client.service';
 import { logger } from '../../utils/logger';
 import { DocumentCategory } from '../../common/enums';
 import { SmartFolderType, SMART_FOLDER_MAPPING } from '../../config/smart-folders.config';
-
-const storage = new LocalStorageService();
 
 export interface SaveTrainingRecordDto {
   documentId?:       string;
@@ -36,7 +35,9 @@ class TrainingDocumentService {
     const relativeDir = `training/${year}`;
     const storagePath = `${relativeDir}/${storedName}`;
 
-    // 1. Save file to training folder
+    // 1. Save file to training folder via active storage provider
+    const currentProvider = appConfig.storageProvider === 'b2' && appConfig.b2KeyId && appConfig.b2ApplicationKey ? 'b2' : 'local';
+    const storage = StorageFactory.getService(currentProvider);
     await storage.save(file.buffer, storedName, file.mimetype, relativeDir);
 
     // 2. Call FastAPI AI pipeline synchronously using a temporary doc ID

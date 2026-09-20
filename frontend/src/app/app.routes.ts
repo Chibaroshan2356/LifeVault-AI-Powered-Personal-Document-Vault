@@ -63,6 +63,14 @@ export const routes: Routes = [
           import('./features/smart-folders/smart-folders.routes').then((m) => m.SMART_FOLDERS_ROUTES),
         title: 'LifeVault – Smart Folders',
       },
+      {
+        path: 'security',
+        loadComponent: () =>
+          import('./features/security/security-activity.component').then(
+            (m) => m.SecurityActivityComponent,
+          ),
+        title: 'LifeVault – Security & Theft Protection',
+      },
     ]
   },
 

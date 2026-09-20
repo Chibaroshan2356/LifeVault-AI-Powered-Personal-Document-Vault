@@ -1,0 +1,195 @@
+<div class="security-page">
+  <!-- Page Header -->
+  <div class="header-section">
+    <div class="header-left">
+      <div class="title-with-badge">
+        <div class="icon-circle">
+          <mat-icon>security</mat-icon>
+        </div>
+        <div>
+          <h1>Security & Theft Protection</h1>
+          <p class="subtitle">Real-time audit monitoring, access logs, and automated theft-protection defense</p>
+        </div>
+      </div>
+    </div>
+    <div class="header-right">
+      <button mat-flat-button class="refresh-btn" (click)="loadActivity(currentPage)">
+        <mat-icon>refresh</mat-icon>
+        <span>Refresh Activity</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Security Status Banner Cards -->
+  <div class="security-grid">
+    <div class="security-card active-shield">
+      <div class="card-icon">
+        <mat-icon>verified_user</mat-icon>
+      </div>
+      <div class="card-content">
+        <span class="status-indicator online"></span>
+        <h3>Vault Theft Shield Active</h3>
+        <p>Private storage isolation, path traversal defense & cryptographic document ownership verified</p>
+      </div>
+    </div>
+
+    <div class="security-card">
+      <div class="card-icon download-shield">
+        <mat-icon>mark_email_read</mat-icon>
+      </div>
+      <div class="card-content">
+        <h3>Download Email Alerts</h3>
+        <p>Instant Gmail SMTP security notification dispatched upon any document export or download</p>
+      </div>
+    </div>
+
+    <div class="security-card">
+      <div class="card-icon anomaly-shield">
+        <mat-icon>policy</mat-icon>
+      </div>
+      <div class="card-content">
+        <h3>Suspicious Activity Detector</h3>
+        <p>Rule-based threshold tracking for rapid failed logins and high-volume burst downloads</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter Pills -->
+  <div class="filter-bar">
+    <div class="filter-pills">
+      <button
+        class="filter-pill"
+        [class.active]="activeFilter === 'ALL'"
+        (click)="applyFilter('ALL')"
+        matRipple>
+        <mat-icon>list_alt</mat-icon>
+        <span>All Events ({{ events.length }})</span>
+      </button>
+      <button
+        class="filter-pill"
+        [class.active]="activeFilter === 'DOWNLOADS'"
+        (click)="applyFilter('DOWNLOADS')"
+        matRipple>
+        <mat-icon>download</mat-icon>
+        <span>Downloads</span>
+      </button>
+      <button
+        class="filter-pill"
+        [class.active]="activeFilter === 'VIEWS'"
+        (click)="applyFilter('VIEWS')"
+        matRipple>
+        <mat-icon>visibility</mat-icon>
+        <span>Views</span>
+      </button>
+      <button
+        class="filter-pill"
+        [class.active]="activeFilter === 'LOGINS'"
+        (click)="applyFilter('LOGINS')"
+        matRipple>
+        <mat-icon>login</mat-icon>
+        <span>Auth & Logins</span>
+      </button>
+      <button
+        class="filter-pill"
+        [class.active]="activeFilter === 'ALERTS'"
+        (click)="applyFilter('ALERTS')"
+        matRipple>
+        <mat-icon>warning_amber</mat-icon>
+        <span>Alerts & Flags</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading Bar -->
+  <mat-progress-bar *ngIf="loading" mode="indeterminate" class="loader-bar"></mat-progress-bar>
+
+  <!-- Error Alert -->
+  <div class="error-banner" *ngIf="error">
+    <mat-icon>error_outline</mat-icon>
+    <span>{{ error }}</span>
+  </div>
+
+  <!-- Activity Timeline Table / List -->
+  <div class="timeline-container">
+    <div class="table-header-row">
+      <div class="col-event">Event & Description</div>
+      <div class="col-status">Status</div>
+      <div class="col-network">IP & Client</div>
+      <div class="col-time">Timestamp</div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" *ngIf="!loading && filteredEvents.length === 0">
+      <mat-icon>security_update_good</mat-icon>
+      <h3>No Security Events Recorded</h3>
+      <p>No activity matches your current filter. Your account is completely secure.</p>
+    </div>
+
+    <!-- Event Rows -->
+    <div
+      class="event-row"
+      *ngFor="let ev of filteredEvents"
+      [class.suspicious-row]="ev.action === 'SUSPICIOUS_ACTIVITY' || ev.action === 'LOGIN_FAILED'">
+      <div class="col-event">
+        <div class="event-icon-box" [ngClass]="getActionBadgeClass(ev.action, ev.status)">
+          <mat-icon>{{ getActionIcon(ev.action) }}</mat-icon>
+        </div>
+        <div class="event-info">
+          <div class="event-title">{{ formatActionTitle(ev.action) }}</div>
+          <div class="event-details" *ngIf="ev.details">{{ ev.details }}</div>
+          <a
+            *ngIf="ev.documentId"
+            [routerLink]="['/documents', ev.documentId]"
+            class="doc-link">
+            <mat-icon>article</mat-icon>
+            <span>View Related Document</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-status">
+        <span class="status-badge" [ngClass]="getActionBadgeClass(ev.action, ev.status)">
+          {{ ev.status }}
+        </span>
+      </div>
+
+      <div class="col-network">
+        <div class="ip-addr" *ngIf="ev.ipAddress">
+          <mat-icon>router</mat-icon>
+          <span>{{ ev.ipAddress }}</span>
+        </div>
+        <div class="user-agent" *ngIf="ev.userAgent" [title]="ev.userAgent">
+          <mat-icon>devices</mat-icon>
+          <span>{{ ev.userAgent }}</span>
+        </div>
+        <div *ngIf="!ev.ipAddress && !ev.userAgent" class="text-muted">
+          Internal Service
+        </div>
+      </div>
+
+      <div class="col-time">
+        <div class="time-primary">{{ ev.timestamp | date:'medium' }}</div>
+        <div class="time-relative">{{ ev.timestamp | date:'shortTime' }}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination footer -->
+  <div class="pagination-footer" *ngIf="totalPages > 1">
+    <button
+      mat-stroked-button
+      [disabled]="currentPage <= 1 || loading"
+      (click)="loadActivity(currentPage - 1)">
+      <mat-icon>chevron_left</mat-icon>
+      <span>Previous</span>
+    </button>
+    <span class="page-indicator">Page {{ currentPage }} of {{ totalPages }} ({{ total }} total events)</span>
+    <button
+      mat-stroked-button
+      [disabled]="currentPage >= totalPages || loading"
+      (click)="loadActivity(currentPage + 1)">
+      <span>Next</span>
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

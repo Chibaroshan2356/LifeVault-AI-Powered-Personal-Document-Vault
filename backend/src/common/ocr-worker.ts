@@ -11,14 +11,13 @@
  *  4. Update processingHistory and status
  */
 import { DocumentModel }   from '../modules/document/document.model';
-import { LocalStorageService } from './local-storage.service';
+import { StorageFactory }   from './storage.factory';
 import { aiClient }        from './ai-client.service';
+import { blockchainService } from './blockchain.service';
 import { logger }          from '../utils/logger';
 import { DocumentStatus, ProcessingStage, ProcessingStageStatus } from './enums';
 import type { OCRJobPayload } from './interfaces';
 import { SMART_FOLDER_MAPPING, SmartFolderType } from '../config/smart-folders.config';
-
-const storage = new LocalStorageService();
 
 const safeParseDate = (dateVal: any): Date | undefined => {
   if (!dateVal) return undefined;
@@ -34,7 +33,7 @@ const safeParseDate = (dateVal: any): Date | undefined => {
 };
 
 export async function ocrJobHandler(payload: OCRJobPayload): Promise<void> {
-  const { documentId, userId, filePath, mimeType } = payload;
+  const { documentId, userId, filePath, mimeType, fileHash } = payload;
   const startTime = Date.now();
 
   logger.info('OCR job started', { documentId });
@@ -75,17 +74,18 @@ export async function ocrJobHandler(payload: OCRJobPayload): Promise<void> {
 
   try {
     // ── 2. Load file from storage ───────────────────────────────
+    const doc = await DocumentModel.findById(documentId);
+    if (!doc) throw new Error('Document not found in DB');
+
     let fileBuffer: Buffer;
     try {
+      const storage = StorageFactory.getService(doc.storageProvider);
       fileBuffer = await storage.get(filePath);
     } catch (err) {
       throw new Error(`Failed to read file from storage: ${(err as Error).message}`);
     }
 
     // ── 3. Call AI service ──────────────────────────────────────
-    const doc = await DocumentModel.findById(documentId);
-    if (!doc) throw new Error('Document not found in DB');
-
     const result = await aiClient.processDocument(
       fileBuffer,
       doc.originalFileName,
@@ -139,14 +139,41 @@ export async function ocrJobHandler(payload: OCRJobPayload): Promise<void> {
       },
     });
 
-    // ── 5. Smart Folder assignment is handled above in the MongoDB update ──
-
     logger.info('OCR job completed', {
       documentId,
       docType:     result.document_type,
       ocrChars:    result.ocr_text.length,
       durationMs,
     });
+
+    // ── 5. Blockchain registration (non-fatal) ──────────────────
+    //    If the blockchain service is enabled and we have a hash,
+    //    register the document. Failure here NEVER affects document status.
+    if (fileHash && blockchainService.isEnabled()) {
+      logger.info('BlockchainService: starting registration', { documentId });
+      const registration = await blockchainService.register(documentId, fileHash);
+
+      if (registration) {
+        await DocumentModel.findByIdAndUpdate(documentId, {
+          'blockchainIntegrity.txHash':            registration.txHash,
+          'blockchainIntegrity.blockNumber':       registration.blockNumber,
+          'blockchainIntegrity.registeredAt':      new Date(),
+          'blockchainIntegrity.contractAddress':   process.env.BLOCKCHAIN_CONTRACT_ADDRESS ?? '',
+          'blockchainIntegrity.network':           registration.network,
+          'blockchainIntegrity.verificationStatus': 'registered',
+        });
+        logger.info('BlockchainService: registration saved to MongoDB', {
+          documentId,
+          txHash: registration.txHash,
+        });
+      } else {
+        // Blockchain failed — mark as failed but do NOT affect document.status
+        await DocumentModel.findByIdAndUpdate(documentId, {
+          'blockchainIntegrity.verificationStatus': 'failed',
+        });
+        logger.warn('BlockchainService: registration failed — document remains READY', { documentId });
+      }
+    }
 
   } catch (err) {
     const message = (err as Error).message;

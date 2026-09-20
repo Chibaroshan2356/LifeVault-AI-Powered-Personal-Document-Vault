@@ -12,6 +12,8 @@ import { dashboardRouter }    from './document/dashboard.routes';
 import { smartFolderRouter }  from './smart-folder/smart-folder.routes';
 import { reminderRouter }     from './reminder/reminder.routes';
 import { notificationRouter } from './notification/notification.routes';
+import { blockchainRouter }   from './blockchain/blockchain.routes';
+import { securityRouter }     from './security/security.routes';
 
 export const apiRouter = Router();
 
@@ -29,6 +31,7 @@ apiRouter.get('/', (_req, res) => {
       smartFolders:  '/api/v1/smart-folders',
       reminders:     '/api/v1/reminders',
       notifications: '/api/v1/notifications',
+      security:      '/api/v1/security',
     },
     docs: '/api-docs',
   });
@@ -37,7 +40,11 @@ apiRouter.get('/', (_req, res) => {
 apiRouter.use('/auth',          authRouter);
 apiRouter.use('/users',         userRouter);
 apiRouter.use('/documents',     documentRouter);
+// Blockchain integrity routes nested under document ID
+apiRouter.use('/documents/:id', blockchainRouter);
 apiRouter.use('/dashboard',     dashboardRouter);
 apiRouter.use('/smart-folders', smartFolderRouter);
 apiRouter.use('/reminders',     reminderRouter);
 apiRouter.use('/notifications', notificationRouter);
+apiRouter.use('/security',      securityRouter);
+

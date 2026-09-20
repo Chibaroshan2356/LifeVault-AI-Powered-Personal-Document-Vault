@@ -101,6 +101,19 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   animatedAccuracy = 0;
   animatedNeedsReview = 0;
   animatedExpiring = 0;
+  animatedExpiredDocs = 0;
+
+  // Non-intrusive error tracking
+  dashboardErrors: { [key: string]: string } = {};
+
+  get hasDashboardError(): boolean {
+    return Object.keys(this.dashboardErrors).length > 0;
+  }
+
+  get dashboardErrorMessage(): string {
+    const msgs = Object.values(this.dashboardErrors);
+    return msgs.length > 0 ? msgs[0] : '';
+  }
 
   private lastMouseUpdateTime = 0;
   private cardElements: HTMLElement[] = [];
@@ -184,17 +197,18 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     // 800 ms: Start single unified counters animation loop (runs outside Angular Zone)
     setTimeout(() => {
       this.animateAllCounters({
-        totalDocs: this.statsData.totalDocuments,
+        totalDocs: this.statsData.totalDocuments ?? 0,
         accuracy: 98.2,
         expiring: this.expiringDocuments.length,
         needsReview: this.processingErrors.length,
+        expired: this.statsData.expiredDocuments ?? 0,
         confidenceProgress: 98.2,
       });
     }, 800);
   }
 
   // ── Unified numeric counter animator (Only 1 loop instead of 4) 
-  private animateAllCounters(targets: { totalDocs: number; accuracy: number; expiring: number; needsReview: number; confidenceProgress: number }): void {
+  private animateAllCounters(targets: { totalDocs: number; accuracy: number; expiring: number; needsReview: number; expired: number; confidenceProgress: number }): void {
     const startTime = performance.now();
     const duration = 1200;
     
@@ -207,6 +221,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         this.animatedAccuracy = Math.round(easeProgress * targets.accuracy * 10) / 10;
         this.animatedExpiring = Math.floor(easeProgress * targets.expiring);
         this.animatedNeedsReview = Math.floor(easeProgress * targets.needsReview);
+        this.animatedExpiredDocs = Math.floor(easeProgress * targets.expired);
         this.animatedConfidenceProgress = Math.round(easeProgress * targets.confidenceProgress * 10) / 10;
         
         this.cdr.detectChanges(); // Local UI updates
@@ -220,6 +235,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           this.animatedAccuracy = targets.accuracy;
           this.animatedExpiring = targets.expiring;
           this.animatedNeedsReview = targets.needsReview;
+          this.animatedExpiredDocs = targets.expired;
           this.animatedConfidenceProgress = targets.confidenceProgress;
           this.cdr.detectChanges();
         });
@@ -240,6 +256,29 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
 
   trackByString(index: number, item: string): string {
     return item;
+  }
+
+  // ── Error Management Handlers ────────────────────────────────
+  private handleDashboardError(key: string, message: string): void {
+    this.dashboardErrors[key] = message;
+    this.cdr.markForCheck();
+  }
+
+  private clearDashboardError(key: string): void {
+    if (this.dashboardErrors[key]) {
+      delete this.dashboardErrors[key];
+      this.cdr.markForCheck();
+    }
+  }
+
+  retryLoad(): void {
+    this.dashboardErrors = {};
+    this.loadProfile();
+    this.loadStats();
+    this.loadRecentDocuments();
+    this.loadExpiringDocuments();
+    this.loadProcessingErrors();
+    this.cdr.markForCheck();
   }
 
   // ── Data Loader Methods ───────────────────────────────────────
@@ -272,9 +311,13 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           )?.count ?? 0;
           this.statCards[3].value = res.data.byCategory.length;
 
+          this.clearDashboardError('stats');
           this.triggerStaggeredAnimations();
           this.cdr.markForCheck();
         }
+      },
+      error: () => {
+        this.handleDashboardError('stats', 'Failed to load document statistics');
       },
     });
   }
@@ -285,6 +328,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         if (res.success && res.data) {
           this.recentDocuments = res.data.documents;
           this.generateAIDiscoveries();
+          this.clearDashboardError('recent');
           this.cdr.markForCheck();
           
           setTimeout(() => {
@@ -300,6 +344,9 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           }, 0);
         }
       },
+      error: () => {
+        this.handleDashboardError('recent', 'Failed to load recent documents');
+      },
     });
   }
 
@@ -310,10 +357,14 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           this.expiringDocuments = res.data.documents;
           this.statCards[2].value = this.expiringDocuments.length;
           
+          this.clearDashboardError('expiring');
           this.triggerStaggeredAnimations();
           this.generateAIDiscoveries();
           this.cdr.markForCheck();
         }
+      },
+      error: () => {
+        this.handleDashboardError('expiring', 'Failed to load expiring documents');
       },
     });
   }
@@ -324,10 +375,14 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         if (res.success && res.data) {
           this.processingErrors = res.data.documents;
           
+          this.clearDashboardError('errors');
           this.triggerStaggeredAnimations();
           this.generateAIDiscoveries();
           this.cdr.markForCheck();
         }
+      },
+      error: () => {
+        this.handleDashboardError('errors', 'Failed to load processing error records');
       },
     });
   }
@@ -387,6 +442,10 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
 
   get expiringCount(): number {
     return this.statCards[2].value;
+  }
+
+  get expiredDocumentsCount(): number {
+    return this.statsData?.expiredDocuments ?? 0;
   }
 
   get needsReviewCount(): number {

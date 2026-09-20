@@ -43,8 +43,9 @@ export const SearchDocumentsSchema = z.object({
   category: z.string().optional(),                     // document type filter
   status:   z.string().optional(),                     // processing status filter
   mimeType: z.string().optional(),                     // file type filter
-  minSize:  z.coerce.number().int().min(0).optional(), // file size range (bytes)
-  maxSize:  z.coerce.number().int().min(0).optional(),
+  minSize:      z.coerce.number().int().min(0).optional(), // file size range (bytes)
+  maxSize:      z.coerce.number().int().min(0).optional(),
+  expiryStatus: z.enum(['expired', 'active', 'expiringSoon']).optional(),
 
   // Date range filter
   fromDate: z.string().datetime().optional(),          // ISO 8601 format

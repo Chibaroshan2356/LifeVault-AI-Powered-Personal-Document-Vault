@@ -324,6 +324,114 @@ describe('DocumentService.search()', () => {
     expect(chainMock.sort).toHaveBeenCalledWith({ createdAt: -1 });
   });
 
+  it('escapes special regex characters in holder, org, and docnumber search', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    await documentService.search(OWNER_ID, {
+      holder: 'John (Doe)*',
+      org: 'Gov [Dept]',
+      docnumber: 'ABC+123?',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        'metadata.holderName': { $regex: 'John \\(Doe\\)\\*', $options: 'i' },
+        'metadata.organization': { $regex: 'Gov \\[Dept\\]', $options: 'i' },
+        'metadata.documentNumber': { $regex: 'ABC\\+123\\?', $options: 'i' },
+      }),
+    );
+  });
+
+  it('searches both metadata.documentName and originalFileName with escaped regex when docname is provided', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    await documentService.search(OWNER_ID, {
+      docname: 'Passport (Scan)',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        $or: [
+          { 'metadata.documentName': { $regex: 'Passport \\(Scan\\)', $options: 'i' } },
+          { originalFileName: { $regex: 'Passport \\(Scan\\)', $options: 'i' } },
+        ],
+      }),
+    );
+  });
+
+  it('filters by expiryStatus (expired, expiringSoon, active)', async () => {
+    (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
+    const chainMock = {
+      sort:   jest.fn().mockReturnThis(),
+      skip:   jest.fn().mockReturnThis(),
+      limit:  jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      lean:   jest.fn().mockResolvedValue([{ ...mockDoc, createdAt: new Date() }]),
+    };
+    (DocumentModel.find as jest.Mock).mockReturnValue(chainMock);
+
+    // Test 'expired'
+    await documentService.search(OWNER_ID, {
+      expiryStatus: 'expired',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        expiryDate: expect.objectContaining({ $ne: null, $lt: expect.any(Date) }),
+      }),
+    );
+
+    // Test 'expiringSoon'
+    await documentService.search(OWNER_ID, {
+      expiryStatus: 'expiringSoon',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        expiryDate: expect.objectContaining({ $ne: null, $gte: expect.any(Date), $lte: expect.any(Date) }),
+      }),
+    );
+
+    // Test 'active'
+    await documentService.search(OWNER_ID, {
+      expiryStatus: 'active',
+      page: 1,
+      limit: 10,
+      sort: 'newest',
+    });
+    expect(DocumentModel.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        expiryDate: expect.objectContaining({ $gte: expect.any(Date) }),
+      }),
+    );
+  });
+
   it('respects user ownership in search', async () => {
     (DocumentModel.countDocuments as jest.Mock).mockResolvedValue(1);
     const chainMock = {

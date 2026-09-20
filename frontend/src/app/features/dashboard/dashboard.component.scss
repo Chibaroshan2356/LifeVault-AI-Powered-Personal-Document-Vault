@@ -667,9 +667,68 @@
 }
 
 /* ── Narrative AI Health Metrics Bar ── */
+/* ── Non-intrusive Dashboard Error Banner ── */
+.dashboard-error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  padding: 12px 20px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  margin-bottom: var(--sp-lg);
+  animation: dashboard-enter 0.4s ease both;
+
+  .error-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fca5a5;
+    font-size: 13px;
+    font-weight: 500;
+
+    .error-icon {
+      color: #f87171;
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .retry-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+
+    mat-icon {
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+    }
+
+    &:hover {
+      background: rgba(239, 68, 68, 0.35);
+      border-color: #ef4444;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+/* ── Narrative AI Health Metrics Bar ── */
 .ai-status-summary-bar {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: var(--sp-lg);
   width: 100%;
   
@@ -720,6 +779,11 @@
       border-top: 3px solid #ec4899 !important;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 -4px 15px rgba(236, 72, 153, 0.12) !important;
       .value { color: #f472b6 !important; text-shadow: 0 0 10px rgba(244, 114, 182, 0.35); }
+    }
+    &.accent-rose {
+      border-top: 3px solid #f43f5e !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 -4px 15px rgba(244, 63, 94, 0.12) !important;
+      .value { color: #fb7185 !important; text-shadow: 0 0 10px rgba(251, 113, 133, 0.35); }
     }
     
     &:hover {

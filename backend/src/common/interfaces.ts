@@ -58,6 +58,8 @@ export interface OCRJobPayload {
   userId:     string;
   filePath:   string;
   mimeType:   string;
+  /** SHA-256 hex of the original file bytes — used for blockchain registration */
+  fileHash?:  string;
 }
 
 /**

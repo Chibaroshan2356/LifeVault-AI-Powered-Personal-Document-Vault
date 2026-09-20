@@ -13,6 +13,7 @@ export interface DashboardStats {
   totalDocuments: number;
   byCategory: Array<{ category: string; count: number }>;
   byStatus: Array<{ status: string; count: number }>;
+  expiredDocuments: number;
 }
 
 export interface DashboardDocument {

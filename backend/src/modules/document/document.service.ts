@@ -17,18 +17,20 @@
  *  Example: uploads/64f3a1.../2026/a3c7f2b1.pdf
  */
 import path from 'path';
+import { createHash } from 'crypto';
 import { v4 as uuidv4 } from 'uuid';
 import mongoose from 'mongoose';
 import { DocumentModel }          from './document.model';
-import { LocalStorageService }    from '../../common/local-storage.service';
+import { StorageFactory }         from '../../common/storage.factory';
+import { appConfig }              from '../../config/app.config';
 import { jobQueue }               from '../../common/job-queue.service';
 import { HttpError }              from '../../middleware/error.middleware';
 import { logger }                 from '../../utils/logger';
 import { DocumentStatus, DocumentCategory, ProcessingStage, ProcessingStageStatus } from '../../common/enums';
 import { ApiResponse, PaginationMeta } from '../../utils/ApiResponse';
+import { escapeRegex }            from '../../utils/regex.util';
+import { validateObjectKey }      from '../../utils/storage-key.util';
 import type { ListDocumentsDto, SearchDocumentsDto }  from './document.validator';
-
-const storage = new LocalStorageService();
 
 /** Shape of data returned for a document list item */
 export interface DocumentListItem {
@@ -61,25 +63,37 @@ class DocumentService {
 
     const startTime = Date.now();
 
-    // 1. Build storage path: userId/year/uuid.ext
+    // 1. Compute SHA-256 hash of the raw file bytes BEFORE writing to disk.
+    //    This is the value anchored on the blockchain for integrity verification.
+    const fileHash = createHash('sha256').update(file.buffer).digest('hex');
+
+    // 2. Build storage path: userId/year/uuid.ext
     const ext         = path.extname(file.originalname).toLowerCase() || this.mimeToExt(file.mimetype);
     const storedName  = `${uuidv4()}${ext}`;
     const year        = new Date().getFullYear().toString();
     const storagePath = `${userId}/${year}/${storedName}`;
 
-    // 2. Persist file to disk via storage abstraction
+    // 3. Persist file via selected storage provider (B2 or Local)
+    const currentProvider = appConfig.storageProvider === 'b2' && appConfig.b2KeyId && appConfig.b2ApplicationKey ? 'b2' : 'local';
+    const storage = StorageFactory.getService(currentProvider);
     await storage.save(file.buffer, storedName, file.mimetype, `${userId}/${year}`);
 
-    // 3. Create MongoDB document record
+    // 4. Create MongoDB document record with fileHash and storageProvider embedded
     const doc = await DocumentModel.create({
       userId:           new mongoose.Types.ObjectId(userId),
       originalFileName: file.originalname,
       storedFileName:   storedName,
       storagePath,
+      storageProvider:  currentProvider,
       mimeType:         file.mimetype,
       fileSize:         file.size,
-      category:         DocumentCategory.OTHER,   // AI will update this in Sprint 7
+      category:         DocumentCategory.OTHER,
       status:           DocumentStatus.UPLOADED,
+      // Store the hash immediately — blockchain registration happens in the background
+      blockchainIntegrity: {
+        fileHash,
+        verificationStatus: 'pending',
+      },
       processingHistory: [
         {
           stage:      ProcessingStage.UPLOAD,
@@ -92,12 +106,13 @@ class DocumentService {
 
     const documentId = (doc._id as mongoose.Types.ObjectId).toString();
 
-    // 4. Enqueue background OCR job (runs when AI service is connected in Sprint 5)
+    // 5. Enqueue background OCR job — pass fileHash for blockchain registration
     await jobQueue.enqueue({
       documentId,
       userId,
       filePath: storagePath,
       mimeType: file.mimetype,
+      fileHash,
     });
 
     logger.info('Document uploaded', {
@@ -106,6 +121,7 @@ class DocumentService {
       originalFileName: file.originalname,
       fileSize:         file.size,
       storagePath,
+      fileHash,
     });
 
     return { documentId };
@@ -189,18 +205,35 @@ class DocumentService {
       filter.$text = { $search: dto.q };
     }
 
-    // ── Metadata searches (case-insensitive regex) ────────────────
+    // ── Metadata & Name searches (case-insensitive escaped regex) ─
     if (dto.holder && dto.holder.trim()) {
-      filter['metadata.holderName'] = { $regex: dto.holder, $options: 'i' };
+      filter['metadata.holderName'] = { $regex: escapeRegex(dto.holder.trim()), $options: 'i' };
     }
     if (dto.docname && dto.docname.trim()) {
-      filter['metadata.documentName'] = { $regex: dto.docname, $options: 'i' };
+      const escapedDocName = escapeRegex(dto.docname.trim());
+      filter.$or = [
+        { 'metadata.documentName': { $regex: escapedDocName, $options: 'i' } },
+        { originalFileName: { $regex: escapedDocName, $options: 'i' } },
+      ];
     }
     if (dto.org && dto.org.trim()) {
-      filter['metadata.organization'] = { $regex: dto.org, $options: 'i' };
+      filter['metadata.organization'] = { $regex: escapeRegex(dto.org.trim()), $options: 'i' };
     }
     if (dto.docnumber && dto.docnumber.trim()) {
-      filter['metadata.documentNumber'] = { $regex: dto.docnumber, $options: 'i' };
+      filter['metadata.documentNumber'] = { $regex: escapeRegex(dto.docnumber.trim()), $options: 'i' };
+    }
+
+    // ── Expiry status filter ───────────────────────────────────────
+    if (dto.expiryStatus) {
+      const now = new Date();
+      if (dto.expiryStatus === 'expired') {
+        filter.expiryDate = { $ne: null, $lt: now };
+      } else if (dto.expiryStatus === 'expiringSoon') {
+        const soon = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+        filter.expiryDate = { $ne: null, $gte: now, $lte: soon };
+      } else if (dto.expiryStatus === 'active') {
+        filter.expiryDate = { $gte: now };
+      }
     }
 
     // ── Category and Status filters ───────────────────────────────
@@ -352,10 +385,12 @@ class DocumentService {
 
     // Delete file from storage (best effort — don't fail if file missing)
     try {
+      const storage = StorageFactory.getService(doc.storageProvider);
       await storage.delete(doc.storagePath);
     } catch {
       logger.warn('File not found during delete — skipping storage deletion', {
         storagePath: doc.storagePath,
+        storageProvider: doc.storageProvider,
         documentId,
       });
     }
@@ -363,6 +398,47 @@ class DocumentService {
     await DocumentModel.deleteOne({ _id: documentId });
 
     logger.info('Document deleted', { documentId, userId });
+  }
+
+  // ------------------------------------------------------------------
+  // Secure File Retrieval (Download / View)
+  // ------------------------------------------------------------------
+
+  /**
+   * Loads a document file buffer and metadata with strict ownership enforcement.
+   * @throws HttpError 404 if document or file not found
+   * @throws HttpError 403 if ownership mismatch
+   */
+  async getFile(
+    documentId: string,
+    userId: string,
+  ): Promise<{
+    buffer:           Buffer;
+    originalFileName: string;
+    mimeType:         string;
+    fileSize:         number;
+    document:         IDocument;
+  }> {
+    const doc = await this.findById(documentId, userId);
+
+    // Validate storage path against directory traversal
+    validateObjectKey(doc.storagePath);
+
+    let buffer: Buffer;
+    try {
+      const storage = StorageFactory.getService(doc.storageProvider);
+      buffer = await storage.get(doc.storagePath);
+    } catch (err: any) {
+      throw new HttpError(404, `Physical document file not found: ${err.message}`);
+    }
+
+    return {
+      buffer,
+      originalFileName: doc.originalFileName,
+      mimeType:         doc.mimeType,
+      fileSize:         doc.fileSize,
+      document:         doc,
+    };
   }
 
   // ------------------------------------------------------------------

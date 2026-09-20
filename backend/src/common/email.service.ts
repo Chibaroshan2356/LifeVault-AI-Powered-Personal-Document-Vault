@@ -251,6 +251,142 @@ export class EmailService {
 
     return this.sendEmail({ to: toEmail, subject, html, text });
   }
+
+  /**
+   * Send a Document Download Security Alert via Gmail SMTP.
+   * Notifies user whenever a document has been downloaded.
+   * Never includes sensitive content, text, or file attachments.
+   */
+  async sendDownloadAlertEmail(
+    toEmail:      string,
+    userName:     string,
+    docName:      string,
+    downloadTime?: Date,
+  ): Promise<EmailResult> {
+    const appUrl = appConfig.corsOrigin || 'http://localhost:4200';
+    const timestampStr = (downloadTime || new Date()).toLocaleString('en-US', {
+      timeZone: 'UTC',
+      dateStyle: 'full',
+      timeStyle: 'medium',
+    }) + ' UTC';
+
+    const subject = 'LifeVault Security Alert: Document Downloaded';
+
+    const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #0b0f19; color: #f1f5f9; margin: 0; padding: 24px; }
+    .container { max-width: 560px; margin: 0 auto; background: #111827; border: 1px solid rgba(239,68,68,0.3); border-radius: 14px; overflow: hidden; }
+    .header { background: linear-gradient(135deg, rgba(239,68,68,0.2), rgba(99,102,241,0.15)); padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .shield-badge { display: inline-block; background: #ef4444; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px; }
+    .title { font-size: 20px; font-weight: 700; color: #f8fafc; margin-top: 8px; }
+    .content { padding: 24px; }
+    .box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .item { font-size: 14px; color: #cbd5e1; margin-bottom: 8px; }
+    .item strong { color: #94a3b8; }
+    .btn { display: inline-block; background: #ef4444; color: #ffffff !important; text-decoration: none; font-weight: 600; font-size: 13px; padding: 10px 20px; border-radius: 8px; margin-top: 14px; }
+    .footer { padding: 16px 24px; background: rgba(0,0,0,0.3); font-size: 12px; color: #64748b; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="shield-badge">SECURITY ALERT</span>
+      <div class="title">Document Download Notification</div>
+    </div>
+    <div class="content">
+      <p style="font-size: 15px; color: #e2e8f0; margin-top: 0;">Hello <strong>${userName || 'User'}</strong>,</p>
+      <p style="font-size: 14px; color: #94a3b8; line-height: 1.5;">Your document "<strong>${docName}</strong>" was downloaded from your LifeVault account.</p>
+      <div class="box">
+        <div class="item"><strong>Document:</strong> ${docName}</div>
+        <div class="item"><strong>Action:</strong> Document Download</div>
+        <div class="item"><strong>Time:</strong> ${timestampStr}</div>
+      </div>
+      <p style="font-size: 13px; color: #f87171; line-height: 1.4;">If you did not perform this action, please log in to your LifeVault account and secure your account immediately.</p>
+      <a href="${appUrl}/auth/login" class="btn">Secure My Account →</a>
+    </div>
+    <div class="footer">
+      LifeVault Security Team • Automated Protection Alert
+    </div>
+  </div>
+</body>
+</html>
+`;
+
+    const text = `LifeVault Security Alert: Document Downloaded\n\nHello ${userName || 'User'},\n\nYour document "${docName}" was downloaded from your LifeVault account.\n\nDocument: ${docName}\nAction: Document Download\nTime: ${timestampStr}\n\nIf you did not perform this action, please log in to your LifeVault account and secure your account immediately.\n\nRegards,\nLifeVault Security Team`;
+
+    return this.sendEmail({ to: toEmail, subject, html, text });
+  }
+
+  /**
+   * Send a Suspicious Activity Alert via Gmail SMTP.
+   */
+  async sendSuspiciousActivityEmail(
+    toEmail:      string,
+    userName:     string,
+    activityDesc: string,
+    eventTime?:   Date,
+  ): Promise<EmailResult> {
+    const appUrl = appConfig.corsOrigin || 'http://localhost:4200';
+    const timestampStr = (eventTime || new Date()).toLocaleString('en-US', {
+      timeZone: 'UTC',
+      dateStyle: 'full',
+      timeStyle: 'medium',
+    }) + ' UTC';
+
+    const subject = 'LifeVault Security Alert: Suspicious Activity Detected';
+
+    const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #0b0f19; color: #f1f5f9; margin: 0; padding: 24px; }
+    .container { max-width: 560px; margin: 0 auto; background: #111827; border: 1px solid rgba(239,68,68,0.4); border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(239,68,68,0.15); }
+    .header { background: linear-gradient(135deg, rgba(239,68,68,0.3), rgba(185,28,28,0.15)); padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .shield-badge { display: inline-block; background: #dc2626; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px; }
+    .title { font-size: 20px; font-weight: 700; color: #f8fafc; margin-top: 8px; }
+    .content { padding: 24px; }
+    .box { background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.25); border-radius: 10px; padding: 16px; margin: 16px 0; }
+    .item { font-size: 14px; color: #fca5a5; margin-bottom: 8px; }
+    .item strong { color: #f87171; }
+    .btn { display: inline-block; background: #dc2626; color: #ffffff !important; text-decoration: none; font-weight: 600; font-size: 13px; padding: 10px 20px; border-radius: 8px; margin-top: 14px; }
+    .footer { padding: 16px 24px; background: rgba(0,0,0,0.3); font-size: 12px; color: #64748b; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="shield-badge">CRITICAL ALERT</span>
+      <div class="title">Suspicious Activity Detected</div>
+    </div>
+    <div class="content">
+      <p style="font-size: 15px; color: #e2e8f0; margin-top: 0;">Hello <strong>${userName || 'User'}</strong>,</p>
+      <p style="font-size: 14px; color: #94a3b8; line-height: 1.5;">Suspicious activity was detected on your LifeVault account.</p>
+      <div class="box">
+        <div class="item"><strong>Activity:</strong> ${activityDesc}</div>
+        <div class="item"><strong>Time:</strong> ${timestampStr}</div>
+      </div>
+      <p style="font-size: 13px; color: #f87171; line-height: 1.4;">If you did not perform this activity, please secure your account immediately.</p>
+      <a href="${appUrl}/auth/login" class="btn">Secure My Account →</a>
+    </div>
+    <div class="footer">
+      LifeVault Security Team • Automated Protection Alert
+    </div>
+  </div>
+</body>
+</html>
+`;
+
+    const text = `LifeVault Security Alert: Suspicious Activity Detected\n\nHello ${userName || 'User'},\n\nSuspicious activity was detected on your LifeVault account.\n\nActivity: ${activityDesc}\nTime: ${timestampStr}\n\nIf you did not perform this activity, secure your account immediately.\n\nRegards,\nLifeVault Security Team`;
+
+    return this.sendEmail({ to: toEmail, subject, html, text });
+  }
 }
 
 export const emailService = new EmailService();
+

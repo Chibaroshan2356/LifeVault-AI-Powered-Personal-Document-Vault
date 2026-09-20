@@ -6,22 +6,22 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
 export interface INotification extends Document {
-  userId:     mongoose.Types.ObjectId;
-  documentId: mongoose.Types.ObjectId;
-  title:      string;
-  body:       string;
-  eventType?: string;
-  docName?:   string;
-  subtitle?:  string;
-  read:       boolean;
-  createdAt:  Date;
-  updatedAt:  Date;
+  userId:      mongoose.Types.ObjectId;
+  documentId?: mongoose.Types.ObjectId;
+  title:       string;
+  body:        string;
+  eventType?:  string;
+  docName?:    string;
+  subtitle?:   string;
+  read:        boolean;
+  createdAt:   Date;
+  updatedAt:   Date;
 }
 
 const NotificationSchema = new Schema<INotification>(
   {
     userId:     { type: mongoose.Schema.Types.ObjectId, ref: 'User',     required: true, index: true },
-    documentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Document', required: true },
+    documentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Document', required: false },
     title:      { type: String, required: true },
     body:       { type: String, required: true },
     eventType:  { type: String, default: 'reminder' },

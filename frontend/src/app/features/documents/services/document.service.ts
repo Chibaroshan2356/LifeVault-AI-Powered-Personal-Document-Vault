@@ -13,6 +13,8 @@ import type {
   DocumentDetail,
   UploadResponse,
   PaginationMeta,
+  BlockchainIntegrity,
+  IntegrityVerificationResult,
 } from '../models/document.models';
 
 interface ApiResponse<T> {
@@ -143,4 +145,51 @@ export class DocumentService {
       .delete<ApiResponse<null>>(`${this.url}/${id}`)
       .pipe(map(() => undefined));
   }
+
+  /**
+   * Get blockchain integrity record for a document.
+   * Returns the stored hash, verification status, and on-chain metadata.
+   */
+  getIntegrity(id: string): Observable<BlockchainIntegrity> {
+    return this.http
+      .get<ApiResponse<BlockchainIntegrity>>(`${this.url}/${id}/integrity`)
+      .pipe(map((res) => res.data!));
+  }
+
+  /**
+   * Verify document integrity by re-hashing the stored file and comparing against chain.
+   * This triggers a POST — no request body needed.
+   */
+  verifyIntegrity(id: string): Observable<IntegrityVerificationResult> {
+    return this.http
+      .post<ApiResponse<IntegrityVerificationResult>>(`${this.url}/${id}/verify`, {})
+      .pipe(map((res) => res.data!));
+  }
+
+  /**
+   * Securely stream file blob for inline preview (enforces JWT + ownership).
+   */
+  getFileBlob(id: string): Observable<Blob> {
+    return this.http.get(`${this.url}/${id}/file`, { responseType: 'blob' });
+  }
+
+  /**
+   * Securely download document with ownership verification, audit logging, and email alert.
+   */
+  downloadDocument(id: string, fileName?: string): Observable<Blob> {
+    return this.http.get(`${this.url}/${id}/download`, { responseType: 'blob' }).pipe(
+      map((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName || `document-${id}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => window.URL.revokeObjectURL(url), 1000);
+        return blob;
+      }),
+    );
+  }
 }
+

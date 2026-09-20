@@ -13,6 +13,18 @@
     </button>
   </header>
 
+  <!-- Non-intrusive Error State Banner -->
+  <div class="dashboard-error-banner" *ngIf="hasDashboardError">
+    <div class="error-banner-content">
+      <mat-icon class="error-icon">info_outline</mat-icon>
+      <span>{{ dashboardErrorMessage }}. Some metrics may be temporarily unavailable.</span>
+    </div>
+    <button class="retry-btn" (click)="retryLoad()" matRipple>
+      <mat-icon>refresh</mat-icon>
+      <span>Retry</span>
+    </button>
+  </div>
+
   <!-- Narrative AI Summary & Identity Health Metrics -->
   <section class="ai-status-summary-bar">
     <div class="summary-metric accent-blue">
@@ -30,6 +42,10 @@
     <div class="summary-metric accent-pink" [class.warning]="expiringCount > 0">
       <span class="value">{{ animatedExpiring }}</span>
       <span class="label">Expiring Soon</span>
+    </div>
+    <div class="summary-metric accent-rose" [class.danger]="expiredDocumentsCount > 0">
+      <span class="value">{{ animatedExpiredDocs }}</span>
+      <span class="label">Expired Documents</span>
     </div>
   </section>
 

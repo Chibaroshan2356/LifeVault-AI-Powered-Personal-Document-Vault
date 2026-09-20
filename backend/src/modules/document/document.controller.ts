@@ -9,6 +9,11 @@ import { documentService }  from './document.service';
 import { ApiResponse }      from '../../utils/ApiResponse';
 import { validateUploadedFile } from '../../middleware/upload.middleware';
 import { ListDocumentsSchema, SearchDocumentsSchema }  from './document.validator';
+import { securityAuditService } from '../security/security-audit.service';
+import { SecurityAction, SecurityStatus } from '../security/security.types';
+import { emailService } from '../../common/email.service';
+import { logger } from '../../utils/logger';
+
 
 // ------------------------------------------------------------------
 // POST /api/v1/documents/upload
@@ -301,3 +306,161 @@ export const searchDocuments = async (
     next(err);
   }
 };
+
+// ------------------------------------------------------------------
+// GET /api/v1/documents/:id/download
+// ------------------------------------------------------------------
+
+/**
+ * @swagger
+ * /documents/{id}/download:
+ *   get:
+ *     summary: Securely download document file (enforces ownership, audit log, email alert)
+ *     tags: [Documents]
+ *     security:
+ *       - BearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema: { type: string }
+ *     responses:
+ *       200:
+ *         description: Document binary stream
+ *         content:
+ *           application/octet-stream:
+ *             schema:
+ *               type: string
+ *               format: binary
+ *       401:
+ *         description: Unauthorized
+ *       403:
+ *         description: Forbidden
+ *       404:
+ *         description: Document or physical file not found
+ */
+export const downloadDocument = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> => {
+  try {
+    const userId = req.user!.sub;
+    const userEmail = req.user!.email;
+    const { id } = req.params;
+    const ipAddress = (req.headers['x-forwarded-for'] as string)?.split(',')[0]?.trim() || req.socket.remoteAddress;
+    const userAgent = req.headers['user-agent'];
+
+    // 1. Ownership & file verification
+    const fileResult = await documentService.getFile(id, userId);
+
+    // 2. Record successful download event in security audit log
+    await securityAuditService.recordEvent({
+      userId,
+      documentId: id,
+      action:     SecurityAction.DOCUMENT_DOWNLOAD,
+      status:     SecurityStatus.SUCCESS,
+      ipAddress,
+      userAgent,
+      details:    `Downloaded file: ${fileResult.originalFileName}`,
+    });
+
+    // 3. Dispatch download security alert email (non-blocking)
+    if (userEmail) {
+      emailService
+        .sendDownloadAlertEmail(
+          userEmail,
+          userEmail.split('@')[0],
+          fileResult.originalFileName,
+          new Date(),
+        )
+        .catch((emailErr) => {
+          logger.warn('[DOWNLOAD ALERT] Failed to send download security email', {
+            error: emailErr.message,
+            documentId: id,
+            userId,
+          });
+        });
+    }
+
+    // 4. Check for high-volume download anomaly (suspicious activity)
+    securityAuditService.checkSuspiciousDownloads(userId).catch(() => {});
+
+    // 5. Send file with download headers
+    res.setHeader('Content-Type', fileResult.mimeType);
+    res.setHeader(
+      'Content-Disposition',
+      `attachment; filename="${encodeURIComponent(fileResult.originalFileName)}"`,
+    );
+    res.setHeader('Content-Length', fileResult.buffer.length);
+    res.status(200).send(fileResult.buffer);
+  } catch (err) {
+    next(err);
+  }
+};
+
+// ------------------------------------------------------------------
+// GET /api/v1/documents/:id/file
+// ------------------------------------------------------------------
+
+/**
+ * @swagger
+ * /documents/{id}/file:
+ *   get:
+ *     summary: Stream document file for inline viewing (enforces ownership & view audit)
+ *     tags: [Documents]
+ *     security:
+ *       - BearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema: { type: string }
+ *     responses:
+ *       200:
+ *         description: Document binary stream (inline)
+ *       401:
+ *         description: Unauthorized
+ *       403:
+ *         description: Forbidden
+ *       404:
+ *         description: Document or physical file not found
+ */
+export const streamDocumentFile = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> => {
+  try {
+    const userId = req.user!.sub;
+    const { id } = req.params;
+    const ipAddress = (req.headers['x-forwarded-for'] as string)?.split(',')[0]?.trim() || req.socket.remoteAddress;
+    const userAgent = req.headers['user-agent'];
+
+    // 1. Ownership & file verification
+    const fileResult = await documentService.getFile(id, userId);
+
+    // 2. Record view audit event
+    await securityAuditService.recordEvent({
+      userId,
+      documentId: id,
+      action:     SecurityAction.DOCUMENT_VIEW,
+      status:     SecurityStatus.SUCCESS,
+      ipAddress,
+      userAgent,
+      details:    `Viewed file: ${fileResult.originalFileName}`,
+    });
+
+    // 3. Send file inline
+    res.setHeader('Content-Type', fileResult.mimeType);
+    res.setHeader(
+      'Content-Disposition',
+      `inline; filename="${encodeURIComponent(fileResult.originalFileName)}"`,
+    );
+    res.setHeader('Content-Length', fileResult.buffer.length);
+    res.status(200).send(fileResult.buffer);
+  } catch (err) {
+    next(err);
+  }
+};
+

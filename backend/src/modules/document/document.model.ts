@@ -42,26 +42,44 @@ export interface IDocumentMetadata {
   documentNumber?: string;
 }
 
+/**
+ * Blockchain integrity record — populated after on-chain registration.
+ * Only the SHA-256 hash and block metadata are stored here.
+ * NO personal data (name, DOB, document number) is ever put on-chain.
+ */
+export interface IBlockchainIntegrity {
+  fileHash:            string;   // SHA-256 hex of the original file bytes
+  txHash?:             string;   // Ethereum transaction hash
+  blockNumber?:        number;   // Block number of registration
+  registeredAt?:       Date;     // Timestamp of successful registration
+  contractAddress?:    string;   // Address of DocumentIntegrity contract
+  network?:            string;   // e.g. "hardhat", "polygon-amoy", "polygon"
+  verificationStatus:  'pending' | 'registered' | 'failed' | 'verified' | 'tampered';
+}
+
 /** Full document interface */
 export interface IDocument extends Document {
-  userId:            mongoose.Types.ObjectId;
-  originalFileName:  string;
-  storedFileName:    string;
-  storagePath:       string;   // relative: "userId/2026/uuid.pdf"
-  mimeType:          string;
-  fileSize:          number;
-  category:          DocumentCategory;
-  status:            DocumentStatus;
-  processingHistory: IProcessingHistoryEntry[];
-  ocrText:           string;
-  ocrConfidence:     number;
-  metadata:          IDocumentMetadata;
-  aiVersionInfo:     IAIVersionInfo | null;
-  expiryDate:        Date | null;
-  errorMessage:      string | null;
-  smartFolder?:      string;
-  createdAt:         Date;
-  updatedAt:         Date;
+  userId:               mongoose.Types.ObjectId;
+  originalFileName:     string;
+  storedFileName:       string;
+  storagePath:          string;   // relative: "userId/2026/uuid.pdf"
+  storageProvider?:     'local' | 'b2';
+  mimeType:             string;
+  fileSize:             number;
+  category:             DocumentCategory;
+  status:               DocumentStatus;
+  processingHistory:    IProcessingHistoryEntry[];
+  ocrText:              string;
+  ocrConfidence:        number;
+  metadata:             IDocumentMetadata;
+  aiVersionInfo:        IAIVersionInfo | null;
+  expiryDate:           Date | null;
+  errorMessage:         string | null;
+  smartFolder?:         string;
+  /** Blockchain integrity anchor — null until SHA-256 is computed at upload */
+  blockchainIntegrity:  IBlockchainIntegrity | null;
+  createdAt:            Date;
+  updatedAt:            Date;
 }
 
 const ProcessingHistorySchema = new Schema<IProcessingHistoryEntry>(
@@ -97,6 +115,23 @@ const AIVersionInfoSchema = new Schema<IAIVersionInfo>(
   { _id: false },
 );
 
+const BlockchainIntegritySchema = new Schema<IBlockchainIntegrity>(
+  {
+    fileHash:           { type: String, required: true },
+    txHash:             { type: String },
+    blockNumber:        { type: Number },
+    registeredAt:       { type: Date },
+    contractAddress:    { type: String },
+    network:            { type: String },
+    verificationStatus: {
+      type:    String,
+      enum:    ['pending', 'registered', 'failed', 'verified', 'tampered'],
+      default: 'pending',
+    },
+  },
+  { _id: false },
+);
+
 const DocumentSchema = new Schema<IDocument>(
   {
     userId: {
@@ -117,10 +152,16 @@ const DocumentSchema = new Schema<IDocument>(
       required: true,
     },
 
-    /** Relative path from the uploads root, e.g. "userId/2026/uuid.pdf" */
+    /** Relative path from the uploads root or B2 object key, e.g. "userId/2026/uuid.pdf" */
     storagePath: {
       type:     String,
       required: true,
+    },
+
+    storageProvider: {
+      type:    String,
+      enum:    ['local', 'b2'],
+      default: 'local',
     },
 
     mimeType: {
@@ -187,6 +228,16 @@ const DocumentSchema = new Schema<IDocument>(
       default: 'Other',
       index:   true,
     },
+
+    /**
+     * Blockchain integrity anchor.
+     * null  = uploaded before blockchain integration or blockchain disabled.
+     * set   = SHA-256 was computed at upload time.
+     */
+    blockchainIntegrity: {
+      type:    BlockchainIntegritySchema,
+      default: null,
+    },
   },
   {
     timestamps: true,
@@ -197,8 +248,8 @@ const DocumentSchema = new Schema<IDocument>(
 // Compound index: fetch all documents for a user, sorted by date
 DocumentSchema.index({ userId: 1, createdAt: -1 });
 
-// Text index on OCR text for full-text search
-DocumentSchema.index({ ocrText: 'text' });
+// Compound text index on OCR text scoped by user for optimized multi-tenant search
+DocumentSchema.index({ userId: 1, ocrText: 'text' });
 
 // Indexes for metadata search filtering
 DocumentSchema.index({ 'metadata.holderName': 1 });

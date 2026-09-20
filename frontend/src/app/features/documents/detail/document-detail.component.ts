@@ -16,7 +16,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { DocumentService } from '../services/document.service';
 import { ReminderService }  from '../services/reminder.service';
-import { DocumentDetail, DocumentStatus, DocumentMetadata } from '../models/document.models';
+import { DocumentDetail, DocumentStatus, DocumentMetadata, BlockchainIntegrity, IntegrityVerificationResult } from '../models/document.models';
 import { environment } from '../../../../environments/environment';
 import { SmartReminderComponent } from '../components/smart-reminder/smart-reminder.component';
 
@@ -58,6 +58,13 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
   showConfidenceHeatmap = false;
   currentViewMode: 'interactive' | 'native' = 'interactive';
 
+  // ── Blockchain Integrity ─────────────────────────────────────
+  integrityRecord: BlockchainIntegrity | null = null;
+  integrityLoading = false;
+  verifying = false;
+  verificationResult: IntegrityVerificationResult | null = null;
+  verificationError = '';
+
   @ViewChild('deleteConfirmDialog') deleteConfirmDialog!: TemplateRef<any>;
   @ViewChild('smartReminder') smartReminder?: SmartReminderComponent;
 
@@ -91,8 +98,42 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
     this.reminderService.requestBrowserNotificationPermission();
   }
 
+  private blobUrl: string | null = null;
+
   ngOnDestroy(): void {
     this.stopPolling();
+    if (this.blobUrl) {
+      URL.revokeObjectURL(this.blobUrl);
+      this.blobUrl = null;
+    }
+  }
+
+  private loadFileBlob(documentId: string): void {
+    this.docService.getFileBlob(documentId).subscribe({
+      next: (blob) => {
+        this.ngZone.run(() => {
+          if (this.blobUrl) {
+            URL.revokeObjectURL(this.blobUrl);
+          }
+          this.blobUrl = URL.createObjectURL(blob);
+          this.rawFileUrl = this.blobUrl;
+          this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.blobUrl);
+          this.cdr.detectChanges();
+        });
+      },
+      error: (err) => {
+        console.error('[DocumentDetail] Failed to load secure file stream', err);
+      },
+    });
+  }
+
+  downloadFile(): void {
+    if (!this.doc) return;
+    this.docService.downloadDocument(this.doc._id, this.doc.originalFileName).subscribe({
+      error: (err) => {
+        console.error('[DocumentDetail] Download failed', err);
+      },
+    });
   }
 
   private startPolling(id: string): void {
@@ -106,8 +147,9 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
           this.ngZone.run(() => {
             this.doc = d;
             this.loading = false;
-            this.rawFileUrl = `${environment.apiUrl.replace('/api/v1', '')}/uploads/${d.storagePath}`;
-            this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.rawFileUrl);
+            if (!this.blobUrl) {
+              this.loadFileBlob(d._id);
+            }
             this.initializeInteractiveRegions();
             this.cdr.detectChanges();
 
@@ -115,6 +157,8 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
               this.stopPolling();
               if (d.status === DocumentStatus.READY && !this.scanTriggered) {
                 this.triggerOcrScanEffects();
+                // Load blockchain integrity record once document is READY
+                this.loadIntegrityRecord(d._id);
               }
             }
           });
@@ -353,5 +397,90 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
     if (pct >= 95) return 'high';
     if (pct >= 80) return 'med';
     return 'low';
+  }
+
+  // ── Blockchain Integrity Methods ─────────────────────────────────
+
+  /** Load blockchain integrity record from the API */
+  loadIntegrityRecord(docId: string): void {
+    this.integrityLoading = true;
+    this.docService.getIntegrity(docId).subscribe({
+      next: (record) => {
+        this.integrityRecord = record;
+        this.integrityLoading = false;
+        this.cdr.detectChanges();
+      },
+      error: () => {
+        this.integrityLoading = false;
+        this.cdr.detectChanges();
+      },
+    });
+  }
+
+  /** Re-hash the stored file and verify against the blockchain record */
+  verifyDocumentIntegrity(): void {
+    if (!this.doc || this.verifying) return;
+    this.verifying = true;
+    this.verificationError = '';
+    this.verificationResult = null;
+
+    this.docService.verifyIntegrity(this.doc._id).subscribe({
+      next: (result) => {
+        this.verificationResult = result;
+        // Update local integrity record status to match verification result
+        if (this.integrityRecord) {
+          this.integrityRecord.verificationStatus = result.verificationStatus;
+        }
+        this.verifying = false;
+        this.cdr.detectChanges();
+      },
+      error: (err) => {
+        this.verificationError = err?.error?.message || 'Verification failed. Please try again.';
+        this.verifying = false;
+        this.cdr.detectChanges();
+      },
+    });
+  }
+
+  /** Returns a user-friendly label for the integrity status */
+  getIntegrityStatusLabel(): string {
+    switch (this.integrityRecord?.verificationStatus) {
+      case 'pending':    return 'Pending Registration';
+      case 'registered': return 'Registered on Chain';
+      case 'failed':     return 'Registration Failed';
+      case 'verified':   return 'Integrity Verified';
+      case 'tampered':   return 'Integrity Violation';
+      default:           return 'Not Available';
+    }
+  }
+
+  /** Returns CSS class for integrity status badge */
+  getIntegrityStatusClass(): string {
+    switch (this.integrityRecord?.verificationStatus) {
+      case 'registered': return 'status-registered';
+      case 'verified':   return 'status-verified';
+      case 'tampered':   return 'status-tampered';
+      case 'failed':     return 'status-failed';
+      default:           return 'status-pending';
+    }
+  }
+
+  /** Truncate a long hex hash for display */
+  shortHash(hash: string | null | undefined): string {
+    if (!hash) return 'N/A';
+    return `${hash.slice(0, 8)}...${hash.slice(-8)}`;
+  }
+
+  /** Build a block explorer URL for the tx hash (Polygon Amoy) */
+  getExplorerUrl(txHash: string | null): string | null {
+    if (!txHash || !this.integrityRecord?.network) return null;
+    const network = this.integrityRecord.network.toLowerCase();
+    if (network.includes('polygon') || network.includes('amoy')) {
+      const base = network.includes('amoy')
+        ? 'https://amoy.polygonscan.com/tx/'
+        : 'https://polygonscan.com/tx/';
+      return base + txHash;
+    }
+    return null;
   }
 }
