@@ -15,8 +15,10 @@ import { Subscription, interval, startWith, switchMap } from 'rxjs';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { DocumentService } from '../services/document.service';
-import { DocumentDetail, DocumentStatus, DocumentMetadata } from '../models/document.models';
+import { ReminderService }  from '../services/reminder.service';
+import { DocumentDetail, DocumentStatus, DocumentMetadata, BlockchainIntegrity, IntegrityVerificationResult } from '../models/document.models';
 import { environment } from '../../../../environments/environment';
+import { SmartReminderComponent } from '../components/smart-reminder/smart-reminder.component';
 
 @Component({
   selector: 'app-document-detail',
@@ -31,6 +33,7 @@ import { environment } from '../../../../environments/environment';
     MatDialogModule,
     MatSnackBarModule,
     MatTooltipModule,
+    SmartReminderComponent,
   ],
   templateUrl: './document-detail.component.html',
   styleUrl: './document-detail.component.scss',
@@ -55,12 +58,27 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
   showConfidenceHeatmap = false;
   currentViewMode: 'interactive' | 'native' = 'interactive';
 
+  // ── Blockchain Integrity ─────────────────────────────────────
+  integrityRecord: BlockchainIntegrity | null = null;
+  integrityLoading = false;
+  verifying = false;
+  verificationResult: IntegrityVerificationResult | null = null;
+  verificationError = '';
+
   @ViewChild('deleteConfirmDialog') deleteConfirmDialog!: TemplateRef<any>;
+  @ViewChild('smartReminder') smartReminder?: SmartReminderComponent;
+
+  openManualReminder(): void {
+    if (this.smartReminder) {
+      this.smartReminder.openEditDialog(true);
+    }
+  }
 
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     private readonly docService: DocumentService,
+    private readonly reminderService: ReminderService,
     private readonly sanitizer: DomSanitizer,
     private readonly dialog: MatDialog,
     private readonly snackbar: MatSnackBar,
@@ -69,34 +87,78 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')!;
-    this.startPolling(id);
+    this.route.paramMap.subscribe((params) => {
+      const id = params.get('id');
+      if (id) {
+        this.stopPolling();
+        this.startPolling(id);
+      }
+    });
+    // Request browser notification permission for reminders
+    this.reminderService.requestBrowserNotificationPermission();
   }
+
+  private blobUrl: string | null = null;
 
   ngOnDestroy(): void {
     this.stopPolling();
+    if (this.blobUrl) {
+      URL.revokeObjectURL(this.blobUrl);
+      this.blobUrl = null;
+    }
+  }
+
+  private loadFileBlob(documentId: string): void {
+    this.docService.getFileBlob(documentId).subscribe({
+      next: (blob) => {
+        this.ngZone.run(() => {
+          if (this.blobUrl) {
+            URL.revokeObjectURL(this.blobUrl);
+          }
+          this.blobUrl = URL.createObjectURL(blob);
+          this.rawFileUrl = this.blobUrl;
+          this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.blobUrl);
+          this.cdr.detectChanges();
+        });
+      },
+      error: (err) => {
+        console.error('[DocumentDetail] Failed to load secure file stream', err);
+      },
+    });
+  }
+
+  downloadFile(): void {
+    if (!this.doc) return;
+    this.docService.downloadDocument(this.doc._id, this.doc.originalFileName).subscribe({
+      error: (err) => {
+        console.error('[DocumentDetail] Download failed', err);
+      },
+    });
   }
 
   private startPolling(id: string): void {
     this.pollSubscription = interval(3000)
       .pipe(
         startWith(0),
-        switchMap(() => this.docService.getById(id))
+        switchMap(() => this.docService.getById(id)),
       )
       .subscribe({
         next: (d) => {
           this.ngZone.run(() => {
             this.doc = d;
             this.loading = false;
-            this.rawFileUrl = `${environment.apiUrl.replace('/api/v1', '')}/uploads/${d.storagePath}`;
-            this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.rawFileUrl);
+            if (!this.blobUrl) {
+              this.loadFileBlob(d._id);
+            }
             this.initializeInteractiveRegions();
-            this.cdr.markForCheck();
+            this.cdr.detectChanges();
 
             if (d.status === DocumentStatus.READY || d.status === DocumentStatus.FAILED) {
               this.stopPolling();
               if (d.status === DocumentStatus.READY && !this.scanTriggered) {
                 this.triggerOcrScanEffects();
+                // Load blockchain integrity record once document is READY
+                this.loadIntegrityRecord(d._id);
               }
             }
           });
@@ -319,8 +381,8 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
   getSuggestions(): string[] {
     if (!this.doc) return [];
     const suggestions: string[] = [];
-    if (!this.doc.metadata.expiryDate) {
-      suggestions.push('No expiry date detected. Consider adding manually if applicable.');
+    if (!this.doc.expiryDate && !this.doc.metadata?.expiryDate) {
+      suggestions.push('No expiry, renewal, warranty, guarantee, or due date detected.');
     }
     if (this.confidencePercent < 80) {
       suggestions.push('Low overall OCR confidence. Select fields to verify layout alignment.');
@@ -335,5 +397,90 @@ export class DocumentDetailComponent implements OnInit, OnDestroy {
     if (pct >= 95) return 'high';
     if (pct >= 80) return 'med';
     return 'low';
+  }
+
+  // ── Blockchain Integrity Methods ─────────────────────────────────
+
+  /** Load blockchain integrity record from the API */
+  loadIntegrityRecord(docId: string): void {
+    this.integrityLoading = true;
+    this.docService.getIntegrity(docId).subscribe({
+      next: (record) => {
+        this.integrityRecord = record;
+        this.integrityLoading = false;
+        this.cdr.detectChanges();
+      },
+      error: () => {
+        this.integrityLoading = false;
+        this.cdr.detectChanges();
+      },
+    });
+  }
+
+  /** Re-hash the stored file and verify against the blockchain record */
+  verifyDocumentIntegrity(): void {
+    if (!this.doc || this.verifying) return;
+    this.verifying = true;
+    this.verificationError = '';
+    this.verificationResult = null;
+
+    this.docService.verifyIntegrity(this.doc._id).subscribe({
+      next: (result) => {
+        this.verificationResult = result;
+        // Update local integrity record status to match verification result
+        if (this.integrityRecord) {
+          this.integrityRecord.verificationStatus = result.verificationStatus;
+        }
+        this.verifying = false;
+        this.cdr.detectChanges();
+      },
+      error: (err) => {
+        this.verificationError = err?.error?.message || 'Verification failed. Please try again.';
+        this.verifying = false;
+        this.cdr.detectChanges();
+      },
+    });
+  }
+
+  /** Returns a user-friendly label for the integrity status */
+  getIntegrityStatusLabel(): string {
+    switch (this.integrityRecord?.verificationStatus) {
+      case 'pending':    return 'Pending Registration';
+      case 'registered': return 'Registered on Chain';
+      case 'failed':     return 'Registration Failed';
+      case 'verified':   return 'Integrity Verified';
+      case 'tampered':   return 'Integrity Violation';
+      default:           return 'Not Available';
+    }
+  }
+
+  /** Returns CSS class for integrity status badge */
+  getIntegrityStatusClass(): string {
+    switch (this.integrityRecord?.verificationStatus) {
+      case 'registered': return 'status-registered';
+      case 'verified':   return 'status-verified';
+      case 'tampered':   return 'status-tampered';
+      case 'failed':     return 'status-failed';
+      default:           return 'status-pending';
+    }
+  }
+
+  /** Truncate a long hex hash for display */
+  shortHash(hash: string | null | undefined): string {
+    if (!hash) return 'N/A';
+    return `${hash.slice(0, 8)}...${hash.slice(-8)}`;
+  }
+
+  /** Build a block explorer URL for the tx hash (Polygon Amoy) */
+  getExplorerUrl(txHash: string | null): string | null {
+    if (!txHash || !this.integrityRecord?.network) return null;
+    const network = this.integrityRecord.network.toLowerCase();
+    if (network.includes('polygon') || network.includes('amoy')) {
+      const base = network.includes('amoy')
+        ? 'https://amoy.polygonscan.com/tx/'
+        : 'https://polygonscan.com/tx/';
+      return base + txHash;
+    }
+    return null;
   }
 }

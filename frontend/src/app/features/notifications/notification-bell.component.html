@@ -1,0 +1,123 @@
+<div class="nb-wrapper">
+  <!-- Bell button with glow pulse and dynamic badge -->
+  <button class="nb-bell" (click)="toggle()" [class.open]="isOpen" matTooltip="Notifications" aria-label="Notifications">
+    <mat-icon>notifications</mat-icon>
+    <span class="nb-badge" *ngIf="unreadCount > 0">{{ unreadCount > 9 ? '9+' : unreadCount }}</span>
+  </button>
+
+  <!-- Dropdown panel -->
+  <div class="nb-panel" *ngIf="isOpen">
+    <!-- Header -->
+    <div class="nb-header">
+      <div class="nb-header-left">
+        <div class="nb-header-icon-box">
+          <mat-icon>notifications_active</mat-icon>
+        </div>
+        <div class="nb-header-text">
+          <h3 class="nb-title">Notifications</h3>
+          <span class="nb-subtitle" *ngIf="notifications.length > 0">
+            You have {{ notifications.length }} notification{{ notifications.length !== 1 ? 's' : '' }}
+          </span>
+          <span class="nb-subtitle" *ngIf="notifications.length === 0">
+            All caught up
+          </span>
+        </div>
+      </div>
+      <div class="nb-count-pill" *ngIf="notifications.length > 0">
+        {{ notifications.length }}
+      </div>
+    </div>
+
+    <!-- Confirmation Modal Overlay for "Delete All" -->
+    <div class="nb-confirm-overlay" *ngIf="showClearConfirm">
+      <div class="nb-confirm-card">
+        <div class="nb-confirm-icon-box">
+          <mat-icon>delete_sweep</mat-icon>
+        </div>
+        <h4 class="nb-confirm-title">Delete all notifications?</h4>
+        <p class="nb-confirm-desc">This will permanently remove all notifications from your vault.</p>
+        <div class="nb-confirm-actions">
+          <button class="nb-confirm-btn cancel" (click)="cancelClearAll($event)" [disabled]="isDeleting">
+            Cancel
+          </button>
+          <button class="nb-confirm-btn delete" (click)="confirmClearAll($event)" [disabled]="isDeleting">
+            <span *ngIf="!isDeleting">Delete All</span>
+            <span *ngIf="isDeleting">Deleting...</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="nb-empty" *ngIf="notifications.length === 0 && !showClearConfirm">
+      <div class="nb-empty-halo">
+        <div class="nb-empty-icon-wrap">
+          <mat-icon>notifications_off</mat-icon>
+        </div>
+      </div>
+      <h4 class="nb-empty-title">You're all caught up</h4>
+      <p class="nb-empty-sub">No new notifications right now.</p>
+    </div>
+
+    <!-- Notification List -->
+    <div class="nb-list" *ngIf="notifications.length > 0 && !showClearConfirm">
+      <div
+        class="nb-card"
+        *ngFor="let n of notifications"
+        [class.unread]="!n.read"
+        (click)="onNotificationClick(n)"
+        matRipple
+        role="button"
+      >
+        <!-- Type Emoji Icon -->
+        <div class="nb-type-icon">
+          <span>{{ getEmojiIcon(n) }}</span>
+        </div>
+
+        <!-- Notification Info -->
+        <div class="nb-info">
+          <div class="nb-info-header">
+            <span class="nb-item-title">{{ getFormattedTitle(n) }}</span>
+            <span class="nb-unread-dot" *ngIf="!n.read" matTooltip="Unread"></span>
+          </div>
+
+          <!-- Document name (if detected) -->
+          <div class="nb-doc-name-row" *ngIf="getDocName(n)">
+            <mat-icon class="nb-doc-glyph">description</mat-icon>
+            <span class="nb-doc-name-text">{{ getDocName(n) }}</span>
+          </div>
+
+          <!-- Subtitle / Actionable line -->
+          <span class="nb-item-desc">{{ getSubtitle(n) }}</span>
+
+          <!-- Timestamp -->
+          <div class="nb-time-row">
+            <mat-icon class="nb-clock-icon">schedule</mat-icon>
+            <span class="nb-time-text">{{ n.createdAt | date:'d MMM, h:mm a' }}</span>
+          </div>
+        </div>
+
+        <!-- Individual Delete Button -->
+        <button
+          class="nb-delete-btn"
+          (click)="deleteNotification($event, n)"
+          matTooltip="Delete notification"
+          aria-label="Delete notification"
+        >
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer Action Bar -->
+    <div class="nb-footer" *ngIf="notifications.length > 0 && !showClearConfirm">
+      <button class="nb-clear-all-btn" (click)="promptClearAll($event)">
+        <mat-icon>delete_sweep</mat-icon>
+        <span>Delete all notifications</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Backdrop to close on click outside -->
+  <div class="nb-backdrop" *ngIf="isOpen" (click)="close()"></div>
+</div>

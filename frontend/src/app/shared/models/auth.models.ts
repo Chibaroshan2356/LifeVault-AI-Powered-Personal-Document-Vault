@@ -48,3 +48,10 @@ export interface LoginRequest {
   email:    string;
   password: string;
 }
+
+/** Standard API envelope */
+export interface ApiResponse<T = any> {
+  success:  boolean;
+  message?: string;
+  data?:    T;
+}

@@ -24,6 +24,8 @@ import { jwtService }                 from './jwt/jwt.service';
 import { JWT_CONSTANTS }              from './jwt/jwt.constants';
 import { HttpError }                  from '../../middleware/error.middleware';
 import { logger }                     from '../../utils/logger';
+import { securityAuditService }       from '../security/security-audit.service';
+import { SecurityAction, SecurityStatus } from '../security/security.types';
 import type { RegisterDto, LoginDto, RefreshDto } from './auth.validator';
 import type { LoginResult, RefreshResult }        from './auth.types';
 
@@ -75,20 +77,52 @@ class AuthService {
    */
   async login(dto: LoginDto, userAgent?: string, ipAddress?: string): Promise<LoginResult> {
     // 1. Find user — explicitly select passwordHash (excluded by default)
-    const user = await UserModel.findOne({ email: dto.email }).select('+passwordHash');
+    const user = await UserModel.findOne({ email: dto.email.toLowerCase() }).select('+passwordHash');
     if (!user) {
+      // Record failed login audit event
+      await securityAuditService.recordEvent({
+        action:    SecurityAction.LOGIN_FAILED,
+        status:    SecurityStatus.FAILED,
+        ipAddress,
+        userAgent,
+        details:   `Failed login attempt for non-existent or invalid account`,
+      });
+
+      // Check suspicious failed login burst
+      await securityAuditService.checkSuspiciousFailedLogins(ipAddress, dto.email);
+
       // Same error message as wrong password — prevents email enumeration
       throw new HttpError(401, 'Invalid email or password');
     }
 
     // 2. Check account is active
     if (!user.isActive) {
+      await securityAuditService.recordEvent({
+        userId:    (user._id as mongoose.Types.ObjectId).toString(),
+        action:    SecurityAction.LOGIN_FAILED,
+        status:    SecurityStatus.FAILED,
+        ipAddress,
+        userAgent,
+        details:   'Account deactivated',
+      });
       throw new HttpError(403, 'Your account has been deactivated. Please contact support.');
     }
 
     // 3. Verify password
     const isMatch = await bcrypt.compare(dto.password, user.passwordHash);
     if (!isMatch) {
+      const userId = (user._id as mongoose.Types.ObjectId).toString();
+      await securityAuditService.recordEvent({
+        userId,
+        action:    SecurityAction.LOGIN_FAILED,
+        status:    SecurityStatus.FAILED,
+        ipAddress,
+        userAgent,
+        details:   'Invalid password',
+      });
+
+      await securityAuditService.checkSuspiciousFailedLogins(ipAddress, dto.email);
+
       throw new HttpError(401, 'Invalid email or password');
     }
 
@@ -114,9 +148,19 @@ class AuthService {
     // 7. Update lastLoginAt
     await UserModel.findByIdAndUpdate(user._id, { lastLoginAt: new Date() });
 
+    // 8. Record LOGIN_SUCCESS in security audit log
+    await securityAuditService.recordEvent({
+      userId,
+      action:    SecurityAction.LOGIN_SUCCESS,
+      status:    SecurityStatus.SUCCESS,
+      ipAddress,
+      userAgent,
+      details:   'Successful authentication',
+    });
+
     logger.info('User logged in', { userId, email: user.email });
 
-    // 8. Return — passwordHash never included
+    // 9. Return — passwordHash never included
     const safeUser = user.toObject() as unknown as IUserLean;
     delete (safeUser as unknown as Record<string, unknown>).passwordHash;
 
@@ -202,6 +246,13 @@ class AuthService {
         break;
       }
     }
+
+    await securityAuditService.recordEvent({
+      userId:  decoded.sub,
+      action:  SecurityAction.LOGOUT,
+      status:  SecurityStatus.SUCCESS,
+      details: 'User logged out',
+    });
 
     logger.info('User logged out', { userId: decoded.sub });
   }

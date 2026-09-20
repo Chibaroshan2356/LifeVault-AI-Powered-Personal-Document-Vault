@@ -12,10 +12,10 @@
       </div>
     </div>
     <div class="header-actions" *ngIf="doc">
-      <a [href]="rawFileUrl" target="_blank" download class="action-btn download" matRipple>
+      <button (click)="downloadFile()" class="action-btn download" matRipple>
         <mat-icon>download</mat-icon>
         <span>Download File</span>
-      </a>
+      </button>
       <button class="action-btn delete-btn-header" (click)="deleteDocument()" matRipple>
         <mat-icon>delete_outline</mat-icon>
         <span>Delete Document</span>
@@ -429,6 +429,135 @@
         </div>
       </div>
 
+      <!-- Smart Reminder Card -->
+      <app-smart-reminder
+        #smartReminder
+        *ngIf="doc.status === 'READY'"
+        [documentId]="doc._id"
+        [docCategory]="doc.category"
+        [ocrConfidence]="doc.ocrConfidence">
+      </app-smart-reminder>
+
+      <!-- ══ Blockchain Integrity Panel ══════════════════════════════ -->
+      <div class="card blockchain-card" *ngIf="doc.status === 'READY'">
+        <div class="card-header blockchain-header">
+          <div class="blockchain-title">
+            <mat-icon class="chain-icon">link</mat-icon>
+            <h2>Blockchain Integrity</h2>
+          </div>
+          <span class="integrity-badge"
+                [ngClass]="getIntegrityStatusClass()"
+                *ngIf="integrityRecord && !integrityLoading">
+            {{ getIntegrityStatusLabel() }}
+          </span>
+          <span class="integrity-badge status-pending" *ngIf="integrityLoading">
+            Loading...
+          </span>
+        </div>
+
+        <div class="blockchain-body">
+
+          <!-- Not available state (blockchain disabled or no record) -->
+          <div class="bc-unavailable" *ngIf="!integrityLoading && !integrityRecord">
+            <mat-icon>info_outline</mat-icon>
+            <p>Blockchain integrity is not available for this document.</p>
+          </div>
+
+          <!-- Blockchain disabled server-side -->
+          <div class="bc-unavailable" *ngIf="integrityRecord && !integrityRecord.blockchainEnabled && integrityRecord.verificationStatus !== 'verified' && integrityRecord.verificationStatus !== 'tampered'">
+            <mat-icon>info_outline</mat-icon>
+            <p>Blockchain service is not enabled on this server. Hash verification uses local comparison.</p>
+          </div>
+
+          <!-- Hash info rows -->
+          <div class="bc-info-grid" *ngIf="integrityRecord && integrityRecord.fileHash">
+            <div class="bc-row">
+              <span class="bc-label">File Hash (SHA-256)</span>
+              <span class="bc-value hash-value" [title]="integrityRecord.fileHash">
+                {{ shortHash(integrityRecord.fileHash) }}
+              </span>
+            </div>
+            <div class="bc-row" *ngIf="integrityRecord.txHash">
+              <span class="bc-label">Transaction</span>
+              <span class="bc-value hash-value" [title]="integrityRecord.txHash">
+                {{ shortHash(integrityRecord.txHash) }}
+              </span>
+            </div>
+            <div class="bc-row" *ngIf="integrityRecord.blockNumber">
+              <span class="bc-label">Block Number</span>
+              <span class="bc-value">#{{ integrityRecord.blockNumber | number }}</span>
+            </div>
+            <div class="bc-row" *ngIf="integrityRecord.registeredAt">
+              <span class="bc-label">Registered At</span>
+              <span class="bc-value">{{ integrityRecord.registeredAt | date:'medium' }}</span>
+            </div>
+            <div class="bc-row" *ngIf="integrityRecord.network">
+              <span class="bc-label">Network</span>
+              <span class="bc-value network-badge">{{ integrityRecord.network }}</span>
+            </div>
+          </div>
+
+          <!-- Verification Result -->
+          <div class="verification-result verified" *ngIf="verificationResult?.verified">
+            <mat-icon>verified_user</mat-icon>
+            <div>
+              <strong>Integrity Confirmed</strong>
+              <p>This document is authentic and has not been altered since upload.</p>
+              <p class="result-hash" *ngIf="verificationResult?.blockchainChecked">
+                Verified on-chain at {{ verificationResult?.timestamp | date:'medium' }}
+              </p>
+            </div>
+          </div>
+
+          <div class="verification-result tampered" *ngIf="verificationResult && !verificationResult.verified">
+            <mat-icon>gpp_bad</mat-icon>
+            <div>
+              <strong>Integrity Violation Detected</strong>
+              <p>The stored file does not match the registered hash. It may have been altered.</p>
+            </div>
+          </div>
+
+          <div class="verification-error" *ngIf="verificationError">
+            <mat-icon>error_outline</mat-icon>
+            <span>{{ verificationError }}</span>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="bc-actions" *ngIf="integrityRecord?.fileHash">
+            <button class="bc-verify-btn"
+                    (click)="verifyDocumentIntegrity()"
+                    [disabled]="verifying"
+                    matRipple>
+              <mat-icon>{{ verifying ? 'hourglass_top' : 'search' }}</mat-icon>
+              <span>{{ verifying ? 'Verifying...' : 'Verify Integrity' }}</span>
+            </button>
+
+            <a class="bc-explorer-btn"
+               *ngIf="getExplorerUrl(integrityRecord?.txHash ?? null)"
+               [href]="getExplorerUrl(integrityRecord?.txHash ?? null)"
+               target="_blank"
+               rel="noopener noreferrer"
+               matRipple>
+              <mat-icon>open_in_new</mat-icon>
+              <span>View on Explorer</span>
+            </a>
+          </div>
+
+          <!-- Pending state -->
+          <div class="bc-pending" *ngIf="integrityRecord && integrityRecord.verificationStatus === 'pending'">
+            <mat-icon class="spin-icon">sync</mat-icon>
+            <p>Awaiting blockchain registration. This completes automatically after document processing.</p>
+          </div>
+
+          <!-- Failed state -->
+          <div class="bc-failed" *ngIf="integrityRecord && integrityRecord.verificationStatus === 'failed'">
+            <mat-icon>warning_amber</mat-icon>
+            <p>Blockchain registration could not be completed. Hash-based local verification is still available.</p>
+          </div>
+        </div>
+      </div>
+      <!-- ══ End Blockchain Integrity Panel ══════════════════════════ -->
+
       <!-- Smart AI Suggestions Panel -->
       <div class="card suggestions-card">
         <div class="card-header">
@@ -438,6 +567,14 @@
           <div class="suggestion-item" *ngFor="let suggestion of getSuggestions()">
             <mat-icon class="sparkle-icon">auto_awesome</mat-icon>
             <span class="sugg-text">{{ suggestion }}</span>
+          </div>
+
+          <!-- Manual Reminder Trigger (shown when no reminder is active yet) -->
+          <div class="manual-reminder-box" *ngIf="!smartReminder?.hasReminder">
+            <button class="manual-reminder-btn" (click)="openManualReminder()" matRipple>
+              <mat-icon>add_alarm</mat-icon>
+              <span>+ Add Reminder Manually</span>
+            </button>
           </div>
         </div>
       </div>

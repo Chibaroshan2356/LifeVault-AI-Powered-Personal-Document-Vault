@@ -24,6 +24,7 @@ import bcrypt          from 'bcryptjs';
 jest.mock('../../src/modules/user/user.model');
 jest.mock('../../src/modules/auth/refresh-token.model');
 jest.mock('../../src/modules/auth/jwt/jwt.service');
+jest.mock('../../src/modules/security/security-audit.service');
 jest.mock('bcryptjs');
 
 const mockUser = {
@@ -127,7 +128,11 @@ describe('AuthService.refresh()', () => {
 
   it('returns a new access token for a valid refresh token', async () => {
     (jwtService.verifyRefreshToken as jest.Mock).mockReturnValue({ sub: 'user123', jti: 'jti123' });
-    (RefreshTokenModel.find as jest.Mock).mockResolvedValue([{ _id: 'tok1', tokenHash: 'hash' }]);
+    (RefreshTokenModel.find as jest.Mock).mockReturnValue({
+      sort: () => ({
+        limit: () => [{ _id: 'tok1', tokenHash: 'hash' }],
+      }),
+    });
     (bcrypt.compare as jest.Mock).mockResolvedValue(true);
     (UserModel.findById as jest.Mock).mockResolvedValue(mockUser);
     (jwtService.signAccessToken as jest.Mock).mockReturnValue('new_access_token');
@@ -139,7 +144,11 @@ describe('AuthService.refresh()', () => {
 
   it('throws 401 if refresh token not found in DB', async () => {
     (jwtService.verifyRefreshToken as jest.Mock).mockReturnValue({ sub: 'user123', jti: 'jti123' });
-    (RefreshTokenModel.find as jest.Mock).mockResolvedValue([{ tokenHash: 'other_hash' }]);
+    (RefreshTokenModel.find as jest.Mock).mockReturnValue({
+      sort: () => ({
+        limit: () => [{ tokenHash: 'other_hash' }],
+      }),
+    });
     (bcrypt.compare as jest.Mock).mockResolvedValue(false);
 
     await expect(

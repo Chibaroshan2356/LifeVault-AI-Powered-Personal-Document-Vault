@@ -1,26 +1,39 @@
 /**
- * token-storage.service.ts — Token Persistence Abstraction
+ * token-storage.service.ts — Token and User Persistence Abstraction
  *
- * All token reads/writes go through this service.
- * If we move from localStorage to httpOnly cookies, only this file changes.
- *
- * Usage:
- *   tokenStorage.saveTokens(accessToken, refreshToken);
- *   tokenStorage.getAccessToken();
- *   tokenStorage.clear();
+ * All token and user cache reads/writes go through this service.
  */
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { User } from '../../shared/models/auth.models';
 
 const ACCESS_KEY  = environment.jwtKey;
 const REFRESH_KEY = `${environment.jwtKey}_refresh`;
+const USER_KEY    = `${environment.jwtKey}_user`;
 
 @Injectable({ providedIn: 'root' })
 export class TokenStorageService {
 
-  saveTokens(accessToken: string, refreshToken: string): void {
+  saveTokens(accessToken: string, refreshToken: string, user?: User): void {
     localStorage.setItem(ACCESS_KEY,  accessToken);
     localStorage.setItem(REFRESH_KEY, refreshToken);
+    if (user) {
+      localStorage.setItem(USER_KEY, JSON.stringify(user));
+    }
+  }
+
+  saveUser(user: User): void {
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
+  }
+
+  getUser(): User | null {
+    const raw = localStorage.getItem(USER_KEY);
+    if (!raw) return null;
+    try {
+      return JSON.parse(raw);
+    } catch {
+      return null;
+    }
   }
 
   saveAccessToken(token: string): void {
@@ -38,6 +51,7 @@ export class TokenStorageService {
   clear(): void {
     localStorage.removeItem(ACCESS_KEY);
     localStorage.removeItem(REFRESH_KEY);
+    localStorage.removeItem(USER_KEY);
   }
 
   hasTokens(): boolean {

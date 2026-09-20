@@ -1,0 +1,74 @@
+<div class="red-dialog">
+  <div class="red-header">
+    <span class="red-icon">⏰</span>
+    <h2 class="red-title">{{ data.isManual ? 'Add Reminder' : 'Edit Smart Reminder' }}</h2>
+    <button class="red-close" (click)="cancel()" aria-label="Close dialog">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="red-body">
+
+    <!-- Event label -->
+    <div class="red-field">
+      <label class="red-label" for="eventLabel">Event Title</label>
+      <input
+        id="eventLabel"
+        class="red-input"
+        type="text"
+        [(ngModel)]="eventLabel"
+        placeholder="e.g. Certificate Expiry, Insurance Renewal, Payment Due"
+      />
+    </div>
+
+    <!-- Event date -->
+    <div class="red-field">
+      <label class="red-label" for="eventDate">Event Date</label>
+      <input
+        id="eventDate"
+        class="red-input"
+        type="date"
+        [(ngModel)]="eventDateStr"
+      />
+    </div>
+
+    <!-- Reminder intervals -->
+    <div class="red-section-label">Remind me:</div>
+    <div class="red-checkboxes">
+      <label class="red-checkbox-row" *ngFor="let opt of intervalOptions">
+        <input type="checkbox" [(ngModel)]="opt.enabled" />
+        <span>{{ opt.label }}</span>
+      </label>
+    </div>
+
+    <!-- Notification time -->
+    <div class="red-field">
+      <label class="red-label" for="notifTime">Notification Time (Local)</label>
+      <input
+        id="notifTime"
+        class="red-input"
+        type="time"
+        [(ngModel)]="notificationTime"
+      />
+    </div>
+
+  </div>
+
+  <!-- Actions -->
+  <div class="red-footer">
+    <div class="red-left-actions">
+      <button class="red-disable-btn" (click)="disableAndClose()" *ngIf="data.reminder">
+        <mat-icon>notifications_off</mat-icon>
+        Disable
+      </button>
+    </div>
+
+    <div class="red-primary-actions">
+      <button class="red-cancel-btn" (click)="cancel()">Cancel</button>
+      <button class="red-save-btn" (click)="save()" [disabled]="!isValid">
+        <mat-icon>save</mat-icon>
+        Save Changes
+      </button>
+    </div>
+  </div>
+</div>

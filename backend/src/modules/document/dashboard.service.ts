@@ -20,6 +20,7 @@ export interface DashboardStats {
   totalDocuments: number;
   byCategory: Array<{ category: string; count: number }>;
   byStatus: Array<{ status: string; count: number }>;
+  expiredDocuments: number;
 }
 
 /** Shape of a document list item in dashboard */
@@ -39,13 +40,15 @@ class DashboardService {
    * - Total document count
    * - Breakdown by category
    * - Breakdown by status
+   * - Total expired documents (expiryDate < now)
    *
    * Uses MongoDB aggregation for efficiency.
    */
   async getStats(userId: string): Promise<DashboardStats> {
     const userOid = new mongoose.Types.ObjectId(userId);
+    const now = new Date();
 
-    // Aggregation pipeline: filter by user → count + group by category/status
+    // Aggregation pipeline: filter by user → count + group by category/status + count expired
     const pipeline: mongoose.PipelineStage[] = [
       // Stage 1: Filter by userId
       {
@@ -54,7 +57,7 @@ class DashboardService {
         },
       } as mongoose.PipelineStage,
 
-      // Stage 2: Count total documents and group by category and status
+      // Stage 2: Count total documents and group by category, status, and expired count
       {
         $facet: {
           total: [{ $count: 'count' }],
@@ -76,6 +79,14 @@ class DashboardService {
             },
             { $sort: { count: -1 } },
           ],
+          expired: [
+            {
+              $match: {
+                expiryDate: { $ne: null, $lt: now },
+              },
+            },
+            { $count: 'count' },
+          ],
         },
       } as mongoose.PipelineStage,
     ];
@@ -87,21 +98,23 @@ class DashboardService {
         totalDocuments: 0,
         byCategory: [],
         byStatus: [],
+        expiredDocuments: 0,
       };
     }
 
     const facetResult = result[0];
 
     return {
-      totalDocuments: facetResult.total[0]?.count ?? 0,
-      byCategory: facetResult.byCategory.map((item: any) => ({
+      totalDocuments: facetResult.total?.[0]?.count ?? 0,
+      byCategory: (facetResult.byCategory ?? []).map((item: any) => ({
         category: item._id,
         count: item.count,
       })),
-      byStatus: facetResult.byStatus.map((item: any) => ({
+      byStatus: (facetResult.byStatus ?? []).map((item: any) => ({
         status: item._id,
         count: item.count,
       })),
+      expiredDocuments: facetResult.expired?.[0]?.count ?? 0,
     };
   }
 

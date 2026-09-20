@@ -14,14 +14,15 @@ export interface DocumentListItem {
 }
 
 export interface DocumentDetail extends DocumentListItem {
-  storagePath:       string;
-  ocrText:           string;
-  ocrConfidence:     number;
-  metadata:          DocumentMetadata;
-  processingHistory: ProcessingHistoryEntry[];
-  expiryDate:        string | null;
-  errorMessage:      string | null;
-  aiVersionInfo?:    any;
+  storagePath:         string;
+  ocrText:             string;
+  ocrConfidence:       number;
+  metadata:            DocumentMetadata;
+  processingHistory:   ProcessingHistoryEntry[];
+  expiryDate:          string | null;
+  errorMessage:        string | null;
+  aiVersionInfo?:      any;
+  blockchainIntegrity?: BlockchainIntegrity | null;
 }
 
 export enum DocumentCategory {
@@ -86,4 +87,28 @@ export interface PaginationMeta {
   limit:      number;
   total:      number;
   totalPages: number;
+}
+
+/** Blockchain integrity record returned from /documents/:id/integrity */
+export interface BlockchainIntegrity {
+  fileHash:           string | null;
+  verificationStatus: 'pending' | 'registered' | 'failed' | 'verified' | 'tampered' | 'not_computed';
+  txHash:             string | null;
+  blockNumber:        number | null;
+  registeredAt:       string | null;
+  contractAddress:    string | null;
+  network:            string | null;
+  blockchainEnabled:  boolean;
+}
+
+/** Result from POST /documents/:id/verify */
+export interface IntegrityVerificationResult {
+  verified:           boolean;
+  registered:         boolean;
+  timestamp:          string | null;
+  currentHash:        string;
+  storedHash:         string;
+  hashMatch:          boolean;
+  blockchainChecked:  boolean;
+  verificationStatus: 'verified' | 'tampered';
 }

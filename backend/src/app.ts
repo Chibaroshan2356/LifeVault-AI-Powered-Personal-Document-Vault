@@ -93,12 +93,7 @@ export const createApp = (): Application => {
   app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
   // ----------------------------------------------------------------
-  // 7. Static file serving for uploads
-  // ----------------------------------------------------------------
-  app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
-
-  // ----------------------------------------------------------------
-  // 8. Health check (exempt from rate limiting)
+  // 7. Health check (exempt from rate limiting)
   // ----------------------------------------------------------------
   app.get('/health', (_req: Request, res: Response) => {
     res.status(200).json({

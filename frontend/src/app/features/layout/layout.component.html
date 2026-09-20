@@ -10,6 +10,8 @@
       </div>
       <span class="brand-name">LifeVault</span>
       <span class="ai-badge">AI</span>
+      <div class="brand-spacer"></div>
+      <app-notification-bell></app-notification-bell>
     </div>
 
     <!-- Navigation Menu (Arc / macOS Dock-style) -->
@@ -32,6 +34,11 @@
       <a class="nav-item" routerLink="/documents/search" routerLinkActive="active" matRipple>
         <i class="lucide-search"></i>
         <span>Search</span>
+        <span class="active-indicator-glow"></span>
+      </a>
+      <a class="nav-item" routerLink="/security" routerLinkActive="active" matRipple>
+        <mat-icon style="font-size: 18px; width: 18px; height: 18px;">security</mat-icon>
+        <span>Security Shield</span>
         <span class="active-indicator-glow"></span>
       </a>
     </nav>

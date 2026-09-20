@@ -34,6 +34,7 @@ export interface TrainingUploadResponse {
 }
 
 export interface SaveTrainingDto {
+  documentId?:       string;
   originalFilePath:  string;
   ocrText:           string;
   aiCategory:        string;

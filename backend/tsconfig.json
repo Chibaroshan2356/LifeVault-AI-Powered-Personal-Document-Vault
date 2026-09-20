@@ -2,7 +2,8 @@
   "compilerOptions": {
     /* Language and Environment */
     "target": "ES2022",                   /* JavaScript version to compile to */
-    "lib": ["ES2022"],                     /* Built-in library type definitions */
+    "lib": ["ES2022", "DOM"],                     /* Built-in library type definitions */
+    "skipLibCheck": true,                  /* Skip type checking of declaration files */
     "module": "commonjs",                  /* Use CommonJS modules for Node.js */
     "moduleResolution": "node",            /* Node.js-style module resolution */
 
@@ -52,3 +53,4 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "tests"]
 }
+

@@ -48,6 +48,7 @@ import { ApiResponse } from '../../utils/ApiResponse';
  *                             properties:
  *                               status: { type: string }
  *                               count: { type: integer }
+ *                         expiredDocuments: { type: integer }
  *       401:
  *         description: Unauthorized
  *       500:

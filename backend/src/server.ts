@@ -16,7 +16,9 @@ import { createApp }       from './app';
 import { logger }          from './utils/logger';
 import { jobQueue }        from './common/job-queue.service';
 import { ocrJobHandler }   from './common/ocr-worker';
-import { smartFolderService } from './modules/smart-folder/smart-folder.service';
+import { blockchainService } from './common/blockchain.service';
+import { smartFolderService }    from './modules/smart-folder/smart-folder.service';
+import { startReminderScheduler } from './modules/reminder/reminder-scheduler.service';
 
 const PORT = parseInt(process.env.PORT ?? '3000', 10);
 
@@ -29,9 +31,16 @@ const PORT = parseInt(process.env.PORT ?? '3000', 10);
     // Run Smart Folder category migration on startup (idempotent)
     await smartFolderService.migrateExistingDocumentsToSmartFolders();
 
+    // Initialize blockchain service (non-fatal — logs warning if not configured)
+    await blockchainService.initialize();
+    logger.info(`✅ Blockchain service: ${blockchainService.isEnabled() ? 'enabled' : 'disabled'}`);
+
     // Register OCR handler BEFORE starting HTTP server
     jobQueue.register(ocrJobHandler);
     logger.info('✅ OCR job handler registered');
+
+    // Start the hourly Smart Reminder scheduler
+    startReminderScheduler();
 
     const app    = createApp();
     const server = app.listen(PORT, () => {

@@ -16,12 +16,25 @@ dist/
 build/
 *.egg-info/
 .angular/
+outputs/*
+!outputs/.gitkeep
+blockchain/artifacts/
+blockchain/cache/
+blockchain/typechain-types/
 
 # Environment variables
 .env
+.env.*
 .env.local
 .env.*.local
 *.env
+*.env.*
+**/.env
+**/.env.*
+!.env.example
+!*.env.example
+!**/.env.example
+!backend/.env.example
 
 # IDE
 .vscode/
@@ -48,6 +61,8 @@ htmlcov/
 # Uploads and temporary files
 uploads/*
 !uploads/.gitkeep
+backend/uploads/*
+!backend/uploads/.gitkeep
 temp/
 tmp/
 
@@ -55,9 +70,12 @@ tmp/
 models/*.pth
 models/*.h5
 models/*.pkl
+training/models/
 datasets/raw/*
 !datasets/.gitkeep
 !models/.gitkeep
+dataset/testing_data/
+dataset/training_data/
 
 # OS
 Thumbs.db

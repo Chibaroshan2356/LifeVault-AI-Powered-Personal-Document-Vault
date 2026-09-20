@@ -4,7 +4,10 @@ import { LocalStorageService } from '../../src/common/local-storage.service';
 import { aiClient } from '../../src/common/ai-client.service';
 import { DocumentCategory } from '../../src/common/enums';
 
+import { DocumentModel } from '../../src/modules/document/document.model';
+
 jest.mock('../../src/modules/document/training-document.model');
+jest.mock('../../src/modules/document/document.model');
 jest.mock('../../src/common/local-storage.service');
 jest.mock('../../src/common/ai-client.service');
 
@@ -59,6 +62,7 @@ describe('TrainingDocumentService', () => {
   describe('saveTrainingRecord', () => {
     it('creates training document in DB and returns success', async () => {
       (TrainingDocumentModel.create as jest.Mock).mockResolvedValue({ _id: RECORD_ID });
+      (DocumentModel.findOne as jest.Mock).mockResolvedValue(null);
 
       const dto = {
         originalFilePath: 'training/2026/uuid.png',

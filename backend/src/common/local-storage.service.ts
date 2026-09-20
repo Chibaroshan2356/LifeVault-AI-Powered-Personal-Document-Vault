@@ -24,7 +24,27 @@ export class LocalStorageService implements IStorageService {
   private readonly baseDir: string;
 
   constructor() {
-    this.baseDir = appConfig.uploadDir;
+    this.baseDir = path.resolve(appConfig.uploadDir);
+  }
+
+  /**
+   * Validates and resolves a storage path within the base uploads directory.
+   * Throws an Error if directory traversal is attempted.
+   */
+  private resolveSafePath(storagePath: string): string {
+    const resolvedBase = path.resolve(this.baseDir);
+    const resolvedTarget = path.resolve(this.baseDir, storagePath);
+
+    if (!resolvedTarget.startsWith(resolvedBase + path.sep) && resolvedTarget !== resolvedBase) {
+      logger.warn('[SECURITY] Path traversal attempt detected and blocked', {
+        storagePath,
+        resolvedTarget,
+        resolvedBase,
+      });
+      throw new Error('Invalid storage path: Path traversal detected');
+    }
+
+    return resolvedTarget;
   }
 
   async save(
@@ -33,15 +53,15 @@ export class LocalStorageService implements IStorageService {
     mimeType: string,
     subDir: string,       // e.g. "userId/2026"
   ): Promise<SavedFile> {
-    const dirPath  = path.join(this.baseDir, subDir);
-    const filePath = path.join(dirPath, storedFileName);
+    const safeSubDir = this.resolveSafePath(subDir);
+    const filePath = this.resolveSafePath(path.join(subDir, storedFileName));
 
     // Ensure the directory exists
-    await fs.mkdir(dirPath, { recursive: true });
+    await fs.mkdir(safeSubDir, { recursive: true });
 
     await fs.writeFile(filePath, buffer);
 
-    const storagePath = `${subDir}/${storedFileName}`;
+    const storagePath = `${subDir}/${storedFileName}`.replace(/\\/g, '/');
 
     logger.debug('File saved to local storage', {
       storagePath,
@@ -57,22 +77,24 @@ export class LocalStorageService implements IStorageService {
   }
 
   async get(storagePath: string): Promise<Buffer> {
-    const filePath = path.join(this.baseDir, storagePath);
+    const filePath = this.resolveSafePath(storagePath);
     return fs.readFile(filePath);
   }
 
   async delete(storagePath: string): Promise<void> {
-    const filePath = path.join(this.baseDir, storagePath);
+    const filePath = this.resolveSafePath(storagePath);
     await fs.unlink(filePath);
     logger.debug('File deleted from local storage', { storagePath });
   }
 
   async exists(storagePath: string): Promise<boolean> {
     try {
-      await fs.access(path.join(this.baseDir, storagePath));
+      const filePath = this.resolveSafePath(storagePath);
+      await fs.access(filePath);
       return true;
     } catch {
       return false;
     }
   }
 }
+

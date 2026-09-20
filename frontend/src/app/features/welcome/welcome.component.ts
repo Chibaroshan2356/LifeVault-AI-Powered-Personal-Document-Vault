@@ -27,9 +27,10 @@ import {
   ChangeDetectorRef,
   NgZone,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { Router }       from '@angular/router';
-import { AuthService }  from '../auth/services/auth.service';
+import { CommonModule }     from '@angular/common';
+import { Router }           from '@angular/router';
+import { AuthService }      from '../auth/services/auth.service';
+import { DashboardService }  from '../dashboard/services/dashboard.service';
 
 declare const window: any;
 
@@ -44,9 +45,10 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('welcomeCanvas') canvasRef!: ElementRef<HTMLCanvasElement>;
 
   // ── UI State ─────────────────────────────────────────────────
-  userName   = 'User';
-  isLeaving  = false;
-  isLoaded   = false;
+  userName      = 'User';
+  documentCount = 0;
+  isLeaving     = false;
+  isLoaded      = false;
 
   // Staggered fades
   showBrand    = false;
@@ -89,16 +91,30 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private visibilityListener!: () => void;
 
   constructor(
-    private readonly authService: AuthService,
-    private readonly router:      Router,
-    private readonly cdr:         ChangeDetectorRef,
-    private readonly ngZone:      NgZone,
+    private readonly authService:      AuthService,
+    private readonly dashboardService: DashboardService,
+    private readonly router:           Router,
+    private readonly cdr:              ChangeDetectorRef,
+    private readonly ngZone:           NgZone,
   ) {}
 
   // ── Lifecycle ─────────────────────────────────────────────────
   ngOnInit(): void {
     this.resolveUserName();
+    this.fetchStats();
     this.runStaggeredReveal();
+  }
+
+  private fetchStats(): void {
+    this.dashboardService.getStats().subscribe({
+      next: (res: any) => {
+        if (res.data?.totalDocuments !== undefined) {
+          this.documentCount = res.data.totalDocuments;
+          this.cdr.detectChanges();
+        }
+      },
+      error: () => {},
+    });
   }
 
   ngAfterViewInit(): void {

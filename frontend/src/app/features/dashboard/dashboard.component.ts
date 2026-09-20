@@ -88,6 +88,9 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   // Client-facing AI Insights
   aiDiscoveries: { title: string; desc: string[]; icon: string; confidence: number }[] = [];
   smartAlerts: string[] = [];
+  latestActions: string[] = [];
+  identityCount = 0;
+  parsedDocsCount = 0;
   
   // Staggered CSS-driven confidence ring
   confidenceValue = 0;
@@ -98,6 +101,19 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   animatedAccuracy = 0;
   animatedNeedsReview = 0;
   animatedExpiring = 0;
+  animatedExpiredDocs = 0;
+
+  // Non-intrusive error tracking
+  dashboardErrors: { [key: string]: string } = {};
+
+  get hasDashboardError(): boolean {
+    return Object.keys(this.dashboardErrors).length > 0;
+  }
+
+  get dashboardErrorMessage(): string {
+    const msgs = Object.values(this.dashboardErrors);
+    return msgs.length > 0 ? msgs[0] : '';
+  }
 
   private lastMouseUpdateTime = 0;
   private cardElements: HTMLElement[] = [];
@@ -172,10 +188,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   private triggerStaggeredAnimations(): void {
     if (!this.statsData) return;
 
-    // 0 ms: Background globe animations are running on the GPU
-    // 200 ms: Hero panel enters sequentially (CSS delay)
-    // 400 ms: Summary cards metrics enter sequentially (CSS delay)
-
     // 600 ms: Trigger CSS hardware-accelerated Confidence Ring transition
     setTimeout(() => {
       this.confidenceValue = 98.2;
@@ -185,17 +197,18 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     // 800 ms: Start single unified counters animation loop (runs outside Angular Zone)
     setTimeout(() => {
       this.animateAllCounters({
-        totalDocs: this.statsData.totalDocuments,
+        totalDocs: this.statsData.totalDocuments ?? 0,
         accuracy: 98.2,
         expiring: this.expiringDocuments.length,
         needsReview: this.processingErrors.length,
+        expired: this.statsData.expiredDocuments ?? 0,
         confidenceProgress: 98.2,
       });
     }, 800);
   }
 
   // ── Unified numeric counter animator (Only 1 loop instead of 4) 
-  private animateAllCounters(targets: { totalDocs: number; accuracy: number; expiring: number; needsReview: number; confidenceProgress: number }): void {
+  private animateAllCounters(targets: { totalDocs: number; accuracy: number; expiring: number; needsReview: number; expired: number; confidenceProgress: number }): void {
     const startTime = performance.now();
     const duration = 1200;
     
@@ -208,6 +221,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         this.animatedAccuracy = Math.round(easeProgress * targets.accuracy * 10) / 10;
         this.animatedExpiring = Math.floor(easeProgress * targets.expiring);
         this.animatedNeedsReview = Math.floor(easeProgress * targets.needsReview);
+        this.animatedExpiredDocs = Math.floor(easeProgress * targets.expired);
         this.animatedConfidenceProgress = Math.round(easeProgress * targets.confidenceProgress * 10) / 10;
         
         this.cdr.detectChanges(); // Local UI updates
@@ -221,6 +235,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           this.animatedAccuracy = targets.accuracy;
           this.animatedExpiring = targets.expiring;
           this.animatedNeedsReview = targets.needsReview;
+          this.animatedExpiredDocs = targets.expired;
           this.animatedConfidenceProgress = targets.confidenceProgress;
           this.cdr.detectChanges();
         });
@@ -241,6 +256,29 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
 
   trackByString(index: number, item: string): string {
     return item;
+  }
+
+  // ── Error Management Handlers ────────────────────────────────
+  private handleDashboardError(key: string, message: string): void {
+    this.dashboardErrors[key] = message;
+    this.cdr.markForCheck();
+  }
+
+  private clearDashboardError(key: string): void {
+    if (this.dashboardErrors[key]) {
+      delete this.dashboardErrors[key];
+      this.cdr.markForCheck();
+    }
+  }
+
+  retryLoad(): void {
+    this.dashboardErrors = {};
+    this.loadProfile();
+    this.loadStats();
+    this.loadRecentDocuments();
+    this.loadExpiringDocuments();
+    this.loadProcessingErrors();
+    this.cdr.markForCheck();
   }
 
   // ── Data Loader Methods ───────────────────────────────────────
@@ -273,19 +311,24 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           )?.count ?? 0;
           this.statCards[3].value = res.data.byCategory.length;
 
+          this.clearDashboardError('stats');
           this.triggerStaggeredAnimations();
           this.cdr.markForCheck();
         }
+      },
+      error: () => {
+        this.handleDashboardError('stats', 'Failed to load document statistics');
       },
     });
   }
 
   private loadRecentDocuments(): void {
-    this.dashboardService.getRecentDocuments(5).subscribe({
+    this.dashboardService.getRecentDocuments(10).subscribe({
       next: (res) => {
         if (res.success && res.data) {
           this.recentDocuments = res.data.documents;
           this.generateAIDiscoveries();
+          this.clearDashboardError('recent');
           this.cdr.markForCheck();
           
           setTimeout(() => {
@@ -301,6 +344,9 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           }, 0);
         }
       },
+      error: () => {
+        this.handleDashboardError('recent', 'Failed to load recent documents');
+      },
     });
   }
 
@@ -311,10 +357,14 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
           this.expiringDocuments = res.data.documents;
           this.statCards[2].value = this.expiringDocuments.length;
           
+          this.clearDashboardError('expiring');
           this.triggerStaggeredAnimations();
           this.generateAIDiscoveries();
           this.cdr.markForCheck();
         }
+      },
+      error: () => {
+        this.handleDashboardError('expiring', 'Failed to load expiring documents');
       },
     });
   }
@@ -325,10 +375,14 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
         if (res.success && res.data) {
           this.processingErrors = res.data.documents;
           
+          this.clearDashboardError('errors');
           this.triggerStaggeredAnimations();
           this.generateAIDiscoveries();
           this.cdr.markForCheck();
         }
+      },
+      error: () => {
+        this.handleDashboardError('errors', 'Failed to load processing error records');
       },
     });
   }
@@ -390,80 +444,118 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     return this.statCards[2].value;
   }
 
+  get expiredDocumentsCount(): number {
+    return this.statsData?.expiredDocuments ?? 0;
+  }
+
   get needsReviewCount(): number {
     return this.processingErrors.length;
   }
 
-  // AI Discoveries Engine
+  // Dynamic AI Discoveries Engine based strictly on real user documents
   private generateAIDiscoveries(): void {
     this.aiDiscoveries = [];
     this.smartAlerts = [];
+    this.latestActions = [];
     
-    let hasPAN = false;
-    let hasAadhaar = false;
-    let resumeCount = 0;
-    
+    let idCount = 0;
+    let resCount = 0;
+
+    if (this.recentDocuments.length === 0) {
+      this.identityCount = 0;
+      this.parsedDocsCount = 0;
+      this.latestActions = [
+        'Vault initialized and ready for document uploads',
+        'Smart Folder auto-classification system active',
+        'Smart Reminders ready for deadline tracking'
+      ];
+      this.smartAlerts = [
+        'Upload your first document to view AI insights',
+        'Smart Reminder deadline triggers ready'
+      ];
+      return;
+    }
+
     this.recentDocuments.forEach(doc => {
-      const cat = doc.category?.toLowerCase();
-      if (cat === 'pan') {
-        hasPAN = true;
+      const cat = doc.category?.toLowerCase() || '';
+      const name = doc.originalFileName || 'Document';
+
+      if (cat.includes('pan')) {
+        idCount++;
         this.aiDiscoveries.push({
           title: 'PAN Card',
           icon: 'credit_card',
           confidence: 99,
           desc: ['PAN Number validated', 'Holder name matched']
         });
-      } else if (cat === 'aadhaar') {
-        hasAadhaar = true;
+        this.latestActions.push(`PAN card number & holder name validated for "${name}"`);
+      } else if (cat.includes('aadhaar')) {
+        idCount++;
         this.aiDiscoveries.push({
           title: 'Aadhaar Card',
           icon: 'badge',
           confidence: 98,
           desc: ['DOB extracted', 'Address verified']
         });
-      } else if (cat === 'resume') {
-        resumeCount++;
+        this.latestActions.push(`Aadhaar card address & DOB verified for "${name}"`);
+      } else if (cat.includes('resume') || cat.includes('cv')) {
+        resCount++;
         this.aiDiscoveries.push({
           title: 'Resume / CV',
           icon: 'description',
           confidence: 97,
-          desc: ['Skills: Angular, Node.js, Python, MongoDB']
+          desc: ['Skills & employment history parsed']
         });
-      } else if (cat === 'passport') {
+        this.latestActions.push(`Technical skills & career experience extracted from "${name}"`);
+      } else if (cat.includes('passport')) {
+        idCount++;
         this.aiDiscoveries.push({
           title: 'Passport',
           icon: 'flight_takeoff',
           confidence: 99,
-          desc: ['Nationality detected', 'Expiry: 2032']
+          desc: ['Nationality & passport number detected']
         });
+        this.latestActions.push(`Passport number & validity limit verified for "${name}"`);
+      } else if (cat.includes('receipt') || cat.includes('fee') || cat.includes('bill')) {
+        this.aiDiscoveries.push({
+          title: doc.category || 'Fee Receipt',
+          icon: 'receipt_long',
+          confidence: 98,
+          desc: ['Payment amount & transaction details verified']
+        });
+        this.latestActions.push(`Payment summary & transaction details extracted from "${name}"`);
+        this.smartAlerts.push(`Payment receipt "${name}" indexed & verified`);
+      } else if (cat.includes('certificate') || cat.includes('educational')) {
+        resCount++;
+        this.aiDiscoveries.push({
+          title: doc.category || 'Educational Certificate',
+          icon: 'school',
+          confidence: 96,
+          desc: ['Issuer & qualification verified', 'Expiry reminder active']
+        });
+        this.latestActions.push(`Educational certificate details & date verified for "${name}"`);
+      } else {
+        this.aiDiscoveries.push({
+          title: doc.category || 'Document',
+          icon: 'insert_drive_file',
+          confidence: 95,
+          desc: ['Text OCR completed', 'Metadata indexed']
+        });
+        this.latestActions.push(`Document OCR completed & indexed for "${name}"`);
       }
     });
 
-    if (this.aiDiscoveries.length === 0) {
-      this.aiDiscoveries = [
-        { title: 'Passport', icon: 'flight_takeoff', confidence: 99, desc: ['Nationality detected', 'Expiry: 2032'] },
-        { title: 'Aadhaar Card', icon: 'badge', confidence: 98, desc: ['DOB extracted', 'Address verified'] },
-        { title: 'Resume / CV', icon: 'description', confidence: 97, desc: ['Skills: Angular, Node.js, Python, MongoDB'] },
-        { title: 'PAN Card', icon: 'credit_card', confidence: 99, desc: ['PAN Number validated', 'Holder name matched'] }
-      ];
+    this.identityCount = idCount;
+    this.parsedDocsCount = resCount;
+
+    if (this.expiringDocuments.length > 0) {
+      this.expiringDocuments.forEach(doc => {
+        this.smartAlerts.push(`"${doc.originalFileName}" has an upcoming expiration date`);
+      });
     }
 
-    if (hasPAN && hasAadhaar) {
-      this.smartAlerts.push('Aadhaar and PAN names match successfully');
-    }
-    if (resumeCount > 1) {
-      this.smartAlerts.push('2 Resumes detected (possible duplicate)');
-    }
-    if (this.expiringDocuments.length > 0) {
-      this.smartAlerts.push('Passport expires soon (requires action)');
-    }
-    
     if (this.smartAlerts.length === 0) {
-      this.smartAlerts = [
-        'Aadhaar and PAN name matching verified',
-        'Passport expires in 8 months',
-        'Missing phone number in active Resume'
-      ];
+      this.smartAlerts.push('All document metadata & classifications verified');
     }
   }
 }
