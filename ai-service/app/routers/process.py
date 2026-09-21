@@ -154,7 +154,26 @@ async def process_document(
         final_extracted = {}
         for field in ["documentName", "holderName", "organization", "documentNumber", "issueDate", "expiryDate"]:
             llm_ent = layoutlm_results.get(field)
+            use_llm = False
             if llm_ent and llm_ent["confidence"] >= 0.70:
+                val = llm_ent["value"]
+                if field == "documentName" and doc_type in ["Passport", "Driving License", "Resume", "Fee Receipt", "Identity Card", "Educational Certificate", "Internship Certificate", "Aadhaar Card", "PAN Card"] and rule_based_extracted.get("documentName"):
+                    # Preserve standard document title over LLM tokens
+                    use_llm = False
+                elif field == "holderName":
+                    from app.extraction.extractor import _is_valid_person_name
+                    if _is_valid_person_name(val):
+                        use_llm = True
+                elif field == "documentNumber" and doc_type in ["Driving License", "Passport"] and rule_based_extracted.get("documentNumber"):
+                    # Preserve specific DL No / Passport No over generic LLM tokens
+                    use_llm = False
+                elif field in ["issueDate", "expiryDate"] and doc_type in ["Driving License", "Passport"] and rule_based_extracted.get(field):
+                    # Preserve explicit "Valid Till" / "Date of Issue" / "Date of Expiry" over generic LLM date predictions
+                    use_llm = False
+                else:
+                    use_llm = True
+
+            if use_llm:
                 val = llm_ent["value"]
                 # Normalise dates predicted by LayoutLMv3
                 if field in ["issueDate", "expiryDate"]:

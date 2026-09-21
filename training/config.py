@@ -8,19 +8,18 @@ import torch
 BASE_MODEL = "nielsr/layoutlmv3-finetuned-funsd"
 
 # Hyperparameters
-EPOCHS = 15
+EPOCHS = 5
 BATCH_SIZE = 4
-LEARNING_RATE = 5e-5
+LEARNING_RATE = 7e-5
 WEIGHT_DECAY = 0.01
 MAX_LENGTH = 512
 SEED = 42
 TRAIN_SPLIT = 0.8  # 80% train, 20% validation
 
 # Paths
-# Assumes execution from repository root
 DATASET_DIR = "dataset"
-OUTPUT_DIR = "training_outputs"
-BEST_MODEL_DIR = os.path.join(OUTPUT_DIR, "best_model")
+OUTPUT_DIR = os.path.join("training", "models", "layoutlmv3-lifevault", "experiment_2")
+BEST_MODEL_DIR = os.path.join(OUTPUT_DIR, "best")
 
 # Device configuration (automatically handles CPU/GPU)
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"

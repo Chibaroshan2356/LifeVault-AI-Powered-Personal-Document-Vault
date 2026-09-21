@@ -99,11 +99,65 @@ P<INDDOE<<JOHN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     
     refined = extract_passport_metadata(passport_text, extracted_fields)
     assert refined["documentName"] == "Passport"
-    assert refined["holderName"] == "John Doe"
+    assert refined["holderName"] == "JOHN DOE"
     assert refined["organization"] == "Republic of India"
     assert refined["documentNumber"] == "Z1234567"
     assert refined["issueDate"] == "2020-05-15T00:00:00.000Z"
     assert refined["expiryDate"] == "2030-05-14T00:00:00.000Z"
+
+
+def test_vietnam_passport_classification_and_metadata():
+    passport_text = """
+CONG HOA XA HOI CHU NGHA VIET NAM
+SOCIALIST REPUBLIC OF VIETNAM
+HO CHIEU / PASSPORT
+Loai / Type
+Ma s6 / Code
+So ho chieu / Passport No
+P
+VNM
+C6235072
+va ten / Full name
+TRUMP DONALD JOHN
+Quoc tich
+Nationality
+VEET NAM / VIETNAMESE
+Ngay sinh
+Date of birth
+Noi sinh
+Place of binth
+14 / 06 / 1946
+LAM DONG
+Gioi tinh
+Sex
+So GCMNDMID eardN
+NAM /M
+251126947
+Ngay cap / Date of issue
+Co
+tn den VDate of expiry
+24 /10 /2018
+24/10 / 2028
+Noi
+[Place of issue
+Quan ly xuat
+canh
+P<VNMTRUMP<<DONALD<JOHN<<<
+<<<<<44<4<4<<<<<
+C6235072<5VNM460614502810249251126947<<<<<18
+    """
+    extracted_fields = extract(passport_text)
+    doc_type, conf = classify(passport_text, extracted_fields)
+    assert doc_type == "Passport"
+    assert conf > 0.5
+    
+    refined = extract_passport_metadata(passport_text, extracted_fields)
+    assert refined["documentName"] == "Passport"
+    assert refined["holderName"] == "TRUMP DONALD JOHN"
+    assert refined["organization"] == "Socialist Republic of Vietnam"
+    assert refined["documentNumber"] == "C6235072"
+    assert refined["issueDate"] == "2018-10-24T00:00:00.000Z"
+    assert refined["expiryDate"] == "2028-10-24T00:00:00.000Z"
 
 
 def test_aadhaar_classification_and_metadata():
@@ -321,6 +375,26 @@ def test_driving_license_classification_and_metadata():
     assert refined["documentNumber"] == "CH-0420160000123"
     assert refined["issueDate"] == "2020-05-15T00:00:00.000Z"
     assert refined["expiryDate"] == "2030-05-14T00:00:00.000Z"
+
+
+def test_driving_license_with_badge_no_and_vehicle_classes():
+    dl_text = """
+    UNION OF INDIA
+    DRIVING LICENCE
+    DL No: TN54 2008000
+    Badge No: 03788 TN54
+    LMV / HTV
+    Date of Issue: 20-03-2018
+    Valid Till: 19-03-2028
+    Date of Birth: 06-06-2001
+    """
+    extracted_fields = extract(dl_text)
+    refined = extract_driving_license_metadata(dl_text, extracted_fields)
+    assert refined["documentName"] == "Driving License"
+    assert refined["holderName"] is None  # LMV / HTV never used as name
+    assert refined["documentNumber"] == "TN54 2008000"
+    assert refined["issueDate"] == "2018-03-20T00:00:00.000Z"
+    assert refined["expiryDate"] == "2028-03-19T00:00:00.000Z"
 
 
 def test_internship_certificate_classification_and_metadata():

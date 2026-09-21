@@ -25,6 +25,37 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(level
 logger = logging.getLogger("LayoutLMv3Train")
 
 
+from collections import Counter
+import torch
+import torch.nn as nn
+
+
+class WeightedTrainer(Trainer):
+    """
+    Custom Trainer that overrides compute_loss to use class-weighted CrossEntropyLoss.
+    Prevents the dominant 'O' class from suppressing minority entity gradients.
+    """
+    def __init__(self, class_weights=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.class_weights = class_weights
+
+    def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
+        labels = inputs.get("labels")
+        outputs = model(**inputs)
+        logits = outputs.get("logits")
+        
+        if self.class_weights is not None:
+            loss_fct = nn.CrossEntropyLoss(
+                weight=self.class_weights.to(logits.device),
+                ignore_index=-100
+            )
+            loss = loss_fct(logits.view(-1, self.model.config.num_labels), labels.view(-1))
+        else:
+            loss = outputs.loss
+            
+        return (loss, outputs) if return_outputs else loss
+
+
 def main():
     logger.info("Starting LayoutLMv3 fine-tuning pipeline...")
     logger.info(f"Using device: {config.DEVICE.upper()}")
@@ -80,15 +111,47 @@ def main():
         desc="Tokenizing and aligning validation set"
     )
     
+    # Calculate class counts and dynamic capped weights from train_dataset
+    label_counts = Counter()
+    for sample in train_dataset:
+        for lbl in sample["labels"]:
+            if lbl != -100:
+                label_counts[lbl] += 1
+
+    total_tokens = sum(label_counts.values())
+    num_classes = len(label2id)
+
+    class_weights_list = []
+    logger.info("=" * 60)
+    logger.info("CLASS WEIGHT ASSIGNMENT FOR LOSS FUNCTION")
+    logger.info("=" * 60)
+    logger.info(f"{'ID':<4} {'Label':<30} {'Count':<8} {'Weight':<8}")
+    logger.info("-" * 60)
+    
+    for i in range(num_classes):
+        lbl_str = id2label[i]
+        cnt = label_counts.get(i, 0)
+        if cnt == 0:
+            w = 10.0  # Safe cap for zero-count labels
+        else:
+            raw_w = total_tokens / (num_classes * cnt)
+            w = max(0.15, min(10.0, float(raw_w)))
+        class_weights_list.append(w)
+        logger.info(f"{i:<4} {lbl_str:<30} {cnt:<8} {w:.4f}")
+    logger.info("=" * 60)
+
+    class_weights = torch.tensor(class_weights_list, dtype=torch.float32)
+
     # 5. Define Training Arguments
     training_args = TrainingArguments(
         output_dir=config.OUTPUT_DIR,
         num_train_epochs=config.EPOCHS,
         per_device_train_batch_size=config.BATCH_SIZE,
         per_device_eval_batch_size=config.BATCH_SIZE,
+        gradient_accumulation_steps=2,
         learning_rate=config.LEARNING_RATE,
         weight_decay=config.WEIGHT_DECAY,
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         save_strategy="epoch",
         save_total_limit=2,
         load_best_model_at_end=True,
@@ -99,8 +162,9 @@ def main():
         logging_steps=10
     )
     
-    # 6. Initialize Trainer
-    trainer = Trainer(
+    # 6. Initialize Weighted Trainer
+    trainer = WeightedTrainer(
+        class_weights=class_weights,
         model=model,
         args=training_args,
         train_dataset=train_dataset,
@@ -110,8 +174,16 @@ def main():
     )
     
     # 7. Execute Training
-    logger.info("Executing training loop (Hugging Face Trainer API)...")
-    trainer.train()
+    logger.info("Executing training loop (Weighted Trainer API)...")
+    ckpt = None
+    if os.path.exists(config.OUTPUT_DIR):
+        ckpts = [os.path.join(config.OUTPUT_DIR, d) for d in os.listdir(config.OUTPUT_DIR) if d.startswith("checkpoint-")]
+        if ckpts:
+            ckpts.sort(key=lambda x: int(x.split("-")[-1]))
+            ckpt = ckpts[-1]
+            logger.info(f"Resuming training from latest checkpoint '{ckpt}'...")
+            
+    trainer.train(resume_from_checkpoint=ckpt)
     
     # 8. Export trained model and configs
     logger.info(f"Training finished! Exporting best model to '{config.BEST_MODEL_DIR}'...")

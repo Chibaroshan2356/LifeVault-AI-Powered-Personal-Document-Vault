@@ -64,18 +64,19 @@ def _extract_name(text: str) -> Optional[str]:
     """Extract holder name from common name patterns."""
     # Pattern: "Name: John Doe" or "Holder: John Doe"
     m = re.search(
-        _NAME_KEYWORDS + r'([A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3})',
+        _NAME_KEYWORDS + r'([A-Z][A-Za-z\s\.]{2,40})',
         text, re.IGNORECASE
     )
     if m:
-        return m.group(1).strip()
+        candidate = m.group(1).strip()
+        if _is_valid_person_name(candidate):
+            return candidate.title()
 
     # Pattern: all-caps name (common in Indian documents)
-    m = re.search(r'\n([A-Z]{2,}\s+[A-Z]{2,}(?:\s+[A-Z]{2,})?)\n', text)
-    if m:
-        name = m.group(1).strip()
-        if len(name) < 50:
-            return name.title()
+    for m in re.finditer(r'\n([A-Z]{2,}\s+[A-Z]{2,}(?:\s+[A-Z]{2,})?)\n', text):
+        candidate = m.group(1).strip()
+        if _is_valid_person_name(candidate):
+            return candidate.title()
 
     return None
 
@@ -118,21 +119,43 @@ def _extract_date_by_keyword(text: str, keyword_pattern: str) -> Optional[str]:
 
 def _extract_document_number(text: str) -> Optional[str]:
     """Extract any document/ID/registration number."""
+    # Prioritize DL Number if present
+    m_dl = re.search(r'(?:dl\s*no\.?|dl\s*number|d\.l\.\s*no\.?|licen[cs]e\s*no\.?)\s*[:\-–—\s]*([A-Z]{2}\s?\d{2}\s?[A-Z0-9\s/-]{4,15})', text, re.IGNORECASE)
+    if m_dl:
+        return m_dl.group(1).strip()
+
     for _name, pattern in _ID_PATTERNS.items():
         m = re.search(pattern, text, re.IGNORECASE)
         if m:
-            return m.group(1).strip()
+            cand = m.group(1).strip()
+            # Avoid picking Badge numbers as generic ID
+            if _name == "generic" and re.search(r'\bbadge\b', text[max(0, m.start()-15):m.start()], re.IGNORECASE):
+                continue
+            return cand
     return None
 
 
 def _normalise_date(raw: str) -> Optional[str]:
     """Attempt to normalise a raw date string to ISO 8601 format."""
+    if not raw:
+        return None
+    raw_clean = re.sub(r'\s+', '', raw.strip())
+    raw_clean = re.sub(r'[^0-9A-Za-z/-]', '', raw_clean)
     formats = [
         "%d/%m/%Y", "%d-%m-%Y", "%Y-%m-%d", "%Y/%m/%d",
         "%d/%m/%y", "%d-%m-%y",
         "%d %b %Y", "%d %B %Y", "%b %d, %Y", "%B %d, %Y",
         "%d %b. %Y",
     ]
+    # First try the clean version without spaces
+    for fmt in ["%d/%m/%Y", "%d-%m-%Y", "%Y-%m-%d", "%Y/%m/%d", "%d/%m/%y", "%d-%m-%y"]:
+        try:
+            dt = datetime.strptime(raw_clean, fmt)
+            return dt.strftime("%Y-%m-%dT00:00:00.000Z")
+        except ValueError:
+            continue
+
+    # Fallback to standard formats
     for fmt in formats:
         try:
             dt = datetime.strptime(raw.strip(), fmt)
@@ -230,7 +253,27 @@ def extract_resume_metadata(text: str, default_metadata: dict) -> dict:
 def _is_valid_person_name(name: str) -> bool:
     if not name:
         return False
-    name_lower = name.lower()
+    name_clean = name.strip()
+    
+    # A person name must not contain digits or special punctuation
+    if any(c.isdigit() for c in name_clean):
+        return False
+    if any(c in r"()[]{}<>=+*^%$#@!~`/?\|:;\"\\" for c in name_clean):
+        return False
+    # Allowed characters: letters, spaces, dots, hyphens, apostrophes
+    if not re.match(r"^[A-Za-z\s\.\'\-]+$", name_clean):
+        return False
+
+    name_lower = name_clean.lower()
+    
+    # Vehicle classes and driving licence abbreviations
+    vehicle_tokens = {"lmv", "htv", "ht", "mcwg", "mcwog", "trans", "non-trans", "hgv", "psv", "cov", "badge", "dl", "nt", "tr"}
+    tokens = set(re.findall(r'\b[a-z0-9-]+\b', name_lower))
+    if tokens and tokens.issubset(vehicle_tokens):
+        return False
+    if any(vt in tokens for vt in ["lmv", "htv", "mcwg", "mcwog", "psv", "hgv", "badge"]):
+        return False
+
     invalid_keywords = [
         "college", "university", "institute", "school", "engineering", 
         "technology", "receipt", "fee", "payment", "amount", "rupees", "rs.", "rs", 
@@ -239,13 +282,17 @@ def _is_valid_person_name(name: str) -> bool:
         "roll", "admission", "office", "copy", "original", "student", "candidate", "kec",
         "company", "solutions", "limited", "ltd", "pvt", "corp", "corporation", "association",
         "group", "services", "industries", "designation", "department", "dept", "valid", "expiry", "card",
-        "issued", "awarded", "presented", "certifies", "completion", "achievement", "to", "by", "for", "verify", "credential", "certified", "url", "developer"
+        "issued", "awarded", "presented", "certifies", "completion", "achievement", "to", "by", "for", "verify", "credential", "certified", "url", "developer",
+        "licence", "license", "driving", "union of india", "blood", "rto", "son/daughter", "authority", "issuing", "salem", "tamil nadu", "highway", "nagar",
+        "republic", "socialist", "vietnam", "viet nam", "vietnamese", "cong hoa", "xa hoi", "chu nghia", "ho chieu", "passport",
+        "nationality", "quoc tich", "place of birth", "noi sinh", "noi cap", "cuc quan ly", "xuat nhap canh", "sex", "gender", "gioi tinh",
+        "ngay sinh", "ngay cap", "date of birth", "date of issue", "date of expiry", "government", "ministry", "specimen", "state of"
     ]
     for kw in invalid_keywords:
         if kw in name_lower:
             return False
-    # A person name should typically be between 2 and 40 characters
-    if not (2 <= len(name.strip()) <= 40):
+    # A person name should typically be between 2 and 50 characters
+    if not (2 <= len(name_clean) <= 50):
         return False
     return True
 
@@ -649,43 +696,154 @@ def extract_educational_certificate_metadata(text: str, default_metadata: dict) 
 
 def extract_passport_metadata(text: str, default_metadata: dict) -> dict:
     doc_name = "Passport"
+    lines = [l.strip() for l in text.split("\n") if l.strip()]
     
-    # 1. Holder
+    # 1. Holder Name
     holder = None
-    mrz_match = re.search(r'P<([A-Z]{3})([A-Z<]+?)<<([A-Z<]+)', text.upper())
-    if mrz_match:
-        surname = mrz_match.group(2).replace('<', ' ').strip().title()
-        given = mrz_match.group(3).replace('<', ' ').strip().title()
-        holder = f"{given} {surname}".strip()
-    else:
-        surname_m = re.search(r'(?:surname|last\s+name)\s*[:\-–—\s]\s*([A-Za-z]+)', text, re.IGNORECASE)
-        given_m = re.search(r'(?:given\s+names?|first\s+name)\s*[:\-–—\s]\s*([A-Za-z\s]+)', text, re.IGNORECASE)
-        if given_m and surname_m:
-            holder = f"{given_m.group(1).strip()} {surname_m.group(1).strip()}".title()
+    # A) Try explicit label matching (Full name / Họ và tên / Surname / Given names)
+    name_labels = [
+        r'\b(?:full\s*name|họ\s*và\s*tên|ho\s*va\s*ten|va\s*ten)\b',
+        r'\b(?:given\s*names?|first\s*name)\b',
+        r'\b(?:surname|last\s*name)\b',
+        r'\bname\b'
+    ]
+    for idx, line in enumerate(lines):
+        for lbl in name_labels:
+            if re.search(lbl, line, re.IGNORECASE):
+                # Check remainder of same line
+                cand = re.sub(lbl, '', line, flags=re.IGNORECASE).strip(' :-–—/')
+                if cand and _is_valid_person_name(cand):
+                    holder = cand if cand == cand.upper() else cand.title()
+                    break
+                # Check next line
+                if idx + 1 < len(lines):
+                    next_cand = lines[idx + 1].strip(' :-–—/')
+                    if _is_valid_person_name(next_cand):
+                        holder = next_cand if next_cand == next_cand.upper() else next_cand.title()
+                        break
+        if holder:
+            break
             
-    if not holder or not _is_valid_person_name(holder):
-        holder = default_metadata.get("holderName")
+    # B) Try MRZ match if not found
+    if not holder:
+        mrz_match = re.search(r'P<([A-Z]{3})([A-Z<]+?)<<([A-Z<]+)', text.upper())
+        if mrz_match:
+            surname = mrz_match.group(2).replace('<', ' ').strip()
+            given = mrz_match.group(3).replace('<', ' ').strip()
+            full = f"{surname} {given}".strip()
+            if _is_valid_person_name(full):
+                holder = full
+                
+    if not holder:
+        cand_default = default_metadata.get("holderName")
+        if cand_default and _is_valid_person_name(cand_default):
+            holder = cand_default
 
     # 2. Organization
     org = "Government of India"
-    if "republic of" in text.lower():
+    text_lower = text.lower()
+    if "socialist republic of vietnam" in text_lower or "vietnam" in text_lower or "vnm" in text_lower:
+        org = "Socialist Republic of Vietnam"
+    elif "republic of" in text_lower:
         m = re.search(r'republic\s+of\s+([A-Za-z\ ]+)', text, re.IGNORECASE)
         if m:
             org = f"Republic of {m.group(1).strip().title()}"
+    elif "united states" in text_lower or "usa" in text_lower:
+        org = "United States of America"
             
     # 3. Document Number
-    doc_num = default_metadata.get("documentNumber")
+    doc_num = None
+    num_labels = [
+        r'\b(?:passport\s*no\.?|passport\s*number|số\s*hộ\s*chiếu|so\s*ho\s*chieu|passport)\b'
+    ]
+    for idx, line in enumerate(lines):
+        for lbl in num_labels:
+            if re.search(lbl, line, re.IGNORECASE):
+                same = re.sub(lbl, '', line, flags=re.IGNORECASE).strip(' :-–—/')
+                m = re.search(r'\b([A-Z0-9]{7,10})\b', same, re.IGNORECASE)
+                if m and any(c.isdigit() for c in m.group(1)):
+                    doc_num = m.group(1).upper()
+                    break
+                for offset in [1, 2, 3]:
+                    if idx + offset < len(lines):
+                        cand_line = lines[idx + offset].strip(' :-–—/')
+                        m = re.search(r'\b([A-Z]\d{7,8})\b', cand_line, re.IGNORECASE)
+                        if m:
+                            doc_num = m.group(1).upper()
+                            break
+                if doc_num:
+                    break
+        if doc_num:
+            break
+            
     if not doc_num:
         m = re.search(r'\b([A-Z]\d{7})\b', text.upper())
         if m:
             doc_num = m.group(1)
             
+    if not doc_num:
+        doc_num = default_metadata.get("documentNumber")
+        
+    # 4. Dates: Issue Date and Expiry Date
+    date_regex = r'\b(\d{1,2}\s*[/-]\s*\d{1,2}\s*[/-]\s*\d{2,4})\b'
+    
+    issue_date = None
+    expiry_date = None
+    
+    issue_labels = [r'\b(?:date\s+of\s+issue|issue\s+date|issued\s+on|ngay\s+cap|ngày\s+cấp|d\.?o\.?i\.?)\b']
+    expiry_labels = [r'\b(?:date\s+of\s+expiry|expiry\s+date|valid\s+(?:until|thru|through|upto|till)|co\s+gia\s+tri\s+den|có\s+giá\s+trị\s+đến|co\s+gla\s+den|expiry)\b']
+    dob_labels = [r'\b(?:date\s+of\s+birth|d\.?o\.?b\.?|ngay\s+sinh|ngày\s+sinh|birth)\b']
+    
+    line_dates = []
+    for idx, line in enumerate(lines):
+        for dm in re.finditer(date_regex, line):
+            line_dates.append((idx, line, _normalise_date(dm.group(1))))
+            
+    for idx, line in enumerate(lines):
+        if any(re.search(lbl, line, re.IGNORECASE) for lbl in issue_labels):
+            for l_idx, l_text, norm_d in line_dates:
+                if idx <= l_idx <= idx + 4:
+                    if not any(re.search(dl, lines[l_idx], re.IGNORECASE) for dl in dob_labels):
+                        issue_date = norm_d
+                        break
+            if issue_date:
+                break
+                
+    for idx, line in enumerate(lines):
+        if any(re.search(lbl, line, re.IGNORECASE) for lbl in expiry_labels):
+            for l_idx, l_text, norm_d in line_dates:
+                if idx <= l_idx <= idx + 4:
+                    if not any(re.search(dl, lines[l_idx], re.IGNORECASE) for dl in dob_labels):
+                        if norm_d != issue_date:
+                            expiry_date = norm_d
+                            break
+                        else:
+                            expiry_date = norm_d
+            if expiry_date:
+                break
+                
+    if (not issue_date or not expiry_date) and len(line_dates) >= 2:
+        non_dob_dates = []
+        for l_idx, l_text, norm_d in line_dates:
+            if not any(re.search(dl, lines[l_idx], re.IGNORECASE) for dl in dob_labels) and not any(re.search(dl, lines[max(0, l_idx-1)], re.IGNORECASE) for dl in dob_labels):
+                non_dob_dates.append(norm_d)
+        if len(non_dob_dates) >= 2:
+            if not issue_date:
+                issue_date = non_dob_dates[0]
+            if not expiry_date:
+                expiry_date = non_dob_dates[1]
+                
+    if not issue_date:
+        issue_date = default_metadata.get("issueDate")
+    if not expiry_date:
+        expiry_date = default_metadata.get("expiryDate")
+
     return {
         "documentName":   doc_name,
         "holderName":     holder,
         "organization":   org,
-        "issueDate":      default_metadata.get("issueDate"),
-        "expiryDate":     default_metadata.get("expiryDate"),
+        "issueDate":      issue_date,
+        "expiryDate":     expiry_date,
         "documentNumber": doc_num,
     }
 
@@ -787,39 +945,152 @@ def extract_pan_metadata(text: str, default_metadata: dict) -> dict:
 
 def extract_driving_license_metadata(text: str, default_metadata: dict) -> dict:
     doc_name = "Driving License"
+    lines = [l.strip() for l in text.split("\n") if l.strip()]
     
-    # 1. Holder
+    # 1. Holder Name (Strictly avoid vehicle classes like LMV / HTV)
     holder = None
-    m = re.search(r'(?:name\s+of\s+holder|licensee|name)\s*[:\-–—\s]\s*([A-Za-z][A-Za-z\ \.]+)', text, re.IGNORECASE)
-    if m:
-        candidate = m.group(1).strip()
-        if _is_valid_person_name(candidate):
-            holder = candidate.title()
+    name_labels = [r'\bname\s+of\s+holder\b', r'\blicensee\b', r'\bholder\s*name\b', r'\bname\b']
+    for idx, line in enumerate(lines):
+        for lbl in name_labels:
+            if re.search(lbl, line, re.IGNORECASE):
+                # Check same line
+                clean = re.sub(lbl, '', line, flags=re.IGNORECASE).strip(' :-–—')
+                if clean and _is_valid_person_name(clean):
+                    holder = clean.title()
+                    break
+                # Check next line
+                if idx + 1 < len(lines):
+                    cand = lines[idx + 1].strip(' :-–—')
+                    if _is_valid_person_name(cand):
+                        holder = cand.title()
+                        break
+        if holder:
+            break
             
-    if not holder or not _is_valid_person_name(holder):
-        holder = default_metadata.get("holderName")
+    if not holder:
+        cand_default = default_metadata.get("holderName")
+        if cand_default and _is_valid_person_name(cand_default):
+            holder = cand_default
         
     # 2. Organization
     org = "Ministry of Road Transport and Highways"
-    lines = [l.strip() for l in text.split("\n") if l.strip()]
-    for line in lines[:5]:
-        if "transport" in line.lower() or "rto" in line.lower() or "union territory" in line.lower():
-            org = line.title()
-            break
+    for line in lines[:8]:
+        line_lower = line.lower()
+        if "transport" in line_lower or "rto" in line_lower or "union territory" in line_lower or "union of india" in line_lower:
+            clean_org = re.sub(r'^[^A-Za-z0-9]+|[^A-Za-z0-9\(\)\s]+$', '', line).strip()
+            if 4 <= len(clean_org) <= 80:
+                org = clean_org.title()
+                break
             
-    # 3. Document Number
-    doc_num = default_metadata.get("documentNumber")
+    # 3. Document Number (Prioritize DL No. over Badge No.)
+    doc_num = None
+    dl_labels = [
+        r'\b(?:i\s*dl|idl|id|dl|d\.l\.)\s*no\b\.?',
+        r'\bdl\s*number\b', r'\bd\.l\.\s*number\b',
+        r'\blicen[cs]e\s*no\b\.?', r'\bdriving\s+licen[cs]e\s+no\b\.?',
+        r'\bdriving\s+licen[cs]e\b'
+    ]
+    for idx, line in enumerate(lines):
+        for lbl in dl_labels:
+            if re.search(lbl, line, re.IGNORECASE):
+                # Check same line
+                same_line = re.sub(lbl, '', line, flags=re.IGNORECASE).strip(' :-–—')
+                m = re.search(r'\b([A-Z]{2}\s?\d{2}\s?[A-Z0-9\s/-]{4,15})\b', same_line, re.IGNORECASE)
+                if m:
+                    doc_num = m.group(1).strip()
+                    break
+                # Check next 2 lines
+                for offset in [1, 2]:
+                    if idx + offset < len(lines):
+                        next_line = lines[idx + offset]
+                        # Avoid picking badge lines or date lines as DL number
+                        if not any(re.search(b_lbl, next_line, re.IGNORECASE) for b_lbl in [r'\bbadge\b', r'\bdate\b', r'\bdare\b', r'\bvalid\b', r'\bissue\b']):
+                            m = re.search(r'\b([A-Z]{2}\s?\d{2}\s?[A-Z0-9\s/-]{4,15})\b', next_line, re.IGNORECASE)
+                            if m:
+                                doc_num = m.group(1).strip()
+                                break
+                if doc_num:
+                    break
+        if doc_num:
+            break
+
     if not doc_num:
-        m = re.search(r'\b([A-Z]{2}\s?\d{2}\s?\d{11})\b', text.upper())
-        if m:
-            doc_num = m.group(1).strip()
+        # Look for Indian DL standard pattern excluding Badge lines
+        for idx, line in enumerate(lines):
+            is_badge = 'badge' in line.lower() or (idx > 0 and 'badge' in lines[idx-1].lower())
+            if not is_badge:
+                m = re.search(r'\b([A-Z]{2}\s?\d{2}\s?\d{4,11})\b', line, re.IGNORECASE)
+                if m:
+                    doc_num = m.group(1).strip()
+                    break
+
+    if not doc_num:
+        doc_num = default_metadata.get("documentNumber")
+        # If default document number is a short badge number, discard it if it was from Badge No.
+        if doc_num and len(doc_num.replace(" ", "")) < 6:
+            doc_num = None
+
+    # 4. Issue Date (Prioritize "Date of Issue" / "Dare of Issue" / "DOI")
+    issue_date = None
+    date_regex = r'\b(\d{2}[/-]\d{2}[/-]\d{4})\b'
+    issue_labels = [r'\b(?:date\s+of\s+issue|dare\s+of\s+issue|issue\s+date|issued\s+on|d\.?o\.?i\.?)\b']
+    for idx, line in enumerate(lines):
+        for lbl in issue_labels:
+            if re.search(lbl, line, re.IGNORECASE):
+                for offset in [0, 1, 2]:
+                    if idx + offset < len(lines):
+                        m = re.search(date_regex, lines[idx + offset])
+                        if m:
+                            issue_date = _normalise_date(m.group(1))
+                            break
+                if issue_date:
+                    break
+        if issue_date:
+            break
+
+    if not issue_date:
+        issue_date = default_metadata.get("issueDate")
+
+    # 5. Expiry Date (Prioritize "Valid Till" / "Valid To" / "Expiry", strictly avoid DOB)
+    expiry_date = None
+    expiry_labels = [
+        r'\bvalid\s+(?:til[a-z]*|to|upto|until|through|ity|valid)\b',
+        r'\b(?:validity|expiry\s+date|date\s+of\s+expiry|expiry)\b'
+    ]
+    dob_labels = [r'\b(?:date\s+of\s+birth|d\.?o\.?b\.?|birth)\b']
+    for idx, line in enumerate(lines):
+        for lbl in expiry_labels:
+            if re.search(lbl, line, re.IGNORECASE):
+                found_dates = []
+                for offset in range(0, 5):
+                    if idx + offset < len(lines):
+                        cand_line = lines[idx + offset]
+                        # Stop if reached DOB
+                        if any(re.search(dob_l, cand_line, re.IGNORECASE) for dob_l in dob_labels):
+                            break
+                        for dm in re.finditer(date_regex, cand_line):
+                            norm = _normalise_date(dm.group(1))
+                            found_dates.append(norm)
+                if found_dates:
+                    # Filter out issue_date if distinct expiry dates exist
+                    valid_dates = [d for d in found_dates if d != issue_date]
+                    if valid_dates:
+                        expiry_date = valid_dates[0]
+                    else:
+                        expiry_date = found_dates[-1]
+                    break
+        if expiry_date:
+            break
+
+    if not expiry_date:
+        expiry_date = default_metadata.get("expiryDate")
             
     return {
         "documentName":   doc_name,
         "holderName":     holder,
         "organization":   org,
-        "issueDate":      default_metadata.get("issueDate"),
-        "expiryDate":     default_metadata.get("expiryDate"),
+        "issueDate":      issue_date,
+        "expiryDate":     expiry_date,
         "documentNumber": doc_num,
     }
 
